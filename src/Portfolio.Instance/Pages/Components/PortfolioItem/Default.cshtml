@@ -1,0 +1,23 @@
+﻿@model ProjectModel;
+
+<!-- Component representing a portfolio item. -->
+<div class="item">
+	<div class="imageArea">
+		<a href="#">
+			<div class="imageHolder">
+				<img src="~/@Model.FeaturedImage" />
+				<div class="portfolio-item-info">
+					<div class="portfolio-item-info-group">
+						<span class="portfolio-item-info-group-icon">S</span>
+					</div>
+				</div>
+			</div>
+		</a>
+	</div>
+
+	<h1 class="portfolio-title"><a href="#">@Model.ProjectName</a></h1>
+	<div class="portfolio-meta">
+		<span class="location">Brighton</span>
+		<span class="date">July 2018 - Present</span>
+	</div>
+</div>

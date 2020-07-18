@@ -3,3 +3,65 @@
 @{
     ViewData["Title"] = "";
 }
+
+@inject IContentService contentService;
+
+<section class="sheetArticle">
+
+	@{
+		var categories = new string[]
+		{
+			"category-personal",
+			"category-professional",
+			"category-gamejam"
+		};
+	}
+
+	<article>
+		<header>
+			<h2>Personal Projects</h2>
+		</header>
+		<section>
+
+			<div class="section-text">
+				<p>Personal projects of mine; for the fun of programming.</p>
+			</div>
+
+			<div class="portfolioGrid">
+
+				@foreach (var item in contentService.AllProjects())
+				{
+					if (item.Tags.Contains("category-personal"))
+					{
+						@await Component.InvokeAsync("PortfolioItem", item)
+					}
+				}
+
+			</div>
+		</section>
+	</article>
+	
+	<article>
+		<header>
+			<h2>Professional Projects</h2>
+		</header>
+		<section>
+
+			<div class="section-text">
+				<p>Personal projects of mine; for the fun of programming.</p>
+			</div>
+
+			<div class="portfolioGrid">
+
+				@foreach (var item in contentService.AllProjects())
+				{
+					if (item.Tags.Contains("category-professional"))
+					{
+						@await Component.InvokeAsync("PortfolioItem", item)
+					}
+				}
+
+			</div>
+		</section>
+	</article>
+</section>
