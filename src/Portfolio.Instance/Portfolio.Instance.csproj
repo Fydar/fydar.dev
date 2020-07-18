@@ -11,8 +11,21 @@
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="3.1.4" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="wwwroot\img\" />
+  </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\..\RPGCore\src\RPGCore.Packages\RPGCore.Packages.csproj" />
     <ProjectReference Include="..\Portfolio.Models\Portfolio.Models.csproj" />
   </ItemGroup>
+
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <Exec Command="dotnet run --no-build --configuration $(Configuration) --project &quot;$(ProjectDir)..\Portfolio.Pipeline.BuildStep/Portfolio.Pipeline.BuildStep.csproj&quot; &quot;$(TargetDir)&quot;" />
+  </Target>
+
+  <Target Name="AddGeneratedContentItems" BeforeTargets="AssignTargetPaths" DependsOnTargets="PrepareForPublish">
+    <Exec Command="dotnet run --no-build --configuration $(Configuration) --project &quot;$(ProjectDir)..\Portfolio.Pipeline.BuildStep/Portfolio.Pipeline.BuildStep.csproj&quot; &quot;$(PublishDir)&quot;" />
+  </Target>
+
 </Project>

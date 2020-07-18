@@ -22,6 +22,8 @@ namespace Portfolio.Instance
 		public void ConfigureServices(IServiceCollection services)
 		{
 			services.AddRazorPages();
+
+			services.AddSingleton<IContentService, LocalContentService>();
 		}
 
 		// This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -42,6 +44,11 @@ namespace Portfolio.Instance
 
 			app.UseHttpsRedirection();
 			app.UseStaticFiles();
+			app.UseStaticFiles(new StaticFileOptions
+			{
+				FileProvider = new PhysicalFileProvider(Path.Combine(env.ContentRootPath, ContentDirectory.Path, "data", "img")),
+				RequestPath = "/img"
+			});
 
 			app.UseRouting();
 
