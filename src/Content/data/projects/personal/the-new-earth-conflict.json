@@ -1,0 +1,13 @@
+{
+  "ProjectName": "The New Earth Conflict",
+  "Slug": "the-new-earth-conflict",
+  "FeaturedImage": "img/the-new-earth-conflict-header.png",
+  "Excerpt": "A space-based strategy game",
+  "Skills": [
+    "data/projects/skills/gameplay-programming.json"
+  ],
+  "PublishedDate": 1595040153,
+  "ProjectCategory": "data/projects/categories/category-personal.json",
+  "Institution": null,
+  "Page": "pages/projects/personal/the-new-earth-conflict.html"
+}

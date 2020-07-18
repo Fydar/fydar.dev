@@ -1,7 +1,9 @@
-﻿using System.Collections.Generic;
+﻿using RPGCore.Behaviour;
+using System.Collections.Generic;
 
 namespace Portfolio.Models
 {
+	[EditorType]
 	public class MarkupElementModel
 	{
 		public string Layout { get; set; }

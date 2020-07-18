@@ -1,0 +1,14 @@
+{
+  "ProjectName": "Crypt Crawl",
+  "Slug": "crypt-crawl",
+  "FeaturedImage": "img/crypt-crawl-header.png",
+  "Excerpt": "A 2d pixel-art dungeon crawler.",
+  "Skills": [
+    "data/projects/skills/gameplay-programming.json",
+    "data/projects/skills/network-programming.json"
+  ],
+  "PublishedDate": 1595040153,
+  "ProjectCategory": "data/projects/categories/category-personal.json",
+  "Institution": null,
+  "Page": "pages/projects/personal/crypt-crawl.html"
+}

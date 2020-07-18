@@ -1,0 +1,32 @@
+﻿@using Portfolio.Instance;
+@using Portfolio.Instance.ViewComponents;
+@using Portfolio.Instance.Models;
+@using Portfolio.Instance.Services.ContentService;
+@using Portfolio.Models;
+@using System.IO;
+
+@model PortfolioItemViewModel
+@{
+	ViewData["Title"] = "";
+}
+
+@inject IContentService contentService;
+
+<section class="sheetArticle">
+
+	<article>
+		<header>
+			<h2>@Model.Project.ProjectName</h2>
+		</header>
+		<section>
+
+			@{
+				using var stream = Model.Project.PageResource.Content.LoadStream();
+				using var sr = new StreamReader(stream);
+				@Html.Raw(sr.ReadToEnd());
+			}
+
+		</section>
+	</article>
+
+</section>

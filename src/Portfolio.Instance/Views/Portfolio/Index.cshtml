@@ -1,7 +1,12 @@
-﻿@page
-@model IndexModel
+﻿@using Portfolio.Instance;
+@using Portfolio.Instance.ViewComponents;
+@using Portfolio.Instance.Models;
+@using Portfolio.Instance.Services.ContentService;
+@using Portfolio.Models;
+
+@model PortfolioIndexViewModel
 @{
-    ViewData["Title"] = "";
+	ViewData["Title"] = "";
 }
 
 @inject IContentService contentService;
@@ -31,7 +36,7 @@
 
 				@foreach (var item in contentService.AllProjects())
 				{
-					if (item.Tags.Contains("category-personal"))
+					if (item.ProjectCategoryResource.FullName == "data/projects/categories/category-personal.json")
 					{
 						@await Component.InvokeAsync("PortfolioItem", item)
 					}
@@ -40,7 +45,7 @@
 			</div>
 		</section>
 	</article>
-	
+
 	<article>
 		<header>
 			<h2>Professional Projects</h2>
@@ -55,7 +60,7 @@
 
 				@foreach (var item in contentService.AllProjects())
 				{
-					if (item.Tags.Contains("category-professional"))
+					if (item.ProjectCategoryResource.FullName == "data/projects/categories/category-professional.json")
 					{
 						@await Component.InvokeAsync("PortfolioItem", item)
 					}

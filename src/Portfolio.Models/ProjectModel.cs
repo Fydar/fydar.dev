@@ -1,5 +1,5 @@
 ﻿using Newtonsoft.Json;
-using RPGCore.Behaviour.Manifest;
+using RPGCore.Behaviour;
 using RPGCore.Packages;
 using System.Linq;
 
@@ -9,19 +9,31 @@ namespace Portfolio.Models
 	public class ProjectModel : ILoadResourceCallback
 	{
 		public string ProjectName { get; set; }
+		public string ProjectCategory { get; set; }
 		public string Slug { get; set; }
 		public string Institution { get; set; }
 		public string FeaturedImage { get; set; }
 		public string Excerpt { get; set; }
 		public string[] Skills { get; set; }
 		public long PublishedDate { get; set; }
-		public MarkupElementModel Page { get; set; }
+		public string Page { get; set; }
 
-		[JsonIgnore] public string[] Tags { get; private set; }
+		[JsonIgnore] public IResource PageResource { get; set; }
+		[JsonIgnore] public IResource ProjectCategoryResource { get; set; }
+		[JsonIgnore] public IResource[] SkillsPages { get; private set; }
 
 		public void OnAfterDeserializedFrom(ILoadedResourceCache cache, IResource resource)
 		{
-			Tags = resource.Tags.ToArray();
+			PageResource = cache.GetResource(Page);
+
+			ProjectCategoryResource = cache.GetResource(ProjectCategory);
+			cache.GetOrDeserialize<ProjectCategoryModel>(ProjectCategoryResource).Projects.Add(this);
+
+			SkillsPages = Skills.Select(tag => cache.GetResource(tag)).ToArray();
+			foreach (var skillPage in SkillsPages)
+			{
+				cache.GetOrDeserialize<ProjectCategoryModel>(skillPage).Projects.Add(this);
+			}
 		}
 	}
 }

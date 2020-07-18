@@ -20,6 +20,18 @@ namespace Portfolio.Instance.Services.ContentService
 			deserializationCache = new Dictionary<IResource, object>();
 		}
 
+		public ProjectModel GetProject(string slug)
+		{
+			foreach (var project in AllProjects())
+			{
+				if (string.Equals(project.Slug, slug, StringComparison.OrdinalIgnoreCase))
+				{
+					return project;
+				}
+			}
+			return null;
+		}
+
 		public IEnumerable<ProjectModel> AllProjects()
 		{
 			foreach (var resource in contentExplorer.Tags["type-project"])
@@ -28,11 +40,11 @@ namespace Portfolio.Instance.Services.ContentService
 			}
 		}
 
-		public IEnumerable<ProjectModel> AllProjectCategories()
+		public IEnumerable<ProjectCategoryModel> AllProjectCategories()
 		{
 			foreach (var resource in contentExplorer.Tags["type-project-category"])
 			{
-				yield return GetOrDeserialize<ProjectModel>(resource);
+				yield return GetOrDeserialize<ProjectCategoryModel>(resource);
 			}
 		}
 
@@ -58,6 +70,15 @@ namespace Portfolio.Instance.Services.ContentService
 			}
 
 			return (T)cached;
+		}
+
+		public IResource GetResource(string fullname)
+		{
+			if (!string.IsNullOrEmpty(fullname))
+			{
+				return contentExplorer.Resources[fullname];
+			}
+			return null;
 		}
 	}
 }

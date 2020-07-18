@@ -20,8 +20,35 @@ namespace Portfolio.Pipeline.BuildStep
 
 				using (var project = ProjectExplorer.Load(sourceProjectPath, PortfolioPipelines.Import))
 				{
+					foreach (var resource in project.Resources)
+					{
+						foreach (var dependency in resource.Dependencies)
+						{
+							if (string.IsNullOrEmpty(dependency.Key))
+							{
+								Console.WriteLine($"ERROR: Invalid Dependency! The resource {resource.FullName}'s dependency \"{dependency.Key}\" is invalid");
+							}
+							else if (!project.Resources.Contains(dependency.Key))
+							{
+								Console.WriteLine($"ERROR: Missing Dependency! Unable to find {resource.FullName}'s dependency \"{dependency.Key}\"");
+							}
+						}
+					}
+
 					project.ExportFoldersToDirectory(PortfolioPipelines.Build, destination);
 				}
+
+				/*
+				var editorManifestFile = new FileInfo(Path.Combine(destination, "editor-manifest.json"));
+				var serializer = new JsonSerializer();
+
+				using (var zipStream = editorManifestFile.Open(FileMode.Create, FileAccess.Write))
+				using (var streamWriter = new StreamWriter(zipStream))
+				{
+					serializer.Serialize(streamWriter, editorManifestFile);
+				}
+				*/
+
 				return 0;
 			}
 			catch (Exception e)
