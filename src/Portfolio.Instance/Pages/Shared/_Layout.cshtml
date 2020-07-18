@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	@{
+		string title = ViewData["Title"] as string;
+	}
+	@if (string.IsNullOrEmpty(title))
+	{
+		<title>Anthony Marmont</title>
+	}
+	else
+	{
+		<title>@ViewData["Title"] - Anthony Marmont</title>
+	}
+	<link rel="stylesheet" href="~/css/main.css" />
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Quattrocento+Sans">
+</head>
+<body>
+
+	<div class="layout">
+		<div class="paddingLeft">
+		</div>
+		<div class="paddingRight">
+		</div>
+		<div class="header">
+		</div>
+		<div class="headerContent">
+			<h1>Anthony Marmont</h1>
+			<p>Programmer, Games Developer</p>
+		</div>
+		<div class="navbar">
+			<a href="#">Portfolio</a>
+			<a href="#">Blog</a>
+		</div>
+		<div class="sheet">
+			@RenderBody()
+		</div>
+	</div>
+
+	<script src="~/js/site.js" asp-append-version="true"></script>
+
+	@RenderSection("Scripts", required: false)
+</body>
+</html>

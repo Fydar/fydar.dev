@@ -1,0 +1,58 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29521.150
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Portfolio.Instance", "Portfolio.Instance\Portfolio.Instance.csproj", "{CF41C32D-C121-4182-810B-7C2766743A82}"
+	ProjectSection(ProjectDependencies) = postProject
+		{24C5C1CD-E1F2-42C9-A459-4320B0E86EF4} = {24C5C1CD-E1F2-42C9-A459-4320B0E86EF4}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Portfolio.Models", "Portfolio.Models\Portfolio.Models.csproj", "{61E817A9-FDB4-41B0-AC69-DACC338C5DCB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Portfolio.Pipeline", "Portfolio.Pipeline\Portfolio.Pipeline.csproj", "{E13800CA-48F3-495E-BCA9-D9D2E85D5572}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Portfolio.Pipeline.BuildStep", "Portfolio.Pipeline.BuildStep\Portfolio.Pipeline.BuildStep.csproj", "{24C5C1CD-E1F2-42C9-A459-4320B0E86EF4}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RPGCore.Behaviour", "..\..\RPGCore\src\RPGCore.Behaviour\RPGCore.Behaviour.csproj", "{664609ED-E716-4878-AD6F-A2E602AD8437}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RPGCore.Packages", "..\..\RPGCore\src\RPGCore.Packages\RPGCore.Packages.csproj", "{E876ECA6-56DA-40D3-865E-6ECEE59006E4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CF41C32D-C121-4182-810B-7C2766743A82}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CF41C32D-C121-4182-810B-7C2766743A82}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CF41C32D-C121-4182-810B-7C2766743A82}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CF41C32D-C121-4182-810B-7C2766743A82}.Release|Any CPU.Build.0 = Release|Any CPU
+		{61E817A9-FDB4-41B0-AC69-DACC338C5DCB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{61E817A9-FDB4-41B0-AC69-DACC338C5DCB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{61E817A9-FDB4-41B0-AC69-DACC338C5DCB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{61E817A9-FDB4-41B0-AC69-DACC338C5DCB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E13800CA-48F3-495E-BCA9-D9D2E85D5572}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E13800CA-48F3-495E-BCA9-D9D2E85D5572}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E13800CA-48F3-495E-BCA9-D9D2E85D5572}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E13800CA-48F3-495E-BCA9-D9D2E85D5572}.Release|Any CPU.Build.0 = Release|Any CPU
+		{24C5C1CD-E1F2-42C9-A459-4320B0E86EF4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{24C5C1CD-E1F2-42C9-A459-4320B0E86EF4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{24C5C1CD-E1F2-42C9-A459-4320B0E86EF4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{24C5C1CD-E1F2-42C9-A459-4320B0E86EF4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{664609ED-E716-4878-AD6F-A2E602AD8437}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{664609ED-E716-4878-AD6F-A2E602AD8437}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{664609ED-E716-4878-AD6F-A2E602AD8437}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{664609ED-E716-4878-AD6F-A2E602AD8437}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E876ECA6-56DA-40D3-865E-6ECEE59006E4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E876ECA6-56DA-40D3-865E-6ECEE59006E4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E876ECA6-56DA-40D3-865E-6ECEE59006E4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E876ECA6-56DA-40D3-865E-6ECEE59006E4}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8A760B08-A6FD-49DA-81C2-64E42FF8C180}
+	EndGlobalSection
+EndGlobal
