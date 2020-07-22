@@ -2,6 +2,7 @@
   "ProjectName": "LEGO® Star Wars™ Battles",
   "Slug": "lego-star-wars-battles",
   "FeaturedImage": "img/lego-star-wars-battles-header.webp",
+  "HoverImage": "img/lego-star-wars-battles-3.png",
   "Excerpt": "A mobile multiplayer real-time strategy game.",
   "Skills": [
     "data/projects/skills/network-programming.json",
@@ -10,5 +11,17 @@
   "PublishedDate": 1595040153,
   "ProjectCategory": "data/projects/categories/category-professional.json",
   "Institution": "data/company/tt-games.json",
-  "Page": "pages/projects/professional/lego-star-wars-battles.html"
+  "Page": "pages/projects/professional/lego-star-wars-battles.html",
+  "Links": [
+      {
+        "SiteName": "Website",
+        "Url": "https://www.starwars.com/games-apps/lego-star-wars-battles-mobile",
+        "Icon": "website"
+      },
+      {
+        "SiteName": "Google Play",
+        "Url": "https://play.google.com/store/apps/details?id=com.ttgames.legoswb&hl=en_GB",
+        "Icon": "google-play"
+      }
+  ]
 }

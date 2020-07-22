@@ -20,7 +20,7 @@ namespace Portfolio.Instance.Controllers
 		{
 			return View(new PortfolioIndexViewModel()
 			{
-				AllProjects = contentService.AllProjects().ToArray()
+				AllProjects = contentService.Projects
 			});
 		}
 

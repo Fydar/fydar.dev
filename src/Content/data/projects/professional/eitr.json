@@ -2,6 +2,7 @@
   "ProjectName": "Eitr",
   "Slug": "eitr",
   "FeaturedImage": "img/eitr-header.jpg",
+  "HoverImage": "img/eitr-background-1.gif",
   "Excerpt": "An indie-hit 2d pixel-art dungeon crawler.",
   "Skills": [
     "data/projects/skills/tools-programming.json"
@@ -9,5 +10,17 @@
   "PublishedDate": 1595040153,
   "ProjectCategory": "data/projects/categories/category-professional.json",
   "Institution": "data/company/eneme-entertainment.json",
-  "Page": "pages/projects/professional/eitr.html"
+  "Page": "pages/projects/professional/eitr.html",
+  "Links": [
+    {
+        "SiteName": "Website",
+        "Url": "https://eitrthegame.com/",
+        "Icon": "website"
+    },
+    {
+    "SiteName": "Steam",
+    "Url": "https://store.steampowered.com/app/350050/EITR/",
+    "Icon": "steam"
+    }
+  ]
 }

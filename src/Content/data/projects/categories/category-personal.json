@@ -1,5 +1,6 @@
 {
   "DisplayName": "Personal Projects",
   "Slug": "personal",
-  "Description": "Personal projects of mine; for the fun of programming."
+  "Description": "Personal projects of mine; for the fun of programming.",
+  "Order": 1
 }

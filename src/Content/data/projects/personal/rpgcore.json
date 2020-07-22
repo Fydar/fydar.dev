@@ -2,6 +2,7 @@
   "ProjectName": "RPGCore",
   "Slug": "rpgcore",
   "FeaturedImage": "img/rpgcore-header.png",
+  "HoverImage": "img/rpgcore-1.png",
   "Excerpt": "An extensive C# library for producing RPGCore mechanics and more.",
   "Skills": [
     "data/projects/skills/tools-programming.json"
@@ -9,5 +10,8 @@
   "PublishedDate": 1595040153,
   "ProjectCategory": "data/projects/categories/category-personal.json",
   "Institution": null,
-  "Page": "pages/projects/personal/rpgcore.html"
+  "Page": "pages/projects/personal/rpgcore.html",
+  "ProjectSubtitle": null,
+  "Links": null,
+  "Order": 0
 }

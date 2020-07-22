@@ -2,10 +2,14 @@
   "ProjectName": "Mini Jam 40 - \"Hunters\"",
   "Slug": "minijam-40-hunters",
   "FeaturedImage": "img/minijam-40-hunters-header.png",
+  "HoverImage": "img/minijam-40-hunters-1.png",
   "Excerpt": "My personal submission for the 48-hour Mini Jam themed \"Hunters\".",
   "Skills": [],
   "PublishedDate": 1595040153,
   "ProjectCategory": "data/projects/categories/category-gamejam.json",
   "Institution": null,
-  "Page": "pages/projects/game-jams/minijam-40-hunters.html"
+  "Page": "pages/projects/game-jams/minijam-40-hunters.html",
+  "ProjectSubtitle": null,
+  "Links": null,
+  "Order": 2
 }

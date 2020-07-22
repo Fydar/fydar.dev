@@ -24,22 +24,65 @@
 		</div>
 		<div class="paddingRight">
 		</div>
-		<div class="header">
-		</div>
-		<div class="headerContent">
-			<h1>Anthony Marmont</h1>
-			<p>Programmer, Games Developer</p>
-		</div>
 		<div class="navbar">
-			<a href="#">Portfolio</a>
-			<a href="#">Blog</a>
+
+			<a class="logo" asp-controller="Portfolio" asp-action="Index">
+				<div class="text-logo">Anthony Marmont</div>
+			</a>
+
+			<div style="flex-grow: 100000;"></div>
+
+			<div class="navbar-grouping">
+				<a class="nav-button @(ViewContext.RouteData.Values["Controller"].ToString() == "Portfolio" ? "active" : "")" asp-controller="Portfolio" asp-action="Index">Portfolio</a>
+				<a class="nav-button @(ViewContext.RouteData.Values["Controller"].ToString() == "Resume" ? "active" : "")" asp-controller="Resume" asp-action="Index" asp>Resume</a>
+			</div>
 		</div>
+
 		<div class="sheet">
 			@RenderBody()
 		</div>
 	</div>
 
+	<!--Custom Parallax Script-->
+	<script>
+		const clamp = (a, min = 0, max = 1) => Math.min(max, Math.max(min, a));
+		const invlerp = (x, y, a) => clamp((a - x) / (y - x));
+		const lerp = function (value1, value2, amount) {
+			amount = amount < 0 ? 0 : amount;
+			amount = amount > 1 ? 1 : amount;
+			return value1 + (value2 - value1) * amount;
+		};
+
+		window.addEventListener("scroll", updateParallax);
+		window.addEventListener("resize", updateParallax);
+
+		function updateParallax() {
+			var paralaxContainers = document.getElementsByClassName("paralax-container");
+
+			for (let p = 0; p < paralaxContainers.length; p++) {
+				var paralaxContainer = paralaxContainers[p];
+
+				var bounds = paralaxContainer.getBoundingClientRect();
+				var scroll = invlerp(-bounds.height, screen.height, bounds.top);
+
+				for (let i = 0; i < paralaxContainer.children.length; i++) {
+					var layer = paralaxContainer.children[i];
+
+
+					var layerBound = layer.getBoundingClientRect();
+
+					var offset = lerp(0, -layerBound.height + bounds.height, scroll);
+
+					layer.style.top = offset + "px";
+				}
+			}
+		}
+
+	</script>
+
 	<script src="~/js/site.js" asp-append-version="true"></script>
+	<script src="~/lib/jquery/jquery.min.js" asp-append-version="true"></script>
+	<script src="~/lib/parallax.js/parallax.min.js" asp-append-version="true"></script>
 
 	@RenderSection("Scripts", required: false)
 </body>

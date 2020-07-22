@@ -1,9 +1,10 @@
 using Portfolio.Models;
+using System.Collections.Generic;
 
 namespace Portfolio.Instance.Models
 {
 	public class PortfolioIndexViewModel
 	{
-		public ProjectModel[] AllProjects { get; set; }
+		public IReadOnlyList<ProjectModel> AllProjects { get; set; }
 	}
 }

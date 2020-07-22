@@ -2,10 +2,14 @@
   "ProjectName": "Ludum Dare 46",
   "Slug": "ludum-dare-46",
   "FeaturedImage": "img/ludum-dare-46-header.png",
+  "HoverImage": "img/ludum-dare-46-1.png",
   "Excerpt": "My personal submission for the 48-hour Ludum Dare 46 Compo game jam themed \"Keep it alive\".",
   "Skills": [],
   "PublishedDate": 1595040153,
   "ProjectCategory": "data/projects/categories/category-gamejam.json",
   "Institution": null,
-  "Page": "pages/projects/game-jams/ludum-dare-46.html"
+  "Page": "pages/projects/game-jams/ludum-dare-46.html",
+  "ProjectSubtitle": null,
+  "Links": null,
+  "Order": 1
 }

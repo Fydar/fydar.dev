@@ -3,19 +3,31 @@
 <!-- Component representing a portfolio item. -->
 <div class="item">
 	<div class="imageArea">
-		<a href="#">
+		<a asp-controller="Portfolio" asp-action="Item" asp-route-projectIdentifier="@Model.Slug">
 			<div class="imageHolder">
 				<img src="~/@Model.FeaturedImage" />
 				<div class="portfolio-item-info">
-					<div class="portfolio-item-info-group">
-						<span class="portfolio-item-info-group-icon">S</span>
-					</div>
+					@if (!string.IsNullOrEmpty(Model.HoverImage))
+					{
+						<img src="~/@Model.HoverImage" />
+					}
+					@if (Model.Links != null && Model.Links.Length != 0)
+					{
+						<div class="portfolio-item-info-group">
+							@foreach (var link in Model.Links)
+							{
+								<a href="@link.Url" target="_blank">
+									<span class="portfolio-item-info-group-icon">@link.SiteName</span>
+								</a>
+							}
+						</div>
+					}
 				</div>
 			</div>
 		</a>
 	</div>
 
-	<h1 class="portfolio-title"><a href="#">@Model.ProjectName</a></h1>
+	<h1 class="portfolio-title"><a asp-controller="Portfolio" asp-action="Item" asp-route-projectIdentifier="@Model.Slug">@Model.ProjectName</a></h1>
 	<div class="portfolio-meta">
 		<span class="location">Brighton</span>
 		<span class="date">July 2018 - Present</span>

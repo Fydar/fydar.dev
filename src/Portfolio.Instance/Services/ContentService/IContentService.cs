@@ -6,8 +6,10 @@ namespace Portfolio.Instance.Services.ContentService
 {
 	public interface IContentService
 	{
+		List<ProjectModel> Projects { get; }
+		List<ProjectCategoryModel> Categories { get; }
+
 		IResource GetResource(string fullname);
-		IEnumerable<ProjectModel> AllProjects();
 		ProjectModel GetProject(string slug);
 	}
 }

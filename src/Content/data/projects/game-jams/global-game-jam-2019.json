@@ -2,10 +2,14 @@
   "ProjectName": "Global Game Jam 2019",
   "Slug": "global-game-jam-2019",
   "FeaturedImage": "img/global-game-jam-2019-header.jpg",
+  "HoverImage": "img/global-game-jam-2019-1.jpg",
   "Excerpt": "My teams submission for the 48-hour game jam themed around \"Home\".",
   "Skills": [],
   "PublishedDate": 1595040153,
   "ProjectCategory": "data/projects/categories/category-gamejam.json",
   "Institution": null,
-  "Page": "pages/projects/game-jams/global-game-jam-2019.html"
+  "Page": "pages/projects/game-jams/global-game-jam-2019.html",
+  "ProjectSubtitle": null,
+  "Links": null,
+  "Order": 4
 }

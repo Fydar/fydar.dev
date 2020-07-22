@@ -2,6 +2,7 @@
   "ProjectName": "Sci-Fi UI",
   "Slug": "sci-fi-ui",
   "FeaturedImage": "img/sci-fi-ui-header.png",
+  "HoverImage": "img/sci-fi-ui-1.png",
   "Excerpt": "A demonstration of UI tools to create a Sci-Fi UI.",
   "Skills": [
     "data/projects/skills/ui-programming.json"
@@ -9,5 +10,8 @@
   "PublishedDate": 1595040153,
   "ProjectCategory": "data/projects/categories/category-personal.json",
   "Institution": null,
-  "Page": "pages/projects/personal/sci-fi-ui.html"
+  "Page": "pages/projects/personal/sci-fi-ui.html",
+  "ProjectSubtitle": null,
+  "Links": null,
+  "Order": 10
 }

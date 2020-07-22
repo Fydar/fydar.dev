@@ -13,16 +13,35 @@ namespace Portfolio.Instance.Services.ContentService
 		private readonly JsonSerializer serializer;
 		private readonly Dictionary<IResource, object> deserializationCache;
 
+		public List<ProjectModel> Projects { get; }
+		public List<ProjectCategoryModel> Categories { get; }
+
 		public LocalContentService()
 		{
 			contentExplorer = PackageExplorer.LoadFromDirectoryAsync(ContentDirectory.Path).Result;
 			serializer = new JsonSerializer();
 			deserializationCache = new Dictionary<IResource, object>();
+
+			Projects = new List<ProjectModel>();
+			foreach (var resource in contentExplorer.Tags["type-project"])
+			{
+				Projects.Add(GetOrDeserialize<ProjectModel>(resource));
+			}
+			Projects.Sort();
+
+			Categories = new List<ProjectCategoryModel>();
+			foreach (var resource in contentExplorer.Tags["type-category"])
+			{
+				var category = GetOrDeserialize<ProjectCategoryModel>(resource);
+				category.Projects.Sort();
+				Categories.Add(category);
+			}
+			Categories.Sort();
 		}
 
 		public ProjectModel GetProject(string slug)
 		{
-			foreach (var project in AllProjects())
+			foreach (var project in Projects)
 			{
 				if (string.Equals(project.Slug, slug, StringComparison.OrdinalIgnoreCase))
 				{
@@ -32,22 +51,6 @@ namespace Portfolio.Instance.Services.ContentService
 			return null;
 		}
 
-		public IEnumerable<ProjectModel> AllProjects()
-		{
-			foreach (var resource in contentExplorer.Tags["type-project"])
-			{
-				yield return GetOrDeserialize<ProjectModel>(resource);
-			}
-		}
-
-		public IEnumerable<ProjectCategoryModel> AllProjectCategories()
-		{
-			foreach (var resource in contentExplorer.Tags["type-project-category"])
-			{
-				yield return GetOrDeserialize<ProjectCategoryModel>(resource);
-			}
-		}
-
 		public void Dispose()
 		{
 			contentExplorer.Dispose();
@@ -55,21 +58,24 @@ namespace Portfolio.Instance.Services.ContentService
 
 		public T GetOrDeserialize<T>(IResource resource)
 		{
-			if (!deserializationCache.TryGetValue(resource, out object cached))
+			lock (deserializationCache)
 			{
-				using var stream = resource.Content.LoadStream();
-				using var sr = new StreamReader(stream);
-				using var jsonReader = new JsonTextReader(sr);
-
-				cached = serializer.Deserialize<T>(jsonReader);
-
-				if (cached is ILoadResourceCallback callback)
+				if (!deserializationCache.TryGetValue(resource, out object cached))
 				{
-					callback.OnAfterDeserializedFrom(this, resource);
-				}
-			}
+					using var stream = resource.Content.LoadStream();
+					using var sr = new StreamReader(stream);
+					using var jsonReader = new JsonTextReader(sr);
 
-			return (T)cached;
+					cached = serializer.Deserialize<T>(jsonReader);
+					deserializationCache.Add(resource, cached);
+
+					if (cached is ILoadResourceCallback callback)
+					{
+						callback.OnAfterDeserializedFrom(this, resource);
+					}
+				}
+				return (T)cached;
+			}
 		}
 
 		public IResource GetResource(string fullname)

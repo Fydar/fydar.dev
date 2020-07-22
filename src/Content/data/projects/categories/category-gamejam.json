@@ -1,5 +1,6 @@
 {
   "DisplayName": "Game Jam Projects",
   "Slug": "game-jams",
-  "Description": "A collection of my favorite Game Jam projects."
+  "Description": "A collection of my favorite Game Jam projects.",
+  "Order": 2
 }

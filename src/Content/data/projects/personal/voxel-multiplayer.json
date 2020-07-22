@@ -2,6 +2,7 @@
   "ProjectName": "Voxel Multiplayer",
   "Slug": "voxel-multiplayer",
   "FeaturedImage": "img/voxel-multiplayer-header.png",
+  "HoverImage": "img/voxel-multiplayer-1.png",
   "Excerpt": "A voxel-art multiplayer PvP game.",
   "Skills": [
     "data/projects/skills/gameplay-programming.json",
@@ -10,5 +11,8 @@
   "PublishedDate": 1595040153,
   "ProjectCategory": "data/projects/categories/category-personal.json",
   "Institution": null,
-  "Page": "pages/projects/personal/voxel-multiplayer.html"
+  "Page": "pages/projects/personal/voxel-multiplayer.html",
+  "ProjectSubtitle": null,
+  "Links": null,
+  "Order": 7
 }

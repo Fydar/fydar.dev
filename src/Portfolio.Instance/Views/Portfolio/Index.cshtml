@@ -13,60 +13,44 @@
 
 <section class="sheetArticle">
 
-	@{
-		var categories = new string[]
-		{
-			"category-personal",
-			"category-professional",
-			"category-gamejam"
-		};
+	@foreach (var category in contentService.Categories)
+	{
+		<article>
+			<header>
+				<h2>@category.DisplayName</h2>
+			</header>
+			<section>
+
+				<div class="section-text">
+					<p>@category.Description</p>
+				</div>
+
+				<div class="portfolioGrid">
+
+					@foreach (var project in category.Projects)
+					{
+						@await Component.InvokeAsync("PortfolioItem", project)
+					}
+
+				</div>
+			</section>
+		</article>
 	}
 
-	<article>
-		<header>
-			<h2>Personal Projects</h2>
-		</header>
-		<section>
+	<!--
+	<div class="paralax-container" style="height: 500px; overflow: hidden; position: relative;" id="originMe">
 
-			<div class="section-text">
-				<p>Personal projects of mine; for the fun of programming.</p>
-			</div>
+		<div class="parallax-layer" style="height: 1800px; background-image: url('img/minijam-40-hunters-header.png'); background-position: center;"></div>
+		<div class="parallax-layer" style="height: 700px; background-image: url('img/minijam-40-logo.png'); background-position: center; background-repeat: no-repeat;"></div>
 
-			<div class="portfolioGrid">
+	</div>
 
-				@foreach (var item in contentService.AllProjects())
-				{
-					if (item.ProjectCategoryResource.FullName == "data/projects/categories/category-personal.json")
-					{
-						@await Component.InvokeAsync("PortfolioItem", item)
-					}
-				}
+	<div class="paralax-container" style="height: 500px; overflow: hidden; position: relative;" id="originMe">
 
-			</div>
-		</section>
-	</article>
+		<div class="parallax-layer" style="height: 1800px; background-image: url('img/eitr-background-1.gif'); background-position: center; background-size: cover; image-rendering: pixelated;"></div>
+		<div class="parallax-layer" style="height: 700px; background-image: url('img/eitr-logo-transparent.png'); background-position: center; background-repeat: no-repeat;"></div>
 
-	<article>
-		<header>
-			<h2>Professional Projects</h2>
-		</header>
-		<section>
+	</div>
+	-->
 
-			<div class="section-text">
-				<p>Personal projects of mine; for the fun of programming.</p>
-			</div>
-
-			<div class="portfolioGrid">
-
-				@foreach (var item in contentService.AllProjects())
-				{
-					if (item.ProjectCategoryResource.FullName == "data/projects/categories/category-professional.json")
-					{
-						@await Component.InvokeAsync("PortfolioItem", item)
-					}
-				}
-
-			</div>
-		</section>
-	</article>
 </section>
