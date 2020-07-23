@@ -1,8 +1,8 @@
 {
   "ProjectName": "LEGO® Star Wars™ Battles",
   "Slug": "lego-star-wars-battles",
-  "FeaturedImage": "img/lego-star-wars-battles-header.webp",
-  "HoverImage": "img/lego-star-wars-battles-3.png",
+  "FeaturedImage": "img/lego-star-wars-battles-1.jpg",
+  "HoverImage": "img/lego-star-wars-battles-2.jpg",
   "Excerpt": "A mobile multiplayer real-time strategy game.",
   "Skills": [
     "data/projects/skills/network-programming.json",
