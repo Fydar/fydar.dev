@@ -16,7 +16,11 @@
 					<div class="portfolio-item-info-group">
 						@foreach (var link in Model.Links)
 						{
-							<a class="portfolio-item-info-group-item "href="@link.Url" target="_blank">
+							<a class="portfolio-item-info-group-item " href="@link.Url" target="_blank">
+								@if (!string.IsNullOrEmpty(link.Icon))
+								{
+									<span class="pin pin-@link.Icon.ToLower()"></span>
+								}
 								@link.SiteName
 							</a>
 						}
@@ -28,7 +32,7 @@
 
 	<h1 class="portfolio-title"><a asp-controller="Portfolio" asp-action="Item" asp-route-projectIdentifier="@Model.Slug">@Model.ProjectName</a></h1>
 	<div class="portfolio-meta">
-		<span class="location">Brighton</span>
-		<span class="date">July 2018 - Present</span>
+		<span class="pin pin-location"></span>Brighton
+		<span class="pin pin-date"></span>July 2018 - Present
 	</div>
 </div>

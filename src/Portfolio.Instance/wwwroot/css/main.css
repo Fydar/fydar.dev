@@ -154,7 +154,7 @@ article {
 			}
 
 /* 
-	.portfolio-item:hover .imageArea .imageHolder img {
+.portfolio-item:hover .imageArea .imageHolder img {
     transform: scale(1.06);
     filter: blur(2px);
     -webkit-filter: blur(2px);
@@ -195,20 +195,33 @@ article {
 }
 
 .portfolio-item-info-group {
-	text-align: center;
 	position: absolute;
 	width: 100%;
 	bottom: 0;
 	pointer-events: none;
+	display: flex;
+	justify-content: flex-end;
+	font-size: 1rem;
+	font-weight: bold;
 }
 
-.portfolio-item-info-group-icon {
+.portfolio-item-info-group-item {
 	background-color: #eee;
 	display: inline-block;
 	min-width: 1.4em;
-	min-height: 1.4em;
 	pointer-events: all;
+	margin: 8px;
+	padding: 4px 8px 4px 2px;
+	background-color: #24252a;
+	border-radius: 0.3em;
+	color: #eee;
+	text-decoration: none;
 }
+
+	.portfolio-item-info-group-item:hover {
+		color: white;
+		background-color: #2f3037;
+	}
 
 
 
@@ -243,38 +256,69 @@ article {
 		margin: 4px 16px 4px 0;
 	}
 
-	/* Pins */
-	.portfolio-meta .location:before,
-	.portfolio-meta .date:before,
-	.portfolio-meta .grade:before,
-	.entry-meta .location:before,
-	.entry-meta .date:before,
-	.entry-meta .grade:before {
-		content: "";
-		display: block;
-		filter: brightness(0.7);
-		width: 1.2em;
-		height: 1.2em;
-		float: left;
-		margin: 0 4px 0 0;
+/* Pins */
+.pin {
+	display: inline-block;
+	width: 1.2em;
+	height: 1em;
+	margin: 0 2px 0 2px;
+	vertical-align: middle;
+}
+	.pin::after {
+		content: '';
+		position: absolute;
+		width: 1.3em;
+		height: 1.3em;
+		transform: translateY(-0.25em);
 	}
 
-	.portfolio-meta .location:before,
-	.entry-meta .location:before {
+	.pin.pin-location::after {
 		background: url("/img/location-pin.png") no-repeat;
-		background-size: 1.2em;
+		filter: brightness(0.7);
+		background-size: contain;
 	}
 
-	.portfolio-meta .date:before,
-	.entry-meta .date:before {
+	.pin.pin-date::after {
 		background: url("/img/date-pin.png") no-repeat;
-		background-size: 1.2em;
+		filter: brightness(0.7);
+		background-size: contain;
 	}
 
-	.portfolio-meta .grade:before,
-	.entry-meta .grade:before {
+	.pin.pin-website::after {
+		background: url("/img/globe.svg") no-repeat;
+		filter: brightness(0.7);
+		background-size: contain;
+	}
+
+	.pin.pin-grade::after {
 		background: url("/img/star-pin.png") no-repeat;
-		background-size: 1.2em;
+		filter: brightness(0.7);
+		background-size: contain;
+	}
+
+	.pin.pin-youtube::after {
+		background: url("/img/youtube.svg") no-repeat;
+		background-size: contain;
+	}
+
+	.pin.pin-linkedin::after {
+		background: url("/img/linkedin.svg") no-repeat;
+		background-size: contain;
+	}
+
+	.pin.pin-github::after {
+		background: url("/img/github.svg") no-repeat;
+		background-size: contain;
+	}
+
+	.pin.pin-steam::after {
+		background: url("/img/steam.png") no-repeat;
+		background-size: contain;
+	}
+
+	.pin.pin-google-play::after {
+		background: url("/img/google-play.svg") no-repeat;
+		background-size: contain;
 	}
 
 
@@ -371,7 +415,7 @@ article {
 	margin-left: auto;
 	padding: 0;
 	/* transition: max-width 0.1s; */
-}
+	}
 
 	.container .portfolioGrid {
 		grid-template-columns: 1fr;
