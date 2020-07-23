@@ -20,6 +20,7 @@ namespace Portfolio.Pipeline
 				ImportPipeline = Import
 			};
 			Build.Exporters.Add(new JsonMinimizerResourceExporter());
+			Build.Exporters.Add(new ResizedImageResourceExporter());
 		}
 	}
 }

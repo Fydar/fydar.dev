@@ -32,13 +32,17 @@ namespace Portfolio.Models
 		public ExternalLinkModel[] Links { get; set; }
 		public int Order { get; set; }
 
-		[JsonIgnore] public IResource PageResource { get; set; }
-		[JsonIgnore] public IResource ProjectCategoryResource { get; set; }
+		[JsonIgnore] public IResource PageResource { get; private set; }
+		[JsonIgnore] public IResource FeaturedImageResource { get; private set; }
+		[JsonIgnore] public IResource HoverImageResource { get; private set; }
+		[JsonIgnore] public IResource ProjectCategoryResource { get; private set; }
 		[JsonIgnore] public IResource[] SkillsPages { get; private set; }
 
 		public void OnAfterDeserializedFrom(ILoadedResourceCache cache, IResource resource)
 		{
 			PageResource = cache.GetResource(Page);
+			FeaturedImageResource = cache.GetResource(FeaturedImage);
+			HoverImageResource = cache.GetResource(HoverImage);
 
 			ProjectCategoryResource = cache.GetResource(ProjectCategory);
 			cache.GetOrDeserialize<ProjectCategoryModel>(ProjectCategoryResource).Projects.Add(this);

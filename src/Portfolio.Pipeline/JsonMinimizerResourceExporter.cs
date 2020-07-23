@@ -13,7 +13,7 @@ namespace Portfolio.Pipeline
 			return resource.Extension == ".json";
 		}
 
-		public override void BuildResource(IResource resource, IArchiveEntry contentEntry)
+		public override void BuildResource(IResource resource, IArchive archive)
 		{
 			var serializer = new JsonSerializer()
 			{
@@ -27,7 +27,8 @@ namespace Portfolio.Pipeline
 				document = serializer.Deserialize<JObject>(reader);
 			}
 
-			using var zipStream = contentEntry.OpenWrite();
+			var entry = archive.Files.GetFile($"data/{resource.FullName}");
+			using var zipStream = entry.OpenWrite();
 			using var streamWriter = new StreamWriter(zipStream);
 			serializer.Serialize(streamWriter, document);
 		}

@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.StaticFiles;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.FileProviders;
@@ -69,6 +70,14 @@ namespace Portfolio.Instance
 					pattern: "{controller=Home}/{action=Index}");
 			});
 
+		}
+	}
+
+	public class ResizedContentTypeProvider : IContentTypeProvider
+	{
+		public bool TryGetContentType(string subpath, out string contentType)
+		{
+			throw new System.NotImplementedException();
 		}
 	}
 }

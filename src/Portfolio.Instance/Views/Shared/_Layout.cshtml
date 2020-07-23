@@ -23,7 +23,7 @@
 
 		@if (ViewData.TryGetValue("FeaturedImage", out var featuredImage))
 		{
-			<img src="/@featuredImage" class="parallax-layer" style="image-rendering: pixelated; object-fit: cover; width: 100%; min-height: 100%; top: -141.402px;">
+			<img src="/@ResourceHelper.TransformName(featuredImage.ToString(), "fullscreen")" class="parallax-layer" style="image-rendering: pixelated; object-fit: cover; width: 100%; min-height: 100%; top: -141.402px;">
 		}
 		else
 		{
@@ -72,8 +72,6 @@
 	</div>
 
 	<script src="~/js/site.js" asp-append-version="true"></script>
-	<script src="~/lib/jquery/jquery.min.js" asp-append-version="true"></script>
-	<script src="~/lib/parallax.js/parallax.min.js" asp-append-version="true"></script>
 
 	@RenderSection("Scripts", required: false)
 </body>

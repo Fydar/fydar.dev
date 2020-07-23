@@ -1,11 +1,7 @@
 ﻿using RPGCore.Packages;
 using RPGCore.Packages.Archives;
-using System.IO;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
-using System.Xml;
-using System.Xml.Linq;
 using System.Collections.Generic;
+using System.Xml;
 
 namespace Portfolio.Pipeline
 {
@@ -16,13 +12,8 @@ namespace Portfolio.Pipeline
 			return resource.Extension == ".html";
 		}
 
-		public override void BuildResource(IResource resource, IArchiveEntry contentEntry)
+		public override void BuildResource(IResource resource, IArchive archive)
 		{
-			var serializer = new JsonSerializer()
-			{
-				Formatting = Newtonsoft.Json.Formatting.None
-			};
-
 			var oldDocument = new XmlDocument();
 			oldDocument.Load(resource.Content.LoadStream());
 
@@ -38,40 +29,11 @@ namespace Portfolio.Pipeline
 				}
 			}
 
-			var newDocument = new XmlDocument();
-			var newRoot = newDocument.CreateElement("div");
-			var classAttribute = newDocument.CreateAttribute("class");
-			classAttribute.Value = "article-content";
-			newRoot.Attributes.Append(classAttribute);
-			newDocument.AppendChild(newRoot);
-
-			newRoot.InnerXml = oldDocument.DocumentElement["body"].InnerXml;
-
-			/*
-			var bodyChildren = document.DocumentElement["body"].ChildNodes;
-			for (int i = 0; i < bodyChildren.Count; i++)
+			var entry = archive.Files.GetFile($"data/{resource.FullName}");
+			using (var output = entry.OpenWrite())
 			{
-				var bodyChild = bodyChildren.Item(i);
-
-				newRoot.AppendChild(bodyChild.Clone());
+				oldDocument.Save(output);
 			}
-			*/
-
-			using (var output = contentEntry.OpenWrite())
-			{
-				newDocument.Save(output);
-			}
-
-			/*JObject document;
-			using (var sr = new StreamReader(resource.Content.LoadStream()))
-			using (var reader = new JsonTextReader(sr))
-			{
-				document = serializer.Deserialize<JObject>(reader);
-			}
-
-			using var zipStream = contentEntry.OpenWrite();
-			using var streamWriter = new StreamWriter(zipStream);
-			serializer.Serialize(streamWriter, document);*/
 		}
 
 		private static IEnumerable<XmlNode> AllNodes(XmlNode rootNode)

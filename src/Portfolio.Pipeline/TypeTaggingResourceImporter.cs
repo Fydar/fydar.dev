@@ -10,6 +10,11 @@ namespace Portfolio.Pipeline
 {
 	public class TypeTaggingResourceImporter : ImportProcessor
 	{
+		private static readonly Dictionary<string, string> featuredImageMetadata = new Dictionary<string, string>()
+		{
+			["Size"] = "fullscreen,medium"
+		};
+
 		public override void ProcessImport(ProjectResourceImporter importer)
 		{
 			Console.WriteLine(importer.ArchiveEntry.FullName);
@@ -26,7 +31,9 @@ namespace Portfolio.Pipeline
 				importer.ImporterTags.Add("type-project");
 
 				var loaded = LoadJson<ProjectModel>(importer);
-				importer.Dependencies.Register(loaded.FeaturedImage);
+				importer.Dependencies.Register(loaded.FeaturedImage, metadata: featuredImageMetadata);
+				importer.Dependencies.Register(loaded.HoverImage, metadata: featuredImageMetadata);
+
 				importer.Dependencies.Register(loaded.ProjectCategory);
 				importer.Dependencies.Register(loaded.Page);
 
