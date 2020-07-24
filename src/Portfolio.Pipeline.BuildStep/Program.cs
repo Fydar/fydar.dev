@@ -38,17 +38,6 @@ namespace Portfolio.Pipeline.BuildStep
 					project.ExportFoldersToDirectory(PortfolioPipelines.Build, destination);
 				}
 
-				/*
-				var editorManifestFile = new FileInfo(Path.Combine(destination, "editor-manifest.json"));
-				var serializer = new JsonSerializer();
-
-				using (var zipStream = editorManifestFile.Open(FileMode.Create, FileAccess.Write))
-				using (var streamWriter = new StreamWriter(zipStream))
-				{
-					serializer.Serialize(streamWriter, editorManifestFile);
-				}
-				*/
-
 				return 0;
 			}
 			catch (Exception e)

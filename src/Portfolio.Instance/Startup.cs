@@ -1,11 +1,11 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.StaticFiles;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.FileProviders;
 using Microsoft.Extensions.Hosting;
 using Portfolio.Instance.Services.ContentService;
+using Portfolio.Instance.Utility;
 using System.IO;
 
 namespace Portfolio.Instance
@@ -19,7 +19,6 @@ namespace Portfolio.Instance
 			Configuration = configuration;
 		}
 
-		// This method gets called by the runtime. Use this method to add services to the container.
 		public void ConfigureServices(IServiceCollection services)
 		{
 			services.AddSingleton<IContentService, LocalContentService>();
@@ -34,7 +33,6 @@ namespace Portfolio.Instance
 			});
 		}
 
-		// This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
 		public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
 		{
 			if (env.IsDevelopment())
@@ -44,9 +42,6 @@ namespace Portfolio.Instance
 			else
 			{
 				app.UseExceptionHandler("/Error");
-
-				// The default HSTS value is 30 days. You may want to change this 
-				// for production scenarios, see https://aka.ms/aspnetcore-hsts.
 				app.UseHsts();
 			}
 
@@ -55,7 +50,7 @@ namespace Portfolio.Instance
 			app.UseStaticFiles(new StaticFileOptions
 			{
 				FileProvider = new PhysicalFileProvider(Path.Combine(env.ContentRootPath, ContentDirectory.Path, "data", "img")),
-				RequestPath = "/img"
+				RequestPath = "/img",
 			});
 
 			app.UseMvc();
@@ -69,15 +64,6 @@ namespace Portfolio.Instance
 					name: "default",
 					pattern: "{controller=Home}/{action=Index}");
 			});
-
-		}
-	}
-
-	public class ResizedContentTypeProvider : IContentTypeProvider
-	{
-		public bool TryGetContentType(string subpath, out string contentType)
-		{
-			throw new System.NotImplementedException();
 		}
 	}
 }

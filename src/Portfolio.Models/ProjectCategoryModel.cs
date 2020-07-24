@@ -19,10 +19,6 @@ namespace Portfolio.Models
 		public void OnAfterDeserializedFrom(ILoadedResourceCache cache, IResource resource)
 		{
 			Projects = new List<ProjectModel>();
-			foreach (var dependantResource in resource.Dependencies)
-			{
-
-			}
 		}
 
 		public int CompareTo(ProjectCategoryModel other)

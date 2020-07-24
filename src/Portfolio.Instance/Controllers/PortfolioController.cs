@@ -1,7 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Portfolio.Instance.Models;
 using Portfolio.Instance.Services.ContentService;
-using System.Linq;
 
 namespace Portfolio.Instance.Controllers
 {
@@ -31,7 +30,7 @@ namespace Portfolio.Instance.Controllers
 
 			if (portfolioItem == null)
 			{
-				return NotFound(); 
+				return NotFound();
 			}
 
 			return View(new PortfolioItemViewModel()

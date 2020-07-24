@@ -4,12 +4,13 @@
 	{
 		public static string TransformName(string name, string insert)
 		{
-			if (name.EndsWith(".gif"))
+			if (name.EndsWith(".gif")
+				|| name.EndsWith(".webp"))
 			{
 				return name;
 			}
 
-			return name.Insert(name.LastIndexOf('.'), $"-{insert}"); ;
+			return name.Insert(name.LastIndexOf('.'), $"-{insert}");
 		}
 	}
 }

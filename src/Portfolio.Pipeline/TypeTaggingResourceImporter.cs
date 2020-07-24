@@ -76,7 +76,7 @@ namespace Portfolio.Pipeline
 			return model;
 		}
 
-		private static TModel ProcessXmlDocument<TModel>(ProjectResourceImporter importer)
+		public static TModel ProcessXmlDocument<TModel>(ProjectResourceImporter importer)
 			where TModel : class
 		{
 			static IEnumerable<XmlNode> AllNodes(XmlNode rootNode)
@@ -113,18 +113,3 @@ namespace Portfolio.Pipeline
 		}
 	}
 }
-
-/*
-if (importer.ArchiveEntry.FullName.Contains("data/projects/game-jams"))
-{
-	importer.ImporterTags.Add("data/projects/categories/category-gamejam");
-}
-else if (importer.ArchiveEntry.FullName.Contains("data/projects/personal"))
-{
-	importer.ImporterTags.Add("data/projects/categories/category-personal");
-}
-else if (importer.ArchiveEntry.FullName.Contains("data/projects/professional"))
-{
-	importer.ImporterTags.Add("data/projects/categories/category-professional");
-}
-*/

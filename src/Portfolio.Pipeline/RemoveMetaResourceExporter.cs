@@ -30,10 +30,8 @@ namespace Portfolio.Pipeline
 			}
 
 			var entry = archive.Files.GetFile($"data/{resource.FullName}");
-			using (var output = entry.OpenWrite())
-			{
-				oldDocument.Save(output);
-			}
+			using var output = entry.OpenWrite();
+			oldDocument.Save(output);
 		}
 
 		private static IEnumerable<XmlNode> AllNodes(XmlNode rootNode)

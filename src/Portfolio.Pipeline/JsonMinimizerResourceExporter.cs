@@ -1,8 +1,8 @@
-﻿using RPGCore.Packages;
+﻿using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
+using RPGCore.Packages;
 using RPGCore.Packages.Archives;
 using System.IO;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
 
 namespace Portfolio.Pipeline
 {
