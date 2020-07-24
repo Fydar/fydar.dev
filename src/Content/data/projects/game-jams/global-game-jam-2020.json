@@ -10,6 +10,22 @@
   "Institution": null,
   "Page": "pages/projects/game-jams/global-game-jam-2020.html",
   "ProjectSubtitle": null,
-  "Links": null,
+  "Links": [
+    {
+      "SiteName": "GitHub",
+      "Url": "https://github.com/Fydar/WorldRepair",
+      "Icon": "github"
+    },
+    {
+      "SiteName": "Global Game Jam",
+      "Url": "https://globalgamejam.org/2020/games/repair-world-8",
+      "Icon": "global-game-jam"
+    },
+    {
+      "SiteName": "YouTube",
+      "Url": "https://www.youtube.com/watch?v=QG4aYGcsoio",
+      "Icon": "youtube"
+    }
+  ],
   "Order": 0
 }

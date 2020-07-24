@@ -10,6 +10,12 @@
   "Institution": null,
   "Page": "pages/projects/game-jams/minijam-36-nature.html",
   "ProjectSubtitle": null,
-  "Links": null,
+  "Links": [
+    {
+      "SiteName": "Itch.io",
+      "Url": "https://fydar.itch.io/lost-blues",
+      "Icon": "itch-io"
+    }
+  ],
   "Order": 3
 }

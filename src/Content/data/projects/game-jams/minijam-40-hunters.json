@@ -10,6 +10,12 @@
   "Institution": null,
   "Page": "pages/projects/game-jams/minijam-40-hunters.html",
   "ProjectSubtitle": null,
-  "Links": null,
+  "Links": [
+    {
+      "SiteName": "Itch.io",
+      "Url": "https://fydar.itch.io/road-to-northstead",
+      "Icon": "itch-io"
+    }
+  ],
   "Order": 2
 }

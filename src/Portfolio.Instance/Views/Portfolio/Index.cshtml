@@ -21,7 +21,7 @@
 			</header>
 			<section>
 
-				<div class="portfolioGrid">
+				<div class="portfolioGrid @(category.Projects.Count > 3 ? "portfolioGrid-sm" : "")">
 
 					@foreach (var project in category.Projects)
 					{

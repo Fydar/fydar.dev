@@ -10,6 +10,17 @@
   "Institution": null,
   "Page": "pages/projects/game-jams/global-game-jam-2018.html",
   "ProjectSubtitle": null,
-  "Links": null,
+  "Links": [
+    {
+      "SiteName": "Global Game Jam",
+      "Url": "https://globalgamejam.org/2018/games/lost-static",
+      "Icon": "global-game-jam"
+    },
+    {
+      "SiteName": "YouTube",
+      "Url": "https://www.youtube.com/watch?v=Pms5NU5-IHQ",
+      "Icon": "youtube"
+    }
+  ],
   "Order": 5
 }

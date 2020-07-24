@@ -10,6 +10,22 @@
   "Institution": null,
   "Page": "pages/projects/game-jams/global-game-jam-2019.html",
   "ProjectSubtitle": null,
-  "Links": null,
+  "Links": [
+    {
+      "SiteName": "GitHub",
+      "Url": "https://github.com/Fydar/GGJ2019",
+      "Icon": "github"
+    },
+    {
+      "SiteName": "Global Game Jam",
+      "Url": "https://globalgamejam.org/2019/games/so-far-home",
+      "Icon": "global-game-jam"
+    },
+    {
+      "SiteName": "YouTube",
+      "Url": "https://www.youtube.com/watch?v=I7_W-q0Np6s",
+      "Icon": "youtube"
+    }
+  ],
   "Order": 4
 }

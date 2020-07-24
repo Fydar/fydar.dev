@@ -13,6 +13,12 @@
   "Institution": null,
   "Page": "pages/projects/personal/crypt-crawl.html",
   "ProjectSubtitle": null,
-  "Links": null,
+  "Links": [
+    {
+      "SiteName": "YouTube",
+      "Url": "https://www.youtube.com/watch?v=q9bQsY3fzQ8",
+      "Icon": "youtube"
+    }
+  ],
   "Order": 9
 }

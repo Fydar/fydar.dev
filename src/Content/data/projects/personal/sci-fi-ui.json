@@ -12,6 +12,12 @@
   "Institution": null,
   "Page": "pages/projects/personal/sci-fi-ui.html",
   "ProjectSubtitle": null,
-  "Links": null,
+  "Links": [
+    {
+      "SiteName": "YouTube",
+      "Url": "https://www.youtube.com/watch?v=krBxiee8I8M",
+      "Icon": "youtube"
+    }
+  ],
   "Order": 10
 }

@@ -12,6 +12,12 @@
   "Institution": null,
   "Page": "pages/projects/personal/rpgcore.html",
   "ProjectSubtitle": null,
-  "Links": null,
+  "Links": [
+    {
+      "SiteName": "GitHub",
+      "Url": "https://github.com/Fydar/RPGCore",
+      "Icon": "github"
+    }
+  ],
   "Order": 0
 }

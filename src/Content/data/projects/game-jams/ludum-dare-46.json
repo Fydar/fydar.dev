@@ -10,6 +10,27 @@
   "Institution": null,
   "Page": "pages/projects/game-jams/ludum-dare-46.html",
   "ProjectSubtitle": null,
-  "Links": null,
+  "Links": [
+    {
+      "SiteName": "GitHub",
+      "Url": "https://github.com/Fydar/RaidHealerSimulator",
+      "Icon": "github"
+    },
+    {
+      "SiteName": "Ludum Dare",
+      "Url": "https://ldjam.com/events/ludum-dare/46/mmo-raid-healer-simulator",
+      "Icon": "ludum-dare"
+    },
+    {
+      "SiteName": "Itch.io",
+      "Url": "https://fydar.itch.io/raid-healer-simulator",
+      "Icon": "itch-io"
+    },
+    {
+      "SiteName": "YouTube",
+      "Url": "https://www.youtube.com/watch?v=wZhdUXI0Wyg",
+      "Icon": "youtube"
+    }
+  ],
   "Order": 1
 }
