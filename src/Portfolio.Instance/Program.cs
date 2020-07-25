@@ -1,5 +1,7 @@
 using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Hosting.Server.Features;
+using Microsoft.AspNetCore.Server.Kestrel.Core;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
 using Portfolio.Instance.Utility;
@@ -23,9 +25,14 @@ namespace Portfolio.Instance
 
 			try
 			{
-				Log.Information("Starting web host");
-				BuildWebHost(args)
-					.Run();
+				var host = BuildWebHost(args);
+				host.Start();
+
+				var addresses = host.ServerFeatures.Get<IServerAddressesFeature>().Addresses;
+				Log.Information($"Web host started listening on {string.Join(", ", addresses)}");
+
+				host.WaitForShutdown();
+
 				return 0;
 			}
 			catch (Exception exception)

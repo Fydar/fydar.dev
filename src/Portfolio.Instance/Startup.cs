@@ -41,7 +41,7 @@ namespace Portfolio.Instance
 			}
 			else
 			{
-				app.UseExceptionHandler("/Error");
+				app.UseStatusCodePagesWithReExecute("/error/{0}");
 				app.UseHsts();
 			}
 
@@ -57,6 +57,8 @@ namespace Portfolio.Instance
 			app.UseRouting();
 
 			app.UseAuthorization();
+
+			app.UseMiddleware<RequestLoggingMiddleware>();
 
 			app.UseEndpoints(endpoints =>
 			{

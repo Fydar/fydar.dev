@@ -1,0 +1,30 @@
+﻿@using Portfolio.Instance;
+@using Portfolio.Instance.ViewComponents;
+@using Portfolio.Instance.Models;
+@using Portfolio.Instance.Services.ContentService;
+@using Portfolio.Models;
+
+@model ErrorViewModel
+@{
+	ViewData["Title"] = "Error";
+}
+
+@inject IContentService contentService;
+
+<section class="sheetArticle">
+
+	@foreach (var category in contentService.Categories)
+	{
+		<article>
+			<header>
+				<h2>Uh oh!</h2>
+			</header>
+			<section>
+
+				<p>It appears that there has been an internal server error! Please try again soon.</p>
+
+			</section>
+		</article>
+	}
+
+</section>

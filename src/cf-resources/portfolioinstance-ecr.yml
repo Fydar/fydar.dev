@@ -1,0 +1,22 @@
+AWSTemplateFormatVersion: '2010-09-09'
+
+Description: 'ECR: Portfolio Instance'
+
+Metadata: {}
+
+Parameters: {}
+
+Mappings: {}
+
+Resources:
+
+  PortfolioInstanceRepository:
+    Type: AWS::ECR::Repository
+    Properties:
+      RepositoryName: portfolioinstance
+
+Outputs:
+
+  InstanceArn:
+    Value: !GetAtt [PortfolioInstanceRepository, Arn]
+    
