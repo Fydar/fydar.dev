@@ -173,7 +173,7 @@ Resources:
           - PortfolioInstanceLoadBalancer
           - DNSName
       Type: CNAME
-      TTL: '86400'
+      TTL: '30'
 
   PortfolioCluster:
     Type: 'AWS::ECS::Cluster'
@@ -287,33 +287,35 @@ Resources:
       VpcId: !Ref Vpc
       TargetType: ip
 
-  PortfolioInstanceListener:
+  HTTPListener:
     Type: 'AWS::ElasticLoadBalancingV2::Listener'
     Properties:
       LoadBalancerArn: !Ref PortfolioInstanceLoadBalancer
       Port: 80
-      Protocol: HTTP
+      Protocol: 'HTTP'
       DefaultActions:
-        - RedirectConfig:
+        - Type: 'redirect'
+          RedirectConfig:
+            Protocol: 'HTTPS'
+            Port: '443'
             Host: '#{host}'
             Path: '/#{path}'
-            Port: '443'
-            Protocol: HTTPS
             Query: '#{query}'
-            StatusCode: HTTP_301
-          Type: redirect
+            StatusCode: 'HTTP_301'
 
   PortfolioInstanceListenerHttps:
     Type: 'AWS::ElasticLoadBalancingV2::Listener'
     Properties:
       LoadBalancerArn: !Ref PortfolioInstanceLoadBalancer
       Port: 443
-      Protocol: HTTPS
+      Protocol: 'HTTPS'
       DefaultActions:
-        - TargetGroupArn: !Ref PortfolioInstanceTargetGroup
-          Type: forward
+        - Type: 'forward'
+          TargetGroupArn: !Ref PortfolioInstanceTargetGroup
       Certificates:
         - CertificateArn: 'arn:aws:acm:us-east-1:222779217717:certificate/14f9bd48-6e9a-47d7-a3ff-d28f832995c7'
+
+
 
   PortfolioInstanceServiceSecurityGroup:
     Type: 'AWS::EC2::SecurityGroup'
@@ -329,8 +331,6 @@ Resources:
   PortfolioInstanceService:
     Type: 'AWS::ECS::Service'
     DependsOn:
-      - PortfolioInstanceListener
-      - PortfolioInstanceListenerHttps
       - PortfolioInstanceTargetGroup
     Properties:
       Cluster: !Ref PortfolioCluster

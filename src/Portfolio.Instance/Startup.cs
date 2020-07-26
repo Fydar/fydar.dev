@@ -21,20 +21,20 @@ namespace Portfolio.Instance
 
 		public void ConfigureServices(IServiceCollection services)
 		{
-			services.AddSingleton<IContentService, LocalContentService>();
-
-			services.AddControllers(options =>
-			{
-			});
-
+			services.AddHealthChecks();
+			services.AddControllers();
 			services.AddMvc(options =>
 			{
 				options.EnableEndpointRouting = false;
 			});
+
+			services.AddSingleton<IContentService, LocalContentService>();
 		}
 
 		public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
 		{
+			app.UseHealthChecks("/api/health");
+
 			if (env.IsDevelopment())
 			{
 				app.UseDeveloperExceptionPage();
@@ -42,10 +42,8 @@ namespace Portfolio.Instance
 			else
 			{
 				app.UseStatusCodePagesWithReExecute("/error/{0}");
-				app.UseHsts();
 			}
 
-			app.UseHttpsRedirection();
 			app.UseStaticFiles();
 			app.UseStaticFiles(new StaticFileOptions
 			{
@@ -53,12 +51,12 @@ namespace Portfolio.Instance
 				RequestPath = "/img",
 			});
 
+			app.UseMiddleware<RequestLoggingMiddleware>();
+
 			app.UseMvc();
 			app.UseRouting();
 
 			app.UseAuthorization();
-
-			app.UseMiddleware<RequestLoggingMiddleware>();
 
 			app.UseEndpoints(endpoints =>
 			{

@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Logging;
+using Serilog.Context;
 using System.Threading.Tasks;
 
 namespace Portfolio.Instance.Utility
@@ -17,17 +18,18 @@ namespace Portfolio.Instance.Utility
 
 		public async Task Invoke(HttpContext context)
 		{
-			try
+			using (LogContext.PushProperty("RequestPath", context.Request?.Path.Value))
+			using (LogContext.PushProperty("RequestMethod", context.Request?.Method))
+			using (LogContext.PushProperty("ResponseStatusCode", context.Response?.StatusCode))
 			{
-				await next(context);
-			}
-			finally
-			{
-				logger.LogInformation(
-					"Request {method} {url} => {statusCode}",
-					context.Request?.Method,
-					context.Request?.Path.Value,
-					context.Response?.StatusCode);
+				try
+				{
+					await next(context);
+				}
+				finally
+				{
+					logger.LogInformation("RequestLog");
+				}
 			}
 		}
 	}

@@ -1,30 +1,21 @@
-﻿@using Portfolio.Instance;
-@using Portfolio.Instance.ViewComponents;
-@using Portfolio.Instance.Models;
-@using Portfolio.Instance.Services.ContentService;
-@using Portfolio.Models;
+﻿@using Portfolio.Instance.Models;
 
 @model ErrorViewModel
 @{
-	ViewData["Title"] = "Error";
+	ViewData["Title"] = "Missing";
 }
-
-@inject IContentService contentService;
 
 <section class="sheetArticle">
 
-	@foreach (var category in contentService.Categories)
-	{
-		<article>
-			<header>
-				<h2>404 Missing</h2>
-			</header>
-			<section>
+	<article>
+		<header>
+			<h2>404 Missing</h2>
+		</header>
+		<section>
 
-				<p>The requested resource could not be found.</p>
+			<p>The requested resource could not be found.</p>
 
-			</section>
-		</article>
-	}
+		</section>
+	</article>
 
 </section>
