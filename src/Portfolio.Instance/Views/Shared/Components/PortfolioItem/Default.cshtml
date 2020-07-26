@@ -1,38 +1,56 @@
 ﻿@model ProjectModel;
 
-<div class="portfolio-item">
-	<div class="imageArea">
-		<div class="imageHolder">
-			<a asp-controller="Portfolio" asp-action="Item" asp-route-projectIdentifier="@Model.Slug">
-				<img src="~/@ResourceHelper.TransformName(Model.FeaturedImage, "medium")" />
-			</a>
-			<div class="portfolio-item-info">
-				@if (!string.IsNullOrEmpty(Model.HoverImage))
-				{
-					<img src="~/@ResourceHelper.TransformName(Model.HoverImage, "medium")" />
-				}
-				@if (Model.Links != null && Model.Links.Length != 0)
-				{
-					<div class="portfolio-item-info-group">
-						@foreach (var link in Model.Links)
-						{
-							<a class="portfolio-item-info-group-item " href="@link.Url" target="_blank">
-								@if (!string.IsNullOrEmpty(link.Icon))
-								{
-									<span class="pin pin-@link.Icon.ToLower()"></span>
-								}
-								@link.SiteName
-							</a>
-						}
-					</div>
-				}
-			</div>
-		</div>
-	</div>
+<div class="card">
+    <div class="card-image">
+        <div class="imageHolder">
+            <a asp-controller="Portfolio" asp-action="Item" asp-route-projectIdentifier="@Model.Slug">
+                <img src="~/@ResourceHelper.TransformName(Model.FeaturedImage, "medium")" loading="lazy" />
+            </a>
+            <div class="card-hover overlay">
+                @if (!string.IsNullOrEmpty(Model.HoverImage))
+                {
+                    <img src="~/@ResourceHelper.TransformName(Model.HoverImage, "medium")" loading="lazy" />
+                }
+                @if (Model.Links != null && Model.Links.Length != 0)
+                {
+                    <div class="overlay-bottom badge-bar badge-bar-vertical">
+                        @foreach (var link in Model.Links)
+                        {
+                            <a class="badge badge-lozenge" href="@link.Url" target="_blank">
+                                @if (!string.IsNullOrEmpty(link.Icon))
+                                {
+                                    <span class="pin pin-@link.Icon.ToLower()"></span>
+                                }
+                                @link.SiteName
+                            </a>
+                        }
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
 
-	<h1 class="portfolio-title"><a asp-controller="Portfolio" asp-action="Item" asp-route-projectIdentifier="@Model.Slug">@Model.ProjectName</a></h1>
-	<div class="portfolio-meta">
-		<span class="pin pin-location"></span>Brighton
-		<span class="pin pin-date"></span>July 2018 - Present
-	</div>
+    <div class="card-header">
+        <h1 class="card-title"><a asp-controller="Portfolio" asp-action="Item" asp-route-projectIdentifier="@Model.Slug">@Model.ProjectName</a></h1>
+        @if (!string.IsNullOrEmpty(Model.ProjectSubtitle))
+        {
+            <p class="card-subtitle"><a asp-controller="Portfolio" asp-action="Item" asp-route-projectIdentifier="@Model.Slug">@Model.ProjectSubtitle</a></p>
+        }
+    </div>
+
+    <div class="card-body">
+        @if (Model.Badges != null && Model.Badges.Any(badge => badge.DisplayOnHomepage))
+        {
+            <div class="badge-bar badge-bar-subtle">
+                @foreach (var badge in Model.Badges)
+                {
+                    if (badge.DisplayOnHomepage)
+                    {
+                        <div class="badge"><span class="pin pin-@badge.Icon"></span>&nbsp;@badge.Content</div>
+                    }
+                }
+            </div>
+        }
+    </div>
+
 </div>

@@ -14,6 +14,15 @@ namespace Portfolio.Models
 		public string Icon { get; set; }
 	}
 
+	[EditorType]
+	public struct BadgeEntry
+	{
+		public string Content { get; set; }
+		public string Url { get; set; }
+		public string Tooltip { get; set; }
+		public string Icon { get; set; }
+		public bool DisplayOnHomepage { get; set; }
+	}
 
 	[EditorType]
 	public class ProjectModel : ILoadResourceCallback, IComparable<ProjectModel>
@@ -30,6 +39,7 @@ namespace Portfolio.Models
 		public long PublishedDate { get; set; }
 		public string Page { get; set; }
 		public ExternalLinkModel[] Links { get; set; }
+		public BadgeEntry[] Badges { get; set; }
 		public int Order { get; set; }
 
 		[JsonIgnore] public IResource PageResource { get; private set; }

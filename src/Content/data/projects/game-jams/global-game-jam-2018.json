@@ -1,5 +1,6 @@
 {
-  "ProjectName": "Global Game Jam 2018",
+  "ProjectName": "Lost in Static",
+  "ProjectSubtitle": "Global Game Jam 2018",
   "Slug": "global-game-jam-2018",
   "FeaturedImage": "img/global-game-jam-2018-header.jpg",
   "HoverImage": "img/global-game-jam-2018-1.jpg",
@@ -9,7 +10,6 @@
   "ProjectCategory": "data/projects/categories/category-gamejam.json",
   "Institution": null,
   "Page": "pages/projects/game-jams/global-game-jam-2018.html",
-  "ProjectSubtitle": null,
   "Links": [
     {
       "SiteName": "Global Game Jam",
@@ -20,6 +20,29 @@
       "SiteName": "YouTube",
       "Url": "https://www.youtube.com/watch?v=Pms5NU5-IHQ",
       "Icon": "youtube"
+    }
+  ],
+  "Badges": [
+    {
+      "Tooltip": "Location",
+      "Icon": "location",
+      "Content": "Unity Technologies, Brighton",
+      "Url": null,
+      "DisplayOnHomepage": false
+    },
+    {
+      "Tooltip": "Date",
+      "Icon": "date",
+      "Content": "January 2018",
+      "Url": null,
+      "DisplayOnHomepage": true
+    },
+    {
+      "Tooltip": "Team",
+      "Icon": "people",
+      "Content": "5 People",
+      "Url": null,
+      "DisplayOnHomepage": true
     }
   ],
   "Order": 5

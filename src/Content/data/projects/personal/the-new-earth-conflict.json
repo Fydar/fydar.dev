@@ -13,5 +13,28 @@
   "Page": "pages/projects/personal/the-new-earth-conflict.html",
   "ProjectSubtitle": null,
   "Links": null,
+  "Badges": [
+    {
+      "Tooltip": "Location",
+      "Icon": "location",
+      "Content": "Northbrook College",
+      "Url": null,
+      "DisplayOnHomepage": false
+    },
+    {
+      "Tooltip": "Date",
+      "Icon": "date",
+      "Content": "May 2017",
+      "Url": null,
+      "DisplayOnHomepage": true
+    },
+    {
+      "Tooltip": "Team",
+      "Icon": "person",
+      "Content": "Solo",
+      "Url": null,
+      "DisplayOnHomepage": true
+    }
+  ],
   "Order": 8
 }

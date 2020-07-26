@@ -1,0 +1,85 @@
+<html>
+
+<style>
+.retro-monitor {
+    width: 100%;
+    color: #51f351;
+    text-shadow: 0 0 3px #51f351, 0 0 12px #51f351;
+    background-color: #181d18;
+    height: 100%;
+    padding: 0;
+    font-family: monospace;
+    margin: 0;
+    font-size: xx-large;
+}
+
+.vertical-center {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+.horizontal-center {
+  width: 100%;
+    text-align: center;
+}
+.retro-text {
+}
+
+.retro-button {
+    border: 2px solid #51f351;
+    color: #51f351;
+    text-shadow: 0 0 3px #51f351, 0 0 12px #51f351;
+    box-shadow: 0 0 3px #51f351, 0 0 12px #51f351;
+    background-color: transparent;
+    font-size: x-large;
+}
+
+.retro-button:hover {
+    background-color: #51f351;
+    color: white;
+    text-shadow: 0 0 3px white, 0 0 12px white;
+}
+
+
+@keyframes blink {
+  50% {
+    color: transparent;
+    text-shadow: 0 0 3px transparent, 0 0 12px transparent;
+  }
+}
+@-webkit-keyframes blink {
+  50% {
+    color: transparent;
+    text-shadow: 0 0 3px transparent, 0 0 12px transparent;
+  }
+}
+.retro-select {
+    color: #51f351;
+    text-shadow: 0 0 3px #51f351, 0 0 12px #51f351;
+    animation: blink 1s step-start 0s infinite;
+    -webkit-animation: blink 1s step-start 0s infinite;
+}
+</style>
+
+<script>
+function goBack()
+{
+    window.history.back()
+}
+</script>
+
+<body>
+
+    <div class="retro-monitor">
+        <div class="vertical-center horizontal-center retro-text">
+            404
+            Page not found<span class="retro-select">_</span><br/><br/>
+            <button class="retro-button" onclick="goBack()">Go Back</button>
+        </div>
+    </div>
+
+</body>
+
+</html>

@@ -20,8 +20,7 @@
 				<h2>@category.DisplayName</h2>
 			</header>
 			<section>
-
-				<div class="portfolioGrid @(category.Projects.Count > 3 ? "portfolioGrid-sm" : "")">
+				<div class="card-grid @(category.Projects.Count > 3 ? "card-grid-sm" : "")">
 
 					@foreach (var project in category.Projects)
 					{

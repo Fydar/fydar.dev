@@ -22,5 +22,21 @@
     "Url": "https://store.steampowered.com/app/350050/EITR/",
     "Icon": "steam"
     }
+  ],
+  "Badges": [
+    {
+      "Tooltip": "Location",
+      "Icon": "location",
+      "Content": "Remote",
+      "Url": null,
+      "DisplayOnHomepage": false
+    },
+    {
+      "Tooltip": "Date",
+      "Icon": "date",
+      "Content": "June 2017 - June 2018",
+      "Url": null,
+      "DisplayOnHomepage": true
+    }
   ]
 }

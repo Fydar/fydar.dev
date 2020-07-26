@@ -1,5 +1,6 @@
 {
-  "ProjectName": "Global Game Jam 2020",
+  "ProjectName": "Snoot",
+  "ProjectSubtitle": "Global Game Jam 2020",
   "Slug": "global-game-jam-2020",
   "FeaturedImage": "img/global-game-jam-2020-header.png",
   "HoverImage": "img/global-game-jam-2020-1.png",
@@ -9,7 +10,6 @@
   "ProjectCategory": "data/projects/categories/category-gamejam.json",
   "Institution": null,
   "Page": "pages/projects/game-jams/global-game-jam-2020.html",
-  "ProjectSubtitle": null,
   "Links": [
     {
       "SiteName": "GitHub",
@@ -27,5 +27,28 @@
       "Icon": "youtube"
     }
   ],
-  "Order": 0
+  "Badges": [
+    {
+      "Tooltip": "Location",
+      "Icon": "location",
+      "Content": "The Skiff, Brighton",
+      "Url": null,
+      "DisplayOnHomepage": false
+    },
+    {
+      "Tooltip": "Date",
+      "Icon": "date",
+      "Content": "January 2020",
+      "Url": null,
+      "DisplayOnHomepage": true
+    },
+    {
+      "Tooltip": "Team",
+      "Icon": "people",
+      "Content": "3 People",
+      "Url": null,
+      "DisplayOnHomepage": true
+    }
+  ],
+  "Order": 1
 }

@@ -23,5 +23,21 @@
         "Url": "https://play.google.com/store/apps/details?id=com.ttgames.legoswb&hl=en_GB",
         "Icon": "google-play"
       }
+  ],
+  "Badges": [
+    {
+      "Tooltip": "Location",
+      "Icon": "location",
+      "Content": "Brighton",
+      "Url": null,
+      "DisplayOnHomepage": false
+    },
+    {
+      "Tooltip": "Date",
+      "Icon": "date",
+      "Content": "July 2018 - Present",
+      "Url": null,
+      "DisplayOnHomepage": true
+    }
   ]
 }

@@ -1,5 +1,6 @@
 {
-  "ProjectName": "Mini Jam 40 - \"Hunters\"",
+  "ProjectName": "Road to Northstead",
+  "ProjectSubtitle": "Mini Jam 40 - \"Hunters\"",
   "Slug": "minijam-40-hunters",
   "FeaturedImage": "img/minijam-40-hunters-header.png",
   "HoverImage": "img/minijam-40-hunters-2.png",
@@ -9,12 +10,34 @@
   "ProjectCategory": "data/projects/categories/category-gamejam.json",
   "Institution": null,
   "Page": "pages/projects/game-jams/minijam-40-hunters.html",
-  "ProjectSubtitle": null,
   "Links": [
     {
       "SiteName": "Itch.io",
       "Url": "https://fydar.itch.io/road-to-northstead",
       "Icon": "itch-io"
+    }
+  ],
+  "Badges": [
+    {
+      "Tooltip": "Location",
+      "Icon": "location",
+      "Content": "Remote",
+      "Url": null,
+      "DisplayOnHomepage": false
+    },
+    {
+      "Tooltip": "Date",
+      "Icon": "date",
+      "Content": "November 2019",
+      "Url": null,
+      "DisplayOnHomepage": true
+    },
+    {
+      "Tooltip": "Team",
+      "Icon": "person",
+      "Content": "Solo",
+      "Url": null,
+      "DisplayOnHomepage": true
     }
   ],
   "Order": 2

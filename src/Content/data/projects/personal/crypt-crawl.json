@@ -20,5 +20,28 @@
       "Icon": "youtube"
     }
   ],
+  "Badges": [
+    {
+      "Tooltip": "Location",
+      "Icon": "location",
+      "Content": "Northbrook",
+      "Url": null,
+      "DisplayOnHomepage": false
+    },
+    {
+      "Tooltip": "Date",
+      "Icon": "date",
+      "Content": "February 2017",
+      "Url": null,
+      "DisplayOnHomepage": true
+    },
+    {
+      "Tooltip": "Team",
+      "Icon": "person",
+      "Content": "Solo",
+      "Url": null,
+      "DisplayOnHomepage": true
+    }
+  ],
   "Order": 9
 }

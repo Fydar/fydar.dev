@@ -1,5 +1,6 @@
 {
-  "ProjectName": "Ludum Dare 46",
+  "ProjectName": "MMO Raid Healer Simulator",
+  "ProjectSubtitle": "Ludum Dare 46",
   "Slug": "ludum-dare-46",
   "FeaturedImage": "img/ludum-dare-46-header.png",
   "HoverImage": "img/ludum-dare-46-1.png",
@@ -9,7 +10,6 @@
   "ProjectCategory": "data/projects/categories/category-gamejam.json",
   "Institution": null,
   "Page": "pages/projects/game-jams/ludum-dare-46.html",
-  "ProjectSubtitle": null,
   "Links": [
     {
       "SiteName": "GitHub",
@@ -32,5 +32,28 @@
       "Icon": "youtube"
     }
   ],
-  "Order": 1
+  "Badges": [
+    {
+      "Tooltip": "Location",
+      "Icon": "location",
+      "Content": "Remote",
+      "Url": null,
+      "DisplayOnHomepage": false
+    },
+    {
+      "Tooltip": "Date",
+      "Icon": "date",
+      "Content": "April 2020",
+      "Url": null,
+      "DisplayOnHomepage": true
+    },
+    {
+      "Tooltip": "Team",
+      "Icon": "person",
+      "Content": "Solo",
+      "Url": null,
+      "DisplayOnHomepage": true
+    }
+  ],
+  "Order": 0
 }

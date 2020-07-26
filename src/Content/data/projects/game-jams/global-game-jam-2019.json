@@ -1,5 +1,6 @@
 {
-  "ProjectName": "Global Game Jam 2019",
+  "ProjectName": "So Far from Home",
+  "ProjectSubtitle": "Global Game Jam 2019",
   "Slug": "global-game-jam-2019",
   "FeaturedImage": "img/global-game-jam-2019-header.jpg",
   "HoverImage": "img/global-game-jam-2019-1.jpg",
@@ -9,7 +10,6 @@
   "ProjectCategory": "data/projects/categories/category-gamejam.json",
   "Institution": null,
   "Page": "pages/projects/game-jams/global-game-jam-2019.html",
-  "ProjectSubtitle": null,
   "Links": [
     {
       "SiteName": "GitHub",
@@ -25,6 +25,29 @@
       "SiteName": "YouTube",
       "Url": "https://www.youtube.com/watch?v=I7_W-q0Np6s",
       "Icon": "youtube"
+    }
+  ],
+  "Badges": [
+    {
+      "Tooltip": "Location",
+      "Icon": "location",
+      "Content": "The Skiff, Brighton",
+      "Url": null,
+      "DisplayOnHomepage": false
+    },
+    {
+      "Tooltip": "Date",
+      "Icon": "date",
+      "Content": "January 2019",
+      "Url": null,
+      "DisplayOnHomepage": true
+    },
+    {
+      "Tooltip": "Team",
+      "Icon": "people",
+      "Content": "6 People",
+      "Url": null,
+      "DisplayOnHomepage": true
     }
   ],
   "Order": 4

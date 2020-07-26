@@ -19,5 +19,21 @@
       "Icon": "youtube"
     }
   ],
+  "Badges": [
+    {
+      "Tooltip": "Date",
+      "Icon": "date",
+      "Content": "June 2018",
+      "Url": null,
+      "DisplayOnHomepage": true
+    },
+    {
+      "Tooltip": "Team",
+      "Icon": "people",
+      "Content": "2 People",
+      "Url": null,
+      "DisplayOnHomepage": true
+    }
+  ],
   "Order": 6
 }

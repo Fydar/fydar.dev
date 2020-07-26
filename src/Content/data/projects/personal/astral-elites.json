@@ -13,5 +13,21 @@
   "Page": "pages/projects/personal/astral-elites.html",
   "ProjectSubtitle": null,
   "Links": null,
+  "Badges": [
+    {
+      "Tooltip": "Date",
+      "Icon": "date",
+      "Content": "July 2018",
+      "Url": null,
+      "DisplayOnHomepage": true
+    },
+    {
+      "Tooltip": "Team",
+      "Icon": "person",
+      "Content": "Solo",
+      "Url": null,
+      "DisplayOnHomepage": true
+    }
+  ],
   "Order": 5
 }

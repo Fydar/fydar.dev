@@ -1,5 +1,6 @@
 {
-  "ProjectName": "Mini Jam 36 - \"Nature\"",
+  "ProjectName": "Lost Blues",
+  "ProjectSubtitle": "Mini Jam 36 - \"Nature\"",
   "Slug": "minijam-36-nature",
   "FeaturedImage": "img/minijam-36-nature-header.png",
   "HoverImage": "img/minijam-36-nature-1.png",
@@ -9,12 +10,34 @@
   "ProjectCategory": "data/projects/categories/category-gamejam.json",
   "Institution": null,
   "Page": "pages/projects/game-jams/minijam-36-nature.html",
-  "ProjectSubtitle": null,
   "Links": [
     {
       "SiteName": "Itch.io",
       "Url": "https://fydar.itch.io/lost-blues",
       "Icon": "itch-io"
+    }
+  ],
+  "Badges": [
+    {
+      "Tooltip": "Location",
+      "Icon": "location",
+      "Content": "Remote",
+      "Url": null,
+      "DisplayOnHomepage": false
+    },
+    {
+      "Tooltip": "Date",
+      "Icon": "date",
+      "Content": "September 2019",
+      "Url": null,
+      "DisplayOnHomepage": true
+    },
+    {
+      "Tooltip": "Team",
+      "Icon": "person",
+      "Content": "Solo",
+      "Url": null,
+      "DisplayOnHomepage": true
     }
   ],
   "Order": 3
