@@ -1,0 +1,44 @@
+{
+  "ProjectName": "Astral Swarm",
+  "Slug": "astral-swarm",
+  "FeaturedImage": "img/astral-swarm-header.png",
+  "HoverImage": "img/astral-swarm-1.png",
+  "Excerpt": "A fast-paced mobile space-shooter created with Out of the Blue Studios.",
+  "HideOnHomePage": true,
+  "Skills": [
+  ],
+  "PublishedDate": 1595040153,
+  "ProjectCategory": "data/projects/categories/category-personal.json",
+  "Institution": null,
+  "Page": "pages/projects/personal/astral-swarm.html",
+  "ProjectSubtitle": null,
+  "Links": [
+    {
+      "SiteName": "Itch.io",
+      "Url": "https://ootblues.itch.io/astral-swarm",
+      "Icon": "itch-io"
+    },
+    {
+      "SiteName": "Google Play",
+      "Url": "https://play.google.com/store/apps/details?id=ootblues.com.game.astralswarm",
+      "Icon": "google-play"
+    }
+  ],
+  "Badges": [
+    {
+      "Tooltip": "Date",
+      "Icon": "date",
+      "Content": "June 2017",
+      "Url": null,
+      "DisplayOnHomepage": true
+    },
+    {
+      "Tooltip": "Team",
+      "Icon": "person",
+      "Content": "30 People",
+      "Url": null,
+      "DisplayOnHomepage": true
+    }
+  ],
+  "Order": 5
+}

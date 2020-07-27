@@ -1,8 +1,8 @@
 {
   "ProjectName": "The Dwellers",
   "Slug": "the-dwellers",
-  "FeaturedImage": "img/the-dwellers-header.jpg",
-  "HoverImage": "img/the-dwellers-1.jpg",
+  "FeaturedImage": "img/the-dwellers-1.jpg",
+  "HoverImage": "img/the-dwellers-header.jpg",
   "Excerpt": "A voxel-art RPG game with tile-based dungeons.",
   "Skills": [
     "data/projects/skills/gameplay-programming.json"

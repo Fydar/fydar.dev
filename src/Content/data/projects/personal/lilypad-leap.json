@@ -1,0 +1,45 @@
+{
+  "ProjectName": "Lilypad Leap",
+  "Slug": "lilypad-leap",
+  "FeaturedImage": "img/lilypad-leap-header.png",
+  "HoverImage": "img/lilypad-leap-1.png",
+  "Excerpt": "An arcade mobile game where you control a jumping frog.",
+  "HideOnHomePage": true,
+  "Skills": [
+    "data/projects/skills/gameplay-programming.json"
+  ],
+  "PublishedDate": 1595040153,
+  "ProjectCategory": "data/projects/categories/category-personal.json",
+  "Institution": null,
+  "Page": "pages/projects/personal/lilypad-leap.html",
+  "ProjectSubtitle": null,
+  "Links": [
+    {
+      "SiteName": "Itch.io",
+      "Url": "https://ootblues.itch.io/lilypad-leap",
+      "Icon": "itch-io"
+    },
+    {
+      "SiteName": "Google Play",
+      "Url": "https://play.google.com/store/apps/details?id=ootblues.com.game.endlessjumper",
+      "Icon": "google-play"
+    }
+  ],
+  "Badges": [
+    {
+      "Tooltip": "Date",
+      "Icon": "date",
+      "Content": "May 2017",
+      "Url": null,
+      "DisplayOnHomepage": true
+    },
+    {
+      "Tooltip": "Team",
+      "Icon": "person",
+      "Content": "30 People",
+      "Url": null,
+      "DisplayOnHomepage": true
+    }
+  ],
+  "Order": 5
+}

@@ -62,7 +62,7 @@ namespace Portfolio.Instance
 			{
 				endpoints.MapControllerRoute(
 					name: "default",
-					pattern: "{controller=Home}/{action=Index}");
+					pattern: "{controller=Portfolio}/{action=Index}");
 			});
 		}
 	}

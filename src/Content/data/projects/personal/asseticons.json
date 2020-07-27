@@ -1,0 +1,49 @@
+{
+  "ProjectName": "AssetIcons",
+  "Slug": "asseticons",
+  "FeaturedImage": "img/asseticons-header.png",
+  "HoverImage": "img/asseticons-1.png",
+  "Excerpt": "An asset published on the Unity Asset Store",
+  "Skills": [
+    "data/projects/skills/tools-programming.json"
+  ],
+  "PublishedDate": 1595040153,
+  "ProjectCategory": "data/projects/categories/category-personal.json",
+  "Institution": null,
+  "Page": "pages/projects/personal/asseticons.html",
+  "ProjectSubtitle": null,
+  "Links": [
+    {
+      "SiteName": "Issue Tracker",
+      "Url": "https://github.com/Fydar/AssetIcons",
+      "Icon": "github"
+    },
+    {
+      "SiteName": "Asset Store",
+      "Url": "https://assetstore.unity.com/packages/tools/utilities/asseticons-100547",
+      "Icon": "unity"
+    },
+    {
+      "SiteName": "YouTube",
+      "Url": "https://www.youtube.com/watch?v=9tq5_naSYmM",
+      "Icon": "youtube"
+    }
+  ],
+  "Badges": [
+    {
+      "Tooltip": "Date",
+      "Icon": "date",
+      "Content": "October 2017 - Present",
+      "Url": null,
+      "DisplayOnHomepage": true
+    },
+    {
+      "Tooltip": "Team",
+      "Icon": "person",
+      "Content": "Solo",
+      "Url": null,
+      "DisplayOnHomepage": true
+    }
+  ],
+  "Order": 5
+}

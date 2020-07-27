@@ -1,0 +1,39 @@
+{
+  "ProjectName": "Procedural Space",
+  "Slug": "procedural-space",
+  "FeaturedImage": "img/procedural-space-header.png",
+  "HoverImage": "img/procedural-space-1.png",
+  "Excerpt": "An experiment in creating volumetric gas clouds.",
+  "HideOnHomePage": true,
+  "Skills": [
+  ],
+  "PublishedDate": 1595040153,
+  "ProjectCategory": "data/projects/categories/category-personal.json",
+  "Institution": null,
+  "Page": "pages/projects/personal/procedural-space.html",
+  "ProjectSubtitle": null,
+  "Links": [
+    {
+      "SiteName": "YouTube",
+      "Url": "https://www.youtube.com/watch?v=3WZEolSCnvY",
+      "Icon": "youtube"
+    }
+  ],
+  "Badges": [
+    {
+      "Tooltip": "Date",
+      "Icon": "date",
+      "Content": "September 2016",
+      "Url": null,
+      "DisplayOnHomepage": true
+    },
+    {
+      "Tooltip": "Team",
+      "Icon": "person",
+      "Content": "Solo",
+      "Url": null,
+      "DisplayOnHomepage": true
+    }
+  ],
+  "Order": 10
+}

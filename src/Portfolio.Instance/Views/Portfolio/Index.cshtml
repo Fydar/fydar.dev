@@ -20,14 +20,33 @@
 				<h2>@category.DisplayName</h2>
 			</header>
 			<section>
-				<div class="card-grid @(category.Projects.Count > 3 ? "card-grid-sm" : "")">
+                <div class="card-grid @(category.Projects.Count > 3 ? "card-grid-sm" : "")">
 
-					@foreach (var project in category.Projects)
-					{
-						@await Component.InvokeAsync("PortfolioItem", project)
-					}
+                    @{
+                        int missing = 0;
+                    }
+                    @foreach (var project in category.Projects)
+                    {
+                        if (project.HideOnHomePage)
+                        {
+                            missing++;
+                        }
+                        else
+                        {
+                            @await Component.InvokeAsync("PortfolioItem", project)
+                        }
+                    }
 
-				</div>
+                    @if (missing > 0)
+                    {
+                        @await Component.InvokeAsync("ViewMoreItem", new ViewMoreViewModel()
+                        {
+                           Description = "More Projects",
+                           Quantity = missing
+                        })
+                    }
+
+                </div>
 			</section>
 		</article>
 	}

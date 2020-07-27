@@ -1,0 +1,34 @@
+{
+  "ProjectName": "My Portfolio",
+  "Slug": "my-portfolio",
+  "FeaturedImage": "img/my-portfolio-header.png",
+  "HoverImage": "img/my-portfolio-header.png",
+  "Excerpt": "This portfolio, built from scratch and hosted in AWS.",
+  "HideOnHomePage": true,
+  "Skills": [
+    "data/projects/skills/network-programming.json"
+  ],
+  "PublishedDate": 1595040153,
+  "ProjectCategory": "data/projects/categories/category-personal.json",
+  "Institution": null,
+  "Page": "pages/projects/personal/my-portfolio.html",
+  "ProjectSubtitle": null,
+  "Links": null,
+  "Badges": [
+    {
+      "Tooltip": "Date",
+      "Icon": "date",
+      "Content": "July 2020",
+      "Url": null,
+      "DisplayOnHomepage": true
+    },
+    {
+      "Tooltip": "Team",
+      "Icon": "person",
+      "Content": "Solo",
+      "Url": null,
+      "DisplayOnHomepage": true
+    }
+  ],
+  "Order": 5
+}

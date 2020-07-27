@@ -11,5 +11,6 @@ namespace Portfolio.Instance.Services.ContentService
 
 		IResource GetResource(string fullname);
 		ProjectModel GetProject(string slug);
+		ProjectCategoryModel GetCategory(string slug);
 	}
 }

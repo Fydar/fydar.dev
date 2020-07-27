@@ -52,6 +52,18 @@ namespace Portfolio.Instance.Services.ContentService
 			return null;
 		}
 
+		public ProjectCategoryModel GetCategory(string slug)
+		{
+			foreach (var categories in Categories)
+			{
+				if (string.Equals(categories.Slug, slug, StringComparison.OrdinalIgnoreCase))
+				{
+					return categories;
+				}
+			}
+			return null;
+		}
+
 		public void Dispose()
 		{
 			contentExplorer.Dispose();

@@ -23,20 +23,28 @@ namespace Portfolio.Instance.Controllers
 			});
 		}
 
-		[Route("/portfolio/{projectIdentifier}")]
-		public IActionResult Item(string projectIdentifier)
+		[Route("/portfolio/{identifier}")]
+		public IActionResult Item(string identifier)
 		{
-			var portfolioItem = contentService.GetProject(projectIdentifier);
-
-			if (portfolioItem == null)
+			var category = contentService.GetCategory(identifier);
+			if (category != null)
 			{
-				return NotFound();
+				return View("Category", new CategoryViewModel()
+				{
+					Category = category
+				});
 			}
 
-			return View(new PortfolioItemViewModel()
+			var project = contentService.GetProject(identifier);
+			if (project != null)
 			{
-				Project = portfolioItem
-			});
+				return View("Project", new ProjectViewModel()
+				{
+					Project = project
+				});
+			}
+
+			return NotFound();
 		}
 	}
 }

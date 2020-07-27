@@ -1,0 +1,32 @@
+﻿@using Portfolio.Instance;
+@using Portfolio.Instance.ViewComponents;
+@using Portfolio.Instance.Models;
+@using Portfolio.Instance.Services.ContentService;
+@using Portfolio.Models;
+
+@model CategoryViewModel
+@{
+    ViewData["Title"] = "Portfolio";
+}
+
+@inject IContentService contentService;
+
+<section class="sheetArticle">
+
+    <article>
+        <header>
+            <h2>@Model.Category.DisplayName</h2>
+        </header>
+        <section>
+            <div class="card-grid @(Model.Category.Projects.Count > 3 ? "card-grid-sm" : "")">
+
+                @foreach (var project in Model.Category.Projects)
+                {
+                     @await Component.InvokeAsync("PortfolioItem", project)
+                }
+
+            </div>
+        </section>
+    </article>
+
+</section>
