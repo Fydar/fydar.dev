@@ -3,7 +3,7 @@
 namespace Portfolio.Models
 {
 	[EditorType]
-	public class EducationalInstitutionModel : InstitutionModel
+	public class CollegeModel : InstitutionModel
 	{
 	}
 }

@@ -4,8 +4,8 @@
   "FeaturedImage": "img/eitr-header.jpg",
   "HoverImage": "img/eitr-background-1.gif",
   "Excerpt": "An indie-hit 2d pixel-art dungeon crawler.",
-  "Skills": [
-    "data/projects/skills/tools-programming.json"
+  "Disciplines": [
+    "data/disciplines/tools-programming.json"
   ],
   "PublishedDate": 1595040153,
   "ProjectCategory": "data/projects/categories/category-professional.json",

@@ -1,6 +1,7 @@
 {
   "DisplayName": "Personal Projects",
   "Slug": "personal",
+  "FeaturedImage": "img/rpgcore-header.png",
   "Description": "Personal projects of mine; for the fun of programming.",
   "Order": 1
 }

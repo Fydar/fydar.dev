@@ -4,8 +4,8 @@
   "FeaturedImage": "img/the-new-earth-conflict-header.png",
   "HoverImage": "img/the-new-earth-conflict-1.png",
   "Excerpt": "A space-based strategy game",
-  "Skills": [
-    "data/projects/skills/gameplay-programming.json"
+  "Disciplines": [
+    "data/disciplines/gameplay-programming.json"
   ],
   "PublishedDate": 1595040153,
   "ProjectCategory": "data/projects/categories/category-personal.json",

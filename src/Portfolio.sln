@@ -8,15 +8,20 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Portfolio.Instance", "Portf
 		{24C5C1CD-E1F2-42C9-A459-4320B0E86EF4} = {24C5C1CD-E1F2-42C9-A459-4320B0E86EF4}
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Portfolio.Models", "Portfolio.Models\Portfolio.Models.csproj", "{61E817A9-FDB4-41B0-AC69-DACC338C5DCB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Portfolio.Models", "Portfolio.Models\Portfolio.Models.csproj", "{61E817A9-FDB4-41B0-AC69-DACC338C5DCB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Portfolio.Pipeline", "Portfolio.Pipeline\Portfolio.Pipeline.csproj", "{E13800CA-48F3-495E-BCA9-D9D2E85D5572}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Portfolio.Pipeline", "Portfolio.Pipeline\Portfolio.Pipeline.csproj", "{E13800CA-48F3-495E-BCA9-D9D2E85D5572}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Portfolio.Pipeline.BuildStep", "Portfolio.Pipeline.BuildStep\Portfolio.Pipeline.BuildStep.csproj", "{24C5C1CD-E1F2-42C9-A459-4320B0E86EF4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Portfolio.Pipeline.BuildStep", "Portfolio.Pipeline.BuildStep\Portfolio.Pipeline.BuildStep.csproj", "{24C5C1CD-E1F2-42C9-A459-4320B0E86EF4}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RPGCore.Behaviour", "..\..\RPGCore\src\RPGCore.Behaviour\RPGCore.Behaviour.csproj", "{664609ED-E716-4878-AD6F-A2E602AD8437}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RPGCore.Packages", "..\..\RPGCore\src\RPGCore.Packages\RPGCore.Packages.csproj", "{E876ECA6-56DA-40D3-865E-6ECEE59006E4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{5C8A9A56-5DD6-4A0D-AB74-4487EB729ADF}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

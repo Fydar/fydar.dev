@@ -36,7 +36,7 @@ namespace Portfolio.Models
 		public string FeaturedImage { get; set; }
 		public string HoverImage { get; set; }
 		public string Excerpt { get; set; }
-		public string[] Skills { get; set; }
+		public string[] Disciplines { get; set; }
 		public long PublishedDate { get; set; }
 		public string Page { get; set; }
 		public ExternalLinkModel[] Links { get; set; }
@@ -47,7 +47,7 @@ namespace Portfolio.Models
 		[JsonIgnore] public IResource FeaturedImageResource { get; private set; }
 		[JsonIgnore] public IResource HoverImageResource { get; private set; }
 		[JsonIgnore] public IResource ProjectCategoryResource { get; private set; }
-		[JsonIgnore] public IResource[] SkillsPages { get; private set; }
+		[JsonIgnore] public IResource[] DisciplineResources { get; private set; }
 
 		public void OnAfterDeserializedFrom(ILoadedResourceCache cache, IResource resource)
 		{
@@ -58,10 +58,13 @@ namespace Portfolio.Models
 			ProjectCategoryResource = cache.GetResource(ProjectCategory);
 			cache.GetOrDeserialize<ProjectCategoryModel>(ProjectCategoryResource).Projects.Add(this);
 
-			SkillsPages = Skills.Select(tag => cache.GetResource(tag)).ToArray();
-			foreach (var skillPage in SkillsPages)
+			if (Disciplines != null)
 			{
-				cache.GetOrDeserialize<ProjectCategoryModel>(skillPage).Projects.Add(this);
+				DisciplineResources = Disciplines.Select(tag => cache.GetResource(tag)).ToArray();
+				foreach (var discipline in DisciplineResources)
+				{
+					cache.GetOrDeserialize<DisciplineModel>(discipline).FeaturedProjects.Add(this);
+				}
 			}
 		}
 

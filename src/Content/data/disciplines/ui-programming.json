@@ -1,5 +1,9 @@
 {
   "DisplayName": "UI Programming",
   "Slug": "ui-programming",
+  "ShowOnHomePage": false,
+  "FeaturedImage": "img/sci-fi-ui-header.png",
+  "IconImage": "img/layout.svg",
+  "Page": "pages/disciplines/ui-programming.html",
   "Description": "I have a deep appreciation for the value of a well-oiled user-interface."
 }

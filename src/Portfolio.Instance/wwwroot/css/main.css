@@ -2,7 +2,7 @@ body {
     padding: 0;
     margin: 0;
     font-family: 'Quattrocento Sans', Helvetica, sans-serif;
-    font-size: 15px;
+    font-size: 16px;
     font-weight: 400;
     color: #404040;
 }
@@ -41,25 +41,25 @@ h3 {
 
 article {
     background-color: #ffffff;
-    margin-bottom: 3em;
+    margin-bottom: 2rem;
     border: 1px solid #e1e4e8;
     border-radius: 10px;
 }
 
     article header {
         background-color: #f6f8fa;
-        padding: 1px 1rem;
+        padding: 1px 1.6rem;
         border-bottom: 1px solid #e1e4e8;
         border-top-left-radius: 10px;
         border-top-right-radius: 10px;
     }
 
     article h1 {
-        font-size: 1.5em;
+        font-size: 1.4em;
     }
 
     article section {
-        min-height: 3em;
+        min-height: 3rem;
         overflow: hidden;
     }
 
@@ -69,31 +69,30 @@ article {
         overflow: hidden;
     }
 
-
-.section-text {
-    margin: 2rem 1rem;
-}
-
-.section-image {
+.breadcrumb-bar {
+    background-color: #fbfbfb;
+    border-radius: 10px;
+    color: #4a4a4a;
     width: 100%;
+    display: flex;
+    margin-bottom: 2rem;
 }
-
-    .section-image img {
-        width: 100%;
+    .breadcrumb-bar .breadcrumb {
+        padding: 1em 1.5em;
     }
-
-.section-cutout {
-    padding: 2rem;
-    background: #fafafa;
-    box-shadow: inset 1px 1px 4px #aaa;
-}
+        .breadcrumb-bar .breadcrumb.breadcrumb-active {
+            color: #777;
+        }
 
 .card {
     border-radius: 6px;
     border: 1px solid #e1e4e8;
     transition: transform 0.15s ease-in-out;
+    display: flex;
+    flex-direction: column;
 }
 
+    .card .card-jumbotron,
     .card .card-image,
     .card .card-header,
     .card .card-body {
@@ -145,6 +144,7 @@ article {
         position: relative;
         z-index: 0;
         overflow: hidden;
+        background-color: #fafbfc;
     }
 
         .card .card-image .imageHolder {
@@ -167,9 +167,13 @@ article {
     .card .card-header {
         background-color: #fafbfc;
         padding: 0.5rem 0.5rem;
+        flex-grow: 1;
     }
 
     .card .card-jumbotron {
+        flex-grow: 1;
+        min-height: 120px;
+        padding: 22px 0;
         background-color: #fafbfc;
         color: #999;
         display: flex;
@@ -177,25 +181,34 @@ article {
         flex-wrap: wrap;
         flex-flow: column;
         text-align: center;
-        height: 100%;
-        min-height: 180px;
         text-decoration: none;
     }
 
-        .card .card-jumbotron h2 {
+        .card .card-jumbotron img {
+            width: 120px;
+            margin: auto;
+        }
+
+        .card .card-jumbotron .jumbotext-2,
+        .card .card-jumbotron .jumbotext-3 {
             margin: 0;
             display: inline-block;
-            font-size: 6rem;
-            font-weight: bold;
             text-decoration: none;
         }
 
-        .card .card-jumbotron h3 {
-            margin: 0;
-            display: inline-block;
+        .card .card-jumbotron .jumbotext-2 {
+            font-size: 6rem;
+            font-weight: bold;
+        }
+
+        .card .card-jumbotron .jumbotext-3 {
             font-size: 2.5rem;
             font-weight: bold;
-            text-decoration: none;
+        }
+
+        .card .card-jumbotron .jumbotext-4 {
+            font-size: 1.5rem;
+            font-weight: bold;
         }
 
     .card .card-body {
@@ -266,7 +279,7 @@ article {
     .badge-bar.badge-bar-subtle {
         color: #999;
         text-transform: uppercase;
-        font-size: 0.675rem;
+        font-size: 0.65rem;
         padding: 0.2rem;
     }
 
@@ -496,12 +509,16 @@ article {
 .card-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-gap: 1rem;
+    grid-gap: 1.1rem;
     margin: 1.3rem;
 }
 
     .card-grid.card-grid-sm {
         grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    .card-grid.card-grid-xs {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
     }
 
 .container {
@@ -516,6 +533,10 @@ article {
 
         .container .card-grid.card-grid-sm {
             grid-template-columns: 1fr;
+        }
+
+        .container .card-grid.card-grid-xs {
+            grid-template-columns: 1fr 1fr;
         }
 
 @media (min-width: 576px) {
@@ -537,6 +558,10 @@ article {
             .container .card-grid.card-grid-sm {
                 grid-template-columns: 1fr 1fr;
             }
+
+            .container .card-grid.card-grid-xs {
+                grid-template-columns: 1fr 1fr 1fr;
+            }
 }
 
 @media (min-width: 992px) {
@@ -546,7 +571,11 @@ article {
 
         .container .card-grid.card-grid-sm {
             grid-template-columns: 1fr 1fr 1fr;
-            grid-gap: 1em;
+            grid-gap: 1.1rem;
+        }
+
+        .container .card-grid.card-grid-xs {
+            grid-template-columns: 1fr 1fr 1fr 1fr;
         }
 }
 
@@ -557,7 +586,7 @@ article {
 }
 
 
-.section-asideImage {
+.post-asideImage {
     width: 250px;
     margin: 0 1em;
     float: right;
@@ -565,25 +594,97 @@ article {
 
 /* Medium Devices, Desktops */
 @media only screen and (max-width : 992px) {
-    .section-asideImage {
+    .post-asideImage {
         width: 200px;
     }
 }
 
 /* Small Devices, Tablets */
 @media only screen and (max-width : 768px) {
-    .section-asideImage {
+    .post-asideImage {
         width: 160px;
     }
 }
 
 /* Extra Small Devices, Phones */
 @media only screen and (max-width : 480px) {
-    .section-asideImage {
+    .post-asideImage {
         display: block;
         width: 200px;
         max-width: none;
         float: none;
         margin: 0 auto 1em auto;
+    }
+}
+
+
+blockquote {
+    background: #fbfbfb;
+    border-left: 6px solid #d8d8d8;
+    margin: 1.5rem 10px;
+    padding: 1.15rem 10px 2px 12px;
+    max-width: 580px;
+}
+
+    blockquote:before {
+        content: '\201C';
+        position: absolute;
+        color: #d8d8d8;
+        font-size: 12rem;
+        transform: translate(-0.25rem, -3rem);
+    }
+
+
+.post-text {
+    margin: 2rem 2rem;
+}
+
+div.post-image {
+    background-color: #f3f3f3;
+}
+
+.post-image {
+    width: 90%;
+    margin: 2rem auto;
+}
+
+    .post-image img {
+        width: 100%;
+    }
+
+.post-image-caption {
+    color: #4a4a4a;
+    padding: 0.8em 1rem;
+}
+
+.post-cutout {
+    padding: 2rem;
+    background: #fbfbfb;
+    box-shadow: inset 1px 1px 4px #aaa;
+}
+
+@media (min-width: 576px) {
+    .post-text {
+        margin: 2rem 3rem;
+    }
+}
+
+@media (min-width: 768px) {
+    .post-text {
+        margin: 2rem 5.5rem;
+    }
+
+    .post-image {
+        width: 85%;
+    }
+}
+
+@media (min-width: 992px) {
+    .post-text {
+        margin: 2rem 8.5rem;
+    }
+
+    .post-image {
+        width: 75%;
     }
 }

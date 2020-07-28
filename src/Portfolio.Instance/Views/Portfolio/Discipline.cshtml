@@ -1,0 +1,44 @@
+﻿@using Portfolio.Instance;
+@using Portfolio.Instance.ViewComponents;
+@using Portfolio.Instance.Models;
+@using Portfolio.Instance.Services.ContentService;
+@using Portfolio.Models;
+@using System.IO;
+
+@model DisciplineViewModel
+@{
+	ViewData["Title"] = Model.Discipline.DisplayName;
+	ViewData["FeaturedImage"] = Model.Discipline.FeaturedImage;
+}
+
+<section class="sheetArticle">
+
+    @await Component.InvokeAsync("BreadcrumbBar", new BreadcrumbBarViewModel(
+        new BreadcrumbModel()
+        {
+            Controller = "Portfolio",
+            Action = "Index",
+            Text = "Portfolio"
+        },
+        new BreadcrumbModel()
+        {
+            Text = Model.Discipline.DisplayName
+        }
+    ))
+
+    <article>
+        <header>
+            <h2>@Model.Discipline.DisplayName</h2>
+        </header>
+        <section>
+
+            @{
+                using var stream = Model.Discipline.PageResource.Content.LoadStream();
+                using var sr = new StreamReader(stream);
+                @Html.Raw(sr.ReadToEnd());
+            }
+
+        </section>
+    </article>
+
+</section>

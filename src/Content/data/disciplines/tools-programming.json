@@ -1,5 +1,9 @@
 {
   "DisplayName": "Tools Programming",
   "Slug": "tools-programming",
+  "ShowOnHomePage": true,
+  "IconImage": "img/settings.svg",
+  "FeaturedImage": "img/rpgcore-1.png",
+  "Page": "pages/disciplines/tools-programming.html",
   "Description": "I am very passionate about tools programming; specifically tools that inspire design."
 }

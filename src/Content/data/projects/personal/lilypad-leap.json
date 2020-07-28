@@ -5,8 +5,8 @@
   "HoverImage": "img/lilypad-leap-1.png",
   "Excerpt": "An arcade mobile game where you control a jumping frog.",
   "HideOnHomePage": true,
-  "Skills": [
-    "data/projects/skills/gameplay-programming.json"
+  "Disciplines": [
+    "data/disciplines/gameplay-programming.json"
   ],
   "PublishedDate": 1595040153,
   "ProjectCategory": "data/projects/categories/category-personal.json",

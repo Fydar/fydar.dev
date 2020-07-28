@@ -44,6 +44,15 @@ namespace Portfolio.Instance.Controllers
 				});
 			}
 
+			var discipline = contentService.GetDiscipline(identifier);
+			if (discipline != null)
+			{
+				return View("Discipline", new DisciplineViewModel()
+				{
+					Discipline = discipline
+				});
+			}
+
 			return NotFound();
 		}
 	}

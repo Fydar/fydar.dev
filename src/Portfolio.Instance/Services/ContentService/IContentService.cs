@@ -8,9 +8,11 @@ namespace Portfolio.Instance.Services.ContentService
 	{
 		List<ProjectModel> Projects { get; }
 		List<ProjectCategoryModel> Categories { get; }
+		List<DisciplineModel> Disciplines { get; }
 
 		IResource GetResource(string fullname);
 		ProjectModel GetProject(string slug);
 		ProjectCategoryModel GetCategory(string slug);
+		DisciplineModel GetDiscipline(string slug);
 	}
 }

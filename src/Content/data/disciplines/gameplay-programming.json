@@ -1,0 +1,9 @@
+{
+  "DisplayName": "Gameplay Programming",
+  "Slug": "gameplay-programming",
+  "ShowOnHomePage": false,
+  "FeaturedImage": "img/the-dwellers-1.jpg",
+  "IconImage": "img/games.svg",
+  "Page": "pages/disciplines/gameplay-programming.html",
+  "Description": null
+}

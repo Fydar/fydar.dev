@@ -4,9 +4,9 @@
   "FeaturedImage": "img/crypt-crawl-header.png",
   "HoverImage": "img/crypt-crawl-1.png",
   "Excerpt": "A 2d pixel-art dungeon crawler.",
-  "Skills": [
-    "data/projects/skills/gameplay-programming.json",
-    "data/projects/skills/network-programming.json"
+  "Disciplines": [
+    "data/disciplines/gameplay-programming.json",
+    "data/disciplines/network-programming.json"
   ],
   "PublishedDate": 1595040153,
   "ProjectCategory": "data/projects/categories/category-personal.json",

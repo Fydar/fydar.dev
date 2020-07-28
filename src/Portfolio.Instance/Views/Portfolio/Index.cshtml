@@ -6,20 +6,43 @@
 
 @model PortfolioIndexViewModel
 @{
-	ViewData["Title"] = "Portfolio";
+	ViewData["Title"] = "";
 }
 
 @inject IContentService contentService;
 
 <section class="sheetArticle">
 
-	@foreach (var category in contentService.Categories)
-	{
-		<article>
-			<header>
-				<h2>@category.DisplayName</h2>
-			</header>
-			<section>
+
+    @for (int i = 0; i < contentService.Categories.Count; i++)
+    {
+        var category = contentService.Categories[i];
+
+        @if (i == 1)
+        {
+            <article>
+                <section>
+                    <div class="card-grid card-grid-sm">
+                        @foreach (var discipline in contentService.Disciplines)
+                        {
+                            if (discipline.ShowOnHomePage)
+                            {
+                                @await Component.InvokeAsync("DisciplineCard", new DisciplineViewModel()
+                                {
+                                    Discipline = discipline
+                                })
+                            }
+                        }
+                    </div>
+                </section>
+            </article>
+        }
+
+        <article>
+            <header>
+                <h2>@category.DisplayName</h2>
+            </header>
+            <section>
                 <div class="card-grid @(category.Projects.Count > 3 ? "card-grid-sm" : "")">
 
                     @{
@@ -47,8 +70,8 @@
                     }
 
                 </div>
-			</section>
-		</article>
-	}
+            </section>
+        </article>
+    }
 
 </section>

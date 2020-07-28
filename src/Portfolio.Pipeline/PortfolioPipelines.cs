@@ -12,15 +12,15 @@ namespace Portfolio.Pipeline
 		{
 			Import = ImportPipeline.Create()
 				.UseJsonMetaFiles()
-				.UseProcessor(new TypeTaggingResourceImporter())
+				.UseProcessor(new JsonImporter())
 				.Build();
 
 			Build = new BuildPipeline()
 			{
 				ImportPipeline = Import
 			};
-			Build.Exporters.Add(new JsonMinimizerResourceExporter());
-			Build.Exporters.Add(new ResizedImageResourceExporter());
+			Build.Exporters.Add(new JsonExporter());
+			Build.Exporters.Add(new ImageExporter());
 		}
 	}
 }

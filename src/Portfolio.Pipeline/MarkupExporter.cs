@@ -1,11 +1,12 @@
 ﻿using RPGCore.Packages;
 using RPGCore.Packages.Archives;
+using System;
 using System.Collections.Generic;
 using System.Xml;
 
 namespace Portfolio.Pipeline
 {
-	public class RemoveMetaResourceExporter : ResourceExporter
+	public class MarkupExporter : ResourceExporter
 	{
 		public override bool CanExport(IResource resource)
 		{
@@ -14,10 +15,10 @@ namespace Portfolio.Pipeline
 
 		public override void BuildResource(IResource resource, IArchive archive)
 		{
+			Console.WriteLine($"Exporting {resource.FullName}...");
+
 			var oldDocument = new XmlDocument();
 			oldDocument.Load(resource.Content.LoadStream());
-
-			oldDocument.DocumentElement.RemoveChild(oldDocument.DocumentElement["script"]);
 
 			foreach (var imageElement in AllNodes(oldDocument.DocumentElement))
 			{

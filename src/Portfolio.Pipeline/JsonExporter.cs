@@ -6,7 +6,7 @@ using System.IO;
 
 namespace Portfolio.Pipeline
 {
-	public class JsonMinimizerResourceExporter : ResourceExporter
+	public class JsonExporter : ResourceExporter
 	{
 		public override bool CanExport(IResource resource)
 		{

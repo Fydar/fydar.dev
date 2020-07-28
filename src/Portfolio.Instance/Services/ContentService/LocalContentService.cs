@@ -16,6 +16,7 @@ namespace Portfolio.Instance.Services.ContentService
 
 		public List<ProjectModel> Projects { get; }
 		public List<ProjectCategoryModel> Categories { get; }
+		public List<DisciplineModel> Disciplines { get; }
 
 		public LocalContentService()
 		{
@@ -38,6 +39,15 @@ namespace Portfolio.Instance.Services.ContentService
 				Categories.Add(category);
 			}
 			Categories.Sort();
+
+			Disciplines = new List<DisciplineModel>();
+			foreach (var resource in contentExplorer.Tags["type-discipline"])
+			{
+				var discipline = GetOrDeserialize<DisciplineModel>(resource);
+				discipline.FeaturedProjects.Sort();
+				Disciplines.Add(discipline);
+			}
+			Disciplines.Sort();
 		}
 
 		public ProjectModel GetProject(string slug)
@@ -59,6 +69,18 @@ namespace Portfolio.Instance.Services.ContentService
 				if (string.Equals(categories.Slug, slug, StringComparison.OrdinalIgnoreCase))
 				{
 					return categories;
+				}
+			}
+			return null;
+		}
+
+		public DisciplineModel GetDiscipline(string slug)
+		{
+			foreach (var discipline in Disciplines)
+			{
+				if (string.Equals(discipline.Slug, slug, StringComparison.OrdinalIgnoreCase))
+				{
+					return discipline;
 				}
 			}
 			return null;

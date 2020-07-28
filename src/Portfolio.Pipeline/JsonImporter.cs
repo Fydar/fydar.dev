@@ -8,7 +8,7 @@ using System.Xml;
 
 namespace Portfolio.Pipeline
 {
-	public class TypeTaggingResourceImporter : ImportProcessor
+	public class JsonImporter : ImportProcessor
 	{
 		private static readonly Dictionary<string, string> featuredImageMetadata = new Dictionary<string, string>()
 		{
@@ -17,14 +17,24 @@ namespace Portfolio.Pipeline
 
 		public override void ProcessImport(ProjectResourceImporter importer)
 		{
-			Console.WriteLine(importer.ArchiveEntry.FullName);
+			Console.WriteLine($"Importing {importer.ArchiveEntry.FullName}...");
 			if (importer.ArchiveEntry.FullName.StartsWith("data/projects/categories"))
 			{
 				importer.ImporterTags.Add("type-category");
+
+				var loaded = LoadJson<ProjectCategoryModel>(importer);
+
+				importer.Dependencies.Register(loaded.FeaturedImage);
 			}
-			else if (importer.ArchiveEntry.FullName.StartsWith("data/projects/skills"))
+			else if (importer.ArchiveEntry.FullName.StartsWith("data/disciplines"))
 			{
-				importer.ImporterTags.Add("type-skill");
+				importer.ImporterTags.Add("type-discipline");
+
+				var loaded = LoadJson<DisciplineModel>(importer);
+
+				importer.Dependencies.Register(loaded.Page);
+				importer.Dependencies.Register(loaded.FeaturedImage);
+				importer.Dependencies.Register(loaded.IconImage);
 			}
 			else if (importer.ArchiveEntry.FullName.StartsWith("data/projects"))
 			{
@@ -42,16 +52,17 @@ namespace Portfolio.Pipeline
 					importer.Dependencies.Register(loaded.Institution);
 				}
 
-				foreach (string skill in loaded.Skills)
+				foreach (string disciplines in loaded.Disciplines)
 				{
-					importer.Dependencies.Register(skill);
+					importer.Dependencies.Register(disciplines);
 				}
 			}
 			else if (importer.ArchiveEntry.FullName.StartsWith("data/education"))
 			{
 				importer.ImporterTags.Add("type-education");
 
-				var loaded = LoadJson<EducationalInstitutionModel>(importer);
+				var loaded = LoadJson<CollegeModel>(importer);
+
 				importer.Dependencies.Register(loaded.IconUrl);
 				importer.Dependencies.Register(loaded.Page);
 			}
@@ -60,6 +71,7 @@ namespace Portfolio.Pipeline
 				importer.ImporterTags.Add("type-company");
 
 				var loaded = LoadJson<CompanyModel>(importer);
+
 				importer.Dependencies.Register(loaded.IconUrl);
 				importer.Dependencies.Register(loaded.Page);
 			}
@@ -74,42 +86,6 @@ namespace Portfolio.Pipeline
 
 			var model = serializer.Deserialize<TModel>(reader);
 			return model;
-		}
-
-		public static TModel ProcessXmlDocument<TModel>(ProjectResourceImporter importer)
-			where TModel : class
-		{
-			static IEnumerable<XmlNode> AllNodes(XmlNode rootNode)
-			{
-				for (int i = 0; i < rootNode.ChildNodes.Count; i++)
-				{
-					var childNode = rootNode.ChildNodes[i];
-					yield return childNode;
-
-					foreach (var node in AllNodes(childNode))
-					{
-						yield return node;
-					}
-				}
-			}
-
-			var document = new XmlDocument();
-			document.Load(importer.ArchiveEntry.OpenRead());
-
-			var rootElement = document.DocumentElement;
-
-			foreach (var imageElement in AllNodes(document.DocumentElement))
-			{
-				if (imageElement.Name == "img")
-				{
-					var srcAttribute = imageElement.Attributes["src"];
-
-					importer.Dependencies.Register(srcAttribute.Value.Replace("../", ""));
-				}
-			}
-
-			var element = rootElement.ChildNodes.Item(0);
-			return JsonConvert.DeserializeObject<TModel>(element.InnerXml);
 		}
 	}
 }

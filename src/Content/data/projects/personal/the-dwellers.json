@@ -4,8 +4,8 @@
   "FeaturedImage": "img/the-dwellers-1.jpg",
   "HoverImage": "img/the-dwellers-header.jpg",
   "Excerpt": "A voxel-art RPG game with tile-based dungeons.",
-  "Skills": [
-    "data/projects/skills/gameplay-programming.json"
+  "Disciplines": [
+    "data/disciplines/gameplay-programming.json"
   ],
   "PublishedDate": 1595040153,
   "ProjectCategory": "data/projects/categories/category-personal.json",

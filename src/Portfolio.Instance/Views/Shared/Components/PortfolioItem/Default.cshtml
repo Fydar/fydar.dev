@@ -4,7 +4,7 @@
 
     <div class="card-image">
         <div class="imageHolder">
-            <a asp-controller="Portfolio" asp-action="Item" asp-route-projectIdentifier="@Model.Slug">
+            <a asp-controller="Portfolio" asp-action="Item" asp-route-identifier="@Model.Slug">
                 <img src="~/@ResourceHelper.TransformName(Model.FeaturedImage, "medium")" loading="lazy" />
             </a>
             <div class="card-hover overlay">
@@ -32,10 +32,10 @@
     </div>
 
     <div class="card-header">
-        <h1 class="card-title"><a asp-controller="Portfolio" asp-action="Item" asp-route-projectIdentifier="@Model.Slug">@Model.ProjectName</a></h1>
+        <h1 class="card-title"><a asp-controller="Portfolio" asp-action="Item" asp-route-identifier="@Model.Slug">@Model.ProjectName</a></h1>
         @if (!string.IsNullOrEmpty(Model.ProjectSubtitle))
         {
-            <p class="card-subtitle"><a asp-controller="Portfolio" asp-action="Item" asp-route-projectIdentifier="@Model.Slug">@Model.ProjectSubtitle</a></p>
+            <p class="card-subtitle"><a asp-controller="Portfolio" asp-action="Item" asp-route-identifier="@Model.Slug">@Model.ProjectSubtitle</a></p>
         }
     </div>
 

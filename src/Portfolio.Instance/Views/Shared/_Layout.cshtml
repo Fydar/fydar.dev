@@ -1,21 +1,23 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="utf-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	@{
-		string title = ViewData["Title"] as string;
-	}
-	@if (string.IsNullOrEmpty(title))
-	{
-		<title>Anthony Marmont</title>
-	}
-	else
-	{
-		<title>@ViewData["Title"] - Anthony Marmont</title>
-	}
-	<link rel="stylesheet" href="~/css/main.css" />
-	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Quattrocento+Sans">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+    @{
+        string title = ViewData["Title"] as string;
+    }
+    @if (string.IsNullOrEmpty(title))
+    {
+        <title>Anthony Marmont</title>
+    }
+    else
+    {
+        <title>@ViewData["Title"] - Anthony Marmont</title>
+    }
+    <link rel="stylesheet" href="~/css/main.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Quattrocento+Sans">
 </head>
 <body style="background-color: #edf0f2;">
 
@@ -44,7 +46,7 @@
 
 			<div class="navbar-grouping">
 				<a class="nav-button @(ViewContext.RouteData.Values["Controller"].ToString() == "Portfolio" ? "active" : "")" asp-controller="Portfolio" asp-action="Index">Portfolio</a>
-				<a class="nav-button @(ViewContext.RouteData.Values["Controller"].ToString() == "Resume" ? "active" : "")" asp-controller="Resume" asp-action="Index" asp>Resume</a>
+				<a class="nav-button @(ViewContext.RouteData.Values["Controller"].ToString() == "Blog" ? "active" : "")" asp-controller="Blog" asp-action="Index" asp>Resume</a>
 			</div>
 
 		</div>
@@ -54,7 +56,7 @@
 
 		<div class="container">
 
-			<div class="sheet" style="padding-top: 50px;">
+			<div class="sheet" style="padding-top: 2rem;">
 				@RenderBody()
 			</div>
 

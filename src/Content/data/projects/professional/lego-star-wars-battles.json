@@ -4,9 +4,9 @@
   "FeaturedImage": "img/lego-star-wars-battles-1.jpg",
   "HoverImage": "img/lego-star-wars-battles-2.jpg",
   "Excerpt": "A mobile multiplayer real-time strategy game.",
-  "Skills": [
-    "data/projects/skills/network-programming.json",
-    "data/projects/skills/tools-programming.json"
+  "Disciplines": [
+    "data/disciplines/network-programming.json",
+    "data/disciplines/tools-programming.json"
   ],
   "PublishedDate": 1595040153,
   "ProjectCategory": "data/projects/categories/category-professional.json",

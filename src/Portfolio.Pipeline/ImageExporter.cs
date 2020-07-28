@@ -9,7 +9,7 @@ using System.IO;
 
 namespace Portfolio.Pipeline
 {
-	public class ResizedImageResourceExporter : ResourceExporter
+	public class ImageExporter : ResourceExporter
 	{
 		private static readonly Dictionary<string, int> resolutions = new Dictionary<string, int>()
 		{
@@ -28,6 +28,8 @@ namespace Portfolio.Pipeline
 
 		public override void BuildResource(IResource resource, IArchive archive)
 		{
+			Console.WriteLine($"Exporting {resource.FullName}...");
+
 			var entry = archive.Files.GetFile($"data/{resource.FullName}");
 			using (var zipStream = entry.OpenWrite())
 			using (var readStream = resource.Content.LoadStream())

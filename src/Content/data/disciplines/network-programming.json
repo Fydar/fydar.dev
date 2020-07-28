@@ -1,0 +1,9 @@
+{
+  "DisplayName": "Network Programming",
+  "Slug": "network-programming",
+  "ShowOnHomePage": true,
+  "FeaturedImage": "img/my-portfolio-header.png",
+  "IconImage": "img/api.svg",
+  "Page": "pages/disciplines/network-programming.html",
+  "Description": null
+}
