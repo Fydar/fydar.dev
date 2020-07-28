@@ -7,11 +7,11 @@
 
 @model DisciplineViewModel
 @{
-	ViewData["Title"] = Model.Discipline.DisplayName;
-	ViewData["FeaturedImage"] = Model.Discipline.FeaturedImage;
+    ViewData["Title"] = Model.Discipline.DisplayName;
+    ViewData["FeaturedImage"] = Model.Discipline.FeaturedImage;
 }
 
-<section class="sheetArticle">
+<div class="container">
 
     @await Component.InvokeAsync("BreadcrumbBar", new BreadcrumbBarViewModel(
         new BreadcrumbModel()
@@ -26,9 +26,10 @@
         }
     ))
 
-    <article>
+    <div class="page">
         <header>
             <h2>@Model.Discipline.DisplayName</h2>
+            <img src="/@Model.Discipline.IconImage" style="margin: auto; height: 186px; margin-top: 1rem; margin-bottom: 1rem;" />
         </header>
         <section>
 
@@ -39,6 +40,6 @@
             }
 
         </section>
-    </article>
+    </div>
 
-</section>
+</div>

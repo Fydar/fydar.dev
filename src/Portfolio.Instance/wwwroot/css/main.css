@@ -39,34 +39,39 @@ h3 {
             text-decoration: underline #666;
         }
 
-article {
+.page {
     background-color: #ffffff;
-    margin-bottom: 2rem;
+    margin-bottom: 3rem;
     border: 1px solid #e1e4e8;
     border-radius: 10px;
 }
 
-    article header {
-        background-color: #f6f8fa;
+    .page header {
+        /* background-color: #f6f8fa; */
+        text-align: center;
         padding: 1px 1.6rem;
         border-bottom: 1px solid #e1e4e8;
         border-top-left-radius: 10px;
         border-top-right-radius: 10px;
     }
 
-    article h1 {
+    .page h1 {
         font-size: 1.4em;
     }
 
-    article section {
+    .page section {
         min-height: 3rem;
         overflow: hidden;
     }
 
-    article footer {
+    .page footer {
         background-color: #f6f6f6;
         vertical-align: middle;
         overflow: hidden;
+    }
+
+    .page.page-profile {
+        margin-top: -300px;
     }
 
 .breadcrumb-bar {
@@ -77,9 +82,11 @@ article {
     display: flex;
     margin-bottom: 2rem;
 }
+
     .breadcrumb-bar .breadcrumb {
         padding: 1em 1.5em;
     }
+
         .breadcrumb-bar .breadcrumb.breadcrumb-active {
             color: #777;
         }
@@ -165,7 +172,7 @@ article {
             }
 
     .card .card-header {
-        background-color: #fafbfc;
+        /* background-color: #fafbfc; */
         padding: 0.5rem 0.5rem;
         flex-grow: 1;
     }
@@ -173,7 +180,7 @@ article {
     .card .card-jumbotron {
         flex-grow: 1;
         min-height: 120px;
-        padding: 22px 0;
+        padding: 26px 0;
         background-color: #fafbfc;
         color: #999;
         display: flex;
@@ -283,6 +290,12 @@ article {
         padding: 0.2rem;
     }
 
+    .badge-bar.badge-bar-social {
+        font-size: 2rem;
+        justify-content: center;
+        margin: 1rem 0;
+    }
+
 .badge {
     display: inline-block;
     min-width: 1.4em;
@@ -295,8 +308,8 @@ article {
     .badge.badge-lozenge {
         margin: 0.3em;
         font-size: 0.85em;
-        padding: 0.3em 0.3em 0.3em 0.15em;
-        border-radius: 0.3em;
+        padding: 0.3em 0.45em 0.3em 0.15em;
+        border-radius: 0.5em;
         background-color: #fafbfc;
         border: 1px solid #c8e1ff;
         color: #444;
@@ -322,10 +335,12 @@ article {
 
     .pin::after {
         content: '';
-        position: absolute;
-        width: 1.3em;
+        display: block;
+        position: relative;
+        width: 100%;
         height: 1.3em;
-        transform: translateY(-0.25em);
+        transform: translateY(-0.3em);
+        top: 0;
     }
 
     .pin.pin-location::after {
@@ -562,6 +577,10 @@ article {
             .container .card-grid.card-grid-xs {
                 grid-template-columns: 1fr 1fr 1fr;
             }
+
+        .container.container-sm {
+            max-width: 720px;
+        }
 }
 
 @media (min-width: 992px) {
@@ -577,12 +596,20 @@ article {
         .container .card-grid.card-grid-xs {
             grid-template-columns: 1fr 1fr 1fr 1fr;
         }
+
+        .container.container-sm {
+            max-width: 720px;
+        }
 }
 
 @media (min-width: 1200px) {
     .container {
         max-width: 1140px;
     }
+
+        .container.container-sm {
+            max-width: 720px;
+        }
 }
 
 
@@ -639,6 +666,21 @@ blockquote {
     margin: 2rem 2rem;
 }
 
+    .post-text h1 {
+        margin-top: 1.5em;
+        margin-bottom: 0.35em;
+    }
+
+    .post-text h2 {
+        margin-top: 1.45em;
+        margin-bottom: 0.35em;
+    }
+
+    .post-text h3 {
+        margin-top: 1.75em;
+        margin-bottom: 0.35em;
+    }
+
 div.post-image {
     background-color: #f3f3f3;
 }
@@ -671,7 +713,7 @@ div.post-image {
 
 @media (min-width: 768px) {
     .post-text {
-        margin: 2rem 5.5rem;
+        margin: 2rem 6rem;
     }
 
     .post-image {
@@ -681,7 +723,7 @@ div.post-image {
 
 @media (min-width: 992px) {
     .post-text {
-        margin: 2rem 8.5rem;
+        margin: 2rem 9rem;
     }
 
     .post-image {

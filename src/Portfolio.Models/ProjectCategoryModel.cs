@@ -13,6 +13,7 @@ namespace Portfolio.Models
 		public string Slug { get; set; }
 		public string Description { get; set; }
 		public string FeaturedImage { get; set; }
+		public string IconImage { get; set; }
 		public int Order { get; set; }
 
 		[JsonIgnore] public List<ProjectModel> Projects { get; private set; }

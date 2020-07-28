@@ -2,6 +2,7 @@
   "DisplayName": "Personal Projects",
   "Slug": "personal",
   "FeaturedImage": "img/rpgcore-header.png",
+  "IconImage": "img/desk.svg",
   "Description": "Personal projects of mine; for the fun of programming.",
   "Order": 1
 }
