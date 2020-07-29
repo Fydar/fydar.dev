@@ -21,6 +21,7 @@ namespace Portfolio.Pipeline
 			};
 			Build.Exporters.Add(new JsonExporter());
 			Build.Exporters.Add(new ImageExporter());
+			Build.Exporters.Add(new MarkupExporter());
 		}
 	}
 }

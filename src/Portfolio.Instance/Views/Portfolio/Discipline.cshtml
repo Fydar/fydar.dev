@@ -29,16 +29,13 @@
     <div class="page">
         <header>
             <h2>@Model.Discipline.DisplayName</h2>
-            <img src="/@Model.Discipline.IconImage" style="margin: auto; height: 186px; margin-top: 1rem; margin-bottom: 1rem;" />
         </header>
         <section>
-
             @{
                 using var stream = Model.Discipline.PageResource.Content.LoadStream();
                 using var sr = new StreamReader(stream);
                 @Html.Raw(sr.ReadToEnd());
             }
-
         </section>
     </div>
 

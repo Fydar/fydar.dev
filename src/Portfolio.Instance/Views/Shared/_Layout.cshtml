@@ -22,7 +22,7 @@
 <body style="background-color: #edf0f2; margin: 0; padding: 0;">
 
     
-    <div class="parallax-container parallax-anchor-top" style="height: 700px; max-height: 65vh; overflow: hidden; position: relative; z-index: -1;">
+    <div class="parallax-container parallax-anchor-top" style="height: 700px; max-height: 55vh; overflow: hidden; position: relative; z-index: -1;">
 
         @if (ViewData.TryGetValue("FeaturedImage", out var featuredImage))
         {
@@ -39,9 +39,9 @@
         <div class="container container-sm">
             <div class="page page-profile">
                 <header>
-                    <img src="/img/profile.svg" style="margin: auto; height: 186px; margin-top: 1rem; margin-bottom: 1rem;" />
-                    <h1 style="font-size: 2.75rem; margin: 0 0 1rem 0;">Anthony Marmont</h1>
-                    <h2 style="font-size: 2.5rem;">&lt;/programmer&gt;</h2>
+                    <img src="/img/profile.svg" style="margin: auto; height: 166px; margin-top: 1.5rem; margin-bottom: 0.75rem;" />
+                    <h1 style="font-size: 2.5rem; margin: 0 0 0.5rem 0;">Anthony Marmont</h1>
+                    <h2 style="font-size: 2.25rem; margin: 0 0 0.5rem 0; color: #999;">&lt;/programmer&gt;</h2>
                     <p class="badge-bar badge-bar-social">
                         <a class="badge" target="_blank" href="https://www.youtube.com/channel/UCEEI1m2TCso1OGWEHvHS20g"><span class="pin pin-youtube"></span></a>
                         <a class="badge" target="_blank" href="https://fydar.itch.io/"><span class="pin pin-itch-io"></span></a>
@@ -50,23 +50,20 @@
                     </p>
                 </header>
 
-                <!--<div class="navbar">
+                <!--
+                <div class="navbar">
+                    <a class="logo" asp-controller="Portfolio" asp-action="Index">
+                        <div class="text-logo">Anthony Marmont</div>
+                    </a>
 
-                    <div class="container navbar">
+                    <div style="flex-grow: 100000;"></div>
 
-                        <a class="logo" asp-controller="Portfolio" asp-action="Index">
-                            <div class="text-logo">Anthony Marmont</div>
-                        </a>
-
-                        <div style="flex-grow: 100000;"></div>
-
-                        <div class="navbar-grouping">
-                            <a class="nav-button @(ViewContext.RouteData.Values["Controller"].ToString() == "Portfolio" ? "active" : "")" asp-controller="Portfolio" asp-action="Index">Portfolio</a>
-                            <a class="nav-button @(ViewContext.RouteData.Values["Controller"].ToString() == "Blog" ? "active" : "")" asp-controller="Blog" asp-action="Index" asp>Resume</a>
-                        </div>
-
+                    <div class="navbar-grouping">
+                        <a class="nav-button @(ViewContext.RouteData.Values["Controller"].ToString() == "Portfolio" ? "active" : "")" asp-controller="Portfolio" asp-action="Index">Portfolio</a>
+                        <a class="nav-button @(ViewContext.RouteData.Values["Controller"].ToString() == "Blog" ? "active" : "")" asp-controller="Blog" asp-action="Index" asp>Resume</a>
                     </div>
-                </div>-->
+                </div>
+                -->
 
                 @RenderSection("NavbarAddon", required: false)
             </div>
