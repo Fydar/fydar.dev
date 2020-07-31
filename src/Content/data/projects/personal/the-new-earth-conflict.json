@@ -12,7 +12,13 @@
   "Institution": null,
   "Page": "pages/projects/personal/the-new-earth-conflict.html",
   "ProjectSubtitle": null,
-  "Links": null,
+  "Links": [
+    {
+      "SiteName": "YouTube",
+      "Url": "https://www.youtube.com/watch?v=PakFTX3lhwU",
+      "Icon": "youtube"
+    }
+  ],
   "Badges": [
     {
       "Tooltip": "Location",

@@ -1,7 +1,7 @@
 {
   "ProjectName": "My Portfolio",
   "Slug": "my-portfolio",
-  "FeaturedImage": "img/my-portfolio-header.png",
+  "FeaturedImage": "img/my-portfolio-1.png",
   "HoverImage": "img/my-portfolio-header.png",
   "Excerpt": "This portfolio, built from scratch and hosted in AWS.",
   "HideOnHomePage": true,

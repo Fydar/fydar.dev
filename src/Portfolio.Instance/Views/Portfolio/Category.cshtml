@@ -6,27 +6,42 @@
 
 @model CategoryViewModel
 @{
-    ViewData["Title"] = "Portfolio";
+	ViewData["Title"] = "Portfolio";
 }
 
 @inject IContentService contentService;
 
 <div class="container">
+	@await Component.InvokeAsync("BreadcrumbBar", new BreadcrumbBarViewModel(
+		new BreadcrumbModel()
+		{
+			Controller = "Portfolio",
+			Action = "Index",
+			Text = "Portfolio"
+		},
+		new BreadcrumbModel()
+		{
+			Text = Model.Category.DisplayName
+		}
+	))
+</div>
 
-    <div class="page">
-        <header>
-            <h2>@Model.Category.DisplayName</h2>
-        </header>
-        <section>
-            <div class="card-grid @(Model.Category.Projects.Count > 3 ? "card-grid-sm" : "")">
+<div class="container">
 
-                @foreach (var project in Model.Category.Projects)
-                {
-                     @await Component.InvokeAsync("PortfolioItem", project)
-                }
+	<div class="page">
+		<header>
+			<h2>@Model.Category.DisplayName</h2>
+		</header>
+		<section>
+			<div class="card-grid @(Model.Category.Projects.Count > 3 ? "card-grid-sm" : "")">
 
-            </div>
-        </section>
-    </div>
+				@foreach (var project in Model.Category.Projects)
+				{
+					@await Component.InvokeAsync("PortfolioItem", project)
+				}
+
+			</div>
+		</section>
+	</div>
 
 </div>

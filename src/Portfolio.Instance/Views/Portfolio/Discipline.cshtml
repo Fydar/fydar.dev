@@ -7,36 +7,38 @@
 
 @model DisciplineViewModel
 @{
-    ViewData["Title"] = Model.Discipline.DisplayName;
-    ViewData["FeaturedImage"] = Model.Discipline.FeaturedImage;
+	ViewData["Title"] = Model.Discipline.DisplayName;
+	ViewData["FeaturedImage"] = Model.Discipline.FeaturedImage;
 }
 
 <div class="container">
+	@await Component.InvokeAsync("BreadcrumbBar", new BreadcrumbBarViewModel(
+		new BreadcrumbModel()
+		{
+			Controller = "Portfolio",
+			Action = "Index",
+			Text = "Portfolio"
+		},
+		new BreadcrumbModel()
+		{
+			Text = Model.Discipline.DisplayName
+		}
+	))
+</div>
 
-    @await Component.InvokeAsync("BreadcrumbBar", new BreadcrumbBarViewModel(
-        new BreadcrumbModel()
-        {
-            Controller = "Portfolio",
-            Action = "Index",
-            Text = "Portfolio"
-        },
-        new BreadcrumbModel()
-        {
-            Text = Model.Discipline.DisplayName
-        }
-    ))
-
-    <div class="page">
-        <header>
-            <h2>@Model.Discipline.DisplayName</h2>
-        </header>
-        <section>
-            @{
-                using var stream = Model.Discipline.PageResource.Content.LoadStream();
-                using var sr = new StreamReader(stream);
-                @Html.Raw(sr.ReadToEnd());
-            }
-        </section>
-    </div>
-
+<div class="page">
+	<header>
+		<div class="container">
+			<h2>@Model.Discipline.DisplayName</h2>
+		</div>
+	</header>
+	<section>
+		<div class="container">
+			@{
+				using var stream = Model.Discipline.PageResource.Content.LoadStream();
+				using var sr = new StreamReader(stream);
+				@Html.Raw(sr.ReadToEnd());
+			}
+		</div>
+	</section>
 </div>

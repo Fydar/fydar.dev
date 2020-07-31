@@ -1,92 +1,87 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
-    @{
-        string title = ViewData["Title"] as string;
-    }
-    @if (string.IsNullOrEmpty(title))
-    {
-        <title>Anthony Marmont</title>
-    }
-    else
-    {
-        <title>@ViewData["Title"] - Anthony Marmont</title>
-    }
-    <link rel="stylesheet" href="~/css/main.css" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Quattrocento+Sans">
+	@{
+		string title = ViewData["Title"] as string;
+	}
+	@if (string.IsNullOrEmpty(title))
+	{
+		<title>Anthony Marmont</title>
+	}
+	else
+	{
+		<title>@ViewData["Title"] - Anthony Marmont</title>
+	}
+	<link rel="stylesheet" href="~/css/main.css" />
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Quattrocento+Sans">
 </head>
 <body style="background-color: #edf0f2; margin: 0; padding: 0;">
 
-    
-    <div class="parallax-container parallax-anchor-top" style="height: 700px; max-height: 55vh; overflow: hidden; position: relative; z-index: -1;">
+	<div class="parallax-container parallax-anchor-top" style="height: 700px; max-height: 55vh; overflow: hidden; position: relative; z-index: -1;">
+		@if (ViewData.TryGetValue("FeaturedImage", out var featuredImage))
+		{
+			<img class="parallax-layer" src="/@ResourceHelper.TransformName(featuredImage.ToString(), "fullscreen")" style="image-rendering: pixelated; object-fit: cover; width: 100%; min-height: 100%; top: -141.402px;">
+		}
+		else
+		{
+			<img class="parallax-layer" src="/img/minijam-40-hunters-header.png" style="image-rendering: pixelated; object-fit: cover; width: 100%; min-height: 100%; top: -141.402px;">
+		}
+	</div>
 
-        @if (ViewData.TryGetValue("FeaturedImage", out var featuredImage))
-        {
-            <img class="parallax-layer" src="/@ResourceHelper.TransformName(featuredImage.ToString(), "fullscreen")" style="image-rendering: pixelated; object-fit: cover; width: 100%; min-height: 100%; top: -141.402px;">
-        }
-        else
-        {
-            <img class="parallax-layer" src="/img/minijam-40-hunters-1.png" style="image-rendering: pixelated; object-fit: cover; width: 100%; min-height: 100%; top: -141.402px;">
-        }
+	<div class="container container-sm">
+		<div class="page page-profile">
+			<header>
+				<img src="/img/profile.svg" style="margin: auto; height: 166px; margin-top: 1.5rem; margin-bottom: 0.75rem;" />
+				<h1 style="font-size: 2.5rem; margin: 1.0rem 0 0.5rem 0;">Anthony Marmont</h1>
+				<!--<h2 style="font-size: 2.25rem; margin: 0 0 0.5rem 0; color: #999;">&lt;/programmer&gt;</h2>-->
+				<p class="badge-bar badge-bar-social">
+					<a class="badge" target="_blank" href="https://www.youtube.com/channel/UCEEI1m2TCso1OGWEHvHS20g"><span class="pin pin-youtube"></span></a>
+					<a class="badge" target="_blank" href="https://fydar.itch.io/"><span class="pin pin-itch-io"></span></a>
+					<a class="badge" target="_blank" href="https://github.com/Fydar"><span class="pin pin-github"></span></a>
+					<a class="badge" target="_blank" href="https://www.linkedin.com/in/anthonymarmont/"><span class="pin pin-linkedin"></span></a>
+				</p>
+			</header>
 
-    </div>
+			<!--
+			<div class="navbar">
+				<a class="logo" asp-controller="Portfolio" asp-action="Index">
+					<div class="text-logo">Anthony Marmont</div>
+				</a>
 
-    <div>
-        <div class="container container-sm">
-            <div class="page page-profile">
-                <header>
-                    <img src="/img/profile.svg" style="margin: auto; height: 166px; margin-top: 1.5rem; margin-bottom: 0.75rem;" />
-                    <h1 style="font-size: 2.5rem; margin: 0 0 0.5rem 0;">Anthony Marmont</h1>
-                    <h2 style="font-size: 2.25rem; margin: 0 0 0.5rem 0; color: #999;">&lt;/programmer&gt;</h2>
-                    <p class="badge-bar badge-bar-social">
-                        <a class="badge" target="_blank" href="https://www.youtube.com/channel/UCEEI1m2TCso1OGWEHvHS20g"><span class="pin pin-youtube"></span></a>
-                        <a class="badge" target="_blank" href="https://fydar.itch.io/"><span class="pin pin-itch-io"></span></a>
-                        <a class="badge" target="_blank" href="https://github.com/Fydar"><span class="pin pin-github"></span></a>
-                        <a class="badge" target="_blank" href="https://www.linkedin.com/in/anthonymarmont/"><span class="pin pin-linkedin"></span></a>
-                    </p>
-                </header>
+				<div style="flex-grow: 100000;"></div>
 
-                <!--
-                <div class="navbar">
-                    <a class="logo" asp-controller="Portfolio" asp-action="Index">
-                        <div class="text-logo">Anthony Marmont</div>
-                    </a>
+				<div class="navbar-grouping">
+					<a class="nav-button @(ViewContext.RouteData.Values["Controller"].ToString() == "Portfolio" ? "active" : "")" asp-controller="Portfolio" asp-action="Index">Portfolio</a>
+					<a class="nav-button @(ViewContext.RouteData.Values["Controller"].ToString() == "Blog" ? "active" : "")" asp-controller="Blog" asp-action="Index" asp>Resume</a>
+				</div>
+			</div>
+			-->
 
-                    <div style="flex-grow: 100000;"></div>
+			@RenderSection("NavbarAddon", required: false)
+		</div>
+	</div>
 
-                    <div class="navbar-grouping">
-                        <a class="nav-button @(ViewContext.RouteData.Values["Controller"].ToString() == "Portfolio" ? "active" : "")" asp-controller="Portfolio" asp-action="Index">Portfolio</a>
-                        <a class="nav-button @(ViewContext.RouteData.Values["Controller"].ToString() == "Blog" ? "active" : "")" asp-controller="Blog" asp-action="Index" asp>Resume</a>
-                    </div>
-                </div>
-                -->
+	<div style="min-height: 50vh;">
 
-                @RenderSection("NavbarAddon", required: false)
-            </div>
-        </div>
+		@RenderBody()
 
-        <div style="min-height: 50vh; background-color: #edf0f2;">
+	</div>
 
-            @RenderBody()
+	<div class="website-footer">
 
-        </div>
-    </div>
+		<div class="container">
 
-    <div class="website-footer">
+			<p>&copy; 2020 Anthony Marmont</p>
 
-        <div class="container website-footer">
+		</div>
+	</div>
 
-            <p>&copy; 2020 Anthony Marmont</p>
+	<script src="~/js/site.js" asp-append-version="true"></script>
 
-        </div>
-    </div>
-
-    <script src="~/js/site.js" asp-append-version="true"></script>
-
-    @RenderSection("Scripts", required: false)
+	@RenderSection("Scripts", required: false)
 </body>
 </html>

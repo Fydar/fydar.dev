@@ -1,0 +1,535 @@
+AWSTemplateFormatVersion: 2010-09-09
+Description: 'ECS cluster: Portfolio'
+Parameters:
+  VpcCidr:
+    Type: String
+    Description: Specifies the CIDR Block of VPC
+    Default: 11.0.0.0/16
+    AllowedPattern: >-
+      ^((1?[0-9]{1,2}|2[0-4][0-9]|25[0-5])\.){3}(1?[0-9]{1,2}|2[0-4][0-9]|25[0-5])\/(8|16|24)$
+  SubnetCidr1:
+    Type: String
+    Description: Specifies the CIDR Block of Subnet 1
+    Default: 11.0.0.0/24
+    AllowedPattern: >-
+      ^((1?[0-9]{1,2}|2[0-4][0-9]|25[0-5])\.){3}(1?[0-9]{1,2}|2[0-4][0-9]|25[0-5])\/(8|16|24|32)$
+  Cname:
+    Type: String
+    Description: The CNAME for the deployed server.
+    Default: anthonymarmont.com.
+    AllowedPattern: '^([-a-z\d]+\.)?anthonymarmont\.com\.$'
+  TaskCpu:
+    Type: String
+    Description: Determines the provisioned CPU for Fargate tasks
+    Default: .25 vCPU
+    AllowedValues:
+      - .25 vCPU
+      - .5 vCPU
+      - 1 vCPU
+      - 2 vCPU
+      - 4 vCPU
+  TaskMemory:
+    Type: String
+    Description: Determines the provisioned memory for Fargate tasks
+    Default: 1 GB
+    AllowedValues:
+      - 0.5 GB
+      - 1 GB
+      - 2 GB
+      - 3 GB
+      - 4 GB
+Mappings: {}
+Resources:
+  Vpc:
+    Type: 'AWS::EC2::VPC'
+    Properties:
+      CidrBlock: ''
+      EnableDnsSupport: true
+      EnableDnsHostnames: true
+    Metadata:
+      'AWS::CloudFormation::Designer':
+        id: fdc1d9ea-f7ba-44b3-a326-7804151eca32
+  PubSubnetAz1:
+    Type: 'AWS::EC2::Subnet'
+    Properties:
+      VpcId: !Ref Vpc
+      CidrBlock: !Ref SubnetCidr1
+      AvailabilityZone: !Select 
+        - 0
+        - !Ref VpcAvailabilityZones
+      MapPublicIpOnLaunch: true
+    Metadata:
+      'AWS::CloudFormation::Designer':
+        id: 9a804ee9-1378-4029-a467-b5f77d59c655
+  InternetGateway:
+    Type: 'AWS::EC2::InternetGateway'
+    Metadata:
+      'AWS::CloudFormation::Designer':
+        id: ad6efa86-64a0-4be3-9e27-e34385ae4cb7
+  AttachGateway:
+    Type: 'AWS::EC2::VPCGatewayAttachment'
+    Properties:
+      VpcId: !Ref Vpc
+      InternetGatewayId: !Ref InternetGateway
+    Metadata:
+      'AWS::CloudFormation::Designer':
+        id: 72ce18f4-128e-4d53-9421-e6fdb6c380ef
+  RouteViaIgw:
+    Type: 'AWS::EC2::RouteTable'
+    Properties:
+      VpcId: !Ref Vpc
+    Metadata:
+      'AWS::CloudFormation::Designer':
+        id: c2bade4a-3a5a-497e-b306-cc7cceeaa198
+  PublicRouteViaIgw:
+    Type: 'AWS::EC2::Route'
+    Properties:
+      RouteTableId: !Ref RouteViaIgw
+      DestinationCidrBlock: 0.0.0.0/0
+      GatewayId: !Ref InternetGateway
+    Metadata:
+      'AWS::CloudFormation::Designer':
+        id: 83a6e12a-3d62-41a4-b4be-1308191786d8
+  PubSubnet1RouteTableAssociation:
+    Type: 'AWS::EC2::SubnetRouteTableAssociation'
+    Properties:
+      SubnetId: !Ref PubSubnetAz1
+      RouteTableId: !Ref RouteViaIgw
+    Metadata:
+      'AWS::CloudFormation::Designer':
+        id: 4278fbee-c3fb-4059-aa55-e901c9952ed4
+  PortfolioInstanceCname:
+    Type: 'AWS::Route53::RecordSet'
+    Properties:
+      HostedZoneName: anthonymarmont.com.
+      Name: !Ref Cname
+      ResourceRecords:
+        - !GetAtt 
+          - PortfolioInstanceLoadBalancer
+          - DNSName
+      Type: CNAME
+      TTL: '86400'
+    Metadata:
+      'AWS::CloudFormation::Designer':
+        id: 944cbf6a-f759-4946-96ed-01c651269fc7
+  PortfolioCluster:
+    Type: 'AWS::ECS::Cluster'
+    Metadata:
+      'AWS::CloudFormation::Designer':
+        id: b06b07d4-ccd1-4afc-b955-f3753495db76
+  ECSTaskExecutionRole:
+    Type: 'AWS::IAM::Role'
+    Properties:
+      AssumeRolePolicyDocument:
+        Version: 2012-10-17
+        Statement:
+          - Sid: ''
+            Effect: Allow
+            Principal:
+              Service:
+                - ecs-tasks.amazonaws.com
+            Action:
+              - 'sts:AssumeRole'
+      ManagedPolicyArns:
+        - 'arn:aws:iam::aws:policy/service-role/AmazonECSTaskExecutionRolePolicy'
+    Metadata:
+      'AWS::CloudFormation::Designer':
+        id: 9fef62e8-7127-4c4f-8fc2-f4e19f3103e3
+  ECSTaskRole:
+    Type: 'AWS::IAM::Role'
+    Properties:
+      AssumeRolePolicyDocument:
+        Version: 2012-10-17
+        Statement:
+          - Sid: ''
+            Effect: Allow
+            Principal:
+              Service: ecs-tasks.amazonaws.com
+            Action: 'sts:AssumeRole'
+    Metadata:
+      'AWS::CloudFormation::Designer':
+        id: 8f3a782f-fdc7-46e9-9c61-49b6f65c3721
+  PortfolioInstanceTask:
+    Type: 'AWS::ECS::TaskDefinition'
+    Properties:
+      NetworkMode: awsvpc
+      Cpu: !Ref TaskCpu
+      Memory: !Ref TaskMemory
+      ExecutionRoleArn: !GetAtt 
+        - ECSTaskExecutionRole
+        - Arn
+      RequiresCompatibilities:
+        - FARGATE
+      ContainerDefinitions:
+        Image: !Sub '222779217717.dkr.ecr.us-east-1.amazonaws.com/portfolioinstance:${Tag}'
+        Name: Portfolio-Instance
+        PortMappings:
+          - ContainerPort: 80
+            HostPort: 80
+            Protocol: HTTP
+        LogConfiguration:
+          LogDriver: awslogs
+          Options:
+            awslogs-group: portfolio-logs
+            awslogs-region: us-east-1
+            awslogs-stream-prefix: portfolio-instance
+      TaskRoleArn: !GetAtt 
+        - ECSTaskRole
+        - Arn
+    Metadata:
+      'AWS::CloudFormation::Designer':
+        id: 9820e488-f06d-4893-a644-d617cd8f3d74
+  PortfolioInstanceLoadBalancerSecurityGroup:
+    Type: 'AWS::EC2::SecurityGroup'
+    Properties:
+      VpcId: !Ref Vpc
+      GroupDescription: Allow TCP ports 80 and 443 for IPv4 and IPv6
+      SecurityGroupIngress:
+        - CidrIp: 0.0.0.0/0
+          FromPort: 80
+          IpProtocol: tcp
+          ToPort: 80
+        - CidrIpv6: '::/0'
+          FromPort: 80
+          IpProtocol: tcp
+          ToPort: 80
+        - CidrIp: 0.0.0.0/0
+          FromPort: 443
+          IpProtocol: tcp
+          ToPort: 443
+        - CidrIpv6: '::/0'
+          FromPort: 443
+          IpProtocol: tcp
+          ToPort: 443
+    Metadata:
+      'AWS::CloudFormation::Designer':
+        id: 52763e8c-56c1-4a2c-92f4-f2b9221ca44f
+  PortfolioInstanceLoadBalancer:
+    Type: 'AWS::ElasticLoadBalancingV2::LoadBalancer'
+    Properties:
+      Type: application
+      Scheme: internet-facing
+      IpAddressType: dualstack
+      SecurityGroups:
+        - !Ref PortfolioInstanceLoadBalancerSecurityGroup
+      Subnets:
+        - !Ref PubSubnetAz1
+    Metadata:
+      'AWS::CloudFormation::Designer':
+        id: bc96d6af-c067-43b6-b548-b905730258db
+  PortfolioInstanceTargetGroup:
+    Type: 'AWS::ElasticLoadBalancingV2::TargetGroup'
+    Properties:
+      HealthCheckPath: /api/health
+      HealthCheckPort: '80'
+      HealthCheckProtocol: HTTP
+      HealthCheckTimeoutSeconds: 2
+      HealthyThresholdCount: 2
+      Matcher:
+        HttpCode: '200'
+      Port: 80
+      Protocol: HTTP
+      UnhealthyThresholdCount: '5'
+      VpcId: !Ref Vpc
+      TargetType: ip
+    Metadata:
+      'AWS::CloudFormation::Designer':
+        id: fdb95fe8-0666-490e-a9bb-58528b7388b3
+  PortfolioInstanceListener:
+    Type: 'AWS::ElasticLoadBalancingV2::Listener'
+    Properties:
+      LoadBalancerArn: !Ref PortfolioInstanceLoadBalancer
+      Port: 80
+      Protocol: HTTP
+      DefaultActions:
+        - RedirectConfig:
+            Host: '#{host}'
+            Path: '/#{path}'
+            Port: '443'
+            Protocol: HTTPS
+            Query: '#{query}'
+            StatusCode: HTTP_301
+          Type: redirect
+    Metadata:
+      'AWS::CloudFormation::Designer':
+        id: ae7431f6-9013-4db6-8dc5-86b76e28ff04
+  PortfolioInstanceListenerHttps:
+    Type: 'AWS::ElasticLoadBalancingV2::Listener'
+    Properties:
+      LoadBalancerArn: !Ref PortfolioInstanceLoadBalancer
+      Port: 443
+      Protocol: HTTPS
+      DefaultActions:
+        - TargetGroupArn: !Ref PortfolioInstanceTargetGroup
+          Type: forward
+      Certificates:
+        - CertificateArn: >-
+            arn:aws:acm:us-east-1:222779217717:certificate/14f9bd48-6e9a-47d7-a3ff-d28f832995c7
+    Metadata:
+      'AWS::CloudFormation::Designer':
+        id: 59d9edb0-f97c-468b-824b-5c0028e4e154
+  PortfolioInstanceServiceSecurityGroup:
+    Type: 'AWS::EC2::SecurityGroup'
+    Properties:
+      GroupDescription: Allow TCP port 80 only from load balancer
+      VpcId: !Ref Vpc
+      SecurityGroupIngress:
+        - SourceSecurityGroupId: !Ref PortfolioInstanceLoadBalancerSecurityGroup
+          FromPort: 80
+          IpProtocol: tcp
+          ToPort: 80
+    Metadata:
+      'AWS::CloudFormation::Designer':
+        id: 7a37a75e-cba5-4357-ab9c-b0a3f95ac33e
+  PortfolioInstanceService:
+    Type: 'AWS::ECS::Service'
+    Properties:
+      Cluster: !Ref PortfolioCluster
+      LaunchType: FARGATE
+      DesiredCount: 1
+      TaskDefinition: !Ref PortfolioInstanceTask
+      DeploymentConfiguration:
+        MaximumPercent: 200
+        MinimumHealthyPercent: 50
+      LoadBalancers:
+        - ContainerName: portfolio-instance
+          ContainerPort: 80
+        - TargetGroupArn: !Ref PortfolioInstanceTargetGroup
+      NetworkConfiguration:
+        AwsvpcConfiguration:
+          AssignPublicIp: ENABLED
+          SecurityGroups:
+            - !Ref PortfolioInstanceServiceSecurityGroup
+          Subnets:
+            - !Ref PubSubnetAz1
+    Metadata:
+      'AWS::CloudFormation::Designer':
+        id: 8bdcd77d-e642-46cd-9dab-65c05a4cf7a2
+Outputs: {}
+Metadata:
+  'AWS::CloudFormation::Designer':
+    8f3a782f-fdc7-46e9-9c61-49b6f65c3721:
+      size:
+        width: 60
+        height: 60
+      position:
+        x: 680
+        'y': 160
+      z: 2
+      parent: fdc1d9ea-f7ba-44b3-a326-7804151eca32
+      embeds: []
+    9fef62e8-7127-4c4f-8fc2-f4e19f3103e3:
+      size:
+        width: 60
+        height: 60
+      position:
+        x: 680
+        'y': 240
+      z: 2
+      parent: fdc1d9ea-f7ba-44b3-a326-7804151eca32
+      embeds: []
+    9820e488-f06d-4893-a644-d617cd8f3d74:
+      size:
+        width: 60
+        height: 60
+      position:
+        x: 570
+        'y': 200
+      z: 2
+      parent: fdc1d9ea-f7ba-44b3-a326-7804151eca32
+      embeds: []
+    b06b07d4-ccd1-4afc-b955-f3753495db76:
+      size:
+        width: 60
+        height: 60
+      position:
+        x: 470
+        'y': 100
+      z: 2
+      parent: fdc1d9ea-f7ba-44b3-a326-7804151eca32
+      embeds: []
+    ad6efa86-64a0-4be3-9e27-e34385ae4cb7:
+      size:
+        width: 60
+        height: 60
+      position:
+        x: -50
+        'y': 350
+      z: 1
+      embeds: []
+    fdc1d9ea-f7ba-44b3-a326-7804151eca32:
+      size:
+        width: 690
+        height: 410
+      position:
+        x: 60
+        'y': 80
+      z: 1
+      embeds:
+        - 7a37a75e-cba5-4357-ab9c-b0a3f95ac33e
+        - c2bade4a-3a5a-497e-b306-cc7cceeaa198
+        - 9a804ee9-1378-4029-a467-b5f77d59c655
+        - b06b07d4-ccd1-4afc-b955-f3753495db76
+        - 9820e488-f06d-4893-a644-d617cd8f3d74
+        - 9fef62e8-7127-4c4f-8fc2-f4e19f3103e3
+        - 8f3a782f-fdc7-46e9-9c61-49b6f65c3721
+        - 8bdcd77d-e642-46cd-9dab-65c05a4cf7a2
+    52763e8c-56c1-4a2c-92f4-f2b9221ca44f:
+      size:
+        width: 60
+        height: 60
+      position:
+        x: 320
+        'y': 310
+      z: 3
+      parent: 9a804ee9-1378-4029-a467-b5f77d59c655
+      embeds: []
+      iscontainedinside:
+        - fdc1d9ea-f7ba-44b3-a326-7804151eca32
+        - fdc1d9ea-f7ba-44b3-a326-7804151eca32
+    7a37a75e-cba5-4357-ab9c-b0a3f95ac33e:
+      size:
+        width: 60
+        height: 60
+      position:
+        x: 470
+        'y': 310
+      z: 2
+      parent: fdc1d9ea-f7ba-44b3-a326-7804151eca32
+      embeds: []
+      iscontainedinside:
+        - fdc1d9ea-f7ba-44b3-a326-7804151eca32
+        - fdc1d9ea-f7ba-44b3-a326-7804151eca32
+    c2bade4a-3a5a-497e-b306-cc7cceeaa198:
+      size:
+        width: 100
+        height: 90
+      position:
+        x: 90
+        'y': 390
+      z: 2
+      parent: fdc1d9ea-f7ba-44b3-a326-7804151eca32
+      embeds:
+        - 83a6e12a-3d62-41a4-b4be-1308191786d8
+      iscontainedinside:
+        - fdc1d9ea-f7ba-44b3-a326-7804151eca32
+        - fdc1d9ea-f7ba-44b3-a326-7804151eca32
+    72ce18f4-128e-4d53-9421-e6fdb6c380ef:
+      source:
+        id: fdc1d9ea-f7ba-44b3-a326-7804151eca32
+      target:
+        id: ad6efa86-64a0-4be3-9e27-e34385ae4cb7
+      z: 1
+    83a6e12a-3d62-41a4-b4be-1308191786d8:
+      size:
+        width: 60
+        height: 60
+      position:
+        x: 110
+        'y': 410
+      z: 3
+      parent: c2bade4a-3a5a-497e-b306-cc7cceeaa198
+      embeds: []
+      isassociatedwith:
+        - ad6efa86-64a0-4be3-9e27-e34385ae4cb7
+      iscontainedinside:
+        - c2bade4a-3a5a-497e-b306-cc7cceeaa198
+        - c2bade4a-3a5a-497e-b306-cc7cceeaa198
+    9a804ee9-1378-4029-a467-b5f77d59c655:
+      size:
+        width: 310
+        height: 230
+      position:
+        x: 90
+        'y': 150
+      z: 2
+      parent: fdc1d9ea-f7ba-44b3-a326-7804151eca32
+      embeds:
+        - bc96d6af-c067-43b6-b548-b905730258db
+        - fdb95fe8-0666-490e-a9bb-58528b7388b3
+        - 59d9edb0-f97c-468b-824b-5c0028e4e154
+        - ae7431f6-9013-4db6-8dc5-86b76e28ff04
+        - 52763e8c-56c1-4a2c-92f4-f2b9221ca44f
+      iscontainedinside:
+        - fdc1d9ea-f7ba-44b3-a326-7804151eca32
+        - fdc1d9ea-f7ba-44b3-a326-7804151eca32
+    bc96d6af-c067-43b6-b548-b905730258db:
+      size:
+        width: 60
+        height: 60
+      position:
+        x: 110
+        'y': 210
+      z: 3
+      parent: 9a804ee9-1378-4029-a467-b5f77d59c655
+      embeds: []
+      isassociatedwith:
+        - 52763e8c-56c1-4a2c-92f4-f2b9221ca44f
+      iscontainedinside:
+        - 9a804ee9-1378-4029-a467-b5f77d59c655
+        - 9a804ee9-1378-4029-a467-b5f77d59c655
+    ae7431f6-9013-4db6-8dc5-86b76e28ff04:
+      size:
+        width: 60
+        height: 60
+      position:
+        x: 220
+        'y': 250
+      z: 3
+      parent: 9a804ee9-1378-4029-a467-b5f77d59c655
+      embeds: []
+      isassociatedwith:
+        - bc96d6af-c067-43b6-b548-b905730258db
+    fdb95fe8-0666-490e-a9bb-58528b7388b3:
+      size:
+        width: 60
+        height: 60
+      position:
+        x: 320
+        'y': 170
+      z: 3
+      parent: 9a804ee9-1378-4029-a467-b5f77d59c655
+      embeds: []
+      iscontainedinside:
+        - fdc1d9ea-f7ba-44b3-a326-7804151eca32
+    59d9edb0-f97c-468b-824b-5c0028e4e154:
+      size:
+        width: 60
+        height: 60
+      position:
+        x: 220
+        'y': 170
+      z: 3
+      parent: 9a804ee9-1378-4029-a467-b5f77d59c655
+      embeds: []
+      isassociatedwith:
+        - bc96d6af-c067-43b6-b548-b905730258db
+    8bdcd77d-e642-46cd-9dab-65c05a4cf7a2:
+      size:
+        width: 60
+        height: 60
+      position:
+        x: 470
+        'y': 200
+      z: 2
+      parent: fdc1d9ea-f7ba-44b3-a326-7804151eca32
+      embeds: []
+      isassociatedwith:
+        - 9820e488-f06d-4893-a644-d617cd8f3d74
+        - b06b07d4-ccd1-4afc-b955-f3753495db76
+        - fdb95fe8-0666-490e-a9bb-58528b7388b3
+    944cbf6a-f759-4946-96ed-01c651269fc7:
+      size:
+        width: 60
+        height: 60
+      position:
+        x: -140
+        'y': 210
+      z: 1
+      embeds: []
+    4278fbee-c3fb-4059-aa55-e901c9952ed4:
+      source:
+        id: c2bade4a-3a5a-497e-b306-cc7cceeaa198
+      target:
+        id: 9a804ee9-1378-4029-a467-b5f77d59c655
+      z: 2

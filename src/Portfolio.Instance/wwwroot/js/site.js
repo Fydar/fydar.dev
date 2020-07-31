@@ -8,6 +8,7 @@ const lerp = function (value1, value2, amount) {
 
 window.addEventListener("scroll", updateParallax);
 window.addEventListener("resize", updateParallax);
+updateParallax();
 
 (function () {
 	updateParallax();

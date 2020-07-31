@@ -46,6 +46,7 @@ namespace Portfolio.Models
 		[JsonIgnore] public IResource PageResource { get; private set; }
 		[JsonIgnore] public IResource FeaturedImageResource { get; private set; }
 		[JsonIgnore] public IResource HoverImageResource { get; private set; }
+		[JsonIgnore] public ProjectCategoryModel ProjectCategoryModel { get; private set; }
 		[JsonIgnore] public IResource ProjectCategoryResource { get; private set; }
 		[JsonIgnore] public IResource[] DisciplineResources { get; private set; }
 
@@ -56,6 +57,7 @@ namespace Portfolio.Models
 			HoverImageResource = cache.GetResource(HoverImage);
 
 			ProjectCategoryResource = cache.GetResource(ProjectCategory);
+			ProjectCategoryModel = cache.GetOrDeserialize<ProjectCategoryModel>(ProjectCategoryResource);
 			cache.GetOrDeserialize<ProjectCategoryModel>(ProjectCategoryResource).Projects.Add(this);
 
 			if (Disciplines != null)

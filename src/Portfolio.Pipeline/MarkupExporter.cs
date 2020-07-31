@@ -46,6 +46,13 @@ namespace Portfolio.Pipeline
 					containerStyle.Value = "toc-container";
 					container.Attributes.Append(containerStyle);
 
+					var title = document.CreateNode(XmlNodeType.Element, "p", null);
+					var titleStyle = document.CreateAttribute("class");
+					titleStyle.Value = "toc-title";
+					title.InnerText = "Contents";
+					title.Attributes.Append(titleStyle);
+
+					container.AppendChild(title);
 					WriteHeadings(container, headings);
 
 					imageElement.ParentNode.ReplaceChild(container, imageElement);
@@ -57,16 +64,25 @@ namespace Portfolio.Pipeline
 			document.Save(output);
 		}
 
-		void WriteHeadings(XmlNode xmlNode, IEnumerable<Heading> headings)
+		void WriteHeadings(XmlNode xmlNode, IEnumerable<Heading> headings, string prefix = "")
 		{
 			var listElement = xmlNode.OwnerDocument.CreateNode(XmlNodeType.Element, "ul", null);
 
+			int index = 0;
 			foreach (var heading in headings)
 			{
+				string thisPrefix;
+				if (!string.IsNullOrEmpty(prefix))
+				{
+					thisPrefix = $"{prefix}.{index + 1}";
+				}
+				else
+				{
+					thisPrefix = $"{index + 1}";
+				}
+
 				var listItem = xmlNode.OwnerDocument.CreateNode(XmlNodeType.Element, "li", "");
 				var linkElement = xmlNode.OwnerDocument.CreateNode(XmlNodeType.Element, "a", "");
-				linkElement.InnerText = heading.Headingtext;
-
 				if (!string.IsNullOrEmpty(heading.HeadingIdentifier))
 				{
 					var href = xmlNode.OwnerDocument.CreateAttribute("href");
@@ -75,13 +91,28 @@ namespace Portfolio.Pipeline
 					linkElement.Attributes.Append(href);
 				}
 
-				if (heading.Subheadings.Count > 0)
-				{
-					WriteHeadings(listItem, heading.Subheadings);
-				}
+				var tocNumberElement = xmlNode.OwnerDocument.CreateNode(XmlNodeType.Element, "span", "");
+				var tocNumberElementStyle = xmlNode.OwnerDocument.CreateAttribute("class");
+				tocNumberElementStyle.Value = "toc-number";
+				tocNumberElement.Attributes.Append(tocNumberElementStyle);
+				tocNumberElement.InnerText = thisPrefix;
 
+				var tocTextElement = xmlNode.OwnerDocument.CreateNode(XmlNodeType.Element, "span", "");
+				var tocTextElementStyle = xmlNode.OwnerDocument.CreateAttribute("class");
+				tocTextElementStyle.Value = "toc-text";
+				tocTextElement.Attributes.Append(tocTextElementStyle);
+				tocTextElement.InnerText = heading.Headingtext;
+
+				linkElement.AppendChild(tocNumberElement);
+				linkElement.AppendChild(tocTextElement);
 				listItem.AppendChild(linkElement);
 				listElement.AppendChild(listItem);
+
+				if (heading.Subheadings.Count > 0)
+				{
+					WriteHeadings(listItem, heading.Subheadings, thisPrefix);
+				}
+				index++;
 			}
 
 			xmlNode.AppendChild(listElement);
@@ -125,7 +156,7 @@ namespace Portfolio.Pipeline
 					}
 					else
 					{
-						while (newHeading.HeadingDepth < currentHeading.HeadingDepth)
+						while (newHeading.HeadingDepth <= currentHeading.HeadingDepth)
 						{
 							currentHeading = currentHeading.Parent;
 							if (currentHeading == null)

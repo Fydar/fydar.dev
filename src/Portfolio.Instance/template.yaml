@@ -136,7 +136,7 @@ Resources:
     Properties:
       VpcId: !Ref Vpc
 
-  PublicRouteViaIgw:
+  PublicRouteViaIgwIpv4:
     Type: AWS::EC2::Route
     Properties:
       RouteTableId: !Ref RouteViaIgw

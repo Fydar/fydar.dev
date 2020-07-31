@@ -1,0 +1,35 @@
+{
+  "ProjectName": "HuskyNet",
+  "Slug": "huskynet",
+  "FeaturedImage": "img/huskynet-dashboard-2.png",
+  "HoverImage": "img/huskynet-header.png",
+  "Excerpt": "An exploration of a horizontally scalable server stack",
+  "HideOnHomePage": true,
+  "Disciplines": [
+    "data/disciplines/network-programming.json",
+    "data/disciplines/tools-programming.json"
+  ],
+  "PublishedDate": 1595040153,
+  "ProjectCategory": "data/projects/categories/category-personal.json",
+  "Institution": null,
+  "Page": "pages/projects/personal/huskynet.html",
+  "ProjectSubtitle": null,
+  "Links": null,
+  "Badges": [
+    {
+      "Tooltip": "Date",
+      "Icon": "date",
+      "Content": "Present",
+      "Url": null,
+      "DisplayOnHomepage": true
+    },
+    {
+      "Tooltip": "Team",
+      "Icon": "person",
+      "Content": "Solo",
+      "Url": null,
+      "DisplayOnHomepage": true
+    }
+  ],
+  "Order": 5
+}

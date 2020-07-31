@@ -24,7 +24,6 @@ namespace Portfolio.Pipeline
 
 				var loaded = LoadJson<ProjectCategoryModel>(importer);
 
-				importer.Dependencies.Register(loaded.IconImage);
 				importer.Dependencies.Register(loaded.FeaturedImage, metadata: featuredImageMetadata);
 			}
 			else if (importer.ArchiveEntry.FullName.StartsWith("data/disciplines"))

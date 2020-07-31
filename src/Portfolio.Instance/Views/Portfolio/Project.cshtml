@@ -14,6 +14,31 @@
 @inject IContentService contentService;
 
 <div class="container">
+	@await Component.InvokeAsync("BreadcrumbBar", new BreadcrumbBarViewModel(
+		new BreadcrumbModel()
+		{
+			Controller = "Portfolio",
+			Action = "Index",
+			Text = "Portfolio"
+		},
+		new BreadcrumbModel()
+		{
+			Controller = "Portfolio",
+			Action = "Item",
+			Text = Model.Project.ProjectCategoryModel.DisplayName,
+			RouteParameters = new Dictionary<string, string>()
+			{
+				["identifier"] = Model.Project.ProjectCategoryModel.Slug
+			}
+		},
+		new BreadcrumbModel()
+		{
+			Text = Model.Project.ProjectName
+		}
+	))
+</div>
+
+<div class="container">
 
 	<div class="page">
 		<header>

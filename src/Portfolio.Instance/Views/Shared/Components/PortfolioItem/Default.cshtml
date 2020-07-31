@@ -32,7 +32,7 @@
     </div>
 
     <div class="card-header">
-        <h1 class="card-title"><a asp-controller="Portfolio" asp-action="Item" asp-route-identifier="@Model.Slug">@Model.ProjectName</a></h1>
+        <p class="card-title"><a asp-controller="Portfolio" asp-action="Item" asp-route-identifier="@Model.Slug">@Model.ProjectName</a></p>
         @if (!string.IsNullOrEmpty(Model.ProjectSubtitle))
         {
             <p class="card-subtitle"><a asp-controller="Portfolio" asp-action="Item" asp-route-identifier="@Model.Slug">@Model.ProjectSubtitle</a></p>
