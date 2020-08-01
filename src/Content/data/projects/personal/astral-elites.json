@@ -12,7 +12,18 @@
   "Institution": null,
   "Page": "pages/projects/personal/astral-elites.html",
   "ProjectSubtitle": null,
-  "Links": null,
+  "Links": [
+    {
+      "SiteName": "Itch.io",
+      "Url": "https://fydar.itch.io/astral-elites",
+      "Icon": "itch-io"
+    },
+    {
+      "SiteName": "YouTube",
+      "Url": "https://www.youtube.com/watch?v=r4RrKXTHTGY",
+      "Icon": "youtube"
+    }
+  ],
   "Badges": [
     {
       "Tooltip": "Date",
