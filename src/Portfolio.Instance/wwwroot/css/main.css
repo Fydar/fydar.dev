@@ -489,15 +489,6 @@ h3 {
 	padding-bottom: 3rem;
 }
 
-.navbar {
-	color: #eee;
-	font-family: sans-serif;
-	font-size: 1em;
-	background-color: #24252a;
-	flex-wrap: wrap;
-	display: flex;
-}
-
 .logo {
 	display: flex;
 	vertical-align: middle;
@@ -516,40 +507,36 @@ h3 {
 	text-decoration: none;
 }
 
-.navbar-grouping {
+.navbar {
+	font-family: sans-serif;
+	font-size: 1.1em;
+	flex-wrap: wrap;
 	display: flex;
-	justify-content: center;
+	padding: 0 4rem;
 }
 
-.nav-button {
-	display: flex;
-	align-items: center;
-	align-self: center;
-	justify-content: center;
-	padding: 6px;
-	margin: 16px 10px;
-	width: 120px;
-	border: 2px solid #00a0c4;
-	border-radius: 30px;
-	text-decoration: none;
-	font-size: 14px;
-	letter-spacing: 1.2px;
-	color: white;
-	user-select: none;
-	background: linear-gradient(120deg, #00a0c4 50%, #24252a 50%);
-	background-size: 225% 100%;
-	background-position: right bottom;
-	transition: background-position .3s ease-out;
-}
-
-	.nav-button:hover {
-		background-position: 0% bottom;
+	.navbar .nav-button {
+		display: flex;
+		align-items: center;
+		align-self: center;
+		justify-content: center;
+		margin: 8px 6px;
+		padding: 16px 4px;
+		min-width: 88px;
+		text-decoration: none;
+		letter-spacing: 1.2px;
+		user-select: none;
+		color: #404040;
 	}
 
-	.nav-button.active {
-		background: #00a0c4;
+	.navbar .nav-button:hover {
+		color: #666666;
 	}
 
+	.navbar .navbar-grouping {
+		display: flex;
+		justify-content: center;
+	}
 
 .parallax-layer {
 	position: absolute;
@@ -688,6 +675,16 @@ h3 {
 	margin-bottom: 4rem;
 }
 
+	.page .page-section {
+		min-height: 3rem;
+		overflow: hidden;
+		border-bottom: 1px solid #e1e4e8;
+	}
+
+		.page .page-section:last-child {
+			border-bottom: 0;
+		}
+
 	.page header {
 		/* background-color: #f6f8fa; */
 		text-align: center;
@@ -713,8 +710,9 @@ h3 {
 	}
 
 	.page.page-profile {
-		margin-top: -300px;
 		box-shadow: 0 8px 20px #00000066;
+		margin-top: 96px;
+		margin-bottom: 96px;
 	}
 
 

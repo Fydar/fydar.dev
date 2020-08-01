@@ -31,11 +31,14 @@ function updateParallax() {
 		for (let i = 0; i < paralaxContainer.children.length; i++) {
 			var layer = paralaxContainer.children[i];
 
-			var layerBound = layer.getBoundingClientRect();
+			if (layer.classList.contains("parallax-layer")) {
 
-			var offset = lerp(0, -layerBound.height + bounds.height, scroll);
+				var layerBound = layer.getBoundingClientRect();
 
-			layer.style.top = offset + "px";
+				var offset = lerp(0, -layerBound.height + bounds.height, scroll);
+
+				layer.style.top = offset + "px";
+            }
 		}
 	}
 }

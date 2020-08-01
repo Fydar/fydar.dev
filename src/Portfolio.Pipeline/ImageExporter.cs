@@ -15,7 +15,7 @@ namespace Portfolio.Pipeline
 		{
 			["tiny"] = 64,
 			["thumbnail"] = 150,
-			["medium"] = 500,
+			["medium"] = 360,
 			["fullscreen"] = 1920,
 		};
 
