@@ -48,6 +48,13 @@
       "Content": "6 People",
       "Url": null,
       "DisplayOnHomepage": true
+    },
+    {
+      "Tooltip": "Theme",
+      "Icon": "pencil",
+      "Content": "Home",
+      "Url": null,
+      "DisplayOnHomepage": true
     }
   ],
   "Order": 4

@@ -43,6 +43,13 @@
       "Content": "5 People",
       "Url": null,
       "DisplayOnHomepage": true
+    },
+    {
+      "Tooltip": "Theme",
+      "Icon": "pencil",
+      "Content": "Transmission",
+      "Url": null,
+      "DisplayOnHomepage": true
     }
   ],
   "Order": 5

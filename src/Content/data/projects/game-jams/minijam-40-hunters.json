@@ -43,6 +43,13 @@
       "Content": "Solo",
       "Url": null,
       "DisplayOnHomepage": true
+    },
+    {
+      "Tooltip": "Theme",
+      "Icon": "pencil",
+      "Content": "Hunters",
+      "Url": null,
+      "DisplayOnHomepage": true
     }
   ],
   "Order": 2

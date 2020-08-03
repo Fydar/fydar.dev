@@ -53,6 +53,13 @@
       "Content": "Solo",
       "Url": null,
       "DisplayOnHomepage": true
+    },
+    {
+      "Tooltip": "Theme",
+      "Icon": "pencil",
+      "Content": "Keep it alive",
+      "Url": null,
+      "DisplayOnHomepage": true
     }
   ],
   "Order": 0

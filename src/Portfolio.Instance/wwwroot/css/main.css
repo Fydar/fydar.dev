@@ -285,8 +285,21 @@ h3 {
 		color: #999;
 		text-transform: uppercase;
 		font-size: 0.775rem;
-		padding: 0.2rem;
+		padding: 0.2rem 0;
 	}
+
+		.badge-bar.badge-bar-subtle .badge {
+			padding: 0.3rem 0.4rem;
+		}
+
+		.badge-bar.badge-bar-subtle .pin {
+			padding-right: 0.15em;
+		}
+
+			.badge-bar.badge-bar-subtle .pin::after {
+				height: 1em;
+				transform: translateY(-0.1em);
+			}
 
 	.badge-bar.badge-bar-social {
 		font-size: 1.8rem;
@@ -400,29 +413,36 @@ h3 {
 		top: 0;
 	}
 
-	.pin.pin-location::after {
-		background: url("/img/location-pin.svg") no-repeat;
-		filter: brightness(0.7);
+	.pin.pin-date::after {
+		background: url("/img/pin-calender.svg") no-repeat;
+		filter: invert() brightness(0.7);
 		background-size: contain;
 		background-position: center;
 	}
 
-	.pin.pin-date::after {
-		background: url("/img/date-pin.png") no-repeat;
-		filter: brightness(0.7);
+	.pin.pin-pencil::after {
+		background: url("/img/pin-pencil.svg") no-repeat;
+		filter: invert() brightness(0.7);
 		background-size: contain;
 		background-position: center;
 	}
 
 	.pin.pin-person::after {
-		background: url("/img/person-pin.png") no-repeat;
-		filter: brightness(0.7);
+		background: url("/img/pin-person.svg") no-repeat;
+		filter: invert() brightness(0.7);
 		background-size: contain;
 		background-position: center;
 	}
 
 	.pin.pin-people::after {
-		background: url("/img/person-pin.png") no-repeat;
+		background: url("/img/pin-person.svg") no-repeat;
+		filter: invert() brightness(0.7);
+		background-size: contain;
+		background-position: center;
+	}
+
+	.pin.pin-location::after {
+		background: url("/img/pin-location.svg") no-repeat;
 		filter: brightness(0.7);
 		background-size: contain;
 		background-position: center;

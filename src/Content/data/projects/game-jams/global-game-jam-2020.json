@@ -48,6 +48,13 @@
       "Content": "3 People",
       "Url": null,
       "DisplayOnHomepage": true
+    },
+    {
+      "Tooltip": "Theme",
+      "Icon": "pencil",
+      "Content": "Repair",
+      "Url": null,
+      "DisplayOnHomepage": true
     }
   ],
   "Order": 1
