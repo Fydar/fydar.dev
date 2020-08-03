@@ -7,7 +7,7 @@
   "Disciplines": [
     "data/disciplines/gameplay-programming.json"
   ],
-  "PublishedDate": 1595040153,
+  "PublishedDate": 1530403200,
   "ProjectCategory": "data/projects/categories/category-personal.json",
   "Institution": null,
   "Page": "pages/projects/personal/astral-elites.html",
@@ -40,5 +40,5 @@
       "DisplayOnHomepage": true
     }
   ],
-  "Order": 5
+  "Order": 30
 }

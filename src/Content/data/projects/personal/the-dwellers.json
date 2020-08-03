@@ -7,7 +7,7 @@
   "Disciplines": [
     "data/disciplines/gameplay-programming.json"
   ],
-  "PublishedDate": 1595040153,
+  "PublishedDate": 1527811200,
   "ProjectCategory": "data/projects/categories/category-personal.json",
   "Institution": null,
   "Page": "pages/projects/personal/the-dwellers.html",
@@ -35,5 +35,5 @@
       "DisplayOnHomepage": true
     }
   ],
-  "Order": 6
+  "Order": 70
 }

@@ -15,6 +15,11 @@
       "SiteName": "Itch.io",
       "Url": "https://fydar.itch.io/road-to-northstead",
       "Icon": "itch-io"
+    },
+    {
+      "SiteName": "YouTube",
+      "Url": "https://www.youtube.com/watch?v=nt5aEzyqaOU",
+      "Icon": "youtube"
     }
   ],
   "Badges": [

@@ -8,7 +8,7 @@
     "data/disciplines/gameplay-programming.json",
     "data/disciplines/network-programming.json"
   ],
-  "PublishedDate": 1595040153,
+  "PublishedDate": 1485907200,
   "ProjectCategory": "data/projects/categories/category-personal.json",
   "Institution": null,
   "Page": "pages/projects/personal/crypt-crawl.html",
@@ -43,5 +43,5 @@
       "DisplayOnHomepage": true
     }
   ],
-  "Order": 9
+  "Order": 100
 }

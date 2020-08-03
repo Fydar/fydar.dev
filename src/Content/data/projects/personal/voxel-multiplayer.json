@@ -8,7 +8,7 @@
     "data/disciplines/gameplay-programming.json",
     "data/disciplines/network-programming.json"
   ],
-  "PublishedDate": 1595040153,
+  "PublishedDate": 1517443200,
   "ProjectCategory": "data/projects/categories/category-personal.json",
   "Institution": null,
   "Page": "pages/projects/personal/voxel-multiplayer.html",
@@ -43,5 +43,5 @@
       "DisplayOnHomepage": true
     }
   ],
-  "Order": 7
+  "Order": 80
 }

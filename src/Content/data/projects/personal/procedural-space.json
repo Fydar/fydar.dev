@@ -7,7 +7,7 @@
   "HideOnHomePage": true,
   "Disciplines": [
   ],
-  "PublishedDate": 1595040153,
+  "PublishedDate": 1472688000,
   "ProjectCategory": "data/projects/categories/category-personal.json",
   "Institution": null,
   "Page": "pages/projects/personal/procedural-space.html",
@@ -35,5 +35,5 @@
       "DisplayOnHomepage": true
     }
   ],
-  "Order": 10
+  "Order": 140
 }

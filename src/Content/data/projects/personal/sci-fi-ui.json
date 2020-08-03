@@ -7,7 +7,7 @@
   "Disciplines": [
     "data/disciplines/ui-programming.json"
   ],
-  "PublishedDate": 1595040153,
+  "PublishedDate": 1477958400,
   "ProjectCategory": "data/projects/categories/category-personal.json",
   "Institution": null,
   "Page": "pages/projects/personal/sci-fi-ui.html",
@@ -35,5 +35,5 @@
       "DisplayOnHomepage": true
     }
   ],
-  "Order": 10
+  "Order": 130
 }

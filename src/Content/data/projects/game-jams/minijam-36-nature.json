@@ -15,6 +15,11 @@
       "SiteName": "Itch.io",
       "Url": "https://fydar.itch.io/lost-blues",
       "Icon": "itch-io"
+    },
+    {
+      "SiteName": "YouTube",
+      "Url": "https://www.youtube.com/watch?v=N0eWZrliNG4",
+      "Icon": "youtube"
     }
   ],
   "Badges": [

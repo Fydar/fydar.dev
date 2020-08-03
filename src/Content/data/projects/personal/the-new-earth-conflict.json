@@ -7,7 +7,7 @@
   "Disciplines": [
     "data/disciplines/gameplay-programming.json"
   ],
-  "PublishedDate": 1595040153,
+  "PublishedDate": 1493596800,
   "ProjectCategory": "data/projects/categories/category-personal.json",
   "Institution": null,
   "Page": "pages/projects/personal/the-new-earth-conflict.html",
@@ -42,5 +42,5 @@
       "DisplayOnHomepage": true
     }
   ],
-  "Order": 8
+  "Order": 90
 }

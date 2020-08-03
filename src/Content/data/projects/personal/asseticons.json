@@ -7,7 +7,7 @@
   "Disciplines": [
     "data/disciplines/tools-programming.json"
   ],
-  "PublishedDate": 1595040153,
+  "PublishedDate": 1506816000,
   "ProjectCategory": "data/projects/categories/category-personal.json",
   "Institution": null,
   "Page": "pages/projects/personal/asseticons.html",
@@ -45,5 +45,5 @@
       "DisplayOnHomepage": true
     }
   ],
-  "Order": 5
+  "Order": 20
 }

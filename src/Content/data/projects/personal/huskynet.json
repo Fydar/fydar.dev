@@ -9,7 +9,7 @@
     "data/disciplines/network-programming.json",
     "data/disciplines/tools-programming.json"
   ],
-  "PublishedDate": 1595040153,
+  "PublishedDate": 1596485058,
   "ProjectCategory": "data/projects/categories/category-personal.json",
   "Institution": null,
   "Page": "pages/projects/personal/huskynet.html",
@@ -31,5 +31,5 @@
       "DisplayOnHomepage": true
     }
   ],
-  "Order": 5
+  "Order": 50
 }

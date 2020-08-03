@@ -7,7 +7,7 @@
   "HideOnHomePage": true,
   "Disciplines": [
   ],
-  "PublishedDate": 1595040153,
+  "PublishedDate": 1496275200,
   "ProjectCategory": "data/projects/categories/category-personal.json",
   "Institution": null,
   "Page": "pages/projects/personal/astral-swarm.html",
@@ -40,5 +40,5 @@
       "DisplayOnHomepage": true
     }
   ],
-  "Order": 5
+  "Order": 110
 }
