@@ -3,7 +3,7 @@
   "Slug": "the-new-earth-conflict",
   "FeaturedImage": "img/the-new-earth-conflict-header.png",
   "HoverImage": "img/the-new-earth-conflict-1.png",
-  "Excerpt": "A space-based strategy game",
+  "Excerpt": "A space strategy game",
   "Disciplines": [
     "data/disciplines/gameplay-programming.json"
   ],

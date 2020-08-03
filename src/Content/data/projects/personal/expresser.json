@@ -1,0 +1,39 @@
+{
+  "ProjectName": "Expresser",
+  "Slug": "expresser",
+  "FeaturedImage": "img/expresser-csharp-2.png",
+  "HoverImage": "img/expresser-invalid-chars-1.png",
+  "Excerpt": "Expresser is a modular DSL Lexer.",
+  "Disciplines": [
+    "data/disciplines/tools-programming.json"
+  ],
+  "PublishedDate": 1595040153,
+  "ProjectCategory": "data/projects/categories/category-personal.json",
+  "Institution": null,
+  "Page": "pages/projects/personal/expresser.html",
+  "ProjectSubtitle": null,
+  "Links": [
+    {
+      "SiteName": "GitHub",
+      "Url": "https://github.com/Fydar/Expresser",
+      "Icon": "github"
+    }
+  ],
+  "Badges": [
+    {
+      "Tooltip": "Date",
+      "Icon": "date",
+      "Content": "May 2019",
+      "Url": null,
+      "DisplayOnHomepage": true
+    },
+    {
+      "Tooltip": "Team",
+      "Icon": "person",
+      "Content": "Solo",
+      "Url": null,
+      "DisplayOnHomepage": true
+    }
+  ],
+  "Order": 5
+}
