@@ -1,0 +1,37 @@
+﻿@using Portfolio.Instance;
+@using Portfolio.Instance.ViewComponents;
+@using Portfolio.Instance.Models;
+@using Portfolio.Instance.Services.ContentService;
+@using Portfolio.Models;
+@using Portfolio.Models.Blog;
+@using System.IO;
+
+@{
+	Layout = "_Layout";
+}
+
+@model BlogPostModel
+@{
+	ViewData["Title"] = Model.PostTitle;
+	ViewData["HeaderStyle"] = "BlogStyle";
+	ViewData["FeaturedImage"] = Model.FeaturedImage;
+}
+
+@inject IContentService contentService;
+
+<div class="page">
+	<header>
+		<div class="container">
+			<h2>@Model.PostTitle</h2>
+		</div>
+	</header>
+	<section>
+		<div class="container">
+			@{
+				using var stream = Model.PageResource.Content.LoadStream();
+				using var sr = new StreamReader(stream);
+				@Html.Raw(sr.ReadToEnd());
+			}
+		</div>
+	</section>
+</div>

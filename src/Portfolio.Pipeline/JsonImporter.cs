@@ -1,5 +1,6 @@
 ﻿using Newtonsoft.Json;
 using Portfolio.Models;
+using Portfolio.Models.Blog;
 using RPGCore.Packages.Pipeline;
 using System;
 using System.Collections.Generic;
@@ -73,6 +74,15 @@ namespace Portfolio.Pipeline
 				var loaded = LoadJson<CompanyModel>(importer);
 
 				importer.Dependencies.Register(loaded.IconUrl);
+				importer.Dependencies.Register(loaded.Page);
+			}
+			else if (importer.ArchiveEntry.FullName.StartsWith("data/blog/posts"))
+			{
+				importer.ImporterTags.Add("type-blogpost");
+
+				var loaded = LoadJson<BlogPostModel>(importer);
+
+				importer.Dependencies.Register(loaded.FeaturedImage);
 				importer.Dependencies.Register(loaded.Page);
 			}
 		}

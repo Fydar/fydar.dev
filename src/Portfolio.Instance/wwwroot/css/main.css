@@ -1087,15 +1087,30 @@ div.post-image {
 
 
 @media (min-width: 576px) {
-
 	.post-text {
 		margin: 1rem 3rem;
 	}
+
+	.container .card-grid {
+		grid-template-columns: 1fr 1fr;
+	}
+
+		.container .card-grid.card-grid-sm {
+			grid-template-columns: 1fr 1fr;
+		}
+
+		.container .card-grid.card-grid-xs {
+			grid-template-columns: 1fr 1fr 1fr;
+		}
 }
 
 @media (min-width: 768px) {
+	.page .container {
+		max-width: 688px;
+	}
+
 	.container {
-		max-width: 526px;
+		max-width: 720px;
 		width: 100%;
 		padding: 0;
 	}
@@ -1115,10 +1130,6 @@ div.post-image {
 		.container.container-sm {
 			max-width: 720px;
 		}
-
-	.page .container {
-		max-width: 616px;
-	}
 
 	.post-image {
 		width: 85%;

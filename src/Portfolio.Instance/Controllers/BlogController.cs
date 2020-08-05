@@ -25,22 +25,10 @@ namespace Portfolio.Instance.Controllers
 		[Route("/blog/{identifier}")]
 		public IActionResult Item(string identifier)
 		{
-			var category = contentService.GetCategory(identifier);
-			if (category != null)
+			var blogPost = contentService.GetBlogPost(identifier);
+			if (blogPost != null)
 			{
-				return View("Category", new CategoryViewModel()
-				{
-					Category = category
-				});
-			}
-
-			var project = contentService.GetProject(identifier);
-			if (project != null)
-			{
-				return View("Project", new ProjectViewModel()
-				{
-					Project = project
-				});
+				return View("BlogPost", blogPost);
 			}
 
 			return NotFound();

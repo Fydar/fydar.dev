@@ -1,0 +1,27 @@
+﻿@using Portfolio.Instance;
+@using Portfolio.Instance.ViewComponents;
+@using Portfolio.Instance.Models;
+@using Portfolio.Instance.Services.ContentService;
+@using Portfolio.Models;
+
+@model PortfolioIndexViewModel
+@{
+	ViewData["Title"] = "";
+	ViewData["HeaderStyle"] = "BlogStyle";
+}
+
+@inject IContentService contentService;
+
+<div class="container">
+	@foreach (var blogPost in contentService.BlogPosts)
+	{
+		<div class="page">
+			<header>
+				<h2>@blogPost.PostTitle</h2>
+			</header>
+			<section>
+
+			</section>
+		</div>
+	}
+</div>

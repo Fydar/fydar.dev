@@ -1,6 +1,7 @@
 ﻿using Newtonsoft.Json;
 using Portfolio.Instance.Utility;
 using Portfolio.Models;
+using Portfolio.Models.Blog;
 using RPGCore.Packages;
 using System;
 using System.Collections.Generic;
@@ -17,6 +18,7 @@ namespace Portfolio.Instance.Services.ContentService
 		public List<ProjectModel> Projects { get; }
 		public List<ProjectCategoryModel> Categories { get; }
 		public List<DisciplineModel> Disciplines { get; }
+		public List<BlogPostModel> BlogPosts { get; }
 
 		public LocalContentService()
 		{
@@ -24,30 +26,32 @@ namespace Portfolio.Instance.Services.ContentService
 			serializer = new JsonSerializer();
 			deserializationCache = new Dictionary<IResource, object>();
 
-			Projects = new List<ProjectModel>();
-			foreach (var resource in contentExplorer.Tags["type-project"])
+			Projects = DeserializeAll<ProjectModel>("type-project");
+			Categories = DeserializeAll<ProjectCategoryModel>("type-category");
+			foreach (var category in Categories)
 			{
-				Projects.Add(GetOrDeserialize<ProjectModel>(resource));
-			}
-			Projects.Sort();
-
-			Categories = new List<ProjectCategoryModel>();
-			foreach (var resource in contentExplorer.Tags["type-category"])
-			{
-				var category = GetOrDeserialize<ProjectCategoryModel>(resource);
 				category.Projects.Sort();
-				Categories.Add(category);
 			}
-			Categories.Sort();
 
-			Disciplines = new List<DisciplineModel>();
-			foreach (var resource in contentExplorer.Tags["type-discipline"])
+			Disciplines = DeserializeAll<DisciplineModel>("type-discipline");
+			foreach (var discipline in Disciplines)
 			{
-				var discipline = GetOrDeserialize<DisciplineModel>(resource);
 				discipline.FeaturedProjects.Sort();
-				Disciplines.Add(discipline);
 			}
-			Disciplines.Sort();
+
+			BlogPosts = DeserializeAll<BlogPostModel>("type-blogpost");
+		}
+
+		List<T> DeserializeAll<T>(string tag)
+		{
+			var items = new List<T>();
+			foreach (var resource in contentExplorer.Tags[tag])
+			{
+				var item = GetOrDeserialize<T>(resource);
+				items.Add(item);
+			}
+			items.Sort();
+			return items;
 		}
 
 		public ProjectModel GetProject(string slug)
@@ -81,6 +85,18 @@ namespace Portfolio.Instance.Services.ContentService
 				if (string.Equals(discipline.Slug, slug, StringComparison.OrdinalIgnoreCase))
 				{
 					return discipline;
+				}
+			}
+			return null;
+		}
+
+		public BlogPostModel GetBlogPost(string slug)
+		{
+			foreach (var blogPost in BlogPosts)
+			{
+				if (string.Equals(blogPost.Slug, slug, StringComparison.OrdinalIgnoreCase))
+				{
+					return blogPost;
 				}
 			}
 			return null;
