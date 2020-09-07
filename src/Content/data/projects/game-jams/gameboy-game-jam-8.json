@@ -1,0 +1,61 @@
+{
+  "ProjectName": "Mini Miner",
+  "ProjectSubtitle": "Gameboy Game Jam 8",
+  "Slug": "mini-miner",
+  "FeaturedImage": "img/mini-miner-1.png",
+  "HoverImage": "img/mini-miner-2.png",
+  "Excerpt": "My submission for the week-long game jam making Gameboy-style games.",
+  "Disciplines": [],
+  "PublishedDate": 1599508587,
+  "ProjectCategory": "data/projects/categories/category-gamejam.json",
+  "Institution": null,
+  "Page": "pages/projects/game-jams/mini-miner.html",
+  "Links": [
+    {
+      "SiteName": "GitHub",
+      "Url": "https://github.com/Fydar/MiniMiner",
+      "Icon": "github"
+    },
+    {
+      "SiteName": "Itch.io",
+      "Url": "https://fydar.itch.io/mini-miner",
+      "Icon": "itch-io"
+    },
+    {
+      "SiteName": "YouTube",
+      "Url": "https://www.youtube.com/watch?v=_JwmO41hxcI",
+      "Icon": "youtube"
+    }
+  ],
+  "Badges": [
+    {
+      "Tooltip": "Location",
+      "Icon": "location",
+      "Content": "Remote",
+      "Url": null,
+      "DisplayOnHomepage": false
+    },
+    {
+      "Tooltip": "Date",
+      "Icon": "date",
+      "Content": "September 2020",
+      "Url": null,
+      "DisplayOnHomepage": true
+    },
+    {
+      "Tooltip": "Team",
+      "Icon": "person",
+      "Content": "Solo",
+      "Url": null,
+      "DisplayOnHomepage": true
+    },
+    {
+      "Tooltip": "Theme",
+      "Icon": "pencil",
+      "Content": "Gameboy",
+      "Url": null,
+      "DisplayOnHomepage": true
+    }
+  ],
+  "Order": -1
+}
