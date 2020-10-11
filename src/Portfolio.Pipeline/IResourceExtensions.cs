@@ -7,7 +7,7 @@ namespace Portfolio.Pipeline
 	{
 		public static string TransformName(this IResource resource, string insert)
 		{
-			return ResourceHelper.TransformName(resource.FullName, insert);
+			return ResourceHelper.TransformName(resource.Name, insert);
 		}
 	}
 }

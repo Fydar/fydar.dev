@@ -13,7 +13,7 @@ namespace Portfolio.Pipeline
 	{
 		private static readonly Dictionary<string, string> featuredImageMetadata = new Dictionary<string, string>()
 		{
-			["Size"] = "fullscreen,medium,thumbnail"
+			["Size"] = "fullscreen,medium,thumbnail,blur"
 		};
 
 		public override void ProcessImport(ProjectResourceImporter importer)

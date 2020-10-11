@@ -22,7 +22,7 @@ namespace Portfolio.Pipeline
 			return resource.Extension == ".html";
 		}
 
-		public override void BuildResource(IResource resource, IArchive archive)
+		public override void BuildResource(IResource resource, IArchiveDirectory destination)
 		{
 			Console.WriteLine($"Exporting {resource.FullName}...");
 
@@ -59,7 +59,7 @@ namespace Portfolio.Pipeline
 				}
 			}
 
-			var entry = archive.Files.GetFile($"data/{resource.FullName}");
+			var entry = destination.Files.GetFile(resource.Name);
 			using var output = entry.OpenWrite();
 			document.Save(output);
 		}

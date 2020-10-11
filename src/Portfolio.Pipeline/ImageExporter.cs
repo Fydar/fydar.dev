@@ -9,14 +9,37 @@ using System.IO;
 
 namespace Portfolio.Pipeline
 {
+	public class ImageSettings
+	{
+		public int Width { get; set; }
+		public ImageFormat ImageFormat { get; set; }
+	}
+
 	public class ImageExporter : ResourceExporter
 	{
-		private static readonly Dictionary<string, int> resolutions = new Dictionary<string, int>()
+		internal static readonly Dictionary<string, ImageSettings> resolutions = new Dictionary<string, ImageSettings>()
 		{
-			["tiny"] = 64,
-			["thumbnail"] = 150,
-			["medium"] = 360,
-			["fullscreen"] = 1920,
+			["blur"] = new ImageSettings()
+			{
+				Width = 48,
+				ImageFormat = ImageFormat.Jpeg
+			},
+			["tiny"] = new ImageSettings()
+			{
+				Width = 64
+			},
+			["thumbnail"] = new ImageSettings()
+			{
+				Width = 150
+			},
+			["medium"] = new ImageSettings()
+			{
+				Width = 360
+			},
+			["fullscreen"] = new ImageSettings()
+			{
+				Width = 1920
+			},
 		};
 
 		public override bool CanExport(IResource resource)
@@ -26,11 +49,11 @@ namespace Portfolio.Pipeline
 				|| string.Equals(resource.Extension, ".jpeg", StringComparison.OrdinalIgnoreCase);
 		}
 
-		public override void BuildResource(IResource resource, IArchive archive)
+		public override void BuildResource(IResource resource, IArchiveDirectory destination)
 		{
 			Console.WriteLine($"Exporting {resource.FullName}...");
 
-			var entry = archive.Files.GetFile($"data/{resource.FullName}");
+			var entry = destination.Files.GetFile(resource.Name);
 			using (var zipStream = entry.OpenWrite())
 			using (var readStream = resource.Content.LoadStream())
 			{
@@ -57,21 +80,22 @@ namespace Portfolio.Pipeline
 
 			foreach (string size in sizes)
 			{
-				int width = resolutions[size];
+				var imageSettings = resolutions[size];
+				int width = imageSettings.Width;
 				int height = int.MaxValue;
 
 				using var readStream = resource.Content.LoadStream();
 				var source = new Bitmap(readStream);
 				var resized = Resize(source, width, height);
 
-				var resizedEntry = archive.Files.GetFile($"data/{resource.TransformName(size)}");
+				var resizedEntry = destination.Files.GetFile(resource.TransformName(size));
 				using var resizedZipStream = resizedEntry.OpenWrite();
 
-				CompressImageSave(resized, resizedZipStream, resource.Extension, 90);
+				CompressImageSave(resized, resizedZipStream, resource.Extension, 90, imageSettings.ImageFormat);
 			}
 		}
 
-		public static void CompressImageSave(Bitmap bitmap, Stream destination, string extension, int quality)
+		public static void CompressImageSave(Bitmap bitmap, Stream destination, string extension, int quality, ImageFormat imageFormat)
 		{
 			static ImageCodecInfo GetEncoder(ImageFormat format)
 			{
@@ -85,29 +109,33 @@ namespace Portfolio.Pipeline
 				}
 				return null;
 			}
-			ImageCodecInfo encoder;
-			switch (extension)
+
+			if (imageFormat == null)
 			{
-				case ".png":
-				case ".PNG":
-					encoder = GetEncoder(ImageFormat.Png);
-					break;
+				switch (extension)
+				{
+					case ".png":
+					case ".PNG":
+						imageFormat = ImageFormat.Png;
+						break;
 
-				case ".jpeg":
-				case ".jpg":
-				case ".JPEG":
-				case ".JPG":
-					encoder = GetEncoder(ImageFormat.Jpeg);
-					break;
+					case ".jpeg":
+					case ".jpg":
+					case ".JPEG":
+					case ".JPG":
+						imageFormat = ImageFormat.Jpeg;
+						break;
 
-				case ".bmp":
-				case ".BMP":
-					encoder = GetEncoder(ImageFormat.Bmp);
-					break;
+					case ".bmp":
+					case ".BMP":
+						imageFormat = ImageFormat.Bmp;
+						break;
 
-				default:
-					throw new InvalidOperationException("Cannot compress a file of type " + extension);
+					default:
+						throw new InvalidOperationException("Cannot compress a file of type " + extension);
+				}
 			}
+			var encoder = GetEncoder(imageFormat);
 
 			var parameters = new EncoderParameters(1);
 			parameters.Param[0] = new EncoderParameter(Encoder.Quality, quality);

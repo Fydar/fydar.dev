@@ -11,12 +11,13 @@ namespace Portfolio.Pipeline.BuildStep
 			try
 			{
 				string destination = args[0].Trim('"');
+				var destinationDirectoryInfo = new DirectoryInfo(destination);
 
 				var directory = new FileInfo(typeof(Program).Assembly.Location).Directory;
 
 				string sourceProjectPath = Path.Combine(directory.FullName, "Content");
 
-				Console.WriteLine($"Copying game data from {sourceProjectPath} to {destination}...");
+				Console.WriteLine($"Copying game data:\n- FROM:  {sourceProjectPath}\n- TO:    {destinationDirectoryInfo.FullName}");
 
 				using (var project = ProjectExplorer.Load(sourceProjectPath, PortfolioPipelines.Import))
 				{
