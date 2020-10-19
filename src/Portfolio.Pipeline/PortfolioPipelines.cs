@@ -12,7 +12,10 @@ namespace Portfolio.Pipeline
 		{
 			Import = ImportPipeline.Create()
 				.UseJsonMetaFiles()
-				.UseProcessor(new JsonImporter())
+				.UseImporter(new ImageImporter())
+				.UseImporter(new JsonImporter())
+				.UseProcessor(new ImageProcessor())
+				.UseProcessor(new LoggingImporter())
 				.Build();
 
 			Build = new BuildPipeline()
@@ -20,7 +23,6 @@ namespace Portfolio.Pipeline
 				ImportPipeline = Import
 			};
 			Build.Exporters.Add(new JsonExporter());
-			Build.Exporters.Add(new ImageExporter());
 			Build.Exporters.Add(new MarkupExporter());
 		}
 	}

@@ -1,96 +1,105 @@
 ﻿using Newtonsoft.Json;
 using Portfolio.Models;
 using Portfolio.Models.Blog;
+using RPGCore.Packages;
+using RPGCore.Packages.Archives;
 using RPGCore.Packages.Pipeline;
-using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Xml;
 
 namespace Portfolio.Pipeline
 {
-	public class JsonImporter : ImportProcessor
+	public class JsonImporter : IArchiveFileImporter
 	{
 		private static readonly Dictionary<string, string> featuredImageMetadata = new Dictionary<string, string>()
 		{
 			["Size"] = "fullscreen,medium,thumbnail,blur"
 		};
 
-		public override void ProcessImport(ProjectResourceImporter importer)
+		public bool CanImport(IArchiveFile archiveFile)
 		{
-			Console.WriteLine($"Importing {importer.ArchiveEntry.FullName}...");
-			if (importer.ArchiveEntry.FullName.StartsWith("data/projects/categories"))
+			return archiveFile.Extension == ".json";
+		}
+
+		public IEnumerable<ProjectResourceUpdate> ImportFile(ArchiveFileImporterContext context, IArchiveFile archiveFile)
+		{
+			var update = context.AuthorUpdate(archiveFile.FullName)
+				.WithContent(archiveFile);
+
+			if (archiveFile.FullName.StartsWith("data/projects/categories"))
 			{
-				importer.ImporterTags.Add("type-category");
+				update.ImporterTags.Add("type-category");
 
-				var loaded = LoadJson<ProjectCategoryModel>(importer);
+				var loaded = LoadJson<ProjectCategoryModel>(archiveFile);
 
-				importer.Dependencies.Register(loaded.FeaturedImage, metadata: featuredImageMetadata);
+				update.Dependencies.Register(loaded.FeaturedImage, metadata: featuredImageMetadata);
 			}
-			else if (importer.ArchiveEntry.FullName.StartsWith("data/disciplines"))
+			else if (archiveFile.FullName.StartsWith("data/disciplines"))
 			{
-				importer.ImporterTags.Add("type-discipline");
+				update.ImporterTags.Add("type-discipline");
 
-				var loaded = LoadJson<DisciplineModel>(importer);
+				var loaded = LoadJson<DisciplineModel>(archiveFile);
 
-				importer.Dependencies.Register(loaded.Page);
-				importer.Dependencies.Register(loaded.FeaturedImage);
-				importer.Dependencies.Register(loaded.IconImage);
+				update.Dependencies.Register(loaded.Page);
+				update.Dependencies.Register(loaded.FeaturedImage);
+				update.Dependencies.Register(loaded.IconImage);
 			}
-			else if (importer.ArchiveEntry.FullName.StartsWith("data/projects"))
+			else if (archiveFile.FullName.StartsWith("data/projects"))
 			{
-				importer.ImporterTags.Add("type-project");
+				update.ImporterTags.Add("type-project");
 
-				var loaded = LoadJson<ProjectModel>(importer);
-				importer.Dependencies.Register(loaded.FeaturedImage, metadata: featuredImageMetadata);
-				importer.Dependencies.Register(loaded.HoverImage, metadata: featuredImageMetadata);
+				var loaded = LoadJson<ProjectModel>(archiveFile);
+				update.Dependencies.Register(loaded.FeaturedImage, metadata: featuredImageMetadata);
+				update.Dependencies.Register(loaded.HoverImage, metadata: featuredImageMetadata);
 
-				importer.Dependencies.Register(loaded.ProjectCategory);
-				importer.Dependencies.Register(loaded.Page);
+				update.Dependencies.Register(loaded.ProjectCategory);
+				update.Dependencies.Register(loaded.Page);
 
 				if (!string.IsNullOrEmpty(loaded.Institution))
 				{
-					importer.Dependencies.Register(loaded.Institution);
+					update.Dependencies.Register(loaded.Institution);
 				}
 
 				foreach (string disciplines in loaded.Disciplines)
 				{
-					importer.Dependencies.Register(disciplines);
+					update.Dependencies.Register(disciplines);
 				}
 			}
-			else if (importer.ArchiveEntry.FullName.StartsWith("data/education"))
+			else if (archiveFile.FullName.StartsWith("data/education"))
 			{
-				importer.ImporterTags.Add("type-education");
+				update.ImporterTags.Add("type-education");
 
-				var loaded = LoadJson<CollegeModel>(importer);
+				var loaded = LoadJson<CollegeModel>(archiveFile);
 
-				importer.Dependencies.Register(loaded.IconUrl);
-				importer.Dependencies.Register(loaded.Page);
+				update.Dependencies.Register(loaded.IconUrl);
+				update.Dependencies.Register(loaded.Page);
 			}
-			else if (importer.ArchiveEntry.FullName.StartsWith("data/company"))
+			else if (archiveFile.FullName.StartsWith("data/company"))
 			{
-				importer.ImporterTags.Add("type-company");
+				update.ImporterTags.Add("type-company");
 
-				var loaded = LoadJson<CompanyModel>(importer);
+				var loaded = LoadJson<CompanyModel>(archiveFile);
 
-				importer.Dependencies.Register(loaded.IconUrl);
-				importer.Dependencies.Register(loaded.Page);
+				update.Dependencies.Register(loaded.IconUrl);
+				update.Dependencies.Register(loaded.Page);
 			}
-			else if (importer.ArchiveEntry.FullName.StartsWith("data/blog/posts"))
+			else if (archiveFile.FullName.StartsWith("data/blog/posts"))
 			{
-				importer.ImporterTags.Add("type-blogpost");
+				update.ImporterTags.Add("type-blogpost");
 
-				var loaded = LoadJson<BlogPostModel>(importer);
+				var loaded = LoadJson<BlogPostModel>(archiveFile);
 
-				importer.Dependencies.Register(loaded.FeaturedImage);
-				importer.Dependencies.Register(loaded.Page);
+				update.Dependencies.Register(loaded.FeaturedImage);
+				update.Dependencies.Register(loaded.Page);
 			}
+
+			yield return update;
 		}
 
-		private static TModel LoadJson<TModel>(ProjectResourceImporter importer)
+		private static TModel LoadJson<TModel>(IArchiveFile archiveFile)
 		{
 			var serializer = new JsonSerializer();
-			using var file = importer.ArchiveEntry.OpenRead();
+			using var file = archiveFile.OpenRead();
 			using var sr = new StreamReader(file);
 			using var reader = new JsonTextReader(sr);
 
