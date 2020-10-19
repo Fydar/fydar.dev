@@ -433,16 +433,20 @@ table.code-table {
 	position: absolute;
 }
 
-	.overlay .overlay-bottom {
+	.overlay .overlay-bottom-right {
 		position: absolute;
 		bottom: 0;
-		padding: 0 0 4px 0;
-		font-size: 1rem;
-		font-weight: bold;
+		right: 0;
+	}
+
+	.overlay .overlay-top-right {
+		position: absolute;
+		top: 0;
+		right: 0;
 	}
 
 .badge-bar {
-	width: 100%;
+	width: auto;
 	display: flex;
 	flex-wrap: wrap;
 	pointer-events: none;
@@ -451,6 +455,8 @@ table.code-table {
 	.badge-bar.badge-bar-vertical {
 		flex-wrap: wrap-reverse;
 		justify-content: flex-end;
+		padding: 4px;
+		font-size: 1rem;
 	}
 
 	.badge-bar.badge-bar-subtle {
@@ -496,6 +502,7 @@ table.code-table {
 		background-color: #fafbfc;
 		border: 1px solid #c8e1ff;
 		color: #444;
+		font-weight: bold;
 		box-shadow: 0 0 0 0 #4287f5ff;
 		transition: box-shadow .15s ease-in-out, background-color .15s ease-in-out;
 	}
