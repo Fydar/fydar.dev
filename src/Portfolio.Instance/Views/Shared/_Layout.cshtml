@@ -56,42 +56,46 @@
 	}
 	else
 	{
-		<div class="parallax-container parallax-anchor-top" style="overflow: hidden; position: relative; @(fullscreen ? "min-height: 100vh" : "")">
-			@if (ViewData.TryGetValue("FeaturedImage", out var featuredImage))
-			{
-				<img class="parallax-layer" src="/@ResourceHelper.TransformName(featuredImage.ToString(), "fullscreen")" style="z-index: -1; image-rendering: pixelated; object-fit: cover; width: 100%; min-height: 200%;">
-			}
-			else
-			{
-				<img class="parallax-layer" src="/img/minijam-40-hunters-header.png" style="z-index: -1; image-rendering: pixelated; object-fit: cover; width: 100%; min-height: 200%;">
-			}
-			<div class="container container-sm">
-				<div class="page page-profile">
-					<div class="page-section" style="text-align: center;">
-						<img src="/img/profile.svg" style="margin: auto; height: 166px; margin-top: 1.75rem; margin-bottom: 0.75rem;" />
-						<h1 style="font-size: 2.5rem; margin: 1.5rem 0 0.5rem 0;">Anthony Marmont</h1>
-						<!--<h2 style="font-size: 2.25rem; margin: 0 0 0.5rem 0; color: #999;">&lt;/programmer&gt;</h2>-->
-						<p class="badge-bar badge-bar-social">
-							<a class="badge" target="_blank" href="https://www.youtube.com/channel/UCEEI1m2TCso1OGWEHvHS20g"><span class="pin pin-youtube"></span></a>
-							<a class="badge" target="_blank" href="https://fydar.itch.io/"><span class="pin pin-itch-io"></span></a>
-							<a class="badge" target="_blank" href="https://github.com/Fydar"><span class="pin pin-github"></span></a>
-							<a class="badge" target="_blank" href="https://www.linkedin.com/in/anthonymarmont/"><span class="pin pin-linkedin"></span></a>
-						</p>
-					</div>
+<div class="parallax-container parallax-anchor-top" style="overflow: hidden; position: relative; @(fullscreen ? "min-height: 100vh" : "")">
+	@if (ViewData.TryGetValue("FeaturedImage", out var featuredImage))
+	{
+		<div class="parallax-layer" style="z-index: -1; width: 100%; min-height: 200%;">
+			<partial name="ResourceImage" model='new ResourceImageViewModel((string)featuredImage, "fullscreen")' />
+		</div>
+	}
+	else
+	{
+		<div class="parallax-layer" style="z-index: -1; width: 100%; min-height: 200%;">
+			<partial name="ResourceImage" model='new ResourceImageViewModel("img/minijam-40-hunters-header.png")' />
+		</div>
+	}
+	<div class="container container-sm">
+		<div class="page page-profile">
+			<div class="page-section" style="text-align: center;">
+				<img src="/img/profile.svg" style="margin: auto; height: 166px; margin-top: 1.75rem; margin-bottom: 0.75rem;" />
+				<h1 style="font-size: 2.5rem; margin: 1.5rem 0 0.5rem 0;">Anthony Marmont</h1>
+				<!--<h2 style="font-size: 2.25rem; margin: 0 0 0.5rem 0; color: #999;">&lt;/programmer&gt;</h2>-->
+				<p class="badge-bar badge-bar-social">
+					<a class="badge" target="_blank" href="https://www.youtube.com/channel/UCEEI1m2TCso1OGWEHvHS20g"><span class="pin pin-youtube"></span></a>
+					<a class="badge" target="_blank" href="https://fydar.itch.io/"><span class="pin pin-itch-io"></span></a>
+					<a class="badge" target="_blank" href="https://github.com/Fydar"><span class="pin pin-github"></span></a>
+					<a class="badge" target="_blank" href="https://www.linkedin.com/in/anthonymarmont/"><span class="pin pin-linkedin"></span></a>
+				</p>
+			</div>
 
-					<div class="page-section">
-						<div class="navbar">
-							<div class="navbar-grouping">
-								<a class="nav-button @(ViewContext.RouteData.Values["Controller"].ToString() == "Portfolio" ? "active" : "")" asp-controller="Portfolio" asp-action="Index">Portfolio</a>
-								<a class="nav-button @(ViewContext.RouteData.Values["Controller"].ToString() == "Blog" ? "active" : "")" asp-controller="Blog" asp-action="Index" asp>Blog</a>
-							</div>
-						</div>
+			<div class="page-section">
+				<div class="navbar">
+					<div class="navbar-grouping">
+						<a class="nav-button @(ViewContext.RouteData.Values["Controller"].ToString() == "Portfolio" ? "active" : "")" asp-controller="Portfolio" asp-action="Index">Portfolio</a>
+						<a class="nav-button @(ViewContext.RouteData.Values["Controller"].ToString() == "Blog" ? "active" : "")" asp-controller="Blog" asp-action="Index" asp>Blog</a>
 					</div>
-
-					@RenderSection("NavbarAddon", required: false)
 				</div>
 			</div>
+
+			@RenderSection("NavbarAddon", required: false)
 		</div>
+	</div>
+</div>
 	}
 
 	<div style="min-height: 80vh; padding-top: 32px;">

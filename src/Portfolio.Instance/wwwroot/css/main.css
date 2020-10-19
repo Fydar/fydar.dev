@@ -325,6 +325,7 @@ table.code-table {
 			overflow: hidden;
 		}
 
+			.card .card-image .imageHolder svg,
 			.card .card-image .imageHolder img {
 				width: 100%;
 				height: 100%;

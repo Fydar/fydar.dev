@@ -4,9 +4,9 @@
 
     <div class="card-image">
         <div class="imageHolder">
-            <a asp-controller="Portfolio" asp-action="Item" asp-route-identifier="@Model.Slug">
-                <img src="~/@ResourceHelper.TransformName(Model.FeaturedImage, "medium")" loading="lazy" />
-            </a>
+			<a asp-controller="Portfolio" asp-action="Item" asp-route-identifier="@Model.Slug">
+				<partial name="ResourceImage" model='new ResourceImageViewModel(Model.FeaturedImage, "medium")' />
+			</a>
             <div class="card-hover overlay">
                 @if (!string.IsNullOrEmpty(Model.HoverImage))
                 {
