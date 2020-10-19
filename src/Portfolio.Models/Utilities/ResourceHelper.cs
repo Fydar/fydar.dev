@@ -15,7 +15,8 @@
 				return name;
 			}
 
-			if (insert == "blur")
+			if (insert == "blur"
+				|| insert == "medium")
 			{
 				name = name.Substring(0, name.LastIndexOf('.')) + ".jpg";
 			}
