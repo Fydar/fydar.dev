@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Portfolio.Instance.Models;
+using Portfolio.Instance.ViewModels;
 
 namespace Portfolio.Instance.Controllers
 {

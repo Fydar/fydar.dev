@@ -1,0 +1,48 @@
+﻿@using Portfolio.Instance;
+@using Portfolio.Instance.ViewComponents;
+@using Portfolio.Instance.Models;
+@using Portfolio.Instance.Services.ContentService;
+@using Portfolio.Models;
+
+@model ContactViewModel
+@{
+	ViewData["Title"] = "Contact";
+}
+
+@inject IContentService contentService;
+
+<div class="container">
+	<div class="page">
+		<header>
+			<h2>Contact</h2>
+		</header>
+		<section>
+
+			<form method="post" asp-controller="Contact" asp-action="Submit">
+				<div>
+					<label for="UserEmail">Email:</label>
+				</div>
+				<div>
+					<input name="UserEmail" type="email" />
+				</div>
+
+				<div>
+					<label for="UserSubject">Subject:</label>
+				</div>
+				<div>
+					<input name="UserSubject" type="text" />
+				</div>
+
+				<div>
+					<label for="UserBody">Body:</label>
+				</div>
+				<div>
+					<textarea rows="16" name="UserBody" type="text"></textarea>
+				</div>
+
+				<button type="submit">Send</button>
+			</form>
+
+		</section>
+	</div>
+</div>

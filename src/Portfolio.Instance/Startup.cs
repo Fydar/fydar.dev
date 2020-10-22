@@ -7,6 +7,9 @@ using Microsoft.Extensions.Hosting;
 using Portfolio.Instance.Services.ContentService;
 using Portfolio.Instance.Utility;
 using System.IO;
+using Amazon.Extensions.NETCore.Setup;
+using Amazon.SimpleEmail;
+using Portfolio.Instance.Services.ViewRenderer;
 
 namespace Portfolio.Instance
 {
@@ -29,6 +32,9 @@ namespace Portfolio.Instance
 			});
 
 			services.AddSingleton<IContentService, LocalContentService>();
+			services.AddScoped<IViewToStringRenderer, RazorViewToStringRenderer>();
+
+			services.AddAWSService<IAmazonSimpleEmailService>();
 		}
 
 		public void Configure(IApplicationBuilder app, IWebHostEnvironment env)

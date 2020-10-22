@@ -184,8 +184,8 @@ Resources:
       AssumeRolePolicyDocument:
         Version: 2012-10-17
         Statement:
-          - Sid: ''
-            Effect: Allow
+          - Effect: Allow
+            Sid: ''
             Principal:
               Service:
                 - ecs-tasks.amazonaws.com
@@ -200,12 +200,16 @@ Resources:
       AssumeRolePolicyDocument:
         Version: 2012-10-17
         Statement:
-          - Sid: ''
-            Effect: Allow
+          - Effect: Allow
+            Sid: ''
             Principal:
               Service: ecs-tasks.amazonaws.com
             Action: 'sts:AssumeRole'
-            
+          - Effect: Allow
+            Action: 'ses:SendRawEmail'
+            Resource: '*'
+
+
   PortfolioInstanceTask:
     Type: 'AWS::ECS::TaskDefinition'
     Properties:

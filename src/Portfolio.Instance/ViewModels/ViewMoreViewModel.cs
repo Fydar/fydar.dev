@@ -1,4 +1,4 @@
-namespace Portfolio.Instance.Models
+namespace Portfolio.Instance.ViewModels
 {
 	public class ViewMoreViewModel
 	{

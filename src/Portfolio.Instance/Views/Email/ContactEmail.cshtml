@@ -1,0 +1,65 @@
+﻿@model ContactEmailViewModel
+
+@{
+	Layout = "_EmailTemplate.cshtml";
+}
+
+<div style="background-color: #edf0f3; font-family:wf_segoe-ui_normal, 'Segoe UI', 'Segoe WP', Tahoma, Arial, sans-serif; letter-spacing: -0.1px; color:#333;">
+	<div style="height: 40px;"></div>
+	<table width="90%" border="0" cellpadding="10" align="center"
+		   style="padding: 10px; background-color: #fff;
+            border-bottom: 2.5px solid #ddd;
+            border-right: 1px solid #ddd;
+            border-left: 1px solid #eee;
+            border-top: 1px solid #eee">
+		<thead>
+			<tr>
+				<td>
+					<h2 style="font-weight: normal; margin-bottom: 0;">@Model.FormName</h2>
+
+					<p>At <i>@Model.SubmitTime</i>, a user used the <i>"@Model.FormName"</i> form.</p>
+
+					<div style="border-left: 4px solid #ccc; padding: 4px 0 4px 16px;">
+
+						<p style="font-size: 0.75em; font-weight: bold; color: #555; letter-spacing: 0.5px; margin: 0.5em 0;">FROM</p>
+						<p style="margin: 0.5em 0;">
+							<a href="mailto:@Model.UserEmail" style="color: #555; text-decoration: none; font-size: 0.95em; display: inline-block; background-color: #fafafa; border-radius: 12px; border: 1px solid #ddd; padding: 2px 10px;">@Model.UserEmail</a>
+						</p>
+
+						<p style="font-size: 0.75em; font-weight: bold; color: #555; letter-spacing: 0.5px; margin: 1.5em 0 0.5em 0;">SUBJECT</p>
+						<p style="font-size: 1.1em; margin: 0.5em 0;">@Model.UserSubject</p>
+
+						<p style="font-size: 0.75em; font-weight: bold; color: #555; letter-spacing: 0.5px; margin: 1.5em 0 0.5em 0;">MESSAGE</p>
+						<p style="margin: 0.5em 0; display: block; background-color: #fefefe; border-radius: 5px; border: 1px solid #ddd; padding: 8px; white-space: pre-line;">@Model.UserBody</p>
+
+					</div>
+				</td>
+			</tr>
+		</tbody>
+		<tfoot>
+			<tr>
+				<td>
+					<table width="100%" border="0">
+						<thead>
+							<tr>
+								<td style="vertical-align: bottom">
+
+									<hr style="border: 0; height: 1px; background: #ccc;
+                                    background-image: -webkit-linear-gradient(left, #ddd, #ccc, #ddd);
+                                    background-image: -moz-linear-gradient(left, #ddd, #ccc, #ddd);
+                                    background-image: -ms-linear-gradient(left, #ddd, #ccc, #ddd);
+                                    background-image: -o-linear-gradient(left, #ddd, #ccc, #ddd);" />
+
+									<p style="font-size:13px; color: #999;">Reply with "Unsubscribe" in the subject to unsubscribe.</p>
+
+								</td>
+							</tr>
+						</thead>
+					</table>
+				</td>
+			</tr>
+		</tfoot>
+	</table>
+	<div style="height: 40px;"></div>
+</div>
+

@@ -15,13 +15,13 @@
 
 <div class="container">
 	@await Component.InvokeAsync("BreadcrumbBar", new BreadcrumbBarViewModel(
-		new BreadcrumbModel()
+		new BreadcrumbViewModel()
 		{
 			Controller = "Portfolio",
 			Action = "Index",
 			Text = "Portfolio"
 		},
-		new BreadcrumbModel()
+		new BreadcrumbViewModel()
 		{
 			Controller = "Portfolio",
 			Action = "Item",
@@ -31,7 +31,7 @@
 				["identifier"] = Model.Project.ProjectCategoryModel.Slug
 			}
 		},
-		new BreadcrumbModel()
+		new BreadcrumbViewModel()
 		{
 			Text = Model.Project.ProjectName
 		}
