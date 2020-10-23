@@ -3,6 +3,19 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29521.150
 MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{5C8A9A56-5DD6-4A0D-AB74-4487EB729ADF}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "cf-resources", "cf-resources", "{D43188AB-1AFC-4329-B471-53FADBF189FE}"
+	ProjectSection(SolutionItems) = preProject
+		cf-resources\emailreceive-lambda.yml = cf-resources\emailreceive-lambda.yml
+		cf-resources\instance-ec2-eip.yml = cf-resources\instance-ec2-eip.yml
+		cf-resources\instance-ecs-fargate-lb.yaml = cf-resources\instance-ecs-fargate-lb.yaml
+		cf-resources\portfolioinstance-ecr.yml = cf-resources\portfolioinstance-ecr.yml
+	EndProjectSection
+EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Portfolio.Instance", "Portfolio.Instance\Portfolio.Instance.csproj", "{CF41C32D-C121-4182-810B-7C2766743A82}"
 	ProjectSection(ProjectDependencies) = postProject
 		{24C5C1CD-E1F2-42C9-A459-4320B0E86EF4} = {24C5C1CD-E1F2-42C9-A459-4320B0E86EF4}
@@ -18,10 +31,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RPGCore.Behaviour", "..\..\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RPGCore.Packages", "..\..\RPGCore\src\RPGCore.Packages\RPGCore.Packages.csproj", "{E876ECA6-56DA-40D3-865E-6ECEE59006E4}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{5C8A9A56-5DD6-4A0D-AB74-4487EB729ADF}"
-	ProjectSection(SolutionItems) = preProject
-		.editorconfig = .editorconfig
-	EndProjectSection
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Portfolio.EmailReceive", "Portfolio.EmailReceive\Portfolio.EmailReceive.csproj", "{B76D6E01-DB2C-46A9-91E6-1E121D9D9EFF}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Portfolio.EmailReceive.Tests", "Portfolio.EmailReceive.Tests\Portfolio.EmailReceive.Tests.csproj", "{62D98A56-FC78-4F64-B53C-B97F53C02AEB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -53,6 +65,14 @@ Global
 		{E876ECA6-56DA-40D3-865E-6ECEE59006E4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E876ECA6-56DA-40D3-865E-6ECEE59006E4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E876ECA6-56DA-40D3-865E-6ECEE59006E4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B76D6E01-DB2C-46A9-91E6-1E121D9D9EFF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B76D6E01-DB2C-46A9-91E6-1E121D9D9EFF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B76D6E01-DB2C-46A9-91E6-1E121D9D9EFF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B76D6E01-DB2C-46A9-91E6-1E121D9D9EFF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{62D98A56-FC78-4F64-B53C-B97F53C02AEB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{62D98A56-FC78-4F64-B53C-B97F53C02AEB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{62D98A56-FC78-4F64-B53C-B97F53C02AEB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{62D98A56-FC78-4F64-B53C-B97F53C02AEB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

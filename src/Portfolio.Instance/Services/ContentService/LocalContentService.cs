@@ -42,7 +42,7 @@ namespace Portfolio.Instance.Services.ContentService
 			BlogPosts = DeserializeAll<BlogPostModel>("type-blogpost");
 		}
 
-		List<T> DeserializeAll<T>(string tag)
+		private List<T> DeserializeAll<T>(string tag)
 		{
 			var items = new List<T>();
 			foreach (var resource in contentExplorer.Tags[tag])

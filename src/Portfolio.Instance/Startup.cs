@@ -1,3 +1,4 @@
+using Amazon.SimpleEmail;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -5,11 +6,9 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.FileProviders;
 using Microsoft.Extensions.Hosting;
 using Portfolio.Instance.Services.ContentService;
+using Portfolio.Instance.Services.ViewRenderer;
 using Portfolio.Instance.Utility;
 using System.IO;
-using Amazon.Extensions.NETCore.Setup;
-using Amazon.SimpleEmail;
-using Portfolio.Instance.Services.ViewRenderer;
 
 namespace Portfolio.Instance
 {

@@ -62,7 +62,7 @@ namespace Portfolio.Instance.Controllers
 					{
 						Html = new Content(htmlBody)
 					}
-				},				
+				},
 			};
 
 			await simpleEmailService.SendEmailAsync(request);

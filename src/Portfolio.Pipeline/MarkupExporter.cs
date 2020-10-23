@@ -64,7 +64,7 @@ namespace Portfolio.Pipeline
 			document.Save(output);
 		}
 
-		void WriteHeadings(XmlNode xmlNode, IEnumerable<Heading> headings, string prefix = "")
+		private void WriteHeadings(XmlNode xmlNode, IEnumerable<Heading> headings, string prefix = "")
 		{
 			var listElement = xmlNode.OwnerDocument.CreateNode(XmlNodeType.Element, "ul", null);
 
