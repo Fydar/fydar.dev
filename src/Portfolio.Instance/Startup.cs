@@ -6,6 +6,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.FileProviders;
 using Microsoft.Extensions.Hosting;
 using Portfolio.Instance.Services.ContentService;
+using Portfolio.Instance.Services.PageMetaProvider;
 using Portfolio.Instance.Services.ViewRenderer;
 using Portfolio.Instance.Utility;
 using System.IO;
@@ -32,6 +33,9 @@ namespace Portfolio.Instance
 
 			services.AddSingleton<IContentService, LocalContentService>();
 			services.AddScoped<IViewToStringRenderer, RazorViewToStringRenderer>();
+
+			services.AddSingleton<IPageMetaTransformer, ProjectOpenGraphPageMetaTransformer>();
+			services.AddSingleton<IPageMetaTransformer, ProjectTwitterPageMetaTransformer>();
 
 			services.AddAWSService<IAmazonSimpleEmailService>();
 		}
