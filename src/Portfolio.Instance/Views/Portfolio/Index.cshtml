@@ -11,62 +11,65 @@
 
 @inject IContentService contentService;
 
-@section NavbarAddon {
-    <section>
-        <div class="card-grid">
-            @foreach (var discipline in contentService.Disciplines)
-            {
-                if (discipline.ShowOnHomePage)
-                {
-                    @await Component.InvokeAsync("DisciplineCard", new DisciplineViewModel()
-                    {
-                        Discipline = discipline
-                    })
-                }
-            }
-        </div>
-    </section>
-}
-
 <div class="container">
 
-    @for (int i = 0; i < contentService.Categories.Count; i++)
-    {
-        var category = contentService.Categories[i];
+	@for (int i = 0; i < contentService.Categories.Count; i++)
+	{
+		var category = contentService.Categories[i];
 
-        <div class="page">
-            <header>
-                <h2>@category.DisplayName</h2>
-            </header>
-            <section>
-                <div class="card-grid @(category.Projects.Count > 3 ? "card-grid-sm" : "")">
+		<div class="page">
+			<header>
+				<h2>@category.DisplayName</h2>
+			</header>
+			<section>
+				<div class="card-grid @(category.Projects.Count > 3 ? "card-grid-sm" : "")">
 
-                    @{
-                        int missing = 0;
-                    }
-                    @foreach (var project in category.Projects)
-                    {
-                        if (project.HideOnHomePage)
-                        {
-                            missing++;
-                        }
-                        else
-                        {
-                            @await Component.InvokeAsync("PortfolioItem", project)
-                        }
-                    }
+					@{
+						int missing = 0;
+					}
+					@foreach (var project in category.Projects)
+					{
+						if (project.HideOnHomePage)
+						{
+							missing++;
+						}
+						else
+						{
+							@await Component.InvokeAsync("PortfolioItem", project)
+						}
+					}
 
-                    @if (missing > 0)
-                    {
-                        @await Component.InvokeAsync("ViewMoreItem", new ViewMoreViewModel()
-                        {
-                            Description = "More Projects",
-                            Quantity = missing
-                        })
-                    }
+					@if (missing > 0)
+					{
+						@await Component.InvokeAsync("ViewMoreItem", new ViewMoreViewModel()
+						{
+							Description = "More Projects",
+							Quantity = missing
+						})
+					}
 
-                </div>
-            </section>
-        </div>
-    }
+				</div>
+			</section>
+		</div>
+	}
+
+	<div class="page">
+		<header>
+			<h2>Disciplines</h2>
+		</header>
+		<section>
+			<div class="card-grid">
+				@foreach (var discipline in contentService.Disciplines)
+				{
+					if (discipline.ShowOnHomePage)
+					{
+						@await Component.InvokeAsync("DisciplineCard", new DisciplineViewModel()
+						{
+							Discipline = discipline
+						})
+					}
+				}
+			</div>
+		</section>
+	</div>
 </div>

@@ -45,12 +45,11 @@
 					<div class="navbar">
 						<div class="navbar-grouping">
 							<a class="nav-button @(ViewContext.RouteData.Values["Controller"].ToString() == "Portfolio" ? "active" : "")" asp-controller="Portfolio" asp-action="Index">Portfolio</a>
-							<a class="nav-button @(ViewContext.RouteData.Values["Controller"].ToString() == "Blog" ? "active" : "")" asp-controller="Blog" asp-action="Index" asp>Blog</a>
+							<a class="nav-button @(ViewContext.RouteData.Values["Controller"].ToString() == "Contact" ? "active" : "")" asp-controller="Contact" asp-action="Index" asp>Contact</a>
 						</div>
 					</div>
 				</div>
 
-				@RenderSection("NavbarAddon", required: false)
 			</div>
 		</div>
 	}
@@ -74,7 +73,6 @@
 					<div class="page-section" style="text-align: center;">
 						<img src="/img/profile.svg" style="margin: auto; height: 166px; margin-top: 1.75rem; margin-bottom: 0.75rem;" />
 						<h1 style="font-size: 2.5rem; margin: 1.5rem 0 0.5rem 0;">Anthony Marmont</h1>
-						<!--<h2 style="font-size: 2.25rem; margin: 0 0 0.5rem 0; color: #999;">&lt;/programmer&gt;</h2>-->
 						<p class="badge-bar badge-bar-social">
 							<a class="badge" target="_blank" href="https://www.youtube.com/channel/UCEEI1m2TCso1OGWEHvHS20g"><span class="pin pin-youtube"></span></a>
 							<a class="badge" target="_blank" href="https://fydar.itch.io/"><span class="pin pin-itch-io"></span></a>
@@ -87,12 +85,11 @@
 						<div class="navbar">
 							<div class="navbar-grouping">
 								<a class="nav-button @(ViewContext.RouteData.Values["Controller"].ToString() == "Portfolio" ? "active" : "")" asp-controller="Portfolio" asp-action="Index">Portfolio</a>
-								<a class="nav-button @(ViewContext.RouteData.Values["Controller"].ToString() == "Blog" ? "active" : "")" asp-controller="Blog" asp-action="Index" asp>Blog</a>
+								<a class="nav-button @(ViewContext.RouteData.Values["Controller"].ToString() == "Contact" ? "active" : "")" asp-controller="Contact" asp-action="Index" asp>Contact</a>
 							</div>
 						</div>
 					</div>
 
-					@RenderSection("NavbarAddon", required: false)
 				</div>
 			</div>
 		</div>
@@ -113,6 +110,9 @@
 	</div>
 
 	<script src="~/js/site.js" asp-append-version="true"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/jquery.validate.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validation-unobtrusive/3.2.11/jquery.validate.unobtrusive.min.js"></script>
 
 	@RenderSection("Scripts", required: false)
 </body>

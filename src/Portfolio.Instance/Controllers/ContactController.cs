@@ -27,47 +27,64 @@ namespace Portfolio.Instance.Controllers
 			this.razorViewToStringRenderer = razorViewToStringRenderer;
 		}
 
-		[Route("[controller]")]
+		[HttpGet("[controller]")]
 		public IActionResult Index()
 		{
 			return View("Index", new ContactViewModel());
 		}
 
-		[HttpPost("[controller]/[action]")]
+		[HttpPost("[controller]")]
 		public async Task<IActionResult> Submit([FromForm] ContactSubmitRequestModel requestModel)
 		{
-			string htmlBody = await razorViewToStringRenderer.RenderViewToStringAsync("Email/ContactEmail", new ContactEmailViewModel()
+			if (ModelState.IsValid)
 			{
-				FormName = "Contact",
+				string htmlBody = await razorViewToStringRenderer.RenderViewToStringAsync("Email/ContactEmail", new ContactEmailViewModel()
+				{
+					FormName = "Contact",
+					UserEmail = requestModel.UserEmail,
+					UserBody = requestModel.UserBody,
+					UserSubject = requestModel.UserSubject,
+					SubmitTime = DateTimeOffset.Now
+				});
+
+				var request = new SendEmailRequest()
+				{
+					Source = "Anthony Marmont <contact@anthonymarmont.com>",
+					Destination = new Destination()
+					{
+						ToAddresses = new List<string>()
+						{
+							"dev.anthonymarmont@gmail.com"
+						}
+					},
+					Message = new Message()
+					{
+						Subject = new Content($"Contact: {requestModel.UserSubject}"),
+						Body = new Body()
+						{
+							Html = new Content(htmlBody)
+						}
+					},
+				};
+				await simpleEmailService.SendEmailAsync(request);
+
+				return View("Index", new ContactViewModel()
+				{
+					UserEmail = "",
+					UserSubject = "",
+					UserBody = "",
+					Sent = true,
+					SentToEmail = requestModel.UserEmail
+				});
+			}
+
+			return View("Index", new ContactViewModel()
+			{
 				UserEmail = requestModel.UserEmail,
-				UserBody = requestModel.UserBody,
 				UserSubject = requestModel.UserSubject,
-				SubmitTime = DateTimeOffset.Now
+				UserBody = requestModel.UserBody,
+				Sent = false,
 			});
-
-			var request = new SendEmailRequest()
-			{
-				Source = "Anthony Marmont <contact@anthonymarmont.com>",
-				Destination = new Destination()
-				{
-					ToAddresses = new List<string>()
-					{
-						"dev.anthonymarmont@gmail.com"
-					}
-				},
-				Message = new Message()
-				{
-					Subject = new Content($"Contact: {requestModel.UserSubject}"),
-					Body = new Body()
-					{
-						Html = new Content(htmlBody)
-					}
-				},
-			};
-
-			await simpleEmailService.SendEmailAsync(request);
-
-			return RedirectToAction(nameof(Index));
 		}
 	}
 }

@@ -1,8 +1,9 @@
 body {
 	padding: 0;
 	margin: 0;
-	font-family: 'Quattrocento Sans', Helvetica, sans-serif;
+	/* font-family: 'Quattrocento Sans', Helvetica, sans-serif;*/
 	/* -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji; */
+	font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
 	font-size: 16px;
 	font-weight: 400;
 	color: #404040;
@@ -391,6 +392,8 @@ table.code-table {
 		padding: 0;
 		color: #666;
 		font-size: 1.4em;
+		font-weight: 350;
+		letter-spacing: 0.25px;
 	}
 
 		.card .card-title a {
@@ -464,6 +467,8 @@ table.code-table {
 		text-transform: uppercase;
 		font-size: 0.775rem;
 		padding: 0.2rem 0;
+		font-weight: 400;
+		letter-spacing: 0.25px;
 	}
 
 		.badge-bar.badge-bar-subtle .badge {
@@ -502,9 +507,10 @@ table.code-table {
 		background-color: #fafbfc;
 		border: 1px solid #c8e1ff;
 		color: #444;
-		font-weight: bold;
+		font-weight: 500;
 		box-shadow: 0 0 0 0 #4287f5ff;
 		transition: box-shadow .15s ease-in-out, background-color .15s ease-in-out;
+		user-select: none;
 	}
 
 		.badge.badge-lozenge:hover {
@@ -871,12 +877,13 @@ blockquote {
 		color: #d8d8d8;
 		font-size: 12rem;
 		transform: translate(-0.25rem, -3rem);
+		font-family: 'Quattrocento Sans', Helvetica, sans-serif;
 	}
 
 
 .alert {
 	background-color: #fbfbfb;
-	border-left: 5px solid #d8d8d8;
+	border-left: 6px solid #d8d8d8;
 	margin: 1.5rem 10px;
 	padding: 0.5rem 1rem 0.5rem 1rem;
 	max-width: 580px;
@@ -1188,3 +1195,136 @@ div.post-image {
 			max-width: 720px;
 		}
 }
+
+label {
+	display: inline-block;
+	margin-bottom: .5rem;
+	font-weight: 500;
+	text-transform: uppercase;
+	letter-spacing: 0.5px;
+	font-size: 0.9em;
+	margin: 0.6rem 0 0.5rem 0;
+}
+
+.form-group {
+	margin-bottom: 1rem;
+}
+
+
+.form-control:-webkit-autofill,
+.form-control:-webkit-autofill:hover {
+	-webkit-box-shadow: 0 0 0px 1000px #f6f9ff inset !important;
+}
+
+.form-control {
+	box-sizing: border-box;
+	display: block;
+	width: 100%;
+	height: calc(1.5em + .75rem + 2px);
+	padding: 0.375rem 0.75rem;
+	font-size: 1rem;
+	font-weight: 400;
+	line-height: 1.5;
+	color: #495057;
+	background-color: #fff;
+	background-clip: padding-box;
+	border: 1px solid #ced4da;
+	border-radius: .25rem;
+	transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+	font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+}
+
+	.form-control:focus {
+		color: #495057;
+		background-color: #fff;
+		border-color: #80bdff;
+		outline: 0;
+		box-shadow: 0 0 0 0.2rem rgba(0,123,255,.25);
+	}
+
+
+.form-btn {
+	display: inline-block;
+	font-weight: 400;
+	color: #212529;
+	text-align: center;
+	vertical-align: middle;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	background-color: transparent;
+	border: 1px solid transparent;
+	padding: .375rem .75rem;
+	font-size: 1rem;
+	line-height: 1.5;
+	border-radius: .25rem;
+	transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+.form-btn-primary {
+	color: #fff;
+	background-color: #007bff;
+	border-color: #007bff;
+}
+
+	.form-btn-primary:focus {
+		color: #fff;
+		background-color: #0069d9;
+		border-color: #0062cc;
+		box-shadow: 0 0 0 0.2rem rgba(38,143,255,.5);
+	}
+
+
+
+
+.form-control.is-invalid, .was-validated .form-control:invalid, .form-control.input-validation-error {
+	border-color: #dc3545;
+	padding-right: calc(1.5em + .75rem);
+	background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='none' stroke='%23dc3545' viewBox='0 0 12 12'%3e%3ccircle cx='6' cy='6' r='4.5'/%3e%3cpath stroke-linejoin='round' d='M5.8 3.6h.4L6 6.5z'/%3e%3ccircle cx='6' cy='8.2' r='.6' fill='%23dc3545' stroke='none'/%3e%3c/svg%3e");
+	background-repeat: no-repeat;
+	background-position: right calc(.375em + .1875rem) center;
+	background-size: calc(.75em + .375rem) calc(.75em + .375rem);
+}
+
+	.form-control.is-invalid:focus, .was-validated .form-control:invalid:focus, .form-control.input-validation-error:focus {
+		border-color: #dc3545;
+		box-shadow: 0 0 0 0.2rem rgba(220,53,69,.25);
+	}
+
+.validation-feedback {
+	display: block;
+	height: 0;
+	opacity: 0;
+	transition: ease-in-out 0.1s;
+	width: 100%;
+	margin-top: .25rem;
+	font-size: 80%;
+}
+
+.invalid-feedback, .field-validation-error {
+	height: 1em;
+	opacity: 1;
+	color: #dc3545;
+}
+
+.field-validation-valid {
+	height: 0em;
+	opacity: 0;
+}
+
+
+.text-muted {
+	color: #6c757d !important;
+}
+
+.form-text {
+	display: block;
+	margin-top: .25rem;
+}
+
+.small, small {
+	font-size: 80%;
+	font-weight: 400;
+}
+
