@@ -208,6 +208,9 @@ Resources:
           - Effect: Allow
             Action: 'ses:SendRawEmail'
             Resource: '*'
+          - Effect: Allow
+            Action: 'ses:SendEmail'
+            Resource: '*'
 
 
   PortfolioInstanceTask:
