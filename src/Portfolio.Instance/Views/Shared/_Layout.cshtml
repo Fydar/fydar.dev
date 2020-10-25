@@ -31,7 +31,11 @@
 		{
 			foreach (var meta in transfomer.TransformMetaItems(pageMeta))
 			{
-				<meta name="@meta.Name" content="@meta.Content" />
+				<meta name="@meta.Name" @foreach (var kvp in meta.Values) {
+					<text>
+						@kvp.Key="@kvp.Value"
+					</text>
+				}  />
 			}
 		}
 	}

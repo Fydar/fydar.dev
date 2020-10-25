@@ -10,16 +10,16 @@ namespace Portfolio.Instance.Services.PageMetaProvider
 			var projectViewModel = pageMetaCollection.GetModel<ProjectViewModel>();
 			if (projectViewModel != null)
 			{
-				yield return new MetaItem("twitter:card", "summary_large_image");
+				yield return new MetaItem(name: "twitter:card", content: "summary_large_image");
 
-				yield return new MetaItem("twitter:title", projectViewModel.Project.ProjectName);
-				yield return new MetaItem("twitter:description", projectViewModel.Project.Excerpt);
+				yield return new MetaItem(name: "twitter:title", content: projectViewModel.Project.ProjectName);
+				yield return new MetaItem(name: "twitter:description", content: projectViewModel.Project.Excerpt);
 
-				yield return new MetaItem("twitter:image", $"https://anthonymarmont.com/{projectViewModel.Project.FeaturedImage}");
-				yield return new MetaItem("twitter:image:alt", "");
+				yield return new MetaItem(name: "twitter:image", content: $"https://anthonymarmont.com/{projectViewModel.Project.FeaturedImage}");
+				yield return new MetaItem(name: "twitter:image:alt", content: "");
 
-				yield return new MetaItem("twitter:site", "@Fydarus");
-				yield return new MetaItem("twitter:creator", "@Fydarus");
+				yield return new MetaItem(name: "twitter:site", content: "@Fydarus");
+				yield return new MetaItem(name: "twitter:creator", content: "@Fydarus");
 			}
 		}
 	}
