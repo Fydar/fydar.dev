@@ -49,7 +49,10 @@ namespace Portfolio.Pipeline
 		{
 			Console.WriteLine($"Process Image {resource.FullName}...");
 
-			var sizes = new HashSet<string>();
+			var sizes = new HashSet<string>
+			{
+				"blur"
+			};
 			foreach (var dependency in resource.Dependants)
 			{
 				if (dependency.Metadata == null)

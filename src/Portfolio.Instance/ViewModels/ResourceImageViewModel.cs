@@ -5,6 +5,7 @@
 		public string Image { get; set; }
 		public string Size { get; set; }
 		public bool Unblur { get; set; } = true;
+		public bool Pixel { get; set; } = true;
 
 		public ResourceImageViewModel(string image)
 		{
