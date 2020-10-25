@@ -24,6 +24,8 @@ namespace Portfolio.Instance
 
 		public void ConfigureServices(IServiceCollection services)
 		{
+			services.AddResponseCompression();
+
 			services.AddHealthChecks();
 			services.AddControllers();
 			services.AddMvc(options =>
@@ -43,6 +45,8 @@ namespace Portfolio.Instance
 		public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
 		{
 			app.UseHealthChecks("/api/health");
+
+			app.UseResponseCompression();
 
 			if (env.IsDevelopment())
 			{
