@@ -1,4 +1,5 @@
 using Amazon.SimpleEmail;
+using LettuceEncrypt;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -9,6 +10,7 @@ using Portfolio.Instance.Services.ContentService;
 using Portfolio.Instance.Services.PageMetaProvider;
 using Portfolio.Instance.Services.ViewRenderer;
 using Portfolio.Instance.Utility;
+using System;
 using System.IO;
 
 namespace Portfolio.Instance
@@ -40,11 +42,25 @@ namespace Portfolio.Instance
 			services.AddSingleton<IPageMetaTransformer, ProjectTwitterPageMetaTransformer>();
 
 			services.AddAWSService<IAmazonSimpleEmailService>();
+
+			bool enableHttps = true;
+			if (enableHttps)
+			{
+				services.AddLettuceEncrypt(options =>
+				{
+					options.AcceptTermsOfService = true;
+					options.DomainNames = new string[] { Environment.GetEnvironmentVariable("CONFIG_DOMAINNAME") };
+					options.EmailAddress = "dev.anthonymarmont@gmail.com";
+				})
+					.PersistDataToDirectory(new DirectoryInfo("lettuce"), null);
+			}
 		}
 
 		public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
 		{
 			app.UseHealthChecks("/api/health");
+
+			app.UseHttpsRedirection();
 
 			app.UseResponseCompression();
 
@@ -63,6 +79,7 @@ namespace Portfolio.Instance
 				FileProvider = new PhysicalFileProvider(Path.Combine(env.ContentRootPath, ContentDirectory.Path, "data", "img")),
 				RequestPath = "/img",
 			});
+
 
 			app.UseMiddleware<RequestLoggingMiddleware>();
 

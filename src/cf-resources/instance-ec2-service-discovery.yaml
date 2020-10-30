@@ -1,4 +1,4 @@
-﻿AWSTemplateFormatVersion: '2010-09-09'
+AWSTemplateFormatVersion: '2010-09-09'
 
 Description: 'ECS cluster: Portfolio'
 Parameters:
@@ -8,10 +8,10 @@ Parameters:
     Description: 'Image tag to launch task with.'
     Default: 'latest'
 
-  DomainName:
+  Cname:
     Type: String
-    Description: The domain name for the deployed server.
-    Default: 'www.anthonymarmont.com'
+    Description: The CNAME for the deployed server.
+    Default: 'www.anthonymarmont.com.'
 
   KeyPairName:
     Type: String
@@ -84,9 +84,6 @@ Resources:
       CidrBlock: !Ref VpcCidr
       EnableDnsSupport: true
       EnableDnsHostnames: true
-      Tags:
-        - Key: Name
-          Value: anthonymarmont.com
 
   PubSubnetAz1:
     Type: AWS::EC2::Subnet
@@ -95,11 +92,8 @@ Resources:
       AvailabilityZone: !Ref SubnetAz1
       CidrBlock: !Ref SubnetIPv4Cidr1
       MapPublicIpOnLaunch: true
-      # Ipv6CidrBlock: !Ref SubnetIpv6Cidr1
-      # AssignIpv6AddressOnCreation: true
-      Tags:
-        - Key: Name
-          Value: anthonymarmont.com SbAz1
+      ##Ipv6CidrBlock: !Ref SubnetIpv6Cidr1
+      ##AssignIpv6AddressOnCreation: true
 
   PubSubnetAz2:
     Type: AWS::EC2::Subnet
@@ -108,18 +102,11 @@ Resources:
       AvailabilityZone: !Ref SubnetAz2
       CidrBlock: !Ref SubnetIPv4Cidr2
       MapPublicIpOnLaunch: true
-      # Ipv6CidrBlock: !Ref SubnetIpv6Cidr2
-      # AssignIpv6AddressOnCreation: true
-      Tags:
-        - Key: Name
-          Value: anthonymarmont.com SbAz2
+      #Ipv6CidrBlock: !Ref SubnetIpv6Cidr2
+      #AssignIpv6AddressOnCreation: true
 
   InternetGateway:
     Type: AWS::EC2::InternetGateway
-    Properties:
-      Tags:
-        - Key: Name
-          Value: anthonymarmont.com Igw
 
   AttachGateway:
     Type: AWS::EC2::VPCGatewayAttachment
@@ -131,42 +118,39 @@ Resources:
     Type: AWS::EC2::RouteTable
     Properties:
       VpcId: !Ref Vpc
-      Tags:
-        - Key: Name
-          Value: anthonymarmont.com Rtb
 
   PublicRouteViaIgwIpv4:
     Type: AWS::EC2::Route
     Properties:
       RouteTableId: !Ref RouteViaIgw
-      GatewayId: !Ref InternetGateway
       DestinationCidrBlock: 0.0.0.0/0
+      GatewayId: !Ref InternetGateway
 
   PublicRouteViaIgwIpv6:
     Type: AWS::EC2::Route
     Properties:
       RouteTableId: !Ref RouteViaIgw
-      GatewayId: !Ref InternetGateway
       DestinationIpv6CidrBlock: ::/0
+      GatewayId: !Ref InternetGateway
 
   PubSubnet1RouteTableAssociation:
     Type: AWS::EC2::SubnetRouteTableAssociation
     Properties:
-      RouteTableId: !Ref RouteViaIgw
       SubnetId: !Ref PubSubnetAz1
+      RouteTableId: !Ref RouteViaIgw
 
-  PubSubnet2RouteTableAssociation:
+  PubSubnet1RouteTableAssociation:
     Type: AWS::EC2::SubnetRouteTableAssociation
     Properties:
-      RouteTableId: !Ref RouteViaIgw
       SubnetId: !Ref PubSubnetAz2
+      RouteTableId: !Ref RouteViaIgw
 
 
   PortfolioCluster:
-    Type: AWS::ECS::Cluster
+    Type: 'AWS::ECS::Cluster'
 
   ECSTaskExecutionRole:
-    Type: AWS::IAM::Role
+    Type: 'AWS::IAM::Role'
     Properties:
       AssumeRolePolicyDocument:
         Version: 2012-10-17
@@ -183,7 +167,7 @@ Resources:
         - 'arn:aws:iam::aws:policy/service-role/AmazonEC2ContainerServiceforEC2Role'
 
   ECSTaskRole:
-    Type: AWS::IAM::Role
+    Type: 'AWS::IAM::Role'
     Properties:
       ManagedPolicyArns:
         - 'arn:aws:iam::aws:policy/service-role/AmazonEC2ContainerServiceforEC2Role'
@@ -207,9 +191,14 @@ Resources:
                 Action: 'ses:SendEmail'
                 Resource: '*'
 
+  PortfolioInstanceIAMProfile: 
+    Type: "AWS::IAM::InstanceProfile"
+    Properties:
+      Roles: 
+        - Ref: "ECSTaskRole"
 
   PortfolioInstanceTask:
-    Type: AWS::ECS::TaskDefinition
+    Type: 'AWS::ECS::TaskDefinition'
     Properties:
       NetworkMode: bridge
       ExecutionRoleArn: !GetAtt [ECSTaskExecutionRole, Arn]
@@ -221,9 +210,6 @@ Resources:
       ContainerDefinitions:
         - Name: portfolio-instance
           Image: !Sub 222779217717.dkr.ecr.us-east-1.amazonaws.com/portfolioinstance:${Tag}
-          Environment:
-            - Name: CONFIG_DOMAINNAME
-              Value: !Ref DomainName
           PortMappings:
             - ContainerPort: 80
               HostPort: 80
@@ -240,7 +226,7 @@ Resources:
 
 
   PortfolioInstanceService:
-    Type: AWS::ECS::Service
+    Type: 'AWS::ECS::Service'
     Properties:
       Cluster: !Ref PortfolioCluster
       ServiceName: PortfolioInstance
@@ -250,76 +236,72 @@ Resources:
       DeploymentConfiguration:
         MaximumPercent: 200
         MinimumHealthyPercent: 50
+      ServiceRegistries:
+      - RegistryArn: !GetAtt [PortfolioInstanceServiceMap, Arn]
+        ContainerName: portfolio-instance
+        ContainerPort: 443
 
 
-  Ec2Instance:
-    Type: AWS::EC2::Instance
+  PortfolioInstanceAutoScaler:
+    Type: AWS::AutoScaling::AutoScalingGroup
     Properties:
-      InstanceType: "t2.micro"
-      ImageId: ami-0669eafef622afea1
-      NetworkInterfaces:
-        - DeviceIndex: 0
-          NetworkInterfaceId: !Ref PortfolioInstanceNetworkInterface
-      KeyName: !Ref KeyPairName
-      UserData:
-        Fn::Base64: !Sub |
-          #!/bin/bash -xe
-          echo ECS_CLUSTER=${PortfolioCluster} >> /etc/ecs/ecs.config
-      IamInstanceProfile:
-          Ref: PortfolioInstanceIAMProfile
-      Tags:
-        - Key: Name
-          Value: anthonymarmont.com Instane
-          
-  PortfolioInstanceIAMProfile: 
-    Type: AWS::IAM::InstanceProfile
-    Properties:
-      Roles: 
-        - Ref: "ECSTaskRole"
+      MinSize: 0
+      MaxSize: 1
+      DesiredCapacity: 1
+      LaunchTemplate:
+        LaunchTemplateId: !Ref PortfolioInstanceLaunchTemplate
+        Version: !GetAtt [PortfolioInstanceLaunchTemplate, LatestVersionNumber]
+      AvailabilityZones:
+      - !Ref SubnetAz1
 
-  PortfolioInstanceNetworkInterface:
-    Type: AWS::EC2::NetworkInterface
-    Properties:
-      SubnetId: !Ref PubSubnetAz1
-      Description: Interface for controlling traffic such as SSH
-      GroupSet: 
-      - !Ref PortfolioInstanceSecurityGroup
-      SourceDestCheck: true
-      Tags:
-        - Key: Network
-          Value: Web
 
-  WebPortAddress:
-    Type: AWS::EC2::EIP
-    Properties:
-      Domain: standard
-      Tags:
-        - Key: Name
-          Value: anthonymarmont.com IP
-      
-  PortfolioInstanceRecord:
-    Type: AWS::Route53::RecordSet
-    Properties:
-      HostedZoneName: anthonymarmont.com.
-      Name: !Ref DomainName
-      ResourceRecords:
-        - !Ref WebPortAddress
-      Type: A
-      TTL: '30'
-    
 
-  AssociateWebPort:
-    Type: AWS::EC2::EIPAssociation
+  PortfolioInstanceLaunchTemplate:
+    Type: AWS::EC2::LaunchTemplate
     Properties:
-      AllocationId: !GetAtt WebPortAddress.AllocationId
-      NetworkInterfaceId: !Ref PortfolioInstanceNetworkInterface
+        LaunchTemplateName: "portoflio-instance-launch-template"
+        LaunchTemplateData: 
+          InstanceType: "t2.micro"
+          ImageId: ami-0669eafef622afea1
+          NetworkInterfaces:
+            - DeviceIndex: 0
+              NetworkInterfaceId: !Ref PortfolioInstanceNetworkInterface
+          KeyName: !Ref KeyPairName
+          UserData:
+            Fn::Base64: !Sub |
+              #!/bin/bash -xe
+              echo ECS_CLUSTER=${PortfolioCluster} >> /etc/ecs/ecs.config
+          IamInstanceProfile:
+            Arn: !GetAtt [PortfolioInstanceIAMProfile, Arn]
+
+
+
+  PortfolioInstanceNamespace:
+    Type: AWS::ServiceDiscovery::PublicDnsNamespace
+    Properties: 
+      Description: "The public service namespace"
+      Name: !Ref Cname
+
+  PortfolioInstanceServiceMap:
+    Type: AWS::ServiceDiscovery::Service
+    Properties:
+      Name: frontend
+      Description: A registry of all instances provided by our stack.
+      DnsConfig:
+        NamespaceId: !Ref PortfolioInstanceNamespace
+        RoutingPolicy: WEIGHTED
+        DnsRecords:
+          - Type: SRV
+            TTL: 30
+
+
+
 
   PortfolioInstanceSecurityGroup:
-    Type: AWS::EC2::SecurityGroup
+    Type: 'AWS::EC2::SecurityGroup'
     Properties:
-      GroupName: anthonymarmont.com HTTPS SG
-      GroupDescription: 'Allow TCP ports 22, 80 and 443 for IPv4 and IPv6'
       VpcId: !Ref Vpc
+      GroupDescription: 'Allow TCP ports 22, 80 and 443 for IPv4 and IPv6'
       SecurityGroupIngress:
         - CidrIp: 0.0.0.0/0
           FromPort: 22
@@ -345,5 +327,17 @@ Resources:
           FromPort: 443
           ToPort: 443
           IpProtocol: tcp
+
+  PortfolioInstanceNetworkInterface:
+    Type: AWS::EC2::NetworkInterface
+    Properties:
+      SubnetId: !Ref PubSubnetAz1
+      Description: Interface for controlling traffic such as SSH
+      GroupSet: 
+      - !Ref PortfolioInstanceSecurityGroup
+      SourceDestCheck: true
+      Tags:
+        - Key: Network
+          Value: Web
 
 Outputs: {}

@@ -1,12 +1,14 @@
-using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Hosting.Server;
 using Microsoft.AspNetCore.Hosting.Server.Features;
 using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Portfolio.Instance.Utility;
 using Serilog;
 using Serilog.Events;
 using System;
+using System.Net;
 
 namespace Portfolio.Instance
 {
@@ -24,10 +26,12 @@ namespace Portfolio.Instance
 
 			try
 			{
-				var host = BuildWebHost(args);
+				var host = CreateHostBuilder(args).Build();
 				host.Start();
 
-				var addresses = host.ServerFeatures.Get<IServerAddressesFeature>().Addresses;
+				var serverFeatures = host.Services.GetRequiredService<IServer>().Features;
+				var addresses = serverFeatures.Get<IServerAddressesFeature>().Addresses;
+
 				Log.Information($"Web host started listening on {string.Join(", ", addresses)}");
 
 				host.WaitForShutdown();
@@ -45,16 +49,37 @@ namespace Portfolio.Instance
 			}
 		}
 
-		public static IWebHost BuildWebHost(string[] args)
+		public static IHostBuilder CreateHostBuilder(string[] args)
 		{
-			return WebHost.CreateDefaultBuilder(args)
-				.UseConfiguration(new ConfigurationBuilder()
-					.AddCommandLine(args)
-					.Build())
-				.UseStartup<Startup>()
-				.UseSetting(WebHostDefaults.SuppressStatusMessagesKey, "True")
-				.UseSerilog()
-				.Build();
+			return Host.CreateDefaultBuilder(args)
+				.ConfigureHostConfiguration(config =>
+				{
+					config.AddCommandLine(args);
+				})
+				.ConfigureWebHostDefaults(webBuilder =>
+				{
+					webBuilder.UseStartup<Startup>();
+					webBuilder.UseSetting(WebHostDefaults.SuppressStatusMessagesKey, "True");
+
+					webBuilder.UseKestrel(kestral =>
+					{
+						var appServices = kestral.ApplicationServices;
+
+						kestral.Listen(IPAddress.Any, 80);
+
+						bool enableHttps = true;
+						if (enableHttps)
+						{
+							kestral.Listen(
+								IPAddress.Any, 443,
+								listen => listen.UseHttps(adapter =>
+								{
+									adapter.UseLettuceEncrypt(appServices);
+								}));
+						}
+					});
+				})
+				.UseSerilog();
 		}
 	}
 }
