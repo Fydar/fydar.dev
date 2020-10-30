@@ -12,6 +12,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "cf-resources", "cf-resource
 	ProjectSection(SolutionItems) = preProject
 		cf-resources\emailreceive-lambda.yml = cf-resources\emailreceive-lambda.yml
 		cf-resources\instance-ec2-eip.yml = cf-resources\instance-ec2-eip.yml
+		cf-resources\instance-ec2-service-discovery.yaml = cf-resources\instance-ec2-service-discovery.yaml
+		cf-resources\instance-ec2-with-vpc.yaml = cf-resources\instance-ec2-with-vpc.yaml
 		cf-resources\instance-ecs-fargate-lb.yaml = cf-resources\instance-ecs-fargate-lb.yaml
 		cf-resources\portfolioinstance-ecr.yml = cf-resources\portfolioinstance-ecr.yml
 	EndProjectSection
@@ -34,6 +36,14 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Portfolio.EmailReceive", "Portfolio.EmailReceive\Portfolio.EmailReceive.csproj", "{B76D6E01-DB2C-46A9-91E6-1E121D9D9EFF}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Portfolio.EmailReceive.Tests", "Portfolio.EmailReceive.Tests\Portfolio.EmailReceive.Tests.csproj", "{62D98A56-FC78-4F64-B53C-B97F53C02AEB}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LettuceEncrypt", "3rdParty\LettuceEncrypt\LettuceEncrypt\LettuceEncrypt.csproj", "{7778CDF0-6D47-44A3-B640-2EA0022068FC}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "McMaster.AspNetCore.Kestrel.Certificates", "3rdParty\LettuceEncrypt\Kestrel.Certificates\McMaster.AspNetCore.Kestrel.Certificates.csproj", "{3DA60117-6D0D-47FF-9AB4-C942909DB376}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3rdParty", "3rdParty", "{0F75A305-372B-44F5-9962-533577A16B4A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "LetsEncrypt", "LetsEncrypt", "{3EAD3555-9626-4CA5-893E-D704F4DC144D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -73,9 +83,22 @@ Global
 		{62D98A56-FC78-4F64-B53C-B97F53C02AEB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{62D98A56-FC78-4F64-B53C-B97F53C02AEB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{62D98A56-FC78-4F64-B53C-B97F53C02AEB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7778CDF0-6D47-44A3-B640-2EA0022068FC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7778CDF0-6D47-44A3-B640-2EA0022068FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7778CDF0-6D47-44A3-B640-2EA0022068FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7778CDF0-6D47-44A3-B640-2EA0022068FC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3DA60117-6D0D-47FF-9AB4-C942909DB376}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3DA60117-6D0D-47FF-9AB4-C942909DB376}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3DA60117-6D0D-47FF-9AB4-C942909DB376}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3DA60117-6D0D-47FF-9AB4-C942909DB376}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{7778CDF0-6D47-44A3-B640-2EA0022068FC} = {3EAD3555-9626-4CA5-893E-D704F4DC144D}
+		{3DA60117-6D0D-47FF-9AB4-C942909DB376} = {3EAD3555-9626-4CA5-893E-D704F4DC144D}
+		{3EAD3555-9626-4CA5-893E-D704F4DC144D} = {0F75A305-372B-44F5-9962-533577A16B4A}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {8A760B08-A6FD-49DA-81C2-64E42FF8C180}
