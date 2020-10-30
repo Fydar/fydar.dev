@@ -255,8 +255,8 @@ Resources:
   Ec2Instance:
     Type: AWS::EC2::Instance
     Properties:
-      InstanceType: "t2.micro"
-      ImageId: ami-0669eafef622afea1
+      InstanceType: "t4g.micro"
+      ImageId: ami-055458a83541771a4
       NetworkInterfaces:
         - DeviceIndex: 0
           NetworkInterfaceId: !Ref PortfolioInstanceNetworkInterface

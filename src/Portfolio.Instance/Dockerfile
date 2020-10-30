@@ -1,4 +1,4 @@
-FROM mcr.microsoft.com/dotnet/core/aspnet:3.1-buster-slim AS base
+FROM mcr.microsoft.com/dotnet/core/aspnet:3.1.7-alpine3.11-arm64v8 AS base
 EXPOSE 80
 EXPOSE 443
 
