@@ -38,8 +38,7 @@ namespace Portfolio.Instance
 			services.AddSingleton<IContentService, LocalContentService>();
 			services.AddScoped<IViewToStringRenderer, RazorViewToStringRenderer>();
 
-			services.AddSingleton<IPageMetaTransformer, ProjectOpenGraphPageMetaTransformer>();
-			services.AddSingleton<IPageMetaTransformer, ProjectTwitterPageMetaTransformer>();
+			services.AddSingleton<IPageMetaTransformer, ProjectPageMetaTransformer>();
 
 			services.AddAWSService<IAmazonSimpleEmailService>();
 

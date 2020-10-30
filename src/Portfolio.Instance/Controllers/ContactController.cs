@@ -27,13 +27,13 @@ namespace Portfolio.Instance.Controllers
 			this.razorViewToStringRenderer = razorViewToStringRenderer;
 		}
 
-		[HttpGet("[controller]")]
+		[HttpGet("contact")]
 		public IActionResult Index()
 		{
 			return View("Index", new ContactViewModel());
 		}
 
-		[HttpPost("[controller]")]
+		[HttpPost("contact")]
 		public async Task<IActionResult> Submit([FromForm] ContactSubmitRequestModel requestModel)
 		{
 			if (ModelState.IsValid)
