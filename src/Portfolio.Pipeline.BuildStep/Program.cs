@@ -10,7 +10,7 @@ namespace Portfolio.Pipeline.BuildStep
 		{
 			try
 			{
-				string destination = args[0].Trim('"');
+				string destination = "./output";
 				var destinationDirectoryInfo = new DirectoryInfo(destination);
 
 				var directory = new FileInfo(typeof(Program).Assembly.Location).Directory;

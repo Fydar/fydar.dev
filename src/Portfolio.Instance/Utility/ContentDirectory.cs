@@ -9,17 +9,15 @@ namespace Portfolio.Instance.Utility
 
 		static ContentDirectory()
 		{
+			string buildStepOutput = "../Portfolio.Pipeline.BuildStep/bin/Debug/netcoreapp3.1/output/content";
+
 			if (Directory.Exists("content"))
 			{
 				Path = "content";
 			}
-			else if (Directory.Exists("bin/Debug/netcoreapp3.1/content"))
+			else if (Directory.Exists(buildStepOutput))
 			{
-				Path = "bin/Debug/netcoreapp3.1/content";
-			}
-			else if (Directory.Exists("bin/Release/netcoreapp3.1/content"))
-			{
-				Path = "bin/Release/netcoreapp3.1/content";
+				Path = buildStepOutput;
 			}
 			else
 			{

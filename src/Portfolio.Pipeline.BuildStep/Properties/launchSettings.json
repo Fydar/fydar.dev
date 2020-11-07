@@ -2,7 +2,7 @@
   "profiles": {
     "Portfolio.Pipeline.BuildStep": {
       "commandName": "Project",
-      "commandLineArgs": "./output"
+      "commandLineArgs": ""
     }
   }
 }

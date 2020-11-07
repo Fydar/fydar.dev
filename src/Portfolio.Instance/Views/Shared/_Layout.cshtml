@@ -71,34 +71,6 @@
 		bool fullscreen = string.IsNullOrEmpty(pageTitle);
 	}
 
-	<section class="parallax-container parallax-anchor-top" style="overflow: hidden; position: relative; @(fullscreen ? "min-height: 100vh" : "")">
-		@if (ViewData.TryGetValue("FeaturedImage", out var featuredImage))
-		{
-			<div class="parallax-layer" style="z-index: -1; width: 100%; min-height: 200%;">
-				<partial name="ResourceImage" model='new ResourceImageViewModel((string)featuredImage, "fullscreen")' />
-			</div>
-		}
-		else
-		{
-			<div class="parallax-layer" style="z-index: -1; width: 100%; min-height: 200%;">
-				<partial name="ResourceImage" model='new ResourceImageViewModel("img/minijam-40-hunters-5.png") { Pixel = true }' />
-			</div>
-		}
-		<div class="container container-sm">
-			<div class="page page-profile">
-				<div class="page-section" style="text-align: center;">
-					<h1 style="font-size: 2.5rem; margin: 1.5rem 0 0.5rem 0;">Anthony Marmont</h1>
-					<p class="badge-bar badge-bar-social">
-						<a class="badge" target="_blank" href="https://www.youtube.com/channel/UCEEI1m2TCso1OGWEHvHS20g"><span class="pin pin-youtube"></span></a>
-						<a class="badge" target="_blank" href="https://fydar.itch.io/"><span class="pin pin-itch-io"></span></a>
-						<a class="badge" target="_blank" href="https://github.com/Fydar"><span class="pin pin-github"></span></a>
-						<a class="badge" target="_blank" href="https://www.linkedin.com/in/anthonymarmont/"><span class="pin pin-linkedin"></span></a>
-					</p>
-				</div>
-			</div>
-		</div>
-	</section>
-
 	<section class="navbar" id="navbar">
 		<div class="navbar-grouping">
 			<a class="nav-button @(ViewContext.RouteData.Values["Controller"].ToString() == "Portfolio" ? "active" : "")" asp-controller="Portfolio" asp-action="Index">Portfolio</a>
@@ -111,6 +83,20 @@
 			<button class="btn btn-theme-toggle">T</button>
 		</div>
 	</section>
+
+	<div class="container container-sm">
+		<div class="page page-profile">
+			<div class="page-section" style="text-align: center;">
+				<h1 style="font-size: 2.5rem; margin: 1.5rem 0 0.5rem 0;">Anthony Marmont</h1>
+				<p class="badge-bar badge-bar-social">
+					<a class="badge" target="_blank" href="https://www.youtube.com/channel/UCEEI1m2TCso1OGWEHvHS20g"><span class="pin pin-youtube"></span></a>
+					<a class="badge" target="_blank" href="https://fydar.itch.io/"><span class="pin pin-itch-io"></span></a>
+					<a class="badge" target="_blank" href="https://github.com/Fydar"><span class="pin pin-github"></span></a>
+					<a class="badge" target="_blank" href="https://www.linkedin.com/in/anthonymarmont/"><span class="pin pin-linkedin"></span></a>
+				</p>
+			</div>
+		</div>
+	</div>
 
 	@RenderBody()
 
