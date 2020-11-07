@@ -1,24 +1,18 @@
 ﻿@using Portfolio.Instance.Models;
-@using System.Net; 
+@using System.Net;
 
 @model ErrorViewModel
 @{
 	ViewData["Title"] = "Error";
 }
 
-<div class="container">
+<section style="min-height: 80vh; padding-top: 32px;">
+	<div class="container">
 
-	<div class="page">
-		<header>
-			<h2>Uh oh!</h2>
-		</header>
-		<section>
+		<h2>Uh oh!</h2>
 
-			<p>It appears that there has been an error! Please try again soon.</p>
+		<p>It appears that there has been an error! Please try again soon.</p>
 
-			<p>Error Code: @Context.Response.StatusCode (@((HttpStatusCode)Context.Response.StatusCode))</p>
-
-		</section>
+		<p>Error Code: @Context.Response.StatusCode (@((HttpStatusCode)Context.Response.StatusCode))</p>
 	</div>
-
-</div>
+</section>

@@ -1,6 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Portfolio.Instance.Services.ContentService;
-using Portfolio.Instance.Services.PageMetaProvider;
 using Portfolio.Instance.ViewModels;
 
 namespace Portfolio.Instance.Controllers

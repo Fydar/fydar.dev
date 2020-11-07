@@ -16,7 +16,7 @@ namespace Portfolio.Pipeline
 		{
 			["blur"] = new ImageSettings()
 			{
-				Width = 48,
+				Width = 32,
 				ImageFormat = ImageFormat.Jpeg
 			},
 			["tiny"] = new ImageSettings()

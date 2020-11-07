@@ -11,34 +11,26 @@
 	ViewData["FeaturedImage"] = Model.Discipline.FeaturedImage;
 }
 
-<div class="container">
-	@await Component.InvokeAsync("BreadcrumbBar", new BreadcrumbBarViewModel(
-		new BreadcrumbViewModel()
-		{
-			Controller = "Portfolio",
-			Action = "Index",
-			Text = "Portfolio"
-		},
-		new BreadcrumbViewModel()
-		{
-			Text = Model.Discipline.DisplayName
-		}
-	))
-</div>
+@await Component.InvokeAsync("BreadcrumbBar", new BreadcrumbBarViewModel(
+	new BreadcrumbViewModel()
+	{
+		Controller = "Portfolio",
+		Action = "Index",
+		Text = "Portfolio"
+	},
+	new BreadcrumbViewModel()
+	{
+		Text = Model.Discipline.DisplayName
+	}
+))
 
-<div class="page">
-	<header>
-		<div class="container">
-			<h2>@Model.Discipline.DisplayName</h2>
-		</div>
-	</header>
-	<section>
-		<div class="container">
-			@{
-				using var stream = Model.Discipline.PageResource.Content.LoadStream();
-				using var sr = new StreamReader(stream);
-				@Html.Raw(sr.ReadToEnd());
-			}
-		</div>
-	</section>
-</div>
+<section style="min-height: 80vh; padding-top: 32px;">
+	<div class="container">
+		<h2>@Model.Discipline.DisplayName</h2>
+		@{
+			using var stream = Model.Discipline.PageResource.Content.LoadStream();
+			using var sr = new StreamReader(stream);
+			@Html.Raw(sr.ReadToEnd());
+		}
+	</div>
+</section>

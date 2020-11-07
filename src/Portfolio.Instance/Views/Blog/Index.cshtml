@@ -12,16 +12,17 @@
 
 @inject IContentService contentService;
 
-<div class="container">
-	@foreach (var blogPost in contentService.BlogPosts)
-	{
-		<div class="page">
-			<header>
-				<h2>@blogPost.PostTitle</h2>
-			</header>
-			<section>
-
-			</section>
-		</div>
-	}
-</div>
+<section style="min-height: 80vh; padding-top: 32px;">
+	<div class="container">
+		@foreach (var blogPost in contentService.BlogPosts)
+		{
+			<div class="page">
+				<header>
+					<h2>@blogPost.PostTitle</h2>
+				</header>
+				<section>
+				</section>
+			</div>
+		}
+	</div>
+</section>

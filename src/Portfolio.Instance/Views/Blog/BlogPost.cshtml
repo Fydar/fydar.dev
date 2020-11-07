@@ -19,19 +19,13 @@
 
 @inject IContentService contentService;
 
-<div class="page">
-	<header>
-		<div class="container">
-			<h2>@Model.PostTitle</h2>
-		</div>
-	</header>
-	<section>
-		<div class="container">
-			@{
-				using var stream = Model.PageResource.Content.LoadStream();
-				using var sr = new StreamReader(stream);
-				@Html.Raw(sr.ReadToEnd());
-			}
-		</div>
-	</section>
-</div>
+<section style="min-height: 80vh; padding-top: 32px;">
+	<div class="container">
+		<h2>@Model.PostTitle</h2>
+		@{
+			using var stream = Model.PageResource.Content.LoadStream();
+			using var sr = new StreamReader(stream);
+			@Html.Raw(sr.ReadToEnd());
+		}
+	</div>
+</section>

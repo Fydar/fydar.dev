@@ -2,5 +2,6 @@
   "DisplayName": "Studio Projects",
   "Slug": "professional",
   "FeaturedImage": "img/eitr-background-1.gif",
-  "Description": "Work undertaken whilst employed."
+  "Description": "Work undertaken whilst employed.",
+  "Order": 3
 }

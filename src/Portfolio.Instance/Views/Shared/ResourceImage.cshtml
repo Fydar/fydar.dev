@@ -9,7 +9,7 @@
 <div class="image">
 	<svg class="overlay" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 		<filter id="blur" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-			<feGaussianBlur stdDeviation="8 8" edgeMode="duplicate" />
+			<feGaussianBlur stdDeviation="12 12" edgeMode="duplicate" />
 			<feComponentTransfer>
 				<feFuncA type="discrete" tableValues="1 1" />
 			</feComponentTransfer>
@@ -27,14 +27,13 @@
 			string base64 = Convert.ToBase64String(bytes);
 		}
 		<image filter="url(#blur)"
-			   xlink:href="data:image/jpeg;base64,@Html.Raw(base64)"
-			   x="0" y="0" height="100%" width="100%" preserveAspectRatio="xMidYMid slice" />
+					 xlink:href="data:image/jpeg;base64,@Html.Raw(base64)"
+					 x="0" y="0" height="100%" width="100%" preserveAspectRatio="xMidYMid slice" />
 	</svg>
 
 	@if (Model.Unblur)
 	{
-		<img src="~/@ResourceHelper.TransformName(Model.Image, Model.Size)" loading="lazy" class="overlay" 
-			 style='object-fit: cover; @(Model.Pixel ? "image-rendering: pixelated;" : "")' />
+		<img src="~/@ResourceHelper.TransformName(Model.Image, Model.Size)" loading="lazy" class="overlay"
+				 style='object-fit: cover; @(Model.Pixel ? "image-rendering: pixelated;" : "")' />
 	}
 </div>
-

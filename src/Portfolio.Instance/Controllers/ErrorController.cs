@@ -23,7 +23,7 @@ namespace Portfolio.Instance.Controllers
 		{
 			return View("ServerError", new ErrorViewModel()
 			{
-				
+
 			});
 		}
 	}

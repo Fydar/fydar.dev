@@ -13,44 +13,40 @@
 
 @inject IContentService contentService;
 
-<div class="container">
-	@await Component.InvokeAsync("BreadcrumbBar", new BreadcrumbBarViewModel(
-		new BreadcrumbViewModel()
+@await Component.InvokeAsync("BreadcrumbBar", new BreadcrumbBarViewModel(
+	new BreadcrumbViewModel()
+	{
+		Controller = "Portfolio",
+		Action = "Index",
+		Text = "Portfolio"
+	},
+	new BreadcrumbViewModel()
+	{
+		Controller = "Portfolio",
+		Action = "Item",
+		Text = Model.Project.ProjectCategoryModel.DisplayName,
+		RouteParameters = new Dictionary<string, string>()
 		{
-			Controller = "Portfolio",
-			Action = "Index",
-			Text = "Portfolio"
-		},
-		new BreadcrumbViewModel()
-		{
-			Controller = "Portfolio",
-			Action = "Item",
-			Text = Model.Project.ProjectCategoryModel.DisplayName,
-			RouteParameters = new Dictionary<string, string>()
-			{
-				["identifier"] = Model.Project.ProjectCategoryModel.Slug
-			}
-		},
-		new BreadcrumbViewModel()
-		{
-			Text = Model.Project.ProjectName
+			["identifier"] = Model.Project.ProjectCategoryModel.Slug
 		}
-	))
-</div>
+	},
+	new BreadcrumbViewModel()
+	{
+		Text = Model.Project.ProjectName
+	}
+))
 
-<div class="page">
-	<header>
-		<div class="container">
-			<h2>@Model.Project.ProjectName</h2>
-		</div>
-	</header>
-	<section>
-		<div class="container">
-			@{
-				using var stream = Model.Project.PageResource.Content.LoadStream();
-				using var sr = new StreamReader(stream);
-				@Html.Raw(sr.ReadToEnd());
-			}
-		</div>
-	</section>
-</div>
+<section style="min-height: 80vh; padding-top: 32px;">
+	<div class="container">
+	</div>
+
+	<div class="container">
+		<h2>@Model.Project.ProjectName</h2>
+
+		@{
+			using var stream = Model.Project.PageResource.Content.LoadStream();
+			using var sr = new StreamReader(stream);
+			@Html.Raw(sr.ReadToEnd());
+		}
+	</div>
+</section>

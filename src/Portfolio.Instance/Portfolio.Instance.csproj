@@ -34,6 +34,10 @@
     <ProjectReference Include="..\3rdParty\LettuceEncrypt\LettuceEncrypt\LettuceEncrypt.csproj" />
     <ProjectReference Include="..\Portfolio.Models\Portfolio.Models.csproj" />
   </ItemGroup>
+
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <Exec Command="dotnet run --no-build --configuration $(Configuration) --project &quot;$(ProjectDir)..\Portfolio.Pipeline.BuildStep/Portfolio.Pipeline.BuildStep.csproj&quot; &quot;$(TargetDir)&quot;" />
+  </Target>
   
   <Target Name="AddGeneratedContentItems" BeforeTargets="AssignTargetPaths" DependsOnTargets="PrepareForPublish">
     <Exec Command="dotnet run --no-build --configuration $(Configuration) --project &quot;$(ProjectDir)..\Portfolio.Pipeline.BuildStep/Portfolio.Pipeline.BuildStep.csproj&quot; &quot;$(PublishDir)&quot;" />

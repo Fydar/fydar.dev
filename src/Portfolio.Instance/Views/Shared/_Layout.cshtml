@@ -40,22 +40,53 @@
 		}
 	}
 
-	<link rel="stylesheet" href="~/css/main.css" />
+	<link rel="stylesheet" asp-append-version="true" href="~/css/main.css" />
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Quattrocento+Sans">
 </head>
-<body style="background-color: #edf0f2; margin: 0; padding: 0;">
+<body class="light">
+
+	<script>
+		var currentTheme = localStorage.getItem("theme");
+		if (currentTheme === null) {
+			const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)");
+			if (prefersDarkScheme.matches) {
+				currentTheme = "dark"
+			}
+			else {
+				currentTheme = "light";
+			}
+			localStorage.setItem("theme", currentTheme);
+		}
+		if (currentTheme == "dark") {
+			document.body.classList.remove("light");
+			document.body.classList.add("dark");
+		} else {
+			document.body.classList.add("light");
+			document.body.classList.remove("dark");
+		}
+	</script>
+
 	@{
 		string pageTitle = ViewData["Title"] as string;
-		string headerStyle = ViewData["HeaderStyle"] as string;
 		bool fullscreen = string.IsNullOrEmpty(pageTitle);
 	}
 
-	@if (headerStyle == "BlogStyle")
-	{
+	<section class="parallax-container parallax-anchor-top" style="overflow: hidden; position: relative; @(fullscreen ? "min-height: 100vh" : "")">
+		@if (ViewData.TryGetValue("FeaturedImage", out var featuredImage))
+		{
+			<div class="parallax-layer" style="z-index: -1; width: 100%; min-height: 200%;">
+				<partial name="ResourceImage" model='new ResourceImageViewModel((string)featuredImage, "fullscreen")' />
+			</div>
+		}
+		else
+		{
+			<div class="parallax-layer" style="z-index: -1; width: 100%; min-height: 200%;">
+				<partial name="ResourceImage" model='new ResourceImageViewModel("img/minijam-40-hunters-5.png") { Pixel = true }' />
+			</div>
+		}
 		<div class="container container-sm">
 			<div class="page page-profile">
 				<div class="page-section" style="text-align: center;">
-					<img src="/img/profile.svg" style="margin: auto; height: 166px; margin-top: 1.75rem; margin-bottom: 0.75rem;" />
 					<h1 style="font-size: 2.5rem; margin: 1.5rem 0 0.5rem 0;">Anthony Marmont</h1>
 					<p class="badge-bar badge-bar-social">
 						<a class="badge" target="_blank" href="https://www.youtube.com/channel/UCEEI1m2TCso1OGWEHvHS20g"><span class="pin pin-youtube"></span></a>
@@ -64,74 +95,71 @@
 						<a class="badge" target="_blank" href="https://www.linkedin.com/in/anthonymarmont/"><span class="pin pin-linkedin"></span></a>
 					</p>
 				</div>
-
-				<div class="page-section">
-					<div class="navbar">
-						<div class="navbar-grouping">
-							<a class="nav-button @(ViewContext.RouteData.Values["Controller"].ToString() == "Portfolio" ? "active" : "")" asp-controller="Portfolio" asp-action="Index">Portfolio</a>
-							<a class="nav-button @(ViewContext.RouteData.Values["Controller"].ToString() == "Contact" ? "active" : "")" asp-controller="Contact" asp-action="Index" asp>Contact</a>
-						</div>
-					</div>
-				</div>
-
 			</div>
 		</div>
-	}
-	else
-	{
-		<div class="parallax-container parallax-anchor-top" style="overflow: hidden; position: relative; @(fullscreen ? "min-height: 100vh" : "")">
-			@if (ViewData.TryGetValue("FeaturedImage", out var featuredImage))
-			{
-				<div class="parallax-layer" style="z-index: -1; width: 100%; min-height: 200%;">
-					<partial name="ResourceImage" model='new ResourceImageViewModel((string)featuredImage, "fullscreen")' />
-				</div>
-			}
-			else
-			{
-				<div class="parallax-layer" style="z-index: -1; width: 100%; min-height: 200%;">
-					<partial name="ResourceImage" model='new ResourceImageViewModel("img/minijam-40-hunters-5.png") { Pixel = true }' />
-				</div>
-			}
-			<div class="container container-sm">
-				<div class="page page-profile">
-					<div class="page-section" style="text-align: center;">
-						<img src="/img/profile.svg" style="margin: auto; height: 166px; margin-top: 1.75rem; margin-bottom: 0.75rem;" />
-						<h1 style="font-size: 2.5rem; margin: 1.5rem 0 0.5rem 0;">Anthony Marmont</h1>
-						<p class="badge-bar badge-bar-social">
-							<a class="badge" target="_blank" href="https://www.youtube.com/channel/UCEEI1m2TCso1OGWEHvHS20g"><span class="pin pin-youtube"></span></a>
-							<a class="badge" target="_blank" href="https://fydar.itch.io/"><span class="pin pin-itch-io"></span></a>
-							<a class="badge" target="_blank" href="https://github.com/Fydar"><span class="pin pin-github"></span></a>
-							<a class="badge" target="_blank" href="https://www.linkedin.com/in/anthonymarmont/"><span class="pin pin-linkedin"></span></a>
-						</p>
-					</div>
+	</section>
 
-					<div class="page-section">
-						<div class="navbar">
-							<div class="navbar-grouping">
-								<a class="nav-button @(ViewContext.RouteData.Values["Controller"].ToString() == "Portfolio" ? "active" : "")" asp-controller="Portfolio" asp-action="Index">Portfolio</a>
-								<a class="nav-button @(ViewContext.RouteData.Values["Controller"].ToString() == "Contact" ? "active" : "")" asp-controller="Contact" asp-action="Index" asp>Contact</a>
-							</div>
-						</div>
-					</div>
-
-				</div>
-			</div>
+	<section class="navbar" id="navbar">
+		<div class="navbar-grouping">
+			<a class="nav-button @(ViewContext.RouteData.Values["Controller"].ToString() == "Portfolio" ? "active" : "")" asp-controller="Portfolio" asp-action="Index">Portfolio</a>
+			<a class="nav-button @(ViewContext.RouteData.Values["Controller"].ToString() == "Contact" ? "active" : "")" asp-controller="Contact" asp-action="Index" asp>Contact</a>
 		</div>
-	}
 
-	<div class="navbar">
+		<div class="splitter"></div>
 
-	</div>
+		<div class="navbar-grouping">
+			<button class="btn btn-theme-toggle">T</button>
+		</div>
+	</section>
 
-	<div style="min-height: 80vh; padding-top: 32px;">
-		@RenderBody()
-	</div>
+	@RenderBody()
 
-	<div class="website-footer">
+	<section class="website-footer">
 		<div class="container">
 			<p>&copy; 2020 Anthony Marmont</p>
 		</div>
-	</div>
+	</section>
+
+	<script>
+		// Button for changing the theme
+		const btn = document.querySelector(".btn-theme-toggle");
+
+		function UpdateEmbeds() {
+			const itchEmbeds = document.querySelectorAll(".embed-itch");
+			for (var i = 0; i < itchEmbeds.length; i++) {
+				var itchEmbed = itchEmbeds[i];
+				var currentTheme = localStorage.getItem("theme");
+
+				var src = itchEmbed.getAttribute("src");
+				src = src.replace("?dark=true", "");
+				if (currentTheme != "light") {
+					src = src + "?dark=true";;
+				}
+				itchEmbed.setAttribute("src", src);
+			}
+		}
+		UpdateEmbeds();
+
+		btn.addEventListener("click", function () {
+			var currentTheme = localStorage.getItem("theme");
+
+			if (currentTheme == "dark") {
+				currentTheme = "light";
+
+				document.body.classList.add("light");
+				document.body.classList.remove("dark");
+			}
+			else {
+				currentTheme = "dark";
+
+				document.body.classList.remove("light");
+				document.body.classList.add("dark");
+			}
+
+			localStorage.setItem("theme", currentTheme);
+			UpdateEmbeds();
+		});
+	</script>
 
 	<script src="~/js/site.js" asp-append-version="true"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>

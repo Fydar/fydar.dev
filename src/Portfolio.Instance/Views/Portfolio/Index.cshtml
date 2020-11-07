@@ -6,70 +6,60 @@
 
 @model PortfolioIndexViewModel
 @{
-    ViewData["Title"] = "";
+	ViewData["Title"] = "";
 }
 
 @inject IContentService contentService;
 
-<div class="container">
+<section style="min-height: 80vh; padding-top: 32px;">
+	<div class="container">
 
-	@for (int i = 0; i < contentService.Categories.Count; i++)
-	{
-		var category = contentService.Categories[i];
+		@for (int i = 0; i < contentService.Categories.Count; i++)
+		{
+			var category = contentService.Categories[i];
 
-		<div class="page">
-			<header>
-				<h2>@category.DisplayName</h2>
-			</header>
-			<section>
-				<div class="card-grid @(category.Projects.Count > 3 ? "card-grid-sm" : "")">
+			<h2 style="font-size: 2.0em; margin: 1.5em 0;">@category.DisplayName</h2>
 
-					@{
-						int missing = 0;
-					}
-					@foreach (var project in category.Projects)
-					{
-						if (project.HideOnHomePage)
-						{
-							missing++;
-						}
-						else
-						{
-							@await Component.InvokeAsync("PortfolioItem", project)
-						}
-					}
+			<div class="card-grid @(category.Projects.Count > 3 ? "card-grid-sm" : "")">
 
-					@if (missing > 0)
-					{
-						@await Component.InvokeAsync("ViewMoreItem", new ViewMoreViewModel()
-						{
-							Description = "More Projects",
-							Quantity = missing
-						})
-					}
-
-				</div>
-			</section>
-		</div>
-	}
-
-	<div class="page">
-		<header>
-			<h2>Disciplines</h2>
-		</header>
-		<section>
-			<div class="card-grid">
-				@foreach (var discipline in contentService.Disciplines)
+				@{
+					int missing = 0;
+				}
+				@foreach (var project in category.Projects)
 				{
-					if (discipline.ShowOnHomePage)
+					if (project.HideOnHomePage)
 					{
-						@await Component.InvokeAsync("DisciplineCard", new DisciplineViewModel()
-						{
-							Discipline = discipline
-						})
+						missing++;
+					}
+					else
+					{
+						@await Component.InvokeAsync("PortfolioItem", project)
 					}
 				}
+
+				@if (missing > 0)
+				{
+					@await Component.InvokeAsync("ViewMoreItem", new ViewMoreViewModel()
+					{
+						Description = "More Projects",
+						Quantity = missing
+					})
+				}
+
 			</div>
-		</section>
+		}
+
+		<div class="card-grid card-grid-xs">
+			@foreach (var discipline in contentService.Disciplines)
+			{
+				if (discipline.ShowOnHomePage)
+				{
+					@await Component.InvokeAsync("DisciplineCard", new DisciplineViewModel()
+					{
+						Discipline = discipline
+					})
+				}
+			}
+		</div>
 	</div>
-</div>
+</section>

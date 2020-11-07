@@ -38,7 +38,7 @@ function updateParallax() {
 				var offset = lerp(0, -layerBound.height + bounds.height, scroll);
 
 				layer.style.transform = "translateY(" + offset + "px)";
-            }
+			}
 		}
 	}
 }

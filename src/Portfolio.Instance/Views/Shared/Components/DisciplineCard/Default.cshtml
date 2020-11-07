@@ -2,12 +2,12 @@
 
 <div class="card">
 
-    <a class="card-jumbotron" asp-controller="Portfolio" asp-action="Item" asp-route-identifier="@Model.Discipline.Slug">
-        <img src="~/@Model.Discipline.IconImage" />
-    </a>
+	<a class="card-jumbotron" asp-controller="Portfolio" asp-action="Item" asp-route-identifier="@Model.Discipline.Slug">
+		<img src="~/@Model.Discipline.IconImage" />
+	</a>
 
-    <div class="card-header">
-        <h1 class="card-title" style="text-align: center;"><a asp-controller="Portfolio" asp-action="Item" asp-route-identifier="@Model.Discipline.Slug">@Model.Discipline.DisplayName</a></h1>
-    </div>
+	<div class="card-header">
+		<h1 class="card-title" style="text-align: center;"><a asp-controller="Portfolio" asp-action="Item" asp-route-identifier="@Model.Discipline.Slug">@Model.Discipline.DisplayName</a></h1>
+	</div>
 
 </div>

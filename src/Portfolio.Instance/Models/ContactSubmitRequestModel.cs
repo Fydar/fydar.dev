@@ -8,20 +8,20 @@ namespace Portfolio.Instance.Models
 		public string RequestId { get; set; }
 
 		[DisplayName("Email")]
-		[Required(AllowEmptyStrings = false, ErrorMessage = "An 'Email' is required.")]
-		[EmailAddress(ErrorMessage = "The 'Email' must be a valid email address.")]
-		[DataType(DataType.EmailAddress, ErrorMessage = "The 'Email' must be a valid email address.")]
+		[Required(AllowEmptyStrings = false, ErrorMessage = "An email is required.")]
+		[EmailAddress(ErrorMessage = "The email must be in a valid format.")]
+		[DataType(DataType.EmailAddress, ErrorMessage = "The email must be in a valid format.")]
 		public string UserEmail { get; set; }
 
 		[DisplayName("Subject")]
-		[Required(ErrorMessage = "A 'Subject' is required.")]
-		[MinLength(10, ErrorMessage = "The 'Subject' is too short.")]
+		[Required(ErrorMessage = "A subject is required.")]
+		[MinLength(10, ErrorMessage = "The subject is too short.")]
 		[DataType(DataType.Text)]
 		public string UserSubject { get; set; }
 
 		[DisplayName("Body")]
-		[Required(ErrorMessage = "A 'Body' is required.")]
-		[MinLength(10, ErrorMessage = "The 'Body' is too short.")]
+		[Required(ErrorMessage = "A body is required.")]
+		[MinLength(10, ErrorMessage = "The body is too short.")]
 		[DataType(DataType.MultilineText)]
 		public string UserBody { get; set; }
 	}

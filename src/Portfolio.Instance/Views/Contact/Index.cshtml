@@ -11,60 +11,56 @@
 
 @inject IContentService contentService;
 
-<div class="container">
-	<div class="page">
-		<header>
-			<h2>Contact</h2>
-		</header>
-		<section>
-			<div class="container">
+<section style="min-height: 80vh; padding-top: 32px;">
+	<div class="container">
+		<h2>Contact</h2>
+		<div class="container">
 
-				@if (Model.Sent)
-				{
-					<div class="alert alert-green">
-						<p><b>Message successfully delivered.</b></p>
-						<p>Typically, you can expect a response to be sent to <b>@Model.SentToEmail</b> within <b>1-day</b>.</p>
+			@if (Model.Sent)
+			{
+				<div class="alert alert-green">
+					<p><b>Message successfully delivered.</b></p>
+					<p>Typically, you can expect a response to be sent to <b>@Model.SentToEmail</b> within <b>1-day</b>.</p>
+				</div>
+			}
+
+			<div class="alert">
+				<h2>Drop me a message</h2>
+				<form method="post" asp-controller="Contact" asp-action="Submit">
+					<input type="hidden" name="RequestId" value="@Guid.NewGuid().ToString()" />
+
+					<div class="form-group">
+						<label asp-for="UserEmail">Email</label>
+						<input class="form-control" asp-for="UserEmail" />
+						<small class="form-text text-muted">Your email will be used for <b>replying</b>.</small>
+
+						<span class="validation-feedback" asp-validation-for="UserEmail"></span>
 					</div>
-				}
 
-				<div class="alert">
-					<h2>Drop me a message</h2>
-					<form method="post" asp-controller="Contact" asp-action="Submit">
-						<input type="hidden" name="RequestId" value="@Guid.NewGuid().ToString()" />
+					<div class="form-group">
+						<label asp-for="UserSubject">Subject</label>
+						<input class="form-control" asp-for="UserSubject" autocomplete="off" />
 
-						<div class="form-group">
-							<label for="UserEmail">Email</label>
-							<input asp-for="UserEmail" class="form-control" />
-							<small class="form-text text-muted">Your email will be used for <b>replying</b>.</small>
+						<span class="validation-feedback" asp-validation-for="UserSubject"></span>
+					</div>
 
-							<span class="validation-feedback" asp-validation-for="UserEmail"></span>
-						</div>
+					<div class="form-group">
+						<label asp-for="UserBody">Body</label>
+						<textarea class="form-control" asp-for="UserBody" rows="16" type="text" style="min-height: 220px; min-width: 100%; max-width: 100%;" autocomplete="off"></textarea>
 
-						<div class="form-group">
-							<label for="UserSubject">Subject</label>
-							<input autocomplete="false" asp-for="UserSubject" class="form-control" />
+						<span class="validation-feedback" asp-validation-for="UserBody"></span>
+					</div>
 
-							<span class="validation-feedback" asp-validation-for="UserSubject"></span>
-						</div>
-
-						<div class="form-group">
-							<label for="UserBody">Body</label>
-							<textarea autocomplete="false" asp-for="UserBody" class="form-control" rows="16" type="text" style="min-height: 220px; min-width: 100%; max-width: 100%;"></textarea>
-
-							<span class="validation-feedback" asp-validation-for="UserBody"></span>
-						</div>
-
-						<div class="form-group" style="text-align: right;">
-							<button class="form-btn form-btn-primary" type="submit">Send</button>
-						</div>
-					</form>
-				</div>
-
-				<div class="alert">
-					<p>If you wish to email me directly, feel free to email me at: <a href="mailto:contact@anthonymarmont.com">contact@anthonymarmont.com</a></p>
-					<small>Either way, it both ends up in the same, readily-checked inbox!</small>
-				</div>
+					<div class="form-group" style="text-align: right;">
+						<button class="form-btn form-btn-primary" type="submit">Send</button>
+					</div>
+				</form>
 			</div>
-		</section>
+
+			<div class="alert">
+				<p>If you wish to email me directly, feel free to email me at: <a href="mailto:contact@anthonymarmont.com">contact@anthonymarmont.com</a></p>
+				<small>Either way, it both ends up in the same, readily-checked inbox!</small>
+			</div>
+		</div>
 	</div>
-</div>
+</section>
