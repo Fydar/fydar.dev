@@ -1,0 +1,37 @@
+{
+  "ProjectName": "Squadron 42",
+  "Slug": "squadron-42",
+  "FeaturedImage": "img/squadron-42-1.jpg",
+  "HoverImage": "img/star-citizen-2.jpg",
+  "Excerpt": "A next-generation AAA title.",
+  "Disciplines": [
+    "data/disciplines/tools-programming.json"
+  ],
+  "PublishedDate": 1569628800,
+  "ProjectCategory": "data/projects/categories/category-professional.json",
+  "Institution": "data/company/cloud-imperium-games.json",
+  "Page": "pages/projects/professional/squadron-42.html",
+  "Links": [
+      {
+        "SiteName": "Website",
+        "Url": "https://robertsspaceindustries.com/squadron42",
+        "Icon": "website"
+      }
+  ],
+  "Badges": [
+    {
+      "Tooltip": "Location",
+      "Icon": "location",
+      "Content": "Wilmslow",
+      "Url": null,
+      "DisplayOnHomepage": false
+    },
+    {
+      "Tooltip": "Date",
+      "Icon": "date",
+      "Content": "September 2019 - Present",
+      "Url": null,
+      "DisplayOnHomepage": true
+    }
+  ]
+}

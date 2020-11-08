@@ -352,7 +352,7 @@ section.breadcrumbs {
 .card-grid {
 	display: grid;
 	grid-template-columns: 1fr 1fr;
-	grid-gap: 1.0rem;
+	grid-gap: 2rem 1.1rem;
 	margin: 1.3rem 0;
 }
 
@@ -1053,7 +1053,6 @@ div.post-image {
 
 		.container .card-grid.card-grid-sm {
 			grid-template-columns: 1fr 1fr 1fr;
-			grid-gap: 1.1rem;
 		}
 
 		.container .card-grid.card-grid-xs {
