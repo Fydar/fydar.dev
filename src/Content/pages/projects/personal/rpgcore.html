@@ -1,114 +1,143 @@
 <body>
-    <div class="post-text">
+	<div class="post-text">
 
-        <p>An extensive collection of <b>C# libraries</b> for producing RPGCore mechanics and more.</p>
+		<p>An extensive collection of <b>C# libraries</b> for producing RPGCore mechanics and more.</p>
 
-        <p>RPGCore started as an in-Unity framework for producing RPGCore games. Nowadays; RPGCore is a collection of .NET Standard libraries that offer specialised sets of features.</p>
+		<p>RPGCore started as an in-Unity framework for producing RPGCore games. Nowadays; RPGCore is a collection of .NET Standard libraries that offer specialised sets of features.</p>
+
+		<table>
+			<thead>
+				<tr>
+					<td><h4>Library</h4></td>
+					<td><h4>Features</h4></td>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>RPGCore.Behaviour</td>
+					<td>Provides a node-based modular behaviour system.</td>
+				</tr>
+				<tr>
+					<td>RPGCore.Packages</td>
+					<td>Provides an API for processing and bundling game content.</td>
+				</tr>
+				<tr>
+					<td>RPGCore.Inventories</td>
+					<td>Provides an API for containing and moving items.</td>
+				</tr>
+				<tr>
+					<td>RPGCore.Items</td>
+					<td>Provides items with modular behaviour.</td>
+				</tr>
+				<tr>
+					<td>RPGCore.Traits</td>
+					<td>Provides generic containers for character stats.</td>
+				</tr>
+			</tbody>
+		</table>
+
+		<p>These libraries are unit-tested using the NUnit test framework.</p>
+
+		<h2>Libraries</h2>
+
+		<h3>RPGCore.Packages</h3>
+
+		<div class="media">
+
+			<div class="media-item">
+				<!-- Package Voxel -->
+				<div class="scene" style="padding: 50px 30px 50px 30px;"><div class="mesh anim-rotate-left fsa-relative" style="width: 138px; height: 138px; transform: rotateX(-45deg) rotateY(30deg)"><div class="element" style="transform: scale3d(1, -1, 1) translate3d(0, -138px, -69px)"><div class="surface" style="transform: translate3d(0, 0, 0px)"><div class="face" style="width: 138px;height: 23px;transform: translate(0px, 0px);background-color: #523F26;"></div><div class="face" style="width: 23px;height: 23px;transform: translate(69px, 115px);background-color: #523F26;"></div><div class="face" style="width: 138px;height: 23px;transform: translate(0px, 23px);background-color: #604727;"></div><div class="face" style="width: 92px;height: 23px;transform: translate(0px, 46px);background-color: #604727;"></div><div class="face" style="width: 23px;height: 92px;transform: translate(115px, 46px);background-color: #604727;"></div><div class="face" style="width: 69px;height: 23px;transform: translate(0px, 69px);background-color: #604727;"></div><div class="face" style="width: 46px;height: 46px;transform: translate(0px, 92px);background-color: #604727;"></div><div class="face" style="width: 23px;height: 23px;transform: translate(92px, 46px);background-color: #664F30;"></div><div class="face" style="width: 46px;height: 23px;transform: translate(69px, 69px);background-color: #664F30;"></div><div class="face" style="width: 69px;height: 23px;transform: translate(46px, 92px);background-color: #664F30;"></div><div class="face" style="width: 23px;height: 23px;transform: translate(46px, 115px);background-color: #664F30;"></div><div class="face" style="width: 23px;height: 23px;transform: translate(92px, 115px);background-color: #664F30;"></div></div><div class="surface" style="transform: rotateY(-90deg) translate3d(0px, 0, 0px)"><div class="face" style="width: 138px;height: 23px;transform: translate(0px, 0px);background-color: #83643D;"></div><div class="face" style="width: 92px;height: 23px;transform: translate(23px, 69px);background-color: #83643D;"></div><div class="face" style="width: 138px;height: 46px;transform: translate(0px, 23px);background-color: #99723F;"></div><div class="face" style="width: 23px;height: 46px;transform: translate(0px, 69px);background-color: #99723F;"></div><div class="face" style="width: 23px;height: 46px;transform: translate(115px, 69px);background-color: #99723F;"></div><div class="face" style="width: 138px;height: 23px;transform: translate(0px, 115px);background-color: #99723F;"></div><div class="face" style="width: 92px;height: 23px;transform: translate(23px, 92px);background-color: #503C24;"></div></div><div class="surface" style="transform: rotateX(90deg) translate3d(0, 0, 0px)"><div class="face" style="width: 138px;height: 138px;transform: translate(0px, 0px);background-color: #624B2E;"></div></div><div class="surface" style="transform: translate3d(0, 0, 138px)"><div class="face" style="width: 138px;height: 23px;transform: translate(0px, 0px);background-color: #A47E4D;"></div><div class="face" style="width: 23px;height: 23px;transform: translate(69px, 115px);background-color: #A47E4D;"></div><div class="face" style="width: 138px;height: 23px;transform: translate(0px, 23px);background-color: #C08F4F;"></div><div class="face" style="width: 46px;height: 92px;transform: translate(0px, 46px);background-color: #C08F4F;"></div><div class="face" style="width: 69px;height: 23px;transform: translate(69px, 46px);background-color: #C08F4F;"></div><div class="face" style="width: 46px;height: 23px;transform: translate(92px, 69px);background-color: #C08F4F;"></div><div class="face" style="width: 23px;height: 46px;transform: translate(115px, 92px);background-color: #C08F4F;"></div><div class="face" style="width: 23px;height: 23px;transform: translate(46px, 46px);background-color: #CD9F61;"></div><div class="face" style="width: 46px;height: 23px;transform: translate(46px, 69px);background-color: #CD9F61;"></div><div class="face" style="width: 69px;height: 23px;transform: translate(46px, 92px);background-color: #CD9F61;"></div><div class="face" style="width: 23px;height: 23px;transform: translate(46px, 115px);background-color: #CD9F61;"></div><div class="face" style="width: 23px;height: 23px;transform: translate(92px, 115px);background-color: #CD9F61;"></div></div><div class="surface" style="transform: rotateX(90deg) translate3d(0, 0, -138px)"><div class="face" style="width: 46px;height: 138px;transform: translate(0px, 0px);background-color: #AC8047;"></div><div class="face" style="width: 23px;height: 138px;transform: translate(115px, 0px);background-color: #AC8047;"></div><div class="face" style="width: 23px;height: 138px;transform: translate(46px, 0px);background-color: #B88F57;"></div><div class="face" style="width: 23px;height: 138px;transform: translate(92px, 0px);background-color: #B88F57;"></div><div class="face" style="width: 23px;height: 138px;transform: translate(69px, 0px);background-color: #937145;"></div></div><div class="surface" style="transform: rotateY(-90deg) translate3d(0px, 0, -138px)"><div class="face" style="width: 138px;height: 23px;transform: translate(0px, 0px);background-color: #725835;"></div><div class="face" style="width: 92px;height: 23px;transform: translate(23px, 69px);background-color: #725835;"></div><div class="face" style="width: 138px;height: 46px;transform: translate(0px, 23px);background-color: #866437;"></div><div class="face" style="width: 23px;height: 46px;transform: translate(0px, 69px);background-color: #866437;"></div><div class="face" style="width: 23px;height: 46px;transform: translate(115px, 69px);background-color: #866437;"></div><div class="face" style="width: 138px;height: 23px;transform: translate(0px, 115px);background-color: #866437;"></div><div class="face" style="width: 92px;height: 23px;transform: translate(23px, 92px);background-color: #463420;"></div></div></div></div></div>
+			</div>
+
+			<div class="media-body">
+
+				<p>RPGCore.Packages is an API for processing and bundling game data. For every resource managed by RPGCore.Packages, it provides tagging, metadata and dependencies; which work together to form a basic CMS.</p>
+
+				<p>RPGCore.Packages is currently being used to drive the content of my portfolio website.</p>
+
+				<p>RPGCore.Packages also provide a customisable service-stack for importing resources and building resources to packages.</p>
+
+				<ul>
+					<li>Custom resource importers can tag, write metadata and register dependencies for all resources they import.</li>
+					<li>Custom resource exporters can compress, optimize and write new resourcs to the exported directory.</li>
+				</ul>
+
+			</div>
+		</div>
+
+		<h3>RPGCore.Behaviour</h3>
+
+		<div class="media">
+
+			<div class="media-item">
+				<!-- Book Closed Voxel -->
+				<div class="scene" style="padding: 50px 30px 50px 30px;"><div class="mesh anim-rotate-left fsa-relative" style="width: 135px; height: 255px; transform: rotateX(-7deg) rotateY(30deg)"><div class="element" style="transform: scale3d(1, -1, 1) translate3d(0, -255px, -30px)"><div class="surface" style="transform: translate3d(0, 0, 15px)"><div class="face" style="width: 15px;height: 165px;transform: translate(0px, 45px);background-color: #16213E;"></div><div class="face" style="width: 15px;height: 15px;transform: translate(45px, 0px);background-color: #6D2711;"></div><div class="face" style="width: 30px;height: 30px;transform: translate(30px, 15px);background-color: #6D2711;"></div></div><div class="surface" style="transform: rotateY(-90deg) translate3d(0px, 0, 0px)"><div class="face" style="width: 30px;height: 165px;transform: translate(15px, 45px);background-color: #243563;"></div></div><div class="surface" style="transform: rotateY(-90deg) translate3d(0px, 0, -15px)"><div class="face" style="width: 30px;height: 15px;transform: translate(15px, 45px);background-color: #1F2E56;"></div><div class="face" style="width: 30px;height: 15px;transform: translate(15px, 195px);background-color: #1F2E56;"></div></div><div class="surface" style="transform: rotateX(90deg) translate3d(0, 0, -45px)"><div class="face" style="width: 90px;height: 15px;transform: translate(15px, 0px);background-color: #1B284A;"></div><div class="face" style="width: 15px;height: 30px;transform: translate(0px, 15px);background-color: #1B284A;"></div><div class="face" style="width: 90px;height: 15px;transform: translate(15px, 45px);background-color: #1B284A;"></div><div class="face" style="width: 30px;height: 15px;transform: translate(105px, 0px);background-color: #997B26;"></div><div class="face" style="width: 30px;height: 15px;transform: translate(105px, 45px);background-color: #997B26;"></div></div><div class="surface" style="transform: translate3d(0, 0, 45px)"><div class="face" style="width: 15px;height: 165px;transform: translate(0px, 45px);background-color: #2D437C;"></div></div><div class="surface" style="transform: rotateX(90deg) translate3d(0, 0, -210px)"><div class="face" style="width: 90px;height: 15px;transform: translate(15px, 0px);background-color: #283C6F;"></div><div class="face" style="width: 15px;height: 30px;transform: translate(0px, 15px);background-color: #283C6F;"></div><div class="face" style="width: 90px;height: 15px;transform: translate(15px, 45px);background-color: #283C6F;"></div><div class="face" style="width: 30px;height: 15px;transform: translate(105px, 0px);background-color: #E5B939;"></div><div class="face" style="width: 30px;height: 15px;transform: translate(105px, 45px);background-color: #E5B939;"></div></div><div class="surface" style="transform: translate3d(0, 0, 15px)"><div class="face" style="width: 15px;height: 15px;transform: translate(15px, 45px);background-color: #2D437C;"></div><div class="face" style="width: 45px;height: 15px;transform: translate(60px, 45px);background-color: #2D437C;"></div><div class="face" style="width: 15px;height: 105px;transform: translate(120px, 75px);background-color: #2D437C;"></div><div class="face" style="width: 90px;height: 15px;transform: translate(15px, 195px);background-color: #2D437C;"></div><div class="face" style="width: 30px;height: 15px;transform: translate(105px, 45px);background-color: #FFCE40;"></div><div class="face" style="width: 15px;height: 15px;transform: translate(120px, 60px);background-color: #FFCE40;"></div><div class="face" style="width: 15px;height: 15px;transform: translate(120px, 180px);background-color: #FFCE40;"></div><div class="face" style="width: 30px;height: 15px;transform: translate(105px, 195px);background-color: #FFCE40;"></div></div><div class="surface" style="transform: translate3d(0, 0, 0px)"><div class="face" style="width: 90px;height: 15px;transform: translate(15px, 45px);background-color: #16213E;"></div><div class="face" style="width: 30px;height: 15px;transform: translate(15px, 60px);background-color: #16213E;"></div><div class="face" style="width: 15px;height: 15px;transform: translate(105px, 60px);background-color: #16213E;"></div><div class="face" style="width: 15px;height: 105px;transform: translate(15px, 75px);background-color: #16213E;"></div><div class="face" style="width: 15px;height: 105px;transform: translate(120px, 75px);background-color: #16213E;"></div><div class="face" style="width: 30px;height: 15px;transform: translate(15px, 180px);background-color: #16213E;"></div><div class="face" style="width: 15px;height: 15px;transform: translate(105px, 180px);background-color: #16213E;"></div><div class="face" style="width: 90px;height: 15px;transform: translate(15px, 195px);background-color: #16213E;"></div><div class="face" style="width: 60px;height: 15px;transform: translate(45px, 60px);background-color: #19304D;"></div><div class="face" style="width: 90px;height: 105px;transform: translate(30px, 75px);background-color: #19304D;"></div><div class="face" style="width: 60px;height: 15px;transform: translate(45px, 180px);background-color: #19304D;"></div><div class="face" style="width: 30px;height: 15px;transform: translate(105px, 45px);background-color: #7F6720;"></div><div class="face" style="width: 15px;height: 15px;transform: translate(120px, 60px);background-color: #7F6720;"></div><div class="face" style="width: 15px;height: 15px;transform: translate(120px, 180px);background-color: #7F6720;"></div><div class="face" style="width: 30px;height: 15px;transform: translate(105px, 195px);background-color: #7F6720;"></div></div><div class="surface" style="transform: rotateY(-90deg) translate3d(0px, 0, -15px)"><div class="face" style="width: 15px;height: 165px;transform: translate(0px, 45px);background-color: #243563;"></div><div class="face" style="width: 15px;height: 165px;transform: translate(45px, 45px);background-color: #243563;"></div></div><div class="surface" style="transform: translate3d(0, 0, 60px)"><div class="face" style="width: 90px;height: 15px;transform: translate(15px, 45px);background-color: #2D437C;"></div><div class="face" style="width: 30px;height: 15px;transform: translate(15px, 60px);background-color: #2D437C;"></div><div class="face" style="width: 15px;height: 15px;transform: translate(105px, 60px);background-color: #2D437C;"></div><div class="face" style="width: 15px;height: 105px;transform: translate(15px, 75px);background-color: #2D437C;"></div><div class="face" style="width: 30px;height: 15px;transform: translate(60px, 75px);background-color: #2D437C;"></div><div class="face" style="width: 15px;height: 105px;transform: translate(120px, 75px);background-color: #2D437C;"></div><div class="face" style="width: 45px;height: 15px;transform: translate(45px, 120px);background-color: #2D437C;"></div><div class="face" style="width: 60px;height: 15px;transform: translate(45px, 150px);background-color: #2D437C;"></div><div class="face" style="width: 30px;height: 15px;transform: translate(15px, 180px);background-color: #2D437C;"></div><div class="face" style="width: 15px;height: 15px;transform: translate(105px, 180px);background-color: #2D437C;"></div><div class="face" style="width: 90px;height: 15px;transform: translate(15px, 195px);background-color: #2D437C;"></div><div class="face" style="width: 60px;height: 15px;transform: translate(45px, 60px);background-color: #33609B;"></div><div class="face" style="width: 30px;height: 15px;transform: translate(30px, 75px);background-color: #33609B;"></div><div class="face" style="width: 30px;height: 15px;transform: translate(90px, 75px);background-color: #33609B;"></div><div class="face" style="width: 90px;height: 30px;transform: translate(30px, 90px);background-color: #33609B;"></div><div class="face" style="width: 15px;height: 15px;transform: translate(30px, 120px);background-color: #33609B;"></div><div class="face" style="width: 30px;height: 15px;transform: translate(90px, 120px);background-color: #33609B;"></div><div class="face" style="width: 90px;height: 15px;transform: translate(30px, 135px);background-color: #33609B;"></div><div class="face" style="width: 15px;height: 15px;transform: translate(30px, 150px);background-color: #33609B;"></div><div class="face" style="width: 15px;height: 15px;transform: translate(105px, 150px);background-color: #33609B;"></div><div class="face" style="width: 90px;height: 15px;transform: translate(30px, 165px);background-color: #33609B;"></div><div class="face" style="width: 60px;height: 15px;transform: translate(45px, 180px);background-color: #33609B;"></div><div class="face" style="width: 30px;height: 15px;transform: translate(105px, 45px);background-color: #FFCE40;"></div><div class="face" style="width: 15px;height: 15px;transform: translate(120px, 60px);background-color: #FFCE40;"></div><div class="face" style="width: 15px;height: 15px;transform: translate(120px, 180px);background-color: #FFCE40;"></div><div class="face" style="width: 30px;height: 15px;transform: translate(105px, 195px);background-color: #FFCE40;"></div></div><div class="surface" style="transform: translate3d(0, 0, 45px)"><div class="face" style="width: 90px;height: 15px;transform: translate(15px, 45px);background-color: #16213E;"></div><div class="face" style="width: 15px;height: 105px;transform: translate(120px, 75px);background-color: #16213E;"></div><div class="face" style="width: 90px;height: 15px;transform: translate(15px, 195px);background-color: #16213E;"></div><div class="face" style="width: 30px;height: 15px;transform: translate(105px, 45px);background-color: #7F6720;"></div><div class="face" style="width: 15px;height: 15px;transform: translate(120px, 60px);background-color: #7F6720;"></div><div class="face" style="width: 15px;height: 15px;transform: translate(120px, 180px);background-color: #7F6720;"></div><div class="face" style="width: 30px;height: 15px;transform: translate(105px, 195px);background-color: #7F6720;"></div></div><div class="surface" style="transform: rotateX(90deg) translate3d(0, 0, -60px)"><div class="face" style="width: 15px;height: 15px;transform: translate(15px, 15px);background-color: #82643C;"></div><div class="face" style="width: 60px;height: 15px;transform: translate(60px, 15px);background-color: #82643C;"></div><div class="face" style="width: 105px;height: 15px;transform: translate(15px, 30px);background-color: #82643C;"></div></div><div class="surface" style="transform: rotateX(90deg) translate3d(0, 0, -195px)"><div class="face" style="width: 105px;height: 30px;transform: translate(15px, 15px);background-color: #C3975A;"></div></div><div class="surface" style="transform: translate3d(0, 0, 30px)"><div class="face" style="width: 15px;height: 15px;transform: translate(45px, 0px);background-color: #DB4E23;"></div><div class="face" style="width: 30px;height: 45px;transform: translate(30px, 15px);background-color: #DB4E23;"></div></div><div class="surface" style="transform: rotateY(-90deg) translate3d(0px, 0, -30px)"><div class="face" style="width: 15px;height: 45px;transform: translate(15px, 15px);background-color: #AF3E1C;"></div></div><div class="surface" style="transform: rotateX(90deg) translate3d(0, 0, -15px)"><div class="face" style="width: 15px;height: 15px;transform: translate(30px, 15px);background-color: #832E15;"></div></div><div class="surface" style="transform: rotateY(-90deg) translate3d(0px, 0, -45px)"><div class="face" style="width: 15px;height: 15px;transform: translate(15px, 0px);background-color: #AF3E1C;"></div></div><div class="surface" style="transform: rotateY(-90deg) translate3d(0px, 0, -60px)"><div class="face" style="width: 15px;height: 60px;transform: translate(15px, 0px);background-color: #993618;"></div></div><div class="surface" style="transform: rotateX(90deg) translate3d(0, 0, 0px)"><div class="face" style="width: 15px;height: 15px;transform: translate(45px, 15px);background-color: #832E15;"></div></div><div class="surface" style="transform: rotateY(-90deg) translate3d(0px, 0, -120px)"><div class="face" style="width: 30px;height: 135px;transform: translate(15px, 60px);background-color: #977546;"></div></div><div class="surface" style="transform: rotateY(-90deg) translate3d(0px, 0, -135px)"><div class="face" style="width: 15px;height: 30px;transform: translate(0px, 45px);background-color: #B2902C;"></div><div class="face" style="width: 15px;height: 30px;transform: translate(45px, 45px);background-color: #B2902C;"></div><div class="face" style="width: 15px;height: 30px;transform: translate(0px, 180px);background-color: #B2902C;"></div><div class="face" style="width: 15px;height: 30px;transform: translate(45px, 180px);background-color: #B2902C;"></div><div class="face" style="width: 15px;height: 105px;transform: translate(0px, 75px);background-color: #1F2E56;"></div><div class="face" style="width: 15px;height: 105px;transform: translate(45px, 75px);background-color: #1F2E56;"></div></div></div></div></div>
+			</div>
+
+			<div class="media-body">
+				<p>RPGCore.Behaviour is a node-based modular behaviour system. It can be used to describe the real-time or restful behaviour of any gameplay element.</p>
+
+				<h4>How it works</h4>
+
+				<p>RPGCore.Behaviour operates on node collections called "graphs".</p>
+
+				<p>Nodes have inputs and outputs that allow nodes to be connected. Every "connection" from one node to another is represented by a single object that both nodes share a reference too. Output sockets from nodes can write to the connection object whereas input sockets can only read from the connection.</p>
+
+				<p>Nodes can also connect directly to other nodes. This is useful for simpler graph-based solutions like behaviour-trees and state-machines. Nodes can use the Graph APIs to determine which node their inputs and outputs are connected too.</p>
+
+				<h4>Clean API</h4>
+
+				<p>The biggest goal of mine when it came work creating my own node-based system was to create a transparent API. I wanted to avoid all unnecessary reflection as much as possible to reduce any "black-magic" that users might expect was going-on behind the scenes.</p>
+
+				<!--
+				<p>Below is the API for creating an "Adding" node.</p>
+
+				<code lang="csharp">
+
+				</code>
+				-->
+
+			</div>
+		</div>
 
 
-        <iframe class="embed embed-itch" frameborder="0" src="https://itch.io/embed/347385" width="552" height="167" style="max-width: 100%;">
-            <a class="btn btn-outline-secondary btn-lg" href="https://itch.io/embed-upload/347385?color=edf0f2">
-                <span class="pin pin-itch-io"></span> Play on Itch.io
-            </a>
-        </iframe>
+		<h3>RPGCore.Inventories</h3>
+		<div class="media">
 
-        <table>
-            <thead>
-                <tr>
-                    <td>Library</td>
-                    <td>Features</td>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>RPGCore.Behaviour</td>
-                    <td>Provides a node-based modular behaviour system.</td>
-                </tr>
-                <tr>
-                    <td>RPGCore.Packages</td>
-                    <td>Provides an API for processing and bundling game content.</td>
-                </tr>
-                <tr>
-                    <td>RPGCore.Inventories</td>
-                    <td>Provides an API for containing and moving items.</td>
-                </tr>
-                <tr>
-                    <td>RPGCore.Items</td>
-                    <td>Provides items with modular behaviour.</td>
-                </tr>
-                <tr>
-                    <td>RPGCore.Traits</td>
-                    <td>Provides generic containers for character stats.</td>
-                </tr>
-            </tbody>
-        </table>
+			<div class="media-item">
+				<!-- Bag Voxel -->
+				<div class="scene" style="padding: 50px 30px 50px 30px;"><div class="mesh anim-rotate-left fsa-relative" style="width: 140px; height: 168px; transform: rotateX(-45deg) rotateY(30deg)"><div class="element" style="transform: scale3d(1, -1, 1) translate3d(0, -168px, -42px)"><div class="surface" style="transform: translate3d(0, 0, 0px)"><div class="face" style="width: 140px;height: 112px;transform: translate(0px, 0px);background-color: #271D12;"></div><div class="face" style="width: 84px;height: 28px;transform: translate(28px, 112px);background-color: #271D12;"></div><div class="face" style="width: 28px;height: 28px;transform: translate(0px, 112px);background-color: #352718;"></div><div class="face" style="width: 28px;height: 28px;transform: translate(112px, 112px);background-color: #352718;"></div><div class="face" style="width: 140px;height: 28px;transform: translate(0px, 140px);background-color: #352718;"></div></div><div class="surface" style="transform: rotateY(-90deg) translate3d(0px, 0, 0px)"><div class="face" style="width: 56px;height: 56px;transform: translate(0px, 0px);background-color: #3F2E1C;"></div><div class="face" style="width: 84px;height: 56px;transform: translate(0px, 56px);background-color: #3F2E1C;"></div><div class="face" style="width: 56px;height: 28px;transform: translate(28px, 112px);background-color: #3F2E1C;"></div><div class="face" style="width: 28px;height: 28px;transform: translate(0px, 112px);background-color: #553E27;"></div><div class="face" style="width: 84px;height: 28px;transform: translate(0px, 140px);background-color: #553E27;"></div></div><div class="surface" style="transform: rotateX(90deg) translate3d(0, 0, 0px)"><div class="face" style="width: 140px;height: 28px;transform: translate(0px, 0px);background-color: #2F2215;"></div><div class="face" style="width: 28px;height: 28px;transform: translate(0px, 28px);background-color: #2F2215;"></div><div class="face" style="width: 28px;height: 28px;transform: translate(112px, 28px);background-color: #2F2215;"></div><div class="face" style="width: 84px;height: 56px;transform: translate(28px, 28px);background-color: #241A10;"></div></div><div class="surface" style="transform: translate3d(0, 0, 56px)"><div class="face" style="width: 28px;height: 56px;transform: translate(0px, 0px);background-color: #4F3A24;"></div><div class="face" style="width: 28px;height: 56px;transform: translate(112px, 0px);background-color: #4F3A24;"></div></div><div class="surface" style="transform: translate3d(0, 0, 84px)"><div class="face" style="width: 28px;height: 56px;transform: translate(0px, 56px);background-color: #4F3A24;"></div><div class="face" style="width: 28px;height: 56px;transform: translate(112px, 56px);background-color: #4F3A24;"></div><div class="face" style="width: 56px;height: 28px;transform: translate(0px, 112px);background-color: #4F3A24;"></div><div class="face" style="width: 56px;height: 28px;transform: translate(84px, 112px);background-color: #4F3A24;"></div><div class="face" style="width: 140px;height: 28px;transform: translate(0px, 140px);background-color: #6B4E31;"></div><div class="face" style="width: 84px;height: 84px;transform: translate(28px, 0px);background-color: #3D2C1B;"></div><div class="face" style="width: 28px;height: 28px;transform: translate(28px, 84px);background-color: #3D2C1B;"></div><div class="face" style="width: 28px;height: 28px;transform: translate(84px, 84px);background-color: #3D2C1B;"></div><div class="face" style="width: 28px;height: 56px;transform: translate(56px, 84px);background-color: #FFE46B;"></div></div><div class="surface" style="transform: rotateX(90deg) translate3d(0, 0, -56px)"><div class="face" style="width: 28px;height: 28px;transform: translate(0px, 56px);background-color: #2F2215;"></div><div class="face" style="width: 28px;height: 28px;transform: translate(112px, 56px);background-color: #2F2215;"></div></div><div class="surface" style="transform: rotateX(90deg) translate3d(0, 0, -168px)"><div class="face" style="width: 140px;height: 84px;transform: translate(0px, 0px);background-color: #60462C;"></div></div><div class="surface" style="transform: rotateY(-90deg) translate3d(0px, 0, -28px)"><div class="face" style="width: 28px;height: 56px;transform: translate(56px, 0px);background-color: #302315;"></div></div><div class="surface" style="transform: rotateY(-90deg) translate3d(0px, 0, -112px)"><div class="face" style="width: 28px;height: 56px;transform: translate(56px, 0px);background-color: #2A1E12;"></div></div><div class="surface" style="transform: rotateY(-90deg) translate3d(0px, 0, -140px)"><div class="face" style="width: 56px;height: 56px;transform: translate(0px, 0px);background-color: #372819;"></div><div class="face" style="width: 84px;height: 56px;transform: translate(0px, 56px);background-color: #372819;"></div><div class="face" style="width: 56px;height: 28px;transform: translate(28px, 112px);background-color: #372819;"></div><div class="face" style="width: 28px;height: 28px;transform: translate(0px, 112px);background-color: #4A3622;"></div><div class="face" style="width: 84px;height: 28px;transform: translate(0px, 140px);background-color: #4A3622;"></div></div></div></div></div>
+			</div>
 
-        <p>These libraries are unit-tested using the NUnit test framework.</p>
+			<div class="media-body">
 
-        <h2>Demos</h2>
+				<p>Inventories act as smart collections for managing items from RPGCore.Items.</p>
 
-        <h3>RPGCore.Demo.BoardGame</h3>
+				<p>An inventory is made out of many ItemSlots.</p>
 
-        <p>The RPGCore.Demo.BoardGame project is a demo project that utilises RPGCore.Behaviour and RPGCore.Packages to produce a game that isn't in the style of an RPG.</p>
+				<p>An inventory can be queried to see how many items can enter it.</p>
 
-        <p>This demo project and be run from the Command Line via RPGCore.Demo.BoardGame.CommandLine and via Unity; however this demo is in its very really phases and acts more of a proof-of-concept.</p>
+				<h4>Inventory Constraints</h4>
 
-        <h3>RPGCore.Demo.Invetory</h3>
+				<p>Constraints can be applied to inventories to prevent items from entering slots.</p>
 
-        <p>This demo contains a basic set of nodes that you might expect to find in a typical RPG implementation.</p>
+			</div>
+		</div>
 
-        <p>There isn't much to this demo at this point.</p>
+		<h2>Demos</h2>
 
-        <h2>Libraries</h2>
+		<h3>RPGCore.Demo.BoardGame</h3>
 
-        <h3>RPGCore.Packages</h3>
+		<p>The RPGCore.Demo.BoardGame project is a demo project that utilises RPGCore.Behaviour and RPGCore.Packages to produce a game that isn't in the style of an RPG.</p>
 
-        <p>RPGCore.Packages is an API for processing and bundling game data. For every resource managed by RPGCore.Packages, it provides tagging, metadata and dependencies; which work together to form a basic CMS.</p>
+		<p>This demo project and be run from the Command Line via RPGCore.Demo.BoardGame.CommandLine and via Unity; however this demo is in its very really phases and acts more of a proof-of-concept.</p>
 
-        <p>RPGCore.Packages is currently being used to drive the content of my portfolio website.</p>
+		<h3>RPGCore.Demo.Invetory</h3>
 
-        <p>RPGCore.Packages also provide a customisable service-stack for importing resources and building resources to packages.</p>
+		<p>This demo contains a basic set of nodes that you might expect to find in a typical RPG implementation.</p>
 
-        <ul>
-            <li>Custom resource importers can tag, write metadata and register dependencies for all resources they import.</li>
-            <li>Custom resource exporters can compress, optimize and write new resourcs to the exported directory.</li>
-        </ul>
+		<p>There isn't much to this demo at this point.</p>
 
-        <h3>RPGCore.Behaviour</h3>
-
-        <p>RPGCore.Behaviour is a node-based modular behaviour system. It can be used to describe the real-time or restful behaviour of any gameplay element.</p>
-
-        <h4>How it works</h4>
-
-        <p>RPGCore.Behaviour operates on node collections called "graphs".</p>
-
-        <p>Nodes have inputs and outputs that allow nodes to be connected. Every "connection" from one node to another is represented by a single object that both nodes share a reference too. Output sockets from nodes can write to the connection object whereas input sockets can only read from the connection.</p>
-
-        <p>Nodes can also connect directly to other nodes. This is useful for simpler graph-based solutions like behaviour-trees and state-machines. Nodes can use the Graph APIs to determine which node their inputs and outputs are connected too.</p>
-
-        <h4>Multiplayer</h4>
-
-        <p>RPGCore.Behaviour aims to be fully-serializable and support multiplayer content as well.</p>
-
-        <p>RPGCore.Behaviour is suitable for the following networked gameplay environments:</p>
-
-        <ul>
-            <li>Deterministic Simulation with behaviour driven by RPGCore.Behaviour.</li>
-            <li>RPGCore.Behaviour driven server-side RPC generation.</li>
-            <li>RPGCore.Behaviour driven client input to server-side graphs.</li>
-            <li>Server-authoritative inputs to RPGCore.Behaviour nodes on client.</li>
-        </ul>
-
-        <h4>Clean API</h4>
-
-        <p>The biggest goal of mine when it came work creating my own node-based system was to create a transparent API. I wanted to avoid all unnecessary reflection as much as possible to reduce any "black-magic" that users might expect was going-on behind the scenes.</p>
-
-        <p>Below is the API for creating an "Adding" node.</p>
-
-        <code lang="csharp">
-
-        </code>
-
-    </div>
+	</div>
 
 </body>
