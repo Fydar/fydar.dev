@@ -1,8 +1,4 @@
-﻿@using Portfolio.Instance;
-@using Portfolio.Instance.ViewComponents;
-@using Portfolio.Instance.Models;
-@using Portfolio.Instance.Services.ContentService;
-@using Portfolio.Models;
+﻿@using Portfolio.Instance.Services.ContentService;
 
 @model PortfolioIndexViewModel
 @{
@@ -11,14 +7,14 @@
 
 @inject IContentService contentService;
 
-<section style="min-height: 80vh; padding-top: 32px;">
+<section style="min-height: 80vh;">
 	<div class="container">
 
 		@for (int i = 0; i < contentService.Categories.Count; i++)
 		{
 			var category = contentService.Categories[i];
 
-			<h2 style="font-size: 2.0em; margin: 1.5em 0;">@category.DisplayName</h2>
+			<h1>@category.DisplayName</h1>
 
 			<div class="card-grid @(category.Projects.Count > 3 ? "card-grid-sm" : "")">
 
@@ -49,6 +45,7 @@
 			</div>
 		}
 
+		<!--
 		<div class="card-grid card-grid-xs">
 			@foreach (var discipline in contentService.Disciplines)
 			{
@@ -61,5 +58,6 @@
 				}
 			}
 		</div>
+		-->
 	</div>
 </section>

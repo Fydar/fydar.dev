@@ -1,24 +1,24 @@
 ﻿@model BreadcrumbBarViewModel;
 
 <section class="breadcrumb-bar">
-
-	@for (int i = 0; i < Model.Breadcrumbs.Length; i++)
-	{
-		var item = Model.Breadcrumbs[i];
-
-		if (string.IsNullOrEmpty(item.Controller))
+	<div class="container">
+		@for (int i = 0; i < Model.Breadcrumbs.Length; i++)
 		{
-			<span class="breadcrumb @(i == Model.Breadcrumbs.Length - 1 ? "breadcrumb-active" : "")">@item.Text</span>
-		}
-		else
-		{
-			@Html.ActionLink(item.Text, item.Action, item.Controller, item.RouteParameters, new { @class = "breadcrumb" })
-		}
+			var item = Model.Breadcrumbs[i];
 
-		if (i != Model.Breadcrumbs.Length - 1)
-		{
-			<div class="breadcrumb-divider">/</div>
-		}
-	}
+			if (string.IsNullOrEmpty(item.Controller))
+			{
+				<span class="breadcrumb @(i == Model.Breadcrumbs.Length - 1 ? "breadcrumb-active" : "")">@item.Text</span>
+			}
+			else
+			{
+				@Html.ActionLink(item.Text, item.Action, item.Controller, item.RouteParameters, new { @class = "breadcrumb" })
+			}
 
+			if (i != Model.Breadcrumbs.Length - 1)
+			{
+				<div class="breadcrumb-divider">/</div>
+			}
+		}
+	</div>
 </section>
