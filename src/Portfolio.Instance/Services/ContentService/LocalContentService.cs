@@ -20,9 +20,10 @@ namespace Portfolio.Instance.Services.ContentService
 		public List<DisciplineModel> Disciplines { get; }
 		public List<BlogPostModel> BlogPosts { get; }
 
-		public LocalContentService()
+		public LocalContentService(IExplorer content)
 		{
-			contentExplorer = PackageExplorer.LoadFromDirectoryAsync(ContentDirectory.Path).Result;
+			contentExplorer = content;
+
 			serializer = new JsonSerializer();
 			deserializationCache = new Dictionary<IResource, object>();
 
@@ -113,7 +114,7 @@ namespace Portfolio.Instance.Services.ContentService
 			{
 				if (!deserializationCache.TryGetValue(resource, out object cached))
 				{
-					using var stream = resource.Content.LoadStream();
+					using var stream = resource.Content.OpenRead();
 					using var sr = new StreamReader(stream);
 					using var jsonReader = new JsonTextReader(sr);
 

@@ -23,7 +23,7 @@
 	<div class="container">
 		<h2>@Model.PostTitle</h2>
 		@{
-			using var stream = Model.PageResource.Content.LoadStream();
+			using var stream = Model.PageResource.Content.OpenRead();
 			using var sr = new StreamReader(stream);
 			@Html.Raw(sr.ReadToEnd());
 		}

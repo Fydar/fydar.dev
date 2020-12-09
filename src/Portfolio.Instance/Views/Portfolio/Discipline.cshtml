@@ -28,7 +28,7 @@
 	<div class="container">
 		<h2>@Model.Discipline.DisplayName</h2>
 		@{
-			using var stream = Model.Discipline.PageResource.Content.LoadStream();
+			using var stream = Model.Discipline.PageResource.Content.OpenRead();
 			using var sr = new StreamReader(stream);
 			@Html.Raw(sr.ReadToEnd());
 		}

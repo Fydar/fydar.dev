@@ -1,13 +1,31 @@
-﻿using RPGCore.Packages;
-using RPGCore.Packages.Archives;
-using System;
+﻿using RPGCore.FileTree;
+using RPGCore.Projects;
+using RPGCore.Projects.Pipeline;
 using System.Collections.Generic;
+using System.IO;
+using System.Threading.Tasks;
 using System.Xml;
 
 namespace Portfolio.Pipeline
 {
-	public class MarkupExporter : ResourceExporter
+	public class MarkupImporter : IArchiveFileImporter
 	{
+		private class XmlDocumentWriter : IContentWriter
+		{
+			private readonly XmlDocument document;
+
+			public XmlDocumentWriter(XmlDocument document)
+			{
+				this.document = document;
+			}
+
+			public Task WriteContentAsync(Stream destination)
+			{
+				document.Save(destination);
+				return Task.CompletedTask;
+			}
+		}
+
 		public class Heading
 		{
 			public Heading Parent { get; set; }
@@ -17,17 +35,18 @@ namespace Portfolio.Pipeline
 			public List<Heading> Subheadings { get; } = new List<Heading>();
 		}
 
-		public override bool CanExport(IResource resource)
+		public bool CanImport(IArchiveFile archiveFile)
 		{
-			return resource.Extension == ".html";
+			return archiveFile.Extension == ".html";
 		}
 
-		public override void BuildResource(IResource resource, IArchiveDirectory destination)
+		public IEnumerable<ProjectResourceUpdate> ImportFile(ArchiveFileImporterContext context, IArchiveFile archiveFile)
 		{
-			Console.WriteLine($"Exporting {resource.FullName}...");
+			var update = context.AuthorUpdate(archiveFile.FullName);
+			update.ImporterTags.Add("page");
 
 			var document = new XmlDocument();
-			document.Load(resource.Content.LoadStream());
+			document.Load(archiveFile.OpenRead());
 
 			var headings = ReadHeadings(document.DocumentElement);
 
@@ -59,9 +78,9 @@ namespace Portfolio.Pipeline
 				}
 			}
 
-			var entry = destination.Files.GetFile(resource.Name);
-			using var output = entry.OpenWrite();
-			document.Save(output);
+			update.WithContent(new XmlDocumentWriter(document));
+
+			yield return update;
 		}
 
 		private void WriteHeadings(XmlNode xmlNode, IEnumerable<Heading> headings, string prefix = "")

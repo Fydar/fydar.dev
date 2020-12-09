@@ -4,12 +4,12 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.FileProviders;
 using Microsoft.Extensions.Hosting;
 using Portfolio.Instance.Services.ContentService;
 using Portfolio.Instance.Services.PageMetaProvider;
 using Portfolio.Instance.Services.ViewRenderer;
 using Portfolio.Instance.Utility;
+using RPGCore.Packages;
 using System;
 using System.IO;
 
@@ -18,10 +18,12 @@ namespace Portfolio.Instance
 	public class Startup
 	{
 		public IConfiguration Configuration { get; }
+		public IExplorer Explorer { get; }
 
 		public Startup(IConfiguration configuration)
 		{
 			Configuration = configuration;
+			Explorer = PackageExplorer.LoadFromDirectoryAsync(ContentDirectory.Path).Result;
 		}
 
 		public void ConfigureServices(IServiceCollection services)
@@ -35,6 +37,7 @@ namespace Portfolio.Instance
 				options.EnableEndpointRouting = false;
 			});
 
+			services.AddSingleton(Explorer);
 			services.AddSingleton<IContentService, LocalContentService>();
 			services.AddScoped<IViewToStringRenderer, RazorViewToStringRenderer>();
 
@@ -73,12 +76,7 @@ namespace Portfolio.Instance
 			}
 
 			app.UseStaticFiles();
-			app.UseStaticFiles(new StaticFileOptions
-			{
-				FileProvider = new PhysicalFileProvider(Path.Combine(env.ContentRootPath, ContentDirectory.Path, "data", "img")),
-				RequestPath = "/img",
-			});
-
+			app.UseStaticContentImages(Explorer);
 
 			app.UseMiddleware<RequestLoggingMiddleware>();
 

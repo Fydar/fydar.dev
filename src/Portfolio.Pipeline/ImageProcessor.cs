@@ -1,5 +1,6 @@
 ﻿using RPGCore.Packages;
-using RPGCore.Packages.Pipeline;
+using RPGCore.Projects;
+using RPGCore.Projects.Pipeline;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -47,7 +48,7 @@ namespace Portfolio.Pipeline
 
 		public IEnumerable<ProjectResourceUpdate> ProcessImport(ImportProcessorContext context, IResource resource)
 		{
-			Console.WriteLine($"Process Image {resource.FullName}...");
+			Console.WriteLine($"Discovering Resources {resource.FullName}");
 
 			var sizes = new HashSet<string>
 			{
@@ -72,17 +73,19 @@ namespace Portfolio.Pipeline
 
 			foreach (string size in sizes)
 			{
-				string name = $"img/{resource.TransformName(size)}";
-				var update = context.AuthorUpdate(name);
-
 				var imageSettings = resolutions[size];
+				string name = $"img/{resource.TransformName(size)}";
 
-				update.WithContent(new ImageContentWriter()
+				var content = new ImageContentWriter()
 				{
 					extension = name.Substring(name.IndexOf('.')),
 					imageSettings = imageSettings,
 					source = resource.Content
-				});
+				};
+
+				var update = context
+					.AuthorUpdate(name)
+					.WithContent(content);
 
 				yield return update;
 			}
@@ -99,7 +102,7 @@ namespace Portfolio.Pipeline
 				int width = imageSettings.Width;
 				int height = int.MaxValue;
 
-				using var readStream = source.LoadStream();
+				using var readStream = source.OpenRead();
 				var sourceBitmap = new Bitmap(readStream);
 				var resized = Resize(sourceBitmap, width, height);
 

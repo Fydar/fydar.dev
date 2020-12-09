@@ -44,7 +44,7 @@
 		<h2>@Model.Project.ProjectName</h2>
 
 		@{
-			using var stream = Model.Project.PageResource.Content.LoadStream();
+			using var stream = Model.Project.PageResource.Content.OpenRead();
 			using var sr = new StreamReader(stream);
 			@Html.Raw(sr.ReadToEnd());
 		}

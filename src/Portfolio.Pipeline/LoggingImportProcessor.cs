@@ -1,11 +1,12 @@
 ﻿using RPGCore.Packages;
-using RPGCore.Packages.Pipeline;
+using RPGCore.Projects;
+using RPGCore.Projects.Pipeline;
 using System;
 using System.Collections.Generic;
 
 namespace Portfolio.Pipeline
 {
-	public class LoggingImporter : IImportProcessor
+	public class LoggingImportProcessor : IImportProcessor
 	{
 		public bool CanProcess(IResource resource)
 		{

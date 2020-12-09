@@ -1,5 +1,5 @@
-﻿using RPGCore.Packages;
-using RPGCore.Packages.Extensions.MetaFiles;
+﻿using RPGCore.Projects;
+using RPGCore.Projects.Extensions.MetaFiles;
 
 namespace Portfolio.Pipeline
 {
@@ -14,16 +14,15 @@ namespace Portfolio.Pipeline
 				.UseJsonMetaFiles()
 				.UseImporter(new ImageImporter())
 				.UseImporter(new JsonImporter())
+				.UseImporter(new MarkupImporter())
 				.UseProcessor(new ImageProcessor())
-				.UseProcessor(new LoggingImporter())
+				.UseProcessor(new LoggingImportProcessor())
 				.Build();
 
 			Build = new BuildPipeline()
 			{
 				ImportPipeline = Import
 			};
-			Build.Exporters.Add(new JsonExporter());
-			Build.Exporters.Add(new MarkupExporter());
 		}
 	}
 }

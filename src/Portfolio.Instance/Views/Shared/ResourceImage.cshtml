@@ -15,7 +15,7 @@
 			</feComponentTransfer>
 		</filter>
 		@{
-			using var stream = contentService.GetResource(ResourceHelper.TransformName(Model.Image, "blur")).Content.LoadStream();
+			using var stream = contentService.GetResource(ResourceHelper.TransformName(Model.Image, "blur")).Content.OpenRead();
 
 			byte[] bytes;
 			using (var memoryStream = new MemoryStream())
