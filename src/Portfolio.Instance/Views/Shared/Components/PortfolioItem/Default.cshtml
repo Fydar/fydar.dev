@@ -5,7 +5,10 @@
 	<div class="card-image">
 		<div class="imageHolder">
 			<a asp-controller="Portfolio" asp-action="Item" asp-route-identifier="@Model.Slug">
-				<partial name="ResourceImage" model='new ResourceImageViewModel(Model.FeaturedImage, "medium")' />
+				<partial name="ResourceImage" model='new ResourceImageViewModel(Model.FeaturedImage, "medium")
+				{
+					Pixel = false
+				}' />
 			</a>
 			<div class="card-hover overlay">
 				@if (!string.IsNullOrEmpty(Model.HoverImage))

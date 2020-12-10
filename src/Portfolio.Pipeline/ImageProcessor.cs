@@ -30,7 +30,7 @@ namespace Portfolio.Pipeline
 			},
 			["medium"] = new ImageSettings()
 			{
-				Width = 360,
+				Width = 398,
 				ImageFormat = ImageFormat.Jpeg
 			},
 			["fullscreen"] = new ImageSettings()
