@@ -36,6 +36,11 @@ namespace Portfolio.Pipeline
 			["Size"] = "fullscreen,medium,thumbnail,blur"
 		};
 
+		private static readonly Dictionary<string, string> otherImageMetadata = new()
+		{
+			["Size"] = "medium,thumbnail,blur"
+		};
+
 		public bool CanImport(IArchiveFile archiveFile)
 		{
 			return archiveFile.Extension == ".json";
@@ -75,7 +80,7 @@ namespace Portfolio.Pipeline
 				content = loaded;
 
 				update.Dependencies.Register(loaded.FeaturedImage, metadata: featuredImageMetadata);
-				update.Dependencies.Register(loaded.HoverImage, metadata: featuredImageMetadata);
+				update.Dependencies.Register(loaded.HoverImage, metadata: otherImageMetadata);
 
 				update.Dependencies.Register(loaded.ProjectCategory);
 				update.Dependencies.Register(loaded.Page);

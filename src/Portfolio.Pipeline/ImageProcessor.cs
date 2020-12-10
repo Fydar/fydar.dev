@@ -30,12 +30,12 @@ namespace Portfolio.Pipeline
 			},
 			["medium"] = new ImageSettings()
 			{
-				Width = 398,
+				Width = 400,
 				ImageFormat = ImageFormat.Jpeg
 			},
 			["fullscreen"] = new ImageSettings()
 			{
-				Width = 1920
+				Width = 1200
 			},
 		};
 
@@ -99,11 +99,12 @@ namespace Portfolio.Pipeline
 
 			public Task WriteContentAsync(Stream destination)
 			{
-				int width = imageSettings.Width;
-				int height = int.MaxValue;
-
 				using var readStream = source.OpenRead();
 				var sourceBitmap = new Bitmap(readStream);
+
+				int width = Math.Min(imageSettings.Width, sourceBitmap.Width);
+				int height = int.MaxValue;
+
 				var resized = Resize(sourceBitmap, width, height);
 
 				return CompressImageSave(resized, destination, extension, 90, imageSettings.ImageFormat);
