@@ -1,0 +1,51 @@
+{
+  "ProjectName": "Void",
+  "ProjectSubtitle": "Mini Jam 67 - \"Void\"",
+  "Slug": "minijam-67-void",
+  "FeaturedImage": "img/minijam-67-void-1.png",
+  "HoverImage": "img/minijam-67-void-2.png",
+  "Excerpt": "My personal submission for the 72-hour Mini Jam themed \"Void\".",
+  "Disciplines": [],
+  "PublishedDate": 1604793600,
+  "ProjectCategory": "data/projects/categories/category-gamejam.json",
+  "Institution": null,
+  "Page": "pages/projects/game-jams/minijam-67-void.html",
+  "Links": [
+    {
+      "SiteName": "Itch.io",
+      "Url": "https://fydar.itch.io/void",
+      "Icon": "itch-io"
+    }
+  ],
+  "Badges": [
+    {
+      "Tooltip": "Location",
+      "Icon": "location",
+      "Content": "Remote",
+      "Url": null,
+      "DisplayOnHomepage": false
+    },
+    {
+      "Tooltip": "Date",
+      "Icon": "date",
+      "Content": "November 2020",
+      "Url": null,
+      "DisplayOnHomepage": true
+    },
+    {
+      "Tooltip": "Team",
+      "Icon": "person",
+      "Content": "Solo",
+      "Url": null,
+      "DisplayOnHomepage": true
+    },
+    {
+      "Tooltip": "Theme",
+      "Icon": "pencil",
+      "Content": "Void",
+      "Url": null,
+      "DisplayOnHomepage": true
+    }
+  ],
+  "Order": -2
+}
