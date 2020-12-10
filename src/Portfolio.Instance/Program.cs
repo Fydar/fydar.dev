@@ -16,13 +16,20 @@ namespace Portfolio.Instance
 	{
 		public static int Main(string[] args)
 		{
-			Log.Logger = new LoggerConfiguration()
+			var loggerConfiguration = new LoggerConfiguration()
 				.MinimumLevel.Debug()
 				.MinimumLevel.Override("Microsoft", LogEventLevel.Warning)
-				.Enrich.FromLogContext()
-				.WriteTo.Console(new LogFormatter())
-				// .WriteTo.Async(a => a.File(new LogFormatter(), "log.txt", rollingInterval: RollingInterval.Day))
-				.CreateLogger();
+				.MinimumLevel.Override("Microsoft.AspNetCore.Server.Kestrel", LogEventLevel.Error)
+				.Enrich.FromLogContext();
+
+#if DEBUG
+			loggerConfiguration.WriteTo.Sink(new ColoredConsoleSink());
+			// logger.WriteTo.Async(a => a.File(new LogFormatter(), "log.txt", rollingInterval: RollingInterval.Day))
+#else
+			logger.WriteTo.Console(new LogFormatter());
+#endif
+			var logger = loggerConfiguration.CreateLogger();
+			Log.Logger = logger;
 
 			try
 			{
@@ -59,10 +66,12 @@ namespace Portfolio.Instance
 				.ConfigureWebHostDefaults(webBuilder =>
 				{
 					webBuilder.UseStartup<Startup>();
+
 					webBuilder.UseSetting(WebHostDefaults.SuppressStatusMessagesKey, "True");
 
 					webBuilder.UseKestrel(kestral =>
 					{
+#if RELEASE
 						var appServices = kestral.ApplicationServices;
 
 						kestral.Listen(IPAddress.Any, 80);
@@ -77,6 +86,7 @@ namespace Portfolio.Instance
 									adapter.UseLettuceEncrypt(appServices);
 								}));
 						}
+#endif
 					});
 				})
 				.UseSerilog();

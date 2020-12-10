@@ -4,7 +4,7 @@ using RPGCore.Packages;
 using System.IO;
 using System.Linq;
 
-namespace Portfolio.Instance
+namespace Portfolio.Instance.Utility
 {
 	public static class IApplicationBuilderExtensions
 	{

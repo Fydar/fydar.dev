@@ -10,8 +10,11 @@ using Portfolio.Instance.Services.PageMetaProvider;
 using Portfolio.Instance.Services.ViewRenderer;
 using Portfolio.Instance.Utility;
 using RPGCore.Packages;
+
+#if RELEASE
 using System;
 using System.IO;
+#endif
 
 namespace Portfolio.Instance
 {
@@ -45,17 +48,15 @@ namespace Portfolio.Instance
 
 			services.AddAWSService<IAmazonSimpleEmailService>();
 
-			bool enableHttps = true;
-			if (enableHttps)
+#if RELEASE
+			services.AddLettuceEncrypt(options =>
 			{
-				services.AddLettuceEncrypt(options =>
-				{
-					options.AcceptTermsOfService = true;
-					options.DomainNames = new string[] { Environment.GetEnvironmentVariable("CONFIG_DOMAINNAME") };
-					options.EmailAddress = "dev.anthonymarmont@gmail.com";
-				})
-					.PersistDataToDirectory(new DirectoryInfo("lettuce"), null);
-			}
+				options.AcceptTermsOfService = true;
+				options.DomainNames = new string[] { Environment.GetEnvironmentVariable("CONFIG_DOMAINNAME") };
+				options.EmailAddress = "dev.anthonymarmont@gmail.com";
+			})
+				.PersistDataToDirectory(new DirectoryInfo("lettuce"), null);
+#endif
 		}
 
 		public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
