@@ -35,7 +35,14 @@
     {
       "Tooltip": "Date",
       "Icon": "date",
-      "Content": "July 2018 - September 2019",
+      "Content": "July 2018 - September 2020",
+      "Url": null,
+      "DisplayOnHomepage": true
+    },
+    {
+      "Tooltip": "Scale",
+      "Icon": "person",
+      "Content": "AA",
       "Url": null,
       "DisplayOnHomepage": true
     }

@@ -49,7 +49,7 @@ namespace Portfolio.Instance.Utility
 				{
 					Console.ForegroundColor = ConsoleColor.DarkRed;
 					output.Write("\n");
-					JsonValueFormatter.WriteQuotedJsonString(logEvent.Exception.ToString(), output);
+					output.Write(logEvent.Exception.ToString());
 				}
 
 				foreach (var property in logEvent.Properties)
@@ -100,7 +100,7 @@ namespace Portfolio.Instance.Utility
 
 					valueFormatter.Format(property.Value, output);
 				}
-
+				Console.ResetColor();
 				output.Write("\n\n");
 			}
 		}

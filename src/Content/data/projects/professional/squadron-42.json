@@ -2,7 +2,7 @@
   "ProjectName": "Squadron 42",
   "Slug": "squadron-42",
   "FeaturedImage": "img/squadron-42-1.jpg",
-  "HoverImage": "img/star-citizen-2.jpg",
+  "HoverImage": "img/star-citizen-3.jpg",
   "Excerpt": "A next-generation AAA title.",
   "Disciplines": [
     "data/disciplines/tools-programming.json"
@@ -29,7 +29,14 @@
     {
       "Tooltip": "Date",
       "Icon": "date",
-      "Content": "September 2019 - Present",
+      "Content": "September 2020 - Present",
+      "Url": null,
+      "DisplayOnHomepage": true
+    },
+    {
+      "Tooltip": "Scale",
+      "Icon": "person",
+      "Content": "AAA",
       "Url": null,
       "DisplayOnHomepage": true
     }

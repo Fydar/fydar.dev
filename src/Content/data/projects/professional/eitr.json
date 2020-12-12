@@ -37,6 +37,13 @@
       "Content": "June 2017 - June 2018",
       "Url": null,
       "DisplayOnHomepage": true
+    },
+    {
+      "Tooltip": "Scale",
+      "Icon": "person",
+      "Content": "Indie",
+      "Url": null,
+      "DisplayOnHomepage": true
     }
   ]
 }
