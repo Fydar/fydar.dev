@@ -26,7 +26,7 @@ namespace Portfolio.Instance
 			loggerConfiguration.WriteTo.Sink(new ColoredConsoleSink());
 			// logger.WriteTo.Async(a => a.File(new LogFormatter(), "log.txt", rollingInterval: RollingInterval.Day))
 #else
-			logger.WriteTo.Console(new LogFormatter());
+			loggerConfiguration.WriteTo.Console(new LogFormatter());
 #endif
 			var logger = loggerConfiguration.CreateLogger();
 			Log.Logger = logger;
