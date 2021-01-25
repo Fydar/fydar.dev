@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
-    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <TargetFramework>net5.0</TargetFramework>
     <CopyRefAssembliesToPublishDirectory>false</CopyRefAssembliesToPublishDirectory>
     <UserSecretsId>2db2feb6-af56-45dc-9589-66f9eda1d606</UserSecretsId>
     <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
@@ -14,14 +14,15 @@
 
   <ItemGroup>
     <PackageReference Include="AWSSDK.Extensions.NETCore.Setup" Version="3.3.101" />
-    <PackageReference Include="AWSSDK.SimpleEmail" Version="3.5.0.48" />
-    <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="3.1.9" />
-    <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="3.1.9" />
-    <PackageReference Include="Serilog" Version="2.10.1-dev-01256" />
+    <PackageReference Include="AWSSDK.SimpleEmail" Version="3.5.0.61" />
+    <PackageReference Include="LettuceEncrypt" Version="1.1.0-beta.73" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="5.0.2" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="5.0.2" />
+    <PackageReference Include="Serilog" Version="2.10.1-dev-01265" />
     <PackageReference Include="Serilog.AspNetCore" Version="3.4.1-dev-00188" />
     <PackageReference Include="Serilog.Sinks.Async" Version="1.4.1-dev-00073" />
     <PackageReference Include="Serilog.Sinks.Console" Version="4.0.0-dev-00839" />
-    <PackageReference Include="Serilog.Sinks.File" Version="5.0.0-dev-00905" />
+    <PackageReference Include="Serilog.Sinks.File" Version="5.0.0-dev-00909" />
     <PackageReference Include="StackExchange.Redis" Version="2.2.4" />
   </ItemGroup>
 
@@ -31,7 +32,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\..\RPGCore\src\RPGCore.Packages\RPGCore.Packages.csproj" />
-    <ProjectReference Include="..\3rdParty\LettuceEncrypt\LettuceEncrypt\LettuceEncrypt.csproj" />
     <ProjectReference Include="..\Portfolio.Models\Portfolio.Models.csproj" />
   </ItemGroup>
 

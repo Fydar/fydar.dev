@@ -5,11 +5,11 @@
     <AWSProjectType>Lambda</AWSProjectType>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Amazon.Lambda.Core" Version="1.1.0" />
-    <PackageReference Include="Amazon.Lambda.Serialization.SystemTextJson" Version="2.0.0" />
-    <PackageReference Include="Amazon.Lambda.SimpleEmailEvents" Version="2.1.0" />
-    <PackageReference Include="AWSSDK.S3" Version="3.5.3.6" />
-    <PackageReference Include="AWSSDK.SimpleEmail" Version="3.5.0.30" />
-    <PackageReference Include="MimeKit" Version="2.9.2" />
+    <PackageReference Include="Amazon.Lambda.Core" Version="1.2.0" />
+    <PackageReference Include="Amazon.Lambda.Serialization.SystemTextJson" Version="2.1.0" />
+    <PackageReference Include="Amazon.Lambda.SimpleEmailEvents" Version="2.2.0" />
+    <PackageReference Include="AWSSDK.S3" Version="3.5.7.8" />
+    <PackageReference Include="AWSSDK.SimpleEmail" Version="3.5.0.61" />
+    <PackageReference Include="MimeKit" Version="2.10.1" />
   </ItemGroup>
 </Project>

@@ -62,6 +62,7 @@ namespace Portfolio.Instance
 				.ConfigureHostConfiguration(config =>
 				{
 					config.AddCommandLine(args);
+					config.AddEnvironmentVariables("CONFIG_");
 				})
 				.ConfigureWebHostDefaults(webBuilder =>
 				{

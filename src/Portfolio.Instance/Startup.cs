@@ -10,22 +10,20 @@ using Portfolio.Instance.Services.PageMetaProvider;
 using Portfolio.Instance.Services.ViewRenderer;
 using Portfolio.Instance.Utility;
 using RPGCore.Packages;
-
-#if RELEASE
-using System;
 using System.IO;
-#endif
 
 namespace Portfolio.Instance
 {
 	public class Startup
 	{
 		public IConfiguration Configuration { get; }
+		public IWebHostEnvironment Environment { get; }
 		public IExplorer Explorer { get; }
 
-		public Startup(IConfiguration configuration)
+		public Startup(IConfiguration configuration, IWebHostEnvironment environment)
 		{
 			Configuration = configuration;
+			Environment = environment;
 			Explorer = PackageExplorer.LoadFromDirectoryAsync(ContentDirectory.Path).Result;
 		}
 
@@ -42,21 +40,24 @@ namespace Portfolio.Instance
 
 			services.AddSingleton(Explorer);
 			services.AddSingleton<IContentService, LocalContentService>();
-			services.AddScoped<IViewToStringRenderer, RazorViewToStringRenderer>();
-
 			services.AddSingleton<IPageMetaTransformer, ProjectPageMetaTransformer>();
+
+			services.AddScoped<IViewToStringRenderer, RazorViewToStringRenderer>();
 
 			services.AddAWSService<IAmazonSimpleEmailService>();
 
-#if RELEASE
-			services.AddLettuceEncrypt(options =>
+			if (!Environment.IsDevelopment())
 			{
-				options.AcceptTermsOfService = true;
-				options.DomainNames = new string[] { Environment.GetEnvironmentVariable("CONFIG_DOMAINNAME") };
-				options.EmailAddress = "dev.anthonymarmont@gmail.com";
-			})
-				.PersistDataToDirectory(new DirectoryInfo("lettuce"), null);
-#endif
+				string domainName = Configuration.GetValue<string>("DOMAINNAME");
+
+				services.AddLettuceEncrypt(options =>
+				{
+					options.AcceptTermsOfService = true;
+					options.DomainNames = new string[] { domainName };
+					options.EmailAddress = "dev.anthonymarmont@gmail.com";
+				})
+					.PersistDataToDirectory(new DirectoryInfo("lettuce"), null);
+			}
 		}
 
 		public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
@@ -64,9 +65,9 @@ namespace Portfolio.Instance
 			app.UseHealthChecks("/api/health");
 
 			app.UseHttpsRedirection();
-
 			app.UseResponseCompression();
 
+			// Exception handling
 			if (env.IsDevelopment())
 			{
 				app.UseDeveloperExceptionPage();
