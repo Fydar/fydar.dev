@@ -361,8 +361,8 @@ section.navbar {
 	margin: 0;
 	padding: 0;
 	color: var(--color-text-subtitles);
-	margin-top: 0.3rem;
-	font-size: 1.1rem;
+	margin-top: 5px;
+	font-size: 17px;
 }
 
 
@@ -488,18 +488,18 @@ section.navbar {
 	.badge-bar.badge-bar-subtle {
 		color: #999;
 		text-transform: uppercase;
-		font-size: 0.775rem;
+		font-size: 12px;
 		padding: 3px 0;
 		font-weight: 400;
 		letter-spacing: 0.25px;
 	}
 
 		.badge-bar.badge-bar-subtle .badge {
-			padding: 0.3rem 0.4rem;
+			padding: 4px 5px;
 		}
 
 		.badge-bar.badge-bar-subtle .pin {
-			padding-right: 0.15em;
+			padding-right: 2px;
 		}
 
 			.badge-bar.badge-bar-subtle .pin::after {
@@ -508,7 +508,7 @@ section.navbar {
 			}
 
 	.badge-bar.badge-bar-social {
-		font-size: 1.8rem;
+		font-size: 28px;
 		justify-content: center;
 		margin: 1rem 0;
 	}
@@ -519,12 +519,12 @@ section.navbar {
 	white-space: nowrap;
 	pointer-events: all;
 	text-decoration: none;
-	padding: 0.3rem 0.2rem;
+	padding: 3px 4px;
 }
 
 	.badge.badge-lozenge {
 		margin: 4px;
-		font-size: 0.85em;
+		font-size: 14px;
 		padding: 4px 6px 4px 2px;
 		border-radius: 0.5em;
 		background-color: #fafbfc;
@@ -1143,13 +1143,13 @@ $grid-breakpoints: (
 		}
 
 			.container .card-grid.card-grid-sm {
-				grid-template-columns: 350px 350px;
-				grid-gap: 24px 20px;
+				grid-template-columns: 354px 354px;
+				grid-gap: 20px 20px;
 			}
 
 			.container .card-grid.card-grid-xs {
-				grid-template-columns: 350px 350px;
-				grid-gap: 24px 20px;
+				grid-template-columns: 354px 354px;
+				grid-gap: 20px 20px;
 			}
 
 	.post-image {
