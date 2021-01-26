@@ -1,4 +1,4 @@
-FROM mcr.microsoft.com/dotnet/core/aspnet:5.0-alpine3.12-arm64v8 AS base
+FROM mcr.microsoft.com/dotnet/aspnet:5.0.2-alpine3.12-arm64v8 AS base
 EXPOSE 80
 EXPOSE 443
 

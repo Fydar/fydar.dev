@@ -70,25 +70,22 @@ namespace Portfolio.Instance
 
 					webBuilder.UseSetting(WebHostDefaults.SuppressStatusMessagesKey, "True");
 
-					webBuilder.UseKestrel(kestral =>
+					if (webBuilder.GetSetting("Environment") != "Development")
 					{
-#if RELEASE
-						var appServices = kestral.ApplicationServices;
-
-						kestral.Listen(IPAddress.Any, 80);
-
-						bool enableHttps = true;
-						if (enableHttps)
+						webBuilder.UseKestrel(kestral =>
 						{
+							var appServices = kestral.ApplicationServices;
+
+							kestral.Listen(IPAddress.Any, 80);
+
 							kestral.Listen(
 								IPAddress.Any, 443,
 								listen => listen.UseHttps(adapter =>
 								{
 									adapter.UseLettuceEncrypt(appServices);
 								}));
-						}
-#endif
-					});
+						});
+					}
 				})
 				.UseSerilog();
 		}

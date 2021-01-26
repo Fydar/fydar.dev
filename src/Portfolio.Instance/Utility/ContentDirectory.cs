@@ -9,7 +9,7 @@ namespace Portfolio.Instance.Utility
 
 		static ContentDirectory()
 		{
-			string buildStepOutput = "../Portfolio.Pipeline.BuildStep/bin/Debug/netcoreapp3.1/output/content";
+			string buildStepOutput = "../Portfolio.Pipeline.BuildStep/bin/Debug/net5.0/output/content";
 
 			if (Directory.Exists("content"))
 			{

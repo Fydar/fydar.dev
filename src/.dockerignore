@@ -1,7 +1,7 @@
 *
 
-!Portfolio.Instance/bin/Release/netcoreapp3.1/**
-!Portfolio.Pipeline.BuildStep/bin/Debug/netcoreapp3.1/output/**
+!Portfolio.Instance/bin/Release/net5.0/**
+!Portfolio.Pipeline.BuildStep/bin/Debug/net5.0/output/**
 
 **/.classpath
 **/.dockerignore

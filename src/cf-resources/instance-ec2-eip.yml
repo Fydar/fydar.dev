@@ -269,7 +269,7 @@ Resources:
           Ref: PortfolioInstanceIAMProfile
       Tags:
         - Key: Name
-          Value: anthonymarmont.com Instane
+          Value: anthonymarmont.com Instance
           
   PortfolioInstanceIAMProfile: 
     Type: AWS::IAM::InstanceProfile
