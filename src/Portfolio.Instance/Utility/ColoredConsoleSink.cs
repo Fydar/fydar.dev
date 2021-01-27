@@ -1,12 +1,28 @@
-﻿using Serilog.Core;
+using Serilog.Core;
 using Serilog.Events;
 using Serilog.Formatting.Json;
 using System;
+using System.IO;
 
 namespace Portfolio.Instance.Utility
 {
 	public class ColoredConsoleSink : ILogEventSink
 	{
+		private static readonly string[] blacklistedProperties = new string[]
+		{
+			"TraceId",
+			"SpanId",
+			"ParentId",
+			"ConnectionId",
+			"ActionId",
+			"ActionName",
+
+			"RequestPath",
+			"RequestMethod",
+			"RequestId",
+			"SourceContext"
+		};
+
 		private readonly JsonValueFormatter valueFormatter;
 
 		/// <summary>
@@ -49,7 +65,25 @@ namespace Portfolio.Instance.Utility
 				{
 					Console.ForegroundColor = ConsoleColor.DarkRed;
 					output.Write("\n");
-					output.Write(logEvent.Exception.ToString());
+					//output.Write(logEvent.Exception.Format());
+					WriteFormattedException(output, logEvent.Exception.Format());
+				}
+
+				if (logEvent.Properties.TryGetValue("RequestPath", out var requestPathValue))
+				{
+					logEvent.Properties.TryGetValue("RequestMethod", out var requestMethod);
+
+					Console.ForegroundColor = ConsoleColor.DarkGray;
+					output.Write("\n - ");
+					Console.ForegroundColor = ConsoleColor.Cyan;
+					output.Write("Request");
+					Console.ForegroundColor = ConsoleColor.DarkGray;
+					output.Write(": ");
+					Console.ForegroundColor = ConsoleColor.Yellow;
+					output.Write(requestMethod?.ToString()?.Trim('\"') ?? "---");
+					output.Write(" ");
+					Console.ForegroundColor = ConsoleColor.Gray;
+					output.Write(requestPathValue.ToString().Trim('\"'));
 				}
 
 				foreach (var property in logEvent.Properties)
@@ -59,6 +93,21 @@ namespace Portfolio.Instance.Utility
 					{
 						// Escape first '@' by doubling
 						name = '@' + name;
+					}
+
+					// Filter out blacklisted properties
+					bool shouldInclude = true;
+					foreach (string blacklistedProperty in blacklistedProperties)
+					{
+						if (name == blacklistedProperty)
+						{
+							shouldInclude = false;
+						}
+					}
+
+					if (!shouldInclude)
+					{
+						continue;
 					}
 
 					Console.ForegroundColor = ConsoleColor.DarkGray;
@@ -83,26 +132,65 @@ namespace Portfolio.Instance.Utility
 							|| scalarValue.Value is float)
 						{
 							Console.ForegroundColor = ConsoleColor.Blue;
+							valueFormatter.Format(property.Value, output);
+						}
+						else if (scalarValue.Value is TimeSpan timeSpan)
+						{
+							Console.ForegroundColor = ConsoleColor.Blue;
+							output.Write($"{timeSpan.TotalMilliseconds:###,##0.0}ms");
 						}
 						else
 						{
 							Console.ForegroundColor = ConsoleColor.Yellow;
+							valueFormatter.Format(property.Value, output);
 						}
 					}
 					else if (property.Value is null)
 					{
 						Console.ForegroundColor = ConsoleColor.Blue;
+						valueFormatter.Format(property.Value, output);
 					}
 					else
 					{
 						Console.ForegroundColor = ConsoleColor.Gray;
+						valueFormatter.Format(property.Value, output);
 					}
 
-					valueFormatter.Format(property.Value, output);
 				}
 				Console.ResetColor();
 				output.Write("\n\n");
 			}
+		}
+
+		private static void WriteFormattedException(TextWriter output, string formattedException)
+		{
+			using (var reader = new StringReader(formattedException))
+			{
+				string line;
+				while ((line = reader.ReadLine()) != null)
+				{
+					var lineSpan = line.AsSpan();
+					int inIndex = lineSpan.IndexOf(") in ");
+
+					if (inIndex != -1)
+					{
+						Console.ForegroundColor = ConsoleColor.Gray;
+						output.Write(lineSpan.Slice(0, inIndex + 1).ToString());
+
+						Console.ForegroundColor = ConsoleColor.DarkGray;
+						output.Write("\n     ");
+						output.Write(lineSpan.Slice(inIndex + 1).ToString());
+						output.Write("\n");
+					}
+					else
+					{
+						Console.ForegroundColor = ConsoleColor.Gray;
+						output.Write(lineSpan.ToString());
+						output.Write("\n");
+					}
+				}
+			}
+			output.Write("\n");
 		}
 
 		private static ConsoleColor LogLevelToColor(LogEventLevel logLevel)

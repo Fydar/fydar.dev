@@ -20,7 +20,6 @@ namespace Portfolio.Instance.Utility
 		{
 			using (LogContext.PushProperty("RequestPath", context.Request?.Path.Value))
 			using (LogContext.PushProperty("RequestMethod", context.Request?.Method))
-			using (LogContext.PushProperty("ResponseStatusCode", context.Response?.StatusCode))
 			{
 				try
 				{
@@ -28,7 +27,10 @@ namespace Portfolio.Instance.Utility
 				}
 				finally
 				{
-					logger.LogInformation("RequestLog");
+					using (LogContext.PushProperty("ResponseStatusCode", context.Response?.StatusCode))
+					{
+						logger.LogInformation("RequestLog");
+					}
 				}
 			}
 		}

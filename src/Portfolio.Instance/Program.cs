@@ -22,12 +22,16 @@ namespace Portfolio.Instance
 				.MinimumLevel.Override("Microsoft.AspNetCore.Server.Kestrel", LogEventLevel.Error)
 				.Enrich.FromLogContext();
 
-#if DEBUG
 			loggerConfiguration.WriteTo.Sink(new ColoredConsoleSink());
+
+			/*
+#if DEBUG
 			// logger.WriteTo.Async(a => a.File(new LogFormatter(), "log.txt", rollingInterval: RollingInterval.Day))
 #else
 			loggerConfiguration.WriteTo.Console(new LogFormatter());
 #endif
+			*/
+
 			var logger = loggerConfiguration.CreateLogger();
 			Log.Logger = logger;
 
