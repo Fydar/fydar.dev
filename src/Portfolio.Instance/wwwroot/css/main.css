@@ -294,9 +294,6 @@ section.navbar {
 	transition: opacity 0.25s ease, top 0s linear 0s;
 }
 
-.card.card-
-
-
 .card.card-hoverEffect.card-rounded::before {
 	border-radius: 6px;
 }
