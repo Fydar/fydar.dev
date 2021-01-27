@@ -5,16 +5,16 @@
     <TargetFramework>net5.0</TargetFramework>
   </PropertyGroup>
 
-	<ItemGroup>
-		<ProjectReference Include="..\..\..\RPGCore\src\RPGCore.Packages\RPGCore.Packages.csproj" />
-		<ProjectReference Include="..\Portfolio.Pipeline\Portfolio.Pipeline.csproj" />
-	</ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\RPGCore\src\RPGCore.Packages\RPGCore.Packages.csproj" />
+    <ProjectReference Include="..\Portfolio.Pipeline\Portfolio.Pipeline.csproj" />
+  </ItemGroup>
 
-	<ItemGroup>
-		<Content Include="../Content/**/*">
-			<Link>Content\%(RecursiveDir)%(Filename)%(Extension)</Link>
-			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
-		</Content>
-	</ItemGroup>
+  <ItemGroup>
+    <Content Include="../Content/**/*">
+      <Link>Content\%(RecursiveDir)%(Filename)%(Extension)</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
 
 </Project>
