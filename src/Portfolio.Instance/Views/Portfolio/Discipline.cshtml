@@ -14,12 +14,6 @@
 @await Component.InvokeAsync("BreadcrumbBar", new BreadcrumbBarViewModel(
 	new BreadcrumbViewModel()
 	{
-		Controller = "Portfolio",
-		Action = "Index",
-		Text = "Portfolio"
-	},
-	new BreadcrumbViewModel()
-	{
 		Text = Model.Discipline.DisplayName
 	}
 ))

@@ -14,20 +14,12 @@
 @await Component.InvokeAsync("BreadcrumbBar", new BreadcrumbBarViewModel(
 	new BreadcrumbViewModel()
 	{
-		Controller = "Portfolio",
-		Action = "Index",
-		Text = "Portfolio"
-	},
-	new BreadcrumbViewModel()
-	{
 		Text = Model.Category.DisplayName
 	}
 ))
 
 <section style="min-height: 80vh;">
 	<div class="container">
-		<h2>@Model.Category.DisplayName</h2>
-
 		<div class="card-grid @(Model.Category.Projects.Count > 3 ? "card-grid-sm" : "")">
 
 			@foreach (var project in Model.Category.Projects)
