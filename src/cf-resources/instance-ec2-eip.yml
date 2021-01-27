@@ -12,6 +12,7 @@ Parameters:
     Type: String
     Description: The domain name for the deployed server.
     Default: 'www.anthonymarmont.com'
+    AllowedPattern: '^.*anthonymarmont.com$'
 
   KeyPairName:
     Type: String
@@ -86,7 +87,7 @@ Resources:
       EnableDnsHostnames: true
       Tags:
         - Key: Name
-          Value: anthonymarmont.com
+          Value: !Sub ${DomainName}
 
   PubSubnetAz1:
     Type: AWS::EC2::Subnet
@@ -99,7 +100,7 @@ Resources:
       # AssignIpv6AddressOnCreation: true
       Tags:
         - Key: Name
-          Value: anthonymarmont.com SbAz1
+          Value: !Sub ${DomainName} SbAz1
 
   PubSubnetAz2:
     Type: AWS::EC2::Subnet
@@ -112,14 +113,14 @@ Resources:
       # AssignIpv6AddressOnCreation: true
       Tags:
         - Key: Name
-          Value: anthonymarmont.com SbAz2
+          Value: !Sub ${DomainName} SbAz2
 
   InternetGateway:
     Type: AWS::EC2::InternetGateway
     Properties:
       Tags:
         - Key: Name
-          Value: anthonymarmont.com Igw
+          Value: !Sub ${DomainName} Igw
 
   AttachGateway:
     Type: AWS::EC2::VPCGatewayAttachment
@@ -133,7 +134,7 @@ Resources:
       VpcId: !Ref Vpc
       Tags:
         - Key: Name
-          Value: anthonymarmont.com Rtb
+          Value: !Sub ${DomainName} Rtb
 
   PublicRouteViaIgwIpv4:
     Type: AWS::EC2::Route
@@ -269,7 +270,7 @@ Resources:
           Ref: PortfolioInstanceIAMProfile
       Tags:
         - Key: Name
-          Value: anthonymarmont.com Instance
+          Value: !Sub ${DomainName} Instance
           
   PortfolioInstanceIAMProfile: 
     Type: AWS::IAM::InstanceProfile
@@ -295,7 +296,7 @@ Resources:
       Domain: standard
       Tags:
         - Key: Name
-          Value: anthonymarmont.com IP
+          Value: !Sub ${DomainName} IP
       
   PortfolioInstanceRecord:
     Type: AWS::Route53::RecordSet
@@ -317,7 +318,7 @@ Resources:
   PortfolioInstanceSecurityGroup:
     Type: AWS::EC2::SecurityGroup
     Properties:
-      GroupName: anthonymarmont.com HTTPS SG
+      GroupName: !Sub ${DomainName} SSH/HTTP/HTTPS
       GroupDescription: 'Allow TCP ports 22, 80 and 443 for IPv4 and IPv6'
       VpcId: !Ref Vpc
       SecurityGroupIngress:
