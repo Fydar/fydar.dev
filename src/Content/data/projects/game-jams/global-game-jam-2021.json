@@ -1,0 +1,61 @@
+{
+  "ProjectName": "Pew Pew",
+  "ProjectSubtitle": "Global Game Jam 2021",
+  "Slug": "global-game-jam-2021",
+  "FeaturedImage": "img/pewpew-2.png",
+  "HoverImage": "img/pewpew-1.png",
+  "Excerpt": "My solo submission for the 48-hour game jam themed around \"Lost and Found\".",
+  "Disciplines": [],
+  "PublishedDate": 1612851412,
+  "ProjectCategory": "data/projects/categories/category-gamejam.json",
+  "Institution": null,
+  "Page": "pages/projects/game-jams/global-game-jam-2021.html",
+  "Links": [
+    {
+      "SiteName": "GitHub",
+      "Url": "https://github.com/Fydar/Pew-Pew",
+      "Icon": "github"
+    },
+    {
+      "SiteName": "Global Game Jam",
+      "Url": "https://globalgamejam.org/2021/games/lost-space-7",
+      "Icon": "global-game-jam"
+    },
+    {
+      "SiteName": "YouTube",
+      "Url": "https://www.youtube.com/watch?v=9DOz6ob91zM",
+      "Icon": "youtube"
+    }
+  ],
+  "Badges": [
+    {
+      "Tooltip": "Location",
+      "Icon": "location",
+      "Content": "The Skiff, Brighton",
+      "Url": null,
+      "DisplayOnHomepage": false
+    },
+    {
+      "Tooltip": "Date",
+      "Icon": "date",
+      "Content": "January 2021",
+      "Url": null,
+      "DisplayOnHomepage": true
+    },
+    {
+      "Tooltip": "Team",
+      "Icon": "people",
+      "Content": "Solo",
+      "Url": null,
+      "DisplayOnHomepage": true
+    },
+    {
+      "Tooltip": "Theme",
+      "Icon": "pencil",
+      "Content": "Lost and Found",
+      "Url": null,
+      "DisplayOnHomepage": true
+    }
+  ],
+  "Order": -3
+}
