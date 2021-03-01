@@ -387,7 +387,7 @@ section.navbar {
 	}
 
 
-	
+
 .readmore {
 	float: right;
 	margin: 1.2em;
@@ -441,8 +441,12 @@ section.navbar {
 		font-size: 1rem;
 	}
 
+		.badge-bar.badge-bar-vertical .mark {
+			margin-right: 5px;
+		}
+
 	.badge-bar.badge-bar-subtle {
-		color: #999;
+		color: #6c757d;
 		text-transform: uppercase;
 		font-size: 12px;
 		padding: 7px 8px;
@@ -455,20 +459,28 @@ section.navbar {
 			padding: 0;
 		}
 
-		.badge-bar.badge-bar-subtle .pin {
-			padding-right: 4px;
+		.badge-bar.badge-bar-subtle .mark {
+			margin-right: 8px;
 		}
 
-			.badge-bar.badge-bar-subtle .pin::after {
-				height: 1em;
-				transform: translateY(-0.1em);
-			}
+	.badge-bar.badge-bar-seemore {
+		font-size: 28px;
+		margin: 1rem 0;
+	}
+
+		.badge-bar.badge-bar-seemore .mark {
+			margin-right: 8px;
+		}
 
 	.badge-bar.badge-bar-social {
 		font-size: 28px;
 		justify-content: center;
 		margin: 1rem 0;
 	}
+
+		.badge-bar.badge-bar-social .mark {
+			margin-right: 8px;
+		}
 
 .badge {
 	display: inline-block;
@@ -489,6 +501,7 @@ section.navbar {
 		box-shadow: 0 0 0 0 #4287f5ff;
 		transition: box-shadow .15s ease-in-out, background-color .15s ease-in-out;
 		user-select: none;
+		padding: 3px 6px;
 	}
 
 		.badge.badge-lozenge:hover {
@@ -557,132 +570,266 @@ section.navbar {
 	max-width: 464px;
 }
 
-/* Pins */
-.pin {
-	display: inline-block;
-	width: 1.2em;
-	height: 1em;
-	vertical-align: middle;
+.shields {
 }
 
-	.pin::after {
-		content: '';
-		display: block;
-		position: relative;
-		width: 100%;
-		height: 1.3em;
-		transform: translateY(-0.3em);
-		top: 0;
+.mark {
+	display: inline-block;
+	margin-right: 8px;
+}
+
+	/* Solid Backgrounds */
+	.mark.mark-rounded,
+	.mark.mark-circle,
+	.mark.mark-square {
+		background-color: var(--mark-colour-primary);
+		margin: 6px;
+		pointer-events: all;
 	}
 
-	.pin.pin-orange-arrow::after {
-		background: url("/img/pin-orange-arrow.svg") no-repeat;
-		background-size: contain;
-		background-position: center;
+		.mark.mark-rounded::after,
+		.mark.mark-circle::after,
+		.mark.mark-square::after {
+			content: '';
+			display: block;
+			position: relative;
+			height: 100%;
+			width: 100%;
+			pointer-events: none;
+			-webkit-mask: var(--mark-img-url) no-repeat 50% 50%;
+			mask: var(--mark-img-url) no-repeat 50% 50%;
+			-webkit-mask-size: contain;
+			mask-size: contain;
+			background-color: var(--mark-colour-text);
+		}
+
+	.mark.mark-rounded {
+		border-radius: 8px;
+		width: 48px;
+		height: 48px;
 	}
 
-	.pin.pin-date::after {
-		background: url("/img/pin-calender.svg") no-repeat;
-		filter: invert() brightness(0.7);
-		background-size: contain;
-		background-position: center;
+		.mark.mark-rounded::after {
+			height: 60%;
+			width: 60%;
+			top: 20%;
+			left: 20%;
+			bottom: 20%;
+			right: 20%;
+		}
+
+	.mark.mark-circle {
+		border-radius: 50%;
+		width: 52px;
+		height: 52px;
+		margin: 6px;
 	}
 
-	.pin.pin-pencil::after {
-		background: url("/img/pin-pencil.svg") no-repeat;
-		filter: invert() brightness(0.7);
-		background-size: contain;
-		background-position: center;
+		.mark.mark-circle::after {
+			height: 60%;
+			width: 60%;
+			top: 20%;
+			left: 20%;
+			bottom: 20%;
+			right: 20%;
+		}
+
+	.mark.mark-square {
+		width: 40px;
+		height: 40px;
+		margin: 6px;
 	}
 
-	.pin.pin-person::after {
-		background: url("/img/pin-person.svg") no-repeat;
-		filter: invert() brightness(0.7);
-		background-size: contain;
-		background-position: center;
+		.mark.mark-square::after {
+			height: 100%;
+			width: 100%;
+		}
+
+
+
+
+		.mark.mark-rounded::after,
+		.mark.mark-circle::after,
+		.mark.mark-square::after {
+		}
+
+	/* No Backgrounds */
+	.mark.mark-subtle {
+		width: 1em;
+		height: 1em;
+		pointer-events: all;
 	}
 
-	.pin.pin-people::after {
-		background: url("/img/pin-person.svg") no-repeat;
-		filter: invert() brightness(0.7);
-		background-size: contain;
-		background-position: center;
+		.mark.mark-subtle::after {
+			content: '';
+			display: block;
+			position: relative;
+			pointer-events: none;
+			-webkit-mask: var(--mark-img-url) no-repeat 50% 50%;
+			mask: var(--mark-img-url) no-repeat 50% 50%;
+			-webkit-mask-size: contain;
+			mask-size: contain;
+			background-color: currentColor;
+			top: -25%;
+			left: -25%;
+			height: 150%;
+			width: 150%;
+			transform: translateY(1px);
+		}
+
+
+
+	.mark.mark-default {
+		width: 1em;
+		height: 1em;
+		pointer-events: all;
 	}
 
-	.pin.pin-location::after {
-		background: url("/img/pin-location.svg") no-repeat;
-		filter: brightness(0.7);
-		background-size: contain;
-		background-position: center;
+		.mark.mark-default::after {
+			content: '';
+			display: block;
+			position: relative;
+			pointer-events: none;
+			background: var(--mark-img-url);
+			background-size: 100%;
+			background-position: center;
+			background-repeat: no-repeat;
+			top: -25%;
+			left: -25%;
+			height: 150%;
+			width: 150%;
+			transform: translateY(1px);
+		}
+
+
+
+	.mark.mark-youtube {
+		--mark-img-url: url("/img/marks/youtube.svg");
+		--mark-colour-primary: #FF0000;
+		--mark-colour-text: #f6f6f6;
 	}
 
-	.pin.pin-grade::after {
-		background: url("/img/star-pin.svg") no-repeat;
-		filter: brightness(0.7);
-		background-size: contain;
-		background-position: center;
+	.mark.mark-github {
+		--mark-img-url: url("/img/marks/github.svg");
+		--mark-colour-primary: #181717;
+		--mark-colour-text: #f6f6f6;
 	}
 
-	.pin.pin-website::after {
-		background: url("/img/globe.svg") no-repeat;
-		filter: brightness(0.7);
-		background-size: contain;
-		background-position: center;
+	.mark.mark-unity {
+		--mark-img-url: url("/img/marks/unity.svg");
+		--mark-colour-primary: #181717;
+		--mark-colour-text: #f6f6f6;
 	}
 
-	.pin.pin-youtube::after {
-		background: url("/img/youtube.svg") no-repeat;
-		background-size: contain;
-		background-position: center;
+	.mark.mark-dot-net {
+		--mark-img-url: url("/img/marks/dot-net.svg");
+		--mark-colour-primary: #512BD4;
+		--mark-colour-text: #f6f6f6;
 	}
 
-	.pin.pin-linkedin::after {
-		background: url("/img/linkedin.svg") no-repeat;
-		background-size: contain;
-		background-position: center;
+	.mark.mark-itch-io {
+		--mark-img-url: url("/img/marks/itch-dot-io.svg");
+		--mark-colour-primary: #FA5C5C;
+		--mark-colour-text: #f6f6f6;
 	}
 
-	.pin.pin-github::after {
-		background: url("/img/github.svg") no-repeat;
-		background-size: contain;
-		background-position: center;
+	.mark.mark-linkedin {
+		--mark-img-url: url("/img/marks/linkedin-flat.svg");
+		--mark-colour-primary: #0A66C2;
+		--mark-colour-text: #f6f6f6;
 	}
 
-	.pin.pin-steam::after {
-		background: url("/img/steam.svg") no-repeat;
-		background-size: contain;
-		background-position: center;
+	.mark.mark-twitter {
+		--mark-img-url: url("/img/marks/twitter.svg");
+		--mark-colour-primary: #1DA1F2;
+		--mark-colour-text: #f6f6f6;
 	}
 
-	.pin.pin-unity::after {
-		background: url("/img/unity.svg") no-repeat;
-		background-size: contain;
-		background-position: center;
+	.mark.mark-google-play {
+		--mark-img-url: url("/img/marks/googleplay-colour.svg");
+		--mark-colour-primary: #121212;
+		--mark-colour-text: #f6f6f6;
 	}
 
-	.pin.pin-google-play::after {
-		background: url("/img/google-play.svg") no-repeat;
-		background-size: contain;
-		background-position: center;
+	.mark.mark-global-game-jam {
+		--mark-img-url: url("/img/marks/global-game-jam.svg");
+		--mark-colour-primary: #252162;
+		--mark-colour-text: #f6f6f6;
 	}
 
-	.pin.pin-itch-io::after {
-		background: url("/img/itch-io.svg") no-repeat;
-		background-size: contain;
-		background-position: center;
+	.mark.mark-steam {
+		--mark-img-url: url("/img/marks/steam.svg");
+		--mark-colour-primary: #000000;
+		--mark-colour-text: #f6f6f6;
 	}
 
-	.pin.pin-global-game-jam::after {
-		background: url("/img/global-game-jam.png") no-repeat;
-		background-size: contain;
-		background-position: center;
+	.mark.mark-ludum-dare {
+		--mark-img-url: url("/img/marks/ludum-dare.svg");
+		--mark-colour-primary: #ffcc11;
+		--mark-colour-text: #ee5533;
 	}
 
-	.pin.pin-ludum-dare::after {
-		background: url("/img/ludum-dare.png") no-repeat;
-		background-size: contain;
-		background-position: center;
+	.mark.mark-ludum-dare-compo {
+		--mark-img-url: url("/img/marks/ludum-dare.svg");
+		--mark-colour-primary: #ee5533;
+		--mark-colour-text: #f6f6f6;
 	}
+
+	.mark.mark-website {
+		--mark-img-url: url("/img/marks/pin-website.svg");
+	}
+
+	.mark.mark-pin-book {
+		--mark-img-url: url("/img/marks/pin-book.svg");
+	}
+
+	.mark.mark-pin-date {
+		--mark-img-url: url("/img/marks/pin-calender.svg");
+	}
+
+	.mark.mark-pin-pencil {
+		--mark-img-url: url("/img/marks/pin-pencil.svg");
+	}
+
+	.mark.mark-pin-person {
+		--mark-img-url: url("/img/marks/pin-person.svg");
+	}
+
+	.mark.mark-pin-people {
+		--mark-img-url: url("/img/marks/pin-people.svg");
+	}
+
+	.mark.mark-pin-location {
+		--mark-img-url: url("/img/marks/pin-location.svg");
+	}
+
+	.mark.mark-pin-star {
+		--mark-img-url: url("/img/marks/pin-star.svg");
+	}
+
+	.mark.mark-pin-quote {
+		--mark-img-url: url("/img/marks/pin-quote.svg");
+	}
+
+	.mark.mark-pin-lightmode {
+		--mark-img-url: url("/img/marks/pin-lightmode.svg");
+	}
+
+	.mark.mark-pin-darkmode {
+		--mark-img-url: url("/img/marks/pin-darkmode.svg");
+	}
+
+
+
+.dark .mark.mark-github {
+	--mark-colour-primary: #FFFFFF;
+	--mark-colour-text: #181717;
+}
+
+.dark .mark.mark-unity {
+	--mark-colour-primary: #FFFFFF;
+	--mark-colour-text: #181717;
+}
 
 
 .website-footer {
@@ -1217,13 +1364,13 @@ label {
 		font-size: 1rem;
 	}
 
-	.form-control:-webkit-autofill::first-line {
-		background: none;
-		background-clip: content-box;
-		-webkit-text-fill-color: var(--color-text-subtle-1) !important;
-		font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
-		font-size: 1rem;
-	}
+		.form-control:-webkit-autofill::first-line {
+			background: none;
+			background-clip: content-box;
+			-webkit-text-fill-color: var(--color-text-subtle-1) !important;
+			font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+			font-size: 1rem;
+		}
 
 		.form-control:-webkit-autofill:focus {
 			background: none;

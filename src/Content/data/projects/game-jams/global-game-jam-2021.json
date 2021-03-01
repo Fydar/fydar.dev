@@ -44,7 +44,7 @@
     },
     {
       "Tooltip": "Team",
-      "Icon": "people",
+      "Icon": "person",
       "Content": "Solo",
       "Url": null,
       "DisplayOnHomepage": true
