@@ -37,6 +37,13 @@
 	<div class="container">
 		<h2>@Model.Project.ProjectName</h2>
 
+		<div class="right badge-bar badge-bar-seemore">
+			@foreach (var link in Model.Project.Links)
+			{
+				<a class="mark mark-rounded mark-@link.Icon.ToLower()" target="_blank" href="@link.Url" ></a>
+			}
+		</div>
+
 		@{
 			using var stream = Model.Project.PageResource.Content.OpenRead();
 			using var sr = new StreamReader(stream);
