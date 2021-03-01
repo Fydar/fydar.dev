@@ -576,6 +576,9 @@ section.navbar {
 .mark {
 	display: inline-block;
 	margin-right: 8px;
+	/* Default colours */
+	--mark-colour-primary: #414141;
+	--mark-colour-text: #f6f6f6;
 }
 
 	/* Solid Backgrounds */
@@ -747,7 +750,7 @@ section.navbar {
 
 	.mark.mark-google-play {
 		--mark-img-url: url("/img/marks/googleplay-colour.svg");
-		--mark-colour-primary: #121212;
+		--mark-colour-primary: #414141;
 		--mark-colour-text: #f6f6f6;
 	}
 
@@ -818,6 +821,15 @@ section.navbar {
 	.mark.mark-pin-darkmode {
 		--mark-img-url: url("/img/marks/pin-darkmode.svg");
 	}
+
+
+	.mark.mark-pin-othertheme {
+		--mark-img-url: url("/img/marks/pin-darkmode.svg");
+	}
+
+.dark .mark.mark-pin-othertheme {
+	--mark-img-url: url("/img/marks/pin-lightmode.svg");
+}
 
 
 
@@ -1201,6 +1213,14 @@ div.post-image {
 	line-height: 1.5;
 	border-radius: .3rem;
 }
+
+.btn.btn-theme-toggle {
+	color: #999;
+}
+
+	.btn.btn-theme-toggle .mark {
+		margin: 0;
+	}
 
 /*
 $grid-breakpoints: (
