@@ -450,7 +450,7 @@ section.navbar {
 		text-transform: uppercase;
 		font-size: 12px;
 		padding: 7px 8px;
-		gap: 10px;
+		gap: 14px;
 		font-weight: 400;
 		letter-spacing: 0.25px;
 	}
@@ -460,13 +460,18 @@ section.navbar {
 		}
 
 		.badge-bar.badge-bar-subtle .mark {
-			margin-right: 8px;
+			margin-right: 6px;
+			color: #959faa;
 		}
 
-	.badge-bar.badge-bar-seemore {
-		font-size: 28px;
-		margin: 1rem 0;
-	}
+.dark .badge-bar.badge-bar-subtle .mark {
+	color: #6c757d;
+}
+
+.badge-bar.badge-bar-seemore {
+	font-size: 28px;
+	margin: 1rem 0;
+}
 
 		.badge-bar.badge-bar-seemore .mark {
 			margin-right: 8px;
@@ -599,8 +604,8 @@ section.navbar {
 			height: 100%;
 			width: 100%;
 			pointer-events: none;
-			-webkit-mask: var(--mark-img-url) no-repeat 50% 50%;
-			mask: var(--mark-img-url) no-repeat 50% 50%;
+			-webkit-mask: var(--mark-img-flat-url) no-repeat 50% 50%;
+			mask: var(--mark-img-flat-url) no-repeat 50% 50%;
 			-webkit-mask-size: contain;
 			mask-size: contain;
 			background-color: var(--mark-colour-text);
@@ -668,8 +673,8 @@ section.navbar {
 			display: block;
 			position: relative;
 			pointer-events: none;
-			-webkit-mask: var(--mark-img-url) no-repeat 50% 50%;
-			mask: var(--mark-img-url) no-repeat 50% 50%;
+			-webkit-mask: var(--mark-img-flat-url) no-repeat 50% 50%;
+			mask: var(--mark-img-flat-url) no-repeat 50% 50%;
 			-webkit-mask-size: contain;
 			mask-size: contain;
 			background-color: currentColor;
@@ -708,127 +713,152 @@ section.navbar {
 
 	.mark.mark-youtube {
 		--mark-img-url: url("/img/marks/youtube.svg");
+		--mark-img-flat-url: url("/img/marks/youtube.svg");
 		--mark-colour-primary: #FF0000;
 		--mark-colour-text: #f6f6f6;
 	}
 
 	.mark.mark-github {
 		--mark-img-url: url("/img/marks/github.svg");
+		--mark-img-flat-url: url("/img/marks/github.svg");
 		--mark-colour-primary: #181717;
 		--mark-colour-text: #f6f6f6;
 	}
 
 	.mark.mark-unity {
 		--mark-img-url: url("/img/marks/unity.svg");
+		--mark-img-flat-url: url("/img/marks/unity.svg");
 		--mark-colour-primary: #181717;
 		--mark-colour-text: #f6f6f6;
 	}
 
 	.mark.mark-dot-net {
 		--mark-img-url: url("/img/marks/dot-net.svg");
+		--mark-img-flat-url: url("/img/marks/dot-net.svg");
 		--mark-colour-primary: #512BD4;
 		--mark-colour-text: #f6f6f6;
 	}
 
 	.mark.mark-itch-io {
 		--mark-img-url: url("/img/marks/itch-dot-io.svg");
+		--mark-img-flat-url: url("/img/marks/itch-dot-io.svg");
 		--mark-colour-primary: #FA5C5C;
 		--mark-colour-text: #f6f6f6;
 	}
 
 	.mark.mark-linkedin {
 		--mark-img-url: url("/img/marks/linkedin-flat.svg");
+		--mark-img-flat-url: url("/img/marks/linkedin-flat.svg");
 		--mark-colour-primary: #0A66C2;
 		--mark-colour-text: #f6f6f6;
 	}
 
 	.mark.mark-twitter {
 		--mark-img-url: url("/img/marks/twitter.svg");
+		--mark-img-flat-url: url("/img/marks/twitter.svg");
 		--mark-colour-primary: #1DA1F2;
 		--mark-colour-text: #f6f6f6;
 	}
 
 	.mark.mark-google-play {
 		--mark-img-url: url("/img/marks/googleplay-colour.svg");
+		--mark-img-flat-url: url("/img/marks/googleplay-colour.svg");
 		--mark-colour-primary: #414141;
 		--mark-colour-text: #f6f6f6;
 	}
 
 	.mark.mark-global-game-jam {
 		--mark-img-url: url("/img/marks/global-game-jam.svg");
+		--mark-img-flat-url: url("/img/marks/global-game-jam-2.svg");
 		--mark-colour-primary: #252162;
 		--mark-colour-text: #f6f6f6;
 	}
 
 	.mark.mark-steam {
 		--mark-img-url: url("/img/marks/steam.svg");
-		--mark-colour-primary: #000000;
+		--mark-img-flat-url: url("/img/marks/steam-flat.svg");
+		--mark-colour-primary: #19283B;
 		--mark-colour-text: #f6f6f6;
 	}
 
 	.mark.mark-ludum-dare {
 		--mark-img-url: url("/img/marks/ludum-dare.svg");
+		--mark-img-flat-url: url("/img/marks/ludum-dare.svg");
 		--mark-colour-primary: #ffcc11;
 		--mark-colour-text: #ee5533;
 	}
 
 	.mark.mark-ludum-dare-compo {
 		--mark-img-url: url("/img/marks/ludum-dare.svg");
+		--mark-img-flat-url: url("/img/marks/ludum-dare.svg");
 		--mark-colour-primary: #ee5533;
 		--mark-colour-text: #f6f6f6;
 	}
 
 	.mark.mark-website {
 		--mark-img-url: url("/img/marks/pin-website.svg");
+		--mark-img-flat-url: url("/img/marks/pin-website.svg");
 	}
 
 	.mark.mark-pin-book {
 		--mark-img-url: url("/img/marks/pin-book.svg");
+		--mark-img-flat-url: url("/img/marks/pin-book.svg");
 	}
 
 	.mark.mark-pin-date {
 		--mark-img-url: url("/img/marks/pin-calender.svg");
+		--mark-img-flat-url: url("/img/marks/pin-calender.svg");
 	}
 
 	.mark.mark-pin-pencil {
 		--mark-img-url: url("/img/marks/pin-pencil.svg");
+		--mark-img-flat-url: url("/img/marks/pin-pencil.svg");
 	}
 
 	.mark.mark-pin-person {
 		--mark-img-url: url("/img/marks/pin-person.svg");
+		--mark-img-flat-url: url("/img/marks/pin-person.svg");
 	}
 
 	.mark.mark-pin-people {
 		--mark-img-url: url("/img/marks/pin-people.svg");
+		--mark-img-flat-url: url("/img/marks/pin-people.svg");
 	}
 
 	.mark.mark-pin-location {
 		--mark-img-url: url("/img/marks/pin-location.svg");
+		--mark-img-flat-url: url("/img/marks/pin-location.svg");
 	}
 
 	.mark.mark-pin-star {
 		--mark-img-url: url("/img/marks/pin-star.svg");
+		--mark-img-flat-url: url("/img/marks/pin-star.svg");
 	}
 
 	.mark.mark-pin-quote {
 		--mark-img-url: url("/img/marks/pin-quote.svg");
+		--mark-img-flat-url: url("/img/marks/pin-quote.svg");
 	}
 
 	.mark.mark-pin-lightmode {
 		--mark-img-url: url("/img/marks/pin-lightmode.svg");
+		--mark-img-flat-url: url("/img/marks/pin-lightmode.svg");
 	}
 
 	.mark.mark-pin-darkmode {
 		--mark-img-url: url("/img/marks/pin-darkmode.svg");
+		--mark-img-flat-url: url("/img/marks/pin-darkmode.svg");
 	}
 
 
 	.mark.mark-pin-othertheme {
 		--mark-img-url: url("/img/marks/pin-darkmode.svg");
+		--mark-img-flat-url: url("/img/marks/pin-darkmode.svg");
 	}
 
 .dark .mark.mark-pin-othertheme {
 	--mark-img-url: url("/img/marks/pin-lightmode.svg");
+	--mark-img-flat-url: url("/img/marks/pin-lightmode.svg");
 }
 
 
