@@ -32,11 +32,6 @@ namespace Portfolio.Instance.Services.ViewRenderer
 
 		public async Task<string> RenderViewToStringAsync<TModel>(string viewName, TModel model)
 		{
-			//If you wish to use the route data in the generated view (e.g. use 
-			//the Url helper to construct dynamic links)
-			//inject the IHttpContextAccessor then use: var actionContext = new ActionContext(_contextAccessor.HttpContext, _contextAccessor.HttpContext.GetRouteData(), new ActionDescriptor());
-			//instead of the line below
-
 			var actionContext = GetActionContext();
 			var view = FindView(actionContext, viewName);
 
@@ -45,17 +40,14 @@ namespace Portfolio.Instance.Services.ViewRenderer
 			var viewContext = new ViewContext(
 				actionContext,
 				view,
-				new ViewDataDictionary<TModel>(
-					metadataProvider: new EmptyModelMetadataProvider(),
-					modelState: new ModelStateDictionary())
+				new ViewDataDictionary<TModel>(new EmptyModelMetadataProvider(), new ModelStateDictionary())
 				{
 					Model = model
 				},
-				new TempDataDictionary(
-					actionContext.HttpContext,
-					tempDataProvider),
+				new TempDataDictionary(actionContext.HttpContext, tempDataProvider),
 				output,
-				new HtmlHelperOptions());
+				new HtmlHelperOptions()
+			);
 
 			await view.RenderAsync(viewContext);
 

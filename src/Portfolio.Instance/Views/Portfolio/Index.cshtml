@@ -19,7 +19,6 @@
 			<h1>@category.DisplayName</h1>
 
 			<div class="card-grid @(category.Projects.Count > 3 ? "card-grid-sm" : "")">
-
 				@foreach (var project in category.Projects)
 				{
 					if (project.HideOnHomePage)
@@ -31,7 +30,6 @@
 						@await Component.InvokeAsync("PortfolioItem", project)
 					}
 				}
-
 			</div>
 
 			@if (missing > 0)

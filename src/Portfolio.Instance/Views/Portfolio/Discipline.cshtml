@@ -1,9 +1,4 @@
 ﻿@using Portfolio.Instance;
-@using Portfolio.Instance.ViewComponents;
-@using Portfolio.Instance.Models;
-@using Portfolio.Instance.Services.ContentService;
-@using Portfolio.Models;
-@using System.IO;
 
 @model DisciplineViewModel
 @{
@@ -21,10 +16,6 @@
 <section style="min-height: 80vh;">
 	<div class="container">
 		<h2>@Model.Discipline.DisplayName</h2>
-		@{
-			using var stream = Model.Discipline.PageResource.Content.OpenRead();
-			using var sr = new StreamReader(stream);
-			@Html.Raw(sr.ReadToEnd());
-		}
+		@(new ResourceContentHtmlWriter(Model.Discipline.PageResource.Content))
 	</div>
 </section>

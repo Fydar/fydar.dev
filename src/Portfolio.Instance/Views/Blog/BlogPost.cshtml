@@ -1,10 +1,6 @@
 ﻿@using Portfolio.Instance;
-@using Portfolio.Instance.ViewComponents;
-@using Portfolio.Instance.Models;
 @using Portfolio.Instance.Services.ContentService;
-@using Portfolio.Models;
 @using Portfolio.Models.Blog;
-@using System.IO;
 
 @{
 	Layout = "_Layout";
@@ -22,10 +18,6 @@
 <section style="min-height: 80vh;">
 	<div class="container">
 		<h2>@Model.PostTitle</h2>
-		@{
-			using var stream = Model.PageResource.Content.OpenRead();
-			using var sr = new StreamReader(stream);
-			@Html.Raw(sr.ReadToEnd());
-		}
+		@(new ResourceContentHtmlWriter(Model.PageResource.Content))
 	</div>
 </section>

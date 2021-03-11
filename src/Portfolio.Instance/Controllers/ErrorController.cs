@@ -12,7 +12,7 @@ namespace Portfolio.Instance.Controllers
 		[Route("error/404")]
 		public IActionResult Error404()
 		{
-			return View(new ErrorViewModel()
+			return View("Error404", new ErrorViewModel()
 			{
 
 			});

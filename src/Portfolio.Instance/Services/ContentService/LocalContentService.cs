@@ -103,11 +103,6 @@ namespace Portfolio.Instance.Services.ContentService
 			return null;
 		}
 
-		public void Dispose()
-		{
-			contentExplorer.Dispose();
-		}
-
 		public T GetOrDeserialize<T>(IResource resource)
 		{
 			lock (deserializationCache)
@@ -137,6 +132,11 @@ namespace Portfolio.Instance.Services.ContentService
 				return contentExplorer.Resources[fullname];
 			}
 			return null;
+		}
+
+		public void Dispose()
+		{
+			contentExplorer.Dispose();
 		}
 	}
 }
