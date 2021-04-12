@@ -1,4 +1,4 @@
-﻿using RPGCore.Behaviour;
+﻿using RPGCore.DataEditor.CSharp;
 
 namespace Portfolio.Models
 {

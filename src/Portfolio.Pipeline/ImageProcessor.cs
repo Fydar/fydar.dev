@@ -1,5 +1,4 @@
-﻿using RPGCore.Packages;
-using RPGCore.Projects;
+﻿using RPGCore.Projects;
 using RPGCore.Projects.Pipeline;
 using System;
 using System.Collections.Generic;

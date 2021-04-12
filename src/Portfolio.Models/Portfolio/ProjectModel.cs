@@ -1,8 +1,8 @@
-﻿using Newtonsoft.Json;
-using RPGCore.Behaviour;
+﻿using RPGCore.DataEditor.CSharp;
 using RPGCore.Packages;
 using System;
 using System.Linq;
+using System.Text.Json.Serialization;
 
 namespace Portfolio.Models
 {

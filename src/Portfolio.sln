@@ -26,19 +26,19 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Portfolio.Pipeline", "Portf
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Portfolio.Pipeline.BuildStep", "Portfolio.Pipeline.BuildStep\Portfolio.Pipeline.BuildStep.csproj", "{24C5C1CD-E1F2-42C9-A459-4320B0E86EF4}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RPGCore.Behaviour", "..\..\RPGCore\src\RPGCore.Behaviour\RPGCore.Behaviour.csproj", "{664609ED-E716-4878-AD6F-A2E602AD8437}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RPGCore.Behaviour", "..\..\RPGCore\src\libs\RPGCore.Behaviour\RPGCore.Behaviour.csproj", "{664609ED-E716-4878-AD6F-A2E602AD8437}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RPGCore.Packages", "..\..\RPGCore\src\RPGCore.Packages\RPGCore.Packages.csproj", "{E876ECA6-56DA-40D3-865E-6ECEE59006E4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RPGCore.Packages", "..\..\RPGCore\src\libs\RPGCore.Packages\RPGCore.Packages.csproj", "{E876ECA6-56DA-40D3-865E-6ECEE59006E4}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Portfolio.EmailReceive", "Portfolio.EmailReceive\Portfolio.EmailReceive.csproj", "{B76D6E01-DB2C-46A9-91E6-1E121D9D9EFF}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Portfolio.EmailReceive.Tests", "Portfolio.EmailReceive.Tests\Portfolio.EmailReceive.Tests.csproj", "{62D98A56-FC78-4F64-B53C-B97F53C02AEB}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RPGCore.Projects", "..\..\RPGCore\src\RPGCore.Projects\RPGCore.Projects.csproj", "{EA9D75A0-E0E1-4FB5-B9BF-D3EC273439AC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RPGCore.Projects", "..\..\RPGCore\src\libs\RPGCore.Projects\RPGCore.Projects.csproj", "{EA9D75A0-E0E1-4FB5-B9BF-D3EC273439AC}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "RPGCore", "RPGCore", "{C7B01F86-2D10-4BBA-941F-453ADBFDF41A}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RPGCore.FileTree", "..\..\RPGCore\src\RPGCore.FileTree\RPGCore.FileTree.csproj", "{A342DBB1-96E4-4084-A627-8AD1DC01290C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RPGCore.FileTree", "..\..\RPGCore\src\libs\RPGCore.FileTree\RPGCore.FileTree.csproj", "{A342DBB1-96E4-4084-A627-8AD1DC01290C}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3rdParty", "3rdParty", "{E1A41D62-E446-4178-8C91-8C2AE0679A50}"
 EndProject

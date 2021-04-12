@@ -6,8 +6,12 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\RPGCore\src\RPGCore.Packages\RPGCore.Packages.csproj" />
+    <ProjectReference Include="..\..\..\RPGCore\src\libs\RPGCore.Packages\RPGCore.Packages.csproj" />
     <ProjectReference Include="..\Portfolio.Pipeline\Portfolio.Pipeline.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="System.Text.Json" Version="5.0.1" />
   </ItemGroup>
 
   <ItemGroup>
