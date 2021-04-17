@@ -1,6 +1,7 @@
 {
   "ProjectName": "Eitr",
   "Slug": "eitr",
+  "ShowOnResume": true,
   "FeaturedImage": "img/eitr-header.jpg",
   "HoverImage": "img/eitr-background-1.gif",
   "Excerpt": "An indie-hit 2d pixel-art dungeon crawler.",

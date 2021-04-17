@@ -1,6 +1,7 @@
 {
   "ProjectName": "Expresser",
   "Slug": "expresser",
+  "ShowOnResume": true,
   "FeaturedImage": "img/expresser-csharp-2.png",
   "HoverImage": "img/expresser-invalid-chars-1.png",
   "Excerpt": "Expresser is a modular DSL Lexer.",

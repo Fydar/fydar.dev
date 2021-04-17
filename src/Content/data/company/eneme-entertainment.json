@@ -1,9 +1,23 @@
 {
-  "Name": "Eneme Entertainment",
-  "IconUrl": "img/eneme-entertainment.png",
+  "IsProfessional": true,
   "Slug": "eneme-entertainment",
-  "Excerpt": null,
-  "Page": "pages/company/tt-games.html",
-  "Address": "",
-  "Order": 2
+  "Name": "Eneme Entertainment",
+  "IconUrl": "img/logo-eneme-entertainment.png",
+  "Page": "pages/company/eneme-entertainment.html",
+  "Address": "Remote Working, United Kingdom",
+  "TwoWordAddress": "Remote Working, United Kingdom",
+  "Excerpt": "",
+  "Positions": [
+    {
+        "Identifier": "programmer",
+				"PlacementTitle": "Programmer",
+				"PlacementDescriptionHtml": "<p>I joined the indie title <i><a href=\"https://anthonymarmont.com/portfolio/eitr\">‘Eitr’</a></i> team as a remote programmer. I programmed many core gameplay systems such as the <b>inventory system</b>, <b>item system</b>, <b>tooltips</b>, <b>character stats</b>, <b>skill trees</b>, <b>input mapping</b>, and <b>achievements</b>.</p><p>Programming on <i><a href=\"https://anthonymarmont.com/portfolio/eitr\">‘Eitr’</a></i> inspired my <i><a href=\"https://anthonymarmont.com/portfolio/rpgcore\">RPGCore</a></i> open-source project.</p>",
+				"PlacementSubtitle": "",
+				"DisplayMonth": true,
+        "StartTimestamp": 1498867200,
+        "EndTimestamp": 1530403200
+    }
+  ],
+  "StudioType": "Indie",
+  "JobTime": "FullTime"
 }

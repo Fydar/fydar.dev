@@ -10,7 +10,7 @@
   ],
   "PublishedDate": 1485907200,
   "ProjectCategory": "data/projects/categories/category-personal.json",
-  "Institution": null,
+  "Institution": "data/education/northbrook.json",
   "Page": "pages/projects/personal/crypt-crawl.html",
   "ProjectSubtitle": null,
   "Links": [

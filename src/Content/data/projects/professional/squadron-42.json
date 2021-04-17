@@ -1,6 +1,7 @@
 {
   "ProjectName": "Squadron 42",
   "Slug": "squadron-42",
+  "ShowOnResume": false,
   "FeaturedImage": "img/squadron-42-1.jpg",
   "HoverImage": "img/star-citizen-3.jpg",
   "Excerpt": "A next-generation AAA title.",

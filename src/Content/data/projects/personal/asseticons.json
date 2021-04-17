@@ -1,6 +1,7 @@
 {
   "ProjectName": "AssetIcons",
   "Slug": "asseticons",
+  "ShowOnResume": true,
   "FeaturedImage": "img/asseticons-header.png",
   "HoverImage": "img/asseticons-1.png",
   "Excerpt": "An asset published on the Unity Asset Store",
@@ -9,7 +10,7 @@
   ],
   "PublishedDate": 1506816000,
   "ProjectCategory": "data/projects/categories/category-personal.json",
-  "Institution": null,
+  "Institution": "data/company/unity-asset-store.json",
   "Page": "pages/projects/personal/asseticons.html",
   "ProjectSubtitle": null,
   "Links": [

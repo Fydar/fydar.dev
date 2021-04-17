@@ -1,6 +1,7 @@
 {
   "ProjectName": "Mini Miner",
   "ProjectSubtitle": "Gameboy Game Jam 8",
+  "ShowOnResume": true,
   "Slug": "mini-miner",
   "FeaturedImage": "img/mini-miner-1.png",
   "HoverImage": "img/mini-miner-2.png",

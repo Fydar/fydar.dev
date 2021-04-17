@@ -9,7 +9,7 @@
   ],
   "PublishedDate": 1496275200,
   "ProjectCategory": "data/projects/categories/category-personal.json",
-  "Institution": null,
+  "Institution": "data/company/out-of-the-blue-studios.json",
   "Page": "pages/projects/personal/astral-swarm.html",
   "ProjectSubtitle": null,
   "Links": [

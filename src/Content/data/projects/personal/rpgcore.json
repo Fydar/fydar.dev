@@ -1,6 +1,7 @@
 {
   "ProjectName": "RPGCore",
   "Slug": "rpgcore",
+  "ShowOnResume": true,
   "FeaturedImage": "img/rpgcore-header.png",
   "HoverImage": "img/rpgcore-1.png",
   "Excerpt": "An extensive C# library for producing RPGCore mechanics and more.",

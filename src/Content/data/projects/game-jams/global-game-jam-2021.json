@@ -4,6 +4,7 @@
   "Slug": "global-game-jam-2021",
   "FeaturedImage": "img/pewpew-2.png",
   "HoverImage": "img/pewpew-1.png",
+  "ShowOnResume": true,
   "Excerpt": "My solo submission for the 48-hour game jam themed around \"Lost and Found\".",
   "Disciplines": [],
   "PublishedDate": 1612851412,

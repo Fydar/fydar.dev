@@ -10,7 +10,7 @@
   ],
   "PublishedDate": 1517443200,
   "ProjectCategory": "data/projects/categories/category-personal.json",
-  "Institution": null,
+  "Institution": "data/education/northbrook.json",
   "Page": "pages/projects/personal/voxel-multiplayer.html",
   "ProjectSubtitle": null,
   "Links": [

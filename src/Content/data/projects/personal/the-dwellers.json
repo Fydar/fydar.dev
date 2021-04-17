@@ -9,7 +9,7 @@
   ],
   "PublishedDate": 1527811200,
   "ProjectCategory": "data/projects/categories/category-personal.json",
-  "Institution": null,
+  "Institution": "data/education/northbrook.json",
   "Page": "pages/projects/personal/the-dwellers.html",
   "ProjectSubtitle": null,
   "Links": [

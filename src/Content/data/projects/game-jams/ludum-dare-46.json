@@ -2,6 +2,7 @@
   "ProjectName": "MMO Raid Healer Simulator",
   "ProjectSubtitle": "Ludum Dare 46",
   "Slug": "ludum-dare-46",
+  "ShowOnResume": true,
   "FeaturedImage": "img/ludum-dare-46-header.png",
   "HoverImage": "img/ludum-dare-46-1.png",
   "Excerpt": "My personal submission for the 48-hour Ludum Dare 46 Compo game jam themed \"Keep it alive\".",

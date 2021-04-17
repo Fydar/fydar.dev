@@ -1,9 +1,23 @@
 {
-  "Name": "Cloud Imperium Games",
-  "IconUrl": "img/cloud-imperium-games.jpg",
+  "IsProfessional": true,
   "Slug": "cloud-imperium-games",
-  "Excerpt": null,
+  "Name": "Cloud Imperium Games",
+  "IconUrl": "img/logo-transparent-cig-sm.png",
   "Page": "pages/company/cloud-imperium-games.html",
   "Address": "Wilmslow, United Kingdom",
-  "Order": 0
+  "TwoWordAddress": "Wilmslow, United Kingdom",
+  "Excerpt": "",
+  "Positions": [
+    {
+        "Identifier": "tools-programmer",
+				"PlacementTitle": "Tools Programmer",
+				"PlacementDescriptionHtml": "<p>Programmer on standalone (out-of-engine) tools programming in C# on <i><a href=\"https://anthonymarmont.com/portfolio/star-citizen\">‘Star Citizen’</a></i> and <i><a href=\"https://anthonymarmont.com/portfolio/squadron-42\">‘Squadron 42’</a></i>.</p><ul><li>Maintained tooling for game-data authoring</li><li>Created a bespoke asset management visualisation and change tracker</li><li>Maintained core game code in C++</li></ul>",
+				"PlacementSubtitle": "",
+				"DisplayMonth": true,
+        "StartTimestamp": 1600902000,
+        "EndTimestamp": null
+    }
+  ],
+  "StudioType": "AAA",
+  "JobTime": "FullTime"
 }

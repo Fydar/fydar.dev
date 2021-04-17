@@ -1,6 +1,7 @@
 {
   "ProjectName": "LEGO® Star Wars™ Battles",
   "Slug": "lego-star-wars-battles",
+  "ShowOnResume": true,
   "FeaturedImage": "img/lego-star-wars-battles-1.jpg",
   "HoverImage": "img/lego-star-wars-battles-2.jpg",
   "Excerpt": "A mobile multiplayer real-time strategy game.",

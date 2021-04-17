@@ -1,0 +1,23 @@
+{
+  "IsProfessional": false,
+  "Slug": "unity-asset-store",
+  "Name": "Unity Asset Store",
+  "IconUrl": "img/logo-unity-sm.png",
+  "Page": "pages/company/unity-asset-store.html",
+  "Address": "",
+  "TwoWordAddress": "",
+  "Excerpt": "",
+  "Positions": [
+    {
+        "Identifier": "asset-icons",
+				"PlacementTitle": "Asset Store Developer",
+				"PlacementDescriptionHtml": "<p>Produced assets for the Unity Asset Store, most notably <i><a href=\"https://anthonymarmont.com/portfolio/asseticons\">‘AssetIcons’</a></i>.</p><p>Maintenance of the assets has been ongoing with my most recent major update for the asset released 2020.</p>",
+				"PlacementSubtitle": "",
+				"DisplayMonth": false,
+        "StartTimestamp": 1483228800,
+        "EndTimestamp": null
+    }
+  ],
+  "StudioType": "SelfEmployed",
+  "JobTime": "None"
+}

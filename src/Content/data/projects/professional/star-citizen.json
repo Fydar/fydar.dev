@@ -1,6 +1,7 @@
 {
   "ProjectName": "Star Citizen",
   "Slug": "star-citizen",
+  "ShowOnResume": true,
   "FeaturedImage": "img/star-citizen-1.jpg",
   "HoverImage": "img/star-citizen-2.jpg",
   "Excerpt": "A next-generation AAA title.",
