@@ -2,6 +2,7 @@
   "ProjectName": "Void",
   "ProjectSubtitle": "Mini Jam 67 - \"Void\"",
   "Slug": "minijam-67-void",
+  "ShowOnResume": true,
   "FeaturedImage": "img/minijam-67-void-1.png",
   "HoverImage": "img/minijam-67-void-2.png",
   "Excerpt": "My personal submission for the 72-hour Mini Jam themed \"Void\".",

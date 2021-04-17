@@ -54,6 +54,10 @@
 										<p>I am Anthony Marmont, a programmer applying for a position at <b>@Model.Company</b>.</p>
 									}
 								}
+								else
+								{
+									<p>I am Anthony Marmont.</p>
+								}
 
 								<ul>
 									<li>I am a <b>programmer</b></li>
@@ -100,32 +104,6 @@
 							</div>
 
 							<div class="group-page group-page-solo">
-								<h1>Skills</h1>
-
-								<div class="grid-skills">
-									<div class="grid-skills-column">
-										<h4 class="tagheading">Frontend</h4>
-
-										<ul>
-											<li>Unity, C#</li>
-											<li>Gameplay Programming</li>
-											<li>Tools Programming</li>
-											<li>Technical Art</li>
-											<li>UI / UX</li>
-										</ul>
-									</div>
-									<div class="grid-skills-column">
-										<h4 class="tagheading">Backend</h4>
-
-										<ul>
-											<li>Database Infrastructure</li>
-											<li>Scaling and Security</li>
-											<li>ASP.NET Core (MVC)</li>
-											<li>Blazor Web-Tools</li>
-											<li>Unit/Integration Testing</li>
-										</ul>
-									</div>
-								</div>
 								
 								<h1>Projects</h1>
 								@for (int i = 0; i < ContentService.Categories.Count; i++)
@@ -164,7 +142,7 @@
 										{
 											var project = category.Projects[j];
 
-											if (!project.ShowOnResume || counter >= 4)
+											if (!project.ShowOnResume || counter >= 8)
 											{
 												continue;
 											}
@@ -229,14 +207,40 @@
 							</div>
 						
 							<div class="group-page">
+
+								<h1>Skills</h1>
+
+								<div class="grid-skills">
+									<div class="grid-skills-column">
+										<h4 class="tagheading">Frontend</h4>
+
+										<ul>
+											<li>Unity, C#</li>
+											<li>Gameplay Programming</li>
+											<li>Tools Programming</li>
+											<li>Technical Art</li>
+											<li>UI / UX</li>
+										</ul>
+									</div>
+									<div class="grid-skills-column">
+										<h4 class="tagheading">Backend</h4>
+
+										<ul>
+											<li>Database Infrastructure</li>
+											<li>Scaling and Security</li>
+											<li>ASP.NET Core (MVC)</li>
+											<li>Blazor Web-Tools</li>
+											<li>Unit/Integration Testing</li>
+										</ul>
+									</div>
+								</div>
+
 								<h1>Hobbyist Experience</h1>
 							
 								@await Component.InvokeAsync("Timeline", new TimelineViewModel(
 									ContentService.Companies.Where(company => company.DisplayOnResume && !company.IsProfessional), false
 								))
-							</div>
-
-							<div class="group-page">
+								
 								<h1>Education</h1>
 							
 								@await Component.InvokeAsync("Timeline", new TimelineViewModel(
@@ -244,6 +248,7 @@
 								))
 
 							</div>
+
 						</div>
 
 

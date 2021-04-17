@@ -2,7 +2,7 @@
   "ProjectName": "Snoot",
   "ProjectSubtitle": "Global Game Jam 2020",
   "Slug": "global-game-jam-2020",
-  "ShowOnResume": false,
+  "ShowOnResume": true,
   "FeaturedImage": "img/global-game-jam-2020-header.png",
   "HoverImage": "img/global-game-jam-2020-1.png",
   "Excerpt": "My teams submission for the 48-hour game jam themed around \"Repair\".",

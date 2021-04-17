@@ -231,7 +231,7 @@ section.navbar {
     flex-grow: 1;
 }
     .card .card-header p {
-        margin-top: 6px;
+        margin-top: 2px;
     }
 
 
@@ -277,8 +277,8 @@ section.navbar {
 .card-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-gap: 6pt;
-    margin: 28px 0;
+    grid-gap: 20pt 6pt;
+    margin: 22px 0;
 }
 
     .card-grid.card-grid-sm {
