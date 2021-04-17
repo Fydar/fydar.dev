@@ -97,7 +97,7 @@ namespace Portfolio.Pipeline
 			}
 			else if (archiveFile.FullName.StartsWith("data/education"))
 			{
-				update.ImporterTags.Add("type-education");
+				update.ImporterTags.Add("type-college");
 
 				var loaded = LoadJson<CollegeModel>(archiveFile);
 				content = loaded;

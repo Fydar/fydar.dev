@@ -32,6 +32,7 @@ namespace Portfolio.Models
 		public string ProjectCategory { get; set; }
 		public string Slug { get; set; }
 		public bool HideOnHomePage { get; set; }
+		public bool ShowOnResume { get; set; }
 		public string Institution { get; set; }
 		public string FeaturedImage { get; set; }
 		public string HoverImage { get; set; }

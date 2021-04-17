@@ -6,7 +6,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\RPGCore\src\RPGCore.Packages\RPGCore.Packages.csproj" />
+    <ProjectReference Include="..\..\..\RPGCore\src\libs\RPGCore.Packages\RPGCore.Packages.csproj" />
+    <ProjectReference Include="..\..\..\RPGCore\src\libs\RPGCore.DataEditor\RPGCore.DataEditor.csproj" />
     <ProjectReference Include="..\Portfolio.Models\Portfolio.Models.csproj" />
   </ItemGroup>
 

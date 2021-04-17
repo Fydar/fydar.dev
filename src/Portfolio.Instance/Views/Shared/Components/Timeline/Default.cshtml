@@ -1,0 +1,80 @@
+﻿@model TimelineViewModel;
+
+<div class="timeline">
+        
+  <div class="timeline-stream">  
+    @{
+      int index = 0;
+    }
+    @foreach (var institution in Model.Institutions)
+    {  
+      index += 1;
+      for (int i = 0; i < institution.Positions.Count; i++)
+      {
+        var position = institution.Positions[i];
+
+        index += 1;
+        if (institution.Positions.Count > 1)
+        {
+          <div class="timeline-stream-node" style="grid-row: @index;"></div>
+        }
+
+        if (i != institution.Positions.Count - 1)
+        {
+          <div class="timeline-stream-connection" style="grid-row-start: @(index - 0); grid-row-end: @(index + 1);"></div>
+        }
+      }
+    }
+  </div>
+
+  @if (Model.FocusPosition)
+  {
+    @foreach (var institution in Model.Institutions)
+    {
+      var position = institution.Positions[0];
+
+      <div class="timeline-image">
+        <img src="./@institution.IconUrl" />
+      </div>
+
+      <div class="timeline-details">
+        <h2>@position.PlacementTitle</h2>
+        <p class="subtitle2">@institution.Tagline</p>
+        <p class="subtitle3">@position.Tagline</p>
+      </div>
+
+      <div class="timeline-position">
+        @Html.Raw(position.PlacementDescriptionHtml)
+      </div>
+    }
+  }
+  else
+  {
+    @foreach (var institution in Model.Institutions)
+    {
+      <div class="timeline-image">
+        <img src="./@institution.IconUrl" />
+      </div>
+
+      <div class="timeline-details">
+        <h2>@institution.Name</h2>
+        <p class="subtitle2">@institution.Tagline</p>
+        <p class="subtitle3">@institution.Address</p>
+      </div>
+
+      @foreach (var position in institution.Positions)
+      {
+        <div class="timeline-position">
+          <h3>@position.PlacementTitle</h3>
+          @if (!string.IsNullOrEmpty(position.PlacementSubtitle))
+          {
+              <p class="subtitle2">@position.PlacementSubtitle</p>
+          }
+          <p class="subtitle4">@position.Tagline</p>
+
+          @Html.Raw(position.PlacementDescriptionHtml)
+        </div>
+      }
+    }
+  }
+</div>

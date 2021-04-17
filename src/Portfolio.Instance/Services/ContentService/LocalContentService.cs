@@ -5,6 +5,7 @@ using RPGCore.Packages;
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Text;
 
 namespace Portfolio.Instance.Services.ContentService
 {
@@ -18,6 +19,58 @@ namespace Portfolio.Instance.Services.ContentService
 		public List<ProjectCategoryModel> Categories { get; }
 		public List<DisciplineModel> Disciplines { get; }
 		public List<BlogPostModel> BlogPosts { get; }
+		public List<CompanyModel> Companies { get; }
+		public List<CollegeModel> Colleges { get; }
+
+		public string ProfessionalExperience
+		{
+			get
+			{
+				var sb = new StringBuilder();
+				if (ProfessionalYears == 1)
+				{
+					sb.Append("1 year");
+				}
+				else if (ProfessionalYears != 0)
+				{
+					sb.Append($"{ProfessionalYears} years");
+				}
+
+				if (ProfessionalMonths != 0 && ProfessionalYears != 0)
+				{
+					sb.Append(", ");
+				}
+
+				if (ProfessionalMonths == 1)
+				{
+					sb.Append("1 month");
+				}
+				else if (ProfessionalMonths != 0)
+				{
+					sb.Append($"{ProfessionalMonths} months");
+				}
+				return sb.ToString();
+			}
+		}
+
+		public int ProfessionalTotalMonths
+		{
+			get
+			{
+				int total = 0;
+				foreach (var company in Companies)
+				{
+					if (company.IsProfessional)
+					{
+						total += (int)Math.Ceiling(company.Elapsed.TotalDays / 30.4167);
+					}
+				}
+				return total;
+			}
+		}
+
+		public int ProfessionalMonths => ProfessionalTotalMonths % 12;
+		public int ProfessionalYears => ProfessionalTotalMonths / 12;
 
 		public LocalContentService(IExplorer content)
 		{
@@ -40,6 +93,24 @@ namespace Portfolio.Instance.Services.ContentService
 			}
 
 			BlogPosts = DeserializeAll<BlogPostModel>("type-blogpost");
+
+			Companies = DeserializeAll<CompanyModel>("type-company");
+			foreach (var company in Companies)
+			{
+				company.Positions.Sort();
+				company.Positions.Reverse();
+			}
+			Companies.Sort();
+			Companies.Reverse();
+
+			Colleges = DeserializeAll<CollegeModel>("type-college");
+			foreach (var college in Colleges)
+			{
+				college.Positions.Sort();
+				college.Positions.Reverse();
+			}
+			Colleges.Sort();
+			Colleges.Reverse();
 		}
 
 		private List<T> DeserializeAll<T>(string tag)
