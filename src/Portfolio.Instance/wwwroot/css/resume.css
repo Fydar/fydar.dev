@@ -277,8 +277,8 @@ section.navbar {
 .card-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-gap: 20pt 6pt;
-    margin: 22px 0;
+    grid-gap: 26pt 6pt;
+    margin: 32px 0;
 }
 
     .card-grid.card-grid-sm {

@@ -181,7 +181,9 @@
 														{
 															@foreach (var link in project.Badges)
 															{
-																if (link.Tooltip == "Team" || link.Tooltip == "Location")
+																if (link.Tooltip == "Team"
+																	|| link.Tooltip == "Location"
+																	 || link.Tooltip == "Theme")
 																{
 																	continue;
 																}
