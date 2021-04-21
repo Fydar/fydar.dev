@@ -1,0 +1,12 @@
+[
+  {
+    "outputFileName": "output/patio.css",
+    "inputFiles": [
+      "src/css/**/*.css"
+    ],
+    "minify": {
+      "enabled": true,
+      "commentMode": "none"
+    }
+  }
+]

@@ -1,0 +1,48 @@
+
+/* Media Layout */
+.media {
+	display: flex;
+	align-items: flex-start;
+	margin-bottom: 1rem;
+}
+
+	.media .media-image {
+		width: 64px;
+		height: 64px;
+		margin-right: 2rem;
+		margin-top: 1rem;
+	}
+
+	.media .media-item {
+		margin-right: 2rem;
+		margin-top: 1rem;
+	}
+
+	.media .media-body {
+		flex: 1;
+	}
+
+@media (max-width: 768px) {
+
+	.media {
+		flex-direction: column;
+	}
+
+		.media .media-item {
+			width: 100%;
+			margin-right: 0;
+			margin-top: 1rem;
+		}
+
+			.media .media-item .scene {
+				width: 100%;
+			}
+
+			.media .media-item .mesh {
+				width: 100%;
+			}
+
+	section.profile .media-item {
+		margin-bottom: 1rem;
+	}
+}

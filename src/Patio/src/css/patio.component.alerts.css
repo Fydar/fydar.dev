@@ -1,0 +1,37 @@
+
+.alert {
+	background-color: var(--color-grey-5);
+	border-left: 6px solid var(--color-grey-6);
+	margin: 1.5rem 10px;
+	padding: 0.5rem 1rem 0.5rem 1rem;
+	max-width: 580px;
+}
+
+	.alert.alert-green {
+		color: var(--color-green-8);
+		background-color: var(--color-green-1);
+		border-left: 5px solid var(--color-green-6);
+	}
+
+	.alert.alert-orange {
+		color: var(--color-orange-8);
+		background-color: var(--color-orange-1);
+		border-left: 5px solid var(--color-orange-6);
+	}
+
+	.alert .alert-title-1 {
+		font-size: 2.25rem;
+		font-weight: bold;
+		margin: 12px;
+	}
+
+	.alert .alert-title-2 {
+		font-size: 1.5rem;
+		font-weight: bold;
+		margin: 12px;
+	}
+
+	.alert .alert-subtext {
+		font-style: italic;
+		font-size: 0.95rem;
+	}

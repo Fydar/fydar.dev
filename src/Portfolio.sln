@@ -44,6 +44,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3rdParty", "3rdParty", "{E1
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LettuceEncrypt", "..\..\LettuceEncrypt\src\LettuceEncrypt\LettuceEncrypt.csproj", "{A33DC237-44D3-4037-9679-ADD80088022C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Patio", "Patio\Patio.csproj", "{4272A3E3-C30F-4CA3-B835-C0CC6572BBB3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -94,6 +96,10 @@ Global
 		{A33DC237-44D3-4037-9679-ADD80088022C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A33DC237-44D3-4037-9679-ADD80088022C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A33DC237-44D3-4037-9679-ADD80088022C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4272A3E3-C30F-4CA3-B835-C0CC6572BBB3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4272A3E3-C30F-4CA3-B835-C0CC6572BBB3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4272A3E3-C30F-4CA3-B835-C0CC6572BBB3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4272A3E3-C30F-4CA3-B835-C0CC6572BBB3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

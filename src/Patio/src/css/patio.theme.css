@@ -1,0 +1,87 @@
+body {
+	/* Typography */
+	--color-text-primary: #24292e;
+	--color-text-headings: #666666;
+	--color-text-subtitles: #858585;
+	--color-text-subtle-1: #495057;
+	--color-text-subtle-2: #4a4a4a;
+	--color-text-subtle-3: #6c757d;
+	--color-text-subtle-4: #999999;
+	--color-text-link: #2727f5;
+	--color-text-error: #dc3545;
+	/* Borders */
+	--color-border-1: #e1e4e8;
+	--color-border-2: #ced4da;
+	--color-border-select-1: #007bff40;
+	--color-border-select-2: #80bdff;
+	--color-border-error-1: #dc354540;
+	--color-border-error-2: #dc3545;
+	/* Form */
+	--color-form-background-autocorrect: #f0f5ff;
+	/* Backgrounds */
+	--color-background-1: #ffffff;
+	--color-background-2: #f9f9f9;
+	--color-background-3: #f3f3f3;
+	--color-background-4: #fafbfc;
+	--color-background-5: #edf0f2;
+	--color-background-footer: #24252a;
+	/* Grey */
+	--color-grey-5: #fbfbfb;
+	--color-grey-6: #d8d8d8;
+	/* Green */
+	--color-green-1: #def7ec;
+	--color-green-6: #60b8a1;
+	--color-green-8: #04543f;
+	/* Orange */
+	--color-orange-1: #feecdc;
+	--color-orange-6: #f78e6b;
+	--color-orange-7: #f2840f;
+	--color-orange-8: #8a2c0d;
+}
+
+	body.dark {
+		/* Typography */
+		--color-text-primary: #d8d8d8;
+		--color-text-headings: #e1e4e8;
+		--color-text-subtitles: #afb0b1;
+		--color-text-subtle-1: #d8d8d8;
+		--color-text-subtle-2: #4a4a4a;
+		--color-text-subtle-3: #6c757d;
+		--color-text-subtle-4: #999999;
+		--color-text-link: #8799ed;
+		/* Borders */
+		--color-border-1: #242628;
+		--color-border-2: #2d2f31;
+		--color-border-select-1: #007bff40;
+		--color-border-select-2: #80bdff;
+		--color-border-error-1: #dc354540;
+		--color-border-error-2: #dc3545;
+		/* Form */
+		--color-form-background-autocorrect: #1c1c1f;
+		/* Backgrounds */
+		--color-background-1: #121212;
+		--color-background-2: #0d0d0d;
+		--color-background-3: #0d0d0d;
+		--color-background-4: #242628;
+		--color-background-5: #0c0c0c;
+		--color-background-footer: #24252a;
+		/* Grey */
+		--color-grey-5: #202020;
+		--color-grey-6: #444444;
+		/* Green */
+		--color-green-1: #255325;
+		--color-green-6: #64b860;
+		--color-green-8: #a0ed9b;
+		/* Orange */
+		--color-orange-1: #40251c;
+		--color-orange-6: #f78e6b;
+		--color-orange-8: #fed7b5;
+	}
+
+body {
+	font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+	font-size: 16px;
+	font-weight: 400;
+	color: var(--color-text-primary);
+	background-color: var(--color-background-1);
+}

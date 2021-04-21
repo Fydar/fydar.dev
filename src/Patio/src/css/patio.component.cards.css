@@ -1,0 +1,240 @@
+
+/* Cards */
+.card {
+	border: 1px solid var(--color-border-1);
+	display: flex;
+	flex-direction: column;
+	text-decoration: none;
+}
+
+	/* Rounded cards */
+	.card.card-rounded {
+		border-radius: 6px;
+	}
+
+		.card.card-rounded .card-image:first-child,
+		.card.card-rounded .card-header:first-child,
+		.card.card-rounded .card-body:first-child {
+			border-top-left-radius: 6px;
+			border-top-right-radius: 6px;
+		}
+
+		.card.card-rounded .card-image:last-child,
+		.card.card-rounded .card-header:last-child,
+		.card.card-rounded .card-body:last-child {
+			border-bottom: none;
+			border-bottom-left-radius: 6px;
+			border-bottom-right-radius: 6px;
+		}
+
+	/* Hover effects and animation */
+	.card.card-hoverEffect {
+		transition: transform 0.15s ease-in-out;
+		transform: translate(0, 0);
+	}
+
+		.card.card-hoverEffect:hover {
+			transform: translateY(-4px);
+		}
+
+		.card.card-hoverEffect::before {
+			content: '';
+			position: absolute;
+			z-index: -1;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			box-shadow: 0 10px 12px -6px #00000044;
+			opacity: 0;
+			transition: opacity 0.25s linear;
+		}
+
+		.card.card-hoverEffect.card-rounded::before {
+			border-radius: 6px;
+		}
+
+		.card.card-hoverEffect:hover::before {
+			opacity: 1;
+		}
+
+	.card .card-hover {
+		opacity: 0;
+		pointer-events: none;
+		top: 600px;
+		transition: opacity 0.25s ease, top 0s linear 2s;
+	}
+
+	.card:hover .card-hover {
+		opacity: 1;
+		top: 0;
+		transition: opacity 0.25s ease, top 0s linear 0s;
+	}
+
+	/* Card images */
+	.card .card-image {
+		padding-top: 56.25%;
+		width: 100%;
+		position: relative;
+		overflow: hidden;
+		background-color: var(--color-grey-6);
+	}
+
+		.card .card-image .imageHolder {
+			position: absolute;
+			top: 0;
+			width: 100%;
+			height: 100%;
+			overflow: hidden;
+		}
+
+			.card .card-image .imageHolder svg,
+			.card .card-image .imageHolder img {
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+				transition: all 0.2s ease-in-out;
+			}
+
+	/* Card headers */
+	.card .card-header {
+		padding: 8px 8px;
+		flex-grow: 1;
+	}
+
+
+	/* Card body */
+	.card .card-body {
+		margin: 0;
+		padding: 0;
+		background-color: var(--color-background-2);
+		border-top: 1px solid var(--color-border-1);
+	}
+
+	.card .card-title {
+		margin: 0;
+		padding: 0;
+		color: var(--color-text-headings);
+		font-size: 1.4em;
+		font-weight: 350;
+		letter-spacing: 0.25px;
+	}
+
+
+		.card .card-title a {
+			text-decoration: none;
+			color: var(--color-text-headings);
+		}
+
+	.card .card-subtitle {
+		margin: 0;
+		padding: 0;
+		color: var(--color-text-subtitles);
+		margin-top: 5px;
+		font-size: 17px;
+	}
+
+
+		.card .card-subtitle a {
+			text-decoration: none;
+			color: var(--color-text-subtitles);
+		}
+
+
+/* Card grids */
+.card-grid {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-gap: 2rem 1.1rem;
+	margin: 28px 0;
+}
+
+	.card-grid.card-grid-sm {
+		grid-template-columns: 1fr 1fr 1fr;
+	}
+
+	.card-grid.card-grid-xs {
+		grid-template-columns: 1fr 1fr 1fr 1fr;
+	}
+
+
+.container .card-grid {
+	grid-template-columns: 1fr;
+}
+
+	.container .card-grid.card-grid-sm {
+		grid-template-columns: 1fr;
+	}
+
+	.container .card-grid.card-grid-xs {
+		grid-template-columns: 1fr 1fr;
+	}
+
+
+/*
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1400px
+);
+*/
+@media (min-width: 576px) {
+	.container .card-grid {
+		grid-template-columns: 1fr 1fr;
+	}
+
+		.container .card-grid.card-grid-sm {
+			grid-template-columns: 1fr 1fr;
+			grid-gap: 24px 16px;
+		}
+
+		.container .card-grid.card-grid-xs {
+			grid-template-columns: 1fr 1fr 1fr;
+			grid-gap: 24px 16px;
+		}
+}
+
+@media (min-width: 768px) {
+
+	.container .card-grid {
+		grid-template-columns: 1fr 1fr;
+	}
+
+		.container .card-grid.card-grid-sm {
+			grid-template-columns: 354px 354px;
+			grid-gap: 20px 20px;
+		}
+
+		.container .card-grid.card-grid-xs {
+			grid-template-columns: 354px 354px;
+			grid-gap: 20px 20px;
+		}
+}
+
+@media (min-width: 992px) {
+	.container .card-grid.card-grid-sm {
+		grid-template-columns: 306px 306px 306px;
+		grid-gap: 24px 21px;
+	}
+
+	.container .card-grid.card-grid-xs {
+		grid-template-columns: 1fr 1fr 1fr 1fr;
+	}
+}
+
+@media (min-width: 1200px) {
+	.container .card-grid.card-grid-sm {
+		grid-template-columns: 366px 366px 366px;
+		grid-gap: 24px 21px;
+	}
+}
+
+@media (min-width: 1400px) {
+	.container .card-grid.card-grid-sm {
+		grid-template-columns: 400px 400px 400px;
+		grid-gap: 24px 21px;
+	}
+}

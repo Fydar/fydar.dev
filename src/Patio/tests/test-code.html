@@ -1,0 +1,222 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Test - Code</title>
+
+	<link rel="stylesheet" asp-append-version="true" href="../output/patio.min.css" />
+</head>
+<body>
+
+	<div class="container">
+
+		<table class="code-table">
+			<tr>
+				<th>1</th>
+				<td>Code on this line</td>
+			</tr>
+			<tr>
+				<th>2</th>
+				<td>{</td>
+			</tr>
+			<tr>
+				<th>3</th>
+				<td>    /* this is stuff */</td>
+			</tr>
+			<tr>
+				<th>4</th>
+				<td>}</td>
+			</tr>
+		</table>
+
+		<table class="code-table">
+			<tbody>
+				<tr>
+					<th>1</th>
+					<td>Code on this line</td>
+				</tr>
+				<tr>
+					<th>2</th>
+					<td>{</td>
+				</tr>
+				<tr>
+					<th>3</th>
+					<td>    /* this is stuff */    /* this is stuff */    /* this is stuff */    /* this is stuff */    /* this is stuff */    /* this is stuff */    /* this is stuff */    /* this is stuff */    /* this is stuff */</td>
+				</tr>
+				<tr>
+					<th>4</th>
+					<td>}</td>
+				</tr>
+			</tbody>
+		</table>
+
+		<table class="code-table code-sticky-linenumber">
+			<tbody>
+				<tr>                   <th>1</th><td><span class="c-keyword">using</span> AssetIcons;</td></tr>
+				<tr>                   <th>2</th><td><span class="c-keyword">using</span> UnityEngine;</td></tr>
+				<tr>                   <th>3</th><td><br></td></tr>
+				<tr>                   <th>4</th><td>[<span class="c-class"><a target="_blank" href="https://docs.unity3d.com/ScriptReference/CreateAssetMenuAttribute.html">CreateAssetMenu</a></span>]</td></tr>
+				<tr>                   <th>5</th><td><span class="c-keyword">public</span> <span class="c-keyword">class</span> <span class="c-class">Item</span> : <span class="c-class"><a target="_blank" href="https://docs.unity3d.com/ScriptReference/ScriptableObject.html">ScriptableObject</a></span></td></tr>
+				<tr>                   <th>6</th><td>{</td></tr>
+				<tr>                   <th>7</th><td>	[<span class="c-class"><a href="#AssetIconAttribute">AssetIcon</a></span>]</td></tr>
+				<tr>                   <th>8</th><td>	<span class="c-keyword">public</span> <span class="c-class"><a target="_blank" href="https://docs.unity3d.com/ScriptReference/Sprite.html">Sprite</a></span> <span class="c-field">Icon</span>;</td></tr>
+				<tr>                   <th>9</th><td>}</td></tr>
+			</tbody>
+		</table>
+
+		<table class="code-table code-sticky-linenumber" style="max-height: 500px;">
+			<tbody>
+				<tr>                   <th>1</th><td><span class="c-keyword">using</span> AssetIcons.Editors;</td></tr>
+				<tr>                   <th>2</th><td><span class="c-keyword">using</span> AssetIcons.Editors.Pipeline;</td></tr>
+				<tr>                   <th>3</th><td><span class="c-keyword">using</span> System;</td></tr>
+				<tr>                   <th>4</th><td><span class="c-keyword">using</span> UnityEngine;</td></tr>
+				<tr>                   <th>5</th><td><br></td></tr>
+				<tr>                   <th>6</th><td><span class="c-keyword">public</span> <span class="c-keyword">class</span> <span class="c-class">BooleanGraphicDrawerFactory</span> : <span class="c-interface"><a href="#Pipeline_IGraphicDrawerFactory">IGraphicDrawerFactory</a></span></td></tr>
+				<tr>                   <th>7</th><td>{</td></tr>
+				<tr>                   <th>8</th><td>	<span class="c-keyword">private</span> <span class="c-keyword">class</span> <span class="c-class">BooleanGraphicDrawer</span> : <span class="c-interface"><a href="#Pipeline_IGraphicDrawer">IGraphicDrawer</a></span></td></tr>
+				<tr>                   <th>9</th><td>	{</td></tr>
+				<tr class="line-green"><th>10</th><td>		<span class="c-keyword">private</span> <span class="c-keyword">bool</span> <span class="c-field">hasValue</span>;</td></tr>
+				<tr class="line-green"><th>11</th><td>		<span class="c-keyword">private</span> <span class="c-keyword">bool</span> <span class="c-field">lastValue</span>;</td></tr>
+				<tr class="line-green"><th>12</th><td><br></td></tr>
+				<tr class="line-green"><th>13</th><td>		<span class="c-keyword">public</span> <span class="c-keyword">bool</span> <span class="c-method">CanDraw</span>()</td></tr>
+				<tr>                   <th>14</th><td>		{</td></tr>
+				<tr class="line-green"><th>15</th><td>			<span class="c-control">return</span> <span class="c-field">hasValue</span>;</td></tr>
+				<tr class="line-red">  <th>16</th><td>		}</td></tr>
+				<tr>                   <th>17</th><td><br></td></tr>
+				<tr>                   <th>18</th><td>		<span class="c-keyword">public</span> <span class="c-keyword">void</span> <span class="c-method">Draw</span>(<span class="c-structure"><a target="_blank" href="https://docs.unity3d.com/ScriptReference/Rect.html">Rect</a></span> <span class="c-parameter">rect</span>, <span class="c-keyword">bool</span> <span class="c-parameter">selected</span>, <span class="c-class"><a href="#AssetIconsCompiledStyle">AssetIconsCompiledStyle</a></span> <span class="c-parameter">style</span>)</td></tr>
+				<tr>                   <th>19</th><td>		{</td></tr>
+				<tr class="line-green"><th>20</th><td>			<span class="c-comment">// Transform the rect of the icon in the Project window to the rect of the actual graphic.</span></td></tr>
+				<tr class="line-red">  <th>21</th><td>			<span class="c-keyword">var</span> <span class="c-local">drawRect</span> = <span class="c-class"><a href="#AssetIconsGUIUtility">AssetIconsGUIUtility</a></span>.<span class="c-method"><a href="#AssetIconsGUIUtility_AreaToIconRect">AreaToIconRect</a></span>(<span class="c-parameter">rect</span>, <span class="c-parameter">style</span>.<span class="c-property"><a href="#AssetIconsCompiledStyle_MaxSize">MaxSize</a></span>);</td></tr>
+				<tr class="line-green"><th>22</th><td><br></td></tr>
+				<tr>                   <th>23</th><td>			<span class="c-comment">// Using AssetIconsGUI allows us to draw stuff using the user-defined style.</span></td></tr>
+				<tr>                   <th>24</th><td><br></td></tr>
+				<tr>                   <th>25</th><td>			<span class="c-control">if</span> (<span class="c-field">lastValue</span>)</td></tr>
+				<tr>                   <th>26</th><td>			{</td></tr>
+				<tr>                   <th>27</th><td>				<span class="c-comment">// Draw a green square</span></td></tr>
+				<tr>                   <th>28</th><td>				<span class="c-class"><a href="#AssetIconsGUI">AssetIconsGUI</a></span>.<span class="c-method"><a href="#AssetIconsGUI_DrawColor">DrawColor</a></span>(<span class="c-local">drawRect</span>, <span class="c-keyword">new</span> <span class="c-structure"><a target="_blank" href="https://docs.unity3d.com/ScriptReference/Color32.html">Color32</a></span>(<span class="c-numeric">0</span>, <span class="c-numeric">255</span>, <span class="c-numeric">0</span>, <span class="c-numeric">255</span>), <span class="c-parameter">style</span>, <span class="c-parameter">selected</span>);</td></tr>
+				<tr>                   <th>29</th><td>			}</td></tr>
+				<tr>                   <th>30</th><td>			<span class="c-control">else</span></td></tr>
+				<tr>                   <th>31</th><td>			{</td></tr>
+				<tr class="line-red">  <th>32</th><td>				<span class="c-comment">// Draw a red square</span></td></tr>
+				<tr class="line-red">  <th>33</th><td>				<span class="c-class"><a href="#AssetIconsGUI">AssetIconsGUI</a></span>.<span class="c-method"><a href="#AssetIconsGUI_DrawColor">DrawColor</a></span>(<span class="c-local">drawRect</span>, <span class="c-keyword">new</span> <span class="c-structure"><a target="_blank" href="https://docs.unity3d.com/ScriptReference/Color32.html">Color32</a></span>(<span class="c-numeric">255</span>, <span class="c-numeric">0</span>, <span class="c-numeric">0</span>, <span class="c-numeric">255</span>), <span class="c-parameter">style</span>, <span class="c-parameter">selected</span>);</td></tr>
+				<tr class="line-red">  <th>34</th><td>			}</td></tr>
+				<tr>                   <th>35</th><td>		}</td></tr>
+				<tr>                   <th>36</th><td><br></td></tr>
+				<tr>                   <th>37</th><td>		<span class="c-keyword">public</span> <span class="c-keyword">void</span> <span class="c-method">SetValue</span>(<span class="c-keyword">object</span> <span class="c-parameter">value</span>)</td></tr>
+				<tr>                   <th>38</th><td>		{</td></tr>
+				<tr>                   <th>39</th><td>			<span class="c-control">if</span> (<span class="c-parameter">value</span> <span class="c-method">!=</span> <span class="c-keyword">null</span>)</td></tr>
+				<tr>                   <th>40</th><td>			{</td></tr>
+				<tr>                   <th>41</th><td>				<span class="c-field">lastValue</span> = (<span class="c-keyword">bool</span>)<span class="c-parameter">value</span>;</td></tr>
+				<tr>                   <th>42</th><td>				<span class="c-field">hasValue</span> = <span class="c-keyword">true</span>;</td></tr>
+				<tr>                   <th>43</th><td>			}</td></tr>
+				<tr>                   <th>44</th><td>			<span class="c-control">else</span></td></tr>
+				<tr>                   <th>45</th><td>			{</td></tr>
+				<tr>                   <th>46</th><td>				<span class="c-field">hasValue</span> = <span class="c-keyword">false</span>;</td></tr>
+				<tr>                   <th>47</th><td>			}</td></tr>
+				<tr>                   <th>48</th><td>		}</td></tr>
+				<tr>                   <th>49</th><td>	}</td></tr>
+				<tr>                   <th>50</th><td><br></td></tr>
+				<tr>                   <th>51</th><td>	<span class="c-keyword">public</span> <span class="c-keyword">int</span> <span class="c-property">Priority</span></td></tr>
+				<tr>                   <th>52</th><td>	{</td></tr>
+				<tr>                   <th>53</th><td>		<span class="c-keyword">get</span></td></tr>
+				<tr>                   <th>54</th><td>		{</td></tr>
+				<tr>                   <th>55</th><td>			<span class="c-comment">// All of AssetIcons' drawers use 100 as a default value.</span></td></tr>
+				<tr>                   <th>56</th><td>			<span class="c-comment">// The higher the priority, the more likely it is it will be used.</span></td></tr>
+				<tr>                   <th>57</th><td>			<span class="c-control">return</span> <span class="c-numeric">150</span>;</td></tr>
+				<tr>                   <th>58</th><td>		}</td></tr>
+				<tr>                   <th>59</th><td>	}</td></tr>
+				<tr>                   <th>60</th><td><br></td></tr>
+				<tr>                   <th>61</th><td>	<span class="c-keyword">public</span> <span class="c-interface"><a href="#Pipeline_IGraphicDrawer">IGraphicDrawer</a></span> <span class="c-method">CreateDrawer</span>()</td></tr>
+				<tr>                   <th>62</th><td>	{</td></tr>
+				<tr>                   <th>63</th><td>		<span class="c-control">return</span> <span class="c-keyword">new</span> <span class="c-class">BooleanGraphicDrawer</span>();</td></tr>
+				<tr>                   <th>64</th><td>	}</td></tr>
+				<tr>                   <th>65</th><td><br></td></tr>
+				<tr>                   <th>66</th><td>	<span class="c-keyword">public</span> <span class="c-keyword">bool</span> <span class="c-method">IsValidFor</span>(<span class="c-class"><a target="_blank" href="https://docs.microsoft.com/en-us/dotnet/api/system.type">Type</a></span> <span class="c-parameter">type</span>)</td></tr>
+				<tr>                   <th>67</th><td>	{</td></tr>
+				<tr>                   <th>68</th><td>		<span class="c-control">return</span> <span class="c-parameter">type</span> == <span class="c-keyword">typeof</span>(<span class="c-keyword">bool</span>);</td></tr>
+				<tr>                   <th>69</th><td>	}</td></tr>
+				<tr>                   <th>70</th><td>}</td></tr>
+			</tbody>
+		</table>
+
+
+		<table class="code-table" style="max-height: 500px;">
+			<tbody>
+				<tr>                   <th>1</th><th>1</th><td><span class="c-keyword">using</span> AssetIcons.Editors;</td></tr>
+				<tr>                   <th>2</th><th>2</th><td><span class="c-keyword">using</span> AssetIcons.Editors.Pipeline;</td></tr>
+				<tr>                   <th>3</th><th>3</th><td><span class="c-keyword">using</span> System;</td></tr>
+				<tr>                   <th>4</th><th>4</th><td><span class="c-keyword">using</span> UnityEngine;</td></tr>
+				<tr>                   <th>5</th><th>5</th><td><br></td></tr>
+				<tr>                   <th>6</th><th>6</th><td><span class="c-keyword">public</span> <span class="c-keyword">class</span> <span class="c-class">BooleanGraphicDrawerFactory</span> : <span class="c-interface"><a href="#Pipeline_IGraphicDrawerFactory">IGraphicDrawerFactory</a></span></td></tr>
+				<tr>                   <th>7</th><th>7</th><td>{</td></tr>
+				<tr>                   <th>8</th><th>8</th><td>	<span class="c-keyword">private</span> <span class="c-keyword">class</span> <span class="c-class">BooleanGraphicDrawer</span> : <span class="c-interface"><a href="#Pipeline_IGraphicDrawer">IGraphicDrawer</a></span></td></tr>
+				<tr>                   <th>9</th><th>9</th><td>	{</td></tr>
+				<tr class="line-green"><th></th><th>10</th><td>		<span class="c-keyword">private</span> <span class="c-keyword">bool</span> <span class="c-field">hasValue</span>;</td></tr>
+				<tr class="line-green"><th></th><th>11</th><td>		<span class="c-keyword">private</span> <span class="c-keyword">bool</span> <span class="c-field">lastValue</span>;</td></tr>
+				<tr class="line-green"><th></th><th>12</th><td><br></td></tr>
+				<tr class="line-green"><th></th><th>13</th><td>		<span class="c-keyword">public</span> <span class="c-keyword">bool</span> <span class="c-method">CanDraw</span>()</td></tr>
+				<tr>                   <th>10</th><th>14</th><td>		{</td></tr>
+				<tr class="line-green"><th></th><th>15</th><td>			<span class="c-control">return</span> <span class="c-field">hasValue</span>;</td></tr>
+				<tr class="line-red">  <th>11</th><th></th><td>		}</td></tr>
+				<tr>                   <th>12</th><th>16</th><td><br></td></tr>
+				<tr>                   <th>13</th><th>17</th><td>		<span class="c-keyword">public</span> <span class="c-keyword">void</span> <span class="c-method">Draw</span>(<span class="c-structure"><a target="_blank" href="https://docs.unity3d.com/ScriptReference/Rect.html">Rect</a></span> <span class="c-parameter">rect</span>, <span class="c-keyword">bool</span> <span class="c-parameter">selected</span>, <span class="c-class"><a href="#AssetIconsCompiledStyle">AssetIconsCompiledStyle</a></span> <span class="c-parameter">style</span>)</td></tr>
+				<tr>                   <th>14</th><th>18</th><td>		{</td></tr>
+				<tr class="line-green"><th></th><th>20</th><td>			<span class="c-comment">// Transform the rect of the icon in the Project window to the rect of the actual graphic.</span></td></tr>
+				<tr class="line-red">  <th>15</th><th></th><td>			<span class="c-keyword">var</span> <span class="c-local">drawRect</span> = <span class="c-class"><a href="#AssetIconsGUIUtility">AssetIconsGUIUtility</a></span>.<span class="c-method"><a href="#AssetIconsGUIUtility_AreaToIconRect">AreaToIconRect</a></span>(<span class="c-parameter">rect</span>, <span class="c-parameter">style</span>.<span class="c-property"><a href="#AssetIconsCompiledStyle_MaxSize">MaxSize</a></span>);</td></tr>
+				<tr class="line-green"><th></th><th>21</th><td><br></td></tr>
+				<tr>                   <th>16</th><th>22</th><td>			<span class="c-comment">// Using AssetIconsGUI allows us to draw stuff using the user-defined style.</span></td></tr>
+				<tr>                   <th>17</th><th>23</th><td><br></td></tr>
+				<tr>                   <th>18</th><th>24</th><td>			<span class="c-control">if</span> (<span class="c-field">lastValue</span>)</td></tr>
+				<tr>                   <th>19</th><th>25</th><td>			{</td></tr>
+				<tr>                   <th>20</th><th>26</th><td>				<span class="c-comment">// Draw a green square</span></td></tr>
+				<tr>                   <th>21</th><th>27</th><td>				<span class="c-class"><a href="#AssetIconsGUI">AssetIconsGUI</a></span>.<span class="c-method"><a href="#AssetIconsGUI_DrawColor">DrawColor</a></span>(<span class="c-local">drawRect</span>, <span class="c-keyword">new</span> <span class="c-structure"><a target="_blank" href="https://docs.unity3d.com/ScriptReference/Color32.html">Color32</a></span>(<span class="c-numeric">0</span>, <span class="c-numeric">255</span>, <span class="c-numeric">0</span>, <span class="c-numeric">255</span>), <span class="c-parameter">style</span>, <span class="c-parameter">selected</span>);</td></tr>
+				<tr>                   <th>22</th><th>28</th><td>			}</td></tr>
+				<tr>                   <th>23</th><th>29</th><td>			<span class="c-control">else</span></td></tr>
+				<tr>                   <th>24</th><th>30</th><td>			{</td></tr>
+				<tr class="line-red">  <th>25</th><th></th><td>				<span class="c-comment">// Draw a red square</span></td></tr>
+				<tr class="line-red">  <th>26</th><th></th><td>				<span class="c-class"><a href="#AssetIconsGUI">AssetIconsGUI</a></span>.<span class="c-method"><a href="#AssetIconsGUI_DrawColor">DrawColor</a></span>(<span class="c-local">drawRect</span>, <span class="c-keyword">new</span> <span class="c-structure"><a target="_blank" href="https://docs.unity3d.com/ScriptReference/Color32.html">Color32</a></span>(<span class="c-numeric">255</span>, <span class="c-numeric">0</span>, <span class="c-numeric">0</span>, <span class="c-numeric">255</span>), <span class="c-parameter">style</span>, <span class="c-parameter">selected</span>);</td></tr>
+				<tr class="line-red">  <th>27</th><th></th><td>			}</td></tr>
+				<tr>                   <th>28</th><th>31</th><td>		}</td></tr>
+				<tr>                   <th>29</th><th>32</th><td><br></td></tr>
+				<tr>                   <th>30</th><th>33</th><td>		<span class="c-keyword">public</span> <span class="c-keyword">void</span> <span class="c-method">SetValue</span>(<span class="c-keyword">object</span> <span class="c-parameter">value</span>)</td></tr>
+				<tr>                   <th>31</th><th>34</th><td>		{</td></tr>
+				<tr>                   <th>32</th><th>35</th><td>			<span class="c-control">if</span> (<span class="c-parameter">value</span> <span class="c-method">!=</span> <span class="c-keyword">null</span>)</td></tr>
+				<tr>                   <th>33</th><th>36</th><td>			{</td></tr>
+				<tr>                   <th>34</th><th>37</th><td>				<span class="c-field">lastValue</span> = (<span class="c-keyword">bool</span>)<span class="c-parameter">value</span>;</td></tr>
+				<tr>                   <th>35</th><th>38</th><td>				<span class="c-field">hasValue</span> = <span class="c-keyword">true</span>;</td></tr>
+				<tr>                   <th>36</th><th>39</th><td>			}</td></tr>
+				<tr>                   <th>37</th><th>40</th><td>			<span class="c-control">else</span></td></tr>
+				<tr>                   <th>38</th><th>41</th><td>			{</td></tr>
+				<tr>                   <th>39</th><th>42</th><td>				<span class="c-field">hasValue</span> = <span class="c-keyword">false</span>;</td></tr>
+				<tr>                   <th>40</th><th>43</th><td>			}</td></tr>
+				<tr>                   <th>41</th><th>44</th><td>		}</td></tr>
+				<tr>                   <th>42</th><th>45</th><td>	}</td></tr>
+				<tr>                   <th>43</th><th>46</th><td><br></td></tr>
+				<tr>                   <th>44</th><th>47</th><td>	<span class="c-keyword">public</span> <span class="c-keyword">int</span> <span class="c-property">Priority</span></td></tr>
+				<tr>                   <th>45</th><th>48</th><td>	{</td></tr>
+				<tr>                   <th>46</th><th>49</th><td>		<span class="c-keyword">get</span></td></tr>
+				<tr>                   <th>47</th><th>50</th><td>		{</td></tr>
+				<tr>                   <th>48</th><th>51</th><td>			<span class="c-comment">// All of AssetIcons' drawers use 100 as a default value.</span></td></tr>
+				<tr>                   <th>49</th><th>52</th><td>			<span class="c-comment">// The higher the priority, the more likely it is it will be used.</span></td></tr>
+				<tr>                   <th>50</th><th>53</th><td>			<span class="c-control">return</span> <span class="c-numeric">150</span>;</td></tr>
+				<tr>                   <th>51</th><th>54</th><td>		}</td></tr>
+				<tr>                   <th>52</th><th>55</th><td>	}</td></tr>
+				<tr>                   <th>53</th><th>56</th><td><br></td></tr>
+				<tr>                   <th>54</th><th>57</th><td>	<span class="c-keyword">public</span> <span class="c-interface"><a href="#Pipeline_IGraphicDrawer">IGraphicDrawer</a></span> <span class="c-method">CreateDrawer</span>()</td></tr>
+				<tr>                   <th>55</th><th>58</th><td>	{</td></tr>
+				<tr>                   <th>56</th><th>59</th><td>		<span class="c-control">return</span> <span class="c-keyword">new</span> <span class="c-class">BooleanGraphicDrawer</span>();</td></tr>
+				<tr>                   <th>57</th><th>60</th><td>	}</td></tr>
+				<tr>                   <th>58</th><th>61</th><td><br></td></tr>
+				<tr>                   <th>59</th><th>62</th><td>	<span class="c-keyword">public</span> <span class="c-keyword">bool</span> <span class="c-method">IsValidFor</span>(<span class="c-class"><a target="_blank" href="https://docs.microsoft.com/en-us/dotnet/api/system.type">Type</a></span> <span class="c-parameter">type</span>)</td></tr>
+				<tr>                   <th>60</th><th>63</th><td>	{</td></tr>
+				<tr>                   <th>61</th><th>64</th><td>		<span class="c-control">return</span> <span class="c-parameter">type</span> == <span class="c-keyword">typeof</span>(<span class="c-keyword">bool</span>);</td></tr>
+				<tr>                   <th>62</th><th>65</th><td>	}</td></tr>
+				<tr>                   <th>63</th><th>66</th><td>}</td></tr>
+			</tbody>
+		</table>
+
+
+	</div>
+</body>
+</html>

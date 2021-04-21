@@ -1,0 +1,293 @@
+
+.mark {
+	display: inline-block;
+	margin-right: 8px;
+	/* Default colours */
+	--mark-colour-primary: #414141;
+	--mark-colour-text: #f6f6f6;
+}
+
+	/* Solid Backgrounds */
+	.mark.mark-rounded,
+	.mark.mark-circle,
+	.mark.mark-square {
+		background-color: var(--mark-colour-primary);
+		margin: 6px;
+		pointer-events: all;
+	}
+
+		.mark.mark-rounded::after,
+		.mark.mark-circle::after,
+		.mark.mark-square::after {
+			content: '';
+			display: block;
+			position: relative;
+			height: 100%;
+			width: 100%;
+			pointer-events: none;
+			-webkit-mask: var(--mark-img-flat-url) no-repeat 50% 50%;
+			mask: var(--mark-img-flat-url) no-repeat 50% 50%;
+			-webkit-mask-size: contain;
+			mask-size: contain;
+			background-color: var(--mark-colour-text);
+		}
+
+	.mark.mark-rounded {
+		border-radius: 8px;
+		width: 48px;
+		height: 48px;
+	}
+
+		.mark.mark-rounded::after {
+			height: 60%;
+			width: 60%;
+			top: 20%;
+			left: 20%;
+			bottom: 20%;
+			right: 20%;
+		}
+
+	.mark.mark-circle {
+		border-radius: 50%;
+		width: 52px;
+		height: 52px;
+		margin: 6px;
+	}
+
+		.mark.mark-circle::after {
+			height: 60%;
+			width: 60%;
+			top: 20%;
+			left: 20%;
+			bottom: 20%;
+			right: 20%;
+		}
+
+	.mark.mark-square {
+		width: 40px;
+		height: 40px;
+		margin: 6px;
+	}
+
+		.mark.mark-square::after {
+			height: 100%;
+			width: 100%;
+		}
+
+
+
+
+		.mark.mark-rounded::after,
+		.mark.mark-circle::after,
+		.mark.mark-square::after {
+		}
+
+	/* No Backgrounds */
+	.mark.mark-subtle {
+		width: 1em;
+		height: 1em;
+		pointer-events: all;
+	}
+
+		.mark.mark-subtle::after {
+			content: '';
+			display: block;
+			position: relative;
+			pointer-events: none;
+			-webkit-mask: var(--mark-img-flat-url) no-repeat 50% 50%;
+			mask: var(--mark-img-flat-url) no-repeat 50% 50%;
+			-webkit-mask-size: contain;
+			mask-size: contain;
+			background-color: currentColor;
+			top: -25%;
+			left: -25%;
+			height: 150%;
+			width: 150%;
+			transform: translateY(1px);
+		}
+
+
+
+	.mark.mark-default {
+		width: 1em;
+		height: 1em;
+		pointer-events: all;
+	}
+
+		.mark.mark-default::after {
+			content: '';
+			display: block;
+			position: relative;
+			pointer-events: none;
+			background: var(--mark-img-url);
+			background-size: 100%;
+			background-position: center;
+			background-repeat: no-repeat;
+			top: -25%;
+			left: -25%;
+			height: 150%;
+			width: 150%;
+			transform: translateY(1px);
+		}
+
+
+
+	.mark.mark-youtube {
+		--mark-img-url: url("/img/marks/youtube.svg");
+		--mark-img-flat-url: url("/img/marks/youtube.svg");
+		--mark-colour-primary: #FF0000;
+		--mark-colour-text: #f6f6f6;
+	}
+
+	.mark.mark-github {
+		--mark-img-url: url("/img/marks/github.svg");
+		--mark-img-flat-url: url("/img/marks/github.svg");
+		--mark-colour-primary: #181717;
+		--mark-colour-text: #f6f6f6;
+	}
+
+	.mark.mark-unity {
+		--mark-img-url: url("/img/marks/unity.svg");
+		--mark-img-flat-url: url("/img/marks/unity.svg");
+		--mark-colour-primary: #181717;
+		--mark-colour-text: #f6f6f6;
+	}
+
+	.mark.mark-dot-net {
+		--mark-img-url: url("/img/marks/dot-net.svg");
+		--mark-img-flat-url: url("/img/marks/dot-net.svg");
+		--mark-colour-primary: #512BD4;
+		--mark-colour-text: #f6f6f6;
+	}
+
+	.mark.mark-itch-io {
+		--mark-img-url: url("/img/marks/itch-dot-io.svg");
+		--mark-img-flat-url: url("/img/marks/itch-dot-io.svg");
+		--mark-colour-primary: #FA5C5C;
+		--mark-colour-text: #f6f6f6;
+	}
+
+	.mark.mark-linkedin {
+		--mark-img-url: url("/img/marks/linkedin-flat.svg");
+		--mark-img-flat-url: url("/img/marks/linkedin-flat.svg");
+		--mark-colour-primary: #0A66C2;
+		--mark-colour-text: #f6f6f6;
+	}
+
+	.mark.mark-twitter {
+		--mark-img-url: url("/img/marks/twitter.svg");
+		--mark-img-flat-url: url("/img/marks/twitter.svg");
+		--mark-colour-primary: #1DA1F2;
+		--mark-colour-text: #f6f6f6;
+	}
+
+	.mark.mark-google-play {
+		--mark-img-url: url("/img/marks/googleplay-colour.svg");
+		--mark-img-flat-url: url("/img/marks/googleplay-colour.svg");
+		--mark-colour-primary: #414141;
+		--mark-colour-text: #f6f6f6;
+	}
+
+	.mark.mark-global-game-jam {
+		--mark-img-url: url("/img/marks/global-game-jam.svg");
+		--mark-img-flat-url: url("/img/marks/global-game-jam-2.svg");
+		--mark-colour-primary: #252162;
+		--mark-colour-text: #f6f6f6;
+	}
+
+	.mark.mark-steam {
+		--mark-img-url: url("/img/marks/steam.svg");
+		--mark-img-flat-url: url("/img/marks/steam-flat.svg");
+		--mark-colour-primary: #19283B;
+		--mark-colour-text: #f6f6f6;
+	}
+
+	.mark.mark-ludum-dare {
+		--mark-img-url: url("/img/marks/ludum-dare.svg");
+		--mark-img-flat-url: url("/img/marks/ludum-dare.svg");
+		--mark-colour-primary: #ffcc11;
+		--mark-colour-text: #ee5533;
+	}
+
+	.mark.mark-ludum-dare-compo {
+		--mark-img-url: url("/img/marks/ludum-dare.svg");
+		--mark-img-flat-url: url("/img/marks/ludum-dare.svg");
+		--mark-colour-primary: #ee5533;
+		--mark-colour-text: #f6f6f6;
+	}
+
+	.mark.mark-website {
+		--mark-img-url: url("/img/marks/pin-website.svg");
+		--mark-img-flat-url: url("/img/marks/pin-website.svg");
+	}
+
+	.mark.mark-pin-book {
+		--mark-img-url: url("/img/marks/pin-book.svg");
+		--mark-img-flat-url: url("/img/marks/pin-book.svg");
+	}
+
+	.mark.mark-pin-date {
+		--mark-img-url: url("/img/marks/pin-calender.svg");
+		--mark-img-flat-url: url("/img/marks/pin-calender.svg");
+	}
+
+	.mark.mark-pin-pencil {
+		--mark-img-url: url("/img/marks/pin-pencil.svg");
+		--mark-img-flat-url: url("/img/marks/pin-pencil.svg");
+	}
+
+	.mark.mark-pin-person {
+		--mark-img-url: url("/img/marks/pin-person.svg");
+		--mark-img-flat-url: url("/img/marks/pin-person.svg");
+	}
+
+	.mark.mark-pin-people {
+		--mark-img-url: url("/img/marks/pin-people.svg");
+		--mark-img-flat-url: url("/img/marks/pin-people.svg");
+	}
+
+	.mark.mark-pin-location {
+		--mark-img-url: url("/img/marks/pin-location.svg");
+		--mark-img-flat-url: url("/img/marks/pin-location.svg");
+	}
+
+	.mark.mark-pin-star {
+		--mark-img-url: url("/img/marks/pin-star.svg");
+		--mark-img-flat-url: url("/img/marks/pin-star.svg");
+	}
+
+	.mark.mark-pin-quote {
+		--mark-img-url: url("/img/marks/pin-quote.svg");
+		--mark-img-flat-url: url("/img/marks/pin-quote.svg");
+	}
+
+	.mark.mark-pin-lightmode {
+		--mark-img-url: url("/img/marks/pin-lightmode.svg");
+		--mark-img-flat-url: url("/img/marks/pin-lightmode.svg");
+	}
+
+	.mark.mark-pin-darkmode {
+		--mark-img-url: url("/img/marks/pin-darkmode.svg");
+		--mark-img-flat-url: url("/img/marks/pin-darkmode.svg");
+	}
+
+
+	.mark.mark-pin-othertheme {
+		--mark-img-url: url("/img/marks/pin-darkmode.svg");
+		--mark-img-flat-url: url("/img/marks/pin-darkmode.svg");
+	}
+
+.dark .mark.mark-pin-othertheme {
+	--mark-img-url: url("/img/marks/pin-lightmode.svg");
+	--mark-img-flat-url: url("/img/marks/pin-lightmode.svg");
+}
+
+.dark .mark.mark-github {
+	--mark-colour-primary: #FFFFFF;
+	--mark-colour-text: #181717;
+}
+
+.dark .mark.mark-unity {
+	--mark-colour-primary: #FFFFFF;
+	--mark-colour-text: #181717;
+}
