@@ -8,12 +8,12 @@ using System.Threading.Tasks;
 
 namespace Portfolio.EmailReceive.Services
 {
-	public class SESEmailForwardingService : IEmailSinkService
+	public class SESNotifyingService : IEmailSinkService
 	{
 		private readonly IAmazonSimpleEmailService amazonSimpleEmailService;
 		private readonly string destination;
 
-		public SESEmailForwardingService(IAmazonSimpleEmailService amazonSimpleEmailService, string destination)
+		public SESNotifyingService(IAmazonSimpleEmailService amazonSimpleEmailService, string destination)
 		{
 			this.amazonSimpleEmailService = amazonSimpleEmailService;
 			this.destination = destination;
@@ -21,16 +21,23 @@ namespace Portfolio.EmailReceive.Services
 
 		public async Task<bool> ForwardEmailAsync(EmailModel email)
 		{
-			var forwardedMessage = new MimeMessage
+			var body = new BodyBuilder
+			{
+				TextBody = $"You have new unread messages from a user using your contact email address.\n" +
+					$"To view the message; use the administrator contact panel.\n" +
+					$"Your new message can be found here. https://anthonymarmont.com/ticket/{email.Event.MessageId}"
+			};
+
+			var notificationMessage = new MimeMessage
 			(
 				from: new[] { new MailboxAddress("Anthony Marmont", "contact@anthonymarmont.com") },
 				to: new[] { new MailboxAddress("Anthony Marmont", destination) },
-				subject: email.Message.Subject,
-				body: email.Message.Body
+				subject: "You have new unread messages",
+				body: body.ToMessageBody()
 			);
 
 			using var stream = new MemoryStream();
-			await forwardedMessage.WriteToAsync(stream);
+			await notificationMessage.WriteToAsync(stream);
 
 			var request = new SendRawEmailRequest()
 			{

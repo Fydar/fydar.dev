@@ -16,7 +16,9 @@
 
   <ItemGroup>
     <PackageReference Include="AWSSDK.Extensions.NETCore.Setup" Version="3.3.101" />
+    <PackageReference Include="AWSSDK.S3" Version="3.5.7.8" />
     <PackageReference Include="AWSSDK.SimpleEmail" Version="3.5.0.76" />
+    <PackageReference Include="LettuceEncrypt" Version="1.1.0-beta.81" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="5.0.4" />
     <PackageReference Include="Serilog" Version="2.10.1-dev-01265" />
     <PackageReference Include="Serilog.AspNetCore" Version="4.0.0" />
@@ -31,9 +33,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\LettuceEncrypt\src\LettuceEncrypt\LettuceEncrypt.csproj" />
     <ProjectReference Include="..\..\..\RPGCore\src\libs\RPGCore.Packages\RPGCore.Packages.csproj" />
     <ProjectReference Include="..\Portfolio.Models\Portfolio.Models.csproj" />
+    <ProjectReference Include="..\Portfolio.Services.EmailTickets\Portfolio.Services.EmailTickets.csproj" />
   </ItemGroup>
 
 </Project>

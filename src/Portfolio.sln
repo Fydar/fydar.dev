@@ -40,11 +40,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "RPGCore", "RPGCore", "{C7B0
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RPGCore.FileTree", "..\..\RPGCore\src\libs\RPGCore.FileTree\RPGCore.FileTree.csproj", "{A342DBB1-96E4-4084-A627-8AD1DC01290C}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3rdParty", "3rdParty", "{E1A41D62-E446-4178-8C91-8C2AE0679A50}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Patio", "Patio\Patio.csproj", "{4272A3E3-C30F-4CA3-B835-C0CC6572BBB3}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LettuceEncrypt", "..\..\LettuceEncrypt\src\LettuceEncrypt\LettuceEncrypt.csproj", "{A33DC237-44D3-4037-9679-ADD80088022C}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Patio", "Patio\Patio.csproj", "{4272A3E3-C30F-4CA3-B835-C0CC6572BBB3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Portfolio.Services.EmailTickets", "Portfolio.Services.EmailTickets\Portfolio.Services.EmailTickets.csproj", "{229F3B2F-E2F7-402A-A642-344C71CDED12}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -92,14 +90,14 @@ Global
 		{A342DBB1-96E4-4084-A627-8AD1DC01290C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A342DBB1-96E4-4084-A627-8AD1DC01290C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A342DBB1-96E4-4084-A627-8AD1DC01290C}.Release|Any CPU.Build.0 = Release|Any CPU
-		{A33DC237-44D3-4037-9679-ADD80088022C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A33DC237-44D3-4037-9679-ADD80088022C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A33DC237-44D3-4037-9679-ADD80088022C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A33DC237-44D3-4037-9679-ADD80088022C}.Release|Any CPU.Build.0 = Release|Any CPU
 		{4272A3E3-C30F-4CA3-B835-C0CC6572BBB3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{4272A3E3-C30F-4CA3-B835-C0CC6572BBB3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4272A3E3-C30F-4CA3-B835-C0CC6572BBB3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4272A3E3-C30F-4CA3-B835-C0CC6572BBB3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{229F3B2F-E2F7-402A-A642-344C71CDED12}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{229F3B2F-E2F7-402A-A642-344C71CDED12}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{229F3B2F-E2F7-402A-A642-344C71CDED12}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{229F3B2F-E2F7-402A-A642-344C71CDED12}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -109,7 +107,6 @@ Global
 		{E876ECA6-56DA-40D3-865E-6ECEE59006E4} = {C7B01F86-2D10-4BBA-941F-453ADBFDF41A}
 		{EA9D75A0-E0E1-4FB5-B9BF-D3EC273439AC} = {C7B01F86-2D10-4BBA-941F-453ADBFDF41A}
 		{A342DBB1-96E4-4084-A627-8AD1DC01290C} = {C7B01F86-2D10-4BBA-941F-453ADBFDF41A}
-		{A33DC237-44D3-4037-9679-ADD80088022C} = {E1A41D62-E446-4178-8C91-8C2AE0679A50}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {8A760B08-A6FD-49DA-81C2-64E42FF8C180}

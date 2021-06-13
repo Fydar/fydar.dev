@@ -1,9 +1,9 @@
-﻿using RPGCore.DataEditor.CSharp;
+﻿using RPGCore.Data;
 using System.Text.Json.Serialization;
 
 namespace Portfolio.Models
 {
-	[EditorType]
+	[EditableType]
 	public class CollegeModel : InstitutionModel
 	{
 		[JsonIgnore]

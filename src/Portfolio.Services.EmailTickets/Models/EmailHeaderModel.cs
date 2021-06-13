@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Portfolio.EmailReceive
+namespace Portfolio.Services.EmailTickets.Models
 {
 	public class EmailHeaderModel
 	{

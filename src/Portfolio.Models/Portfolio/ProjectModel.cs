@@ -1,4 +1,4 @@
-﻿using RPGCore.DataEditor.CSharp;
+﻿using RPGCore.Data;
 using RPGCore.Packages;
 using System;
 using System.Linq;
@@ -6,7 +6,7 @@ using System.Text.Json.Serialization;
 
 namespace Portfolio.Models
 {
-	[EditorType]
+	[EditableType]
 	public struct ExternalLinkModel
 	{
 		public string SiteName { get; set; }
@@ -14,7 +14,7 @@ namespace Portfolio.Models
 		public string Icon { get; set; }
 	}
 
-	[EditorType]
+	[EditableType]
 	public struct BadgeEntry
 	{
 		public string Content { get; set; }
@@ -24,7 +24,7 @@ namespace Portfolio.Models
 		public bool DisplayOnHomepage { get; set; }
 	}
 
-	[EditorType]
+	[EditableType]
 	public class ProjectModel : ILoadResourceCallback, IComparable<ProjectModel>
 	{
 		public string ProjectName { get; set; }

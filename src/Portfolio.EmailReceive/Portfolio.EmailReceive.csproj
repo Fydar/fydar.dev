@@ -18,4 +18,9 @@
     <PackageReference Include="AWSSDK.SimpleEmail" Version="3.5.0.61" />
     <PackageReference Include="MimeKit" Version="2.10.1" />
   </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Portfolio.Services.EmailTickets\Portfolio.Services.EmailTickets.csproj" />
+  </ItemGroup>
+
 </Project>

@@ -1,3 +1,4 @@
+using Amazon.S3;
 using Amazon.SimpleEmail;
 using LettuceEncrypt;
 using Microsoft.AspNetCore.Builder;
@@ -5,10 +6,12 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Portfolio.Instance.Services.ContactService;
 using Portfolio.Instance.Services.ContentService;
 using Portfolio.Instance.Services.PageMetaProvider;
 using Portfolio.Instance.Services.ViewRenderer;
 using Portfolio.Instance.Utility;
+using Portfolio.Services.EmailTickets;
 using RPGCore.Packages;
 using System.IO;
 
@@ -41,10 +44,19 @@ namespace Portfolio.Instance
 			services.AddSingleton(Explorer);
 			services.AddSingleton<IContentService, LocalContentService>();
 			services.AddSingleton<IPageMetaTransformer, ProjectPageMetaTransformer>();
+			services.AddSingleton(new EmailReaderServiceConfiguration()
+			{
+				Bucket = "anthonymarmont.com-inbound-email"
+			});
+			services.AddSingleton<EmailReaderService>();
+
+			services.AddScoped<IContactSubmitSink, SaveTicketSubmitSink>();
+			services.AddScoped<IContactSubmitSink, ContactNotificationSubmitSink>();
 
 			services.AddScoped<IViewToStringRenderer, RazorViewToStringRenderer>();
 
 			services.AddAWSService<IAmazonSimpleEmailService>();
+			services.AddAWSService<IAmazonS3>();
 
 			if (!Environment.IsDevelopment())
 			{

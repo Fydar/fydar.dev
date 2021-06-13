@@ -1,12 +1,11 @@
-﻿using Amazon.SimpleEmail;
-using Amazon.SimpleEmail.Model;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Portfolio.Instance.Models;
-using Portfolio.Instance.Services.ViewRenderer;
+using Portfolio.Instance.Services.ContactService;
 using Portfolio.Instance.ViewModels;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace Portfolio.Instance.Controllers
@@ -14,17 +13,14 @@ namespace Portfolio.Instance.Controllers
 	public class ContactController : Controller
 	{
 		private readonly ILogger<ContactController> logger;
-		private readonly IAmazonSimpleEmailService simpleEmailService;
-		private readonly IViewToStringRenderer razorViewToStringRenderer;
+		private readonly IContactSubmitSink[] contactSubmitSinks;
 
 		public ContactController(
 			ILogger<ContactController> logger,
-			IAmazonSimpleEmailService simpleEmailService,
-			IViewToStringRenderer razorViewToStringRenderer = null)
+			IEnumerable<IContactSubmitSink> contactSubmitSinks)
 		{
 			this.logger = logger;
-			this.simpleEmailService = simpleEmailService;
-			this.razorViewToStringRenderer = razorViewToStringRenderer;
+			this.contactSubmitSinks = contactSubmitSinks.ToArray();
 		}
 
 		[HttpGet("contact")]
@@ -38,35 +34,20 @@ namespace Portfolio.Instance.Controllers
 		{
 			if (ModelState.IsValid)
 			{
-				string htmlBody = await razorViewToStringRenderer.RenderViewToStringAsync("Email/ContactEmail", new ContactEmailViewModel()
+				var contactSubmitModel = new ContactSubmitModel()
 				{
+					TicketId = requestModel.RequestId,
 					FormName = "Contact",
 					UserEmail = requestModel.UserEmail,
 					UserBody = requestModel.UserBody,
 					UserSubject = requestModel.UserSubject,
 					SubmitTime = DateTimeOffset.Now
-				});
-
-				var request = new SendEmailRequest()
-				{
-					Source = "Anthony Marmont <contact@anthonymarmont.com>",
-					Destination = new Destination()
-					{
-						ToAddresses = new List<string>()
-						{
-							"dev.anthonymarmont@gmail.com"
-						}
-					},
-					Message = new Message()
-					{
-						Subject = new Content($"Contact: {requestModel.UserSubject}"),
-						Body = new Body()
-						{
-							Html = new Content(htmlBody)
-						}
-					},
 				};
-				await simpleEmailService.SendEmailAsync(request);
+
+				foreach (var contactSubmitSink in contactSubmitSinks)
+				{
+					await contactSubmitSink.ProcessSubmitAsync(contactSubmitModel);
+				}
 
 				return View("Index", new ContactViewModel()
 				{

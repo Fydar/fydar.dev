@@ -1,6 +1,6 @@
 ﻿using MimeKit;
 
-namespace Portfolio.EmailReceive.Services
+namespace Portfolio.Services.EmailTickets.Models
 {
 	public class EmailModel
 	{

@@ -4,6 +4,8 @@ using Amazon.Lambda.SimpleEmailEvents.Actions;
 using Amazon.S3;
 using Amazon.SimpleEmail;
 using Portfolio.EmailReceive.Services;
+using Portfolio.Services.EmailTickets;
+using Portfolio.Services.EmailTickets.Models;
 using System;
 using System.Threading.Tasks;
 
@@ -12,7 +14,7 @@ namespace Portfolio.EmailReceive
 	public class Function
 	{
 		private readonly EmailReaderService emailReaderService;
-		private readonly SESEmailForwardingService emailForwardingService;
+		private readonly IEmailSinkService emailSinkService;
 
 		public Function()
 		{
@@ -22,15 +24,19 @@ namespace Portfolio.EmailReceive
 			var amazonS3 = new AmazonS3Client();
 			var amazonSimpleEmail = new AmazonSimpleEmailServiceClient();
 
-			emailReaderService = new EmailReaderService(amazonS3, emailBuckt);
-			emailForwardingService = new SESEmailForwardingService(amazonSimpleEmail, forwardTo);
+			emailReaderService = new EmailReaderService(amazonS3, new EmailReaderServiceConfiguration()
+			{
+				Bucket = emailBuckt
+			});
+			//emailSinkService = new SESEmailForwardingService(amazonSimpleEmail, forwardTo);
+			emailSinkService = new SESNotifyingService(amazonSimpleEmail, forwardTo);
 		}
 
 		/// <summary>
 		/// A simple function that takes a string and does a ToUpper
 		/// </summary>
-		/// <param name="input"></param>
-		/// <param name="context"></param>
+		/// <param name="sesEvent">The lambda event to process.</param>
+		/// <param name="context">Context for the execution of this lambda function.</param>
 		/// <returns></returns>
 		public async Task<string> FunctionHandler(SimpleEmailEvent<LambdaReceiptAction> sesEvent, ILambdaContext context)
 		{
@@ -45,9 +51,13 @@ namespace Portfolio.EmailReceive
 					Subject = record.Ses.Mail.CommonHeaders.Subject
 				};
 
-				var email = await emailReaderService.ReadEmailAsync(emailHeader);
+				var mimeMessage = await emailReaderService.ReadEmailAsync(emailHeader.MessageId);
 
-				await emailForwardingService.ForwardEmailAsync(email);
+				await emailSinkService.ForwardEmailAsync(new EmailModel()
+				{
+					Event = emailHeader,
+					Message = mimeMessage
+				});
 			}
 
 			return "CONTINUE";

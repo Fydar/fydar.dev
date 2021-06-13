@@ -1,4 +1,4 @@
-﻿using RPGCore.DataEditor.CSharp;
+﻿using RPGCore.Data;
 using RPGCore.Packages;
 using System;
 using System.Collections.Generic;
@@ -6,7 +6,7 @@ using System.Text.Json.Serialization;
 
 namespace Portfolio.Models
 {
-	[EditorType]
+	[EditableType]
 	public class DisciplineModel : ILoadResourceCallback, IComparable<DisciplineModel>
 	{
 		public string DisplayName { get; set; }

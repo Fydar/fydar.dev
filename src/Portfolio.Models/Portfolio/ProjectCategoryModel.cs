@@ -1,12 +1,12 @@
 ﻿using Newtonsoft.Json;
-using RPGCore.DataEditor.CSharp;
+using RPGCore.Data;
 using RPGCore.Packages;
 using System;
 using System.Collections.Generic;
 
 namespace Portfolio.Models
 {
-	[EditorType]
+	[EditableType]
 	public class ProjectCategoryModel : ILoadResourceCallback, IComparable<ProjectCategoryModel>
 	{
 		public string DisplayName { get; set; }

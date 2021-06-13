@@ -609,6 +609,7 @@ table.code-table {
 				padding-left: 6px;
 				padding-right: 6px;
 				text-align: right;
+				vertical-align: top;
 				min-width: 22px;
 				color: #2b90af;
 			}

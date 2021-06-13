@@ -1,8 +1,8 @@
-﻿using RPGCore.DataEditor.CSharp;
+﻿using RPGCore.Data;
 
 namespace Portfolio.Models
 {
-	[EditorType]
+	[EditableType]
 	public class QualificationModel : ActivityModel
 	{
 		public string FullQualificationName { get; set; }
