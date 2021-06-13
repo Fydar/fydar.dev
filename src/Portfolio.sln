@@ -12,9 +12,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "cf-resources", "cf-resource
 	ProjectSection(SolutionItems) = preProject
 		cf-resources\emailreceive-lambda.yml = cf-resources\emailreceive-lambda.yml
 		cf-resources\instance-ec2-eip.yml = cf-resources\instance-ec2-eip.yml
-		cf-resources\instance-ec2-service-discovery.yaml = cf-resources\instance-ec2-service-discovery.yaml
-		cf-resources\instance-ec2-with-vpc.yaml = cf-resources\instance-ec2-with-vpc.yaml
-		cf-resources\instance-ecs-fargate-lb.yaml = cf-resources\instance-ecs-fargate-lb.yaml
 		cf-resources\portfolioinstance-ecr.yml = cf-resources\portfolioinstance-ecr.yml
 	EndProjectSection
 EndProject
