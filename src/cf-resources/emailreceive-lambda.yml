@@ -47,6 +47,9 @@ Resources:
       Role: !GetAtt LambdaFunctionTaskRole.Arn
       Runtime: dotnetcore3.1
       Timeout: 600
+      Tags:
+        - Key: Name
+          Value: "Email receive lambda function"
       
   LambdaFunctionTaskRole:
     Type: 'AWS::IAM::Role'

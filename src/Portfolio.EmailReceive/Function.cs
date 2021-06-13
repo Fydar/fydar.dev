@@ -42,6 +42,15 @@ namespace Portfolio.EmailReceive
 		{
 			foreach (var record in sesEvent.Records)
 			{
+				foreach (string from in record.Ses.Mail.CommonHeaders.From)
+				{
+					if (from.EndsWith("amazonses.com", StringComparison.OrdinalIgnoreCase))
+					{
+						context.Logger.LogLine("Email was from amazonses.com, ignoring it.");
+						continue;
+					}
+				}
+
 				var emailHeader = new EmailHeaderModel()
 				{
 					MessageId = record.Ses.Mail.MessageId,
