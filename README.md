@@ -15,25 +15,31 @@ Content for my portfolio is authored into the *'Content'* directory using [RPGCo
 
 [![RPGCore.Traits](https://img.shields.io/badge/📂-Content-333333.svg)](./src/Content)
 
+### 🎨 Patio
+
+CSS styling for my website is created using a CSS library of my creation called _'Patio_.
+
+<sub>[![Patio](https://img.shields.io/badge/📂-Patio-333333.svg)](./src/Patio)</sub>
+
 ### 📦 RPGCore
 
 This project utilises a couple of libraries from [**RPGCore**](https://github.com/Fydar/RPGCore); a framework for producing data-driven mechanics.
 
-> [![RPGCore.Data](https://img.shields.io/badge/📦-RPGCore.Data-333333.svg)](https://github.com/Fydar/RPGCore/tree/main/src/libs/RPGCore.Data)\
-> Used for Json serialization.
+> <sub>[![RPGCore.Data](https://img.shields.io/badge/📦%20RPGCore-Data-333333.svg)](https://github.com/Fydar/RPGCore/tree/main/src/libs/RPGCore.Data)</sub>\
+> <sup>Used for polymorphic data serialization.</sup>
 
-> [![RPGCore.DataEditor](https://img.shields.io/badge/📦-RPGCore.DataEditor-333333.svg)](https://github.com/Fydar/RPGCore/tree/main/src/libs/RPGCore.DataEditor)\
-> Used for editing website data files.
+> <sub>[![RPGCore.DataEditor](https://img.shields.io/badge/📦%20RPGCore-DataEditor-333333.svg)](https://github.com/Fydar/RPGCore/tree/main/src/libs/RPGCore.DataEditor)</sub>\
+> <sup>Used for editing website data files.</sup>
 
-> [![RPGCore.Packages](https://img.shields.io/badge/📦-RPGCore.Packages-333333.svg)](https://github.com/Fydar/RPGCore/tree/main/src/libs/RPGCore.Packages)\
-> Loading pre-packaged content.
+> <sub>[![RPGCore.Packages](https://img.shields.io/badge/📦%20RPGCore-Packages-333333.svg)](https://github.com/Fydar/RPGCore/tree/main/src/libs/RPGCore.Packages)</sub>\
+> <sup>Used for loading pre-packaged portfolio content.</sup>
 
-> [![RPGCore.Projects](https://img.shields.io/badge/📦-RPGCore.Projects-333333.svg)](https://github.com/Fydar/RPGCore/tree/main/src/libs/RPGCore.Projects)\
-> Used for authoring and building pre-packaged content.
+> <sub>[![RPGCore.Projects](https://img.shields.io/badge/📦%20RPGCore-Projects-333333.svg)](https://github.com/Fydar/RPGCore/tree/main/src/libs/RPGCore.Projects)</sub>\
+> <sup>Used for authoring and building pre-packaged portfolio content.</sup>
 
 ### 📦 LettuceEncrypt
 
-This project utilises [LettuceEncrupt](https://github.com/natemcmaster/LettuceEncrypt) to support SSL certicifates and HTTPS.
+This project utilises [LettuceEncrypt](https://github.com/natemcmaster/LettuceEncrypt) to support SSL certicifates and HTTPS.
 
 ## License
 
