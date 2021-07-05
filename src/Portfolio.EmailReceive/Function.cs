@@ -18,8 +18,17 @@ namespace Portfolio.EmailReceive
 
 		public Function()
 		{
-			string emailBuckt = Environment.GetEnvironmentVariable("CONFIG_EMAILBUCKET");
-			string forwardTo = Environment.GetEnvironmentVariable("CONFIG_FORWARDTO");
+			string? emailBuckt = Environment.GetEnvironmentVariable("CONFIG_EMAILBUCKET");
+			string? forwardTo = Environment.GetEnvironmentVariable("CONFIG_FORWARDTO");
+
+			if (emailBuckt == null)
+			{
+				throw new InvalidOperationException("Failed to create function as email bucket was not defined.");
+			}
+			if (forwardTo == null)
+			{
+				throw new InvalidOperationException("Failed to create function as forward to email was not defined.");
+			}
 
 			var amazonS3 = new AmazonS3Client();
 			var amazonSimpleEmail = new AmazonSimpleEmailServiceClient();
@@ -62,11 +71,7 @@ namespace Portfolio.EmailReceive
 
 				var mimeMessage = await emailReaderService.ReadEmailAsync(emailHeader.MessageId);
 
-				await emailSinkService.ForwardEmailAsync(new EmailModel()
-				{
-					Event = emailHeader,
-					Message = mimeMessage
-				});
+				await emailSinkService.ForwardEmailAsync(new EmailModel(emailHeader, mimeMessage));
 			}
 
 			return "CONTINUE";

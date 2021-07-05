@@ -2,6 +2,6 @@
 {
 	public class EmailReaderServiceConfiguration
 	{
-		public string Bucket { get; set; }
+		public string Bucket { get; set; } = string.Empty;
 	}
 }

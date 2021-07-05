@@ -8,7 +8,7 @@
 <html lang="en">
 <head>
 	@{
-		string title = ViewData["Title"] as string;
+		string? title = ViewData["Title"] as string;
 	}
 	@if (string.IsNullOrEmpty(title))
 	{
@@ -65,14 +65,14 @@
 	</script>
 
 	@{
-		string pageTitle = ViewData["Title"] as string;
+		string? pageTitle = ViewData["Title"] as string;
 		bool fullscreen = string.IsNullOrEmpty(pageTitle);
 	}
 
 	<section class="navbar" id="navbar">
 		<div class="navbar-grouping">
-			<a class="nav-button @(ViewContext.RouteData.Values["Controller"].ToString() == "Portfolio" ? "active" : "")" asp-controller="Portfolio" asp-action="Index">Portfolio</a>
-			<a class="nav-button @(ViewContext.RouteData.Values["Controller"].ToString() == "Contact" ? "active" : "")" asp-controller="Contact" asp-action="Index" asp>Contact</a>
+			<a class="nav-button @(ViewContext.RouteData.Values["Controller"]?.ToString() == "Portfolio" ? "active" : "")" asp-controller="Portfolio" asp-action="Index">Portfolio</a>
+			<a class="nav-button @(ViewContext.RouteData.Values["Controller"]?.ToString() == "Contact" ? "active" : "")" asp-controller="Contact" asp-action="Index" asp>Contact</a>
 		</div>
 
 		<div class="splitter"></div>

@@ -1,6 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Portfolio.Instance.ViewModels;
-using System.Threading.Tasks;
 
 namespace Portfolio.Instance.Components.Timeline
 {
@@ -11,7 +10,7 @@ namespace Portfolio.Instance.Components.Timeline
 		{
 		}
 
-		public async Task<IViewComponentResult> InvokeAsync(TimelineViewModel timeline)
+		public IViewComponentResult Invoke(TimelineViewModel timeline)
 		{
 			return View("TimelineViewComponent", timeline);
 		}

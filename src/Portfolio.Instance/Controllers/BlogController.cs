@@ -16,10 +16,7 @@ namespace Portfolio.Instance.Controllers
 		[Route("/blog")]
 		public IActionResult Index()
 		{
-			return View(new PortfolioIndexViewModel()
-			{
-				AllProjects = contentService.Projects
-			});
+			return View(new PortfolioIndexViewModel(contentService.Projects));
 		}
 
 		[Route("/blog/{identifier}")]

@@ -1,7 +1,6 @@
 ﻿using Portfolio.Models;
 using Portfolio.Models.Blog;
 using RPGCore.Packages;
-using System;
 using System.Collections.Generic;
 
 namespace Portfolio.Instance.Services.ContentService
@@ -20,10 +19,10 @@ namespace Portfolio.Instance.Services.ContentService
 		int ProfessionalYears { get; }
 		string ProfessionalExperience { get; }
 
-		IResource GetResource(string fullname);
-		ProjectModel GetProject(string slug);
-		ProjectCategoryModel GetCategory(string slug);
-		DisciplineModel GetDiscipline(string slug);
-		BlogPostModel GetBlogPost(string slug);
+		IResource? GetResource(string fullname);
+		ProjectModel? GetProject(string slug);
+		ProjectCategoryModel? GetCategory(string slug);
+		DisciplineModel? GetDiscipline(string slug);
+		BlogPostModel? GetBlogPost(string slug);
 	}
 }

@@ -30,7 +30,7 @@ namespace Portfolio.Instance.Utility
 		/// <see cref="LogEventPropertyValue"/>s on the event.
 		/// </summary>
 		/// <param name="valueFormatter">A value formatter, or null.</param>
-		public ColoredConsoleSink(JsonValueFormatter valueFormatter = null)
+		public ColoredConsoleSink(JsonValueFormatter? valueFormatter = null)
 		{
 			this.valueFormatter = valueFormatter ?? new JsonValueFormatter(typeTagName: "$type");
 		}
@@ -166,7 +166,7 @@ namespace Portfolio.Instance.Utility
 		{
 			using (var reader = new StringReader(formattedException))
 			{
-				string line;
+				string? line;
 				while ((line = reader.ReadLine()) != null)
 				{
 					var lineSpan = line.AsSpan();
@@ -195,54 +195,29 @@ namespace Portfolio.Instance.Utility
 
 		private static ConsoleColor LogLevelToColor(LogEventLevel logLevel)
 		{
-			switch (logLevel)
+			return logLevel switch
 			{
-				default:
-				case LogEventLevel.Verbose:
-					return ConsoleColor.DarkGray;
-
-				case LogEventLevel.Debug:
-					return ConsoleColor.Gray;
-
-				case LogEventLevel.Information:
-					return ConsoleColor.White;
-
-				case LogEventLevel.Warning:
-					return ConsoleColor.Yellow;
-
-				case LogEventLevel.Error:
-					return ConsoleColor.DarkRed;
-
-				case LogEventLevel.Fatal:
-					return ConsoleColor.Red;
-			}
+				LogEventLevel.Debug => ConsoleColor.Gray,
+				LogEventLevel.Information => ConsoleColor.White,
+				LogEventLevel.Warning => ConsoleColor.Yellow,
+				LogEventLevel.Error => ConsoleColor.DarkRed,
+				LogEventLevel.Fatal => ConsoleColor.Red,
+				_ => ConsoleColor.DarkGray,
+			};
 		}
 
 		private static string AbbreviateLogLevel(LogEventLevel logLevel)
 		{
-			switch (logLevel)
+			return logLevel switch
 			{
-				case LogEventLevel.Verbose:
-					return "VRB";
-
-				case LogEventLevel.Debug:
-					return "DBG";
-
-				case LogEventLevel.Information:
-					return "INF";
-
-				case LogEventLevel.Warning:
-					return "WRN";
-
-				case LogEventLevel.Error:
-					return "ERR";
-
-				case LogEventLevel.Fatal:
-					return "FTL";
-
-				default:
-					return logLevel.ToString();
-			}
+				LogEventLevel.Verbose => "VRB",
+				LogEventLevel.Debug => "DBG",
+				LogEventLevel.Information => "INF",
+				LogEventLevel.Warning => "WRN",
+				LogEventLevel.Error => "ERR",
+				LogEventLevel.Fatal => "FTL",
+				_ => logLevel.ToString(),
+			};
 		}
 	}
 }

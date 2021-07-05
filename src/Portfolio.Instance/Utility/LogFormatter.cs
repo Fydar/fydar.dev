@@ -19,7 +19,7 @@ namespace Portfolio.Instance.Utility
 		/// <see cref="LogEventPropertyValue"/>s on the event.
 		/// </summary>
 		/// <param name="valueFormatter">A value formatter, or null.</param>
-		public LogFormatter(JsonValueFormatter valueFormatter = null)
+		public LogFormatter(JsonValueFormatter? valueFormatter = null)
 		{
 			this.valueFormatter = valueFormatter ?? new JsonValueFormatter(typeTagName: "$type");
 		}

@@ -18,7 +18,7 @@ namespace Portfolio.Instance.Services.ContactService
 		public ContactNotificationSubmitSink(
 			ILogger<ContactNotificationSubmitSink> logger,
 			IAmazonSimpleEmailService simpleEmailService,
-			IViewToStringRenderer razorViewToStringRenderer = null)
+			IViewToStringRenderer razorViewToStringRenderer)
 		{
 			this.logger = logger;
 			this.simpleEmailService = simpleEmailService;

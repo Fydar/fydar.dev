@@ -16,6 +16,10 @@
 <section style="min-height: 80vh;">
 	<div class="container">
 		<h2>@Model.Discipline.DisplayName</h2>
-		@(new ResourceContentHtmlWriter(Model.Discipline.PageResource.Content))
+
+		@if (Model.Discipline.PageResource != null)
+		{
+			@(new ResourceContentHtmlWriter(Model.Discipline.PageResource.Content))
+		}
 	</div>
 </section>

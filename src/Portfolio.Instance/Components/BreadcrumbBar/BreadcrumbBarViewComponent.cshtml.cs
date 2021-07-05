@@ -1,6 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Portfolio.Instance.ViewModels;
-using System.Threading.Tasks;
 
 namespace Portfolio.Instance.Components.BreadcrumbBar
 {
@@ -11,7 +10,7 @@ namespace Portfolio.Instance.Components.BreadcrumbBar
 		{
 		}
 
-		public async Task<IViewComponentResult> InvokeAsync(BreadcrumbBarViewModel breadcrumbBar)
+		public IViewComponentResult Invoke(BreadcrumbBarViewModel breadcrumbBar)
 		{
 			return View("BreadcrumbBarViewComponent", breadcrumbBar);
 		}

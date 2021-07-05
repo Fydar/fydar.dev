@@ -9,22 +9,20 @@ namespace Portfolio.Models
 	[EditableType]
 	public class DisciplineModel : ILoadResourceCallback, IComparable<DisciplineModel>
 	{
-		public string DisplayName { get; set; }
-		public string Slug { get; set; }
-		public string Description { get; set; }
-		public string FeaturedImage { get; set; }
-		public string IconImage { get; set; }
-		public string Page { get; set; }
+		public string DisplayName { get; set; } = string.Empty;
+		public string Slug { get; set; } = string.Empty;
+		public string Description { get; set; } = string.Empty;
+		public string FeaturedImage { get; set; } = string.Empty;
+		public string IconImage { get; set; } = string.Empty;
+		public string Page { get; set; } = string.Empty;
 		public bool ShowOnHomePage { get; set; }
 		public int Order { get; set; }
 
-		[JsonIgnore] public IResource PageResource { get; private set; }
-		[JsonIgnore] public List<ProjectModel> FeaturedProjects { get; private set; }
+		[JsonIgnore] public IResource? PageResource { get; private set; }
+		[JsonIgnore] public List<ProjectModel> FeaturedProjects { get; private set; } = new List<ProjectModel>();
 
 		public void OnAfterDeserializedFrom(ILoadedResourceCache cache, IResource resource)
 		{
-			FeaturedProjects = new List<ProjectModel>();
-
 			PageResource = cache.GetResource(Page);
 		}
 

@@ -6,12 +6,12 @@ namespace Portfolio.Instance.ViewModels
 	{
 		public class TicketListItemModel
 		{
-			public string TicketId { get; set; }
-			public string From { get; set; }
-			public string Subject { get; set; }
+			public string TicketId { get; set; } = string.Empty;
+			public string From { get; set; } = string.Empty;
+			public string Subject { get; set; } = string.Empty;
 			public DateTime ReceivedTime { get; set; }
 		}
 
-		public TicketListItemModel[] Tickets { get; set; }
+		public TicketListItemModel[] Tickets { get; set; } = Array.Empty<TicketListItemModel>();
 	}
 }

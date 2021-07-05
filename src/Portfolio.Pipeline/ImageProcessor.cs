@@ -76,12 +76,10 @@ namespace Portfolio.Pipeline
 				var imageSettings = resolutions[size];
 				string name = $"img/{resource.TransformName(size)}";
 
-				var content = new ImageContentWriter()
-				{
-					extension = name.Substring(name.IndexOf('.')),
-					imageSettings = imageSettings,
-					source = resource.Content
-				};
+				var content = new ImageContentWriter(
+					resource.Content,
+					imageSettings,
+					 name.Substring(name.IndexOf('.')));
 
 				var update = context
 					.AuthorUpdate(name)
@@ -93,9 +91,16 @@ namespace Portfolio.Pipeline
 
 		private class ImageContentWriter : IContentWriter
 		{
-			internal IResourceContent source;
-			internal ImageSettings imageSettings;
-			internal string extension;
+			private readonly IResourceContent source;
+			private readonly ImageSettings imageSettings;
+			private readonly string extension;
+
+			public ImageContentWriter(IResourceContent source, ImageSettings imageSettings, string extension)
+			{
+				this.source = source;
+				this.imageSettings = imageSettings;
+				this.extension = extension;
+			}
 
 			public Task WriteContentAsync(Stream destination)
 			{
@@ -114,7 +119,7 @@ namespace Portfolio.Pipeline
 			{
 				await Task.Run(() =>
 				{
-					static ImageCodecInfo GetEncoder(ImageFormat format)
+					static ImageCodecInfo? GetEncoder(ImageFormat format)
 					{
 						var codecs = ImageCodecInfo.GetImageDecoders();
 						foreach (var codec in codecs)

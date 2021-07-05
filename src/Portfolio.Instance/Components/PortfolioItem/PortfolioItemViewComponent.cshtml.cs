@@ -1,6 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Portfolio.Models;
-using System.Threading.Tasks;
 
 namespace Portfolio.Instance.Components.PortfolioItem
 {
@@ -11,7 +10,7 @@ namespace Portfolio.Instance.Components.PortfolioItem
 		{
 		}
 
-		public async Task<IViewComponentResult> InvokeAsync(ProjectModel project)
+		public IViewComponentResult Invoke(ProjectModel project)
 		{
 			return View("PortfolioItemViewComponent", project);
 		}

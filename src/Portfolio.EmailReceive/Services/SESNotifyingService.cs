@@ -25,7 +25,7 @@ namespace Portfolio.EmailReceive.Services
 			{
 				TextBody = $"You have new unread messages from a user using your contact email address.\n" +
 					$"To view the message; use the administrator contact panel.\n" +
-					$"Your new message can be found here. https://anthonymarmont.com/ticket/{email.Event.MessageId}"
+					$"Your new message can be found here. https://anthonymarmont.com/ticket/{email.Header.MessageId}"
 			};
 
 			var notificationMessage = new MimeMessage

@@ -14,10 +14,10 @@
 	{
 		Controller = "Portfolio",
 		Action = "Item",
-		Text = Model.Project.ProjectCategoryModel.DisplayName,
+		Text = Model.Project.ProjectCategoryModel?.DisplayName ?? "",
 		RouteParameters = new Dictionary<string, string>()
 		{
-			["identifier"] = Model.Project.ProjectCategoryModel.Slug
+			["identifier"] = Model.Project.ProjectCategoryModel?.Slug ?? ""
 		}
 	},
 	new BreadcrumbViewModel()
@@ -43,6 +43,9 @@
 			</div>
 		}
 
-		@(new ResourceContentHtmlWriter(Model.Project.PageResource.Content))
+		@if (Model.Project.PageResource != null)
+		{
+			@(new ResourceContentHtmlWriter(Model.Project.PageResource.Content))
+		}
 	</div>
 </section>

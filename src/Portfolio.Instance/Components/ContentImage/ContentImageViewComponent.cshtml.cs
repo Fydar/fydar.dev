@@ -2,7 +2,6 @@
 using Portfolio.Instance.Services.ContentService;
 using Portfolio.Instance.ViewModels;
 using Portfolio.Models;
-using System.Threading.Tasks;
 
 namespace Portfolio.Instance.Components.DisciplineCard
 {
@@ -16,7 +15,7 @@ namespace Portfolio.Instance.Components.DisciplineCard
 			this.contentService = contentService;
 		}
 
-		public async Task<IViewComponentResult> InvokeAsync(
+		public IViewComponentResult Invoke(
 			string image,
 			string size,
 			bool usePlaceholder = true,
@@ -36,7 +35,7 @@ namespace Portfolio.Instance.Components.DisciplineCard
 			if (usePlaceholder)
 			{
 				string placeholderContentName = ResourceHelper.TransformName(image, "blur");
-				var placeholderContent = contentService.GetResource(placeholderContentName).Content;
+				var placeholderContent = contentService.GetResource(placeholderContentName)?.Content;
 				imageModel.PlaceholderContent = placeholderContent;
 			}
 

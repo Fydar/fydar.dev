@@ -17,10 +17,7 @@ namespace Portfolio.Instance.Controllers
 		[Route("/portfolio")]
 		public IActionResult Index()
 		{
-			return View(new PortfolioIndexViewModel()
-			{
-				AllProjects = contentService.Projects
-			});
+			return View(new PortfolioIndexViewModel(contentService.Projects));
 		}
 
 		[Route("/portfolio/{identifier}")]
@@ -29,28 +26,19 @@ namespace Portfolio.Instance.Controllers
 			var category = contentService.GetCategory(identifier);
 			if (category != null)
 			{
-				return View("Category", new CategoryViewModel()
-				{
-					Category = category
-				});
+				return View("Category", new CategoryViewModel(category));
 			}
 
 			var project = contentService.GetProject(identifier);
 			if (project != null)
 			{
-				return View("Project", new ProjectViewModel()
-				{
-					Project = project
-				});
+				return View("Project", new ProjectViewModel(project));
 			}
 
 			var discipline = contentService.GetDiscipline(identifier);
 			if (discipline != null)
 			{
-				return View("Discipline", new DisciplineViewModel()
-				{
-					Discipline = discipline
-				});
+				return View("Discipline", new DisciplineViewModel(discipline));
 			}
 
 			return NotFound();

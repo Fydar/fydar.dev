@@ -18,6 +18,9 @@
 <section style="min-height: 80vh;">
 	<div class="container">
 		<h2>@Model.PostTitle</h2>
-		@(new ResourceContentHtmlWriter(Model.PageResource.Content))
+		@if (Model.PageResource != null)
+		{
+			@(new ResourceContentHtmlWriter(Model.PageResource.Content))
+		}
 	</div>
 </section>

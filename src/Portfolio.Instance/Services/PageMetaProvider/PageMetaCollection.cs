@@ -12,10 +12,10 @@ namespace Portfolio.Instance.Services.PageMetaProvider
 			models = new Dictionary<Type, object>();
 		}
 
-		public T GetModel<T>()
+		public T? GetModel<T>()
 			where T : class
 		{
-			if (models.TryGetValue(typeof(T), out object value))
+			if (models.TryGetValue(typeof(T), out object? value))
 			{
 				return (T)value;
 			}

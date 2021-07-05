@@ -1,6 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Portfolio.Instance.ViewModels;
-using System.Threading.Tasks;
 
 namespace Portfolio.Instance.Components.DisciplineCard
 {
@@ -11,7 +10,7 @@ namespace Portfolio.Instance.Components.DisciplineCard
 		{
 		}
 
-		public async Task<IViewComponentResult> InvokeAsync(DisciplineViewModel discipline)
+		public IViewComponentResult Invoke(DisciplineViewModel discipline)
 		{
 			return View("DisciplineCardViewComponent", discipline);
 		}

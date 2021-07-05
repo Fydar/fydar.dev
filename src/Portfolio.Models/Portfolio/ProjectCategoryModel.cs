@@ -9,17 +9,16 @@ namespace Portfolio.Models
 	[EditableType]
 	public class ProjectCategoryModel : ILoadResourceCallback, IComparable<ProjectCategoryModel>
 	{
-		public string DisplayName { get; set; }
-		public string Slug { get; set; }
-		public string Description { get; set; }
-		public string FeaturedImage { get; set; }
+		public string DisplayName { get; set; } = string.Empty;
+		public string Slug { get; set; } = string.Empty;
+		public string Description { get; set; } = string.Empty;
+		public string FeaturedImage { get; set; } = string.Empty;
 		public int Order { get; set; }
 
-		[JsonIgnore] public List<ProjectModel> Projects { get; private set; }
+		[JsonIgnore] public List<ProjectModel> Projects { get; private set; } = new List<ProjectModel>();
 
 		public void OnAfterDeserializedFrom(ILoadedResourceCache cache, IResource resource)
 		{
-			Projects = new List<ProjectModel>();
 		}
 
 		public int CompareTo(ProjectCategoryModel other)

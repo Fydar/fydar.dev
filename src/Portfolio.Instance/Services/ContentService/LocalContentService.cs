@@ -125,7 +125,7 @@ namespace Portfolio.Instance.Services.ContentService
 			return items;
 		}
 
-		public ProjectModel GetProject(string slug)
+		public ProjectModel? GetProject(string slug)
 		{
 			foreach (var project in Projects)
 			{
@@ -137,7 +137,7 @@ namespace Portfolio.Instance.Services.ContentService
 			return null;
 		}
 
-		public ProjectCategoryModel GetCategory(string slug)
+		public ProjectCategoryModel? GetCategory(string slug)
 		{
 			foreach (var categories in Categories)
 			{
@@ -149,7 +149,7 @@ namespace Portfolio.Instance.Services.ContentService
 			return null;
 		}
 
-		public DisciplineModel GetDiscipline(string slug)
+		public DisciplineModel? GetDiscipline(string slug)
 		{
 			foreach (var discipline in Disciplines)
 			{
@@ -161,7 +161,7 @@ namespace Portfolio.Instance.Services.ContentService
 			return null;
 		}
 
-		public BlogPostModel GetBlogPost(string slug)
+		public BlogPostModel? GetBlogPost(string slug)
 		{
 			foreach (var blogPost in BlogPosts)
 			{
@@ -177,13 +177,19 @@ namespace Portfolio.Instance.Services.ContentService
 		{
 			lock (deserializationCache)
 			{
-				if (!deserializationCache.TryGetValue(resource, out object cached))
+				if (!deserializationCache.TryGetValue(resource, out object? cached))
 				{
 					using var stream = resource.Content.OpenRead();
 					using var sr = new StreamReader(stream);
 					using var jsonReader = new JsonTextReader(sr);
 
-					cached = serializer.Deserialize<T>(jsonReader);
+					var deserialized = serializer.Deserialize<T>(jsonReader);
+					if (deserialized == null)
+					{
+						throw new InvalidOperationException("Failed to deserialize resource content");
+					}
+
+					cached = deserialized;
 					deserializationCache.Add(resource, cached);
 
 					if (cached is ILoadResourceCallback callback)
@@ -195,7 +201,7 @@ namespace Portfolio.Instance.Services.ContentService
 			}
 		}
 
-		public IResource GetResource(string fullname)
+		public IResource? GetResource(string fullname)
 		{
 			if (!string.IsNullOrEmpty(fullname))
 			{
