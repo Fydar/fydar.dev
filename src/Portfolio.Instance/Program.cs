@@ -20,17 +20,8 @@ namespace Portfolio.Instance
 				.MinimumLevel.Debug()
 				.MinimumLevel.Override("Microsoft", LogEventLevel.Warning)
 				.MinimumLevel.Override("Microsoft.AspNetCore.Server.Kestrel", LogEventLevel.Error)
-				.Enrich.FromLogContext();
-
-			loggerConfiguration.WriteTo.Sink(new ColoredConsoleSink());
-
-			/*
-#if DEBUG
-			// logger.WriteTo.Async(a => a.File(new LogFormatter(), "log.txt", rollingInterval: RollingInterval.Day))
-#else
-			loggerConfiguration.WriteTo.Console(new LogFormatter());
-#endif
-			*/
+				.Enrich.FromLogContext()
+				.WriteTo.Sink(new ColoredConsoleSink());
 
 			var logger = loggerConfiguration.CreateLogger();
 			Log.Logger = logger;

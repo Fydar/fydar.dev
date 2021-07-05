@@ -6,12 +6,12 @@
 	ViewData["FeaturedImage"] = Model.Discipline.FeaturedImage;
 }
 
-@await Component.InvokeAsync("BreadcrumbBar", new BreadcrumbBarViewModel(
+<vc:breadcrumb-bar breadcrumb-bar="new BreadcrumbBarViewModel(
 	new BreadcrumbViewModel()
 	{
 		Text = Model.Discipline.DisplayName
 	}
-))
+)" />
 
 <section style="min-height: 80vh;">
 	<div class="container">

@@ -39,7 +39,11 @@ namespace Portfolio.Instance
 			services.AddMvc(options =>
 			{
 				options.EnableEndpointRouting = false;
-			});
+			})
+				.AddRazorOptions(options =>
+				{
+					options.ViewLocationFormats.Add("/{0}.cshtml");
+				});
 
 			services.AddSingleton(Explorer);
 			services.AddSingleton<IContentService, LocalContentService>();

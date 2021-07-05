@@ -13,7 +13,7 @@ namespace Portfolio.Pipeline
 {
 	public class ImageProcessor : IImportProcessor
 	{
-		internal static readonly Dictionary<string, ImageSettings> resolutions = new Dictionary<string, ImageSettings>()
+		internal static readonly Dictionary<string, ImageSettings> resolutions = new()
 		{
 			["blur"] = new ImageSettings()
 			{
@@ -129,27 +129,35 @@ namespace Portfolio.Pipeline
 
 					if (imageFormat == null)
 					{
-						switch (extension)
+						if (string.Equals(extension, ".png", StringComparison.OrdinalIgnoreCase))
 						{
-							case ".png":
-							case ".PNG":
-								imageFormat = ImageFormat.Png;
-								break;
-
-							case ".jpeg":
-							case ".jpg":
-							case ".JPEG":
-							case ".JPG":
-								imageFormat = ImageFormat.Jpeg;
-								break;
-
-							case ".bmp":
-							case ".BMP":
-								imageFormat = ImageFormat.Bmp;
-								break;
-
-							default:
-								throw new InvalidOperationException("Cannot compress a file of type " + extension);
+							imageFormat = ImageFormat.Png;
+						}
+						else if (string.Equals(extension, ".jpg", StringComparison.OrdinalIgnoreCase)
+							|| string.Equals(extension, ".jpeg", StringComparison.OrdinalIgnoreCase))
+						{
+							imageFormat = ImageFormat.Jpeg;
+						}
+						else if (string.Equals(extension, ".bmp", StringComparison.OrdinalIgnoreCase))
+						{
+							imageFormat = ImageFormat.Bmp;
+						}
+						else if (string.Equals(extension, ".gif", StringComparison.OrdinalIgnoreCase))
+						{
+							imageFormat = ImageFormat.Gif;
+						}
+						else if (string.Equals(extension, ".tff", StringComparison.OrdinalIgnoreCase)
+							|| string.Equals(extension, ".tiff", StringComparison.OrdinalIgnoreCase))
+						{
+							imageFormat = ImageFormat.Tiff;
+						}
+						else if (string.Equals(extension, ".ico", StringComparison.OrdinalIgnoreCase))
+						{
+							imageFormat = ImageFormat.Icon;
+						}
+						else
+						{
+							throw new InvalidOperationException("Cannot compress a file of type " + extension);
 						}
 					}
 					var encoder = GetEncoder(imageFormat);

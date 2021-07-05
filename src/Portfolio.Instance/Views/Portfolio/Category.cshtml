@@ -7,12 +7,12 @@
 
 @inject IContentService contentService;
 
-@await Component.InvokeAsync("BreadcrumbBar", new BreadcrumbBarViewModel(
+<vc:breadcrumb-bar breadcrumb-bar='new BreadcrumbBarViewModel(
 	new BreadcrumbViewModel()
 	{
 		Text = Model.Category.DisplayName
 	}
-))
+)' />
 
 <section style="min-height: 80vh;">
 	<div class="container">
@@ -20,7 +20,7 @@
 
 			@foreach (var project in Model.Category.Projects)
 			{
-				@await Component.InvokeAsync("PortfolioItem", project)
+				<vc:portfolio-item project="project" />
 			}
 
 		</div>

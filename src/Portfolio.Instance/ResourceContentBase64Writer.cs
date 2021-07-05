@@ -6,11 +6,11 @@ using System.Text.Encodings.Web;
 
 namespace Portfolio.Instance
 {
-	public class ResourceContentBaseWriter : IHtmlContent
+	public class ResourceContentBase64Writer : IHtmlContent
 	{
 		private readonly IResourceContent resourceContent;
 
-		public ResourceContentBaseWriter(IResourceContent resourceContent)
+		public ResourceContentBase64Writer(IResourceContent resourceContent)
 		{
 			this.resourceContent = resourceContent;
 		}

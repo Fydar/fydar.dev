@@ -9,7 +9,7 @@
 
 @inject IContentService contentService;
 
-@await Component.InvokeAsync("BreadcrumbBar", new BreadcrumbBarViewModel(
+<vc:breadcrumb-bar breadcrumb-bar='@new BreadcrumbBarViewModel(
 	new BreadcrumbViewModel()
 	{
 		Controller = "Portfolio",
@@ -24,7 +24,7 @@
 	{
 		Text = Model.Project.ProjectName
 	}
-))
+)' />
 
 <section style="min-height: 80vh;">
 	<div class="container">

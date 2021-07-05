@@ -153,7 +153,7 @@
 													<div class="imageHolder">
 														<a asp-controller="Portfolio" asp-action="Item" asp-route-identifier="@project.Slug">
 															<img src="~/@ResourceHelper.TransformName(project.FeaturedImage, "medium")" loading="lazy" class="overlay"
-																	style='object-fit: cover;)' />
+																	style='object-fit: cover;' />
 														</a>
 													</div>
 												</div>
@@ -202,10 +202,10 @@
 								<h1>Professional Experience</h1>
 
 								<p><b>@ContentService.ProfessionalExperience</b></p>
-							
-								@await Component.InvokeAsync("Timeline", new TimelineViewModel(
+
+								<vc:timeline timeline="new TimelineViewModel(
 									ContentService.Companies.Where(company => company.DisplayOnResume && company.IsProfessional)
-								))
+								)" />
 							</div>
 						
 							<div class="group-page">
@@ -238,16 +238,16 @@
 								</div>
 
 								<h1>Hobbyist Experience</h1>
-							
-								@await Component.InvokeAsync("Timeline", new TimelineViewModel(
+
+								<vc:timeline timeline="new TimelineViewModel(
 									ContentService.Companies.Where(company => company.DisplayOnResume && !company.IsProfessional), false
-								))
-								
+								)" />
+
 								<h1>Education</h1>
-							
-								@await Component.InvokeAsync("Timeline", new TimelineViewModel(
+
+								<vc:timeline timeline="new TimelineViewModel(
 									ContentService.Colleges.Where(college => college.DisplayOnResume)
-								))
+								)" />
 
 							</div>
 
