@@ -179,7 +179,7 @@ namespace Portfolio.Instance.Utility
 
 						Console.ForegroundColor = ConsoleColor.DarkGray;
 						output.Write("\n     ");
-						output.Write(lineSpan.Slice(inIndex + 1).ToString());
+						output.Write(lineSpan[(inIndex + 1)..].ToString());
 						output.Write("\n");
 					}
 					else

@@ -45,7 +45,8 @@
 
 		@if (Model.Project.PageResource != null)
 		{
-			@(new ResourceContentHtmlWriter(Model.Project.PageResource.Content))
+			using var stream = Model.Project.PageResource.Content.OpenRead();
+			<vc:markup stream="stream" />
 		}
 	</div>
 </section>

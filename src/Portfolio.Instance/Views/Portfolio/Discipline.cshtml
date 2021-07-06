@@ -19,7 +19,8 @@
 
 		@if (Model.Discipline.PageResource != null)
 		{
-			@(new ResourceContentHtmlWriter(Model.Discipline.PageResource.Content))
+			using var stream = Model.Discipline.PageResource.Content.OpenRead();
+			<vc:markup stream="stream" />
 		}
 	</div>
 </section>

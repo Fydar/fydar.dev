@@ -1,5 +1,4 @@
-﻿@using Portfolio.Instance;
-@using Portfolio.Instance.Services.ContentService;
+﻿@using Portfolio.Instance.Services.ContentService;
 @using Portfolio.Models.Blog;
 
 @{
@@ -18,9 +17,11 @@
 <section style="min-height: 80vh;">
 	<div class="container">
 		<h2>@Model.PostTitle</h2>
+
 		@if (Model.PageResource != null)
 		{
-			@(new ResourceContentHtmlWriter(Model.PageResource.Content))
+			using var stream = Model.PageResource.Content.OpenRead();
+			<vc:markup stream="stream" />
 		}
 	</div>
 </section>
