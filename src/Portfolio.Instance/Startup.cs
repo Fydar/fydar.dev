@@ -6,14 +6,15 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Portfolio.Instance.Services.ContactService;
-using Portfolio.Instance.Services.ContentService;
-using Portfolio.Instance.Services.PageMetaProvider;
-using Portfolio.Instance.Services.ViewRenderer;
+using Portfolio.Site.Services.ContactService;
+using Portfolio.Site.Services.ContentService;
+using Portfolio.Site.Services.PageMetaProvider;
 using Portfolio.Instance.Utility;
 using Portfolio.Services.EmailTickets;
 using RPGCore.Packages;
 using System.IO;
+using Portfolio.Site.Services.ViewToStringRenderer;
+using Portfolio.Site;
 
 namespace Portfolio.Instance
 {
@@ -80,35 +81,7 @@ namespace Portfolio.Instance
 		{
 			app.UseHealthChecks("/api/health");
 
-			app.UseHttpsRedirection();
-			app.UseResponseCompression();
-
-			// Exception handling
-			if (env.IsDevelopment())
-			{
-				app.UseDeveloperExceptionPage();
-			}
-			else
-			{
-				app.UseStatusCodePagesWithReExecute("/error/{0}");
-			}
-
-			app.UseStaticFiles();
-			app.UseStaticContentImages(Explorer);
-
-			app.UseMiddleware<RequestLoggingMiddleware>();
-
-			app.UseMvc();
-			app.UseRouting();
-
-			app.UseAuthorization();
-
-			app.UseEndpoints(endpoints =>
-			{
-				endpoints.MapControllerRoute(
-					name: "default",
-					pattern: "{controller=Portfolio}/{action=Index}");
-			});
+			app.UsePortfolioSite("");
 		}
 	}
 }

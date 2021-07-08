@@ -9,11 +9,6 @@
     <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
     <SatelliteResourceLanguages>en</SatelliteResourceLanguages>
   </PropertyGroup>
-  
-  <PropertyGroup Condition="'$(Configuration)' == 'Debug'">
-    <PreserveCompilationReferences>true</PreserveCompilationReferences>
-    <PreserveCompilationContext>true</PreserveCompilationContext>
-  </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="AWSSDK.Extensions.NETCore.Setup" Version="3.7.0.1" />
@@ -28,14 +23,12 @@
     <PackageReference Include="StackExchange.Redis" Version="2.2.62" />
   </ItemGroup>
 
-  <ItemGroup Condition=" '$(Configuration)'=='Debug' ">
-    <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="5.0.7" />
-  </ItemGroup>
-
   <ItemGroup>
     <ProjectReference Include="..\..\..\RPGCore\src\libs\RPGCore.Packages\RPGCore.Packages.csproj" />
+    <ProjectReference Include="..\Portfolio.EmailReceive.Tests\Portfolio.EmailReceive.Tests.csproj" />
     <ProjectReference Include="..\Portfolio.Models\Portfolio.Models.csproj" />
     <ProjectReference Include="..\Portfolio.Services.EmailTickets\Portfolio.Services.EmailTickets.csproj" />
+    <ProjectReference Include="..\Portfolio.Site\Portfolio.Site.csproj" />
   </ItemGroup>
 
 </Project>
