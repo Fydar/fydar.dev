@@ -1013,153 +1013,153 @@ label {
 
 
 	.mark.mark-youtube {
-		--mark-img-url: url("/img/marks/youtube.svg");
-		--mark-img-flat-url: url("/img/marks/youtube.svg");
+		--mark-img-url: url("img/marks/youtube.svg");
+		--mark-img-flat-url: url("img/marks/youtube.svg");
 		--mark-colour-primary: #FF0000;
 		--mark-colour-text: #f6f6f6;
 	}
 
 	.mark.mark-github {
-		--mark-img-url: url("/img/marks/github.svg");
-		--mark-img-flat-url: url("/img/marks/github.svg");
+		--mark-img-url: url("img/marks/github.svg");
+		--mark-img-flat-url: url("img/marks/github.svg");
 		--mark-colour-primary: #181717;
 		--mark-colour-text: #f6f6f6;
 	}
 
 	.mark.mark-unity {
-		--mark-img-url: url("/img/marks/unity.svg");
-		--mark-img-flat-url: url("/img/marks/unity.svg");
+		--mark-img-url: url("img/marks/unity.svg");
+		--mark-img-flat-url: url("img/marks/unity.svg");
 		--mark-colour-primary: #181717;
 		--mark-colour-text: #f6f6f6;
 	}
 
 	.mark.mark-dot-net {
-		--mark-img-url: url("/img/marks/dot-net.svg");
-		--mark-img-flat-url: url("/img/marks/dot-net.svg");
+		--mark-img-url: url("img/marks/dot-net.svg");
+		--mark-img-flat-url: url("img/marks/dot-net.svg");
 		--mark-colour-primary: #512BD4;
 		--mark-colour-text: #f6f6f6;
 	}
 
 	.mark.mark-itch-io {
-		--mark-img-url: url("/img/marks/itch-dot-io.svg");
-		--mark-img-flat-url: url("/img/marks/itch-dot-io.svg");
+		--mark-img-url: url("img/marks/itch-dot-io.svg");
+		--mark-img-flat-url: url("img/marks/itch-dot-io.svg");
 		--mark-colour-primary: #FA5C5C;
 		--mark-colour-text: #f6f6f6;
 	}
 
 	.mark.mark-linkedin {
-		--mark-img-url: url("/img/marks/linkedin-flat.svg");
-		--mark-img-flat-url: url("/img/marks/linkedin-flat.svg");
+		--mark-img-url: url("img/marks/linkedin-flat.svg");
+		--mark-img-flat-url: url("img/marks/linkedin-flat.svg");
 		--mark-colour-primary: #0A66C2;
 		--mark-colour-text: #f6f6f6;
 	}
 
 	.mark.mark-twitter {
-		--mark-img-url: url("/img/marks/twitter.svg");
-		--mark-img-flat-url: url("/img/marks/twitter.svg");
+		--mark-img-url: url("img/marks/twitter.svg");
+		--mark-img-flat-url: url("img/marks/twitter.svg");
 		--mark-colour-primary: #1DA1F2;
 		--mark-colour-text: #f6f6f6;
 	}
 
 	.mark.mark-google-play {
-		--mark-img-url: url("/img/marks/googleplay-colour.svg");
-		--mark-img-flat-url: url("/img/marks/googleplay-colour.svg");
+		--mark-img-url: url("img/marks/googleplay-colour.svg");
+		--mark-img-flat-url: url("img/marks/googleplay-colour.svg");
 		--mark-colour-primary: #414141;
 		--mark-colour-text: #f6f6f6;
 	}
 
 	.mark.mark-global-game-jam {
-		--mark-img-url: url("/img/marks/global-game-jam.svg");
-		--mark-img-flat-url: url("/img/marks/global-game-jam-2.svg");
+		--mark-img-url: url("img/marks/global-game-jam.svg");
+		--mark-img-flat-url: url("img/marks/global-game-jam-2.svg");
 		--mark-colour-primary: #252162;
 		--mark-colour-text: #f6f6f6;
 	}
 
 	.mark.mark-steam {
-		--mark-img-url: url("/img/marks/steam.svg");
-		--mark-img-flat-url: url("/img/marks/steam-flat.svg");
+		--mark-img-url: url("img/marks/steam.svg");
+		--mark-img-flat-url: url("img/marks/steam-flat.svg");
 		--mark-colour-primary: #19283B;
 		--mark-colour-text: #f6f6f6;
 	}
 
 	.mark.mark-ludum-dare {
-		--mark-img-url: url("/img/marks/ludum-dare.svg");
-		--mark-img-flat-url: url("/img/marks/ludum-dare.svg");
+		--mark-img-url: url("img/marks/ludum-dare.svg");
+		--mark-img-flat-url: url("img/marks/ludum-dare.svg");
 		--mark-colour-primary: #ffcc11;
 		--mark-colour-text: #ee5533;
 	}
 
 	.mark.mark-ludum-dare-compo {
-		--mark-img-url: url("/img/marks/ludum-dare.svg");
-		--mark-img-flat-url: url("/img/marks/ludum-dare.svg");
+		--mark-img-url: url("img/marks/ludum-dare.svg");
+		--mark-img-flat-url: url("img/marks/ludum-dare.svg");
 		--mark-colour-primary: #ee5533;
 		--mark-colour-text: #f6f6f6;
 	}
 
 	.mark.mark-website {
-		--mark-img-url: url("/img/marks/pin-website.svg");
-		--mark-img-flat-url: url("/img/marks/pin-website.svg");
+		--mark-img-url: url("img/marks/pin-website.svg");
+		--mark-img-flat-url: url("img/marks/pin-website.svg");
 	}
 
 	.mark.mark-pin-book {
-		--mark-img-url: url("/img/marks/pin-book.svg");
-		--mark-img-flat-url: url("/img/marks/pin-book.svg");
+		--mark-img-url: url("img/marks/pin-book.svg");
+		--mark-img-flat-url: url("img/marks/pin-book.svg");
 	}
 
 	.mark.mark-pin-date {
-		--mark-img-url: url("/img/marks/pin-calender.svg");
-		--mark-img-flat-url: url("/img/marks/pin-calender.svg");
+		--mark-img-url: url("img/marks/pin-calender.svg");
+		--mark-img-flat-url: url("img/marks/pin-calender.svg");
 	}
 
 	.mark.mark-pin-pencil {
-		--mark-img-url: url("/img/marks/pin-pencil.svg");
-		--mark-img-flat-url: url("/img/marks/pin-pencil.svg");
+		--mark-img-url: url("img/marks/pin-pencil.svg");
+		--mark-img-flat-url: url("img/marks/pin-pencil.svg");
 	}
 
 	.mark.mark-pin-person {
-		--mark-img-url: url("/img/marks/pin-person.svg");
-		--mark-img-flat-url: url("/img/marks/pin-person.svg");
+		--mark-img-url: url("img/marks/pin-person.svg");
+		--mark-img-flat-url: url("img/marks/pin-person.svg");
 	}
 
 	.mark.mark-pin-people {
-		--mark-img-url: url("/img/marks/pin-people.svg");
-		--mark-img-flat-url: url("/img/marks/pin-people.svg");
+		--mark-img-url: url("img/marks/pin-people.svg");
+		--mark-img-flat-url: url("img/marks/pin-people.svg");
 	}
 
 	.mark.mark-pin-location {
-		--mark-img-url: url("/img/marks/pin-location.svg");
-		--mark-img-flat-url: url("/img/marks/pin-location.svg");
+		--mark-img-url: url("img/marks/pin-location.svg");
+		--mark-img-flat-url: url("img/marks/pin-location.svg");
 	}
 
 	.mark.mark-pin-star {
-		--mark-img-url: url("/img/marks/pin-star.svg");
-		--mark-img-flat-url: url("/img/marks/pin-star.svg");
+		--mark-img-url: url("img/marks/pin-star.svg");
+		--mark-img-flat-url: url("img/marks/pin-star.svg");
 	}
 
 	.mark.mark-pin-quote {
-		--mark-img-url: url("/img/marks/pin-quote.svg");
-		--mark-img-flat-url: url("/img/marks/pin-quote.svg");
+		--mark-img-url: url("img/marks/pin-quote.svg");
+		--mark-img-flat-url: url("img/marks/pin-quote.svg");
 	}
 
 	.mark.mark-pin-lightmode {
-		--mark-img-url: url("/img/marks/pin-lightmode.svg");
-		--mark-img-flat-url: url("/img/marks/pin-lightmode.svg");
+		--mark-img-url: url("img/marks/pin-lightmode.svg");
+		--mark-img-flat-url: url("img/marks/pin-lightmode.svg");
 	}
 
 	.mark.mark-pin-darkmode {
-		--mark-img-url: url("/img/marks/pin-darkmode.svg");
-		--mark-img-flat-url: url("/img/marks/pin-darkmode.svg");
+		--mark-img-url: url("img/marks/pin-darkmode.svg");
+		--mark-img-flat-url: url("img/marks/pin-darkmode.svg");
 	}
 
 
 	.mark.mark-pin-othertheme {
-		--mark-img-url: url("/img/marks/pin-darkmode.svg");
-		--mark-img-flat-url: url("/img/marks/pin-darkmode.svg");
+		--mark-img-url: url("img/marks/pin-darkmode.svg");
+		--mark-img-flat-url: url("img/marks/pin-darkmode.svg");
 	}
 
 .dark .mark.mark-pin-othertheme {
-	--mark-img-url: url("/img/marks/pin-lightmode.svg");
-	--mark-img-flat-url: url("/img/marks/pin-lightmode.svg");
+	--mark-img-url: url("img/marks/pin-lightmode.svg");
+	--mark-img-flat-url: url("img/marks/pin-lightmode.svg");
 }
 
 .dark .mark.mark-github {

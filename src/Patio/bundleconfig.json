@@ -1,12 +1,14 @@
 [
   {
+    "includeInProject": true,
     "outputFileName": "output/patio.css",
     "inputFiles": [
       "src/css/**/*.css"
     ],
     "minify": {
       "enabled": true,
-      "commentMode": "none"
+      "commentMode": "none",
+      "adjustRelativePaths": false
     }
   }
 ]

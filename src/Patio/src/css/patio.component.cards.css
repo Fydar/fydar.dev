@@ -234,7 +234,7 @@ $grid-breakpoints: (
 
 @media (min-width: 1400px) {
 	.container .card-grid.card-grid-sm {
-		grid-template-columns: 400px 400px 400px;
+		grid-template-columns: 426px 426px 426px;
 		grid-gap: 24px 21px;
 	}
 }

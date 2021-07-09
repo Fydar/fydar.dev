@@ -4,11 +4,11 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.FileProviders;
 using Microsoft.Extensions.Hosting;
-using Portfolio.Instance.Utility;
 using RPGCore.Packages;
 using System;
 using System.IO;
 using System.Linq;
+using System.Reflection;
 
 namespace Portfolio.Site
 {
@@ -40,6 +40,13 @@ namespace Portfolio.Site
 				}
 
 				app.UseStaticFiles();
+
+				var assemblyDirectory = new FileInfo(Assembly.GetExecutingAssembly().Location).Directory;
+
+				app.UseStaticFiles(new StaticFileOptions()
+				{
+					FileProvider = new PhysicalFileProvider(Path.Combine(assemblyDirectory?.FullName ?? "", "wwwroot")),
+				});
 				app.UseStaticContentImages(explorer);
 
 				app.UseMiddleware<RequestLoggingMiddleware>();
