@@ -9,8 +9,8 @@
 
 	<ItemGroup>
 		<FrameworkReference Include="Microsoft.AspNetCore.App" />
-		<PackageReference Include="AWSSDK.S3" Version="3.7.1.8" />
-		<PackageReference Include="AWSSDK.SimpleEmail" Version="3.7.0.36" />
+		<PackageReference Include="AWSSDK.S3" Version="3.7.1.11" />
+		<PackageReference Include="AWSSDK.SimpleEmail" Version="3.7.0.39" />
 		<PackageReference Include="Serilog" Version="2.10.1-dev-01265" />
 	</ItemGroup>
 
