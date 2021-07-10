@@ -1,6 +1,5 @@
 [
   {
-    "includeInProject": true,
     "outputFileName": "output/patio.css",
     "inputFiles": [
       "src/css/**/*.css"
