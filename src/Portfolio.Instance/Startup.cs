@@ -15,6 +15,8 @@ using RPGCore.Packages;
 using System.IO;
 using Portfolio.Site.Services.ViewToStringRenderer;
 using Portfolio.Site;
+using System.Reflection;
+using Portfolio.Instance.Controllers;
 
 namespace Portfolio.Instance
 {
@@ -62,6 +64,11 @@ namespace Portfolio.Instance
 
 			services.AddAWSService<IAmazonSimpleEmailService>();
 			services.AddAWSService<IAmazonS3>();
+
+			var sampleAssembly = Assembly.GetAssembly(typeof(BlogController));
+			services
+				.AddControllers()
+				.AddApplicationPart(sampleAssembly);
 
 			if (!Environment.IsDevelopment())
 			{

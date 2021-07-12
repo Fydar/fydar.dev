@@ -26,7 +26,7 @@ namespace Portfolio.Site
 
 				if (explorer == null)
 				{
-					throw new InvalidOperationException($"No service of type {typeof(IExplorer).Name}.");
+					throw new InvalidOperationException($"No service of type '{typeof(IExplorer).Name}'.");
 				}
 
 				// Exception handling
