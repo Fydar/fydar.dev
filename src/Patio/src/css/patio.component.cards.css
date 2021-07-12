@@ -170,6 +170,12 @@
 		grid-template-columns: 1fr 1fr;
 	}
 
+.dark .card {
+}
+
+	.dark .card .card-image {
+		background-color: #242628;
+	}
 
 /*
 $grid-breakpoints: (

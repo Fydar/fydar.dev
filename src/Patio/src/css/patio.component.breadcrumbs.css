@@ -45,3 +45,25 @@ section.breadcrumb-bar {
 		color: #777;
 		font-weight: bold;
 	}
+
+
+.dark .breadcrumb-bar {
+	color: #646464;
+	background-color: #0c0c0c;
+}
+
+	.dark .breadcrumb-bar .breadcrumb {
+		color: #d8d8d8;
+	}
+
+		.dark .breadcrumb-bar .breadcrumb:hover {
+			color: #e6e6e6;
+		}
+
+	.dark .breadcrumb-bar a.breadcrumb {
+		color: #bdbdbd;
+	}
+
+	.dark .breadcrumb-bar .breadcrumb.breadcrumb-active {
+		color: #bdbdbd;
+	}

@@ -1,0 +1,17 @@
+
+blockquote {
+	background: var(--color-grey-5);
+	border-left: 6px solid var(--color-grey-6);
+	margin: 1.5rem 10px;
+	padding: 1.15rem 10px 2px 12px;
+	max-width: 580px;
+}
+
+	blockquote:before {
+		content: '\201C';
+		position: absolute;
+		color: var(--color-grey-6);
+		font-size: 12rem;
+		transform: translate(-0.25rem, -3rem);
+		font-family: 'Quattrocento Sans', Helvetica, sans-serif;
+	}

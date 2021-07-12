@@ -1,0 +1,73 @@
+
+h1 {
+	font-weight: 400;
+	font-size: 2em;
+	margin: 3rem 0 2rem 0;
+}
+
+h2 {
+	font-weight: 400;
+	font-size: 1.5em;
+}
+
+h3 {
+	font-weight: 400;
+	font-size: 1.4em;
+}
+
+h4 {
+	font-weight: 400;
+	font-size: 1.3em;
+}
+
+h5 {
+	font-weight: 400;
+	font-size: 1.2em;
+}
+
+h6 {
+	font-weight: 400;
+	font-size: 1.1em;
+}
+
+a {
+	color: var(--color-text-link);
+}
+
+.lead {
+	font-size: 1.25rem;
+	font-weight: 300;
+}
+
+figure {
+	margin: 0 0 1rem;
+}
+
+.blockquote {
+	margin-bottom: 1rem;
+	font-size: 1.25rem;
+}
+
+	.blockquote > :last-child {
+		margin-bottom: 0;
+	}
+
+blockquote {
+	margin: 0 0 1rem;
+}
+
+.blockquote-footer {
+	margin-top: -1rem;
+	margin-bottom: 1rem;
+	font-size: .875em;
+	color: #6c757d;
+}
+
+.text-muted {
+	color: var(--color-text-subtle-3) !important;
+}
+
+.small, small {
+	font-size: 80%;
+	font-weight: 400;
+}
