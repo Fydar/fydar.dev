@@ -16,7 +16,7 @@ namespace Portfolio.Site
 	{
 		public static IApplicationBuilder UsePortfolioSite(this IApplicationBuilder app, PathString path)
 		{
-			return app.Map("", map =>
+			return app.Map(path, map =>
 			{
 				app.UseHttpsRedirection();
 				app.UseResponseCompression();
@@ -64,7 +64,6 @@ namespace Portfolio.Site
 				});
 			});
 		}
-
 
 		private static IApplicationBuilder UseStaticContentImages(this IApplicationBuilder applicationBuilder, IExplorer explorer)
 		{
