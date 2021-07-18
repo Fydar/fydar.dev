@@ -6,17 +6,15 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Portfolio.Instance.Utility;
+using Portfolio.Services.EmailTickets;
+using Portfolio.Site;
 using Portfolio.Site.Services.ContactService;
 using Portfolio.Site.Services.ContentService;
 using Portfolio.Site.Services.PageMetaProvider;
-using Portfolio.Instance.Utility;
-using Portfolio.Services.EmailTickets;
+using Portfolio.Site.Services.ViewToStringRenderer;
 using RPGCore.Packages;
 using System.IO;
-using Portfolio.Site.Services.ViewToStringRenderer;
-using Portfolio.Site;
-using System.Reflection;
-using Portfolio.Instance.Controllers;
 
 namespace Portfolio.Instance
 {
@@ -38,15 +36,10 @@ namespace Portfolio.Instance
 			services.AddResponseCompression();
 
 			services.AddHealthChecks();
-			services.AddControllers();
 			services.AddMvc(options =>
 			{
 				options.EnableEndpointRouting = false;
-			})
-				.AddRazorOptions(options =>
-				{
-					options.ViewLocationFormats.Add("/{0}.cshtml");
-				});
+			});
 
 			services.AddSingleton(Explorer);
 			services.AddSingleton<IContentService, LocalContentService>();
@@ -65,10 +58,7 @@ namespace Portfolio.Instance
 			services.AddAWSService<IAmazonSimpleEmailService>();
 			services.AddAWSService<IAmazonS3>();
 
-			var sampleAssembly = Assembly.GetAssembly(typeof(BlogController));
-			services
-				.AddControllers()
-				.AddApplicationPart(sampleAssembly);
+			services.AddPortfolioSiteControllers();
 
 			if (!Environment.IsDevelopment())
 			{

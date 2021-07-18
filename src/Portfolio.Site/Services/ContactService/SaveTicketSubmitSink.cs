@@ -2,7 +2,7 @@
 using Amazon.S3.Model;
 using Microsoft.Extensions.Logging;
 using MimeKit;
-using Portfolio.Site.ViewModels;
+using Portfolio.Site.Areas.Contact.Models;
 using System.IO;
 using System.Net.Mail;
 using System.Threading.Tasks;

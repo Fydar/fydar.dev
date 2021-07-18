@@ -1,8 +1,8 @@
 ﻿using Amazon.SimpleEmail;
 using Amazon.SimpleEmail.Model;
 using Microsoft.Extensions.Logging;
+using Portfolio.Site.Areas.Contact.Models;
 using Portfolio.Site.Services.ViewToStringRenderer;
-using Portfolio.Site.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;

@@ -1,4 +1,4 @@
-﻿using Portfolio.Site.ViewModels;
+﻿using Portfolio.Site.Areas.Portfolio.Models;
 using System.Collections.Generic;
 
 namespace Portfolio.Site.Services.PageMetaProvider

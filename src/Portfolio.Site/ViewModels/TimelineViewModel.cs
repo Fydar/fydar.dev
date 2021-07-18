@@ -8,7 +8,9 @@ namespace Portfolio.Site.ViewModels
 		public IEnumerable<InstitutionModel> Institutions { get; set; }
 		public bool FocusPosition { get; set; }
 
-		public TimelineViewModel(IEnumerable<InstitutionModel> institutions, bool focusPosition = false)
+		public TimelineViewModel(
+			IEnumerable<InstitutionModel> institutions,
+			bool focusPosition = false)
 		{
 			Institutions = institutions;
 			FocusPosition = focusPosition;

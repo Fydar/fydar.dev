@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Portfolio.Site.Services.ContentService;
-using Portfolio.Site.ViewModels;
 using Portfolio.Models;
+using Portfolio.Site.Areas.Portfolio.Models;
+using Portfolio.Site.Services.ContentService;
 
 namespace Portfolio.Site.Components.ContentImage
 {
