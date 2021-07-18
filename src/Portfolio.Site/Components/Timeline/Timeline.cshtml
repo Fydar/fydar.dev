@@ -1,13 +1,13 @@
 ﻿@model TimelineViewModel;
 
 <div class="timeline">
-        
-  <div class="timeline-stream">  
+
+  <div class="timeline-stream">
     @{
       int index = 0;
     }
     @foreach (var institution in Model.Institutions)
-    {  
+    {
       index += 1;
       for (int i = 0; i < institution.Positions.Count; i++)
       {
@@ -68,7 +68,7 @@
           <h3>@position.PlacementTitle</h3>
           @if (!string.IsNullOrEmpty(position.PlacementSubtitle))
           {
-              <p class="subtitle2">@position.PlacementSubtitle</p>
+            <p class="subtitle2">@position.PlacementSubtitle</p>
           }
           <p class="subtitle4">@position.Tagline</p>
 

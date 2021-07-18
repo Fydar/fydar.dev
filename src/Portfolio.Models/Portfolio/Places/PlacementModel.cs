@@ -26,13 +26,7 @@ namespace Portfolio.Models
 		public TimeSpan Elapsed => (EndTime ?? DateTimeOffset.UtcNow) - StartTime;
 
 		[JsonIgnore]
-		public int TotalMonths
-		{
-			get
-			{
-				return (int)Math.Ceiling(Elapsed.TotalDays / 30.4167);
-			}
-		}
+		public int TotalMonths => (int)Math.Ceiling(Elapsed.TotalDays / 30.4167);
 
 		[JsonIgnore]
 		public int Months => TotalMonths % 12;

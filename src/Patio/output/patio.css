@@ -1413,69 +1413,67 @@ section.navbar {
 		flex-grow: 1;
 	}
 
-/* 3D Voxel Models */
-.scene {
-	display: inline-block;
-	padding: 50px;
-	perspective: 800px;
-	overflow: hidden;
-	box-sizing: border-box;
+
+/* Table of Contents */
+.toc-container {
+	background-color: #f6f8fa;
+	border: 1px solid var(--color-border-1);
+	display: table;
+	margin-bottom: 1em;
+	padding: 16px 32px 20px 20px;
+	width: auto;
+	font-size: 0.95rem;
 }
 
-	.scene .mesh {
-		position: relative;
-		margin: auto;
-		transform-style: preserve-3d;
-		transition: transform 0.6s;
+	.toc-container a {
+		text-decoration: none;
 	}
 
-		.scene .mesh .element {
-			transform-style: preserve-3d;
+		.toc-container a:hover .toc-text {
+			text-decoration: underline;
 		}
 
-		.scene .mesh .surface {
-			transform-origin: 0% 0%;
+	.toc-container .toc-title {
+		font-weight: 700;
+		text-align: center;
+		margin: 0;
+	}
+
+	.toc-container ul {
+		padding-top: 3px;
+		list-style: outside none none !important;
+		padding-left: 1.5rem;
+		margin-bottom: 0;
+	}
+
+		.toc-container ul li {
+			list-style: outside none none !important;
+			padding-top: 3px;
+			padding-bottom: 3px;
 		}
 
-			.scene .mesh .surface div {
-				position: absolute;
-				-webkit-backface-visibility: hidden;
-				backface-visibility: hidden;
-				-webkit-background-clip: content-box;
-				background-clip: content-box;
-				outline: 1px solid transparent;
+			.toc-container ul li .toc-number {
+				color: #202122;
+				text-decoration: none;
+				min-width: 24px;
+				display: inline-block;
+				text-align: center;
 			}
 
-.anim-rotate-left {
-	animation: anim-rotate-left 1s linear normal;
-	animation-play-state: paused;
-	animation-delay: calc(var(--scroll) * -1s);
-}
+			.toc-container ul li .toc-text {
+			}
 
-@keyframes anim-rotate-left {
-	from {
-		transform: rotateX(20deg) rotateY(50deg);
+	.toc-container > ul {
+		padding-left: 0;
 	}
 
-	to {
-		transform: rotateX(-45deg) rotateY(10deg);
-	}
-}
-
-.anim-rotate-vertical {
-	animation: anim-rotate-vertical 1s linear normal;
-	animation-play-state: paused;
-	animation-delay: calc(var(--scroll) * -1s);
-}
-
-@keyframes anim-rotate-vertical {
-	from {
-		transform: rotateX(20deg) rotateY(45deg);
+	.toc-container ul li .toc-number {
+		color: #999999;
 	}
 
-	to {
-		transform: rotateX(-45deg) rotateY(45deg);
-	}
+.dark .toc-container {
+	background: #151515;
+	border: 1px solid #363636;
 }
 
 /* 3D Voxel Models */
@@ -1606,6 +1604,15 @@ blockquote {
 	margin-bottom: 1rem;
 	font-size: .875em;
 	color: #6c757d;
+}
+
+.text-muted {
+	color: var(--color-text-subtle-3) !important;
+}
+
+.small, small {
+	font-size: 80%;
+	font-weight: 400;
 }
 
 

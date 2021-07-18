@@ -1,7 +1,7 @@
 ﻿@model DisciplineViewModel
 @{
-	ViewData["Title"] = Model.Discipline.DisplayName;
-	ViewData["FeaturedImage"] = Model.Discipline.FeaturedImage;
+  ViewData["Title"] = Model.Discipline.DisplayName;
+  ViewData["FeaturedImage"] = Model.Discipline.FeaturedImage;
 }
 
 <vc:breadcrumb-bar breadcrumb-bar="new BreadcrumbBarViewModel(
@@ -12,13 +12,13 @@
 )" />
 
 <section style="min-height: 80vh;">
-	<div class="container">
-		<h2>@Model.Discipline.DisplayName</h2>
+  <div class="container">
+    <h2>@Model.Discipline.DisplayName</h2>
 
-		@if (Model.Discipline.PageResource != null)
-		{
-			using var stream = Model.Discipline.PageResource.Content.OpenRead();
-			<vc:markup stream="stream" />
-		}
-	</div>
+    @if (Model.Discipline.PageResource != null)
+    {
+      using var stream = Model.Discipline.PageResource.Content.OpenRead();
+      <vc:markup stream="stream" />
+    }
+  </div>
 </section>

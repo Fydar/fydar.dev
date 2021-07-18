@@ -1,64 +1,64 @@
 /* 3D Voxel Models */
 .scene {
-	display: inline-block;
-	padding: 50px;
-	perspective: 800px;
-	overflow: hidden;
-	box-sizing: border-box;
+  display: inline-block;
+  padding: 50px;
+  perspective: 800px;
+  overflow: hidden;
+  box-sizing: border-box;
 }
 
-	.scene .mesh {
-		position: relative;
-		margin: auto;
-		transform-style: preserve-3d;
-		transition: transform 0.6s;
-	}
+  .scene .mesh {
+    position: relative;
+    margin: auto;
+    transform-style: preserve-3d;
+    transition: transform 0.6s;
+  }
 
-		.scene .mesh .element {
-			transform-style: preserve-3d;
-		}
+    .scene .mesh .element {
+      transform-style: preserve-3d;
+    }
 
-		.scene .mesh .surface {
-			transform-origin: 0% 0%;
-		}
+    .scene .mesh .surface {
+      transform-origin: 0% 0%;
+    }
 
-			.scene .mesh .surface div {
-				position: absolute;
-				-webkit-backface-visibility: hidden;
-				backface-visibility: hidden;
-				-webkit-background-clip: content-box;
-				background-clip: content-box;
-				outline: 1px solid transparent;
-			}
+      .scene .mesh .surface div {
+        position: absolute;
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+        -webkit-background-clip: content-box;
+        background-clip: content-box;
+        outline: 1px solid transparent;
+      }
 
 .anim-rotate-left {
-	animation: anim-rotate-left 1s linear normal;
-	animation-play-state: paused;
-	animation-delay: calc(var(--scroll) * -1s);
+  animation: anim-rotate-left 1s linear normal;
+  animation-play-state: paused;
+  animation-delay: calc(var(--scroll) * -1s);
 }
 
 @keyframes anim-rotate-left {
-	from {
-		transform: rotateX(20deg) rotateY(50deg);
-	}
+  from {
+    transform: rotateX(20deg) rotateY(50deg);
+  }
 
-	to {
-		transform: rotateX(-45deg) rotateY(10deg);
-	}
+  to {
+    transform: rotateX(-45deg) rotateY(10deg);
+  }
 }
 
 .anim-rotate-vertical {
-	animation: anim-rotate-vertical 1s linear normal;
-	animation-play-state: paused;
-	animation-delay: calc(var(--scroll) * -1s);
+  animation: anim-rotate-vertical 1s linear normal;
+  animation-play-state: paused;
+  animation-delay: calc(var(--scroll) * -1s);
 }
 
 @keyframes anim-rotate-vertical {
-	from {
-		transform: rotateX(20deg) rotateY(45deg);
-	}
+  from {
+    transform: rotateX(20deg) rotateY(45deg);
+  }
 
-	to {
-		transform: rotateX(-45deg) rotateY(45deg);
-	}
+  to {
+    transform: rotateX(-45deg) rotateY(45deg);
+  }
 }

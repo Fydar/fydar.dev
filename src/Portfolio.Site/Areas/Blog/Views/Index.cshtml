@@ -1,23 +1,23 @@
 ﻿@using Portfolio.Site.Services.ContentService;
 
 @{
-	ViewData["Title"] = "";
-	ViewData["HeaderStyle"] = "BlogStyle";
+  ViewData["Title"] = "";
+  ViewData["HeaderStyle"] = "BlogStyle";
 }
 
 @inject IContentService contentService;
 
 <section style="min-height: 80vh;">
-	<div class="container">
-		@foreach (var blogPost in contentService.BlogPosts)
-		{
-			<div class="page">
-				<header>
-					<h2>@blogPost.PostTitle</h2>
-				</header>
-				<section>
-				</section>
-			</div>
-		}
-	</div>
+  <div class="container">
+    @foreach (var blogPost in contentService.BlogPosts)
+    {
+      <div class="page">
+        <header>
+          <h2>@blogPost.PostTitle</h2>
+        </header>
+        <section>
+        </section>
+      </div>
+    }
+  </div>
 </section>

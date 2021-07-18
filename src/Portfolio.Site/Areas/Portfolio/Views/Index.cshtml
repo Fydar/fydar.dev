@@ -3,47 +3,47 @@
 
 @model PortfolioIndexViewModel
 @{
-	ViewData["Title"] = "";
+  ViewData["Title"] = "";
 }
 
 @inject IContentService contentService;
 
 <section style="min-height: 80vh;">
-	<div class="container">
+  <div class="container">
 
-		@for (int i = 0; i < contentService.Categories.Count; i++)
-		{
-			int missing = 0;
+    @for (int i = 0; i < contentService.Categories.Count; i++)
+    {
+      int missing = 0;
 
-			var category = contentService.Categories[i];
+      var category = contentService.Categories[i];
 
-			<h1>@category.DisplayName</h1>
+      <h1>@category.DisplayName</h1>
 
-			<div class="card-grid @(category.Projects.Count > 3 ? "card-grid-sm" : "")">
-				@foreach (var project in category.Projects)
-				{
-					if (project.HideOnHomePage)
-					{
-						missing++;
-					}
-					else
-					{
-						<vc:portfolio-item project="project" />
-					}
-				}
-			</div>
+      <div class="card-grid @(category.Projects.Count > 3 ? "card-grid-sm" : "")">
+        @foreach (var project in category.Projects)
+        {
+          if (project.HideOnHomePage)
+          {
+            missing++;
+          }
+          else
+          {
+            <vc:portfolio-item project="project" />
+          }
+        }
+      </div>
 
-			@if (missing > 0)
-			{
-				<div class="form-group" style="text-align: right;">
-					<a class="form-btn form-btn-readmore"
-					   asp-controller="Portfolio"
-					   asp-action="Item"
-					   asp-route-identifier="@category.Slug">
-						view <b>@missing</b> more projects →
-					</a>
-				</div>
-			}
-		}
-	</div>
+      @if (missing > 0)
+      {
+        <div class="form-group" style="text-align: right;">
+          <a class="form-btn form-btn-readmore"
+             asp-controller="Portfolio"
+             asp-action="Item"
+             asp-route-identifier="@category.Slug">
+            view <b>@missing</b> more projects →
+          </a>
+        </div>
+      }
+    }
+  </div>
 </section>

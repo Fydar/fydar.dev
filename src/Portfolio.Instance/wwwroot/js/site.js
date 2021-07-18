@@ -2,22 +2,22 @@
 const invlerp = (x, y, a) => clamp((a - x) / (y - x));
 
 function UpdateRelativeElements() {
-	var fsaRelativeObjects = document.getElementsByClassName("fsa-relative");
+  var fsaRelativeObjects = document.getElementsByClassName("fsa-relative");
 
-	for (let p = 0; p < fsaRelativeObjects.length; p++) {
-		var fsaRelative = fsaRelativeObjects[p];
+  for (let p = 0; p < fsaRelativeObjects.length; p++) {
+    var fsaRelative = fsaRelativeObjects[p];
 
-		var bounds = fsaRelative.getBoundingClientRect();
-		var scroll = invlerp(-bounds.height, screen.height, bounds.top);
+    var bounds = fsaRelative.getBoundingClientRect();
+    var scroll = invlerp(-bounds.height, screen.height, bounds.top);
 
-		fsaRelative.style.setProperty("--scroll", scroll);
-	}
+    fsaRelative.style.setProperty("--scroll", scroll);
+  }
 }
 
 window.addEventListener("scroll",
-	() => { UpdateRelativeElements(); }, false
+  () => { UpdateRelativeElements(); }, false
 );
 window.addEventListener("resize",
-	() => { UpdateRelativeElements(); }, false
+  () => { UpdateRelativeElements(); }, false
 );
 UpdateRelativeElements();

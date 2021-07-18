@@ -2,28 +2,28 @@
 
 @model TicketTicketViewModel
 @{
-	ViewData["Title"] = "Contact";
+  ViewData["Title"] = "Contact";
 }
 
 <section style="min-height: 80vh;">
-	<div class="container">
-		<h2>Ticket</h2>
-		<div class="container">
-			<p>
-				@Model.TicketId
-			</p>
+  <div class="container">
+    <h2>Ticket</h2>
+    <div class="container">
+      <p>
+        @Model.TicketId
+      </p>
 
-			<p>
-				@Model.From
-			</p>
+      <p>
+        @Model.From
+      </p>
 
-			<p>
-				@Model.To
-			</p>
+      <p>
+        @Model.To
+      </p>
 
-			<div>
-				@Html.Raw(Model.HtmlBody)
-			</div>
-		</div>
-	</div>
+      <div>
+        @Html.Raw(Model.HtmlBody)
+      </div>
+    </div>
+  </div>
 </section>

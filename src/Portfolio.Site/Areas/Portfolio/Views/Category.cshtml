@@ -3,27 +3,27 @@
 
 @model CategoryViewModel
 @{
-	ViewData["Title"] = "Portfolio";
+  ViewData["Title"] = "Portfolio";
 }
 
 @inject IContentService contentService;
 
 <vc:breadcrumb-bar breadcrumb-bar='new BreadcrumbBarViewModel(
-	new BreadcrumbViewModel()
-	{
-		Text = Model.Category.DisplayName
-	}
+  new BreadcrumbViewModel()
+  {
+    Text = Model.Category.DisplayName
+  }
 )' />
 
 <section style="min-height: 80vh;">
-	<div class="container">
-		<div class="card-grid @(Model.Category.Projects.Count > 3 ? "card-grid-sm" : "")">
+  <div class="container">
+    <div class="card-grid @(Model.Category.Projects.Count > 3 ? "card-grid-sm" : "")">
 
-			@foreach (var project in Model.Category.Projects)
-			{
-				<vc:portfolio-item project="project" />
-			}
+      @foreach (var project in Model.Category.Projects)
+      {
+        <vc:portfolio-item project="project" />
+      }
 
-		</div>
-	</div>
+    </div>
+  </div>
 </section>

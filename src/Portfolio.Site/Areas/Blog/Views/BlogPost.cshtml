@@ -2,26 +2,26 @@
 @using Portfolio.Site.Areas.Blog.Models;
 
 @{
-	Layout = "_Layout";
+  Layout = "_Layout";
 }
 
 @model BlogPostViewModel;
 @{
-	ViewData["Title"] = Model.BlogPost.PostTitle;
-	ViewData["HeaderStyle"] = "BlogStyle";
-	ViewData["FeaturedImage"] = Model.BlogPost.FeaturedImage;
+  ViewData["Title"] = Model.BlogPost.PostTitle;
+  ViewData["HeaderStyle"] = "BlogStyle";
+  ViewData["FeaturedImage"] = Model.BlogPost.FeaturedImage;
 }
 
 @inject IContentService contentService;
 
 <section style="min-height: 80vh;">
-	<div class="container">
-		<h2>@Model.BlogPost.PostTitle</h2>
+  <div class="container">
+    <h2>@Model.BlogPost.PostTitle</h2>
 
-		@if (Model.BlogPost.PageResource != null)
-		{
-			using var stream = Model.BlogPost.PageResource.Content.OpenRead();
-			<vc:markup stream="stream" />
-		}
-	</div>
+    @if (Model.BlogPost.PageResource != null)
+    {
+      using var stream = Model.BlogPost.PageResource.Content.OpenRead();
+      <vc:markup stream="stream" />
+    }
+  </div>
 </section>

@@ -3,50 +3,50 @@
 
 @model ProjectViewModel
 @{
-	ViewData["Title"] = Model.Project.ProjectName;
-	ViewData["FeaturedImage"] = Model.Project.FeaturedImage;
+  ViewData["Title"] = Model.Project.ProjectName;
+  ViewData["FeaturedImage"] = Model.Project.FeaturedImage;
 }
 
 @inject IContentService contentService;
 
 <vc:breadcrumb-bar breadcrumb-bar='@new BreadcrumbBarViewModel(
-	new BreadcrumbViewModel()
-	{
-		Controller = "PortfolioItem",
-		Action = "Index",
-		Text = Model.Project.ProjectCategoryModel?.DisplayName ?? "",
-		RouteParameters = new Dictionary<string, string>()
-		{
-			["identifier"] = Model.Project.ProjectCategoryModel?.Slug ?? ""
-		}
-	},
-	new BreadcrumbViewModel()
-	{
-		Text = Model.Project.ProjectName
-	}
+  new BreadcrumbViewModel()
+  {
+    Controller = "PortfolioItem",
+    Action = "Index",
+    Text = Model.Project.ProjectCategoryModel?.DisplayName ?? "",
+    RouteParameters = new Dictionary<string, string>()
+    {
+      ["identifier"] = Model.Project.ProjectCategoryModel?.Slug ?? ""
+    }
+  },
+  new BreadcrumbViewModel()
+  {
+    Text = Model.Project.ProjectName
+  }
 )' />
 
 <section style="min-height: 80vh;">
-	<div class="container">
-	</div>
+  <div class="container">
+  </div>
 
-	<div class="container">
-		<h2>@Model.Project.ProjectName</h2>
+  <div class="container">
+    <h2>@Model.Project.ProjectName</h2>
 
-		@if (Model.Project.Links != null && Model.Project.Links.Length > 0)
-		{
-			<div class="right badge-bar badge-bar-seemore">
-				@foreach (var link in Model.Project.Links)
-				{
-					<a class="mark mark-rounded mark-@link.Icon.ToLower()" target="_blank" href="@link.Url"></a>
-				}
-			</div>
-		}
+    @if (Model.Project.Links != null && Model.Project.Links.Length > 0)
+    {
+      <div class="right badge-bar badge-bar-seemore">
+        @foreach (var link in Model.Project.Links)
+        {
+          <a class="mark mark-rounded mark-@link.Icon.ToLower()" target="_blank" href="@link.Url"></a>
+        }
+      </div>
+    }
 
-		@if (Model.Project.PageResource != null)
-		{
-			using var stream = Model.Project.PageResource.Content.OpenRead();
-			<vc:markup stream="stream" />
-		}
-	</div>
+    @if (Model.Project.PageResource != null)
+    {
+      using var stream = Model.Project.PageResource.Content.OpenRead();
+      <vc:markup stream="stream" />
+    }
+  </div>
 </section>

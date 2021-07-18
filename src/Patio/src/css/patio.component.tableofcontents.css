@@ -1,62 +1,62 @@
 
 /* Table of Contents */
 .toc-container {
-	background-color: #f6f8fa;
-	border: 1px solid var(--color-border-1);
-	display: table;
-	margin-bottom: 1em;
-	padding: 16px 32px 20px 20px;
-	width: auto;
-	font-size: 0.95rem;
+  background-color: #f6f8fa;
+  border: 1px solid var(--color-border-1);
+  display: table;
+  margin-bottom: 1em;
+  padding: 16px 32px 20px 20px;
+  width: auto;
+  font-size: 0.95rem;
 }
 
-	.toc-container a {
-		text-decoration: none;
-	}
+  .toc-container a {
+    text-decoration: none;
+  }
 
-		.toc-container a:hover .toc-text {
-			text-decoration: underline;
-		}
+    .toc-container a:hover .toc-text {
+      text-decoration: underline;
+    }
 
-	.toc-container .toc-title {
-		font-weight: 700;
-		text-align: center;
-		margin: 0;
-	}
+  .toc-container .toc-title {
+    font-weight: 700;
+    text-align: center;
+    margin: 0;
+  }
 
-	.toc-container ul {
-		padding-top: 3px;
-		list-style: outside none none !important;
-		padding-left: 1.5rem;
-		margin-bottom: 0;
-	}
+  .toc-container ul {
+    padding-top: 3px;
+    list-style: outside none none !important;
+    padding-left: 1.5rem;
+    margin-bottom: 0;
+  }
 
-		.toc-container ul li {
-			list-style: outside none none !important;
-			padding-top: 3px;
-			padding-bottom: 3px;
-		}
+    .toc-container ul li {
+      list-style: outside none none !important;
+      padding-top: 3px;
+      padding-bottom: 3px;
+    }
 
-			.toc-container ul li .toc-number {
-				color: #202122;
-				text-decoration: none;
-				min-width: 24px;
-				display: inline-block;
-				text-align: center;
-			}
+      .toc-container ul li .toc-number {
+        color: #202122;
+        text-decoration: none;
+        min-width: 24px;
+        display: inline-block;
+        text-align: center;
+      }
 
-			.toc-container ul li .toc-text {
-			}
+      .toc-container ul li .toc-text {
+      }
 
-	.toc-container > ul {
-		padding-left: 0;
-	}
+  .toc-container > ul {
+    padding-left: 0;
+  }
 
-	.toc-container ul li .toc-number {
-		color: #999999;
-	}
+  .toc-container ul li .toc-number {
+    color: #999999;
+  }
 
 .dark .toc-container {
-	background: #151515;
-	border: 1px solid #363636;
+  background: #151515;
+  border: 1px solid #363636;
 }
