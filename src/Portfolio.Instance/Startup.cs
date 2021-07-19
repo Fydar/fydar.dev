@@ -9,6 +9,7 @@ using Microsoft.Extensions.Hosting;
 using Portfolio.Instance.Utility;
 using Portfolio.Services.EmailTickets;
 using Portfolio.Site;
+using Portfolio.Site.Areas.Portfolio.Models;
 using Portfolio.Site.Services.ContactService;
 using Portfolio.Site.Services.ContentService;
 using Portfolio.Site.Services.PageMetaProvider;
@@ -43,7 +44,7 @@ namespace Portfolio.Instance
 
 			services.AddSingleton(Explorer);
 			services.AddSingleton<IContentService, LocalContentService>();
-			services.AddSingleton<IPageMetaTransformer, ProjectPageMetaTransformer>();
+			services.AddSingleton<IPageMetadataTransformer<ProjectViewModel>, ProjectViewModelPageMetadataTransformer>();
 			services.AddSingleton(new EmailReaderServiceConfiguration()
 			{
 				Bucket = "anthonymarmont.com-inbound-email"

@@ -1,8 +1,5 @@
-﻿@using Portfolio.Site.Services.PageMetaProvider;
-
-@model object;
-
-@inject IEnumerable<IPageMetaTransformer> pageMetaTransformers;
+﻿@using Portfolio.Site.Areas.Portfolio.Controllers
+@using Portfolio.Site.Services.PageMetaProvider;
 
 <!DOCTYPE html>
 <html lang="en">
@@ -23,24 +20,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
-  @{
-    var pageMeta = new PageMetaCollection();
-    pageMeta.SetModel(Model.GetType(), Model);
-
-    foreach (var transfomer in pageMetaTransformers)
-    {
-      foreach (var meta in transfomer.TransformMetaItems(pageMeta))
-      {
-        <meta name="@meta.Name" @foreach (var kvp in meta.Values) { <text>
-              @kvp.Key="@kvp.Value"
-              </text> } />
-      }
-    }
-  }
+  @ViewData.GetPageMetadata()
 
   <link rel="stylesheet" href="~/css/main.css" asp-append-version="true" />
   <link rel="stylesheet" href="~/patio/patio.min.css" asp-append-version="true" />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Quattrocento+Sans">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Quattrocento+Sans" />
 </head>
 <body class="light">
 

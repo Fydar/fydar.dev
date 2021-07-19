@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Portfolio.Site.Areas.Portfolio.Models;
 using Portfolio.Site.Services.ContentService;
+using Portfolio.Site.Services.PageMetaProvider;
 using Portfolio.Site.ViewModels;
 
 namespace Portfolio.Site.Areas.Portfolio.Controllers
@@ -11,10 +12,14 @@ namespace Portfolio.Site.Areas.Portfolio.Controllers
 	public class PortfolioItemController : Controller
 	{
 		private readonly IContentService contentService;
+		private readonly IPageMetadataTransformer<ProjectViewModel> pageMetadataTransformer;
 
-		public PortfolioItemController(IContentService contentService)
+		public PortfolioItemController(
+			IContentService contentService,
+			IPageMetadataTransformer<ProjectViewModel> pageMetadataTransformer)
 		{
 			this.contentService = contentService;
+			this.pageMetadataTransformer = pageMetadataTransformer;
 		}
 
 		[HttpGet]
@@ -23,19 +28,26 @@ namespace Portfolio.Site.Areas.Portfolio.Controllers
 			var category = contentService.GetCategory(identifier);
 			if (category != null)
 			{
-				return View("Category", new CategoryViewModel(category));
+				var categoryViewModel = new CategoryViewModel(category);
+
+				return View("Category", categoryViewModel);
 			}
 
 			var project = contentService.GetProject(identifier);
 			if (project != null)
 			{
-				return View("Project", new ProjectViewModel(project));
+				var projectViewModel = new ProjectViewModel(project);
+				ViewData.SetPageMetadata(pageMetadataTransformer.TransformMetadata(projectViewModel));
+
+				return View("Project", projectViewModel);
 			}
 
 			var discipline = contentService.GetDiscipline(identifier);
 			if (discipline != null)
 			{
-				return View("Discipline", new DisciplineViewModel(discipline));
+				var disciplineViewModel = new DisciplineViewModel(discipline);
+
+				return View("Discipline", disciplineViewModel);
 			}
 
 			return NotFound();

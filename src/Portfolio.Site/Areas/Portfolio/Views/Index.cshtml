@@ -37,8 +37,9 @@
       {
         <div class="form-group" style="text-align: right;">
           <a class="form-btn form-btn-readmore"
-             asp-controller="Portfolio"
-             asp-action="Item"
+             asp-area="Portfolio"
+             asp-controller="PortfolioItem"
+             asp-action="Index"
              asp-route-identifier="@category.Slug">
             view <b>@missing</b> more projects →
           </a>
