@@ -10,7 +10,7 @@ namespace Portfolio.Instance.Utility
 	/// An <see cref="ITextFormatter"/> that writes events in a compact JSON format, for consumption in environments 
 	/// without message template support. Message templates are rendered into text and a hashed event id is included.
 	/// </summary>
-	public class JsonLogFormatter : ITextFormatter
+	public class JsonLogTextFormatter : ITextFormatter
 	{
 		private readonly JsonValueFormatter valueFormatter;
 
@@ -19,7 +19,7 @@ namespace Portfolio.Instance.Utility
 		/// <see cref="LogEventPropertyValue"/>s on the event.
 		/// </summary>
 		/// <param name="valueFormatter">A value formatter, or null.</param>
-		public JsonLogFormatter(JsonValueFormatter? valueFormatter = null)
+		public JsonLogTextFormatter(JsonValueFormatter? valueFormatter = null)
 		{
 			this.valueFormatter = valueFormatter ?? new JsonValueFormatter(typeTagName: "$type");
 		}

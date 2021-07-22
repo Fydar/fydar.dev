@@ -67,7 +67,8 @@ namespace Portfolio.Site
 
 		private static IApplicationBuilder UseStaticContentImages(this IApplicationBuilder applicationBuilder, IExplorer explorer)
 		{
-			var tempDirectory = new DirectoryInfo("wwwimg");
+			var assemblyDirectory = new FileInfo(Assembly.GetExecutingAssembly().Location).Directory;
+			var tempDirectory = new DirectoryInfo(Path.Combine(assemblyDirectory?.FullName ?? "", "wwwimg"));
 
 			tempDirectory.Create();
 

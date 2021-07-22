@@ -9,40 +9,43 @@ using Serilog;
 using Serilog.Events;
 using System;
 using System.Net;
+using System.Threading.Tasks;
 
 namespace Portfolio.Instance
 {
 	public class Program
 	{
-		public static int Main(string[] args)
+		public static async Task<int> Main(string[] args)
 		{
 			var loggerConfiguration = new LoggerConfiguration()
 				.MinimumLevel.Debug()
 				.MinimumLevel.Override("Microsoft", LogEventLevel.Warning)
 				.MinimumLevel.Override("Microsoft.AspNetCore.Server.Kestrel", LogEventLevel.Error)
 				.Enrich.FromLogContext()
-				.WriteTo.Sink(new ColoredConsoleSink());
+				.WriteTo.Sink(new ColoredConsoleLogEventSink());
 
 			var logger = loggerConfiguration.CreateLogger();
 			Log.Logger = logger;
 
 			try
 			{
-				var host = CreateHostBuilder(args).Build();
+				var host = CreateHostBuilder(args)
+					.Build();
+
 				host.Start();
 
 				var serverFeatures = host.Services.GetRequiredService<IServer>().Features;
 				var addresses = serverFeatures.Get<IServerAddressesFeature>().Addresses;
 
-				Log.Information($"Web host started listening on {string.Join(", ", addresses)}");
+				Log.Information($"Web host started listening on '{string.Join("', '", addresses)}'.");
 
-				host.WaitForShutdown();
+				await host.WaitForShutdownAsync();
 
 				return 0;
 			}
 			catch (Exception exception)
 			{
-				Log.Fatal(exception, "Host terminated unexpectedly");
+				Log.Fatal(exception, "Host terminated unexpectedly.");
 				return 1;
 			}
 			finally
@@ -56,8 +59,8 @@ namespace Portfolio.Instance
 			return Host.CreateDefaultBuilder(args)
 				.ConfigureHostConfiguration(config =>
 				{
-					config.AddCommandLine(args);
 					config.AddEnvironmentVariables("CONFIG_");
+					config.AddCommandLine(args);
 				})
 				.ConfigureWebHostDefaults(webBuilder =>
 				{

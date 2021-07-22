@@ -23,13 +23,13 @@ namespace Portfolio.Instance
 	{
 		public IConfiguration Configuration { get; }
 		public IWebHostEnvironment Environment { get; }
-		public IExplorer Explorer { get; }
 
-		public Startup(IConfiguration configuration, IWebHostEnvironment environment)
+		public Startup(
+			IConfiguration configuration,
+			IWebHostEnvironment environment)
 		{
 			Configuration = configuration;
 			Environment = environment;
-			Explorer = PackageExplorer.LoadFromDirectoryAsync(ContentDirectory.Path).Result;
 		}
 
 		public void ConfigureServices(IServiceCollection services)
@@ -42,7 +42,9 @@ namespace Portfolio.Instance
 				options.EnableEndpointRouting = false;
 			});
 
-			services.AddSingleton(Explorer);
+			var explorer = PackageExplorer.LoadFromDirectoryAsync(ContentDirectory.Path).Result;
+			services.AddSingleton(explorer);
+
 			services.AddSingleton<IContentService, LocalContentService>();
 			services.AddSingleton<IPageMetadataTransformer<ProjectViewModel>, ProjectViewModelPageMetadataTransformer>();
 			services.AddSingleton(new EmailReaderServiceConfiguration()
