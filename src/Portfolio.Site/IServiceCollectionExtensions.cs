@@ -1,5 +1,4 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
-using Portfolio.Site.Areas.Portfolio.Controllers;
 using System.Reflection;
 
 namespace Portfolio.Site
@@ -13,11 +12,9 @@ namespace Portfolio.Site
 			collection
 				.AddControllers(options =>
 				{
-					options.Conventions.Add(new ControllerNameAttributeConvention());
 				})
 				.AddViewOptions(options =>
 				{
-
 				})
 				.AddApplicationPart(sampleAssembly)
 				.AddRazorOptions(options =>

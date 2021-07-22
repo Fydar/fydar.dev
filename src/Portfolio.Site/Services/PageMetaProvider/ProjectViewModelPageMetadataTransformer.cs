@@ -1,5 +1,4 @@
-﻿using Portfolio.Site.Areas.Portfolio.Controllers;
-using Portfolio.Site.Areas.Portfolio.Models;
+﻿using Portfolio.Site.Areas.Portfolio.Models;
 
 namespace Portfolio.Site.Services.PageMetaProvider
 {

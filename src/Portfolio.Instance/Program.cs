@@ -9,13 +9,12 @@ using Serilog;
 using Serilog.Events;
 using System;
 using System.Net;
-using System.Threading.Tasks;
 
 namespace Portfolio.Instance
 {
 	public class Program
 	{
-		public static async Task<int> Main(string[] args)
+		public static int Main(string[] args)
 		{
 			var loggerConfiguration = new LoggerConfiguration()
 				.MinimumLevel.Debug()
@@ -39,7 +38,7 @@ namespace Portfolio.Instance
 
 				Log.Information($"Web host started listening on '{string.Join("', '", addresses)}'.");
 
-				await host.WaitForShutdownAsync();
+				host.WaitForShutdown();
 
 				return 0;
 			}

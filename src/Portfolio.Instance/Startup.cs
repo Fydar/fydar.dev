@@ -42,7 +42,7 @@ namespace Portfolio.Instance
 				options.EnableEndpointRouting = false;
 			});
 
-			var explorer = PackageExplorer.LoadFromDirectoryAsync(ContentDirectory.Path).Result;
+			IExplorer explorer = PackageExplorer.LoadFromDirectoryAsync(ContentDirectory.Path).Result;
 			services.AddSingleton(explorer);
 
 			services.AddSingleton<IContentService, LocalContentService>();

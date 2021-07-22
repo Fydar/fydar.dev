@@ -35,6 +35,7 @@ namespace Portfolio.Instance.Utility
 			this.valueFormatter = valueFormatter ?? new JsonValueFormatter(typeTagName: "$type");
 		}
 
+		/// <inheritdoc/>
 		public void Emit(LogEvent logEvent)
 		{
 			if (logEvent == null)
