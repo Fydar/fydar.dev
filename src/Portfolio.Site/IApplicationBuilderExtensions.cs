@@ -51,7 +51,6 @@ namespace Portfolio.Site
 
 				app.UseMiddleware<RequestLoggingMiddleware>();
 
-				app.UseMvc();
 				app.UseRouting();
 
 				app.UseAuthorization();

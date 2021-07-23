@@ -39,7 +39,6 @@ namespace Portfolio.Instance
 			services.AddHealthChecks();
 			services.AddMvc(options =>
 			{
-				options.EnableEndpointRouting = false;
 			});
 
 			IExplorer explorer = PackageExplorer.LoadFromDirectoryAsync(ContentDirectory.Path).Result;
