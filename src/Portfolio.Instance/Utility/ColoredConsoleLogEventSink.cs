@@ -65,7 +65,7 @@ namespace Portfolio.Instance.Utility
 				if (logEvent.Exception != null)
 				{
 					Console.ForegroundColor = ConsoleColor.DarkRed;
-					output.Write("\n");
+					output.WriteLine();
 					//output.Write(logEvent.Exception.Format());
 					WriteFormattedException(output, logEvent.Exception.Format());
 				}
@@ -75,7 +75,8 @@ namespace Portfolio.Instance.Utility
 					logEvent.Properties.TryGetValue("RequestMethod", out var requestMethod);
 
 					Console.ForegroundColor = ConsoleColor.DarkGray;
-					output.Write("\n - ");
+					output.WriteLine();
+					output.Write(" - ");
 					Console.ForegroundColor = ConsoleColor.Cyan;
 					output.Write("Request");
 					Console.ForegroundColor = ConsoleColor.DarkGray;
@@ -112,7 +113,8 @@ namespace Portfolio.Instance.Utility
 					}
 
 					Console.ForegroundColor = ConsoleColor.DarkGray;
-					output.Write("\n - ");
+					output.WriteLine();
+					output.Write(" - ");
 					Console.ForegroundColor = ConsoleColor.Cyan;
 					output.Write(name);
 					Console.ForegroundColor = ConsoleColor.DarkGray;
@@ -159,7 +161,8 @@ namespace Portfolio.Instance.Utility
 
 				}
 				Console.ResetColor();
-				output.Write("\n\n");
+				output.WriteLine();
+				output.WriteLine();
 			}
 		}
 
@@ -179,19 +182,20 @@ namespace Portfolio.Instance.Utility
 						output.Write(lineSpan.Slice(0, inIndex + 1).ToString());
 
 						Console.ForegroundColor = ConsoleColor.DarkGray;
-						output.Write("\n     ");
+						output.WriteLine();
+						output.Write("     ");
 						output.Write(lineSpan[(inIndex + 1)..].ToString());
-						output.Write("\n");
+						output.WriteLine();
 					}
 					else
 					{
 						Console.ForegroundColor = ConsoleColor.Gray;
 						output.Write(lineSpan.ToString());
-						output.Write("\n");
+						output.WriteLine();
 					}
 				}
 			}
-			output.Write("\n");
+			output.WriteLine();
 		}
 
 		private static ConsoleColor LogLevelToColor(LogEventLevel logLevel)
