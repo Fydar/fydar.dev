@@ -5,6 +5,7 @@ namespace Portfolio.Site.Areas.Contact.Models
 {
 	public class ContactSubmitRequestModel
 	{
+		[Required]
 		public string RequestId { get; set; } = string.Empty;
 
 		[DisplayName("Email")]

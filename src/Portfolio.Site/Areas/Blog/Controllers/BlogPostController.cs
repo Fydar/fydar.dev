@@ -1,9 +1,13 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
 using Portfolio.Site.Services.ContentService;
 
 namespace Portfolio.Site.Areas.Blog.Controllers
 {
+	[ApiController]
 	[Area("Blog")]
+	[Route("/blog/{identifier}")]
+	[ApiExplorerSettings(GroupName = "Blog")]
 	public class BlogPostController : Controller
 	{
 		private readonly IContentService contentService;
@@ -13,8 +17,9 @@ namespace Portfolio.Site.Areas.Blog.Controllers
 			this.contentService = contentService;
 		}
 
-		[Route("/blog/{identifier}")]
-		public IActionResult Item(string identifier)
+		[HttpGet]
+		[ProducesResponseType(StatusCodes.Status200OK)]
+		public IActionResult Index(string identifier)
 		{
 			var blogPost = contentService.GetBlogPost(identifier);
 			if (blogPost != null)

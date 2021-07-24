@@ -8,6 +8,7 @@ namespace Portfolio.Site.Areas.Ticket.Controllers
 	[ApiController]
 	[Area("Ticket")]
 	[Route("/ticket")]
+	[ApiExplorerSettings(GroupName = "Ticket")]
 	public class TicketController : Controller
 	{
 		private readonly ILogger<TicketController> logger;

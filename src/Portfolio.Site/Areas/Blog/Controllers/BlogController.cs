@@ -1,10 +1,14 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
 using Portfolio.Site.Areas.Portfolio.Models;
 using Portfolio.Site.Services.ContentService;
 
 namespace Portfolio.Site.Areas.Blog.Controllers
 {
+	[ApiController]
 	[Area("Blog")]
+	[Route("/blog")]
+	[ApiExplorerSettings(GroupName = "Blog")]
 	public class BlogController : Controller
 	{
 		private readonly IContentService contentService;
@@ -14,7 +18,8 @@ namespace Portfolio.Site.Areas.Blog.Controllers
 			this.contentService = contentService;
 		}
 
-		[Route("/blog")]
+		[HttpGet]
+		[ProducesResponseType(StatusCodes.Status200OK)]
 		public IActionResult Index()
 		{
 			return View("Index", new PortfolioIndexViewModel(contentService.Projects));

@@ -13,6 +13,7 @@ namespace Portfolio.Site.Areas.Contact.Controllers
 	[ApiController]
 	[Area("Contact")]
 	[Route("/contact")]
+	[ApiExplorerSettings(GroupName = "Contact")]
 	public class ContactSubmitController : Controller
 	{
 		private readonly ILogger<ContactSubmitController> logger;

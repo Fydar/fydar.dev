@@ -6,15 +6,18 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.OpenApi.Models;
 using Portfolio.Instance.Utility;
 using Portfolio.Services.EmailTickets;
 using Portfolio.Site;
+using Portfolio.Site.Areas.Blog.Controllers;
 using Portfolio.Site.Areas.Portfolio.Models;
 using Portfolio.Site.Services.ContactService;
 using Portfolio.Site.Services.ContentService;
 using Portfolio.Site.Services.PageMetaProvider;
 using Portfolio.Site.Services.ViewToStringRenderer;
 using RPGCore.Packages;
+using System;
 using System.IO;
 
 namespace Portfolio.Instance
@@ -34,6 +37,35 @@ namespace Portfolio.Instance
 
 		public void ConfigureServices(IServiceCollection services)
 		{
+			services.AddSwaggerGen(options =>
+			{
+				options.SwaggerDoc("v1", new OpenApiInfo
+				{
+					Title = "Web Interface",
+					Version = "v1",
+					Description = "A user-facing web site for my portfolio."
+				});
+
+				options.OrderActionsBy(apiDescription => apiDescription.RelativePath);
+
+				options.TagActionsBy(apiDescription =>
+				{
+					return new string[] {
+						apiDescription.GroupName ?? "default"
+					};
+				});
+
+				options.DocInclusionPredicate((docName, apiDesc) =>
+				{
+					return true;
+				});
+
+				// Set the comments path for the Swagger JSON and UI.
+				string xmlFile = $"{typeof(BlogController).Assembly.GetName().Name}.xml";
+				string xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
+				options.IncludeXmlComments(xmlPath);
+			});
+
 			services.AddResponseCompression();
 
 			services.AddHealthChecks();
@@ -78,6 +110,12 @@ namespace Portfolio.Instance
 
 		public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
 		{
+			app.UseSwagger();
+			app.UseSwaggerUI(options =>
+			{
+				options.SwaggerEndpoint("/swagger/v1/swagger.json", "v1");
+			});
+
 			app.UseHealthChecks("/api/health");
 
 			app.UsePortfolioSite("");

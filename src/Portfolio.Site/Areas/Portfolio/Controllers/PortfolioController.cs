@@ -9,6 +9,7 @@ namespace Portfolio.Site.Areas.Portfolio.Controllers
 	[Area("Portfolio")]
 	[Route("/")]
 	[Route("/portfolio")]
+	[ApiExplorerSettings(GroupName = "Portfolio")]
 	public class PortfolioController : Controller
 	{
 		private readonly IContentService contentService;

@@ -8,6 +8,7 @@ namespace Portfolio.Site.Areas.Resume.Controllers
 	[ApiController]
 	[Area("Resume")]
 	[Route("/resume")]
+	[ApiExplorerSettings(GroupName = "Resume")]
 	public class ResumeController : Controller
 	{
 		private readonly IContentService contentService;

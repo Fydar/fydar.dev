@@ -6,19 +6,19 @@ namespace Portfolio.Site.Areas.Error.Controllers
 {
 	[ApiController]
 	[Area("Error")]
-	[Route("error/{code:int}")]
+	[Route("error/404")]
 	[ApiExplorerSettings(GroupName = "Error")]
-	public class ErrorController : Controller
+	public class Error404Controller : Controller
 	{
-		public ErrorController()
+		public Error404Controller()
 		{
 		}
 
 		[HttpGet]
 		[ProducesResponseType(StatusCodes.Status200OK)]
-		public IActionResult Index(int code)
+		public IActionResult Index()
 		{
-			return View("ServerError", new ErrorViewModel()
+			return View("Error404", new ErrorViewModel()
 			{
 
 			});
