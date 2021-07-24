@@ -14,6 +14,11 @@ namespace Portfolio.Site.Areas.Error.Controllers
 		{
 		}
 
+		/// <summary>
+		/// The website page for arbitrary errors.
+		/// </summary>
+		/// <returns>A view representing the page.</returns>
+		/// <response code="200">The arbitrary error page.</response>
 		[HttpGet]
 		[ProducesResponseType(StatusCodes.Status200OK)]
 		public IActionResult Index(int code)

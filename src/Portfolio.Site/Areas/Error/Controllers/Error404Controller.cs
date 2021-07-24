@@ -14,6 +14,11 @@ namespace Portfolio.Site.Areas.Error.Controllers
 		{
 		}
 
+		/// <summary>
+		/// The website page for 404 errors.
+		/// </summary>
+		/// <returns>A view representing the page.</returns>
+		/// <response code="200">The 404 error page.</response>
 		[HttpGet]
 		[ProducesResponseType(StatusCodes.Status200OK)]
 		public IActionResult Index()

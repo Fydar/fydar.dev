@@ -23,6 +23,12 @@ namespace Portfolio.Site.Areas.Portfolio.Controllers
 			this.pageMetadataTransformer = pageMetadataTransformer;
 		}
 
+		/// <summary>
+		/// The website page for a portfolio item.
+		/// </summary>
+		/// <returns>A view representing the page.</returns>
+		/// <response code="200">A portfolio item page.</response>
+		/// <response code="404">When no portfolio item with the identifier could be found.</response>
 		[HttpGet]
 		public IActionResult Index([FromRoute] string identifier)
 		{

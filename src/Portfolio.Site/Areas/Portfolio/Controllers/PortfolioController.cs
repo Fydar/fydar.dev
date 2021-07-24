@@ -19,6 +19,11 @@ namespace Portfolio.Site.Areas.Portfolio.Controllers
 			this.contentService = contentService;
 		}
 
+		/// <summary>
+		/// The website page for a portfolio.
+		/// </summary>
+		/// <returns>A view representing the page.</returns>
+		/// <response code="200">The portfolio page.</response>
 		[HttpGet]
 		[ProducesResponseType(StatusCodes.Status200OK)]
 		public IActionResult Index()

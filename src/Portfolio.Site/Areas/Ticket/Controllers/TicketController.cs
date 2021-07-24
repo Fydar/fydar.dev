@@ -22,6 +22,11 @@ namespace Portfolio.Site.Areas.Ticket.Controllers
 			this.emailReader = emailReader;
 		}
 
+		/// <summary>
+		/// The website page for tickets.
+		/// </summary>
+		/// <returns>A view representing the page.</returns>
+		/// <response code="200">The tickets page.</response>
 		[HttpGet]
 		public IActionResult Index()
 		{

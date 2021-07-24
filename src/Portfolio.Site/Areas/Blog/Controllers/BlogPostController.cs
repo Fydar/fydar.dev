@@ -17,6 +17,12 @@ namespace Portfolio.Site.Areas.Blog.Controllers
 			this.contentService = contentService;
 		}
 
+		/// <summary>
+		/// The website page for a blog post.
+		/// </summary>
+		/// <returns>A view representing the blog post page.</returns>
+		/// <response code="200">A blog post page.</response>
+		/// <response code="404">When no blog post with the identifier could be found.</response>
 		[HttpGet]
 		[ProducesResponseType(StatusCodes.Status200OK)]
 		public IActionResult Index(string identifier)

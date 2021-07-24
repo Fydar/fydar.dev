@@ -27,6 +27,12 @@ namespace Portfolio.Site.Areas.Contact.Controllers
 			this.contactSubmitSinks = contactSubmitSinks.ToArray();
 		}
 
+		/// <summary>
+		/// Submits a contact form.
+		/// </summary>
+		/// <param name="requestModel">A request model representing the contact form.</param>
+		/// <returns>An updated page.</returns>
+		/// <response code="200">An updated representation of the page.</response>
 		[HttpPost]
 		[ProducesResponseType(StatusCodes.Status200OK)]
 		public async Task<IActionResult> Index([FromForm] ContactSubmitRequestModel requestModel)

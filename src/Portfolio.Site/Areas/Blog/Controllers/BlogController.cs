@@ -18,6 +18,11 @@ namespace Portfolio.Site.Areas.Blog.Controllers
 			this.contentService = contentService;
 		}
 
+		/// <summary>
+		/// The website page for blog posts.
+		/// </summary>
+		/// <returns>A view representing the page.</returns>
+		/// <response code="200">The blog posts page.</response>
 		[HttpGet]
 		[ProducesResponseType(StatusCodes.Status200OK)]
 		public IActionResult Index()

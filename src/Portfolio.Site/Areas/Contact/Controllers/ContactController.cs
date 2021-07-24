@@ -10,6 +10,11 @@ namespace Portfolio.Site.Areas.Contact.Controllers
 	[ApiExplorerSettings(GroupName = "Contact")]
 	public class ContactController : Controller
 	{
+		/// <summary>
+		/// The website contact page root.
+		/// </summary>
+		/// <returns>The contact page.</returns>
+		/// <response code="200">The contact page.</response>
 		[HttpGet]
 		[ProducesResponseType(StatusCodes.Status200OK)]
 		public IActionResult Index()

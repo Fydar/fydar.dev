@@ -23,6 +23,12 @@ namespace Portfolio.Site.Areas.Ticket.Controllers
 			this.emailReader = emailReader;
 		}
 
+		/// <summary>
+		/// The website page for a ticket.
+		/// </summary>
+		/// <returns>A view representing the page.</returns>
+		/// <response code="200">A ticket page.</response>
+		/// <response code="404">When no ticket the <paramref name="ticketId"/> could be found.</response>
 		[HttpGet]
 		public async Task<IActionResult> Ticket(string ticketId)
 		{
