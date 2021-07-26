@@ -7,13 +7,14 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
+using Portfolio.Api;
 using Portfolio.Instance.Utility;
+using Portfolio.Services.Content;
 using Portfolio.Services.EmailTickets;
 using Portfolio.Site;
 using Portfolio.Site.Areas.Blog.Controllers;
 using Portfolio.Site.Areas.Portfolio.Models;
 using Portfolio.Site.Services.ContactService;
-using Portfolio.Site.Services.ContentService;
 using Portfolio.Site.Services.PageMetaProvider;
 using Portfolio.Site.Services.ViewToStringRenderer;
 using RPGCore.Packages;
@@ -119,6 +120,8 @@ namespace Portfolio.Instance
 			app.UseHealthChecks("/api/health");
 
 			app.UsePortfolioSite("");
+
+			app.UsePortfolioApi("/api");
 		}
 	}
 }

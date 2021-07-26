@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Portfolio.Services.Content;
 using Portfolio.Site.Areas.Resume.Models;
-using Portfolio.Site.Services.ContentService;
 
 namespace Portfolio.Site.Areas.Resume.Controllers
 {

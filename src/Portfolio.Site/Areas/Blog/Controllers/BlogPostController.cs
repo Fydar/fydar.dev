@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Portfolio.Site.Services.ContentService;
+using Portfolio.Services.Content;
 
 namespace Portfolio.Site.Areas.Blog.Controllers
 {

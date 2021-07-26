@@ -3,7 +3,7 @@ using Portfolio.Models.Blog;
 using RPGCore.Packages;
 using System.Collections.Generic;
 
-namespace Portfolio.Site.Services.ContentService
+namespace Portfolio.Api.Services.ContentService
 {
 	public interface IContentService
 	{

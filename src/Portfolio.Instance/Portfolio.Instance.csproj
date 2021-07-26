@@ -27,6 +27,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\..\RPGCore\src\libs\RPGCore.Packages\RPGCore.Packages.csproj" />
+    <ProjectReference Include="..\Portfolio.Api\Portfolio.Api.csproj" />
     <ProjectReference Include="..\Portfolio.EmailReceive.Tests\Portfolio.EmailReceive.Tests.csproj" />
     <ProjectReference Include="..\Portfolio.Models\Portfolio.Models.csproj" />
     <ProjectReference Include="..\Portfolio.Services.EmailTickets\Portfolio.Services.EmailTickets.csproj" />

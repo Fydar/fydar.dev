@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.29521.150
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31512.422
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{5C8A9A56-5DD6-4A0D-AB74-4487EB729ADF}"
 	ProjectSection(SolutionItems) = preProject
@@ -46,6 +46,10 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RPGCore.Data", "..\..\RPGCore\src\libs\RPGCore.Data\RPGCore.Data.csproj", "{A2D964FF-7954-42DA-AAAC-A5823B1C0D11}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RPGCore.Data.Polymorphic", "..\..\RPGCore\src\libs\RPGCore.Data.Polymorphic\RPGCore.Data.Polymorphic.csproj", "{7B3AFA34-292C-4E08-96FC-E84CB4738E51}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Portfolio.Api", "Portfolio.Api\Portfolio.Api.csproj", "{CDF7C211-3EBA-4B47-B2C0-461F08AE814E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Portfolio.Services.Content", "Portfolio.Services.Content\Portfolio.Services.Content.csproj", "{46D696DD-83A4-47D4-A81B-041B7735889F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -113,6 +117,14 @@ Global
 		{7B3AFA34-292C-4E08-96FC-E84CB4738E51}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7B3AFA34-292C-4E08-96FC-E84CB4738E51}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7B3AFA34-292C-4E08-96FC-E84CB4738E51}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CDF7C211-3EBA-4B47-B2C0-461F08AE814E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CDF7C211-3EBA-4B47-B2C0-461F08AE814E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CDF7C211-3EBA-4B47-B2C0-461F08AE814E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CDF7C211-3EBA-4B47-B2C0-461F08AE814E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{46D696DD-83A4-47D4-A81B-041B7735889F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{46D696DD-83A4-47D4-A81B-041B7735889F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{46D696DD-83A4-47D4-A81B-041B7735889F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{46D696DD-83A4-47D4-A81B-041B7735889F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

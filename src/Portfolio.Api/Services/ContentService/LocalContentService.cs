@@ -6,8 +6,9 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Text;
+using Portfolio.Api.Services.ContentService;
 
-namespace Portfolio.Site.Services.ContentService
+namespace Portfolio.Api.Services.ContentService
 {
 	public class LocalContentService : IContentService, IDisposable, ILoadedResourceCache
 	{
