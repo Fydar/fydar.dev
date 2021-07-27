@@ -1,11 +1,9 @@
 ﻿using Newtonsoft.Json;
+using Portfolio.Models.Utilities;
 using RPGCore.Data;
 using RPGCore.Packages;
 using System;
 using System.Collections.Generic;
-using Portfolio.Models.Portfolio;
-using Portfolio.Models;
-using Portfolio.Models.Utilities;
 
 namespace Portfolio.Models.Portfolio
 {

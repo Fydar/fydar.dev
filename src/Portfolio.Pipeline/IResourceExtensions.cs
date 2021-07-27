@@ -1,6 +1,5 @@
-﻿using Portfolio.Models;
+﻿using Portfolio.Models.Utilities;
 using RPGCore.Packages;
-using Portfolio.Models.Utilities;
 
 namespace Portfolio.Pipeline
 {

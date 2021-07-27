@@ -1,4 +1,3 @@
-using Portfolio.Models;
 using Portfolio.Models.Portfolio;
 
 namespace Portfolio.Site.Areas.Portfolio.Models

@@ -1,5 +1,4 @@
-﻿using Portfolio.Models;
-namespace Portfolio.Models.Utilities
+﻿namespace Portfolio.Models.Utilities
 {
 	public static class ResourceHelper
 	{

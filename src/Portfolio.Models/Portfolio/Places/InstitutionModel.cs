@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text.Json.Serialization;
-using Portfolio.Models.Portfolio.Places;
-using Portfolio.Models;
 
 namespace Portfolio.Models.Portfolio.Places
 {

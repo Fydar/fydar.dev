@@ -1,6 +1,4 @@
 ﻿using RPGCore.Data;
-using Portfolio.Models.Portfolio.Activities;
-using Portfolio.Models;
 
 namespace Portfolio.Models.Portfolio.Activities
 {

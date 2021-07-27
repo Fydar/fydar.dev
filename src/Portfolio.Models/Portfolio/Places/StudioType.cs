@@ -1,5 +1,4 @@
-﻿using Portfolio.Models;
-namespace Portfolio.Models.Portfolio.Places
+﻿namespace Portfolio.Models.Portfolio.Places
 {
 	public enum StudioType
 	{

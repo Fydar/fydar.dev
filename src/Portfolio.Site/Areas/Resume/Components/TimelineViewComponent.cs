@@ -1,5 +1,4 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Portfolio.Site.ViewModels;
 using Portfolio.Site.Areas.Resume.Models;
 
 namespace Portfolio.Site.Areas.Resume.Components

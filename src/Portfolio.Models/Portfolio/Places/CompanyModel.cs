@@ -1,8 +1,6 @@
 ﻿using RPGCore.Data;
 using System.Text;
 using System.Text.Json.Serialization;
-using Portfolio.Models;
-using Portfolio.Models.Portfolio.Places;
 
 namespace Portfolio.Models.Portfolio.Places
 {
