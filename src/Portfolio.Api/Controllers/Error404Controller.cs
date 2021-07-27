@@ -5,7 +5,7 @@ namespace Portfolio.Api.Controllers
 {
 	[ApiController]
 	[Area("Error")]
-	[Route("error/404")]
+	[Route("api/error/404")]
 	[ApiExplorerSettings(GroupName = "Error")]
 	public class Error404Controller : Controller
 	{
