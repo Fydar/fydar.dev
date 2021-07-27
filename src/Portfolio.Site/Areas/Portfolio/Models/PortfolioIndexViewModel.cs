@@ -1,5 +1,6 @@
 using Portfolio.Models;
 using System.Collections.Generic;
+using Portfolio.Models.Portfolio;
 
 namespace Portfolio.Site.Areas.Portfolio.Models
 {

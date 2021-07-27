@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Text;
 using System.Text.Json.Serialization;
+using Portfolio.Models.Portfolio.Places;
+using Portfolio.Models;
 
-namespace Portfolio.Models
+namespace Portfolio.Models.Portfolio.Places
 {
 	public class PlacementModel : IComparable<PlacementModel>
 	{

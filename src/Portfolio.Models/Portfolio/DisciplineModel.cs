@@ -3,8 +3,11 @@ using RPGCore.Packages;
 using System;
 using System.Collections.Generic;
 using System.Text.Json.Serialization;
+using Portfolio.Models.Portfolio;
+using Portfolio.Models;
+using Portfolio.Models.Utilities;
 
-namespace Portfolio.Models
+namespace Portfolio.Models.Portfolio
 {
 	[EditableType]
 	public class DisciplineModel : ILoadResourceCallback, IComparable<DisciplineModel>

@@ -1,6 +1,7 @@
 ﻿using RPGCore.Packages;
+using Portfolio.Models;
 
-namespace Portfolio.Models
+namespace Portfolio.Models.Utilities
 {
 	public interface ILoadedResourceCache
 	{

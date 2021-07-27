@@ -2,6 +2,8 @@
 using Portfolio.Models.Blog;
 using RPGCore.Packages;
 using System.Collections.Generic;
+using Portfolio.Models.Portfolio.Places;
+using Portfolio.Models.Portfolio;
 
 namespace Portfolio.Services.Content
 {

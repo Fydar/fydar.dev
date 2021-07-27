@@ -1,6 +1,6 @@
-using Portfolio.Models;
+using Portfolio.Models.Portfolio;
 
-namespace Portfolio.Site.ViewModels
+namespace Portfolio.Site.Areas.Portfolio.Models
 {
 	public class DisciplineViewModel
 	{

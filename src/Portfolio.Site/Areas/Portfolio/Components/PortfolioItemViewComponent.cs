@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Portfolio.Models;
+using Portfolio.Models.Portfolio;
 
-namespace Portfolio.Site.Components.PortfolioItem
+namespace Portfolio.Site.Areas.Portfolio.Components
 {
 	[ViewComponent(Name = "PortfolioItem")]
 	public class PortfolioItemViewComponent : ViewComponent

@@ -2,12 +2,11 @@
 @using Portfolio.Site.Areas.Portfolio.Models;
 
 @model ProjectViewModel
+
 @{
   ViewData["Title"] = Model.Project.ProjectName;
   ViewData["FeaturedImage"] = Model.Project.FeaturedImage;
 }
-
-@inject IContentService contentService;
 
 <vc:breadcrumb-bar breadcrumb-bar='@new BreadcrumbBarViewModel(
   new BreadcrumbViewModel()

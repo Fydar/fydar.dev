@@ -1,6 +1,8 @@
 ﻿using System;
+using Portfolio.Models.Portfolio.Activities;
+using Portfolio.Models;
 
-namespace Portfolio.Models
+namespace Portfolio.Models.Portfolio.Activities
 {
 	public abstract class ActivityModel : IComparable<ActivityModel>
 	{

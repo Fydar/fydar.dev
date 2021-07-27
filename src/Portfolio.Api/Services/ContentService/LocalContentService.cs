@@ -7,6 +7,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Text;
 using Portfolio.Api.Services.ContentService;
+using Portfolio.Models.Portfolio.Places;
+using Portfolio.Models.Portfolio;
+using Portfolio.Models.Utilities;
 
 namespace Portfolio.Api.Services.ContentService
 {

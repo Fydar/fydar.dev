@@ -1,29 +1,12 @@
-﻿using RPGCore.Data;
+﻿using Portfolio.Models.Utilities;
+using RPGCore.Data;
 using RPGCore.Packages;
 using System;
 using System.Linq;
 using System.Text.Json.Serialization;
 
-namespace Portfolio.Models
+namespace Portfolio.Models.Portfolio
 {
-	[EditableType]
-	public struct ExternalLinkModel
-	{
-		public string SiteName { get; set; }
-		public string Url { get; set; }
-		public string Icon { get; set; }
-	}
-
-	[EditableType]
-	public struct BadgeEntry
-	{
-		public string Content { get; set; }
-		public string Url { get; set; }
-		public string Tooltip { get; set; }
-		public string Icon { get; set; }
-		public bool DisplayOnHomepage { get; set; }
-	}
-
 	[EditableType]
 	public class ProjectModel : ILoadResourceCallback, IComparable<ProjectModel>
 	{

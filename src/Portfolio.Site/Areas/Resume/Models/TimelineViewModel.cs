@@ -1,7 +1,9 @@
 using Portfolio.Models;
 using System.Collections.Generic;
+using Portfolio.Models.Portfolio.Places;
+using Portfolio.Site.ViewModels;
 
-namespace Portfolio.Site.ViewModels
+namespace Portfolio.Site.Areas.Resume.Models
 {
 	public class TimelineViewModel
 	{

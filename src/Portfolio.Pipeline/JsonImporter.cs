@@ -8,6 +8,8 @@ using RPGCore.Projects.Pipeline;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
+using Portfolio.Models.Portfolio.Places;
+using Portfolio.Models.Portfolio;
 
 namespace Portfolio.Pipeline
 {

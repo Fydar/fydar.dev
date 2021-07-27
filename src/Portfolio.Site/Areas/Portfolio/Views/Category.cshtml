@@ -1,12 +1,12 @@
 ﻿@using Portfolio.Services.Content;
+@using Portfolio.Models.Portfolio;
 @using Portfolio.Site.Areas.Portfolio.Models;
 
 @model CategoryViewModel
+
 @{
   ViewData["Title"] = "Portfolio";
 }
-
-@inject IContentService contentService;
 
 <vc:breadcrumb-bar breadcrumb-bar='new BreadcrumbBarViewModel(
   new BreadcrumbViewModel()

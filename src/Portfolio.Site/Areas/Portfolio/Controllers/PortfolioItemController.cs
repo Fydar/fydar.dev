@@ -2,7 +2,6 @@
 using Portfolio.Services.Content;
 using Portfolio.Site.Areas.Portfolio.Models;
 using Portfolio.Site.Services.PageMetaProvider;
-using Portfolio.Site.ViewModels;
 
 namespace Portfolio.Site.Areas.Portfolio.Controllers
 {
