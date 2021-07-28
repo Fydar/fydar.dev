@@ -200,7 +200,7 @@ blockquote {
     color: var(--color-grey-6);
     font-size: 12rem;
     transform: translate(-0.25rem, -3rem);
-    font-family: 'Quattrocento Sans', Helvetica, sans-serif;
+    font-family: Helvetica, sans-serif;
   }
 
 
