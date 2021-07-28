@@ -1,4 +1,5 @@
-﻿using System.Text.Json.Serialization;
+﻿using System.ComponentModel.DataAnnotations;
+using System.Text.Json.Serialization;
 
 namespace Portfolio.Api.Models
 {
@@ -21,18 +22,21 @@ namespace Portfolio.Api.Models
 		/// <item><c>website</c></item>
 		/// </list>
 		/// </remarks>
+		[Required]
 		[JsonPropertyName("site")]
 		public string Site { get; set; } = string.Empty;
 
 		/// <summary>
 		/// How the link should be displayed as text.
 		/// </summary>
+		[Required]
 		[JsonPropertyName("display")]
 		public string Display { get; set; } = string.Empty;
 
 		/// <summary>
 		/// The url of the website that this link directs to.
 		/// </summary>
+		[Required]
 		[JsonPropertyName("url")]
 		public string Url { get; set; } = string.Empty;
 	}

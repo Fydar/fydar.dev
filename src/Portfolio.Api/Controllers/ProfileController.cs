@@ -4,6 +4,9 @@ using Portfolio.Api.Models;
 
 namespace Portfolio.Api.Controllers
 {
+	/// <summary>
+	/// A controller for the /api/profile endpoint that provides the consumer with profile details.
+	/// </summary>
 	[ApiController]
 	[Area("Profile")]
 	[Route("/api/profile")]
@@ -16,7 +19,7 @@ namespace Portfolio.Api.Controllers
 		/// <returns>A model representing the user profile.</returns>
 		/// <response code="200">A model representing the user profile.</response>
 		[HttpGet]
-		[ProducesResponseType(StatusCodes.Status200OK)]
+		[ProducesResponseType(typeof(ProfileModel), StatusCodes.Status200OK)]
 		public IActionResult Index()
 		{
 			var profile = new ProfileModel()
