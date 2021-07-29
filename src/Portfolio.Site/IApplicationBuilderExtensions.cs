@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.FileProviders;
 using Microsoft.Extensions.Hosting;
+using Microsoft.Net.Http.Headers;
 using RPGCore.Packages;
 using System;
 using System.IO;
@@ -14,6 +15,9 @@ namespace Portfolio.Site
 {
 	public static class IApplicationBuilderExtensions
 	{
+
+		private const int cacheTTL = 60 * 60 * 3;
+
 		public static IApplicationBuilder UsePortfolioSite(this IApplicationBuilder app, PathString path)
 		{
 			return app.Map(path, map =>
@@ -39,13 +43,23 @@ namespace Portfolio.Site
 					app.UseStatusCodePagesWithReExecute($"{path}/error/{0}");
 				}
 
-				app.UseStaticFiles();
+				app.UseStaticFiles(new StaticFileOptions()
+				{
+					OnPrepareResponse = ctx =>
+					{
+						ctx.Context.Response.Headers[HeaderNames.CacheControl] = $"public,max-age={cacheTTL}";
+					}
+				});
 
 				var assemblyDirectory = new FileInfo(Assembly.GetExecutingAssembly().Location).Directory;
 
 				app.UseStaticFiles(new StaticFileOptions()
 				{
 					FileProvider = new PhysicalFileProvider(Path.Combine(assemblyDirectory?.FullName ?? "", "wwwroot")),
+					OnPrepareResponse = ctx =>
+					{
+						ctx.Context.Response.Headers[HeaderNames.CacheControl] = $"public,max-age={cacheTTL}";
+					}
 				});
 				app.UseStaticContentImages(explorer);
 
@@ -75,6 +89,10 @@ namespace Portfolio.Site
 			{
 				FileProvider = new PhysicalFileProvider(tempDirectory.FullName),
 				RequestPath = "/img",
+				OnPrepareResponse = ctx =>
+				{
+					ctx.Context.Response.Headers[HeaderNames.CacheControl] = $"public,max-age={cacheTTL}";
+				}
 			});
 
 			var imageDirectory = explorer.RootDirectory.Directories.First(d => d.Name == "img");
