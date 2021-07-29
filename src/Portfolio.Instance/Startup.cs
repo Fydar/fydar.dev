@@ -3,6 +3,7 @@ using Amazon.SimpleEmail;
 using LettuceEncrypt;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.ResponseCompression;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -22,6 +23,7 @@ using RPGCore.Packages;
 using Swashbuckle.AspNetCore.SwaggerGen;
 using System;
 using System.IO;
+using System.Linq;
 
 namespace Portfolio.Instance
 {
@@ -89,7 +91,14 @@ namespace Portfolio.Instance
 				options.IncludeXmlComments(xmlPath);
 			});
 
-			services.AddResponseCompression();
+			services.AddResponseCompression(options =>
+			{
+				options.EnableForHttps = true;
+
+				options.Providers.Add<GzipCompressionProvider>();
+				options.MimeTypes = ResponseCompressionDefaults.MimeTypes
+					.Concat(new[] { "image/svg+xml" });
+			});
 
 			services.AddHealthChecks();
 			services.AddMvc(options =>
