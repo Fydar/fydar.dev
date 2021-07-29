@@ -11,7 +11,7 @@
   <ItemGroup>
     <FrameworkReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="BuildBundlerMinifier" Version="3.2.449" />
-    <PackageReference Include="AWSSDK.SimpleEmail" Version="3.7.0.43" />
+    <PackageReference Include="AWSSDK.SimpleEmail" Version="3.7.0.45" />
     <PackageReference Include="Serilog" Version="2.10.1-dev-01265" />
   </ItemGroup>
 
