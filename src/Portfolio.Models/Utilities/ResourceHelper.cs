@@ -1,10 +1,39 @@
-﻿namespace Portfolio.Models.Utilities
+﻿using System.Collections.Generic;
+
+namespace Portfolio.Models.Utilities
 {
 	public static class ResourceHelper
 	{
-		public static string TransformName(string name, string insert)
+		public static readonly Dictionary<string, ImageSettings> resolutions = new()
 		{
-			if (string.IsNullOrEmpty(insert))
+			["blur"] = new ImageSettings()
+			{
+				MaxWidth = 32,
+				ForceExtension = ".jpeg"
+			},
+			["tiny"] = new ImageSettings()
+			{
+				MaxWidth = 64
+			},
+			["thumbnail"] = new ImageSettings()
+			{
+				MaxWidth = 150
+			},
+			["medium"] = new ImageSettings()
+			{
+				MaxWidth = 400,
+				ForceExtension = ".jpeg"
+			},
+			["fullscreen"] = new ImageSettings()
+			{
+				MaxWidth = 1200,
+				ForceExtension = ".jpeg"
+			},
+		};
+
+		public static string TransformName(string name, string sizeKey)
+		{
+			if (string.IsNullOrEmpty(sizeKey))
 			{
 				return name;
 			}
@@ -15,13 +44,15 @@
 				return name;
 			}
 
-			if (insert == "blur"
-				|| insert == "medium")
+			if (resolutions.TryGetValue(sizeKey, out var settings))
 			{
-				name = name.Substring(0, name.LastIndexOf('.')) + ".jpg";
+				if (!string.IsNullOrEmpty(settings.ForceExtension))
+				{
+					name = $"{name.Substring(0, name.LastIndexOf('.'))}.{settings.ForceExtension}";
+				}
 			}
 
-			return name.Insert(name.LastIndexOf('.'), $"-{insert}");
+			return name.Insert(name.LastIndexOf('.'), $"-{sizeKey}");
 		}
 	}
 }
