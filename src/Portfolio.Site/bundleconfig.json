@@ -1,0 +1,35 @@
+[
+  {
+    "outputFileName": "wwwroot/css/main.min.css",
+    "inputFiles": [
+      "wwwroot/css/main.css"
+    ],
+    "minify": {
+      "enabled": true,
+      "commentMode": "none",
+      "adjustRelativePaths": false
+    }
+  },
+  {
+    "outputFileName": "wwwroot/css/resume.min.css",
+    "inputFiles": [
+      "wwwroot/css/resume.css"
+    ],
+    "minify": {
+      "enabled": true,
+      "commentMode": "none",
+      "adjustRelativePaths": false
+    }
+  },
+  {
+    "outputFileName": "wwwroot/js/site.min.js",
+    "inputFiles": [
+      "wwwroot/js/site.js"
+    ],
+    "minify": {
+      "enabled": true,
+      "commentMode": "none",
+      "adjustRelativePaths": false
+    }
+  }
+]
