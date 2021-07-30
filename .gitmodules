@@ -1,0 +1,3 @@
+[submodule "src/RPGCore"]
+	path = src/RPGCore
+	url = https://github.com/Fydar/RPGCore.git

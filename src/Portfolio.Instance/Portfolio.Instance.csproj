@@ -12,6 +12,15 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\RPGCore\src\libs\RPGCore.Packages\RPGCore.Packages.csproj" />
+    <ProjectReference Include="..\Portfolio.Api\Portfolio.Api.csproj" />
+    <ProjectReference Include="..\Portfolio.EmailReceive.Tests\Portfolio.EmailReceive.Tests.csproj" />
+    <ProjectReference Include="..\Portfolio.Models\Portfolio.Models.csproj" />
+    <ProjectReference Include="..\Portfolio.Services.EmailTickets\Portfolio.Services.EmailTickets.csproj" />
+    <ProjectReference Include="..\Portfolio.Site\Portfolio.Site.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="AWSSDK.Extensions.NETCore.Setup" Version="3.7.1" />
     <PackageReference Include="LettuceEncrypt" Version="1.1.1" />
     <PackageReference Include="Serilog" Version="2.10.1-dev-01265" />
@@ -23,15 +32,6 @@
     <PackageReference Include="Swashbuckle.AspNetCore.Swagger" Version="6.1.4" />
     <PackageReference Include="Swashbuckle.AspNetCore.SwaggerGen" Version="6.1.4" />
     <PackageReference Include="Swashbuckle.AspNetCore.SwaggerUI" Version="6.1.4" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\..\..\RPGCore\src\libs\RPGCore.Packages\RPGCore.Packages.csproj" />
-    <ProjectReference Include="..\Portfolio.Api\Portfolio.Api.csproj" />
-    <ProjectReference Include="..\Portfolio.EmailReceive.Tests\Portfolio.EmailReceive.Tests.csproj" />
-    <ProjectReference Include="..\Portfolio.Models\Portfolio.Models.csproj" />
-    <ProjectReference Include="..\Portfolio.Services.EmailTickets\Portfolio.Services.EmailTickets.csproj" />
-    <ProjectReference Include="..\Portfolio.Site\Portfolio.Site.csproj" />
   </ItemGroup>
 
   <ItemGroup>

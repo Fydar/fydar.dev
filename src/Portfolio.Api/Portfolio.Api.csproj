@@ -9,15 +9,15 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <FrameworkReference Include="Microsoft.AspNetCore.App" />
-    <PackageReference Include="AWSSDK.SimpleEmail" Version="3.7.0.45" />
-    <PackageReference Include="Serilog" Version="2.10.1-dev-01265" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\Portfolio.Models\Portfolio.Models.csproj" />
     <ProjectReference Include="..\Portfolio.Services.Content\Portfolio.Services.Content.csproj" />
     <ProjectReference Include="..\Portfolio.Services.EmailTickets\Portfolio.Services.EmailTickets.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <FrameworkReference Include="Microsoft.AspNetCore.App" />
+    <PackageReference Include="AWSSDK.SimpleEmail" Version="3.7.0.45" />
+    <PackageReference Include="Serilog" Version="2.10.1-dev-01265" />
   </ItemGroup>
 
 </Project>
