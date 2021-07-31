@@ -27,7 +27,7 @@ namespace Portfolio.Site.Services.PageMetaProvider
 					writer.Write(keyValuePair.Value);
 					writer.Write("\"");
 				}
-				writer.Write(" />");
+				writer.WriteLine(" />");
 			}
 		}
 

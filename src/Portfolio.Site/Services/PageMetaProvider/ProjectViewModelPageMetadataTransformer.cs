@@ -15,10 +15,10 @@ namespace Portfolio.Site.Services.PageMetaProvider
 				new PageMetadataItem(name: "author", content: "Anthony Marmont"),
 				new PageMetadataItem(property: "description", name: "description", content: model.Project.Excerpt),
 
-				new PageMetadataItem(property: "og:description", name: "description", content: model.Project.Excerpt),
+				new PageMetadataItem(property: "og:description", content: model.Project.Excerpt),
 				new PageMetadataItem(property: "og:title", name: "title", content: model.Project.ProjectName),
 				new PageMetadataItem(property: "og:image", name: "image", content: imageUrl),
-				new PageMetadataItem(property: "og:image:alt", name: "image", content: model.Project.Excerpt),
+				new PageMetadataItem(property: "og:image:alt", content: model.Project.Excerpt),
 				new PageMetadataItem(property: "og:type", content: "article"),
 				new PageMetadataItem(property: "og:url", content: url),
 
