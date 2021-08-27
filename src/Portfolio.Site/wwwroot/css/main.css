@@ -92,14 +92,8 @@ section.profile {
   position: relative;
 }
 
-  section.profile .profile-background {
+  section.profile.profile-background {
     background-color: var(--color-background-2);
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 152px;
-    right: 0;
-    z-index: -1;
   }
 
   section.profile .media-item {

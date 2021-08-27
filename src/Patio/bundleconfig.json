@@ -9,5 +9,16 @@
       "commentMode": "none",
       "adjustRelativePaths": false
     }
+  },
+  {
+    "outputFileName": "output/patio.js",
+    "inputFiles": [
+      "src/js/**/*.js"
+    ],
+    "minify": {
+      "enabled": true,
+      "commentMode": "none",
+      "adjustRelativePaths": false
+    }
   }
 ]

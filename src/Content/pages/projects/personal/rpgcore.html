@@ -1,143 +1,217 @@
-<body>
-	<div class="post-text">
+<div class="post-text">
 
-		<p>An extensive collection of <b>C# libraries</b> for producing RPGCore mechanics and more.</p>
+  <p>An extensive collection of <b>C# libraries</b> for producing RPGCore mechanics and more.</p>
 
-		<p>RPGCore started as an in-Unity framework for producing RPGCore games. Nowadays; RPGCore is a collection of .NET Standard libraries that offer specialised sets of features.</p>
+  <p>RPGCore started as an in-Unity framework for producing RPGCore games. It has since evolved into a collection of .NET Standard libraries that offer specialised sets of features.</p>
 
-		<table>
-			<thead>
-				<tr>
-					<td><b>Library</b></td>
-					<td><b>Features</b></td>
-				</tr>
-			</thead>
-			<tbody>
-				<tr>
-					<td>RPGCore.Behaviour</td>
-					<td>Provides a node-based modular behaviour system.</td>
-				</tr>
-				<tr>
-					<td>RPGCore.Packages</td>
-					<td>Provides an API for processing and bundling game content.</td>
-				</tr>
-				<tr>
-					<td>RPGCore.Inventories</td>
-					<td>Provides an API for containing and moving items.</td>
-				</tr>
-				<tr>
-					<td>RPGCore.Items</td>
-					<td>Provides items with modular behaviour.</td>
-				</tr>
-				<tr>
-					<td>RPGCore.Traits</td>
-					<td>Provides generic containers for character stats.</td>
-				</tr>
-			</tbody>
-		</table>
+  <figure>
+    <img src="/img/rpgcore-header.png" />
+    <figcaption>The Unity demo project.</figcaption>
+  </figure>
 
-		<p>These libraries are unit-tested using the NUnit test framework.</p>
+  <p>At it's core, this project features a behaviour system that's used to create modular items and buffs. The behaviour system is setup using a visual scripting tool, shown below.</p>
 
-		<h2>Libraries</h2>
+  <figure>
+    <img src="/img/rpgcore-firecape-graph.png" />
+    <figcaption>The graph editor for the 'Fire Cape' item.</figcaption>
+  </figure>
 
-		<h3>RPGCore.Packages</h3>
+  <p>Below is an item called the 'Fire Cape'. It applies the Immolate buff to it's owner, which deals damage to nearby enemies.</p>
 
-		<div class="media">
+  <p>This graph in the game is interpreted by the tooltip system, which renders the 'Fire Cape' tooltip as shown below.</p>
 
-			<div class="media-item">
-				<!-- Package Voxel -->
-				<div class="scene" style="padding: 45px 35px 45px 35px; width: 210px;"><div class="mesh anim-rotate-left fsa-relative" style="width: 138px; height: 138px; transform: rotateX(-45deg) rotateY(30deg);"><div class="element" style="transform: scale3d(1, -1, 1) translate3d(0, -138px, -69px)"><div class="surface" style="transform: rotateY(-90deg) translate3d(0px, 0, 0px)"><div class="face" style="width: 138px;height: 23px;transform: translate(0px, 0px);background-color: #83643D;"></div><div class="face" style="width: 92px;height: 23px;transform: translate(23px, 69px);background-color: #83643D;"></div><div class="face" style="width: 138px;height: 46px;transform: translate(0px, 23px);background-color: #99723F;"></div><div class="face" style="width: 23px;height: 46px;transform: translate(0px, 69px);background-color: #99723F;"></div><div class="face" style="width: 23px;height: 46px;transform: translate(115px, 69px);background-color: #99723F;"></div><div class="face" style="width: 138px;height: 23px;transform: translate(0px, 115px);background-color: #99723F;"></div><div class="face" style="width: 92px;height: 23px;transform: translate(23px, 92px);background-color: #503C24;"></div></div><div class="surface" style="transform: rotateX(90deg) translate3d(0, 0, 0px)"><div class="face" style="width: 138px;height: 138px;transform: translate(0px, 0px);background-color: #624B2E;"></div></div><div class="surface" style="transform: translate3d(0, 0, 138px)"><div class="face" style="width: 138px;height: 23px;transform: translate(0px, 0px);background-color: #A47E4D;"></div><div class="face" style="width: 23px;height: 23px;transform: translate(69px, 115px);background-color: #A47E4D;"></div><div class="face" style="width: 138px;height: 23px;transform: translate(0px, 23px);background-color: #C08F4F;"></div><div class="face" style="width: 46px;height: 92px;transform: translate(0px, 46px);background-color: #C08F4F;"></div><div class="face" style="width: 69px;height: 23px;transform: translate(69px, 46px);background-color: #C08F4F;"></div><div class="face" style="width: 46px;height: 23px;transform: translate(92px, 69px);background-color: #C08F4F;"></div><div class="face" style="width: 23px;height: 46px;transform: translate(115px, 92px);background-color: #C08F4F;"></div><div class="face" style="width: 23px;height: 23px;transform: translate(46px, 46px);background-color: #CD9F61;"></div><div class="face" style="width: 46px;height: 23px;transform: translate(46px, 69px);background-color: #CD9F61;"></div><div class="face" style="width: 69px;height: 23px;transform: translate(46px, 92px);background-color: #CD9F61;"></div><div class="face" style="width: 23px;height: 23px;transform: translate(46px, 115px);background-color: #CD9F61;"></div><div class="face" style="width: 23px;height: 23px;transform: translate(92px, 115px);background-color: #CD9F61;"></div></div><div class="surface" style="transform: rotateX(90deg) translate3d(0, 0, -138px)"><div class="face" style="width: 46px;height: 138px;transform: translate(0px, 0px);background-color: #AC8047;"></div><div class="face" style="width: 23px;height: 138px;transform: translate(115px, 0px);background-color: #AC8047;"></div><div class="face" style="width: 23px;height: 138px;transform: translate(46px, 0px);background-color: #B88F57;"></div><div class="face" style="width: 23px;height: 138px;transform: translate(92px, 0px);background-color: #B88F57;"></div><div class="face" style="width: 23px;height: 138px;transform: translate(69px, 0px);background-color: #937145;"></div></div></div></div></div>
-			</div>
+  <figure>
+    <img src="/img/rpgcore-firecape-tooltip.png" />
+    <figcaption>The graph editor for the 'Fire Cape' item.</figcaption>
+  </figure>
 
-			<div class="media-body">
+  <h2>Libraries</h2>
 
-				<p>RPGCore.Packages is an API for <b>processing and bundling game data</b>. For every resource managed by RPGCore.Packages, it provides tagging, metadata and dependencies; which work together to form a basic CMS.</p>
+  <div class="media">
 
-				<p>RPGCore.Packages is currently being used to drive the content of my portfolio website.</p>
+    <div class="media-item">
 
-				<p>RPGCore.Packages also provide a customisable service-stack for importing resources and building resources to packages.</p>
+      <div class="scene scene-screen-perspective fsa-relative" style="padding: 0 30px 0 30px; min-width: 210px; margin-top: 20px;">
+        <div class="transform anim-rotate-left">
+          <!-- Mesh 'sword-1' -->
+          <div class="mesh mesh-sword-1">
+            <style>
+              .mesh.mesh-sword-1 {
+                width: 224px;
+                height: 608px;
+                transform: translateZ(-24px);
+              }
+    
+              .mesh.mesh-sword-1 .surface {
+                background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAABACAYAAADS1n9/AAAACXBIWXMAAA7EAAAOxAGVKw4bAAAEwUlEQVR4nO2dvW4UQQyAF2mQQiKQQKK+lp40NGirq1LSco9AT0FFQc8jHC0l1VURFDTQ00XpgpBAAiVEUATNIl983vH83M7szO34a3Z2bjbhYo/ttb2LahhOT0+v9HE2m91oAlksFt21y+WSvXY+n3drVquV18/n1h8fH3fzbdveoOthLR7r74W/k+1c/2z9c7ljMwFUExktfBA8HlN8BR9jfei1NRFdAbDAXRYgVDD0Gtj9MMa7krMAwiZGBQDzD+MQN/Ds6PDq9btP3fqXTx9fvXjzPooF4K4BoWNloGthrNfo74JNOT7Xa7ZxebsMawHgD4GVwYf7d/fX44vff72vAx8PmIQdupNDlXeKPt5FdBeAhX5+ySuAKajDJtu2TohHTwHortHjkJ2EhY6tAYXb4bZ1nP/Hc7Xs3FiwFiBk52HTDP5fg/2/y3yn2OFUaUE5uGONDHIBph3rs95k6m1z3L2+jRr9+TZsKIAt4OPcgM2U2/y7SdAwxmv0uQgwHT0LYBIyxAF0ngrfpCR0Dq4xCRrGdO02FkDMux/R7wJCMFkP272+EJ9oCsC5CJ+7CFvtwKeuIGxPVgug0Sb/7OxsPcYWwLeuIGxPdgXQAn/+5FG3y1+9/bghYC1wsQBpya4AGlvGUASfliIUgMsY4tghNK8v+FGEAnBFI5qSboToZFMAfL9/fvm9N8d18AhxyaYAOPHz5c+93rwwDtldQEkC1wmn2ixOdgXAxRpT4SanMGqoHmZXABu2ih7M07mhv3M2k5aw0Ri7qaOGNu9QirYALpOL51spGG1F0QrgwqeRFNNKR1CPDQXgKnelRcZY8A/v/OqOn3/edrax0TwD15RSEztpAbCwHhwdevcu0jUryTk0ipZguZo+PucaPDnr0STkYO9m0Hr6sAp+kKVGOgtg6+HD2JpAubYx+KxJxP6tMAX49uNi4zxUgaaGMvXi2SjNbFKBuqACD1WgqbGOAbBguef7fIU/lpL8ryNcj31+LxV4qAJNDWMQiHdJyB+I3kWkvnvQArd1DFGl0Ocfvl7PgwLV/PSwUQHwLindR9o6hkxRP+4tpOc1YlQAvOu38ZGpI/8hUGEvK285MyoA93yfD/huIGfyCOIY3XBKm02Fa4wKMIV2bHBdtUf5LowKMIV2bBB87VG+CzYVPETwJdQNQPAHe2IBbHQKYKqHuzp18FzIq9cwqZo6NBDHiP+3o2zCgc9MQim9hAqxy2Ihj5TZUPQtWQC8QQvGNgtQIiJ8PzoX4NrhoRYgNAYwtYbFQITvRnFNFHTeFRMAoX12OA5o21YENjJeDSE0Tqixf36qeCkAjRNwfBAD2fn5UFwVjM7n6sCtuVI3BspmyuEznBUcWyAi/LQomymHz3A0LQKZFr1MIB3roz7HTRRjKQFU8mpv3ExJ5wJOTk42Jk0ZQPx+v7H+cVDQkXx+OtaZQDyJM4D6mCtKh4KOlHTT0csElvS8Hex8KemmQ9HXtGI/n/sWDCp54v/ToWwPg+SO+KWilx6jBVgVcqsnwk+P1QL44koLD0kbi/DTonAH71zSrtWxkQkU4deHir3rpVS8W6ihwnfdMpZySymYGfyGEFOKmPsvYhqhOHbyFTFCPEQBKucf8MH9hHy6UgEAAAAASUVORK5CYII=);
+                background-size: 2048px 1024px;
+              }
+            </style>
+            <div class="surface surface-back" style="background-position: -240px 0;width: 224px;height: 608px;transform: rotateX(180deg) translate3d(0, -608px, 8px)"></div>
+            <div class="surface surface-back" style="background-position: -480px -192px;width: 128px;height: 528px;transform: rotateX(180deg) translate3d(48px, -592px, 24px)"></div>
+            <div class="surface surface-down" style="background-position: -480px 0;width: 224px;height: 16px;transform: rotateX(-90deg) translate3d(0, -8px, 480px)"></div>
+            <div class="surface surface-down" style="background-position: -480px -128px;width: 160px;height: 48px;transform: rotateX(-90deg) translate3d(32px, -24px, 496px)"></div>
+            <div class="surface surface-down" style="background-position: 0 -624px;width: 128px;height: 48px;transform: rotateX(-90deg) translate3d(48px, -24px, 416px)"></div>
+            <div class="surface surface-down" style="background-position: 0 -784px;width: 96px;height: 48px;transform: rotateX(-90deg) translate3d(64px, -24px, 448px)"></div>
+            <div class="surface surface-down" style="background-position: -624px -192px;width: 64px;height: 48px;transform: rotateX(-90deg) translate3d(80px, -24px, 592px)"></div>
+            <div class="surface surface-down" style="background-position: -864px 0;width: 64px;height: 48px;transform: rotateX(-90deg) translate3d(80px, -24px, 576px)"></div>
+            <div class="surface surface-down" style="background-position: -656px -128px;width: 32px;height: 48px;transform: rotateX(-90deg) translate3d(96px, -24px, 112px)"></div>
+            <div class="surface surface-down" style="background-position: -144px -752px;width: 32px;height: 16px;transform: rotateX(-90deg) translate3d(96px, -8px, 608px)"></div>
+            <div class="surface surface-forward" style="background-position: 0 0;width: 224px;height: 608px;transform: translate3d(0, 0, 8px)"></div>
+            <div class="surface surface-forward" style="background-position: -720px 0;width: 128px;height: 528px;transform: translate3d(48px, 64px, 24px)"></div>
+            <div class="surface surface-left" style="background-position: -624px -288px;width: 48px;height: 608px;transform: rotateY(-90deg) translate3d(-24px, 0, -96px)"></div>
+            <div class="surface surface-left" style="background-position: -1008px 0;width: 48px;height: 544px;transform: rotateY(-90deg) translate3d(-24px, 48px, -80px)"></div>
+            <div class="surface surface-left" style="background-position: -256px -624px;width: 48px;height: 352px;transform: rotateY(-90deg) translate3d(-24px, 144px, -48px)"></div>
+            <div class="surface surface-left" style="background-position: -1072px 0;width: 48px;height: 352px;transform: rotateY(-90deg) translate3d(-24px, 96px, -64px)"></div>
+            <div class="surface surface-left" style="background-position: -1136px 0;width: 48px;height: 336px;transform: rotateY(-90deg) translate3d(-24px, 112px, -128px)"></div>
+            <div class="surface surface-left" style="background-position: -688px -64px;width: 16px;height: 32px;transform: rotateY(-90deg) translate3d(-8px, 448px, 0)"></div>
+            <div class="surface surface-left" style="background-position: 0 -944px;width: 16px;height: 16px;transform: rotateY(-90deg) translate3d(-8px, 464px, -176px)"></div>
+            <div class="surface surface-left" style="background-position: -48px -912px;width: 16px;height: 16px;transform: rotateY(-90deg) translate3d(-8px, 480px, -32px)"></div>
+            <div class="surface surface-left" style="background-position: -192px -784px;width: 16px;height: 16px;transform: rotateY(-90deg) translate3d(-8px, 448px, -208px)"></div>
+            <div class="surface surface-right" style="background-position: -864px -64px;width: 48px;height: 608px;transform: rotateY(90deg) translate3d(-24px, 0, 128px)"></div>
+            <div class="surface surface-right" style="background-position: -944px 0;width: 48px;height: 544px;transform: rotateY(90deg) translate3d(-24px, 48px, 144px)"></div>
+            <div class="surface surface-right" style="background-position: -320px -624px;width: 48px;height: 352px;transform: rotateY(90deg) translate3d(-24px, 96px, 160px)"></div>
+            <div class="surface surface-right" style="background-position: -384px -624px;width: 48px;height: 352px;transform: rotateY(90deg) translate3d(-24px, 144px, 176px)"></div>
+            <div class="surface surface-right" style="background-position: -1200px 0;width: 48px;height: 336px;transform: rotateY(90deg) translate3d(-24px, 112px, 96px)"></div>
+            <div class="surface surface-right" style="background-position: -80px -848px;width: 16px;height: 32px;transform: rotateY(90deg) translate3d(-8px, 448px, 224px)"></div>
+            <div class="surface surface-right" style="background-position: -192px -752px;width: 16px;height: 16px;transform: rotateY(90deg) translate3d(-8px, 480px, 192px)"></div>
+            <div class="surface surface-right" style="background-position: -160px -784px;width: 16px;height: 16px;transform: rotateY(90deg) translate3d(-8px, 464px, 48px)"></div>
+            <div class="surface surface-right" style="background-position: -112px -848px;width: 16px;height: 16px;transform: rotateY(90deg) translate3d(-8px, 448px, 16px)"></div>
+            <div class="surface surface-up" style="background-position: -480px -32px;width: 224px;height: 16px;transform: rotateX(90deg) translate3d(0, -8px, -448px)"></div>
+            <div class="surface surface-up" style="background-position: -480px -64px;width: 192px;height: 48px;transform: rotateX(90deg) translate3d(16px, -24px, -464px)"></div>
+            <div class="surface surface-up" style="background-position: 0 -688px;width: 128px;height: 48px;transform: rotateX(90deg) translate3d(48px, -24px, -480px)"></div>
+            <div class="surface surface-up" style="background-position: 0 -752px;width: 128px;height: 16px;transform: rotateX(90deg) translate3d(48px, -8px, -144px)"></div>
+            <div class="surface surface-up" style="background-position: -144px -624px;width: 96px;height: 48px;transform: rotateX(90deg) translate3d(64px, -24px, -160px)"></div>
+            <div class="surface surface-up" style="background-position: -144px -688px;width: 96px;height: 48px;transform: rotateX(90deg) translate3d(64px, -24px, -96px)"></div>
+            <div class="surface surface-up" style="background-position: 0 -848px;width: 64px;height: 48px;transform: rotateX(90deg) translate3d(80px, -24px, -560px)"></div>
+            <div class="surface surface-up" style="background-position: -624px -256px;width: 64px;height: 16px;transform: rotateX(90deg) translate3d(80px, -8px, -48px)"></div>
+            <div class="surface surface-up" style="background-position: -112px -784px;width: 32px;height: 48px;transform: rotateX(90deg) translate3d(96px, -24px, -64px)"></div>
+            <div class="surface surface-up" style="background-position: 0 -912px;width: 32px;height: 16px;transform: rotateX(90deg) translate3d(96px, -8px, 0)"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+   
+    <div class="media-body">
+   
+      <table>
+        <thead>
+          <tr>
+            <td><b>Library</b></td>
+            <td><b>Features</b></td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><a href="https://github.com/Fydar/RPGCore/tree/main/src/libs/RPGCore.Data.Polymorphic">RPGCore.Data.Polymorphic</a></td>
+            <td>Polymorphic data serialization.</td>
+          </tr>
+          <tr>
+            <td><a href="https://github.com/Fydar/RPGCore/blob/main/src/libs/RPGCore.DataEditor">RPGCore.DataEditor</a></td>
+            <td>Data file editing API.</td>
+          </tr>
+          <tr>
+            <td><a href="https://github.com/Fydar/RPGCore/blob/main/src/libs/RPGCore.Events">RPGCore.Events</a></td>
+            <td>Value wrappers and collections with events.</td>
+          </tr>
+          <tr>
+            <td><a href="https://github.com/Fydar/RPGCore/blob/main/src/libs/RPGCore.Packages">RPGCore.Packages</a></td>
+            <td>Loading pre-packaged content.</td>
+          </tr>
+          <tr>
+            <td><a href="https://github.com/Fydar/RPGCore/blob/main/src/libs/RPGCore.Projects">RPGCore.Projects</a></td>
+            <td>Authoring pre-packaged content and build pipelines.</td>
+          </tr>
+          <tr>
+            <td><a href="https://github.com/Fydar/RPGCore/blob/main/src/libs/RPGCore.FileTree">RPGCore.FileTree</a></td>
+            <td>File system abstraction with file change events.</td>
+          </tr>
+          <tr>
+            <td><a href="https://github.com/Fydar/RPGCore/blob/main/src/libs/RPGCore.Behaviour">RPGCore.Behaviour</a></td>
+            <td>Provides a node-based modular behaviour system.</td>
+          </tr>
+          <tr>
+            <td><a href="https://github.com/Fydar/RPGCore/blob/main/src/libs/RPGCore.Inventories">RPGCore.Inventories</a></td>
+            <td>Inventories that contain, store, and move items.</td>
+          </tr>
+          <tr>
+            <td><a href="https://github.com/Fydar/RPGCore/blob/main/src/libs/RPGCore.Items">RPGCore.Items</a></td>
+            <td>Modular implementation of RPG items.</td>
+          </tr>
+          <tr>
+            <td><a href="https://github.com/Fydar/RPGCore/blob/main/src/libs/RPGCore.Traits">RPGCore.Traits</a></td>
+            <td>RPG character stats and item stats.</td>
+          </tr>
+        </tbody>
+      </table>
+   
+    </div>
+  </div>
 
-				<ul>
-					<li>Custom resource importers can tag, write metadata and register dependencies for all resources they import.</li>
-					<li>Custom resource exporters can compress, optimize and write new resourcs to the exported directory.</li>
-				</ul>
+  <h3>RPGCore.Packages</h3>
 
-			</div>
-		</div>
+  <div class="media">
 
-		<h3>RPGCore.Behaviour</h3>
+    <div class="media-item">
+      <div class="scene scene-screen-perspective fsa-relative" style="padding: 0 30px 0 30px; min-width: 210px;">
+        <div class="transform anim-rotate-left">
+          <!-- Mesh 'book-closed' -->
+          <div class="mesh mesh-book-closed">
+            <style>
+              .mesh.mesh-book-closed {
+                width: 144px;
+                height: 272px;
+                --half-depth: translateZ(-32px);
+              }
 
-		<div class="media">
+              .mesh.mesh-book-closed .surface {
+                background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAAAgCAYAAACinX6EAAAACXBIWXMAAA7EAAAOxAGVKw4bAAABuElEQVR4nO2Yv07DMBDGbenUt0AMCDHRoTMDEjszL8AjdGNk4xF4AWZ2pA7MDDAhxIB4C5bQs/Q1F8v1H0ga2+lvaC7JxdGdz+cvJbXm9OKmUQ5e757NUS9Wui+f5uW84SOfw8Zzb0+3Hfv94drYJ1f3Wg0E8Qv5Za6betHaPh8ORF6bHRx2fObLNgkuto29C6iPQebLs/Xvyth28LjGSWAf6SvtsSBZdjaydFMG/fn+6py7kpILpgJilkAKOQdsE90EUwaVFZB7MqKbYAqz0ipgygzSBBksg9yroZcmyImCLwfOQcvA+Rp8pK+0XQwpgADFzn7IT2Jvgz4RJMceQxBRrML7r1ps7XY5wZbP7ToJ3iYIpZbaIz4uj5rjx08tdxjYvl1nDJJ2gRiNz8GrgohOQEjjl0pvOgClzaWvCmIvhNTE2SfAdzOk1GqA7L0aN0LqrRZomwqzZx4a375WepUQ/nl1YX+MpGr8Eohqgn/9WnRVV04ymKHQJyekLQscaHxVEUlLoEbMEkCgvmSEyK20Y+ksAdeMo/RVpRDWtX2UTjivbf0zm12g5iB9bBJQY4ePgaY68+AXMmUQGMo8ccUAAAAASUVORK5CYII=);
+                background-size: 1024px 512px;
+              }
+            </style>
+            <div class="surface surface-back" style="background-position: -160px 0;width: 128px;height: 176px;transform: rotateX(180deg) translate3d(16px, -224px, -16px)"></div>
+            <div class="surface surface-back" style="background-position: -144px -192px;width: 128px;height: 176px;transform: rotateX(180deg) translate3d(16px, -224px, 32px)"></div>
+            <div class="surface surface-back" style="background-position: -288px -192px;width: 64px;height: 224px;transform: rotateX(180deg) translate3d(0, -272px, 16px)"></div>
+            <div class="surface surface-down" style="background-position: 0 0;width: 144px;height: 64px;transform: rotateX(-90deg) translate3d(0, -32px, 224px)"></div>
+            <div class="surface surface-down" style="background-position: 0 -400px;width: 112px;height: 32px;transform: rotateX(-90deg) translate3d(16px, -16px, 208px)"></div>
+            <div class="surface surface-down" style="background-position: -32px -448px;width: 16px;height: 16px;transform: rotateX(-90deg) translate3d(32px, 0, 256px)"></div>
+            <div class="surface surface-down" style="background-position: -64px -448px;width: 16px;height: 16px;transform: rotateX(-90deg) translate3d(48px, 0, 272px)"></div>
+            <div class="surface surface-forward" style="background-position: -304px 0;width: 128px;height: 176px;transform: translate3d(16px, 48px, 32px)"></div>
+            <div class="surface surface-forward" style="background-position: 0 -160px;width: 128px;height: 176px;transform: translate3d(16px, 48px, -16px)"></div>
+            <div class="surface surface-forward" style="background-position: -128px -384px;width: 32px;height: 64px;transform: translate3d(32px, 208px, 0)"></div>
+            <div class="surface surface-forward" style="background-position: -448px -192px;width: 16px;height: 176px;transform: translate3d(0, 48px, 16px)"></div>
+            <div class="surface surface-left" style="background-position: -368px -192px;width: 64px;height: 176px;transform: rotateY(-90deg) translate3d(-32px, 48px, -16px)"></div>
+            <div class="surface surface-left" style="background-position: -576px 0;width: 32px;height: 176px;transform: rotateY(-90deg) translate3d(-16px, 48px, 0)"></div>
+            <div class="surface surface-left" style="background-position: 0 -448px;width: 16px;height: 48px;transform: rotateY(-90deg) translate3d(-16px, 208px, -32px)"></div>
+            <div class="surface surface-left" style="background-position: -32px -480px;width: 16px;height: 16px;transform: rotateY(-90deg) translate3d(-16px, 256px, -48px)"></div>
+            <div class="surface surface-right" style="background-position: -448px 0;width: 64px;height: 176px;transform: rotateY(90deg) translate3d(-32px, 48px, 144px)"></div>
+            <div class="surface surface-right" style="background-position: -528px 0;width: 32px;height: 176px;transform: rotateY(90deg) translate3d(-16px, 48px, 16px)"></div>
+            <div class="surface surface-right" style="background-position: -624px 0;width: 32px;height: 144px;transform: rotateY(90deg) translate3d(-16px, 64px, 128px)"></div>
+            <div class="surface surface-right" style="background-position: -176px -384px;width: 16px;height: 64px;transform: rotateY(90deg) translate3d(0, 208px, 64px)"></div>
+            <div class="surface surface-up" style="background-position: 0 -80px;width: 144px;height: 64px;transform: rotateX(90deg) translate3d(0, -32px, -48px)"></div>
+            <div class="surface surface-up" style="background-position: 0 -352px;width: 112px;height: 32px;transform: rotateX(90deg) translate3d(16px, -16px, -64px)"></div>
+          </div>
+        </div>
+      </div>
+    </div>
 
-			<div class="media-item">
-				<!-- Book Closed Voxel -->
-				<div class="scene" style="padding: 0 30px 0 30px; margin-top: -25px; min-width: 210px;"><div class="mesh anim-rotate-left fsa-relative" style="width: 135px; height: 255px; transform: rotateX(-27deg) rotateY(220deg); --scroll:0.412341;"><div class="element" style="transform: scale3d(1, -1, 1) translate3d(0, -255px, -30px)"><div class="surface" style="transform: rotateY(-90deg) translate3d(0px, 0, 0px)"><div class="face" style="width: 30px;height: 165px;transform: translate(15px, 45px);background-color: #243563;"></div></div><div class="surface" style="transform: rotateY(-90deg) translate3d(0px, 0, -15px)"><div class="face" style="width: 30px;height: 15px;transform: translate(15px, 45px);background-color: #1F2E56;"></div><div class="face" style="width: 30px;height: 15px;transform: translate(15px, 195px);background-color: #1F2E56;"></div></div><div class="surface" style="transform: rotateX(90deg) translate3d(0, 0, -45px)"><div class="face" style="width: 90px;height: 15px;transform: translate(15px, 0px);background-color: #1B284A;"></div><div class="face" style="width: 15px;height: 30px;transform: translate(0px, 15px);background-color: #1B284A;"></div><div class="face" style="width: 90px;height: 15px;transform: translate(15px, 45px);background-color: #1B284A;"></div><div class="face" style="width: 30px;height: 15px;transform: translate(105px, 0px);background-color: #997B26;"></div><div class="face" style="width: 30px;height: 15px;transform: translate(105px, 45px);background-color: #997B26;"></div></div><div class="surface" style="transform: translate3d(0, 0, 45px)"><div class="face" style="width: 15px;height: 165px;transform: translate(0px, 45px);background-color: #2D437C;"></div></div><div class="surface" style="transform: rotateX(90deg) translate3d(0, 0, -210px)"><div class="face" style="width: 90px;height: 15px;transform: translate(15px, 0px);background-color: #283C6F;"></div><div class="face" style="width: 15px;height: 30px;transform: translate(0px, 15px);background-color: #283C6F;"></div><div class="face" style="width: 90px;height: 15px;transform: translate(15px, 45px);background-color: #283C6F;"></div><div class="face" style="width: 30px;height: 15px;transform: translate(105px, 0px);background-color: #E5B939;"></div><div class="face" style="width: 30px;height: 15px;transform: translate(105px, 45px);background-color: #E5B939;"></div></div><div class="surface" style="transform: translate3d(0, 0, 15px)"><div class="face" style="width: 15px;height: 15px;transform: translate(15px, 45px);background-color: #2D437C;"></div><div class="face" style="width: 45px;height: 15px;transform: translate(60px, 45px);background-color: #2D437C;"></div><div class="face" style="width: 15px;height: 105px;transform: translate(120px, 75px);background-color: #2D437C;"></div><div class="face" style="width: 90px;height: 15px;transform: translate(15px, 195px);background-color: #2D437C;"></div><div class="face" style="width: 30px;height: 15px;transform: translate(105px, 45px);background-color: #FFCE40;"></div><div class="face" style="width: 15px;height: 15px;transform: translate(120px, 60px);background-color: #FFCE40;"></div><div class="face" style="width: 15px;height: 15px;transform: translate(120px, 180px);background-color: #FFCE40;"></div><div class="face" style="width: 30px;height: 15px;transform: translate(105px, 195px);background-color: #FFCE40;"></div></div><div class="surface" style="transform: rotateY(-90deg) translate3d(0px, 0, -15px)"><div class="face" style="width: 15px;height: 165px;transform: translate(0px, 45px);background-color: #243563;"></div><div class="face" style="width: 15px;height: 165px;transform: translate(45px, 45px);background-color: #243563;"></div></div><div class="surface" style="transform: translate3d(0, 0, 60px)"><div class="face" style="width: 90px;height: 15px;transform: translate(15px, 45px);background-color: #2D437C;"></div><div class="face" style="width: 30px;height: 15px;transform: translate(15px, 60px);background-color: #2D437C;"></div><div class="face" style="width: 15px;height: 15px;transform: translate(105px, 60px);background-color: #2D437C;"></div><div class="face" style="width: 15px;height: 105px;transform: translate(15px, 75px);background-color: #2D437C;"></div><div class="face" style="width: 30px;height: 15px;transform: translate(60px, 75px);background-color: #2D437C;"></div><div class="face" style="width: 15px;height: 105px;transform: translate(120px, 75px);background-color: #2D437C;"></div><div class="face" style="width: 45px;height: 15px;transform: translate(45px, 120px);background-color: #2D437C;"></div><div class="face" style="width: 60px;height: 15px;transform: translate(45px, 150px);background-color: #2D437C;"></div><div class="face" style="width: 30px;height: 15px;transform: translate(15px, 180px);background-color: #2D437C;"></div><div class="face" style="width: 15px;height: 15px;transform: translate(105px, 180px);background-color: #2D437C;"></div><div class="face" style="width: 90px;height: 15px;transform: translate(15px, 195px);background-color: #2D437C;"></div><div class="face" style="width: 60px;height: 15px;transform: translate(45px, 60px);background-color: #33609B;"></div><div class="face" style="width: 30px;height: 15px;transform: translate(30px, 75px);background-color: #33609B;"></div><div class="face" style="width: 30px;height: 15px;transform: translate(90px, 75px);background-color: #33609B;"></div><div class="face" style="width: 90px;height: 30px;transform: translate(30px, 90px);background-color: #33609B;"></div><div class="face" style="width: 15px;height: 15px;transform: translate(30px, 120px);background-color: #33609B;"></div><div class="face" style="width: 30px;height: 15px;transform: translate(90px, 120px);background-color: #33609B;"></div><div class="face" style="width: 90px;height: 15px;transform: translate(30px, 135px);background-color: #33609B;"></div><div class="face" style="width: 15px;height: 15px;transform: translate(30px, 150px);background-color: #33609B;"></div><div class="face" style="width: 15px;height: 15px;transform: translate(105px, 150px);background-color: #33609B;"></div><div class="face" style="width: 90px;height: 15px;transform: translate(30px, 165px);background-color: #33609B;"></div><div class="face" style="width: 60px;height: 15px;transform: translate(45px, 180px);background-color: #33609B;"></div><div class="face" style="width: 30px;height: 15px;transform: translate(105px, 45px);background-color: #FFCE40;"></div><div class="face" style="width: 15px;height: 15px;transform: translate(120px, 60px);background-color: #FFCE40;"></div><div class="face" style="width: 15px;height: 15px;transform: translate(120px, 180px);background-color: #FFCE40;"></div><div class="face" style="width: 30px;height: 15px;transform: translate(105px, 195px);background-color: #FFCE40;"></div></div><div class="surface" style="transform: rotateX(90deg) translate3d(0, 0, -60px)"><div class="face" style="width: 15px;height: 15px;transform: translate(15px, 15px);background-color: #82643C;"></div><div class="face" style="width: 60px;height: 15px;transform: translate(60px, 15px);background-color: #82643C;"></div><div class="face" style="width: 105px;height: 15px;transform: translate(15px, 30px);background-color: #82643C;"></div></div><div class="surface" style="transform: rotateX(90deg) translate3d(0, 0, -195px)"><div class="face" style="width: 105px;height: 30px;transform: translate(15px, 15px);background-color: #C3975A;"></div></div><div class="surface" style="transform: translate3d(0, 0, 30px)"><div class="face" style="width: 15px;height: 15px;transform: translate(45px, 0px);background-color: #DB4E23;"></div><div class="face" style="width: 30px;height: 45px;transform: translate(30px, 15px);background-color: #DB4E23;"></div></div><div class="surface" style="transform: rotateY(-90deg) translate3d(0px, 0, -30px)"><div class="face" style="width: 15px;height: 45px;transform: translate(15px, 15px);background-color: #AF3E1C;"></div></div><div class="surface" style="transform: rotateX(90deg) translate3d(0, 0, -15px)"><div class="face" style="width: 15px;height: 15px;transform: translate(30px, 15px);background-color: #832E15;"></div></div><div class="surface" style="transform: rotateY(-90deg) translate3d(0px, 0, -45px)"><div class="face" style="width: 15px;height: 15px;transform: translate(15px, 0px);background-color: #AF3E1C;"></div></div><div class="surface" style="transform: rotateX(90deg) translate3d(0, 0, 0px)"><div class="face" style="width: 15px;height: 15px;transform: translate(45px, 15px);background-color: #832E15;"></div></div><div class="surface" style="transform: rotateY(-90deg) translate3d(0px, 0, -120px)"><div class="face" style="width: 30px;height: 135px;transform: translate(15px, 60px);background-color: #977546;"></div></div></div></div></div>
-			</div>
+    <div class="media-body">
 
-			<div class="media-body">
-				<p>RPGCore.Behaviour is a node-based modular behaviour system. It can be used to describe the real-time or restful behaviour of any gameplay element.</p>
+      <p>RPGCore.Packages is an API for <b>processing and bundling game data</b>. For every resource managed by RPGCore.Packages, it provides tagging, metadata and dependencies; which work together to form a basic CMS.</p>
+      
+      <p>RPGCore.Packages is currently being used to drive the content of my portfolio website.</p>
+ 
+      <p>The ImportPipeline for RPGCore.Projects provides an API for customising the importing and building process.</p>
+ 
+      <ul>
+        <li>Custom directory importers can be used to control how a directory imports into assets.</li>
+        <li>Custom file importers can be used to control how a file imports into assets.</li>
+        <li>Custom import processors can be used to post-process imported assets (i.e. ignore assets, write metadata, or tag them).</li>
+        <li>Custom resource importers can tag, write metadata and register dependencies for all resources they import.</li>
+        <li>Custom resource exporters can compress, optimize and write new resourcs to the exported directory.</li>
+      </ul>
 
-				<h4>How it works</h4>
+    </div>
+  </div>
 
-				<p>RPGCore.Behaviour operates on node collections called "graphs".</p>
-
-				<p>Nodes have inputs and outputs that allow nodes to be connected. Every "connection" from one node to another is represented by a single object that both nodes share a reference too. Output sockets from nodes can write to the connection object whereas input sockets can only read from the connection.</p>
-
-				<p>Nodes can also connect directly to other nodes. This is useful for simpler graph-based solutions like behaviour-trees and state-machines. Nodes can use the Graph APIs to determine which node their inputs and outputs are connected too.</p>
-
-				<h4>Clean API</h4>
-
-				<p>The biggest goal of mine when it came work creating my own node-based system was to create a transparent API. I wanted to avoid all unnecessary reflection as much as possible to reduce any "black-magic" that users might expect was going-on behind the scenes.</p>
-
-				<!--
-				<p>Below is the API for creating an "Adding" node.</p>
-
-				<code lang="csharp">
-
-				</code>
-				-->
-
-			</div>
-		</div>
-
-
-		<h3>RPGCore.Inventories</h3>
-		<div class="media">
-
-			<div class="media-item">
-				<!-- Bag Voxel -->
-				<div class="scene" style="padding: 25px 35px 25px 35px; width: 210px;"><div class="mesh anim-rotate-left fsa-relative" style="width: 140px; height: 168px; transform: rotateX(-25deg) rotateY(35deg); --scroll:0.686377;"><div class="element" style="transform: scale3d(1, -1, 1) translate3d(0, -168px, -42px)"><div class="surface" style="transform: rotateY(-90deg) translate3d(0px, 0, 0px)"><div class="face" style="width: 56px;height: 56px;transform: translate(0px, 0px);background-color: #3F2E1C;"></div><div class="face" style="width: 84px;height: 56px;transform: translate(0px, 56px);background-color: #3F2E1C;"></div><div class="face" style="width: 56px;height: 28px;transform: translate(28px, 112px);background-color: #3F2E1C;"></div><div class="face" style="width: 28px;height: 28px;transform: translate(0px, 112px);background-color: #553E27;"></div><div class="face" style="width: 84px;height: 28px;transform: translate(0px, 140px);background-color: #553E27;"></div></div><div class="surface" style="transform: rotateX(90deg) translate3d(0, 0, 0px)"><div class="face" style="width: 140px;height: 28px;transform: translate(0px, 0px);background-color: #2F2215;"></div><div class="face" style="width: 28px;height: 28px;transform: translate(0px, 28px);background-color: #2F2215;"></div><div class="face" style="width: 28px;height: 28px;transform: translate(112px, 28px);background-color: #2F2215;"></div><div class="face" style="width: 84px;height: 56px;transform: translate(28px, 28px);background-color: #241A10;"></div></div><div class="surface" style="transform: translate3d(0, 0, 56px)"><div class="face" style="width: 28px;height: 56px;transform: translate(0px, 0px);background-color: #4F3A24;"></div><div class="face" style="width: 28px;height: 56px;transform: translate(112px, 0px);background-color: #4F3A24;"></div></div><div class="surface" style="transform: translate3d(0, 0, 84px)"><div class="face" style="width: 28px;height: 56px;transform: translate(0px, 56px);background-color: #4F3A24;"></div><div class="face" style="width: 28px;height: 56px;transform: translate(112px, 56px);background-color: #4F3A24;"></div><div class="face" style="width: 56px;height: 28px;transform: translate(0px, 112px);background-color: #4F3A24;"></div><div class="face" style="width: 56px;height: 28px;transform: translate(84px, 112px);background-color: #4F3A24;"></div><div class="face" style="width: 140px;height: 28px;transform: translate(0px, 140px);background-color: #6B4E31;"></div><div class="face" style="width: 84px;height: 84px;transform: translate(28px, 0px);background-color: #3D2C1B;"></div><div class="face" style="width: 28px;height: 28px;transform: translate(28px, 84px);background-color: #3D2C1B;"></div><div class="face" style="width: 28px;height: 28px;transform: translate(84px, 84px);background-color: #3D2C1B;"></div><div class="face" style="width: 28px;height: 56px;transform: translate(56px, 84px);background-color: #FFE46B;"></div></div><div class="surface" style="transform: rotateX(90deg) translate3d(0, 0, -56px)"><div class="face" style="width: 28px;height: 28px;transform: translate(0px, 56px);background-color: #2F2215;"></div><div class="face" style="width: 28px;height: 28px;transform: translate(112px, 56px);background-color: #2F2215;"></div></div><div class="surface" style="transform: rotateX(90deg) translate3d(0, 0, -168px)"><div class="face" style="width: 140px;height: 84px;transform: translate(0px, 0px);background-color: #60462C;"></div></div><div class="surface" style="transform: rotateY(-90deg) translate3d(0px, 0, -28px)"><div class="face" style="width: 28px;height: 56px;transform: translate(56px, 0px);background-color: #302315;"></div></div></div></div></div>
-			</div>
-
-			<div class="media-body">
-
-				<p>Inventories act as smart collections for managing items from RPGCore.Items.</p>
-
-				<p>An inventory is made out of many ItemSlots.</p>
-
-				<p>An inventory can be queried to see how many items can enter it.</p>
-
-				<h4>Inventory Constraints</h4>
-
-				<p>Constraints can be applied to inventories to prevent items from entering slots.</p>
-
-			</div>
-		</div>
-
-		<h2>Demos</h2>
-
-		<h3>RPGCore.Demo.BoardGame</h3>
-
-		<p>The RPGCore.Demo.BoardGame project is a demo project that utilises RPGCore.Behaviour and RPGCore.Packages to produce a game that isn't in the style of an RPG.</p>
-
-		<p>This demo project and be run from the Command Line via RPGCore.Demo.BoardGame.CommandLine and via Unity; however this demo is in its very really phases and acts more of a proof-of-concept.</p>
-
-		<h3>RPGCore.Demo.Invetory</h3>
-
-		<p>This demo contains a basic set of nodes that you might expect to find in a typical RPG implementation.</p>
-
-		<p>There isn't much to this demo at this point.</p>
-
-	</div>
-
-</body>
+  </div>

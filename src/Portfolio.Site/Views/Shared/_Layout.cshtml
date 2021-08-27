@@ -4,143 +4,178 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  @{
-    string? title = ViewData["Title"] as string;
-  }
-  @if (string.IsNullOrEmpty(title))
-  {
-    <title>Anthony Marmont</title>
-  }
-  else
-  {
-    <title>@ViewData["Title"] - Anthony Marmont</title>
-  }
+    @{
+        string? title = ViewData["Title"] as string;
+    }
+    @if (string.IsNullOrEmpty(title))
+    {
+        <title>Anthony Marmont</title>
+    }
+    else
+    {
+        <title>@ViewData["Title"] - Anthony Marmont</title>
+    }
 
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
-  @ViewData.GetPageMetadata()
+    @ViewData.GetPageMetadata()
 
-  <link rel="stylesheet" href="~/css/main.min.css" asp-append-version="true" />
-  <link rel="stylesheet" href="~/patio/patio.min.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/main.min.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/patio/patio.min.css" asp-append-version="true" />
 </head>
 <body class="light">
 
-  <script>
-    var currentTheme = localStorage.getItem("theme");
-    if (currentTheme === null) {
-      const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)");
-      if (prefersDarkScheme.matches) {
-        currentTheme = "dark"
-      }
-      else {
-        currentTheme = "light";
-      }
-      localStorage.setItem("theme", currentTheme);
-    }
-    if (currentTheme == "dark") {
-      document.body.classList.remove("light");
-      document.body.classList.add("dark");
-    } else {
-      document.body.classList.add("light");
-      document.body.classList.remove("dark");
-    }
-  </script>
-
-  @{
-    string? pageTitle = ViewData["Title"] as string;
-    bool fullscreen = string.IsNullOrEmpty(pageTitle);
-    string area = ViewContext.RouteData.Values["Area"]?.ToString() ?? "";
-  }
-
-  <section class="navbar" id="navbar">
-    <div class="navbar-grouping">
-      <a class="nav-button @(area == "Portfolio" ? "active" : "")" asp-area="Portfolio" asp-controller="Portfolio" asp-action="Index">Portfolio</a>
-      <a class="nav-button @(area == "Contact" ? "active" : "")" asp-area="Contact" asp-controller="Contact" asp-action="Index">Contact</a>
-    </div>
-
-    <div class="splitter"></div>
-
-    <div class="navbar-grouping">
-      <button class="btn btn-theme-toggle"><span class="mark mark-subtle mark-pin-othertheme"></span></button>
-    </div>
-  </section>
-
-  <section class="profile">
-    <div class="profile-background"></div>
-
-    <div class="container container-sm">
-      <div class="media">
-        <div class="media-item">
-          <!-- Book Closed Model -->
-          <div class="scene" style="padding: 0 30px 0 30px; min-width: 210px;"><div class="mesh anim-rotate-left fsa-relative" style="width: 135px; height: 255px; transform: rotateX(-27deg) rotateY(220deg); --scroll:0.412341;"><div class="element" style="transform: scale3d(1, -1, 1) translate3d(0, -255px, -30px)"><div class="surface" style="transform: rotateY(-90deg) translate3d(0px, 0, 0px)"><div class="face" style="width: 30px;height: 165px;transform: translate(15px, 45px);background-color: #243563;"></div></div><div class="surface" style="transform: rotateY(-90deg) translate3d(0px, 0, -15px)"><div class="face" style="width: 30px;height: 15px;transform: translate(15px, 45px);background-color: #1F2E56;"></div><div class="face" style="width: 30px;height: 15px;transform: translate(15px, 195px);background-color: #1F2E56;"></div></div><div class="surface" style="transform: rotateX(90deg) translate3d(0, 0, -45px)"><div class="face" style="width: 90px;height: 15px;transform: translate(15px, 0px);background-color: #1B284A;"></div><div class="face" style="width: 15px;height: 30px;transform: translate(0px, 15px);background-color: #1B284A;"></div><div class="face" style="width: 90px;height: 15px;transform: translate(15px, 45px);background-color: #1B284A;"></div><div class="face" style="width: 30px;height: 15px;transform: translate(105px, 0px);background-color: #997B26;"></div><div class="face" style="width: 30px;height: 15px;transform: translate(105px, 45px);background-color: #997B26;"></div></div><div class="surface" style="transform: translate3d(0, 0, 45px)"><div class="face" style="width: 15px;height: 165px;transform: translate(0px, 45px);background-color: #2D437C;"></div></div><div class="surface" style="transform: rotateX(90deg) translate3d(0, 0, -210px)"><div class="face" style="width: 90px;height: 15px;transform: translate(15px, 0px);background-color: #283C6F;"></div><div class="face" style="width: 15px;height: 30px;transform: translate(0px, 15px);background-color: #283C6F;"></div><div class="face" style="width: 90px;height: 15px;transform: translate(15px, 45px);background-color: #283C6F;"></div><div class="face" style="width: 30px;height: 15px;transform: translate(105px, 0px);background-color: #E5B939;"></div><div class="face" style="width: 30px;height: 15px;transform: translate(105px, 45px);background-color: #E5B939;"></div></div><div class="surface" style="transform: translate3d(0, 0, 15px)"><div class="face" style="width: 15px;height: 15px;transform: translate(15px, 45px);background-color: #2D437C;"></div><div class="face" style="width: 45px;height: 15px;transform: translate(60px, 45px);background-color: #2D437C;"></div><div class="face" style="width: 15px;height: 105px;transform: translate(120px, 75px);background-color: #2D437C;"></div><div class="face" style="width: 90px;height: 15px;transform: translate(15px, 195px);background-color: #2D437C;"></div><div class="face" style="width: 30px;height: 15px;transform: translate(105px, 45px);background-color: #FFCE40;"></div><div class="face" style="width: 15px;height: 15px;transform: translate(120px, 60px);background-color: #FFCE40;"></div><div class="face" style="width: 15px;height: 15px;transform: translate(120px, 180px);background-color: #FFCE40;"></div><div class="face" style="width: 30px;height: 15px;transform: translate(105px, 195px);background-color: #FFCE40;"></div></div><div class="surface" style="transform: rotateY(-90deg) translate3d(0px, 0, -15px)"><div class="face" style="width: 15px;height: 165px;transform: translate(0px, 45px);background-color: #243563;"></div><div class="face" style="width: 15px;height: 165px;transform: translate(45px, 45px);background-color: #243563;"></div></div><div class="surface" style="transform: translate3d(0, 0, 60px)"><div class="face" style="width: 90px;height: 15px;transform: translate(15px, 45px);background-color: #2D437C;"></div><div class="face" style="width: 30px;height: 15px;transform: translate(15px, 60px);background-color: #2D437C;"></div><div class="face" style="width: 15px;height: 15px;transform: translate(105px, 60px);background-color: #2D437C;"></div><div class="face" style="width: 15px;height: 105px;transform: translate(15px, 75px);background-color: #2D437C;"></div><div class="face" style="width: 30px;height: 15px;transform: translate(60px, 75px);background-color: #2D437C;"></div><div class="face" style="width: 15px;height: 105px;transform: translate(120px, 75px);background-color: #2D437C;"></div><div class="face" style="width: 45px;height: 15px;transform: translate(45px, 120px);background-color: #2D437C;"></div><div class="face" style="width: 60px;height: 15px;transform: translate(45px, 150px);background-color: #2D437C;"></div><div class="face" style="width: 30px;height: 15px;transform: translate(15px, 180px);background-color: #2D437C;"></div><div class="face" style="width: 15px;height: 15px;transform: translate(105px, 180px);background-color: #2D437C;"></div><div class="face" style="width: 90px;height: 15px;transform: translate(15px, 195px);background-color: #2D437C;"></div><div class="face" style="width: 60px;height: 15px;transform: translate(45px, 60px);background-color: #33609B;"></div><div class="face" style="width: 30px;height: 15px;transform: translate(30px, 75px);background-color: #33609B;"></div><div class="face" style="width: 30px;height: 15px;transform: translate(90px, 75px);background-color: #33609B;"></div><div class="face" style="width: 90px;height: 30px;transform: translate(30px, 90px);background-color: #33609B;"></div><div class="face" style="width: 15px;height: 15px;transform: translate(30px, 120px);background-color: #33609B;"></div><div class="face" style="width: 30px;height: 15px;transform: translate(90px, 120px);background-color: #33609B;"></div><div class="face" style="width: 90px;height: 15px;transform: translate(30px, 135px);background-color: #33609B;"></div><div class="face" style="width: 15px;height: 15px;transform: translate(30px, 150px);background-color: #33609B;"></div><div class="face" style="width: 15px;height: 15px;transform: translate(105px, 150px);background-color: #33609B;"></div><div class="face" style="width: 90px;height: 15px;transform: translate(30px, 165px);background-color: #33609B;"></div><div class="face" style="width: 60px;height: 15px;transform: translate(45px, 180px);background-color: #33609B;"></div><div class="face" style="width: 30px;height: 15px;transform: translate(105px, 45px);background-color: #FFCE40;"></div><div class="face" style="width: 15px;height: 15px;transform: translate(120px, 60px);background-color: #FFCE40;"></div><div class="face" style="width: 15px;height: 15px;transform: translate(120px, 180px);background-color: #FFCE40;"></div><div class="face" style="width: 30px;height: 15px;transform: translate(105px, 195px);background-color: #FFCE40;"></div></div><div class="surface" style="transform: rotateX(90deg) translate3d(0, 0, -60px)"><div class="face" style="width: 15px;height: 15px;transform: translate(15px, 15px);background-color: #82643C;"></div><div class="face" style="width: 60px;height: 15px;transform: translate(60px, 15px);background-color: #82643C;"></div><div class="face" style="width: 105px;height: 15px;transform: translate(15px, 30px);background-color: #82643C;"></div></div><div class="surface" style="transform: rotateX(90deg) translate3d(0, 0, -195px)"><div class="face" style="width: 105px;height: 30px;transform: translate(15px, 15px);background-color: #C3975A;"></div></div><div class="surface" style="transform: translate3d(0, 0, 30px)"><div class="face" style="width: 15px;height: 15px;transform: translate(45px, 0px);background-color: #DB4E23;"></div><div class="face" style="width: 30px;height: 45px;transform: translate(30px, 15px);background-color: #DB4E23;"></div></div><div class="surface" style="transform: rotateY(-90deg) translate3d(0px, 0, -30px)"><div class="face" style="width: 15px;height: 45px;transform: translate(15px, 15px);background-color: #AF3E1C;"></div></div><div class="surface" style="transform: rotateX(90deg) translate3d(0, 0, -15px)"><div class="face" style="width: 15px;height: 15px;transform: translate(30px, 15px);background-color: #832E15;"></div></div><div class="surface" style="transform: rotateY(-90deg) translate3d(0px, 0, -45px)"><div class="face" style="width: 15px;height: 15px;transform: translate(15px, 0px);background-color: #AF3E1C;"></div></div><div class="surface" style="transform: rotateX(90deg) translate3d(0, 0, 0px)"><div class="face" style="width: 15px;height: 15px;transform: translate(45px, 15px);background-color: #832E15;"></div></div><div class="surface" style="transform: rotateY(-90deg) translate3d(0px, 0, -120px)"><div class="face" style="width: 30px;height: 135px;transform: translate(15px, 60px);background-color: #977546;"></div></div></div></div></div>
-        </div>
-        <div class="media-body" style="text-align: center; width: 100%;">
-          <h1 style="font-size: 2.5rem; margin: 1.5rem 0 0.5rem 0;">Anthony Marmont</h1>
-          <p class="badge-bar badge-bar-social">
-            <a class="mark mark-rounded mark-youtube" target="_blank" href="https://www.youtube.com/channel/UCEEI1m2TCso1OGWEHvHS20g"></a>
-            <a class="mark mark-rounded mark-itch-io" target="_blank" href="https://fydar.itch.io/"></a>
-            <a class="mark mark-rounded mark-linkedin" target="_blank" href="https://www.linkedin.com/in/anthonymarmont/"></a>
-            <a class="mark mark-rounded mark-github" target="_blank" href="https://github.com/Fydar"></a>
-            <a class="mark mark-rounded mark-twitter" target="_blank" href="https://twitter.com/Fydarus"></a>
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  @RenderBody()
-
-  <section class="website-footer">
-    <div class="container">
-      <p>&copy; 2020 Anthony Marmont</p>
-    </div>
-  </section>
-
-  <script>
-    // Button for changing the theme
-    const btn = document.querySelector(".btn-theme-toggle");
-
-    function UpdateEmbeds() {
-      const itchEmbeds = document.querySelectorAll(".embed-itch");
-      for (var i = 0; i < itchEmbeds.length; i++) {
-        var itchEmbed = itchEmbeds[i];
+    <script>
         var currentTheme = localStorage.getItem("theme");
-
-        var src = itchEmbed.getAttribute("src");
-        src = src.replace("?dark=true", "");
-        if (currentTheme != "light") {
-          src = src + "?dark=true";;
+        if (currentTheme === null) {
+          const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)");
+          if (prefersDarkScheme.matches) {
+            currentTheme = "dark"
+          }
+          else {
+            currentTheme = "light";
+          }
+          localStorage.setItem("theme", currentTheme);
         }
-        itchEmbed.setAttribute("src", src);
-      }
+        if (currentTheme == "dark") {
+          document.body.classList.remove("light");
+          document.body.classList.add("dark");
+        } else {
+          document.body.classList.add("light");
+          document.body.classList.remove("dark");
+        }
+    </script>
+
+    @{
+        string? pageTitle = ViewData["Title"] as string;
+        bool fullscreen = string.IsNullOrEmpty(pageTitle);
+        string area = ViewContext.RouteData.Values["Area"]?.ToString() ?? "";
     }
-    UpdateEmbeds();
 
-    btn.addEventListener("click", function () {
-      var currentTheme = localStorage.getItem("theme");
+    <section class="navbar" id="navbar">
+        <div class="navbar-grouping">
+            <a class="nav-button @(area == "Portfolio" ? "active" : "")" asp-area="Portfolio" asp-controller="Portfolio" asp-action="Index">Portfolio</a>
+            <a class="nav-button @(area == "Contact" ? "active" : "")" asp-area="Contact" asp-controller="Contact" asp-action="Index">Contact</a>
+        </div>
 
-      if (currentTheme == "dark") {
-        currentTheme = "light";
+        <div class="splitter"></div>
 
-        document.body.classList.add("light");
-        document.body.classList.remove("dark");
-      }
-      else {
-        currentTheme = "dark";
+        <div class="navbar-grouping">
+            <button class="btn btn-theme-toggle"><span class="mark mark-subtle mark-pin-othertheme"></span></button>
+        </div>
+    </section>
 
-        document.body.classList.remove("light");
-        document.body.classList.add("dark");
-      }
+    <section class="profile profile-background">
+        <div class="container container-sm" style="max-width: 720px;">
+            <div class="media">
+                <div class="media-item">
+                  <div class="scene scene-screen-perspective fsa-relative" style="padding: 0 30px 0 30px; min-width: 210px;">
+                    <div class="transform anim-rotate-left">
+                      <!-- Mesh 'book-open' -->
+                      <div class="mesh mesh-book-open">
+                          <style>
+                              .mesh.mesh-book-open {
+                                  width: 288px;
+                                  height: 272px;
+                              }
 
-      localStorage.setItem("theme", currentTheme);
-      UpdateEmbeds();
-    });
-  </script>
+                                  .mesh.mesh-book-open .surface {
+                                      background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAAAgCAYAAACinX6EAAAACXBIWXMAAA7EAAAOxAGVKw4bAAACP0lEQVR4nO2YvUoDQRDH92DxAexVRIOVKQKChYUgpLT2BVJaprNMZ2OfF7C2FIQrLATBQguRKMEIloKtTfS/YXSz2a+73fsI8Qc6ZHey3szN7MzIx3f7Y/ZDs7vHdDxc9RLI7YOTsW7//vRayKSVJswCfZ/Oy8PmTkec8Xzbz32GCsevycOnVkXTgyctxsiJT+cdrZPAYPTIhu+frN0x62wd9RPbGdh3/R3S8YVP3nzKQpDPGIw+ZvYbq8tTn206PgZkNdIGZ5FRjc2qMzjcGDcuXmYMRJQhUvH24QCTXlaiO8AnAi5vhkK2d9d/9WWdWMb5UEkE5NGPkao6KokAnT7pyG8+RuVwUUkEIPR99G2Gx0qR6A4AahRkqQJlw9HIoJaHoJ7hMqYqY3WICECJkTtBufvz7QSBWp9xm0MiXOn7x2e9Um53X/hfC5vObMo5aOsEfSjyIguhtFkgFEqzmF0gECkA45dW1qY2vt5ehaQBhFD1mt3pNFApq6HJC9cZD7BGTpDXAK3jM37gBF0KxTS+qAjLVQZ1DgPqlCZPb0VMcjGI2geYDMA6pVIWI2vZCcppYYoEHXn+iVFG5cjsAJvR1DeYZFEjbQhBEQBkh9AbM8k6EjUCXBQ10oYgZgGUMVMfoK7p9PLOE40a9AgiAsgJOujyohtZdYytCZoHrLOATOgsUFecd0AZtbhK5mYYKor/FCgzAooaaUNwRoDrDpAjwNUJshrivASzPLirE6zjPcGpH1clWxA4GavKReEbgUJx6OXax1IAAAAASUVORK5CYII=);
+                                      background-size: 1024px 512px;
+                                  }
+                          </style>
+                          <div class="surface surface-back" style="background-position: 0 -192px;width: 288px;height: 176px;transform: rotateX(180deg) translate3d(0, -224px, 32px)"></div>
+                          <div class="surface surface-back" style="background-position: -576px -48px;width: 80px;height: 224px;transform: rotateX(180deg) translate3d(80px, -272px, 16px)"></div>
+                          <div class="surface surface-down" style="background-position: 0 -384px;width: 288px;height: 32px;transform: rotateX(-90deg) translate3d(0, 0, 224px)"></div>
+                          <div class="surface surface-down" style="background-position: -304px -240px;width: 256px;height: 32px;transform: rotateX(-90deg) translate3d(16px, 0, 208px)"></div>
+                          <div class="surface surface-down" style="background-position: 0 -480px;width: 16px;height: 16px;transform: rotateX(-90deg) translate3d(96px, 0, 256px)"></div>
+                          <div class="surface surface-down" style="background-position: -64px -480px;width: 16px;height: 16px;transform: rotateX(-90deg) translate3d(80px, 0, 272px)"></div>
+                          <div class="surface surface-forward" style="background-position: 0 0;width: 288px;height: 176px;transform: translate3d(0, 48px, -16px)"></div>
+                          <div class="surface surface-forward" style="background-position: -304px 0;width: 256px;height: 224px;transform: translate3d(16px, 48px, 0)"></div>
+                          <div class="surface surface-left" style="background-position: -304px -288px;width: 16px;height: 176px;transform: rotateY(-90deg) translate3d(-32px, 48px, -160px)"></div>
+                          <div class="surface surface-left" style="background-position: -368px -288px;width: 16px;height: 176px;transform: rotateY(-90deg) translate3d(-16px, 48px, -128px)"></div>
+                          <div class="surface surface-left" style="background-position: -672px -48px;width: 16px;height: 176px;transform: rotateY(-90deg) translate3d(-32px, 48px, 0)"></div>
+                          <div class="surface surface-left" style="background-position: -464px -288px;width: 16px;height: 144px;transform: rotateY(-90deg) translate3d(-16px, 64px, -16px)"></div>
+                          <div class="surface surface-left" style="background-position: -736px -48px;width: 16px;height: 64px;transform: rotateY(-90deg) translate3d(-16px, 208px, -80px)"></div>
+                          <div class="surface surface-right" style="background-position: -336px -288px;width: 16px;height: 176px;transform: rotateY(90deg) translate3d(0, 48px, 160px)"></div>
+                          <div class="surface surface-right" style="background-position: -400px -288px;width: 16px;height: 176px;transform: rotateY(90deg) translate3d(16px, 48px, 128px)"></div>
+                          <div class="surface surface-right" style="background-position: -432px -288px;width: 16px;height: 176px;transform: rotateY(90deg) translate3d(16px, 48px, 288px)"></div>
+                          <div class="surface surface-right" style="background-position: -704px -48px;width: 16px;height: 144px;transform: rotateY(90deg) translate3d(0, 64px, 272px)"></div>
+                          <div class="surface surface-right" style="background-position: -496px -288px;width: 16px;height: 48px;transform: rotateY(90deg) translate3d(0, 208px, 112px)"></div>
+                          <div class="surface surface-right" style="background-position: -32px -480px;width: 16px;height: 16px;transform: rotateY(90deg) translate3d(0, 256px, 96px)"></div>
+                          <div class="surface surface-up" style="background-position: 0 -432px;width: 288px;height: 32px;transform: rotateX(90deg) translate3d(0, -32px, -48px)"></div>
+                          <div class="surface surface-up" style="background-position: -576px 0;width: 256px;height: 32px;transform: rotateX(90deg) translate3d(16px, -32px, -64px)"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="media-body" style="text-align: center; width: 100%;">
+                    <h1 style="font-size: 2.5rem; margin: 1.5rem 0 0.5rem 0;">Anthony Marmont</h1>
+                    <p class="badge-bar badge-bar-social">
+                        <a class="mark mark-rounded mark-youtube" target="_blank" href="https://www.youtube.com/channel/UCEEI1m2TCso1OGWEHvHS20g"></a>
+                        <a class="mark mark-rounded mark-itch-io" target="_blank" href="https://fydar.itch.io/"></a>
+                        <a class="mark mark-rounded mark-linkedin" target="_blank" href="https://www.linkedin.com/in/anthonymarmont/"></a>
+                        <a class="mark mark-rounded mark-github" target="_blank" href="https://github.com/Fydar"></a>
+                        <a class="mark mark-rounded mark-twitter" target="_blank" href="https://twitter.com/Fydarus"></a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <script src="~/js/site.min.js" asp-append-version="true"></script>
+    @RenderBody()
 
-  @RenderSection("Scripts", required: false)
+    <section class="website-footer">
+        <div class="container">
+            <p>&copy; 2020 Anthony Marmont</p>
+        </div>
+    </section>
+
+    <script>
+        // Button for changing the theme
+        const btn = document.querySelector(".btn-theme-toggle");
+
+        function UpdateEmbeds() {
+          const itchEmbeds = document.querySelectorAll(".embed-itch");
+          for (var i = 0; i < itchEmbeds.length; i++) {
+            var itchEmbed = itchEmbeds[i];
+            var currentTheme = localStorage.getItem("theme");
+
+            var src = itchEmbed.getAttribute("src");
+            src = src.replace("?dark=true", "");
+            if (currentTheme != "light") {
+              src = src + "?dark=true";;
+            }
+            itchEmbed.setAttribute("src", src);
+          }
+        }
+        UpdateEmbeds();
+
+        btn.addEventListener("click", function () {
+          var currentTheme = localStorage.getItem("theme");
+
+          if (currentTheme == "dark") {
+            currentTheme = "light";
+
+            document.body.classList.add("light");
+            document.body.classList.remove("dark");
+          }
+          else {
+            currentTheme = "dark";
+
+            document.body.classList.remove("light");
+            document.body.classList.add("dark");
+          }
+
+          localStorage.setItem("theme", currentTheme);
+          UpdateEmbeds();
+        });
+    </script>
+
+    <script src="~/patio/patio.min.js" asp-append-version="true"></script>
+
+    @RenderSection("Scripts", required: false)
 </body>
 </html>
