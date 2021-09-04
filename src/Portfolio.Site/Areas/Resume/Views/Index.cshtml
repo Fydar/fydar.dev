@@ -16,6 +16,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Resume</title>
 
+  <link rel="stylesheet" href="~/css/main.min.css" asp-append-version="true" />
+  <link rel="stylesheet" href="~/patio/patio.min.css" asp-append-version="true" />
   <link rel="stylesheet" asp-append-version="true" href="~/css/resume.min.css" />
 </head>
 <body>
@@ -154,8 +156,7 @@
                         <div class="card-image">
                           <div class="imageHolder">
                             <a asp-controller="PortfolioItem" asp-action="Index" asp-route-identifier="@project.Slug">
-                              <img src="~/@ResourceHelper.TransformName(project.FeaturedImage, "medium")" loading="lazy" class="overlay"
-                                   style='object-fit: cover;' />
+                              <img src="~/@ResourceHelper.TransformName(project.FeaturedImage, "medium")" loading="lazy" class="overlay" style='object-fit: cover;' />
                             </a>
                           </div>
                         </div>
@@ -163,7 +164,7 @@
                         <div class="card-header">
                           @if (project.Links != null && project.Links.Length != 0)
                           {
-                            <div class="overlay-bottom-right badge-bar badge-bar-carditems">
+                            <div class="badge-bar badge-bar-carditems">
                               @foreach (var link in project.Links)
                               {
                                 <a class="mark mark-subtle mark-@link.Icon.ToLower()" target="_blank" href="@link.Url"></a>

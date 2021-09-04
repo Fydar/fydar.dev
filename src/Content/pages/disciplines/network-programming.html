@@ -1,60 +1,236 @@
+<article>
 
-<div class="post-text">
+  <TableOfContents />
 
-    <TableOfContents />
+  <h2 id="amazon-web-services">Amazon Web Services (AWS)</h2>
 
-    <h2 id="amazon-web-services">Amazon Web Services (AWS)</h2>
+  <div class="badge-cloud">
+    <span class="badge badge-material badge-orange">ECS</span>
+    <span class="badge badge-material badge-orange">EC2</span>
+    <span class="badge badge-material badge-orange">Fargate</span>
+    <span class="badge badge-material badge-orange">Lambda</span>
+    <span class="badge badge-material badge-purple">S3</span>
+    <span class="badge badge-material badge-purple">SNS</span>
+    <span class="badge badge-material badge-purple">SQS</span>
+    <span class="badge badge-material badge-purple">Route 53</span>
+    <span class="badge badge-material badge-blue">Dynamo DB</span>
+    <span class="badge badge-material badge-blue">Cognito</span>
+    <span class="badge badge-material badge-blue">ElastiCache</span>
+    <span class="badge badge-material badge-green">CloudFormation</span>
+    <span class="badge badge-material badge-green">CloudWatch</span>
+    <span class="badge badge-material badge-pink">VPCs</span>
+  </div>
 
-    <div class="badge-cloud">
-        <span class="badge badge-material badge-orange">ECS</span>
-        <span class="badge badge-material badge-orange">EC2</span>
-        <span class="badge badge-material badge-orange">Fargate</span>
-        <span class="badge badge-material badge-orange">Lambda</span>
-        <span class="badge badge-material badge-purple">S3</span>
-        <span class="badge badge-material badge-purple">SNS</span>
-        <span class="badge badge-material badge-purple">SQS</span>
-        <span class="badge badge-material badge-purple">Route 53</span>
-        <span class="badge badge-material badge-blue">Dynamo DB</span>
-        <span class="badge badge-material badge-blue">Cognito</span>
-        <span class="badge badge-material badge-blue">ElastiCache</span>
-        <span class="badge badge-material badge-green">CloudFormation</span>
-        <span class="badge badge-material badge-green">CloudWatch</span>
-        <span class="badge badge-material badge-pink">VPCs</span>
-    </div>
+  <div class="media">
 
-    <h3>CloudFormation</h3>
+    <div class="scene scene-screen-perspective fsa-relative" style="padding: 50px 50px 50px 50px; width: 196px;">
+      <div class="transform transform-sideon-45deg">
 
-    <div class="media">
-        <img class="media-image" src="/img/aws/cloudformation-white.svg" />
-        <div class="media-body">
-            <p>My preferred method of allocating AWS resources is using CloudFormation. CloudFormation offers the ability to templatize cloud resources and provision them on-demand.</p>
-
-            <div class="post-image">
-                <img src="/img/my-portfolio-header.png" />
-                <div class="post-image-caption">
-                    <b>Figure 1:</b> A CloudFormation template for my portfolio.
-                </div>
-            </div>
+          <!-- Mesh 'aws-cloudformation' -->
+          <div class="mesh mesh-aws-cloudformation">    <style>
+            .mesh.mesh-aws-cloudformation {
+              width: 96px;
+              height: 96px;
+              --half-depth: translateZ(-48px);
+            }
+              .mesh.mesh-aws-cloudformation .surface {
+                background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAvUlEQVR4nO2W2w2AIAxFMelcTuMKTuEKTuNiGkg0PvpEsT+9H5J4UzyQXhDGuV8TomlYOs7LI+ZT3v7+LuBMzNsnzqPVw74DyVkBUAAszXT2qUbjvAeApQEtvlR7AFijVrMzHBQaQ22cqDrJewB4KgDIGGZJcaLqJO8CUBu1LyJYAPLDskrLIaMC4KJG3WDam04FkJwVACCd3c2bUJpA04RvBJabq4XEHfgFwFMBIP6UNgfwbMACkJwVAO4AG3xjsD2p10VhAAAAAElFTkSuQmCC);
+                background-size: 512px 512px;
+              }
+          </style>
+          <div class="surface surface-back" style="background-position: 0 0;width: 96px;height: 96px;transform: rotateX(180deg) translate3d(0, -96px, 48px)"></div>
+          <div class="surface surface-back" style="background-position: -336px 0;width: 96px;height: 96px;transform: rotateX(180deg) translate3d(0, -96px, -32px)"></div>
+          <div class="surface surface-down" style="background-position: 0 -112px;width: 96px;height: 96px;transform: rotateX(-90deg) translate3d(0, -48px, 96px)"></div>
+          <div class="surface surface-down" style="background-position: 0 -224px;width: 96px;height: 96px;transform: rotateX(-90deg) translate3d(0, -48px, 16px)"></div>
+          <div class="surface surface-forward" style="background-position: -224px -112px;width: 96px;height: 96px;transform: translate3d(0, 0, 48px)"></div>
+          <div class="surface surface-forward" style="background-position: -112px -224px;width: 80px;height: 96px;transform: translate3d(0, 0, -32px)"></div>
+          <div class="surface surface-left" style="background-position: -112px 0;width: 96px;height: 96px;transform: rotateY(-90deg) translate3d(-48px, 0, 0)"></div>
+          <div class="surface surface-left" style="background-position: -208px -224px;width: 80px;height: 96px;transform: rotateY(-90deg) translate3d(-32px, 0, -80px)"></div>
+          <div class="surface surface-right" style="background-position: -112px -112px;width: 96px;height: 96px;transform: rotateY(90deg) translate3d(-48px, 0, 16px)"></div>
+          <div class="surface surface-right" style="background-position: 0 -336px;width: 96px;height: 96px;transform: rotateY(90deg) translate3d(-48px, 0, 96px)"></div>
+          <div class="surface surface-up" style="background-position: -224px 0;width: 96px;height: 96px;transform: rotateX(90deg) translate3d(0, -48px, -80px)"></div>
+          <div class="surface surface-up" style="background-position: -336px -112px;width: 96px;height: 96px;transform: rotateX(90deg) translate3d(0, -48px, 0)"></div>
         </div>
+
+      </div>
     </div>
 
-    <h2 id="realtime-websocket-server-infrastructure">Realtime WebSocket Server Infrastructure</h2>
+    <div class="media-body">
 
-    <p>In my spare time whilst working at TT Games I felt influenced to try and create my own realtime WebSocket server infrastructure.</p>
+      <h3>CloudFormation</h3>
 
-    <p>Unfortunately only bits and pieces of this are fully implemented.</p>
+      <p>My preferred method of allocating AWS resources is using CloudFormation. CloudFormation offers the ability to templatize cloud resources and provision them on-demand.</p>
 
-    <div class="post-image">
-        <img src="/img/huskynet-header.png" />
-        <div class="post-image-caption">
-            <b>Figure 2:</b> A diagram of the startup flows involved in HuskyNet.
+      <figure class="figure-image">
+        <resource src="img/my-portfolio-header.png" format="large" loading="lazy" />
+        <figcaption><b>Figure 1:</b> A CloudFormation template for my portfolio.</figcaption>
+      </figure>
+
+    </div>
+  </div>
+
+  <div class="media">
+
+    <div class="scene scene-screen-perspective fsa-relative" style="padding: 50px 50px 50px 50px; width: 196px;">
+      <div class="transform transform-sideon-left">
+
+        <!-- Mesh 'aws-ec2' -->
+        <div class="mesh mesh-aws-ec2">
+          <style>
+            .mesh.mesh-aws-ec2 {
+              width: 96px;
+              height: 96px;
+              --half-depth: translateZ(-56px);
+            }
+
+              .mesh.mesh-aws-ec2 .surface {
+                background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAeklEQVR4nO2UMQ6AIAxFa9LB63g/Ru/nddx0ggk16W+oJf8tJWF5Lb/ouW/XWo4FqdLh666eVYKhAAW0JhKtPd7umoB1jdD1awJoByjq1YlZgBNIOwEvcfMEvJ4nPgMSDAXyCngF8d8fkQwgbwYoMI/AqLQ/CkgwFLgBDnuAYVEwI/8AAAAASUVORK5CYII=);
+                background-size: 512px 512px;
+              }
+          </style>
+          <div class="surface surface-back" style="background-position: -224px -112px;width: 96px;height: 96px;transform: rotateX(180deg) translate3d(0, -96px, 56px)"></div>
+          <div class="surface surface-back" style="background-position: -336px -112px;width: 96px;height: 96px;transform: rotateX(180deg) translate3d(0, -96px, 24px)"></div>
+          <div class="surface surface-back" style="background-position: 0 -352px;width: 96px;height: 96px;transform: rotateX(180deg) translate3d(0, -96px, -8px)"></div>
+          <div class="surface surface-back" style="background-position: -224px -224px;width: 96px;height: 96px;transform: rotateX(180deg) translate3d(0, -96px, -40px)"></div>
+          <div class="surface surface-down" style="background-position: 0 -112px;width: 96px;height: 112px;transform: rotateX(-90deg) translate3d(0, -56px, 96px)"></div>
+          <div class="surface surface-forward" style="background-position: -256px 0;width: 96px;height: 96px;transform: translate3d(0, 0, -40px)"></div>
+          <div class="surface surface-forward" style="background-position: -368px 0;width: 96px;height: 96px;transform: translate3d(0, 0, -8px)"></div>
+          <div class="surface surface-forward" style="background-position: 0 -240px;width: 96px;height: 96px;transform: translate3d(0, 0, 24px)"></div>
+          <div class="surface surface-forward" style="background-position: -112px -240px;width: 96px;height: 96px;transform: translate3d(0, 0, 56px)"></div>
+          <div class="surface surface-left" style="background-position: 0 0;width: 112px;height: 96px;transform: rotateY(-90deg) translate3d(-56px, 0, 0)"></div>
+          <div class="surface surface-right" style="background-position: -128px 0;width: 112px;height: 96px;transform: rotateY(90deg) translate3d(-56px, 0, 96px)"></div>
+          <div class="surface surface-up" style="background-position: -112px -112px;width: 96px;height: 112px;transform: rotateX(90deg) translate3d(0, -56px, 0)"></div>
         </div>
+
+      </div>
     </div>
 
-    <h2 id="multiplayer-programming">Multiplayer Programming</h2>
+    <div class="media-body">
 
-    <p>Syncing state between players is something that will vary from project to project, depending on requirements and scale.</p>
+      <h3>EC2</h3>
 
-    <p><b>Work in progress...</b></p>
+      <p>I use EC2 to provision dedicated servers for realtime services and applications.</p>
 
-</div>
+      <p>My <a href="https://anthonymarmont.com/portfolio/global-game-jam-2021">Global Game Jam 2021 project</a> utilised EC2 to host the game at <a href="http://pewpew.anthonymarmont.com/">http://pewpew.anthonymarmont.com/</a>.</p>
+      
+      <p>A <b>Static IP</b> was used to allow all clients to connect to a single instance.</p>
+
+    </div>
+  </div>
+
+  <div class="media">
+
+    <div class="scene scene-screen-perspective fsa-relative" style="padding: 50px 50px 50px 50px; width: 196px;">
+      <div class="transform transform-sideon-45deg">
+
+        <!-- Mesh 'aws-s3' -->
+        <div class="mesh mesh-aws-s3">
+          <style>
+            .mesh.mesh-aws-s3 {
+              width: 96px;
+              height: 128px;
+              --half-depth: translateZ(-48px);
+            }
+              .mesh.mesh-aws-s3 .surface {
+                background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAuklEQVR4nO2WbQ6AIAiGceNmHaFzdoTOZvMHDZsfAzG28v2Tk3KPvMDCuG8RCgrHGVIsPWmP3qUYrXmcx2pn8u8QnCUC4Lfla+0ZYoCeBRr9z4IhgG9a0LrBM9azgPYkWUGLgTJiR9OC0oE1KK3QYqCMFKK6CF+xwKrVmgBaT80skLQh3zOzoJSBWgvOsEJdhO5dYKUFsAD8AWotNHP8ZgAzfrNEAOAstJpoagCPtGcA4Cz0uvkNAM66AGnYlA3Mi8kqAAAAAElFTkSuQmCC);
+                background-size: 512px 512px;
+              }
+          </style>
+          <div class="surface surface-back" style="background-position: 0 0;width: 96px;height: 128px;transform: rotateX(180deg) translate3d(0, -128px, 48px)"></div>
+          <div class="surface surface-back" style="background-position: -224px -144px;width: 32px;height: 128px;transform: rotateX(180deg) translate3d(0, -128px, -16px)"></div>
+          <div class="surface surface-down" style="background-position: 0 -144px;width: 96px;height: 96px;transform: rotateX(-90deg) translate3d(0, -48px, 128px)"></div>
+          <div class="surface surface-down" style="background-position: -48px -400px;width: 32px;height: 32px;transform: rotateX(-90deg) translate3d(0, -48px, 80px)"></div>
+          <div class="surface surface-down" style="background-position: -448px 0;width: 32px;height: 32px;transform: rotateX(-90deg) translate3d(0, -48px, 32px)"></div>
+          <div class="surface surface-forward" style="background-position: -224px 0;width: 96px;height: 128px;transform: translate3d(0, 0, 48px)"></div>
+          <div class="surface surface-forward" style="background-position: 0 -256px;width: 80px;height: 128px;transform: translate3d(0, 0, -32px)"></div>
+          <div class="surface surface-left" style="background-position: -112px 0;width: 96px;height: 128px;transform: rotateY(-90deg) translate3d(-48px, 0, 0)"></div>
+          <div class="surface surface-left" style="background-position: -96px -256px;width: 80px;height: 128px;transform: rotateY(-90deg) translate3d(-32px, 0, -80px)"></div>
+          <div class="surface surface-right" style="background-position: -336px 0;width: 96px;height: 128px;transform: rotateY(90deg) translate3d(-48px, 0, 96px)"></div>
+          <div class="surface surface-right" style="background-position: -272px -144px;width: 32px;height: 128px;transform: rotateY(90deg) translate3d(-48px, 0, 32px)"></div>
+          <div class="surface surface-up" style="background-position: -112px -144px;width: 96px;height: 96px;transform: rotateX(90deg) translate3d(0, -48px, 0)"></div>
+          <div class="surface surface-up" style="background-position: 0 -400px;width: 32px;height: 32px;transform: rotateX(90deg) translate3d(0, 16px, -96px)"></div>
+          <div class="surface surface-up" style="background-position: 0 -448px;width: 32px;height: 32px;transform: rotateX(90deg) translate3d(0, 16px, -48px)"></div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="media-body">
+
+      <h3>S3</h3>
+
+      <p>Professionally, I have used S3 as a major part in many infrastructure projects and applications. S3 offers simple blob-storage of file contents for archival or storage purposes.</p>
+
+      <p>My portfolio tech-stack utilises S3 to store emails recieved at any address at my domain in S3; along with storing the contact form submissions.</p>
+
+      <p>I have also utilised S3 to provide archival storage of player state; IAP and transaction histories; and many other highly scalable systems.</p>
+
+    </div>
+  </div>
+
+  <div class="media">
+
+    <div class="scene scene-screen-perspective fsa-relative" style="padding: 50px 50px 50px 50px; width: 196px;">
+      <div class="transform transform-sideon-45deg">
+
+        <!-- Mesh 'aws-route53' -->
+        <div class="mesh mesh-aws-route53">
+          <style>
+            .mesh.mesh-aws-route53 {
+              width: 80px;
+              height: 144px;
+              --half-depth: translateZ(-40px);
+            }
+              .mesh.mesh-aws-route53 .surface {
+                background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAQCAYAAAB3AH1ZAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAkElEQVR4nL2VPQ6AMAiFa8Lgdbyfo/fzOm4aBxKKBYvUx9KfBPr1AS0VYce2nPc4r/tk7fNcr7VPr1EJ2teDwgDyptY+w2SgTAAZtHWohoKlIJvzB4AlNcrIkhoGEHXQrQgHGK1SBWAVlldw2WIk72Xj9sq02SvAX4G7AbQCaCDyPp7WUzv8L0Dk2QXQt0RDXNpLZDF7z8eBAAAAAElFTkSuQmCC);
+                background-size: 512px 256px;
+              }
+          </style>
+          <div class="surface surface-back" style="background-position: 0 0;width: 80px;height: 144px;transform: rotateX(180deg) translate3d(0, -144px, 40px)"></div>
+          <div class="surface surface-down" style="background-position: -192px 0;width: 48px;height: 16px;transform: rotateX(-90deg) translate3d(0, 24px, 64px)"></div>
+          <div class="surface surface-down" style="background-position: -64px -160px;width: 32px;height: 32px;transform: rotateX(-90deg) translate3d(48px, 8px, 144px)"></div>
+          <div class="surface surface-down" style="background-position: -144px -160px;width: 16px;height: 48px;transform: rotateX(-90deg) translate3d(64px, -40px, 48px)"></div>
+          <div class="surface surface-forward" style="background-position: 0 -160px;width: 48px;height: 16px;transform: translate3d(0, 48px, -24px)"></div>
+          <div class="surface surface-forward" style="background-position: -256px 0;width: 32px;height: 144px;transform: translate3d(48px, 0, -8px)"></div>
+          <div class="surface surface-forward" style="background-position: -32px -224px;width: 16px;height: 16px;transform: translate3d(64px, 32px, 40px)"></div>
+          <div class="surface surface-left" style="background-position: -192px -32px;width: 48px;height: 16px;transform: rotateY(-90deg) translate3d(-8px, 32px, -64px)"></div>
+          <div class="surface surface-left" style="background-position: -192px -64px;width: 32px;height: 144px;transform: rotateY(-90deg) translate3d(-40px, 0, -48px)"></div>
+          <div class="surface surface-left" style="background-position: 0 -224px;width: 16px;height: 16px;transform: rotateY(-90deg) translate3d(-40px, 48px, 0)"></div>
+          <div class="surface surface-right" style="background-position: -96px 0;width: 80px;height: 144px;transform: rotateY(90deg) translate3d(-40px, 0, 80px)"></div>
+          <div class="surface surface-up" style="background-position: 0 -192px;width: 48px;height: 16px;transform: rotateX(90deg) translate3d(0, -40px, -48px)"></div>
+          <div class="surface surface-up" style="background-position: -64px -208px;width: 32px;height: 32px;transform: rotateX(90deg) translate3d(48px, -40px, 0)"></div>
+          <div class="surface surface-up" style="background-position: -112px -160px;width: 16px;height: 48px;transform: rotateX(90deg) translate3d(64px, -8px, -32px)"></div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="media-body">
+
+      <h3>Route53</h3>
+
+      <p>Professionally, I have used S3 as a major part in many infrastructure projects and applications. S3 offers simple blob-storage of file contents for archival or storage purposes.</p>
+
+      <p>My portfolio tech-stack utilises S3 to store emails recieved at any address at my domain in S3; along with storing the contact form submissions.</p>
+
+    </div>
+  </div>
+
+  <h2 id="realtime-websocket-server-infrastructure">Realtime WebSocket Server Infrastructure</h2>
+
+  <p>In my spare time whilst working at TT Games I felt influenced to try and create my own realtime WebSocket server infrastructure.</p>
+
+  <p>Unfortunately only bits and pieces of this are fully implemented.</p>
+
+  <figure class="figure-image">
+    <resource src="img/huskynet-header.png" format="large" loading="lazy" />
+    <figcaption><b>Figure 2:</b> A diagram of the startup flows involved in HuskyNet.</figcaption>
+  </figure>
+
+  <h2 id="multiplayer-programming">Multiplayer Programming</h2>
+
+  <p>Syncing state between players is something that will vary from project to project, depending on requirements and scale.</p>
+
+  <p><b>Work in progress...</b></p>
+  
+</article>

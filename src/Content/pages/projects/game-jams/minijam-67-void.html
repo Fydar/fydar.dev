@@ -1,72 +1,74 @@
-<div class="post-text">
-    
-    <p>My personal submission for the 72-hour Mini Jam themed "Void".</p>
-    
-    <div class="alert alert-green">
-        <p>the <b>theme</b> for this game jam was...</p>
-        <p class="alert-title-1">Void</p>
-        <p>... to be completed in...</p>
-        <p class="alert-title-2">72-hours</p>
-    </div>
-    
-    <div class="alert alert-orange">
-        <p>the <b>limitation</b> for this game jam was...</p>
-        <p class="alert-title-2">Game must not contain any enemies</p>
-        <p class="alert-subtext">"Most enemies can die; an easy way of telling the difference between an enemy and an obstacle is if the player can kill it or not."</p>
-    </div>
+<article>
 
-    
-<div class="scene scene-screen-perspective fsa-relative" style="padding: 50px 50px 50px 50px;">
+  <p>My personal submission for the 72-hour Mini Jam themed "Void".</p>
+
+  <div class="alert alert-green">
+    <p>the <b>theme</b> for this game jam was...</p>
+    <p class="alert-title-1">Void</p>
+    <p>... to be completed in...</p>
+    <p class="alert-title-2">72-hours</p>
+  </div>
+
+  <div class="alert alert-orange">
+    <p>the <b>limitation</b> for this game jam was...</p>
+    <p class="alert-title-2">Game must not contain any enemies</p>
+    <p class="alert-subtext">"Most enemies can die; an easy way of telling the difference between an enemy and an obstacle is if the player can kill it or not."</p>
+  </div>
+
+
+  <div class="scene scene-screen-perspective fsa-relative" style="padding: 50px 50px 50px 50px;">
     <div class="transform anim-rotate-left">
-  
-  
-    <!-- Mesh 'ship' -->
-    <div class="mesh mesh-ship">    <style>
-        .mesh.mesh-ship {
-          width: 96px;
-          height: 48px;
-          --half-depth: translateZ(-88px);
-        }
-          .mesh.mesh-ship .surface {
-            background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAQCAYAAAB3AH1ZAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAt0lEQVR4nL1VQQ7AIAhziX/y/0dftcUDCbLSgW7rRUWFUiHWotB7PwtAa+0Ye2O057VN7lubrGWubVVfsgEsrLMSgPYpc22rKAPmhJFjRCVzPR/j9ASRQAwZdW5P4B34GpUFsvVhyb5BkioQDYB8oK6BBP6S2iXA+tvr60wA1IYTAWRE/SprRGoHaQU82EyjSqUU2LVBAoip13LM5v0XjwS8CytZrdQFVQD9Ymh/ByEFUE2wOsngAm6uu7XMEXFqAAAAAElFTkSuQmCC);
-            background-size: 512px 256px;
+
+
+      <!-- Mesh 'ship' -->
+      <div class="mesh mesh-ship">
+        <style>
+          .mesh.mesh-ship {
+            width: 96px;
+            height: 48px;
+            --half-depth: translateZ(-88px);
           }
-      </style>
-      <div class="surface surface-back" style="background-position: 0 -128px;width: 96px;height: 16px;transform: rotateX(180deg) translate3d(0, -32px, 88px)"></div>
-      <div class="surface surface-back" style="background-position: -384px 0;width: 64px;height: 16px;transform: rotateX(180deg) translate3d(16px, -32px, 72px)"></div>
-      <div class="surface surface-back" style="background-position: -256px -192px;width: 32px;height: 48px;transform: rotateX(180deg) translate3d(32px, -48px, 56px)"></div>
-      <div class="surface surface-down" style="background-position: -272px 0;width: 96px;height: 176px;transform: rotateX(-90deg) translate3d(0, -88px, 32px)"></div>
-      <div class="surface surface-down" style="background-position: -384px -32px;width: 32px;height: 96px;transform: rotateX(-90deg) translate3d(32px, -40px, 48px)"></div>
-      <div class="surface surface-forward" style="background-position: 0 -160px;width: 96px;height: 16px;transform: translate3d(0, 16px, -8px)"></div>
-      <div class="surface surface-forward" style="background-position: -96px -224px;width: 64px;height: 16px;transform: translate3d(16px, 16px, 56px)"></div>
-      <div class="surface surface-forward" style="background-position: -112px -128px;width: 32px;height: 48px;transform: translate3d(32px, 0, 40px)"></div>
-      <div class="surface surface-forward" style="background-position: -176px -224px;width: 32px;height: 16px;transform: translate3d(32px, 16px, 88px)"></div>
-      <div class="surface surface-left" style="background-position: 0 -64px;width: 144px;height: 48px;transform: rotateY(-90deg) translate3d(-56px, 0, -32px)"></div>
-      <div class="surface surface-left" style="background-position: 0 -224px;width: 80px;height: 16px;transform: rotateY(-90deg) translate3d(-88px, 16px, 0)"></div>
-      <div class="surface surface-left" style="background-position: -96px -192px;width: 64px;height: 16px;transform: rotateY(-90deg) translate3d(-8px, 16px, -16px)"></div>
-      <div class="surface surface-left" style="background-position: -464px 0;width: 16px;height: 16px;transform: rotateY(-90deg) translate3d(-88px, 16px, -80px)"></div>
-      <div class="surface surface-left" style="background-position: -480px -32px;width: 16px;height: 16px;transform: rotateY(-90deg) translate3d(-72px, 16px, -64px)"></div>
-      <div class="surface surface-right" style="background-position: 0 0;width: 144px;height: 48px;transform: rotateY(90deg) translate3d(-88px, 0, 64px)"></div>
-      <div class="surface surface-right" style="background-position: 0 -192px;width: 80px;height: 16px;transform: rotateY(90deg) translate3d(8px, 16px, 96px)"></div>
-      <div class="surface surface-right" style="background-position: -176px -192px;width: 64px;height: 16px;transform: rotateY(90deg) translate3d(-56px, 16px, 80px)"></div>
-      <div class="surface surface-right" style="background-position: -224px -224px;width: 16px;height: 16px;transform: rotateY(90deg) translate3d(56px, 16px, 32px)"></div>
-      <div class="surface surface-right" style="background-position: -304px -192px;width: 16px;height: 16px;transform: rotateY(90deg) translate3d(72px, 16px, 16px)"></div>
-      <div class="surface surface-up" style="background-position: -160px 0;width: 96px;height: 176px;transform: rotateX(90deg) translate3d(0, -88px, -16px)"></div>
-      <div class="surface surface-up" style="background-position: -432px -32px;width: 32px;height: 96px;transform: rotateX(90deg) translate3d(32px, -56px, 0)"></div>
+
+            .mesh.mesh-ship .surface {
+              background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAQCAYAAAB3AH1ZAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAt0lEQVR4nL1VQQ7AIAhziX/y/0dftcUDCbLSgW7rRUWFUiHWotB7PwtAa+0Ye2O057VN7lubrGWubVVfsgEsrLMSgPYpc22rKAPmhJFjRCVzPR/j9ASRQAwZdW5P4B34GpUFsvVhyb5BkioQDYB8oK6BBP6S2iXA+tvr60wA1IYTAWRE/SprRGoHaQU82EyjSqUU2LVBAoip13LM5v0XjwS8CytZrdQFVQD9Ymh/ByEFUE2wOsngAm6uu7XMEXFqAAAAAElFTkSuQmCC);
+              background-size: 512px 256px;
+            }
+        </style>
+        <div class="surface surface-back" style="background-position: 0 -128px;width: 96px;height: 16px;transform: rotateX(180deg) translate3d(0, -32px, 88px)"></div>
+        <div class="surface surface-back" style="background-position: -384px 0;width: 64px;height: 16px;transform: rotateX(180deg) translate3d(16px, -32px, 72px)"></div>
+        <div class="surface surface-back" style="background-position: -256px -192px;width: 32px;height: 48px;transform: rotateX(180deg) translate3d(32px, -48px, 56px)"></div>
+        <div class="surface surface-down" style="background-position: -272px 0;width: 96px;height: 176px;transform: rotateX(-90deg) translate3d(0, -88px, 32px)"></div>
+        <div class="surface surface-down" style="background-position: -384px -32px;width: 32px;height: 96px;transform: rotateX(-90deg) translate3d(32px, -40px, 48px)"></div>
+        <div class="surface surface-forward" style="background-position: 0 -160px;width: 96px;height: 16px;transform: translate3d(0, 16px, -8px)"></div>
+        <div class="surface surface-forward" style="background-position: -96px -224px;width: 64px;height: 16px;transform: translate3d(16px, 16px, 56px)"></div>
+        <div class="surface surface-forward" style="background-position: -112px -128px;width: 32px;height: 48px;transform: translate3d(32px, 0, 40px)"></div>
+        <div class="surface surface-forward" style="background-position: -176px -224px;width: 32px;height: 16px;transform: translate3d(32px, 16px, 88px)"></div>
+        <div class="surface surface-left" style="background-position: 0 -64px;width: 144px;height: 48px;transform: rotateY(-90deg) translate3d(-56px, 0, -32px)"></div>
+        <div class="surface surface-left" style="background-position: 0 -224px;width: 80px;height: 16px;transform: rotateY(-90deg) translate3d(-88px, 16px, 0)"></div>
+        <div class="surface surface-left" style="background-position: -96px -192px;width: 64px;height: 16px;transform: rotateY(-90deg) translate3d(-8px, 16px, -16px)"></div>
+        <div class="surface surface-left" style="background-position: -464px 0;width: 16px;height: 16px;transform: rotateY(-90deg) translate3d(-88px, 16px, -80px)"></div>
+        <div class="surface surface-left" style="background-position: -480px -32px;width: 16px;height: 16px;transform: rotateY(-90deg) translate3d(-72px, 16px, -64px)"></div>
+        <div class="surface surface-right" style="background-position: 0 0;width: 144px;height: 48px;transform: rotateY(90deg) translate3d(-88px, 0, 64px)"></div>
+        <div class="surface surface-right" style="background-position: 0 -192px;width: 80px;height: 16px;transform: rotateY(90deg) translate3d(8px, 16px, 96px)"></div>
+        <div class="surface surface-right" style="background-position: -176px -192px;width: 64px;height: 16px;transform: rotateY(90deg) translate3d(-56px, 16px, 80px)"></div>
+        <div class="surface surface-right" style="background-position: -224px -224px;width: 16px;height: 16px;transform: rotateY(90deg) translate3d(56px, 16px, 32px)"></div>
+        <div class="surface surface-right" style="background-position: -304px -192px;width: 16px;height: 16px;transform: rotateY(90deg) translate3d(72px, 16px, 16px)"></div>
+        <div class="surface surface-up" style="background-position: -160px 0;width: 96px;height: 176px;transform: rotateX(90deg) translate3d(0, -88px, -16px)"></div>
+        <div class="surface surface-up" style="background-position: -432px -32px;width: 32px;height: 96px;transform: rotateX(90deg) translate3d(32px, -56px, 0)"></div>
+      </div>
+
+
     </div>
-  
-  
   </div>
-  </div>
-  
-  <figure>
+
+  <figure class="figure-image">
     <img src="/img/minijam-67-void-1.png" />
     <figcaption>Close-up view of the refinery ship.</figcaption>
   </figure>
-  
-  <figure>
+
+  <figure class="figure-image">
     <img src="/img/minijam-67-void-2.png" />
     <figcaption>Multiple units to command.</figcaption>
   </figure>
 
-</div>
+  </article>

@@ -9,25 +9,32 @@ namespace Portfolio.Models.Utilities
 			["blur"] = new ImageSettings()
 			{
 				MaxWidth = 32,
-				ForceExtension = ".jpeg"
+				ForceExtension = ".jpg"
 			},
 			["tiny"] = new ImageSettings()
 			{
-				MaxWidth = 64
+				MaxWidth = 64,
+				ForceExtension = ".jpg"
 			},
 			["thumbnail"] = new ImageSettings()
 			{
-				MaxWidth = 150
+				MaxWidth = 150,
+				ForceExtension = ".jpg"
 			},
 			["medium"] = new ImageSettings()
 			{
 				MaxWidth = 400,
-				ForceExtension = ".jpeg"
+				ForceExtension = ".jpg"
+			},
+			["large"] = new ImageSettings()
+			{
+				MaxWidth = 720,
+				ForceExtension = ".jpg"
 			},
 			["fullscreen"] = new ImageSettings()
 			{
 				MaxWidth = 1200,
-				ForceExtension = ".jpeg"
+				ForceExtension = ".jpg"
 			},
 		};
 
@@ -48,7 +55,7 @@ namespace Portfolio.Models.Utilities
 			{
 				if (!string.IsNullOrEmpty(settings.ForceExtension))
 				{
-					name = $"{name.Substring(0, name.LastIndexOf('.'))}.{settings.ForceExtension}";
+					name = $"{name.Substring(0, name.LastIndexOf('.'))}{settings.ForceExtension}";
 				}
 			}
 

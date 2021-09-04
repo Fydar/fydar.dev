@@ -58,6 +58,12 @@
         filter: brightness(var(--light-right));
       }
 
+.transform-sideon-45deg {
+  transform: rotateX(0deg) rotateY(45deg);
+}
+.transform-sideon-left {
+  transform: rotateX(0deg) rotateY(30deg);
+}
 
 .anim-rotate-left {
   animation: anim-rotate-left 1s linear normal;

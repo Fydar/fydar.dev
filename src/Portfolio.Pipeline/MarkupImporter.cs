@@ -1,4 +1,5 @@
-﻿using RPGCore.FileTree;
+﻿using Portfolio.Models.Utilities;
+using RPGCore.FileTree;
 using RPGCore.Projects;
 using RPGCore.Projects.Pipeline;
 using System.Collections.Generic;
@@ -40,6 +41,11 @@ namespace Portfolio.Pipeline
 			return archiveFile.Extension == ".html";
 		}
 
+		private static readonly Dictionary<string, string> featuredImageMetadata = new()
+		{
+			["Size"] = "large,medium,thumbnail,blur"
+		};
+
 		public IEnumerable<ProjectResourceUpdate> ImportFile(ArchiveFileImporterContext context, IArchiveFile archiveFile)
 		{
 			var update = context.AuthorUpdate(archiveFile.FullName);
@@ -52,11 +58,37 @@ namespace Portfolio.Pipeline
 
 			foreach (var imageElement in AllNodes(document.DocumentElement))
 			{
-				if (imageElement.Name == "img")
+				if (imageElement.Name == "resource")
+				{
+					var oldSrcAttribute = imageElement.Attributes["src"];
+					var formatAttribute = imageElement.Attributes["format"];
+
+					var newElement = document.CreateNode(XmlNodeType.Element, "img", null);
+					imageElement.ParentNode.ReplaceChild(newElement, imageElement);
+
+					var newSrcAttribute = document.CreateAttribute("src");
+					newSrcAttribute.Value = $"/{ResourceHelper.TransformName(oldSrcAttribute.Value, formatAttribute.Value)}";
+					newElement.Attributes.Append(newSrcAttribute);
+
+					foreach (XmlAttribute oldAttribute in imageElement.Attributes)
+					{
+						if (oldAttribute.Name != "src"
+							&& oldAttribute.Name != "format")
+						{
+							var newAttribute = document.CreateAttribute(oldAttribute.Name);
+							newAttribute.Value = oldAttribute.Value;
+							newElement.Attributes.Append(newAttribute);
+						}
+					}
+
+					update.Dependencies.Register(oldSrcAttribute.Value, metadata: featuredImageMetadata);
+				}
+				else if (imageElement.Name == "img")
 				{
 					var srcAttribute = imageElement.Attributes["src"];
 
 					srcAttribute.Value = srcAttribute.Value.Replace("../", "");
+
 				}
 				else if (imageElement.Name == "TableOfContents")
 				{
@@ -66,9 +98,10 @@ namespace Portfolio.Pipeline
 					container.Attributes.Append(containerStyle);
 
 					var title = document.CreateNode(XmlNodeType.Element, "p", null);
+					title.InnerText = "Contents";
+
 					var titleStyle = document.CreateAttribute("class");
 					titleStyle.Value = "toc-title";
-					title.InnerText = "Contents";
 					title.Attributes.Append(titleStyle);
 
 					container.AppendChild(title);

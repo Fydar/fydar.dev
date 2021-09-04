@@ -23,7 +23,17 @@ namespace Portfolio.Pipeline
 
 		public IEnumerable<ProjectResourceUpdate> ProcessImport(ImportProcessorContext context, IResource resource)
 		{
-			Console.WriteLine($"Discovering Resources {resource.FullName}");
+			lock (Console.Out)
+			{
+				Console.ForegroundColor = ConsoleColor.DarkGray;
+				Console.Write("Discovering image '");
+
+				Console.ForegroundColor = ConsoleColor.Gray;
+				Console.Write(resource.FullName);
+
+				Console.ForegroundColor = ConsoleColor.DarkGray;
+				Console.WriteLine("'");
+			}
 
 			var sizes = new HashSet<string>
 			{

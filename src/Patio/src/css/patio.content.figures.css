@@ -16,3 +16,46 @@ figcaption {
   text-align: center;
   font-size: 0.75em;
 }
+
+figure.figure-youtube {
+  padding-top: 56.25%;
+  width: 100%;
+  position: relative;
+}
+
+  figure.figure-youtube iframe {
+    border: 0;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+  }
+
+figure.figure-cutout {
+  padding: 2rem;
+  background: #fbfbfb;
+  box-shadow: inset 1px 1px 4px #aaa;
+}
+
+figure.figure-image {
+  background-color: #f3f3f3;
+  width: fit-content;
+  max-width: 90%;
+  margin: 2rem auto;
+}
+
+  figure.figure-image figcaption {
+    color: #4a4a4a;
+    padding: 0.8em 1rem;
+    font-size: 0.75em;
+  }
+
+.dark figure.figure-image {
+  background-color: #202020;
+}
+
+  .dark figure.figure-image figcaption {
+    color: #d8d8d8;
+  }

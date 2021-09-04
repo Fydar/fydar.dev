@@ -198,7 +198,7 @@ blockquote {
     content: '\201C';
     position: absolute;
     color: var(--color-grey-6);
-    font-size: 12rem;
+    font-size: 8rem;
     transform: translate(-0.25rem, -3rem);
     font-family: Helvetica, sans-serif;
   }
@@ -1528,6 +1528,12 @@ section.navbar {
         filter: brightness(var(--light-right));
       }
 
+.transform-sideon-45deg {
+  transform: rotateX(0deg) rotateY(45deg);
+}
+.transform-sideon-left {
+  transform: rotateX(0deg) rotateY(30deg);
+}
 
 .anim-rotate-left {
   animation: anim-rotate-left 1s linear normal;
@@ -1584,6 +1590,49 @@ figcaption {
   text-align: center;
   font-size: 0.75em;
 }
+
+figure.figure-youtube {
+  padding-top: 56.25%;
+  width: 100%;
+  position: relative;
+}
+
+  figure.figure-youtube iframe {
+    border: 0;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+  }
+
+figure.figure-cutout {
+  padding: 2rem;
+  background: #fbfbfb;
+  box-shadow: inset 1px 1px 4px #aaa;
+}
+
+figure.figure-image {
+  background-color: #f3f3f3;
+  width: fit-content;
+  max-width: 90%;
+  margin: 2rem auto;
+}
+
+  figure.figure-image figcaption {
+    color: #4a4a4a;
+    padding: 0.8em 1rem;
+    font-size: 0.75em;
+  }
+
+.dark figure.figure-image {
+  background-color: #202020;
+}
+
+  .dark figure.figure-image figcaption {
+    color: #d8d8d8;
+  }
 
 
 h1 {
@@ -1790,9 +1839,16 @@ body {
   }
 
 body {
+  padding: 0;
+  margin: 0;
   font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
   font-size: 16px;
   font-weight: 400;
   color: var(--color-text-primary);
   background-color: var(--color-background-1);
 }
+
+  body.dark {
+    font-weight: 100;
+    letter-spacing: 0.15px;
+  }

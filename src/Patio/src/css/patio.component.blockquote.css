@@ -11,7 +11,7 @@ blockquote {
     content: '\201C';
     position: absolute;
     color: var(--color-grey-6);
-    font-size: 12rem;
+    font-size: 8rem;
     transform: translate(-0.25rem, -3rem);
     font-family: Helvetica, sans-serif;
   }
