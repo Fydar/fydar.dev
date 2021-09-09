@@ -14,6 +14,16 @@
   "ProjectSubtitle": null,
   "Links": [
     {
+      "SiteName": "Play",
+      "Url": "https://fydar.github.io/AstralElites/",
+      "Icon": "github"
+    },
+    {
+      "SiteName": "GitHub",
+      "Url": "https://github.com/Fydar/AstralElites",
+      "Icon": "github"
+    },
+    {
       "SiteName": "Itch.io",
       "Url": "https://fydar.itch.io/astral-elites",
       "Icon": "itch-io"

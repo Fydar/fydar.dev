@@ -17,6 +17,23 @@
     right: 0;
   }
 
+.badge.badge-corner.badge-corner-topright {
+  font-size: 15px;
+  border-bottom-left-radius: 1em;
+  background-color: #fafbfc;
+  color: #444;
+  font-weight: 500;
+  box-shadow: 0 0 0 0 #4287f5ff;
+  transition: box-shadow .15s ease-in-out,background-color .15s ease-in-out;
+  user-select: none;
+  padding: 4px 12px 5px 10px;
+}
+
+  .badge.badge-corner.badge-corner-topright:hover {
+    background-color: #fafbfc;
+    box-shadow: 0 0 0 0.275em #4287f5ff;
+  }
+
 .website-footer {
   color: #888888;
   font-family: sans-serif;

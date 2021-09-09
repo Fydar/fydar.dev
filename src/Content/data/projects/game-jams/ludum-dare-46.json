@@ -13,6 +13,11 @@
   "Page": "pages/projects/game-jams/ludum-dare-46.html",
   "Links": [
     {
+      "SiteName": "Play",
+      "Url": "https://fydar.itch.io/raid-healer-simulator",
+      "Icon": "itch-io"
+    },
+    {
       "SiteName": "GitHub",
       "Url": "https://github.com/Fydar/RaidHealerSimulator",
       "Icon": "github"

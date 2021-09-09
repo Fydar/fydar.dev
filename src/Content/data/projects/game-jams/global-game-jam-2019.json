@@ -12,6 +12,11 @@
   "Page": "pages/projects/game-jams/global-game-jam-2019.html",
   "Links": [
     {
+      "SiteName": "Play",
+      "Url": "https://fydar.github.io/GGJ2019/",
+      "Icon": "website"
+    },
+    {
       "SiteName": "GitHub",
       "Url": "https://github.com/Fydar/GGJ2019",
       "Icon": "github"

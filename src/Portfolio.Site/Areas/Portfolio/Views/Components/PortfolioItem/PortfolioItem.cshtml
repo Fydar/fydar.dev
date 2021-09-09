@@ -19,12 +19,33 @@
           <div class="overlay-bottom-right badge-bar badge-bar-vertical">
             @foreach (var link in Model.Links)
             {
+              if (link.SiteName == "Play")
+              {
+                continue;
+              }
               <a class="badge badge-lozenge" href="@link.Url" target="_blank">
                 @if (!string.IsNullOrEmpty(link.Icon))
                 {
                   <span class="mark mark-default mark-@link.Icon.ToLower()"></span>
                 }
                 @link.SiteName
+              </a>
+            }
+          </div>
+          <div class="overlay-top-right badge-bar">
+            @foreach (var link in Model.Links)
+            {
+              if (link.SiteName != "Play")
+              {
+                continue;
+              }
+
+              <a class="badge badge-corner badge-corner-topright" href="@link.Url" target="_blank">
+                @if (!string.IsNullOrEmpty(link.Icon))
+                {
+                  <span class="mark mark-default mark-@link.Icon.ToLower()"></span>
+                }
+                Play
               </a>
             }
           </div>
