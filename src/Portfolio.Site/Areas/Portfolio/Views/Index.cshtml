@@ -13,38 +13,9 @@
 
     @for (int i = 0; i < contentService.Categories.Count; i++)
     {
-      int missing = 0;
-
       var category = contentService.Categories[i];
 
-      <h1>@category.DisplayName</h1>
-
-      <div class="card-grid @(category.Projects.Count > 3 ? "card-grid-sm" : "")">
-        @foreach (var project in category.Projects)
-        {
-          if (project.HideOnHomePage)
-          {
-            missing++;
-          }
-          else
-          {
-            <vc:portfolio-item project="project" />
-          }
-        }
-      </div>
-
-      @if (missing > 0)
-      {
-        <div class="form-group" style="text-align: right;">
-          <a class="form-btn form-btn-readmore"
-             asp-area="Portfolio"
-             asp-controller="PortfolioItem"
-             asp-action="Index"
-             asp-route-identifier="@category.Slug">
-            view <b>@missing</b> more projects →
-          </a>
-        </div>
-      }
+      <vc:portfolio-grid category="category" />
 
       @if (i == 0)
       {
@@ -135,7 +106,6 @@
             <div class="surface surface-up" style="background-position: -1168px -368px;width: 48px;height: 16px;transform: rotateX(90deg) translate3d(64px, 40px, -144px)"></div>
             <div class="surface surface-up" style="background-position: -1488px -48px;width: 48px;height: 16px;transform: rotateX(90deg) translate3d(64px, 24px, -160px)"></div>
           </div>
-
 
         </div>
         </div>

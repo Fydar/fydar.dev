@@ -2,37 +2,50 @@
 
   <TableOfContents />
 
-  <h2 id="amazon-web-services">Amazon Web Services (AWS)</h2>
+  <blockquote>
+    <p>I love the benefits a well-constructed API and a well-considered server-stack can provide.</p>
+    <p>I enjoy multiplayer experiences and sharable content. I find that being a central part in connecting players is incredibly rewarding.</p>
+  </blockquote>
 
-  <div class="badge-cloud">
-    <span class="badge badge-material badge-orange">ECS</span>
-    <span class="badge badge-material badge-orange">EC2</span>
-    <span class="badge badge-material badge-orange">Fargate</span>
-    <span class="badge badge-material badge-orange">Lambda</span>
-    <span class="badge badge-material badge-purple">S3</span>
-    <span class="badge badge-material badge-purple">SNS</span>
-    <span class="badge badge-material badge-purple">SQS</span>
-    <span class="badge badge-material badge-purple">Route 53</span>
-    <span class="badge badge-material badge-blue">Dynamo DB</span>
-    <span class="badge badge-material badge-blue">Cognito</span>
-    <span class="badge badge-material badge-blue">ElastiCache</span>
-    <span class="badge badge-material badge-green">CloudFormation</span>
-    <span class="badge badge-material badge-green">CloudWatch</span>
-    <span class="badge badge-material badge-pink">VPCs</span>
+  <div class="card-grid">
+    <a href="/portfolio/global-game-jam-2021" class="card">
+      <div class="card-image">
+        <div class="imageHolder">
+          <resource src="img/pewpew-2.png" format="large" loading="lazy" />
+        </div>
+      </div>
+      <div class="card-header">
+        <p class="card-title">Pew Pew</p>
+      </div>
+    </a>
+    <a href="/portfolio/lego-star-wars-battles" class="card">
+      <div class="card-image">
+        <div class="imageHolder">
+          <resource src="img/lego-star-wars-battles-1.jpg" format="large" loading="lazy" />
+        </div>
+      </div>
+      <div class="card-header">
+        <p class="card-title">LEGO&#174; Star Wars&#8482; Battles</p>
+      </div>
+    </a>
   </div>
+
+  <h2 id="amazon-web-services">Amazon Web Services (AWS)</h2>
 
   <div class="media">
 
     <div class="scene scene-screen-perspective fsa-relative" style="padding: 50px 50px 50px 50px; width: 196px;">
       <div class="transform transform-sideon-45deg">
 
-          <!-- Mesh 'aws-cloudformation' -->
-          <div class="mesh mesh-aws-cloudformation">    <style>
+        <!-- Mesh 'aws-cloudformation' -->
+        <div class="mesh mesh-aws-cloudformation">
+          <style>
             .mesh.mesh-aws-cloudformation {
               width: 96px;
               height: 96px;
               --half-depth: translateZ(-48px);
             }
+
               .mesh.mesh-aws-cloudformation .surface {
                 background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAvUlEQVR4nO2W2w2AIAxFMelcTuMKTuEKTuNiGkg0PvpEsT+9H5J4UzyQXhDGuV8TomlYOs7LI+ZT3v7+LuBMzNsnzqPVw74DyVkBUAAszXT2qUbjvAeApQEtvlR7AFijVrMzHBQaQ22cqDrJewB4KgDIGGZJcaLqJO8CUBu1LyJYAPLDskrLIaMC4KJG3WDam04FkJwVACCd3c2bUJpA04RvBJabq4XEHfgFwFMBIP6UNgfwbMACkJwVAO4AG3xjsD2p10VhAAAAAElFTkSuQmCC);
                 background-size: 512px 512px;
@@ -65,6 +78,10 @@
         <resource src="img/my-portfolio-header.png" format="large" loading="lazy" />
         <figcaption><b>Figure 1:</b> A CloudFormation template for my portfolio.</figcaption>
       </figure>
+
+      <p>Both this portfolio website and my <a href="https://anthonymarmont.com/portfolio/global-game-jam-2021">Global Game Jam 2021 project</a> where deployed from CloudFormation templates.</p>
+
+      <p>I am proficient with both Json and YAML templates; however I prefer YAML for its comment support.</p>
 
     </div>
   </div>
@@ -109,11 +126,15 @@
 
       <h3>EC2</h3>
 
-      <p>I use EC2 to provision dedicated servers for realtime services and applications.</p>
+      <p>I haved used EC2 to provision dedicated servers for realtime services and applications.</p>
 
-      <p>My <a href="https://anthonymarmont.com/portfolio/global-game-jam-2021">Global Game Jam 2021 project</a> utilised EC2 to host the game at <a href="http://pewpew.anthonymarmont.com/">http://pewpew.anthonymarmont.com/</a>.</p>
-      
-      <p>A <b>Static IP</b> was used to allow all clients to connect to a single instance.</p>
+      <p>My <a href="https://anthonymarmont.com/portfolio/global-game-jam-2021">Global Game Jam 2021 project</a> utilised EC2 to host the game at <a href="http://pewpew.anthonymarmont.com/">http://pewpew.anthonymarmont.com/</a>. A <b>Static IP</b> was used to allow all clients to connect to a single instance.</p>
+
+      <p>To faciliate debugging I have utilised <b>SSH</b> in order to interact with the <b>Docker</b> and <b>AWS CLI</b> running on the EC2 instance.</p>
+
+      <p>I have also used EC2 in combination with <b>ECS</b> in order to create scalable web solutions with container orchestration.</p>
+
+      <p>For my portfolio website, I wanted to optimize everything I could to reduce the hosting cost. I utilised <a href="https://aws.amazon.com/ec2/graviton/">Graviton</a> instances, based on the 64-bit Arm architecture. This almost halved the hosting costs for the instances.</p>
 
     </div>
   </div>
@@ -131,6 +152,7 @@
               height: 128px;
               --half-depth: translateZ(-48px);
             }
+
               .mesh.mesh-aws-s3 .surface {
                 background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAuklEQVR4nO2WbQ6AIAiGceNmHaFzdoTOZvMHDZsfAzG28v2Tk3KPvMDCuG8RCgrHGVIsPWmP3qUYrXmcx2pn8u8QnCUC4Lfla+0ZYoCeBRr9z4IhgG9a0LrBM9azgPYkWUGLgTJiR9OC0oE1KK3QYqCMFKK6CF+xwKrVmgBaT80skLQh3zOzoJSBWgvOsEJdhO5dYKUFsAD8AWotNHP8ZgAzfrNEAOAstJpoagCPtGcA4Cz0uvkNAM66AGnYlA3Mi8kqAAAAAElFTkSuQmCC);
                 background-size: 512px 512px;
@@ -159,7 +181,7 @@
 
       <h3>S3</h3>
 
-      <p>Professionally, I have used S3 as a major part in many infrastructure projects and applications. S3 offers simple blob-storage of file contents for archival or storage purposes.</p>
+      <p>Professionally, I have used S3 as a major part in many infrastructure projects and applications. S3 offers simple blob-storage of file contents for storage or archival purposes.</p>
 
       <p>My portfolio tech-stack utilises S3 to store emails recieved at any address at my domain in S3; along with storing the contact form submissions.</p>
 
@@ -181,6 +203,7 @@
               height: 144px;
               --half-depth: translateZ(-40px);
             }
+
               .mesh.mesh-aws-route53 .surface {
                 background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAQCAYAAAB3AH1ZAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAkElEQVR4nL2VPQ6AMAiFa8Lgdbyfo/fzOm4aBxKKBYvUx9KfBPr1AS0VYce2nPc4r/tk7fNcr7VPr1EJ2teDwgDyptY+w2SgTAAZtHWohoKlIJvzB4AlNcrIkhoGEHXQrQgHGK1SBWAVlldw2WIk72Xj9sq02SvAX4G7AbQCaCDyPp7WUzv8L0Dk2QXQt0RDXNpLZDF7z8eBAAAAAElFTkSuQmCC);
                 background-size: 512px 256px;
@@ -220,17 +243,17 @@
 
   <p>In my spare time whilst working at TT Games I felt influenced to try and create my own realtime WebSocket server infrastructure.</p>
 
-  <p>Unfortunately only bits and pieces of this are fully implemented.</p>
+  <p>Parts of this realtime WebSocket infrasture was used to power my <a href="https://anthonymarmont.com/portfolio/global-game-jam-2021">Global Game Jam 2021 project</a>.</p>
 
   <figure class="figure-image">
     <resource src="img/huskynet-header.png" format="large" loading="lazy" />
     <figcaption><b>Figure 2:</b> A diagram of the startup flows involved in HuskyNet.</figcaption>
   </figure>
 
-  <h2 id="multiplayer-programming">Multiplayer Programming</h2>
+  <h2 id="databases">Databases</h2>
 
-  <p>Syncing state between players is something that will vary from project to project, depending on requirements and scale.</p>
+  <p>I am proficient with SQL (both MySQL and MSSQL servers), and I am able to construct functional queries in order to facilitate an application with relational data.</p>
 
-  <p><b>Work in progress...</b></p>
-  
+  <p>I have worked with many No-SQL databases, such as Redis, DynamoDB, Cloud Firestore, and Azure Cosmos DB.</p>
+
 </article>

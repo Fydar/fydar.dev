@@ -65,6 +65,7 @@ namespace Portfolio.Pipeline
 				string extension = name.Substring(name.LastIndexOf('.'));
 
 				var content = new ImageContentWriter(
+					resource,
 					resource.Content,
 					imageSettings,
 					extension);
@@ -79,12 +80,18 @@ namespace Portfolio.Pipeline
 
 		private class ImageContentWriter : IContentWriter
 		{
+			private readonly IResource resource;
 			private readonly IResourceContent source;
 			private readonly ImageSettings imageSettings;
 			private readonly string extension;
 
-			public ImageContentWriter(IResourceContent source, ImageSettings imageSettings, string extension)
+			public ImageContentWriter(
+				IResource resource,
+				IResourceContent source,
+				ImageSettings imageSettings,
+				string extension)
 			{
+				this.resource = resource;
 				this.source = source;
 				this.imageSettings = imageSettings;
 				this.extension = extension;
@@ -92,40 +99,49 @@ namespace Portfolio.Pipeline
 
 			public Task WriteContentAsync(Stream destination)
 			{
-				using var readStream = source.OpenRead();
-				using var image = Image.Load(readStream);
+				try
+				{
+					using var readStream = source.OpenRead();
+					using var image = Image.Load(readStream);
 
-				// Make sure the image doesn't exceed the max width.
-				if (image.Width > imageSettings.MaxWidth)
-				{
-					int newWidth = imageSettings.MaxWidth;
-					int newHeight = (int)(image.Height / (float)image.Width) * newWidth;
+					// Make sure the image doesn't exceed the max width.
+					if (image.Width > imageSettings.MaxWidth)
+					{
+						int newWidth = imageSettings.MaxWidth;
+						int newHeight = (int)(image.Height / (float)image.Width) * newWidth;
 
-					// Resize the image to the desired size.
-					image.Mutate(x => x.Resize(newWidth, newHeight));
-				}
+						// Resize the image to the desired size.
+						image.Mutate(x => x.Resize(newWidth, newHeight));
+					}
 
-				// Save the image.
-				if (string.Equals(extension, ".png", StringComparison.OrdinalIgnoreCase))
-				{
-					return image.SaveAsPngAsync(destination);
+					// Save the image.
+					if (string.Equals(extension, ".png", StringComparison.OrdinalIgnoreCase))
+					{
+						return image.SaveAsPngAsync(destination);
+					}
+					else if (string.Equals(extension, ".jpg", StringComparison.OrdinalIgnoreCase)
+						|| string.Equals(extension, ".jpeg", StringComparison.OrdinalIgnoreCase))
+					{
+						return image.SaveAsJpegAsync(destination);
+					}
+					else if (string.Equals(extension, ".bmp", StringComparison.OrdinalIgnoreCase))
+					{
+						return image.SaveAsBmpAsync(destination);
+					}
+					else if (string.Equals(extension, ".gif", StringComparison.OrdinalIgnoreCase))
+					{
+						return image.SaveAsGifAsync(destination);
+					}
+					else
+					{
+						throw new InvalidOperationException($"Cannot compress a file of type '{extension}'.");
+					}
 				}
-				else if (string.Equals(extension, ".jpg", StringComparison.OrdinalIgnoreCase)
-					|| string.Equals(extension, ".jpeg", StringComparison.OrdinalIgnoreCase))
+				catch (Exception exception)
 				{
-					return image.SaveAsJpegAsync(destination);
-				}
-				else if (string.Equals(extension, ".bmp", StringComparison.OrdinalIgnoreCase))
-				{
-					return image.SaveAsBmpAsync(destination);
-				}
-				else if (string.Equals(extension, ".gif", StringComparison.OrdinalIgnoreCase))
-				{
-					return image.SaveAsGifAsync(destination);
-				}
-				else
-				{
-					throw new InvalidOperationException($"Cannot compress a file of type '{extension}'.");
+					Console.ForegroundColor = ConsoleColor.Red;
+					Console.WriteLine($"Failed to import image from file '{resource}'\n{exception}");
+					throw;
 				}
 			}
 		}

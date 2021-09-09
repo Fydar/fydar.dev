@@ -2,6 +2,7 @@
 using RPGCore.FileTree;
 using RPGCore.Projects;
 using RPGCore.Projects.Pipeline;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -52,7 +53,16 @@ namespace Portfolio.Pipeline
 			update.ImporterTags.Add("page");
 
 			var document = new XmlDocument();
-			document.Load(archiveFile.OpenRead());
+			try
+			{
+				document.Load(archiveFile.OpenRead());
+			}
+			catch (Exception exception)
+			{
+				Console.ForegroundColor = ConsoleColor.Red;
+				Console.WriteLine($"Failed to import markup from file '{archiveFile.FullName}'\n{exception}");
+				throw;
+			}
 
 			var headings = ReadHeadings(document.DocumentElement);
 

@@ -1,0 +1,36 @@
+﻿@using Portfolio.Models.Utilities;
+
+@model ProjectCategoryModel;
+
+@{
+  int missing = 0;
+}
+
+<h1>@Model.DisplayName</h1>
+
+<div class="card-grid @(Model.Projects.Count > 3 ? "card-grid-sm" : "")">
+  @foreach (var project in Model.Projects)
+  {
+    if (project.HideOnHomePage)
+    {
+      missing++;
+    }
+    else
+    {
+      <vc:portfolio-item project="project" />
+    }
+  }
+</div>
+
+@if (missing > 0)
+{
+  <div class="form-group" style="text-align: right;">
+    <a class="form-btn form-btn-readmore"
+        asp-area="Portfolio"
+        asp-controller="PortfolioItem"
+        asp-action="Index"
+        asp-route-identifier="@Model.Slug">
+      view <b>@missing</b> more projects →
+    </a>
+  </div>
+}
