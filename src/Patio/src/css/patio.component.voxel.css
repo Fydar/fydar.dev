@@ -1,7 +1,6 @@
 /* 3D Voxel Models */
 .scene {
   display: inline-block;
-  overflow: hidden;
   box-sizing: border-box;
   perspective: 1024px;
   width: 100%;

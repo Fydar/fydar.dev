@@ -16,100 +16,99 @@
       var category = contentService.Categories[i];
 
       <vc:portfolio-grid category="category" />
-
-      @if (i == 0)
-      {
-        <div class="scene scene-screen-perspective fsa-relative" style="padding: 50px 50px 50px 50px;">
-          <div class="transform transform transform-sideon-45deg">
-
-
-          <!-- Mesh 'deer' -->
-          <div class="mesh mesh-deer">    <style>
-              .mesh.mesh-deer {
-                width: 176px;
-                height: 384px;
-                --half-depth: translateZ(-168px);
-              }
-                .mesh.mesh-deer .surface {
-                  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAABACAYAAADS1n9/AAAACXBIWXMAAA7EAAAOxAGVKw4bAAAEzUlEQVR4nO2dsY4UMQxA56T5hauWL6CjokJUiHZFRQMNB8V+AUiUSNwXbHFAAw3VihYdDaJCFHR8AVfdRyzKSj68nnhiT5yZZCavuc1MNrsTO7bjJHttE8H2zYv95vXFifae1WdIOT093V9fX59w5Uf37+x3338Hy1w7XP2+63DNlb+8f3lTXp+dR/eZhsEK4B7i2+WvBh4GP6iV8B0W7bx7+8x1bKcMAoHvTssAlLl2uPpSxhY6ZpACgNA/X/5sVqtVc+/2rSNFsBK+pSLlhFZBUhLlAh4/uHsQfiqshP/x09fecsp2sHmH+tQFNBMSpQCUXUaajeFMdKzploDNu89dTo1aAbD2OnaZCj0FVgqTk2tTKQAV/tMnD10nNBU/nMJsMoprRApABV+RQX39NsOgth0qXDf6l4o0b0AtwCbDGU1Lv7ivEq0Dwp9y/poTYwSTqVAHgXMSvjaDx7VDM3k5TfNCHCkAZ9ZpoLde+MinQqX9sZuzBZhS+JKRZTH6OJMutQxT5va1HCnAemEju893+4RIp73cNLikfuxYgO1M8+8+y9A3otcLGQw3CgAdBCt8U/mxVJ/ta1MbvT9/9aG3XCJHeYAff/42V1dXh0UeS0Fofbc12qieA+8F8JVL5MgFuJU9J/xUWClUausk3cgxB3fZ0gezRroChr+Hb4RatRMDzRFsZhArHSwAlw206kBpGzg4S9lOCC7ap4o1CwtAL7iHxRsdYpVgyIqh7z1W7ViymYsFCJHjRgYNVtF+qc/fh1cBqBUAJCaVdtKQqZLvPbHtaDKE2mi/pNw/paMALgHismCgBNrVQsqQqZLvPbHtaFLH9FpIwL4FpFLwWgCsBGPv+MGBlTTIovVCZYxFgkhaJ0fYGACUAF+TrhbGgAXlXoeUwKcwtL5PoeA1vpbTgY2x6A0Cp3poLJSQBaAKI6nr2uc+D7NewHqAajl4rA4ZY3qFFYwqBLCd6cIYxvRsYCkdxrmIUL05EqUA2IduCxotVotDcyD6ZJDUV+dEyZs4rTE7GlaaBYDXc8npD8VMAUpyAyXs1x8L08OhpXbktlqAeEoOpED4uwXGAqYWoFIeyRRgrD38HH1p3JJX76wxU4DcOnJ9dr5owUopKgYILc5AMMf9mhfc3y181GOKigFCoxqCOW5Dx2bB0z2OrBUAFmnoegNcqyndeCaNAUJb0iG5hNcb4LrvM6vw9SRJBWuibFACbvTS5dpqxm05KEAK06lpT2IJ8N+KHZ3DoUPn7Fg4Oe7hr/gRu4DQKF1yPr1kWkt/DVidBaikp3M2MARnCfDotzoLANTUbTpaK3/tm7P33dPsJ8Tb0WucYIv5hhCfYOE+lKV79yvpaS39tU9w0h240vsVW1prf03hTD38laRztSt7oX8RU/lPxwWEAi7teT3OAoTaiPn1zTn+lk8q1DGA1ESPYcrrYlA8UUFg36jUHOr0/QgTxeoUb+WYjgJocwLcPS6q51xDiCWc1J2C5PsBtLMAjir0NKgVQJrw4fwznQXg9LKrV834uAwOAoeeDPbNAqrQp+OgAJqADRhq2qW/wtlURqGVjFx67o97j6StGrnnRaud13O/pgGElKDO3fOijc3sYSTtcBagKsE0qC2AlFhTX6d94/APhbTzIxZxUhcAAAAASUVORK5CYII=);
-                  background-size: 2048px 1024px;
-                }
-            </style>
-            <div class="surface surface-back" style="background-position: 0 -832px;width: 176px;height: 144px;transform: rotateX(180deg) translate3d(0, -144px, -56px)"></div>
-            <div class="surface surface-back" style="background-position: -192px -864px;width: 144px;height: 80px;transform: rotateX(180deg) translate3d(16px, -96px, -72px)"></div>
-            <div class="surface surface-back" style="background-position: -912px 0;width: 80px;height: 240px;transform: rotateX(180deg) translate3d(48px, -384px, -40px)"></div>
-            <div class="surface surface-back" style="background-position: -1200px 0;width: 80px;height: 176px;transform: rotateX(180deg) translate3d(48px, -384px, 168px)"></div>
-            <div class="surface surface-back" style="background-position: -1008px -224px;width: 80px;height: 160px;transform: rotateX(180deg) translate3d(48px, -320px, -24px)"></div>
-            <div class="surface surface-back" style="background-position: -912px -256px;width: 80px;height: 112px;transform: rotateX(180deg) translate3d(48px, -288px, 8px)"></div>
-            <div class="surface surface-back" style="background-position: -512px -816px;width: 80px;height: 112px;transform: rotateX(180deg) translate3d(48px, -304px, 152px)"></div>
-            <div class="surface surface-back" style="background-position: -976px -400px;width: 80px;height: 48px;transform: rotateX(180deg) translate3d(48px, -80px, -88px)"></div>
-            <div class="surface surface-back" style="background-position: -448px -976px;width: 80px;height: 16px;transform: rotateX(180deg) translate3d(48px, -304px, -8px)"></div>
-            <div class="surface surface-back" style="background-position: -1552px 0;width: 48px;height: 16px;transform: rotateX(180deg) translate3d(64px, -272px, 136px)"></div>
-            <div class="surface surface-down" style="background-position: 0 -992px;width: 176px;height: 16px;transform: rotateX(-90deg) translate3d(0, -72px, 16px)"></div>
-            <div class="surface surface-down" style="background-position: -192px -960px;width: 144px;height: 32px;transform: rotateX(-90deg) translate3d(16px, -104px, 48px)"></div>
-            <div class="surface surface-down" style="background-position: -448px -768px;width: 144px;height: 32px;transform: rotateX(-90deg) translate3d(16px, -88px, 32px)"></div>
-            <div class="surface surface-down" style="background-position: -848px -608px;width: 80px;height: 224px;transform: rotateX(-90deg) translate3d(48px, -56px, 384px)"></div>
-            <div class="surface surface-down" style="background-position: -1104px 0;width: 80px;height: 192px;transform: rotateX(-90deg) translate3d(48px, -40px, 320px)"></div>
-            <div class="surface surface-down" style="background-position: -1296px 0;width: 80px;height: 144px;transform: rotateX(-90deg) translate3d(48px, -24px, 304px)"></div>
-            <div class="surface surface-down" style="background-position: -384px -816px;width: 80px;height: 16px;transform: rotateX(-90deg) translate3d(48px, -104px, 64px)"></div>
-            <div class="surface surface-down" style="background-position: -976px -464px;width: 80px;height: 16px;transform: rotateX(-90deg) translate3d(48px, -8px, 288px)"></div>
-            <div class="surface surface-down" style="background-position: -1296px -160px;width: 48px;height: 224px;transform: rotateX(-90deg) translate3d(64px, -56px, 256px)"></div>
-            <div class="surface surface-down" style="background-position: -608px -832px;width: 48px;height: 176px;transform: rotateX(-90deg) translate3d(64px, -40px, 272px)"></div>
-            <div class="surface surface-down" style="background-position: -544px -944px;width: 48px;height: 48px;transform: rotateX(-90deg) translate3d(64px, -152px, 144px)"></div>
-            <div class="surface surface-down" style="background-position: -1392px -112px;width: 48px;height: 16px;transform: rotateX(-90deg) translate3d(64px, -168px, 128px)"></div>
-            <div class="surface surface-down" style="background-position: -1136px -400px;width: 48px;height: 16px;transform: rotateX(-90deg) translate3d(64px, -104px, 208px)"></div>
-            <div class="surface surface-down" style="background-position: -672px -880px;width: 48px;height: 16px;transform: rotateX(-90deg) translate3d(64px, -88px, 224px)"></div>
-            <div class="surface surface-down" style="background-position: -1360px -192px;width: 48px;height: 16px;transform: rotateX(-90deg) translate3d(64px, -72px, 240px)"></div>
-            <div class="surface surface-forward" style="background-position: -624px -384px;width: 176px;height: 240px;transform: translate3d(0, 0, 72px)"></div>
-            <div class="surface surface-forward" style="background-position: -816px -384px;width: 144px;height: 208px;transform: translate3d(16px, 16px, 88px)"></div>
-            <div class="surface surface-forward" style="background-position: -624px -640px;width: 112px;height: 176px;transform: translate3d(32px, 32px, 104px)"></div>
-            <div class="surface surface-forward" style="background-position: -1104px -208px;width: 80px;height: 144px;transform: translate3d(48px, 240px, 56px)"></div>
-            <div class="surface surface-forward" style="background-position: -352px -912px;width: 80px;height: 96px;transform: translate3d(48px, 208px, -104px)"></div>
-            <div class="surface surface-forward" style="background-position: -1392px 0;width: 80px;height: 96px;transform: translate3d(48px, 208px, 40px)"></div>
-            <div class="surface surface-forward" style="background-position: -1200px -192px;width: 80px;height: 64px;transform: translate3d(48px, 320px, -152px)"></div>
-            <div class="surface surface-forward" style="background-position: -448px -944px;width: 80px;height: 16px;transform: translate3d(48px, 304px, -120px)"></div>
-            <div class="surface surface-forward" style="background-position: -1488px 0;width: 48px;height: 32px;transform: translate3d(64px, 96px, 168px)"></div>
-            <div class="surface surface-forward" style="background-position: -1104px -368px;width: 48px;height: 16px;transform: translate3d(64px, 80px, 136px)"></div>
-            <div class="surface surface-forward" style="background-position: -1360px -160px;width: 48px;height: 16px;transform: translate3d(64px, 128px, 152px)"></div>
-            <div class="surface surface-left" style="background-position: 0 0;width: 320px;height: 208px;transform: rotateY(-90deg) translate3d(-152px, 64px, -64px)"></div>
-            <div class="surface surface-left" style="background-position: 0 -448px;width: 272px;height: 368px;transform: rotateY(-90deg) translate3d(-168px, 16px, -112px)"></div>
-            <div class="surface surface-left" style="background-position: -336px -384px;width: 272px;height: 368px;transform: rotateY(-90deg) translate3d(-168px, 16px, -48px)"></div>
-            <div class="surface surface-left" style="background-position: -288px -496px;width: 32px;height: 32px;transform: rotateY(-90deg) translate3d(56px, 16px, -16px)"></div>
-            <div class="surface surface-left" style="background-position: -288px -544px;width: 16px;height: 48px;transform: rotateY(-90deg) translate3d(-168px, 208px, -80px)"></div>
-            <div class="surface surface-left" style="background-position: -288px -720px;width: 16px;height: 32px;transform: rotateY(-90deg) translate3d(88px, 48px, -96px)"></div>
-            <div class="surface surface-left" style="background-position: -816px -608px;width: 16px;height: 16px;transform: rotateY(-90deg) translate3d(56px, 16px, -144px)"></div>
-            <div class="surface surface-left" style="background-position: -1040px -496px;width: 16px;height: 16px;transform: rotateY(-90deg) translate3d(72px, 32px, -128px)"></div>
-            <div class="surface surface-left" style="background-position: -1264px -272px;width: 16px;height: 16px;transform: rotateY(-90deg) translate3d(56px, 0, -160px)"></div>
-            <div class="surface surface-left" style="background-position: -1456px -112px;width: 16px;height: 16px;transform: rotateY(-90deg) translate3d(88px, 32px, -32px)"></div>
-            <div class="surface surface-left" style="background-position: -1488px -80px;width: 16px;height: 16px;transform: rotateY(-90deg) translate3d(56px, 0, 0)"></div>
-            <div class="surface surface-right" style="background-position: 0 -224px;width: 320px;height: 208px;transform: rotateY(90deg) translate3d(-168px, 64px, 112px)"></div>
-            <div class="surface surface-right" style="background-position: -336px 0;width: 272px;height: 368px;transform: rotateY(90deg) translate3d(-104px, 16px, 64px)"></div>
-            <div class="surface surface-right" style="background-position: -624px 0;width: 272px;height: 368px;transform: rotateY(90deg) translate3d(-104px, 16px, 128px)"></div>
-            <div class="surface surface-right" style="background-position: -288px -448px;width: 32px;height: 32px;transform: rotateY(90deg) translate3d(-88px, 16px, 160px)"></div>
-            <div class="surface surface-right" style="background-position: -288px -608px;width: 16px;height: 48px;transform: rotateY(90deg) translate3d(152px, 208px, 96px)"></div>
-            <div class="surface surface-right" style="background-position: -288px -672px;width: 16px;height: 32px;transform: rotateY(90deg) translate3d(-104px, 48px, 80px)"></div>
-            <div class="surface surface-right" style="background-position: -480px -816px;width: 16px;height: 16px;transform: rotateY(90deg) translate3d(-104px, 32px, 144px)"></div>
-            <div class="surface surface-right" style="background-position: -944px -608px;width: 16px;height: 16px;transform: rotateY(90deg) translate3d(-72px, 0, 16px)"></div>
-            <div class="surface surface-right" style="background-position: -1040px -528px;width: 16px;height: 16px;transform: rotateY(90deg) translate3d(-72px, 16px, 32px)"></div>
-            <div class="surface surface-right" style="background-position: -1136px -432px;width: 16px;height: 16px;transform: rotateY(90deg) translate3d(-88px, 32px, 48px)"></div>
-            <div class="surface surface-right" style="background-position: -1264px -304px;width: 16px;height: 16px;transform: rotateY(90deg) translate3d(-72px, 0, 176px)"></div>
-            <div class="surface surface-up" style="background-position: -192px -832px;width: 176px;height: 16px;transform: rotateX(90deg) translate3d(0, 56px, 0)"></div>
-            <div class="surface surface-up" style="background-position: -288px -768px;width: 144px;height: 32px;transform: rotateX(90deg) translate3d(16px, 72px, -32px)"></div>
-            <div class="surface surface-up" style="background-position: -352px -864px;width: 144px;height: 32px;transform: rotateX(90deg) translate3d(16px, 56px, -16px)"></div>
-            <div class="surface surface-up" style="background-position: -752px -640px;width: 80px;height: 224px;transform: rotateX(90deg) translate3d(48px, -168px, -304px)"></div>
-            <div class="surface surface-up" style="background-position: -1008px 0;width: 80px;height: 208px;transform: rotateX(90deg) translate3d(48px, -168px, -208px)"></div>
-            <div class="surface surface-up" style="background-position: -1072px -400px;width: 48px;height: 144px;transform: rotateX(90deg) translate3d(64px, -152px, -192px)"></div>
-            <div class="surface surface-up" style="background-position: -976px -496px;width: 48px;height: 112px;transform: rotateX(90deg) translate3d(64px, 56px, -96px)"></div>
-            <div class="surface surface-up" style="background-position: -1200px -272px;width: 48px;height: 64px;transform: rotateX(90deg) translate3d(64px, 72px, -80px)"></div>
-            <div class="surface surface-up" style="background-position: -672px -832px;width: 48px;height: 32px;transform: rotateX(90deg) translate3d(64px, -8px, -176px)"></div>
-            <div class="surface surface-up" style="background-position: -448px -912px;width: 48px;height: 16px;transform: rotateX(90deg) translate3d(64px, 88px, -48px)"></div>
-            <div class="surface surface-up" style="background-position: -1168px -368px;width: 48px;height: 16px;transform: rotateX(90deg) translate3d(64px, 40px, -144px)"></div>
-            <div class="surface surface-up" style="background-position: -1488px -48px;width: 48px;height: 16px;transform: rotateX(90deg) translate3d(64px, 24px, -160px)"></div>
-          </div>
-
-        </div>
-        </div>
-      }
     }
+
+    <div class="scene scene-screen-perspective fsa-relative" style="padding: 50px 50px 50px 50px;">
+      <div class="transform transform transform-sideon-45deg">
+
+        <!-- Mesh 'deer' -->
+        <div class="mesh mesh-deer">
+          <style>
+            .mesh.mesh-deer {
+              width: 176px;
+              height: 384px;
+              --half-depth: translateZ(-168px);
+            }
+              .mesh.mesh-deer .surface {
+                background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAABACAYAAADS1n9/AAAACXBIWXMAAA7EAAAOxAGVKw4bAAAEzUlEQVR4nO2dsY4UMQxA56T5hauWL6CjokJUiHZFRQMNB8V+AUiUSNwXbHFAAw3VihYdDaJCFHR8AVfdRyzKSj68nnhiT5yZZCavuc1MNrsTO7bjJHttE8H2zYv95vXFifae1WdIOT093V9fX59w5Uf37+x3338Hy1w7XP2+63DNlb+8f3lTXp+dR/eZhsEK4B7i2+WvBh4GP6iV8B0W7bx7+8x1bKcMAoHvTssAlLl2uPpSxhY6ZpACgNA/X/5sVqtVc+/2rSNFsBK+pSLlhFZBUhLlAh4/uHsQfiqshP/x09fecsp2sHmH+tQFNBMSpQCUXUaajeFMdKzploDNu89dTo1aAbD2OnaZCj0FVgqTk2tTKQAV/tMnD10nNBU/nMJsMoprRApABV+RQX39NsOgth0qXDf6l4o0b0AtwCbDGU1Lv7ivEq0Dwp9y/poTYwSTqVAHgXMSvjaDx7VDM3k5TfNCHCkAZ9ZpoLde+MinQqX9sZuzBZhS+JKRZTH6OJMutQxT5va1HCnAemEju893+4RIp73cNLikfuxYgO1M8+8+y9A3otcLGQw3CgAdBCt8U/mxVJ/ta1MbvT9/9aG3XCJHeYAff/42V1dXh0UeS0Fofbc12qieA+8F8JVL5MgFuJU9J/xUWClUausk3cgxB3fZ0gezRroChr+Hb4RatRMDzRFsZhArHSwAlw206kBpGzg4S9lOCC7ap4o1CwtAL7iHxRsdYpVgyIqh7z1W7ViymYsFCJHjRgYNVtF+qc/fh1cBqBUAJCaVdtKQqZLvPbHtaDKE2mi/pNw/paMALgHismCgBNrVQsqQqZLvPbHtaFLH9FpIwL4FpFLwWgCsBGPv+MGBlTTIovVCZYxFgkhaJ0fYGACUAF+TrhbGgAXlXoeUwKcwtL5PoeA1vpbTgY2x6A0Cp3poLJSQBaAKI6nr2uc+D7NewHqAajl4rA4ZY3qFFYwqBLCd6cIYxvRsYCkdxrmIUL05EqUA2IduCxotVotDcyD6ZJDUV+dEyZs4rTE7GlaaBYDXc8npD8VMAUpyAyXs1x8L08OhpXbktlqAeEoOpED4uwXGAqYWoFIeyRRgrD38HH1p3JJX76wxU4DcOnJ9dr5owUopKgYILc5AMMf9mhfc3y181GOKigFCoxqCOW5Dx2bB0z2OrBUAFmnoegNcqyndeCaNAUJb0iG5hNcb4LrvM6vw9SRJBWuibFACbvTS5dpqxm05KEAK06lpT2IJ8N+KHZ3DoUPn7Fg4Oe7hr/gRu4DQKF1yPr1kWkt/DVidBaikp3M2MARnCfDotzoLANTUbTpaK3/tm7P33dPsJ8Tb0WucYIv5hhCfYOE+lKV79yvpaS39tU9w0h240vsVW1prf03hTD38laRztSt7oX8RU/lPxwWEAi7teT3OAoTaiPn1zTn+lk8q1DGA1ESPYcrrYlA8UUFg36jUHOr0/QgTxeoUb+WYjgJocwLcPS6q51xDiCWc1J2C5PsBtLMAjir0NKgVQJrw4fwznQXg9LKrV834uAwOAoeeDPbNAqrQp+OgAJqADRhq2qW/wtlURqGVjFx67o97j6StGrnnRaud13O/pgGElKDO3fOijc3sYSTtcBagKsE0qC2AlFhTX6d94/APhbTzIxZxUhcAAAAASUVORK5CYII=);
+                background-size: 2048px 1024px;
+              }
+          </style>
+          <div class="surface surface-back" style="background-position: 0 -832px;width: 176px;height: 144px;transform: rotateX(180deg) translate3d(0, -144px, -56px)"></div>
+          <div class="surface surface-back" style="background-position: -192px -864px;width: 144px;height: 80px;transform: rotateX(180deg) translate3d(16px, -96px, -72px)"></div>
+          <div class="surface surface-back" style="background-position: -912px 0;width: 80px;height: 240px;transform: rotateX(180deg) translate3d(48px, -384px, -40px)"></div>
+          <div class="surface surface-back" style="background-position: -1200px 0;width: 80px;height: 176px;transform: rotateX(180deg) translate3d(48px, -384px, 168px)"></div>
+          <div class="surface surface-back" style="background-position: -1008px -224px;width: 80px;height: 160px;transform: rotateX(180deg) translate3d(48px, -320px, -24px)"></div>
+          <div class="surface surface-back" style="background-position: -912px -256px;width: 80px;height: 112px;transform: rotateX(180deg) translate3d(48px, -288px, 8px)"></div>
+          <div class="surface surface-back" style="background-position: -512px -816px;width: 80px;height: 112px;transform: rotateX(180deg) translate3d(48px, -304px, 152px)"></div>
+          <div class="surface surface-back" style="background-position: -976px -400px;width: 80px;height: 48px;transform: rotateX(180deg) translate3d(48px, -80px, -88px)"></div>
+          <div class="surface surface-back" style="background-position: -448px -976px;width: 80px;height: 16px;transform: rotateX(180deg) translate3d(48px, -304px, -8px)"></div>
+          <div class="surface surface-back" style="background-position: -1552px 0;width: 48px;height: 16px;transform: rotateX(180deg) translate3d(64px, -272px, 136px)"></div>
+          <div class="surface surface-down" style="background-position: 0 -992px;width: 176px;height: 16px;transform: rotateX(-90deg) translate3d(0, -72px, 16px)"></div>
+          <div class="surface surface-down" style="background-position: -192px -960px;width: 144px;height: 32px;transform: rotateX(-90deg) translate3d(16px, -104px, 48px)"></div>
+          <div class="surface surface-down" style="background-position: -448px -768px;width: 144px;height: 32px;transform: rotateX(-90deg) translate3d(16px, -88px, 32px)"></div>
+          <div class="surface surface-down" style="background-position: -848px -608px;width: 80px;height: 224px;transform: rotateX(-90deg) translate3d(48px, -56px, 384px)"></div>
+          <div class="surface surface-down" style="background-position: -1104px 0;width: 80px;height: 192px;transform: rotateX(-90deg) translate3d(48px, -40px, 320px)"></div>
+          <div class="surface surface-down" style="background-position: -1296px 0;width: 80px;height: 144px;transform: rotateX(-90deg) translate3d(48px, -24px, 304px)"></div>
+          <div class="surface surface-down" style="background-position: -384px -816px;width: 80px;height: 16px;transform: rotateX(-90deg) translate3d(48px, -104px, 64px)"></div>
+          <div class="surface surface-down" style="background-position: -976px -464px;width: 80px;height: 16px;transform: rotateX(-90deg) translate3d(48px, -8px, 288px)"></div>
+          <div class="surface surface-down" style="background-position: -1296px -160px;width: 48px;height: 224px;transform: rotateX(-90deg) translate3d(64px, -56px, 256px)"></div>
+          <div class="surface surface-down" style="background-position: -608px -832px;width: 48px;height: 176px;transform: rotateX(-90deg) translate3d(64px, -40px, 272px)"></div>
+          <div class="surface surface-down" style="background-position: -544px -944px;width: 48px;height: 48px;transform: rotateX(-90deg) translate3d(64px, -152px, 144px)"></div>
+          <div class="surface surface-down" style="background-position: -1392px -112px;width: 48px;height: 16px;transform: rotateX(-90deg) translate3d(64px, -168px, 128px)"></div>
+          <div class="surface surface-down" style="background-position: -1136px -400px;width: 48px;height: 16px;transform: rotateX(-90deg) translate3d(64px, -104px, 208px)"></div>
+          <div class="surface surface-down" style="background-position: -672px -880px;width: 48px;height: 16px;transform: rotateX(-90deg) translate3d(64px, -88px, 224px)"></div>
+          <div class="surface surface-down" style="background-position: -1360px -192px;width: 48px;height: 16px;transform: rotateX(-90deg) translate3d(64px, -72px, 240px)"></div>
+          <div class="surface surface-forward" style="background-position: -624px -384px;width: 176px;height: 240px;transform: translate3d(0, 0, 72px)"></div>
+          <div class="surface surface-forward" style="background-position: -816px -384px;width: 144px;height: 208px;transform: translate3d(16px, 16px, 88px)"></div>
+          <div class="surface surface-forward" style="background-position: -624px -640px;width: 112px;height: 176px;transform: translate3d(32px, 32px, 104px)"></div>
+          <div class="surface surface-forward" style="background-position: -1104px -208px;width: 80px;height: 144px;transform: translate3d(48px, 240px, 56px)"></div>
+          <div class="surface surface-forward" style="background-position: -352px -912px;width: 80px;height: 96px;transform: translate3d(48px, 208px, -104px)"></div>
+          <div class="surface surface-forward" style="background-position: -1392px 0;width: 80px;height: 96px;transform: translate3d(48px, 208px, 40px)"></div>
+          <div class="surface surface-forward" style="background-position: -1200px -192px;width: 80px;height: 64px;transform: translate3d(48px, 320px, -152px)"></div>
+          <div class="surface surface-forward" style="background-position: -448px -944px;width: 80px;height: 16px;transform: translate3d(48px, 304px, -120px)"></div>
+          <div class="surface surface-forward" style="background-position: -1488px 0;width: 48px;height: 32px;transform: translate3d(64px, 96px, 168px)"></div>
+          <div class="surface surface-forward" style="background-position: -1104px -368px;width: 48px;height: 16px;transform: translate3d(64px, 80px, 136px)"></div>
+          <div class="surface surface-forward" style="background-position: -1360px -160px;width: 48px;height: 16px;transform: translate3d(64px, 128px, 152px)"></div>
+          <div class="surface surface-left" style="background-position: 0 0;width: 320px;height: 208px;transform: rotateY(-90deg) translate3d(-152px, 64px, -64px)"></div>
+          <div class="surface surface-left" style="background-position: 0 -448px;width: 272px;height: 368px;transform: rotateY(-90deg) translate3d(-168px, 16px, -112px)"></div>
+          <div class="surface surface-left" style="background-position: -336px -384px;width: 272px;height: 368px;transform: rotateY(-90deg) translate3d(-168px, 16px, -48px)"></div>
+          <div class="surface surface-left" style="background-position: -288px -496px;width: 32px;height: 32px;transform: rotateY(-90deg) translate3d(56px, 16px, -16px)"></div>
+          <div class="surface surface-left" style="background-position: -288px -544px;width: 16px;height: 48px;transform: rotateY(-90deg) translate3d(-168px, 208px, -80px)"></div>
+          <div class="surface surface-left" style="background-position: -288px -720px;width: 16px;height: 32px;transform: rotateY(-90deg) translate3d(88px, 48px, -96px)"></div>
+          <div class="surface surface-left" style="background-position: -816px -608px;width: 16px;height: 16px;transform: rotateY(-90deg) translate3d(56px, 16px, -144px)"></div>
+          <div class="surface surface-left" style="background-position: -1040px -496px;width: 16px;height: 16px;transform: rotateY(-90deg) translate3d(72px, 32px, -128px)"></div>
+          <div class="surface surface-left" style="background-position: -1264px -272px;width: 16px;height: 16px;transform: rotateY(-90deg) translate3d(56px, 0, -160px)"></div>
+          <div class="surface surface-left" style="background-position: -1456px -112px;width: 16px;height: 16px;transform: rotateY(-90deg) translate3d(88px, 32px, -32px)"></div>
+          <div class="surface surface-left" style="background-position: -1488px -80px;width: 16px;height: 16px;transform: rotateY(-90deg) translate3d(56px, 0, 0)"></div>
+          <div class="surface surface-right" style="background-position: 0 -224px;width: 320px;height: 208px;transform: rotateY(90deg) translate3d(-168px, 64px, 112px)"></div>
+          <div class="surface surface-right" style="background-position: -336px 0;width: 272px;height: 368px;transform: rotateY(90deg) translate3d(-104px, 16px, 64px)"></div>
+          <div class="surface surface-right" style="background-position: -624px 0;width: 272px;height: 368px;transform: rotateY(90deg) translate3d(-104px, 16px, 128px)"></div>
+          <div class="surface surface-right" style="background-position: -288px -448px;width: 32px;height: 32px;transform: rotateY(90deg) translate3d(-88px, 16px, 160px)"></div>
+          <div class="surface surface-right" style="background-position: -288px -608px;width: 16px;height: 48px;transform: rotateY(90deg) translate3d(152px, 208px, 96px)"></div>
+          <div class="surface surface-right" style="background-position: -288px -672px;width: 16px;height: 32px;transform: rotateY(90deg) translate3d(-104px, 48px, 80px)"></div>
+          <div class="surface surface-right" style="background-position: -480px -816px;width: 16px;height: 16px;transform: rotateY(90deg) translate3d(-104px, 32px, 144px)"></div>
+          <div class="surface surface-right" style="background-position: -944px -608px;width: 16px;height: 16px;transform: rotateY(90deg) translate3d(-72px, 0, 16px)"></div>
+          <div class="surface surface-right" style="background-position: -1040px -528px;width: 16px;height: 16px;transform: rotateY(90deg) translate3d(-72px, 16px, 32px)"></div>
+          <div class="surface surface-right" style="background-position: -1136px -432px;width: 16px;height: 16px;transform: rotateY(90deg) translate3d(-88px, 32px, 48px)"></div>
+          <div class="surface surface-right" style="background-position: -1264px -304px;width: 16px;height: 16px;transform: rotateY(90deg) translate3d(-72px, 0, 176px)"></div>
+          <div class="surface surface-up" style="background-position: -192px -832px;width: 176px;height: 16px;transform: rotateX(90deg) translate3d(0, 56px, 0)"></div>
+          <div class="surface surface-up" style="background-position: -288px -768px;width: 144px;height: 32px;transform: rotateX(90deg) translate3d(16px, 72px, -32px)"></div>
+          <div class="surface surface-up" style="background-position: -352px -864px;width: 144px;height: 32px;transform: rotateX(90deg) translate3d(16px, 56px, -16px)"></div>
+          <div class="surface surface-up" style="background-position: -752px -640px;width: 80px;height: 224px;transform: rotateX(90deg) translate3d(48px, -168px, -304px)"></div>
+          <div class="surface surface-up" style="background-position: -1008px 0;width: 80px;height: 208px;transform: rotateX(90deg) translate3d(48px, -168px, -208px)"></div>
+          <div class="surface surface-up" style="background-position: -1072px -400px;width: 48px;height: 144px;transform: rotateX(90deg) translate3d(64px, -152px, -192px)"></div>
+          <div class="surface surface-up" style="background-position: -976px -496px;width: 48px;height: 112px;transform: rotateX(90deg) translate3d(64px, 56px, -96px)"></div>
+          <div class="surface surface-up" style="background-position: -1200px -272px;width: 48px;height: 64px;transform: rotateX(90deg) translate3d(64px, 72px, -80px)"></div>
+          <div class="surface surface-up" style="background-position: -672px -832px;width: 48px;height: 32px;transform: rotateX(90deg) translate3d(64px, -8px, -176px)"></div>
+          <div class="surface surface-up" style="background-position: -448px -912px;width: 48px;height: 16px;transform: rotateX(90deg) translate3d(64px, 88px, -48px)"></div>
+          <div class="surface surface-up" style="background-position: -1168px -368px;width: 48px;height: 16px;transform: rotateX(90deg) translate3d(64px, 40px, -144px)"></div>
+          <div class="surface surface-up" style="background-position: -1488px -48px;width: 48px;height: 16px;transform: rotateX(90deg) translate3d(64px, 24px, -160px)"></div>
+        </div>
+
+      </div>
+    </div>
+
   </div>
 </section>
+

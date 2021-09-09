@@ -10,6 +10,12 @@ figure {
     max-width: 100%;
   }
 
+  figure video {
+    display: block;
+    margin: auto;
+    max-width: 100%;
+  }
+
 figcaption {
   font-style: italic;
   padding: 2px;

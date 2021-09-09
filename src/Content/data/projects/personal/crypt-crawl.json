@@ -4,6 +4,7 @@
   "FeaturedImage": "img/crypt-crawl-header.png",
   "HoverImage": "img/crypt-crawl-1.png",
   "Excerpt": "A 2d pixel-art dungeon crawler.",
+  "HideOnHomePage": true,
   "Disciplines": [
     "data/disciplines/gameplay-programming.json",
     "data/disciplines/network-programming.json"

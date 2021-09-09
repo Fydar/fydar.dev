@@ -1471,7 +1471,6 @@ section.navbar {
 /* 3D Voxel Models */
 .scene {
   display: inline-block;
-  overflow: hidden;
   box-sizing: border-box;
   perspective: 1024px;
   width: 100%;
@@ -1579,6 +1578,12 @@ figure {
 }
 
   figure img {
+    display: block;
+    margin: auto;
+    max-width: 100%;
+  }
+
+  figure video {
     display: block;
     margin: auto;
     max-width: 100%;

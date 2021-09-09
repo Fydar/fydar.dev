@@ -1,0 +1,40 @@
+{
+  "ProjectName": "Fydar.Vox",
+  "Slug": "fydar-vox",
+  "FeaturedImage": "img/fydar-vox-roman-1.png",
+  "HoverImage": "img/fydar-vox-sniper.png",
+  "Excerpt": "A collection of libraries for parsing, meshing and rendering voxel models.",
+  "Disciplines": [
+    "data/disciplines/gameplay-programming.json",
+    "data/disciplines/tools-programming.json"
+  ],
+  "PublishedDate": 1622515050,
+  "ProjectCategory": "data/projects/categories/category-personal.json",
+  "Institution": null,
+  "Page": "pages/projects/personal/fydar-vox.html",
+  "ProjectSubtitle": null,
+  "Links": [
+    {
+      "SiteName": "GitHub",
+      "Url": "https://github.com/Fydar/Vox",
+      "Icon": "github"
+    }
+  ],
+  "Badges": [
+    {
+      "Tooltip": "Date",
+      "Icon": "date",
+      "Content": "June 2020",
+      "Url": null,
+      "DisplayOnHomepage": true
+    },
+    {
+      "Tooltip": "Team",
+      "Icon": "person",
+      "Content": "Solo",
+      "Url": null,
+      "DisplayOnHomepage": true
+    }
+  ],
+  "Order": 15
+}
