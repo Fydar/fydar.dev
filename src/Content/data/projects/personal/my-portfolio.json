@@ -13,7 +13,13 @@
   "Institution": null,
   "Page": "pages/projects/personal/my-portfolio.html",
   "ProjectSubtitle": null,
-  "Links": null,
+  "Links": [
+    {
+      "SiteName": "GitHub",
+      "Url": "https://github.com/Fydar/Portfolio",
+      "Icon": "github"
+    }
+  ],
   "Badges": [
     {
       "Tooltip": "Date",
