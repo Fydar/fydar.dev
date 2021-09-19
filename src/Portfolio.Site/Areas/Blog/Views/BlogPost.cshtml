@@ -14,8 +14,10 @@
 
 @inject IContentService contentService;
 
-<section style="min-height: 80vh;">
-  <div class="container">
+<section class="container" style="min-height: 80vh;">
+
+  <div class="page">
+
     <h2>@Model.BlogPost.PostTitle</h2>
 
     @if (Model.BlogPost.PageResource != null)
@@ -23,5 +25,7 @@
       using var stream = Model.BlogPost.PageResource.Content.OpenRead();
       <vc:markup stream="stream" />
     }
+
   </div>
+
 </section>

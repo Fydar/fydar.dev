@@ -15,8 +15,8 @@
   }
 )' />
 
-<section style="min-height: 80vh;">
-  <div class="container">
+<section class="container" style="min-height: 80vh;">
+
     <div class="card-grid @(Model.Category.Projects.Count > 3 ? "card-grid-sm" : "")">
 
       @foreach (var project in Model.Category.Projects)
@@ -25,5 +25,5 @@
       }
 
     </div>
-  </div>
+
 </section>

@@ -6,13 +6,16 @@
   ViewData["Title"] = "Error";
 }
 
-<section style="min-height: 80vh;">
-  <div class="container">
+<section class="container" style="min-height: 80vh;">
+
+  <div class="page">
 
     <h2>Uh oh!</h2>
 
     <p>It appears that there has been an error! Please try again soon.</p>
 
     <p>Error Code: @Context.Response.StatusCode (@((HttpStatusCode)Context.Response.StatusCode))</p>
+
   </div>
+
 </section>

@@ -113,16 +113,6 @@ label {
     box-shadow: 0 0 0 0.2rem rgba(38,143,255,.5);
   }
 
-.form-btn-readmore {
-  font-size: 20px;
-  padding: 12px 12px;
-  background-color: var(--color-background-4);
-  color: var(--color-text-subtle-4);
-  border: 1px solid var(--color-border-1);
-  text-decoration: none;
-}
-
-
 .form-text {
   display: block;
   margin-top: .25rem;
@@ -165,15 +155,6 @@ label {
   font-size: 1.25rem;
   line-height: 1.5;
   border-radius: .3rem;
-}
-
-.form-btn-readmore {
-  font-size: 20px;
-  padding: 12px 12px;
-  background-color: var(--color-background-4);
-  color: var(--color-text-subtle-4);
-  border: 1px solid var(--color-border-1);
-  text-decoration: none;
 }
 
 .validation-feedback {

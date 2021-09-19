@@ -5,25 +5,24 @@
   ViewData["Title"] = "Contact";
 }
 
-<section style="min-height: 80vh;">
-  <div class="container">
-    <h2>Ticket</h2>
-    <div class="container">
-      <p>
-        @Model.TicketId
-      </p>
+<section class="container" style="min-height: 80vh;">
 
-      <p>
-        @Model.From
-      </p>
+  <h2>Ticket</h2>
 
-      <p>
-        @Model.To
-      </p>
+  <p>
+    @Model.TicketId
+  </p>
 
-      <div>
-        @Html.Raw(Model.HtmlBody)
-      </div>
-    </div>
+  <p>
+    @Model.From
+  </p>
+
+  <p>
+    @Model.To
+  </p>
+
+  <div>
+    @Html.Raw(Model.HtmlBody)
   </div>
+
 </section>

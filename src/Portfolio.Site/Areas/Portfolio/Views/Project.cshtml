@@ -25,11 +25,10 @@
   }
 )' />
 
-<section style="min-height: 80vh;">
-  <div class="container">
-  </div>
+<section class="container" style="min-height: 80vh;">
 
-  <div class="container">
+  <div class="page">
+
     <h2>@Model.Project.ProjectName</h2>
 
     @if (Model.Project.Links != null && Model.Project.Links.Length > 0)
@@ -51,5 +50,7 @@
       using var stream = Model.Project.PageResource.Content.OpenRead();
       <vc:markup stream="stream" />
     }
+
   </div>
+
 </section>

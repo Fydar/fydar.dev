@@ -17,11 +17,27 @@
       margin-right: 5px;
     }
 
+.badgecloud {
+  width: auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.badge-tag {
+  padding: 7px 10px;
+  font-size: 11px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #bfc9d4;
+  background-color: #3c333e;
+  border-radius: 12px;
+}
+
   .badge-bar.badge-bar-subtle {
-    color: #6c757d;
     text-transform: uppercase;
     font-size: 12px;
-    padding: 7px 8px;
     gap: 14px;
     font-weight: 400;
     letter-spacing: 0.25px;

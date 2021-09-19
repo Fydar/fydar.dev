@@ -69,27 +69,6 @@
   overflow: hidden;
 }
 
-section.profile {
-  margin-top: 7rem;
-  margin-bottom: 6rem;
-  position: relative;
-}
-
-  section.profile.profile-background {
-    background-color: var(--color-background-2);
-  }
-
-  section.profile .media-item {
-    margin-top: -4rem;
-    margin-bottom: -4rem;
-  }
-
-.post-sectionicon {
-  margin: auto;
-  width: 142px;
-  display: block;
-}
-
 article {
   /* margin: 1rem 1.5rem; */
 }

@@ -27,37 +27,6 @@
       border-bottom-right-radius: 6px;
     }
 
-  /* Hover effects and animation */
-  .card.card-hoverEffect {
-    transition: transform 0.15s ease-in-out;
-    transform: translate(0, 0);
-  }
-
-    .card.card-hoverEffect:hover {
-      transform: translateY(-4px);
-    }
-
-    .card.card-hoverEffect::before {
-      content: '';
-      position: absolute;
-      z-index: -1;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      box-shadow: 0 10px 12px -6px #00000044;
-      opacity: 0;
-      transition: opacity 0.25s linear;
-    }
-
-    .card.card-hoverEffect.card-rounded::before {
-      border-radius: 6px;
-    }
-
-    .card.card-hoverEffect:hover::before {
-      opacity: 1;
-    }
-
   .card .card-hover {
     opacity: 0;
     pointer-events: none;
@@ -189,11 +158,11 @@ $grid-breakpoints: (
 */
 @media (min-width: 576px) {
   .container .card-grid {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
   }
 
     .container .card-grid.card-grid-sm {
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: 1fr;
       grid-gap: 24px 16px;
     }
 
@@ -206,7 +175,7 @@ $grid-breakpoints: (
 @media (min-width: 768px) {
 
   .container .card-grid {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
   }
 
     .container .card-grid.card-grid-sm {
@@ -223,7 +192,7 @@ $grid-breakpoints: (
 @media (min-width: 992px) {
   .container .card-grid.card-grid-sm {
     grid-template-columns: 306px 306px 306px;
-    grid-gap: 24px 21px;
+    grid-gap: 20px 21px;
   }
 
   .container .card-grid.card-grid-xs {
@@ -233,14 +202,14 @@ $grid-breakpoints: (
 
 @media (min-width: 1200px) {
   .container .card-grid.card-grid-sm {
-    grid-template-columns: 366px 366px 366px;
-    grid-gap: 24px 21px;
+    grid-template-columns: 364px 364px 364px;
+    grid-gap: 22px 21px;
   }
 }
 
 @media (min-width: 1400px) {
   .container .card-grid.card-grid-sm {
-    grid-template-columns: 426px 426px 426px;
+    grid-template-columns: 424px 424px 424px;
     grid-gap: 24px 21px;
   }
 }

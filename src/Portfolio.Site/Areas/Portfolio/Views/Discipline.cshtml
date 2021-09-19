@@ -13,8 +13,10 @@
 	}
 )" />
 
-<section style="min-height: 80vh;">
-  <div class="container">
+<section class="container" style="min-height: 80vh;">
+
+  <div class="page">
+
     <h2>@Model.Discipline.DisplayName</h2>
 
     @if (Model.Discipline.PageResource != null)
@@ -22,5 +24,7 @@
       using var stream = Model.Discipline.PageResource.Content.OpenRead();
       <vc:markup stream="stream" />
     }
+
   </div>
+
 </section>
