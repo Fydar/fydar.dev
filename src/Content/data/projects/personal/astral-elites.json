@@ -2,7 +2,7 @@
   "ProjectName": "Astral Elites",
   "Slug": "astral-elites",
   "FeaturedImage": "img/astral-elites-header.png",
-  "HoverImage": "img/astral-elites-1.png",
+  "HoverImage": "img/astral-elites-preview.webp",
   "Excerpt": "A clean and well-polished Asteroids clone (with Discord integration).",
   "Disciplines": [
     "data/disciplines/gameplay-programming.json"
