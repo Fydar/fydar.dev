@@ -17,11 +17,6 @@
       "SiteName": "Itch.io",
       "Url": "https://ootblues.itch.io/astral-swarm",
       "Icon": "itch-io"
-    },
-    {
-      "SiteName": "Google Play",
-      "Url": "https://play.google.com/store/apps/details?id=ootblues.com.game.astralswarm",
-      "Icon": "google-play"
     }
   ],
   "Badges": [
