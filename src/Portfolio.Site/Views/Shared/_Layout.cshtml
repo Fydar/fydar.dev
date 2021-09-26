@@ -25,28 +25,7 @@
   <link rel="stylesheet" href="~/css/main.min.css" asp-append-version="true" />
   <link rel="stylesheet" href="~/patio/patio.min.css" asp-append-version="true" />
 </head>
-<body class="light">
-
-  <script>
-    var currentTheme = localStorage.getItem("theme");
-    if (currentTheme === null) {
-      const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)");
-      if (prefersDarkScheme.matches) {
-        currentTheme = "dark"
-      }
-      else {
-        currentTheme = "light";
-      }
-      localStorage.setItem("theme", currentTheme);
-    }
-    if (currentTheme == "dark") {
-      document.body.classList.remove("light");
-      document.body.classList.add("dark");
-    } else {
-      document.body.classList.add("light");
-      document.body.classList.remove("dark");
-    }
-  </script>
+<body class="dark">
 
   @{
     string? pageTitle = ViewData["Title"] as string;
@@ -64,7 +43,7 @@
   <section class="container">
     <section class="profile profile-background">
       <h1 style="font-size: 2.5rem;margin: 0.5rem 0 0.5rem 0;">Anthony Marmont</h1>
-      <h1 style="/* font-size: 2.5rem; */margin: 0.5rem 0 0.5rem 0;font-style: italic;color: #5e5e5e;">'Fydar'</h1>
+      <h1 style="margin: 0.5rem 0 0.5rem 0;font-style: italic;color: #828282;">'Fydar'</h1>
       <p>I'm passionate about what I do (making stuff).</p>
       <p class="badgecloud">
         <a class="mark mark-rounded mark-youtube" target="_blank" href="https://www.youtube.com/channel/UCEEI1m2TCso1OGWEHvHS20g"></a>
