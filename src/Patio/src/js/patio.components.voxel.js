@@ -24,7 +24,7 @@ function UpdateScreenPerspective() {
     var scroll = invlerp(-bounds.height, window.innerHeight, bounds.top);
 
     screenPerspective.style.perspectiveOrigin = "50% " + (((window.innerHeight / bounds.height) * ((scroll * 2) - 1) * -100) + 50) + "%";
-    screenPerspective.style.perspective = (1024 / window.devicePixelRatio) + "px";
+    screenPerspective.style.perspective = (1024 * window.devicePixelRatio) + "px";
   }
 }
 

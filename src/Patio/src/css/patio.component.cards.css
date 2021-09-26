@@ -179,7 +179,7 @@ $grid-breakpoints: (
   }
 
     .container .card-grid.card-grid-sm {
-      grid-template-columns: 354px 354px;
+      grid-template-columns: 1fr 1fr;
       grid-gap: 20px 20px;
     }
 
@@ -191,8 +191,8 @@ $grid-breakpoints: (
 
 @media (min-width: 992px) {
   .container .card-grid.card-grid-sm {
-    grid-template-columns: 306px 306px 306px;
-    grid-gap: 20px 21px;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 20px 22px;
   }
 
   .container .card-grid.card-grid-xs {
@@ -202,14 +202,14 @@ $grid-breakpoints: (
 
 @media (min-width: 1200px) {
   .container .card-grid.card-grid-sm {
-    grid-template-columns: 364px 364px 364px;
+    grid-template-columns: 1fr 1fr 1fr;
     grid-gap: 22px 21px;
   }
 }
 
 @media (min-width: 1400px) {
   .container .card-grid.card-grid-sm {
-    grid-template-columns: 424px 424px 424px;
-    grid-gap: 24px 21px;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 24px 22px;
   }
 }
