@@ -13,13 +13,16 @@ An **[ASP.NET Core](https://dotnet.microsoft.com/apps/aspnet)** application host
 
 Content for my portfolio is authored into the *'Content'* directory using [RPGCore.Projects](https://github.com/Fydar/RPGCore/tree/main/src/libs/RPGCore.Projects).
 
-[![RPGCore.Traits](https://img.shields.io/badge/📂-Content-333333.svg)](./src/Content)
+> <sub>[![Content Directory](https://img.shields.io/badge/📂-Content-333333.svg)](./src/Portfolio.Component.Content/Content)</sub>\
+> <sup>Portfolio content directory.</sup>
+
 
 ### 🎨 Patio
 
 CSS styling for my website is created using a CSS library of my creation called _'Patio_.
 
-<sub>[![Patio](https://img.shields.io/badge/📂-Patio-333333.svg)](./src/Patio)</sub>
+> <sub>[![Patio](https://img.shields.io/badge/📂-Patio-333333.svg)](./src/Patio)</sub>\
+> <sup>Frontend toolkit project.</sup>
 
 ### 📦 RPGCore
 
@@ -40,6 +43,9 @@ This project utilises a couple of libraries from [**RPGCore**](https://github.co
 ### 📦 LettuceEncrypt
 
 This project utilises [LettuceEncrypt](https://github.com/natemcmaster/LettuceEncrypt) to support SSL certicifates and HTTPS.
+
+> <sub>[![LettuceEncrypt](https://img.shields.io/badge/📦%20LettuceEncrypt-333333.svg)](https://github.com/natemcmaster/LettuceEncrypt)</sub>\
+> <sup>Open source library for HTTPS.</sup>
 
 ## License
 
