@@ -1,6 +1,6 @@
 ﻿using RPGCore.Data;
 
-namespace Portfolio.Models.Portfolio.Activities
+namespace Portfolio.Services.Content.Portfolio.Activities
 {
 	[EditableType]
 	public class QualificationModel : ActivityModel

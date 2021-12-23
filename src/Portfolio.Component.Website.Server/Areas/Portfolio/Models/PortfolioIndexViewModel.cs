@@ -1,7 +1,7 @@
-using Portfolio.Models.Portfolio;
+using Portfolio.Services.Content.Portfolio;
 using System.Collections.Generic;
 
-namespace Portfolio.Site.Areas.Portfolio.Models
+namespace Portfolio.Component.Website.Server.Areas.Portfolio.Models
 {
 	public class PortfolioIndexViewModel
 	{

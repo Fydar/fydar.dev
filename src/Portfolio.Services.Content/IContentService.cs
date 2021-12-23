@@ -1,6 +1,6 @@
-﻿using Portfolio.Models.Blog;
-using Portfolio.Models.Portfolio;
-using Portfolio.Models.Portfolio.Places;
+﻿using Portfolio.Services.Content.Blog;
+using Portfolio.Services.Content.Portfolio;
+using Portfolio.Services.Content.Portfolio.Places;
 using RPGCore.Packages;
 using System.Collections.Generic;
 

@@ -4,7 +4,7 @@ using RPGCore.Projects.Pipeline;
 using System;
 using System.Collections.Generic;
 
-namespace Portfolio.Pipeline
+namespace Portfolio.Services.Pipeline
 {
 	public class LoggingImportProcessor : IImportProcessor
 	{

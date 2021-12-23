@@ -1,4 +1,4 @@
-﻿using Portfolio.Models.Utilities;
+﻿using Portfolio.Services.Content.Utilities;
 using RPGCore.Packages;
 using RPGCore.Projects;
 using RPGCore.Projects.Pipeline;
@@ -9,7 +9,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
 
-namespace Portfolio.Pipeline
+namespace Portfolio.Services.Pipeline
 {
 	public class ImageProcessor : IImportProcessor
 	{

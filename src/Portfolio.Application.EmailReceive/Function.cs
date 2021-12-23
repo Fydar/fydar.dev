@@ -3,13 +3,13 @@ using Amazon.Lambda.SimpleEmailEvents;
 using Amazon.Lambda.SimpleEmailEvents.Actions;
 using Amazon.S3;
 using Amazon.SimpleEmail;
-using Portfolio.EmailReceive.Services;
+using Portfolio.Application.EmailReceive.Services;
 using Portfolio.Services.EmailTickets;
 using Portfolio.Services.EmailTickets.Models;
 using System;
 using System.Threading.Tasks;
 
-namespace Portfolio.EmailReceive
+namespace Portfolio.Application.EmailReceive
 {
 	public class Function
 	{

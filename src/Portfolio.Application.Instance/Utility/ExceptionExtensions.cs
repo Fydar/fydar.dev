@@ -3,7 +3,7 @@ using System.Reflection;
 using System.Text;
 using System.Text.RegularExpressions;
 
-namespace Portfolio.Instance.Utility
+namespace Portfolio.Application.Instance.Utility
 {
 	public static class ExceptionExtensions
 	{

@@ -2,7 +2,7 @@
 using System.Text;
 using System.Text.Json.Serialization;
 
-namespace Portfolio.Models.Portfolio.Places
+namespace Portfolio.Services.Content.Portfolio.Places
 {
 	public class PlacementModel : IComparable<PlacementModel>
 	{

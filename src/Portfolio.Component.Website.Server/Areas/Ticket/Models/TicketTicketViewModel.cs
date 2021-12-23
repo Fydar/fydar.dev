@@ -1,4 +1,4 @@
-﻿namespace Portfolio.Site.Areas.Ticket.Models
+﻿namespace Portfolio.Component.Website.Server.Areas.Ticket.Models
 {
 	public class TicketTicketViewModel
 	{

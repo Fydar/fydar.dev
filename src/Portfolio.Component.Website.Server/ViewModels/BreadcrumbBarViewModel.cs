@@ -1,4 +1,4 @@
-namespace Portfolio.Site.ViewModels
+namespace Portfolio.Component.Website.Server.ViewModels
 {
 	public class BreadcrumbBarViewModel
 	{

@@ -1,9 +1,9 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Portfolio.Component.Website.Server.Areas.Portfolio.Models;
+using Portfolio.Component.Website.Server.Services.PageMetaProvider;
 using Portfolio.Services.Content;
-using Portfolio.Site.Areas.Portfolio.Models;
-using Portfolio.Site.Services.PageMetaProvider;
 
-namespace Portfolio.Site.Areas.Portfolio.Controllers
+namespace Portfolio.Component.Website.Server.Areas.Portfolio.Controllers
 {
 	[ApiController]
 	[Area("Portfolio")]

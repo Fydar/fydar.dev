@@ -1,11 +1,11 @@
 ﻿using Newtonsoft.Json;
-using Portfolio.Models.Utilities;
+using Portfolio.Services.Content.Utilities;
 using RPGCore.Data;
 using RPGCore.Packages;
 using System;
 using System.Collections.Generic;
 
-namespace Portfolio.Models.Portfolio
+namespace Portfolio.Services.Content.Portfolio
 {
 	[EditableType]
 	public class ProjectCategoryModel : ILoadResourceCallback, IComparable<ProjectCategoryModel>

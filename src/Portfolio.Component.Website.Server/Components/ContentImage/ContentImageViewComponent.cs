@@ -1,9 +1,9 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Portfolio.Models.Utilities;
+using Portfolio.Component.Website.Server.Areas.Portfolio.Models;
 using Portfolio.Services.Content;
-using Portfolio.Site.Areas.Portfolio.Models;
+using Portfolio.Services.Content.Utilities;
 
-namespace Portfolio.Site.Components.ContentImage
+namespace Portfolio.Component.Website.Server.Components.ContentImage
 {
 	[ViewComponent(Name = "ContentImage")]
 	public class ContentImageViewComponent : ViewComponent

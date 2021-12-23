@@ -6,7 +6,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
 
-namespace Portfolio.EmailReceive.Services
+namespace Portfolio.Application.EmailReceive.Services
 {
 	public class SESNotifyingService : IEmailSinkService
 	{

@@ -2,12 +2,12 @@
 using Amazon.S3.Model;
 using Microsoft.Extensions.Logging;
 using MimeKit;
-using Portfolio.Site.Areas.Contact.Models;
+using Portfolio.Component.Website.Server.Areas.Contact.Models;
 using System.IO;
 using System.Net.Mail;
 using System.Threading.Tasks;
 
-namespace Portfolio.Site.Services.ContactService
+namespace Portfolio.Component.Website.Server.Services.ContactService
 {
 	public class SaveTicketSubmitSink : IContactSubmitSink
 	{

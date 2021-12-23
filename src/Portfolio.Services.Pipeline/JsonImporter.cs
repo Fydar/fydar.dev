@@ -1,8 +1,8 @@
 ﻿using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
-using Portfolio.Models.Blog;
-using Portfolio.Models.Portfolio;
-using Portfolio.Models.Portfolio.Places;
+using Portfolio.Services.Content.Blog;
+using Portfolio.Services.Content.Portfolio;
+using Portfolio.Services.Content.Portfolio.Places;
 using RPGCore.FileTree;
 using RPGCore.Projects;
 using RPGCore.Projects.Pipeline;
@@ -10,7 +10,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
 
-namespace Portfolio.Pipeline
+namespace Portfolio.Services.Pipeline
 {
 	public class JsonImporter : IArchiveFileImporter
 	{

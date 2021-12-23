@@ -1,6 +1,6 @@
 ﻿using RPGCore.Data;
 
-namespace Portfolio.Models.Portfolio
+namespace Portfolio.Services.Content.Portfolio
 {
 	[EditableType]
 	public struct BadgeEntry

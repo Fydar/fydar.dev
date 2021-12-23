@@ -1,6 +1,6 @@
-using Portfolio.Models.Blog;
+using Portfolio.Services.Content.Blog;
 
-namespace Portfolio.Site.Areas.Blog.Models
+namespace Portfolio.Component.Website.Server.Areas.Blog.Models
 {
 	public class BlogPostViewModel
 	{

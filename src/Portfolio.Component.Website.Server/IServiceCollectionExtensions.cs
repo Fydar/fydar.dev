@@ -1,7 +1,7 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using System.Reflection;
 
-namespace Portfolio.Site
+namespace Portfolio.Component.Website.Server
 {
 	public static class IServiceCollectionExtensions
 	{

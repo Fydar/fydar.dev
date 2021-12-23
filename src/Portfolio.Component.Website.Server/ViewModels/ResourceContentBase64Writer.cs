@@ -4,7 +4,7 @@ using System;
 using System.IO;
 using System.Text.Encodings.Web;
 
-namespace Portfolio.Site.ViewModels
+namespace Portfolio.Component.Website.Server.ViewModels
 {
 	public class ResourceContentBase64Writer : IHtmlContent
 	{

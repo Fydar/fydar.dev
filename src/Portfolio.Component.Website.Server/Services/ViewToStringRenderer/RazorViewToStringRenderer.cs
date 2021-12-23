@@ -12,7 +12,7 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Portfolio.Site.Services.ViewToStringRenderer
+namespace Portfolio.Component.Website.Server.Services.ViewToStringRenderer
 {
 	public sealed class RazorViewToStringRenderer : IViewToStringRenderer
 	{

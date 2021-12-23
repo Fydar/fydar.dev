@@ -3,7 +3,7 @@ using Microsoft.Extensions.Logging;
 using Serilog.Context;
 using System.Threading.Tasks;
 
-namespace Portfolio.Api
+namespace Portfolio.Component.Api.Server
 {
 	public class RequestLoggingMiddleware
 	{

@@ -1,4 +1,4 @@
-﻿namespace Portfolio.Site.Services.PageMetaProvider
+﻿namespace Portfolio.Component.Website.Server.Services.PageMetaProvider
 {
 	public interface IPageMetadataTransformer<T>
 	{

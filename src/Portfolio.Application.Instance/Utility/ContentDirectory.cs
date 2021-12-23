@@ -1,7 +1,7 @@
 ﻿using System;
 using System.IO;
 
-namespace Portfolio.Instance.Utility
+namespace Portfolio.Application.Instance.Utility
 {
 	public static class ContentDirectory
 	{

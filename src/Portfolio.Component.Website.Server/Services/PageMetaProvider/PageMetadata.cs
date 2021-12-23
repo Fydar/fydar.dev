@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Text.Encodings.Web;
 
-namespace Portfolio.Site.Services.PageMetaProvider
+namespace Portfolio.Component.Website.Server.Services.PageMetaProvider
 {
 	public class PageMetadata : IEnumerable<PageMetadataItem>, IHtmlContent
 	{

@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Portfolio.Models.Utilities
+namespace Portfolio.Services.Content.Utilities
 {
 	public static class ResourceHelper
 	{

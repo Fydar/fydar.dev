@@ -1,6 +1,6 @@
-﻿using Portfolio.Site.Areas.Portfolio.Models;
+﻿using Portfolio.Component.Website.Server.Areas.Portfolio.Models;
 
-namespace Portfolio.Site.Services.PageMetaProvider
+namespace Portfolio.Component.Website.Server.Services.PageMetaProvider
 {
 	public class ProjectViewModelPageMetadataTransformer : IPageMetadataTransformer<ProjectViewModel>
 	{

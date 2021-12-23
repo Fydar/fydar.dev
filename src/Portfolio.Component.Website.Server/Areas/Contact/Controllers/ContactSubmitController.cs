@@ -1,14 +1,14 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using Portfolio.Site.Areas.Contact.Models;
-using Portfolio.Site.Services.ContactService;
+using Portfolio.Component.Website.Server.Areas.Contact.Models;
+using Portfolio.Component.Website.Server.Services.ContactService;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Portfolio.Site.Areas.Contact.Controllers
+namespace Portfolio.Component.Website.Server.Areas.Contact.Controllers
 {
 	[ApiController]
 	[Area("Contact")]

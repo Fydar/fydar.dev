@@ -1,9 +1,10 @@
-﻿using RPGCore.Projects;
+﻿using Portfolio.Services.Pipeline;
+using RPGCore.Projects;
 using System;
 using System.IO;
 using System.Threading.Tasks;
 
-namespace Portfolio.Pipeline.BuildStep
+namespace Portfolio.Application.BuildStep
 {
 	internal class Program
 	{

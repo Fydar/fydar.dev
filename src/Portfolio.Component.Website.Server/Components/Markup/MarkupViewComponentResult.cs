@@ -4,7 +4,7 @@ using System.Buffers;
 using System.IO;
 using System.Threading.Tasks;
 
-namespace Portfolio.Site.Components.Markup
+namespace Portfolio.Component.Website.Server.Components.Markup
 {
 	internal class MarkupViewComponentResult : IViewComponentResult
 	{

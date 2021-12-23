@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using System.IO;
 
-namespace Portfolio.Site.Components.Markup
+namespace Portfolio.Component.Website.Server.Components.Markup
 {
 	[ViewComponent(Name = "Markup")]
 	public class MarkupViewComponent : ViewComponent

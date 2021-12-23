@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Portfolio.Site.Areas.Resume.Models;
+using Portfolio.Component.Website.Server.Areas.Resume.Models;
 
-namespace Portfolio.Site.Areas.Resume.Components
+namespace Portfolio.Component.Website.Server.Areas.Resume.Components
 {
 	[ViewComponent(Name = "Timeline")]
 	public class TimelineViewComponent : ViewComponent

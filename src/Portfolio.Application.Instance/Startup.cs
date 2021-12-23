@@ -8,24 +8,24 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
-using Portfolio.Api;
-using Portfolio.Api.Controllers;
-using Portfolio.Instance.Utility;
+using Portfolio.Application.Instance.Utility;
+using Portfolio.Component.Api.Server;
+using Portfolio.Component.Api.Server.Controllers;
+using Portfolio.Component.Website.Server;
+using Portfolio.Component.Website.Server.Areas.Blog.Controllers;
+using Portfolio.Component.Website.Server.Areas.Portfolio.Models;
+using Portfolio.Component.Website.Server.Services.ContactService;
+using Portfolio.Component.Website.Server.Services.PageMetaProvider;
+using Portfolio.Component.Website.Server.Services.ViewToStringRenderer;
 using Portfolio.Services.Content;
 using Portfolio.Services.EmailTickets;
-using Portfolio.Site;
-using Portfolio.Site.Areas.Blog.Controllers;
-using Portfolio.Site.Areas.Portfolio.Models;
-using Portfolio.Site.Services.ContactService;
-using Portfolio.Site.Services.PageMetaProvider;
-using Portfolio.Site.Services.ViewToStringRenderer;
 using RPGCore.Packages;
 using Swashbuckle.AspNetCore.SwaggerGen;
 using System;
 using System.IO;
 using System.Linq;
 
-namespace Portfolio.Instance
+namespace Portfolio.Application.Instance
 {
 	public class Startup
 	{

@@ -1,4 +1,4 @@
-namespace Portfolio.Site.Areas.Resume.Models
+namespace Portfolio.Component.Website.Server.Areas.Resume.Models
 {
 	public class ResumeViewModel
 	{

@@ -1,10 +1,10 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using Portfolio.Component.Website.Server.Areas.Ticket.Models;
 using Portfolio.Services.EmailTickets;
-using Portfolio.Site.Areas.Ticket.Models;
 using System.Threading.Tasks;
 
-namespace Portfolio.Site.Areas.Ticket.Controllers
+namespace Portfolio.Component.Website.Server.Areas.Ticket.Controllers
 {
 	[ApiController]
 	[Area("Ticket")]

@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 
-namespace Portfolio.Site.Areas.Contact.Models
+namespace Portfolio.Component.Website.Server.Areas.Contact.Models
 {
 	public class ContactSubmitRequestModel
 	{

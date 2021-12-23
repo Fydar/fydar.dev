@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc.ViewFeatures;
 
-namespace Portfolio.Site.Services.PageMetaProvider
+namespace Portfolio.Component.Website.Server.Services.PageMetaProvider
 {
 	public static class ViewDataDictionaryExtensions
 	{

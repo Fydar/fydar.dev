@@ -1,7 +1,7 @@
 ﻿using Portfolio.Services.EmailTickets.Models;
 using System.Threading.Tasks;
 
-namespace Portfolio.EmailReceive.Services
+namespace Portfolio.Application.EmailReceive.Services
 {
 	public interface IEmailSinkService
 	{

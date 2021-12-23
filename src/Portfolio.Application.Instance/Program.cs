@@ -4,13 +4,13 @@ using Microsoft.AspNetCore.Hosting.Server.Features;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Portfolio.Instance.Utility;
+using Portfolio.Application.Instance.Utility;
 using Serilog;
 using Serilog.Events;
 using System;
 using System.Net;
 
-namespace Portfolio.Instance
+namespace Portfolio.Application.Instance
 {
 	public class Program
 	{

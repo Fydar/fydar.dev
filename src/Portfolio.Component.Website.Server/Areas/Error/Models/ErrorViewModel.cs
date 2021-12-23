@@ -1,4 +1,4 @@
-namespace Portfolio.Site.Areas.Error.Models
+namespace Portfolio.Component.Website.Server.Areas.Error.Models
 {
 	public class ErrorViewModel
 	{

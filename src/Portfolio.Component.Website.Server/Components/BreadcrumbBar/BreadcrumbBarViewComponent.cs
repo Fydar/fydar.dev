@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Portfolio.Site.ViewModels;
+using Portfolio.Component.Website.Server.ViewModels;
 
-namespace Portfolio.Site.Components.BreadcrumbBar
+namespace Portfolio.Component.Website.Server.Components.BreadcrumbBar
 {
 	[ViewComponent(Name = "BreadcrumbBar")]
 	public class BreadcrumbBarViewComponent : ViewComponent

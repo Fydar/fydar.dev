@@ -1,9 +1,9 @@
 ﻿using Newtonsoft.Json;
-using Portfolio.Models.Portfolio;
-using Portfolio.Models.Utilities;
+using Portfolio.Services.Content.Portfolio;
+using Portfolio.Services.Content.Utilities;
 using RPGCore.Packages;
 
-namespace Portfolio.Models.Blog
+namespace Portfolio.Services.Content.Blog
 {
 	public class BlogPostModel
 	{

@@ -4,7 +4,7 @@ using Serilog.Formatting.Json;
 using System;
 using System.IO;
 
-namespace Portfolio.Instance.Utility
+namespace Portfolio.Application.Instance.Utility
 {
 	public class ColoredConsoleLogEventSink : ILogEventSink
 	{

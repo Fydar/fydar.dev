@@ -1,8 +1,8 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
-using Portfolio.Api.Controllers;
+using Portfolio.Component.Api.Server.Controllers;
 using System.Reflection;
 
-namespace Portfolio.Api
+namespace Portfolio.Component.Api.Server
 {
 	public static class IServiceCollectionExtensions
 	{

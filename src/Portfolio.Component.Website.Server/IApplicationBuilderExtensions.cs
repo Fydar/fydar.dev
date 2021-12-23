@@ -11,7 +11,7 @@ using System.IO;
 using System.Linq;
 using System.Reflection;
 
-namespace Portfolio.Site
+namespace Portfolio.Component.Website.Server
 {
 	public static class IApplicationBuilderExtensions
 	{

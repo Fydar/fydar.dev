@@ -1,9 +1,9 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Portfolio.Component.Website.Server.Areas.Resume.Models;
 using Portfolio.Services.Content;
-using Portfolio.Site.Areas.Resume.Models;
 
-namespace Portfolio.Site.Areas.Resume.Controllers
+namespace Portfolio.Component.Website.Server.Areas.Resume.Controllers
 {
 	[ApiController]
 	[Area("Resume")]

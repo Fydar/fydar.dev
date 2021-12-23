@@ -1,13 +1,13 @@
 ﻿using Amazon.SimpleEmail;
 using Amazon.SimpleEmail.Model;
 using Microsoft.Extensions.Logging;
-using Portfolio.Site.Areas.Contact.Models;
-using Portfolio.Site.Services.ViewToStringRenderer;
+using Portfolio.Component.Website.Server.Areas.Contact.Models;
+using Portfolio.Component.Website.Server.Services.ViewToStringRenderer;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace Portfolio.Site.Services.ContactService
+namespace Portfolio.Component.Website.Server.Services.ContactService
 {
 	public class ContactNotificationSubmitSink : IContactSubmitSink
 	{

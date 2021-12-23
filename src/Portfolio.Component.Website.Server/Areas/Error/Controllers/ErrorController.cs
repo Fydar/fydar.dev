@@ -1,8 +1,8 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Portfolio.Site.Areas.Error.Models;
+using Portfolio.Component.Website.Server.Areas.Error.Models;
 
-namespace Portfolio.Site.Areas.Error.Controllers
+namespace Portfolio.Component.Website.Server.Areas.Error.Controllers
 {
 	[ApiController]
 	[Area("Error")]

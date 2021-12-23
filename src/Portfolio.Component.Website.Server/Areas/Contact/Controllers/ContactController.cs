@@ -1,8 +1,8 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Portfolio.Site.Areas.Contact.Models;
+using Portfolio.Component.Website.Server.Areas.Contact.Models;
 
-namespace Portfolio.Site.Areas.Contact.Controllers
+namespace Portfolio.Component.Website.Server.Areas.Contact.Controllers
 {
 	[ApiController]
 	[Area("Contact")]

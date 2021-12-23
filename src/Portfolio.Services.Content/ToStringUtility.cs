@@ -2,7 +2,7 @@
 using System.Globalization;
 using System.Text;
 
-namespace Portfolio.Models
+namespace Portfolio.Services.Content
 {
 	public static class ToStringUtility
 	{

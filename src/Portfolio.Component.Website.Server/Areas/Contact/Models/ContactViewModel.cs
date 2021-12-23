@@ -1,4 +1,4 @@
-﻿namespace Portfolio.Site.Areas.Contact.Models
+﻿namespace Portfolio.Component.Website.Server.Areas.Contact.Models
 {
 	public class ContactViewModel : ContactSubmitRequestModel
 	{

@@ -1,8 +1,8 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Portfolio.Api.Models;
+using Portfolio.Component.Api.Server.Models;
 
-namespace Portfolio.Api.Controllers
+namespace Portfolio.Component.Api.Server.Controllers
 {
 	/// <summary>
 	/// A controller for the /api/profile endpoint that provides the consumer with profile details.

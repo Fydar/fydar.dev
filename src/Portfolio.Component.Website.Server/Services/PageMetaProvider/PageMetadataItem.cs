@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Portfolio.Site.Services.PageMetaProvider
+namespace Portfolio.Component.Website.Server.Services.PageMetaProvider
 {
 	public class PageMetadataItem
 	{

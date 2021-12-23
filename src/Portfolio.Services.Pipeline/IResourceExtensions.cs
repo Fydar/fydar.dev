@@ -1,7 +1,7 @@
-﻿using Portfolio.Models.Utilities;
+﻿using Portfolio.Services.Content.Utilities;
 using RPGCore.Packages;
 
-namespace Portfolio.Pipeline
+namespace Portfolio.Services.Pipeline
 {
 	public static class IResourceExtensions
 	{

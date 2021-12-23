@@ -1,6 +1,6 @@
 ﻿using RPGCore.Packages;
 
-namespace Portfolio.Site.Areas.Portfolio.Models
+namespace Portfolio.Component.Website.Server.Areas.Portfolio.Models
 {
 	public class ContentImageViewModel
 	{

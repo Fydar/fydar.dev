@@ -1,6 +1,6 @@
-using Portfolio.Models.Portfolio;
+using Portfolio.Services.Content.Portfolio;
 
-namespace Portfolio.Site.Areas.Portfolio.Models
+namespace Portfolio.Component.Website.Server.Areas.Portfolio.Models
 {
 	public class ProjectViewModel
 	{

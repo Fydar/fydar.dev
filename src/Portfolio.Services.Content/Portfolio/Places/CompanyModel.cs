@@ -2,7 +2,7 @@
 using System.Text;
 using System.Text.Json.Serialization;
 
-namespace Portfolio.Models.Portfolio.Places
+namespace Portfolio.Services.Content.Portfolio.Places
 {
 	[EditableType]
 	public class CompanyModel : InstitutionModel

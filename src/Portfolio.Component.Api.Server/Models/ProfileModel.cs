@@ -2,7 +2,7 @@
 using System.ComponentModel.DataAnnotations;
 using System.Text.Json.Serialization;
 
-namespace Portfolio.Api.Models
+namespace Portfolio.Component.Api.Server.Models
 {
 	/// <summary>
 	/// A model representing a user.

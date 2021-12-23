@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text.Json.Serialization;
 
-namespace Portfolio.Models.Portfolio.Places
+namespace Portfolio.Services.Content.Portfolio.Places
 {
 	public abstract class InstitutionModel : IComparable<InstitutionModel>
 	{

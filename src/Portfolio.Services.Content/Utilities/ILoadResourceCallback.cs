@@ -1,6 +1,6 @@
 ﻿using RPGCore.Packages;
 
-namespace Portfolio.Models.Utilities
+namespace Portfolio.Services.Content.Utilities
 {
 	public interface ILoadResourceCallback
 	{

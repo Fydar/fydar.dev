@@ -1,4 +1,4 @@
-﻿using Portfolio.Models.Utilities;
+﻿using Portfolio.Services.Content.Utilities;
 using RPGCore.FileTree;
 using RPGCore.Projects;
 using RPGCore.Projects.Pipeline;
@@ -8,7 +8,7 @@ using System.IO;
 using System.Threading.Tasks;
 using System.Xml;
 
-namespace Portfolio.Pipeline
+namespace Portfolio.Services.Pipeline
 {
 	public class MarkupImporter : IArchiveFileImporter
 	{

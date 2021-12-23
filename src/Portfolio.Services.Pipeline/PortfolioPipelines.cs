@@ -1,7 +1,7 @@
 ﻿using RPGCore.Projects;
 using RPGCore.Projects.Extensions.MetaFiles;
 
-namespace Portfolio.Pipeline
+namespace Portfolio.Services.Pipeline
 {
 	public static class PortfolioPipelines
 	{

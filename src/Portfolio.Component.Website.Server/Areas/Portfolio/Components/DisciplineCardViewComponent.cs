@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Portfolio.Site.Areas.Portfolio.Models;
+using Portfolio.Component.Website.Server.Areas.Portfolio.Models;
 
-namespace Portfolio.Site.Areas.Portfolio.Components
+namespace Portfolio.Component.Website.Server.Areas.Portfolio.Components
 {
 	[ViewComponent(Name = "DisciplineCard")]
 	public class DisciplineCardViewComponent : ViewComponent

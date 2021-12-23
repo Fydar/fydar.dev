@@ -1,4 +1,4 @@
-﻿namespace Portfolio.Models.Portfolio.Places
+﻿namespace Portfolio.Services.Content.Portfolio.Places
 {
 	public enum StudioType
 	{

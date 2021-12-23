@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Portfolio.Models.Portfolio.Activities
+namespace Portfolio.Services.Content.Portfolio.Activities
 {
 	public abstract class ActivityModel : IComparable<ActivityModel>
 	{

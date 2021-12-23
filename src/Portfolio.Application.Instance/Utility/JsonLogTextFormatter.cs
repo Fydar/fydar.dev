@@ -4,7 +4,7 @@ using Serilog.Formatting.Json;
 using System;
 using System.IO;
 
-namespace Portfolio.Instance.Utility
+namespace Portfolio.Application.Instance.Utility
 {
 	/// <summary>
 	/// An <see cref="ITextFormatter"/> that writes events in a compact JSON format, for consumption in environments 

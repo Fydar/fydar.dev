@@ -2,7 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Portfolio.Services.Content;
 
-namespace Portfolio.Site.Areas.Blog.Controllers
+namespace Portfolio.Component.Website.Server.Areas.Blog.Controllers
 {
 	[ApiController]
 	[Area("Blog")]

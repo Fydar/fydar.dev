@@ -6,7 +6,7 @@ using NUnit.Framework;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace Portfolio.EmailReceive.Tests
+namespace Portfolio.Application.EmailReceive.IntegrationTests
 {
 	[TestFixture(TestOf = typeof(Function))]
 	public class FunctionShould

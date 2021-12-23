@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Http;
 
-namespace Portfolio.Api
+namespace Portfolio.Component.Api.Server
 {
 	public static class IApplicationBuilderExtensions
 	{

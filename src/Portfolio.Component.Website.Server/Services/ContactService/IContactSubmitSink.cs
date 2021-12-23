@@ -1,7 +1,7 @@
-﻿using Portfolio.Site.Areas.Contact.Models;
+﻿using Portfolio.Component.Website.Server.Areas.Contact.Models;
 using System.Threading.Tasks;
 
-namespace Portfolio.Site.Services.ContactService
+namespace Portfolio.Component.Website.Server.Services.ContactService
 {
 	public interface IContactSubmitSink
 	{
