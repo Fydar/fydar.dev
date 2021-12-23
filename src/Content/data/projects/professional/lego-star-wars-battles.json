@@ -18,6 +18,11 @@
         "SiteName": "Website",
         "Url": "https://www.starwars.com/games-apps/lego-star-wars-battles",
         "Icon": "website"
+      },
+      {
+        "SiteName": "App Store",
+        "Url": "http://apple.co/legoswb",
+        "Icon": "website"
       }
   ],
   "Badges": [
