@@ -1,0 +1,32 @@
+{
+  "IsProfessional": true,
+  "Slug": "tt-games",
+  "Name": "TT Games",
+  "IconUrl": "img/logo-ttgames-sm.png",
+  "Page": "pages/company/tt-games.html",
+  "Address": "Brighton, United Kingdom",
+  "TwoWordAddress": "Brighton, United Kingdom",
+  "Excerpt": "",
+  "Positions": [
+    {
+      "Identifier": "games-programmer",
+      "PlacementTitle": "Games Programmer",
+      "PlacementDescriptionHtml": "<p>Full-Stack games developer in <b>C#</b> (.NET Core and Unity) on the mobile title <i><a href=\"https://anthonymarmont.com/portfolio/lego-star-wars-battles\">‘LEGO® Star Wars™ Battles’</a></i>.</p><p>I was personally responsible for the creation and release of the servers and databases for <b>clans</b> and <b>leaderboards</b>.</p>",
+      "PlacementSubtitle": "",
+      "DisplayMonth": true,
+      "StartTimestamp": 1556668800,
+      "EndTimestamp": 1600902000
+    },
+    {
+      "Identifier": "junior-programmer",
+      "PlacementTitle": "Junior Programmer",
+      "PlacementDescriptionHtml": "<p>Gameplay programmer in <b>C#</b> (Unity) on the mobile title <i><a href=\"https://anthonymarmont.com/portfolio/lego-star-wars-battles\">‘LEGO® Star Wars™ Battles’</a></i>.</p><p>When I first joined the team, I worked primarily on gameplay. I created the <b>data delivery mechanisms</b>, <b>configuration system</b>, <b>unit AI</b>.</p><p>I also created helpful tools for <b>saved game data management</b>, <b>profile management</b>, and <b>network debugging</b>.</p>",
+      "PlacementSubtitle": "",
+      "DisplayMonth": true,
+      "StartTimestamp": 1530403200,
+      "EndTimestamp": 1556668800
+    }
+  ],
+  "StudioType": "AA",
+  "JobTime": "FullTime"
+}

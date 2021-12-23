@@ -8,20 +8,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Portfolio.Component.Content\Portfolio.Component.Content.csproj" />
     <ProjectReference Include="..\Portfolio.Services.Pipeline\Portfolio.Services.Pipeline.csproj" />
     <ProjectReference Include="..\RPGCore\src\libs\RPGCore.Packages\RPGCore.Packages.csproj" />
     <ProjectReference Include="..\RPGCore\src\libs\RPGCore.DataEditor\RPGCore.DataEditor.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <PackageReference Include="System.Text.Json" Version="5.0.2" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Content Include="../Content/**/*">
-      <Link>Content\%(RecursiveDir)%(Filename)%(Extension)</Link>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
   </ItemGroup>
 
 </Project>

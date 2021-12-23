@@ -9,7 +9,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Portfolio.Models\Portfolio.Models.csproj" />
+    <ProjectReference Include="..\Portfolio.Services.Pipeline\Portfolio.Services.Pipeline.csproj" />
     <ProjectReference Include="..\Portfolio.Services.Content\Portfolio.Services.Content.csproj" />
     <ProjectReference Include="..\Portfolio.Services.EmailTickets\Portfolio.Services.EmailTickets.csproj" />
   </ItemGroup>
