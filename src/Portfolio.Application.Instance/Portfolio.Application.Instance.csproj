@@ -13,11 +13,9 @@
 
   <ItemGroup>
     <ProjectReference Include="..\RPGCore\src\libs\RPGCore.Packages\RPGCore.Packages.csproj" />
-    <ProjectReference Include="..\Portfolio.Api\Portfolio.Api.csproj" />
-    <ProjectReference Include="..\Portfolio.EmailReceive.Tests\Portfolio.EmailReceive.Tests.csproj" />
-    <ProjectReference Include="..\Portfolio.Models\Portfolio.Models.csproj" />
+    <ProjectReference Include="..\Portfolio.Component.Api.Server\Portfolio.Component.Api.Server.csproj" />
+    <ProjectReference Include="..\Portfolio.Component.Website.Server\Portfolio.Component.Website.Server.csproj" />
     <ProjectReference Include="..\Portfolio.Services.EmailTickets\Portfolio.Services.EmailTickets.csproj" />
-    <ProjectReference Include="..\Portfolio.Site\Portfolio.Site.csproj" />
   </ItemGroup>
 
   <ItemGroup>
@@ -36,7 +34,7 @@
 
   <ItemGroup>
     <Content Include="..\Patio\output\**\*" Link="wwwroot\patio\%(RecursiveDir)%(Filename)%(Extension)" CopyToOutputDirectory="PreserveNewest" />
-    <Content Include="..\Portfolio.Site\wwwroot\**\*" Link="wwwroot\%(RecursiveDir)%(Filename)%(Extension)" CopyToOutputDirectory="PreserveNewest" />
+    <Content Include="..\Portfolio.Component.Website\wwwroot\**\*" Link="wwwroot\%(RecursiveDir)%(Filename)%(Extension)" CopyToOutputDirectory="PreserveNewest" />
   </ItemGroup>
 
 </Project>

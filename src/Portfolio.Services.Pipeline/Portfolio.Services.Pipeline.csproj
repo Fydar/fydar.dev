@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
@@ -7,13 +7,14 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Portfolio.Services.Content\Portfolio.Services.Content.csproj" />
     <ProjectReference Include="..\RPGCore\src\libs\RPGCore.Packages\RPGCore.Packages.csproj" />
-    <ProjectReference Include="..\RPGCore\src\libs\RPGCore.Data\RPGCore.Data.csproj" />
     <ProjectReference Include="..\RPGCore\src\libs\RPGCore.DataEditor\RPGCore.DataEditor.csproj" />
+    <ProjectReference Include="..\RPGCore\src\libs\RPGCore.Projects\RPGCore.Projects.csproj" />
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="System.Text.Json" Version="5.0.2" />
+    <PackageReference Include="SixLabors.ImageSharp" Version="1.0.3" />
   </ItemGroup>
 
 </Project>

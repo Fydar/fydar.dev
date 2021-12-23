@@ -2,7 +2,18 @@
   {
     "outputFileName": "output/patio.css",
     "inputFiles": [
-      "src/css/**/*.css"
+      "src/css/*.css"
+    ],
+    "minify": {
+      "enabled": true,
+      "commentMode": "none",
+      "adjustRelativePaths": false
+    }
+  },
+  {
+    "outputFileName": "output/patio.theme.materialblue.css",
+    "inputFiles": [
+      "src/css/materialblue/*.css"
     ],
     "minify": {
       "enabled": true,

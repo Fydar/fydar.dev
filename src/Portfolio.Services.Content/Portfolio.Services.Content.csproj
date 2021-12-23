@@ -1,13 +1,16 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netstandard2.1</TargetFramework>
+    <TargetFramework>netstandard2.0</TargetFramework>
     <LangVersion>latest</LangVersion>
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Portfolio.Models\Portfolio.Models.csproj" />
+    <ProjectReference Include="..\RPGCore\src\libs\RPGCore.Data.Polymorphic.SystemTextJson\RPGCore.Data.Polymorphic.SystemTextJson.csproj" />
+    <ProjectReference Include="..\RPGCore\src\libs\RPGCore.Data\RPGCore.Data.csproj" />
+    <ProjectReference Include="..\RPGCore\src\libs\RPGCore.Data.Polymorphic\RPGCore.Data.Polymorphic.csproj" />
+    <ProjectReference Include="..\RPGCore\src\libs\RPGCore.Packages\RPGCore.Packages.csproj" />
   </ItemGroup>
 
 </Project>

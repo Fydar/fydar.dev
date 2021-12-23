@@ -8,7 +8,7 @@
   ViewData["FeaturedImage"] = Model.Project.FeaturedImage;
 }
 
-<vc:breadcrumb-bar breadcrumb-bar='@new BreadcrumbBarViewModel(
+<vc:breadcrumb-bar breadcrumb-bar='@(new BreadcrumbBarViewModel(
   new BreadcrumbViewModel()
   {
     Controller = "PortfolioItem",
@@ -23,7 +23,7 @@
   {
     Text = Model.Project.ProjectName
   }
-)' />
+))' />
 
 <section class="container" style="min-height: 80vh;">
 

@@ -8,9 +8,9 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Portfolio.Services.Pipeline\Portfolio.Services.Pipeline.csproj" />
     <ProjectReference Include="..\RPGCore\src\libs\RPGCore.Packages\RPGCore.Packages.csproj" />
     <ProjectReference Include="..\RPGCore\src\libs\RPGCore.DataEditor\RPGCore.DataEditor.csproj" />
-    <ProjectReference Include="..\Portfolio.Pipeline\Portfolio.Pipeline.csproj" />
   </ItemGroup>
 
   <ItemGroup>

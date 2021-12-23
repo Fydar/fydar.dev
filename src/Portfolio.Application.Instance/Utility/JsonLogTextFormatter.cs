@@ -15,7 +15,7 @@ namespace Portfolio.Instance.Utility
 		private readonly JsonValueFormatter valueFormatter;
 
 		/// <summary>
-		/// Construct a <see cref="CompactJsonFormatter"/>, optionally supplying a formatter for
+		/// Construct a <see cref="JsonLogTextFormatter"/>, optionally supplying a formatter for
 		/// <see cref="LogEventPropertyValue"/>s on the event.
 		/// </summary>
 		/// <param name="valueFormatter">A value formatter, or null.</param>
