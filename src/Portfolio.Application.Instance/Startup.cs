@@ -105,7 +105,7 @@ namespace Portfolio.Instance
 			{
 			});
 
-			IExplorer explorer = PackageExplorer.LoadFromDirectoryAsync(ContentDirectory.Path).Result;
+			IExplorer explorer = PackageExplorer.LoadFromDirectoryAsync(ContentDirectory.ContentPath).Result;
 			services.AddSingleton(explorer);
 
 			services.AddSingleton<IContentService, LocalContentService>();

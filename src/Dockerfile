@@ -5,7 +5,7 @@ EXPOSE 443
 RUN ls
 
 COPY /Portfolio.Aplication.Instance/bin/Release/net5.0/publish/ /code/
-COPY /Portfolio.Pipeline.BuildStep/bin/Debug/net5.0/output/content/ /code/content
+COPY /bin/built-content/content/ /code/content
 
 RUN ls ./code
 

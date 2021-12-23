@@ -8,6 +8,7 @@
 
   <ItemGroup>
     <Content Include="Content\**\*.*" CopyToOutputDirectory="PreserveNewest" />
+    <Content Include="Content\content.bproj" CopyToOutputDirectory="PreserveNewest" />
   </ItemGroup>
 
 </Project>

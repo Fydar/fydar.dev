@@ -1,6 +1,4 @@
-﻿using RPGCore.FileTree.FileSystem;
-using RPGCore.Packages;
-using RPGCore.Projects;
+﻿using RPGCore.Projects;
 using System;
 using System.IO;
 using System.Threading.Tasks;
@@ -13,14 +11,31 @@ namespace Portfolio.Pipeline.BuildStep
 		{
 			try
 			{
-				string destination = "./output";
-				var destinationDirectoryInfo = new DirectoryInfo(destination);
-
 				var directory = new FileInfo(typeof(Program).Assembly.Location).Directory;
+				var solutionDirectory = new FileInfo(typeof(Program).Assembly.Location).Directory;
 
+				while (solutionDirectory != null && solutionDirectory.Parent != null)
+				{
+					solutionDirectory = solutionDirectory.Parent;
+
+					if (string.Equals(solutionDirectory.Name, "src", StringComparison.OrdinalIgnoreCase))
+					{
+						break;
+					}
+				}
+
+				if (directory == null || solutionDirectory == null)
+				{
+					throw new InvalidOperationException();
+				}
+
+				string destinationPath = Path.Combine(solutionDirectory.FullName, "bin/built-content");
 				string sourceProjectPath = Path.Combine(directory.FullName, "Content");
 
-				Console.WriteLine($"Copying game data:\n- FROM:  {sourceProjectPath}\n- TO:    {destinationDirectoryInfo.FullName}");
+				var destinationInfo = new DirectoryInfo(destinationPath);
+				var sourceProjectInfo = new DirectoryInfo(sourceProjectPath);
+
+				Console.WriteLine($"Copying game data:\n- FROM:  {sourceProjectInfo.FullName}\n- TO:    {destinationInfo.FullName}");
 
 				using (var project = await ProjectExplorer.LoadAsync(sourceProjectPath, PortfolioPipelines.Import))
 				{
@@ -68,7 +83,7 @@ namespace Portfolio.Pipeline.BuildStep
 						}
 					}
 
-					var packageArchiveDirectory = project.ExportFoldersToDirectory(PortfolioPipelines.Build, destination);
+					var packageArchiveDirectory = project.ExportFoldersToDirectory(PortfolioPipelines.Build, destinationPath);
 
 					Console.WriteLine();
 					Console.ForegroundColor = ConsoleColor.DarkGreen;

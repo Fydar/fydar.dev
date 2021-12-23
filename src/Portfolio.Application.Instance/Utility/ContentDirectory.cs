@@ -5,19 +5,38 @@ namespace Portfolio.Instance.Utility
 {
 	public static class ContentDirectory
 	{
-		public static string Path { get; }
+		public static string ContentPath { get; }
 
 		static ContentDirectory()
 		{
-			string buildStepOutput = "../Portfolio.Pipeline.BuildStep/bin/Debug/net5.0/output/content";
-
 			if (Directory.Exists("content"))
 			{
-				Path = "content";
+				ContentPath = "content";
+				return;
 			}
-			else if (Directory.Exists(buildStepOutput))
+
+			var solutionDirectory = new FileInfo(typeof(Program).Assembly.Location).Directory;
+
+			while (solutionDirectory != null && solutionDirectory.Parent != null)
 			{
-				Path = buildStepOutput;
+				solutionDirectory = solutionDirectory.Parent;
+
+				if (string.Equals(solutionDirectory.Name, "src", StringComparison.OrdinalIgnoreCase))
+				{
+					break;
+				}
+			}
+
+			if (solutionDirectory == null)
+			{
+				throw new InvalidOperationException("Failed to locate package data to host");
+			}
+
+			string destinationPath = Path.Combine(solutionDirectory.FullName, "bin/built-content/content");
+
+			if (Directory.Exists(destinationPath))
+			{
+				ContentPath = destinationPath;
 			}
 			else
 			{
