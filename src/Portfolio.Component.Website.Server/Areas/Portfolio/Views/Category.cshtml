@@ -8,12 +8,7 @@
   ViewData["Title"] = "Portfolio";
 }
 
-<vc:breadcrumb-bar breadcrumb-bar='new BreadcrumbBarViewModel(
-  new BreadcrumbViewModel()
-  {
-    Text = Model.Category.DisplayName
-  }
-)' />
+<vc:breadcrumb-bar breadcrumb-bar='@Model.Breadcrumbs' />
 
 <section class="container" style="min-height: 80vh;">
 

@@ -10,7 +10,7 @@ public class BreadcrumbBarViewComponent : ViewComponent
 	{
 	}
 
-	public IViewComponentResult Invoke(BreadcrumbBarViewModel breadcrumbBar)
+	public IViewComponentResult Invoke(StaticPageBreadcrumbs breadcrumbBar)
 	{
 		return View("BreadcrumbBar", breadcrumbBar);
 	}

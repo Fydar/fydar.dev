@@ -15,10 +15,6 @@
     {
       var category = contentService.Categories[i];
 
-      @await Component.InvokeAsync(typeof(PortfolioGridViewComponent), new {
-        category=category
-      })
-
       <vc:portfolio-grid category="category" />
     }
 

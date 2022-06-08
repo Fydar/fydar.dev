@@ -20,8 +20,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
-  @ViewData.GetPageMetadata()
-  
+  @if (Model is StaticPageViewModel staticPageViewModel)
+  {
+    @staticPageViewModel.Metadata
+    @staticPageViewModel.Breadcrumbs
+  }
+
   <link rel="stylesheet" href="~/css/main.min.css" asp-append-version="true" />
   <link rel="stylesheet" href="~/patio/patio.min.css" asp-append-version="true" />
   <link rel="stylesheet" href="~/patio/patio.theme.materialblue.min.css" asp-append-version="true" />
@@ -29,8 +33,6 @@
 <body class="dark">
 
   @{
-    string? pageTitle = ViewData["Title"] as string;
-    bool fullscreen = string.IsNullOrEmpty(pageTitle);
     string area = ViewContext.RouteData.Values["Area"]?.ToString() ?? "";
   }
 

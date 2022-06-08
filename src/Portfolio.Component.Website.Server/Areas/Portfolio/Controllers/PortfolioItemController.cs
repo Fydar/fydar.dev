@@ -1,7 +1,10 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Portfolio.Component.Website.Server.Areas.Portfolio.Models;
 using Portfolio.Component.Website.Server.Services.PageMetaProvider;
+using Portfolio.Component.Website.Server.ViewModels;
 using Portfolio.Services.Content;
+using System;
+using System.Collections.Generic;
 
 namespace Portfolio.Component.Website.Server.Areas.Portfolio.Controllers;
 
@@ -12,14 +15,11 @@ namespace Portfolio.Component.Website.Server.Areas.Portfolio.Controllers;
 public class PortfolioItemController : Controller
 {
 	private readonly IContentService contentService;
-	private readonly IPageMetadataTransformer<ProjectViewModel> pageMetadataTransformer;
 
 	public PortfolioItemController(
-		IContentService contentService,
-		IPageMetadataTransformer<ProjectViewModel> pageMetadataTransformer)
+		IContentService contentService)
 	{
 		this.contentService = contentService;
-		this.pageMetadataTransformer = pageMetadataTransformer;
 	}
 
 	/// <summary>
@@ -34,7 +34,20 @@ public class PortfolioItemController : Controller
 		var category = contentService.GetCategory(identifier);
 		if (category != null)
 		{
-			var categoryViewModel = new CategoryViewModel(category);
+			var categoryViewModel = new CategoryViewModel(category)
+			{
+				Breadcrumbs = new StaticPageBreadcrumbs(
+				  new BreadcrumbViewModel()
+				  {
+					  PageUrl = Url.Action("Index", "Portfolio"),
+					  Text = "Portfolio"
+				  },
+				  new BreadcrumbViewModel()
+				  {
+					  Text = category.DisplayName
+				  }
+				)
+			};
 
 			return View("Category", categoryViewModel);
 		}
@@ -42,8 +55,21 @@ public class PortfolioItemController : Controller
 		var project = contentService.GetProject(identifier);
 		if (project != null)
 		{
-			var projectViewModel = new ProjectViewModel(project);
-			ViewData.SetPageMetadata(pageMetadataTransformer.TransformMetadata(projectViewModel));
+			var projectViewModel = new ProjectViewModel(project)
+			{
+				Metadata = ProjectViewModelPageMetadataTransformer.TransformMetadata(project),
+				Breadcrumbs = new StaticPageBreadcrumbs(
+				  new BreadcrumbViewModel()
+				  {
+					  PageUrl = Url.Action("Index", "Portfolio"),
+					  Text = "Portfolio"
+				  },
+				  new BreadcrumbViewModel()
+				  {
+					  Text = project.ProjectName
+				  }
+				)
+			};
 
 			return View("Project", projectViewModel);
 		}
@@ -51,7 +77,20 @@ public class PortfolioItemController : Controller
 		var discipline = contentService.GetDiscipline(identifier);
 		if (discipline != null)
 		{
-			var disciplineViewModel = new DisciplineViewModel(discipline);
+			var disciplineViewModel = new DisciplineViewModel(discipline)
+			{
+				Breadcrumbs = new StaticPageBreadcrumbs(
+				  new BreadcrumbViewModel()
+				  {
+					  PageUrl = Url.Action("Index", "Portfolio"),
+					  Text = "Portfolio"
+				  },
+				  new BreadcrumbViewModel()
+				  {
+					  Text = discipline.DisplayName
+				  }
+				)
+			};
 
 			return View("Discipline", disciplineViewModel);
 		}

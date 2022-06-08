@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Portfolio.Component.Website.Server.Areas.Portfolio.Models;
+using Portfolio.Component.Website.Server.ViewModels;
 using Portfolio.Services.Content;
 
 namespace Portfolio.Component.Website.Server.Areas.Portfolio.Controllers;
@@ -28,6 +29,13 @@ public class PortfolioController : Controller
 	[ProducesResponseType(StatusCodes.Status200OK)]
 	public IActionResult Index()
 	{
-		return View("Index", new PortfolioIndexViewModel(contentService.Projects));
+		return View("Index", new PortfolioIndexViewModel(contentService.Projects)
+		{
+			Breadcrumbs = new StaticPageBreadcrumbs(
+				new BreadcrumbViewModel()
+				{
+					Text = "Portfolio"
+				})
+		});
 	}
 }

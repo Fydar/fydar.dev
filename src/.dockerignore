@@ -1,7 +1,7 @@
 *
 
-!Portfolio.Instance/bin/Release/net5.0/**
-!Portfolio.Pipeline.BuildStep/bin/Debug/net5.0/output/**
+!Portfolio.Application.Instance/bin/Release/net5.0/**
+!bin/built-content/**
 
 **/.classpath
 **/.dockerignore

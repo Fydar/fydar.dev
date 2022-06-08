@@ -6,7 +6,7 @@ using System.Text.Encodings.Web;
 
 namespace Portfolio.Component.Website.Server.Services.PageMetaProvider;
 
-public class PageMetadata : IEnumerable<PageMetadataItem>, IHtmlContent
+public class StaticPageMetadata : IEnumerable<PageMetadataItem>, IHtmlContent
 {
 	public List<PageMetadataItem> MetadataItems { get; } = new List<PageMetadataItem>();
 

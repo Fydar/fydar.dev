@@ -4,10 +4,10 @@ EXPOSE 443
 
 RUN ls
 
-COPY /Portfolio.Aplication.Instance/bin/Release/net5.0/publish/ /code/
-COPY /bin/built-content/content/ /code/content
+COPY /Portfolio.Application.Instance/bin/Release/net5.0/publish/ /code/
+COPY /bin/built-content/content/ /code/content/
 
 RUN ls ./code
 
 WORKDIR /code
-ENTRYPOINT ["dotnet", "Portfolio.Aplication.Instance.dll"]
+ENTRYPOINT ["dotnet", "Portfolio.Application.Instance.dll"]

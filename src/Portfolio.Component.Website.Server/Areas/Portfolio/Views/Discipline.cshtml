@@ -6,12 +6,7 @@
   ViewData["FeaturedImage"] = Model.Discipline.FeaturedImage;
 }
 
-<vc:breadcrumb-bar breadcrumb-bar="new BreadcrumbBarViewModel(
-	new BreadcrumbViewModel()
-	{
-		Text = Model.Discipline.DisplayName
-	}
-)" />
+<vc:breadcrumb-bar breadcrumb-bar='@Model.Breadcrumbs' />
 
 <section class="container" style="min-height: 80vh;">
 

@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Portfolio.Component.Website.Server.Areas.Contact.Models;
+using Portfolio.Component.Website.Server.ViewModels;
 
 namespace Portfolio.Component.Website.Server.Areas.Contact.Controllers;
 
@@ -19,6 +20,13 @@ public class ContactController : Controller
 	[ProducesResponseType(StatusCodes.Status200OK)]
 	public IActionResult Index()
 	{
-		return View("Index", new ContactViewModel());
+		return View("Index", new ContactViewModel()
+		{
+			Breadcrumbs = new StaticPageBreadcrumbs(
+				new BreadcrumbViewModel()
+				{
+					Text = "Contact"
+				})
+		});
 	}
 }

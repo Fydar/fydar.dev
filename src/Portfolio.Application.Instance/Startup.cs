@@ -109,7 +109,6 @@ public class Startup
 		services.AddSingleton(explorer);
 
 		services.AddSingleton<IContentService, LocalContentService>();
-		services.AddSingleton<IPageMetadataTransformer<ProjectViewModel>, ProjectViewModelPageMetadataTransformer>();
 		services.AddSingleton(new EmailReaderServiceConfiguration()
 		{
 			Bucket = "anthonymarmont.com-inbound-email"
