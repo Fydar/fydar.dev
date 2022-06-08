@@ -23,29 +23,29 @@
 
     <div class="alert">
       <h2>Drop me a message</h2>
-      <form method="post" asp-controller="Contact" asp-action="Submit">
+      <form method="post" asp-controller="ContactSubmit" asp-action="Index" asp->
         <input type="hidden" name="RequestId" value="@Guid.NewGuid().ToString()" />
 
         <div class="form-group">
-          <label asp-for="UserEmail">Email</label>
-          <input class="form-control" asp-for="UserEmail" />
+          <label asp-for="ContactForm.UserEmail">Email</label>
+          <input asp-for="ContactForm.UserEmail" class="form-control" />
           <small class="form-text text-muted">Your email will be used for <b>replying</b>.</small>
 
-          <span class="validation-feedback" asp-validation-for="UserEmail"></span>
+          <span class="validation-feedback" asp-validation-for="ContactForm.UserEmail"></span>
         </div>
 
         <div class="form-group">
-          <label asp-for="UserSubject">Subject</label>
-          <input class="form-control" asp-for="UserSubject" autocomplete="off" />
+          <label asp-for="ContactForm.UserSubject">Subject</label>
+          <input asp-for="ContactForm.UserSubject" class="form-control" autocomplete="off" />
 
-          <span class="validation-feedback" asp-validation-for="UserSubject"></span>
+          <span class="validation-feedback" asp-validation-for="ContactForm.UserSubject"></span>
         </div>
 
         <div class="form-group">
-          <label asp-for="UserBody">Body</label>
-          <textarea class="form-control" asp-for="UserBody" rows="16" type="text" style="min-height: 220px; min-width: 100%; max-width: 100%;" autocomplete="off"></textarea>
+          <label asp-for="ContactForm.UserBody">Body</label>
+          <textarea asp-for="ContactForm.UserBody" class="form-control" rows="16" type="text" style="min-height: 220px; min-width: 100%; max-width: 100%;" autocomplete="off"></textarea>
 
-          <span class="validation-feedback" asp-validation-for="UserBody"></span>
+          <span class="validation-feedback" asp-validation-for="ContactForm.UserBody"></span>
         </div>
 
         <div class="form-group" style="text-align: right;">
@@ -61,3 +61,8 @@
   </div>
 
 </section>
+
+@section Scripts
+{
+    <partial name="_ValidationScriptsPartial" />
+}

@@ -56,20 +56,26 @@ public class ContactSubmitController : Controller
 
 			return View("Index", new ContactViewModel()
 			{
-				UserEmail = "",
-				UserSubject = "",
-				UserBody = "",
 				Sent = true,
-				SentToEmail = requestModel.UserEmail
+				SentToEmail = requestModel.UserEmail,
+				ContactForm = new ContactSubmitRequestModel()
+				{
+					UserEmail = "",
+					UserSubject = "",
+					UserBody = "",
+				}
 			});
 		}
 
 		return View("Index", new ContactViewModel()
 		{
-			UserEmail = requestModel.UserEmail,
-			UserSubject = requestModel.UserSubject,
-			UserBody = requestModel.UserBody,
 			Sent = false,
+			ContactForm = new ContactSubmitRequestModel()
+			{
+				UserEmail = requestModel.UserEmail,
+				UserSubject = requestModel.UserSubject,
+				UserBody = requestModel.UserBody,
+			}
 		});
 	}
 }
