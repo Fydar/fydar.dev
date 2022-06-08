@@ -173,7 +173,7 @@
                       <div class="card">
                         <div class="card-image">
                           <div class="imageHolder">
-                            <a asp-controller="PortfolioItem" asp-action="Index" asp-route-identifier="@project.Slug">
+                            <a asp-controller="PortfolioItem" asp-action="Index" asp-area="Portfolio" asp-route-identifier="@project.Slug">
                               <img src="~/@ResourceHelper.TransformName(project.FeaturedImage, "medium")" loading="lazy" class="overlay" style='object-fit: cover;' />
                             </a>
                           </div>
@@ -195,7 +195,7 @@
                             </div>
                           }
                           <p class="card-title">
-                            <a asp-controller="PortfolioItem" asp-action="Index" asp-route-identifier="@project.Slug">
+                            <a asp-controller="PortfolioItem" asp-action="Index" asp-area="Portfolio" asp-route-identifier="@project.Slug">
                               @project.ProjectName.Replace("MMO ", "")
                             </a>
                           </p>

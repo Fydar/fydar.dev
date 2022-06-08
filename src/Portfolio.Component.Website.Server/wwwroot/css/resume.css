@@ -25,6 +25,10 @@ h1 {
   font-weight: normal;
 }
 
+.card-body .mark {
+    margin-right: 4px;
+}
+
 .card .card-small {
   font-size: 12px;
   color: #79828e;
@@ -84,7 +88,7 @@ h1 {
 
 .badge-bar.badge-bar-carditems {
   flex-wrap: wrap-reverse;
-  font-size: 1rem;
+  font-size: 0.7rem;
   justify-content: center;
 }
 
