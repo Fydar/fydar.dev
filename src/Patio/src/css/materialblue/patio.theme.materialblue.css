@@ -8,6 +8,7 @@ body {
   --color-text-subtle-3: #6c757d;
   --color-text-subtle-4: #999999;
   --color-text-link: #8799ed;
+  --color-text-error: #ff4456;
   /* Borders */
   --color-border-1: #242628;
   --color-border-2: #2d2f31;
