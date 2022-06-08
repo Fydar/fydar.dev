@@ -3,34 +3,33 @@ using Microsoft.Extensions.Logging;
 using Serilog.Context;
 using System.Threading.Tasks;
 
-namespace Portfolio.Component.Api.Server
+namespace Portfolio.Component.Api.Server;
+
+public class RequestLoggingMiddleware
 {
-	public class RequestLoggingMiddleware
+	private readonly RequestDelegate next;
+	private readonly ILogger logger;
+
+	public RequestLoggingMiddleware(RequestDelegate next, ILoggerFactory loggerFactory)
 	{
-		private readonly RequestDelegate next;
-		private readonly ILogger logger;
+		this.next = next;
+		logger = loggerFactory.CreateLogger<RequestLoggingMiddleware>();
+	}
 
-		public RequestLoggingMiddleware(RequestDelegate next, ILoggerFactory loggerFactory)
+	public async Task Invoke(HttpContext context)
+	{
+		using (LogContext.PushProperty("RequestPath", context.Request?.Path.Value))
+		using (LogContext.PushProperty("RequestMethod", context.Request?.Method))
 		{
-			this.next = next;
-			logger = loggerFactory.CreateLogger<RequestLoggingMiddleware>();
-		}
-
-		public async Task Invoke(HttpContext context)
-		{
-			using (LogContext.PushProperty("RequestPath", context.Request?.Path.Value))
-			using (LogContext.PushProperty("RequestMethod", context.Request?.Method))
+			try
 			{
-				try
+				await next(context);
+			}
+			finally
+			{
+				using (LogContext.PushProperty("ResponseStatusCode", context.Response?.StatusCode))
 				{
-					await next(context);
-				}
-				finally
-				{
-					using (LogContext.PushProperty("ResponseStatusCode", context.Response?.StatusCode))
-					{
-						logger.LogInformation("RequestLog");
-					}
+					logger.LogInformation("RequestLog");
 				}
 			}
 		}

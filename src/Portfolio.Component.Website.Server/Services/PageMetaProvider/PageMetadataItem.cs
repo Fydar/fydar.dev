@@ -1,29 +1,28 @@
 ﻿using System.Collections.Generic;
 
-namespace Portfolio.Component.Website.Server.Services.PageMetaProvider
+namespace Portfolio.Component.Website.Server.Services.PageMetaProvider;
+
+public class PageMetadataItem
 {
-	public class PageMetadataItem
+	public Dictionary<string, string> KeyValuePairs { get; }
+
+	public PageMetadataItem(string? name = null, string? property = null, string? content = null)
 	{
-		public Dictionary<string, string> KeyValuePairs { get; }
+		KeyValuePairs = new Dictionary<string, string>();
 
-		public PageMetadataItem(string? name = null, string? property = null, string? content = null)
+		if (name != null)
 		{
-			KeyValuePairs = new Dictionary<string, string>();
+			KeyValuePairs.Add("name", name);
+		}
 
-			if (name != null)
-			{
-				KeyValuePairs.Add("name", name);
-			}
+		if (property != null)
+		{
+			KeyValuePairs.Add("property", property);
+		}
 
-			if (property != null)
-			{
-				KeyValuePairs.Add("property", property);
-			}
-
-			if (content != null)
-			{
-				KeyValuePairs.Add("content", content);
-			}
+		if (content != null)
+		{
+			KeyValuePairs.Add("content", content);
 		}
 	}
 }

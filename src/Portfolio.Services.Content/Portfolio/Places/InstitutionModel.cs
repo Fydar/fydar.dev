@@ -2,88 +2,87 @@
 using System.Collections.Generic;
 using System.Text.Json.Serialization;
 
-namespace Portfolio.Services.Content.Portfolio.Places
+namespace Portfolio.Services.Content.Portfolio.Places;
+
+public abstract class InstitutionModel : IComparable<InstitutionModel>
 {
-	public abstract class InstitutionModel : IComparable<InstitutionModel>
+	public bool DisplayOnResume { get; set; } = true;
+	public string Slug { get; set; } = string.Empty;
+	public string Name { get; set; } = string.Empty;
+	public string IconUrl { get; set; } = string.Empty;
+	public string Page { get; set; } = string.Empty;
+	public string Address { get; set; } = string.Empty;
+	public string TwoWordAddress { get; set; } = string.Empty;
+	public string Excerpt { get; set; } = string.Empty;
+
+	[JsonIgnore]
+	public int TotalMonths
 	{
-		public bool DisplayOnResume { get; set; } = true;
-		public string Slug { get; set; } = string.Empty;
-		public string Name { get; set; } = string.Empty;
-		public string IconUrl { get; set; } = string.Empty;
-		public string Page { get; set; } = string.Empty;
-		public string Address { get; set; } = string.Empty;
-		public string TwoWordAddress { get; set; } = string.Empty;
-		public string Excerpt { get; set; } = string.Empty;
-
-		[JsonIgnore]
-		public int TotalMonths
+		get
 		{
-			get
+			int total = 0;
+			foreach (var position in Positions)
 			{
-				int total = 0;
-				foreach (var position in Positions)
-				{
-					total += (int)Math.Ceiling(position.Elapsed.TotalDays / 30.4167);
-				}
-				return total;
+				total += (int)Math.Ceiling(position.Elapsed.TotalDays / 30.4167);
 			}
+			return total;
 		}
+	}
 
-		[JsonIgnore]
-		public int Months => TotalMonths % 12;
+	[JsonIgnore]
+	public int Months => TotalMonths % 12;
 
-		[JsonIgnore]
-		public int Years => TotalMonths / 12;
+	[JsonIgnore]
+	public int Years => TotalMonths / 12;
 
-		[JsonIgnore]
-		public abstract string Tagline { get; }
+	[JsonIgnore]
+	public abstract string Tagline { get; }
 
-		public TimeSpan Elapsed
+	public TimeSpan Elapsed
+	{
+		get
 		{
-			get
-			{
-				var total = TimeSpan.Zero;
-
-				foreach (var position in Positions)
-				{
-					total += position.Elapsed;
-				}
-				return total;
-			}
-		}
-
-		public List<PlacementModel> Positions { get; set; } = new List<PlacementModel>();
-
-		public int CompareTo(InstitutionModel other)
-		{
-			return GetLatestEndTime().CompareTo(other.GetLatestEndTime());
-		}
-
-		public DateTimeOffset GetOldestStartTime()
-		{
-			var oldest = DateTimeOffset.UtcNow;
+			var total = TimeSpan.Zero;
 
 			foreach (var position in Positions)
 			{
-				if (position.StartTime < oldest)
-				{
-					oldest = position.StartTime;
-				}
+				total += position.Elapsed;
 			}
-			return oldest;
+			return total;
 		}
-		public DateTimeOffset GetLatestEndTime()
-		{
-			var newest = DateTimeOffset.MinValue;
+	}
 
-			foreach (var position in Positions)
+	public List<PlacementModel> Positions { get; set; } = new List<PlacementModel>();
+
+	public int CompareTo(InstitutionModel other)
+	{
+		return GetLatestEndTime().CompareTo(other.GetLatestEndTime());
+	}
+
+	public DateTimeOffset GetOldestStartTime()
+	{
+		var oldest = DateTimeOffset.UtcNow;
+
+		foreach (var position in Positions)
+		{
+			if (position.StartTime < oldest)
 			{
-				if (position.StartTime > newest)
-				{
-					newest = position.EndTime ?? DateTimeOffset.UtcNow;
-				}
+				oldest = position.StartTime;
 			}
-			return newest;
 		}
+		return oldest;
+	}
+	public DateTimeOffset GetLatestEndTime()
+	{
+		var newest = DateTimeOffset.MinValue;
+
+		foreach (var position in Positions)
+		{
+			if (position.StartTime > newest)
+			{
+				newest = position.EndTime ?? DateTimeOffset.UtcNow;
+			}
+		}
+		return newest;
 	}
 }

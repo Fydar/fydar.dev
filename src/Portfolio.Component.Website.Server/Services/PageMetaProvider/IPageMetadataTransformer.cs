@@ -1,7 +1,6 @@
-﻿namespace Portfolio.Component.Website.Server.Services.PageMetaProvider
+﻿namespace Portfolio.Component.Website.Server.Services.PageMetaProvider;
+
+public interface IPageMetadataTransformer<T>
 {
-	public interface IPageMetadataTransformer<T>
-	{
-		public PageMetadata TransformMetadata(T model);
-	}
+	public PageMetadata TransformMetadata(T model);
 }

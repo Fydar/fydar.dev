@@ -10,81 +10,80 @@ using Serilog.Events;
 using System;
 using System.Net;
 
-namespace Portfolio.Application.Instance
+namespace Portfolio.Application.Instance;
+
+public class Program
 {
-	public class Program
+	public static int Main(string[] args)
 	{
-		public static int Main(string[] args)
+		var loggerConfiguration = new LoggerConfiguration()
+			.MinimumLevel.Debug()
+			.MinimumLevel.Override("Microsoft", LogEventLevel.Warning)
+			.MinimumLevel.Override("Microsoft.AspNetCore.Server.Kestrel", LogEventLevel.Error)
+			.Enrich.FromLogContext()
+			.WriteTo.Sink(new ColoredConsoleLogEventSink());
+
+		var logger = loggerConfiguration.CreateLogger();
+		Log.Logger = logger;
+
+		try
 		{
-			var loggerConfiguration = new LoggerConfiguration()
-				.MinimumLevel.Debug()
-				.MinimumLevel.Override("Microsoft", LogEventLevel.Warning)
-				.MinimumLevel.Override("Microsoft.AspNetCore.Server.Kestrel", LogEventLevel.Error)
-				.Enrich.FromLogContext()
-				.WriteTo.Sink(new ColoredConsoleLogEventSink());
+			var host = CreateHostBuilder(args)
+				.Build();
 
-			var logger = loggerConfiguration.CreateLogger();
-			Log.Logger = logger;
+			host.Start();
 
-			try
-			{
-				var host = CreateHostBuilder(args)
-					.Build();
+			var serverFeatures = host.Services.GetRequiredService<IServer>().Features;
+			var addresses = serverFeatures.Get<IServerAddressesFeature>().Addresses;
 
-				host.Start();
+			Log.Information($"Web host started listening on '{string.Join("', '", addresses)}'.");
 
-				var serverFeatures = host.Services.GetRequiredService<IServer>().Features;
-				var addresses = serverFeatures.Get<IServerAddressesFeature>().Addresses;
+			host.WaitForShutdown();
 
-				Log.Information($"Web host started listening on '{string.Join("', '", addresses)}'.");
-
-				host.WaitForShutdown();
-
-				return 0;
-			}
-			catch (Exception exception)
-			{
-				Log.Fatal(exception, "Host terminated unexpectedly.");
-				return 1;
-			}
-			finally
-			{
-				Log.CloseAndFlush();
-			}
+			return 0;
 		}
-
-		public static IHostBuilder CreateHostBuilder(string[] args)
+		catch (Exception exception)
 		{
-			return Host.CreateDefaultBuilder(args)
-				.ConfigureHostConfiguration(config =>
-				{
-					config.AddEnvironmentVariables("CONFIG_");
-					config.AddCommandLine(args);
-				})
-				.ConfigureWebHostDefaults(webBuilder =>
-				{
-					webBuilder.UseStartup<Startup>();
+			Log.Fatal(exception, "Host terminated unexpectedly.");
+			return 1;
+		}
+		finally
+		{
+			Log.CloseAndFlush();
+		}
+	}
 
-					webBuilder.UseSetting(WebHostDefaults.SuppressStatusMessagesKey, "True");
+	public static IHostBuilder CreateHostBuilder(string[] args)
+	{
+		return Host.CreateDefaultBuilder(args)
+			.ConfigureHostConfiguration(config =>
+			{
+				config.AddEnvironmentVariables("CONFIG_");
+				config.AddCommandLine(args);
+			})
+			.ConfigureWebHostDefaults(webBuilder =>
+			{
+				webBuilder.UseStartup<Startup>();
 
-					if (webBuilder.GetSetting("Environment") != "Development")
+				webBuilder.UseSetting(WebHostDefaults.SuppressStatusMessagesKey, "True");
+
+				if (webBuilder.GetSetting("Environment") != "Development")
+				{
+					webBuilder.UseKestrel(kestral =>
 					{
-						webBuilder.UseKestrel(kestral =>
-						{
-							var appServices = kestral.ApplicationServices;
+						var appServices = kestral.ApplicationServices;
 
-							kestral.Listen(IPAddress.Any, 80);
+						kestral.Listen(IPAddress.Any, 80);
 
-							kestral.Listen(
-								IPAddress.Any, 443,
-								listen => listen.UseHttps(adapter =>
-								{
-									adapter.UseLettuceEncrypt(appServices);
-								}));
-						});
-					}
-				})
-				.UseSerilog();
-		}
+						kestral.Listen(
+							IPAddress.Any, 443,
+							listen => listen.UseHttps(adapter =>
+							{
+								adapter.UseLettuceEncrypt(appServices);
+							}));
+					});
+				}
+			})
+			.UseSerilog();
 	}
 }

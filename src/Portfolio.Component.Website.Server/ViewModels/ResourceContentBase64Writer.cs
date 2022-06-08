@@ -4,30 +4,29 @@ using System;
 using System.IO;
 using System.Text.Encodings.Web;
 
-namespace Portfolio.Component.Website.Server.ViewModels
+namespace Portfolio.Component.Website.Server.ViewModels;
+
+public class ResourceContentBase64Writer : IHtmlContent
 {
-	public class ResourceContentBase64Writer : IHtmlContent
+	private readonly IResourceContent resourceContent;
+
+	public ResourceContentBase64Writer(IResourceContent resourceContent)
 	{
-		private readonly IResourceContent resourceContent;
+		this.resourceContent = resourceContent;
+	}
 
-		public ResourceContentBase64Writer(IResourceContent resourceContent)
+	public void WriteTo(TextWriter writer, HtmlEncoder encoder)
+	{
+		using var stream = resourceContent.OpenRead();
+
+		byte[] bytes;
+		using (var memoryStream = new MemoryStream())
 		{
-			this.resourceContent = resourceContent;
+			stream.CopyTo(memoryStream);
+			bytes = memoryStream.ToArray();
 		}
 
-		public void WriteTo(TextWriter writer, HtmlEncoder encoder)
-		{
-			using var stream = resourceContent.OpenRead();
-
-			byte[] bytes;
-			using (var memoryStream = new MemoryStream())
-			{
-				stream.CopyTo(memoryStream);
-				bytes = memoryStream.ToArray();
-			}
-
-			string base64 = Convert.ToBase64String(bytes);
-			writer.Write(base64);
-		}
+		string base64 = Convert.ToBase64String(bytes);
+		writer.Write(base64);
 	}
 }

@@ -1,7 +1,6 @@
-﻿namespace Portfolio.Services.EmailTickets
+﻿namespace Portfolio.Services.EmailTickets;
+
+public class EmailReaderServiceConfiguration
 {
-	public class EmailReaderServiceConfiguration
-	{
-		public string Bucket { get; set; } = string.Empty;
-	}
+	public string Bucket { get; set; } = string.Empty;
 }

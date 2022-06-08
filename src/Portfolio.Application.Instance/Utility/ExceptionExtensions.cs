@@ -3,139 +3,138 @@ using System.Reflection;
 using System.Text;
 using System.Text.RegularExpressions;
 
-namespace Portfolio.Application.Instance.Utility
+namespace Portfolio.Application.Instance.Utility;
+
+public static class ExceptionExtensions
 {
-	public static class ExceptionExtensions
+	private static readonly Regex lineInterpreter = new("^(at .*?) in (.*):line (\\d+)$");
+
+	public static void Format(this Exception exception, StringBuilder stringBuilder)
 	{
-		private static readonly Regex lineInterpreter = new("^(at .*?) in (.*):line (\\d+)$");
+		// Example: "InvalidOperationException: Message from exception"
+		stringBuilder.Append(exception.GetType().Name);
+		stringBuilder.Append(": ");
 
-		public static void Format(this Exception exception, StringBuilder stringBuilder)
+		stringBuilder.Append(exception.Message);
+
+		stringBuilder.Append('\n');
+
+		// Example: "   at Namespace.Type.Method() (at Path/File.cs:130)"
+		string stackTrace = exception.StackTrace ?? "";
+		if (stackTrace != null)
 		{
-			// Example: "InvalidOperationException: Message from exception"
-			stringBuilder.Append(exception.GetType().Name);
-			stringBuilder.Append(": ");
+			string[] stackTraceLines = stackTrace.Split(new[] { '\r', '\n' }, StringSplitOptions.RemoveEmptyEntries);
 
-			stringBuilder.Append(exception.Message);
-
-			stringBuilder.Append('\n');
-
-			// Example: "   at Namespace.Type.Method() (at Path/File.cs:130)"
-			string stackTrace = exception.StackTrace ?? "";
-			if (stackTrace != null)
+			for (int i = 0; i < stackTraceLines.Length; i++)
 			{
-				string[] stackTraceLines = stackTrace.Split(new[] { '\r', '\n' }, StringSplitOptions.RemoveEmptyEntries);
+				string line = stackTraceLines[i];
+				line = line.TrimStart(' ');
 
-				for (int i = 0; i < stackTraceLines.Length; i++)
+				if (exception.GetType() == typeof(TargetInvocationException))
 				{
-					string line = stackTraceLines[i];
-					line = line.TrimStart(' ');
-
-					if (exception.GetType() == typeof(TargetInvocationException))
+					if (line.StartsWith("at System.RuntimeMethodHandle.InvokeMethod", StringComparison.Ordinal) ||
+						line.StartsWith("at System.Reflection.RuntimeMethodInfo.Invoke", StringComparison.Ordinal) ||
+						line.StartsWith("at System.Reflection.MethodBase.Invoke", StringComparison.Ordinal))
 					{
-						if (line.StartsWith("at System.RuntimeMethodHandle.InvokeMethod", StringComparison.Ordinal) ||
-							line.StartsWith("at System.Reflection.RuntimeMethodInfo.Invoke", StringComparison.Ordinal) ||
-							line.StartsWith("at System.Reflection.MethodBase.Invoke", StringComparison.Ordinal))
-						{
-							continue;
-						}
-					}
-					string stackLine = FormatStackLine(line);
-					if (stackLine != null)
-					{
-						stringBuilder.Append("   ");
-						stringBuilder.Append(stackLine);
-						stringBuilder.Append('\n');
+						continue;
 					}
 				}
-			}
-
-			if (exception.GetType() == typeof(AggregateException))
-			{
-				// Example: "Wrapping InvalidOperationException: Message from exception"
-				var aggregateException = (AggregateException)exception;
-				for (int i = 0; i < aggregateException.InnerExceptions.Count; i++)
+				string stackLine = FormatStackLine(line);
+				if (stackLine != null)
 				{
-					var innerException = aggregateException.InnerExceptions[i];
-
-					stringBuilder.Append("Inner Exception #");
-					stringBuilder.Append(i);
-					stringBuilder.Append(' ');
-					innerException.Format(stringBuilder);
-				}
-			}
-			else if (exception.GetType() == typeof(TargetInvocationException))
-			{
-				var targetInvocationException = (TargetInvocationException)exception;
-
-				targetInvocationException.InnerException?.Format(stringBuilder);
-			}
-			else
-			{
-				// Example: "Caused by InvalidOperationException: Message from exception"
-				var innerException = exception.InnerException;
-				if (innerException != null)
-				{
-					stringBuilder.Append("Caused by ");
-					innerException.Format(stringBuilder);
+					stringBuilder.Append("   ");
+					stringBuilder.Append(stackLine);
+					stringBuilder.Append('\n');
 				}
 			}
 		}
 
-		public static string Format(this Exception exception)
+		if (exception.GetType() == typeof(AggregateException))
 		{
-			var stringBuilder = new StringBuilder();
+			// Example: "Wrapping InvalidOperationException: Message from exception"
+			var aggregateException = (AggregateException)exception;
+			for (int i = 0; i < aggregateException.InnerExceptions.Count; i++)
+			{
+				var innerException = aggregateException.InnerExceptions[i];
 
-			exception.Format(stringBuilder);
+				stringBuilder.Append("Inner Exception #");
+				stringBuilder.Append(i);
+				stringBuilder.Append(' ');
+				innerException.Format(stringBuilder);
+			}
+		}
+		else if (exception.GetType() == typeof(TargetInvocationException))
+		{
+			var targetInvocationException = (TargetInvocationException)exception;
 
-			return stringBuilder.ToString();
+			targetInvocationException.InnerException?.Format(stringBuilder);
+		}
+		else
+		{
+			// Example: "Caused by InvalidOperationException: Message from exception"
+			var innerException = exception.InnerException;
+			if (innerException != null)
+			{
+				stringBuilder.Append("Caused by ");
+				innerException.Format(stringBuilder);
+			}
+		}
+	}
+
+	public static string Format(this Exception exception)
+	{
+		var stringBuilder = new StringBuilder();
+
+		exception.Format(stringBuilder);
+
+		return stringBuilder.ToString();
+	}
+
+	private static string FormatStackLine(string line)
+	{
+		// Remove Stack Lines cased by async methods
+		if (line.StartsWith("at System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1+ConfiguredTaskAwaiter[TResult].GetResult", StringComparison.Ordinal) ||
+			line.StartsWith("at System.Runtime.CompilerServices.ConfiguredTaskAwaitable+ConfiguredTaskAwaiter.GetResult", StringComparison.Ordinal) ||
+			line.StartsWith("at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification", StringComparison.Ordinal) ||
+			line.StartsWith("at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess", StringComparison.Ordinal) ||
+			line.StartsWith("at System.Runtime.CompilerServices.TaskAwaiter.ValidateEnd", StringComparison.Ordinal) ||
+			line.StartsWith("at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw", StringComparison.Ordinal) ||
+			line.StartsWith("at System.Threading.Tasks.TaskFactory", StringComparison.Ordinal))
+		{
+			return string.Empty;
 		}
 
-		private static string FormatStackLine(string line)
+		// Remove Stack Lines from the Startup.cs wrapping
+		if (line.StartsWith("at Microsoft.AspNetCore.Hosting.", StringComparison.Ordinal)
+			|| line.StartsWith("at Microsoft.Extensions.Hosting.", StringComparison.Ordinal))
 		{
-			// Remove Stack Lines cased by async methods
-			if (line.StartsWith("at System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1+ConfiguredTaskAwaiter[TResult].GetResult", StringComparison.Ordinal) ||
-				line.StartsWith("at System.Runtime.CompilerServices.ConfiguredTaskAwaitable+ConfiguredTaskAwaiter.GetResult", StringComparison.Ordinal) ||
-				line.StartsWith("at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification", StringComparison.Ordinal) ||
-				line.StartsWith("at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess", StringComparison.Ordinal) ||
-				line.StartsWith("at System.Runtime.CompilerServices.TaskAwaiter.ValidateEnd", StringComparison.Ordinal) ||
-				line.StartsWith("at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw", StringComparison.Ordinal) ||
-				line.StartsWith("at System.Threading.Tasks.TaskFactory", StringComparison.Ordinal))
-			{
-				return string.Empty;
-			}
-
-			// Remove Stack Lines from the Startup.cs wrapping
-			if (line.StartsWith("at Microsoft.AspNetCore.Hosting.", StringComparison.Ordinal)
-				|| line.StartsWith("at Microsoft.Extensions.Hosting.", StringComparison.Ordinal))
-			{
-				return string.Empty;
-			}
-
-			// Normalise calls in callstack
-			var match = lineInterpreter.Match(line);
-			if (match.Success)
-			{
-				string method = match.Groups[1].Value;
-				string filePath = match.Groups[2].Value;
-				string lineNumber = match.Groups[3].Value;
-
-				int methodSeperator = method.LastIndexOf('.');
-				string typeName = method.Substring(0, methodSeperator);
-				int typeSeperator = typeName.LastIndexOf('.');
-				string shortName = typeSeperator == -1
-					? method[3..]
-					: method[(typeSeperator + 1)..];
-
-				return $"at {shortName} in {filePath}:{lineNumber}";
-			}
-
-			int removeAfterIndex = line.IndexOf("in <");
-			if (removeAfterIndex != -1)
-			{
-				line = line.Substring(0, removeAfterIndex);
-			}
-
-			return line;
+			return string.Empty;
 		}
+
+		// Normalise calls in callstack
+		var match = lineInterpreter.Match(line);
+		if (match.Success)
+		{
+			string method = match.Groups[1].Value;
+			string filePath = match.Groups[2].Value;
+			string lineNumber = match.Groups[3].Value;
+
+			int methodSeperator = method.LastIndexOf('.');
+			string typeName = method.Substring(0, methodSeperator);
+			int typeSeperator = typeName.LastIndexOf('.');
+			string shortName = typeSeperator == -1
+				? method[3..]
+				: method[(typeSeperator + 1)..];
+
+			return $"at {shortName} in {filePath}:{lineNumber}";
+		}
+
+		int removeAfterIndex = line.IndexOf("in <");
+		if (removeAfterIndex != -1)
+		{
+			line = line.Substring(0, removeAfterIndex);
+		}
+
+		return line;
 	}
 }

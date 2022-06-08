@@ -4,20 +4,19 @@ using RPGCore.Projects.Pipeline;
 using System;
 using System.Collections.Generic;
 
-namespace Portfolio.Services.Pipeline
+namespace Portfolio.Services.Pipeline;
+
+public class LoggingImportProcessor : IImportProcessor
 {
-	public class LoggingImportProcessor : IImportProcessor
+	public bool CanProcess(IResource resource)
 	{
-		public bool CanProcess(IResource resource)
-		{
-			return true;
-		}
+		return true;
+	}
 
-		public IEnumerable<ProjectResourceUpdate> ProcessImport(ImportProcessorContext context, IResource resource)
-		{
-			Console.WriteLine($"Imported '{resource.FullName}'");
+	public IEnumerable<ProjectResourceUpdate> ProcessImport(ImportProcessorContext context, IResource resource)
+	{
+		Console.WriteLine($"Imported '{resource.FullName}'");
 
-			return null;
-		}
+		return null;
 	}
 }

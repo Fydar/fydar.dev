@@ -1,9 +1,8 @@
 ﻿using RPGCore.Packages;
 
-namespace Portfolio.Services.Content.Utilities
+namespace Portfolio.Services.Content.Utilities;
+
+public interface ILoadResourceCallback
 {
-	public interface ILoadResourceCallback
-	{
-		void OnAfterDeserializedFrom(ILoadedResourceCache cache, IResource resource);
-	}
+	void OnAfterDeserializedFrom(ILoadedResourceCache cache, IResource resource);
 }

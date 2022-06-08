@@ -1,47 +1,46 @@
 ﻿using System;
 using System.IO;
 
-namespace Portfolio.Application.Instance.Utility
+namespace Portfolio.Application.Instance.Utility;
+
+public static class ContentDirectory
 {
-	public static class ContentDirectory
+	public static string ContentPath { get; }
+
+	static ContentDirectory()
 	{
-		public static string ContentPath { get; }
-
-		static ContentDirectory()
+		if (Directory.Exists("content"))
 		{
-			if (Directory.Exists("content"))
+			ContentPath = "content";
+			return;
+		}
+
+		var solutionDirectory = new FileInfo(typeof(Program).Assembly.Location).Directory;
+
+		while (solutionDirectory != null && solutionDirectory.Parent != null)
+		{
+			solutionDirectory = solutionDirectory.Parent;
+
+			if (string.Equals(solutionDirectory.Name, "src", StringComparison.OrdinalIgnoreCase))
 			{
-				ContentPath = "content";
-				return;
+				break;
 			}
+		}
 
-			var solutionDirectory = new FileInfo(typeof(Program).Assembly.Location).Directory;
+		if (solutionDirectory == null)
+		{
+			throw new InvalidOperationException("Failed to locate package data to host");
+		}
 
-			while (solutionDirectory != null && solutionDirectory.Parent != null)
-			{
-				solutionDirectory = solutionDirectory.Parent;
+		string destinationPath = Path.Combine(solutionDirectory.FullName, "bin/built-content/content");
 
-				if (string.Equals(solutionDirectory.Name, "src", StringComparison.OrdinalIgnoreCase))
-				{
-					break;
-				}
-			}
-
-			if (solutionDirectory == null)
-			{
-				throw new InvalidOperationException("Failed to locate package data to host");
-			}
-
-			string destinationPath = Path.Combine(solutionDirectory.FullName, "bin/built-content/content");
-
-			if (Directory.Exists(destinationPath))
-			{
-				ContentPath = destinationPath;
-			}
-			else
-			{
-				throw new InvalidOperationException("Failed to locate package data to host");
-			}
+		if (Directory.Exists(destinationPath))
+		{
+			ContentPath = destinationPath;
+		}
+		else
+		{
+			throw new InvalidOperationException("Failed to locate package data to host");
 		}
 	}
 }

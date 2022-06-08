@@ -1,11 +1,10 @@
-﻿namespace Portfolio.Services.Content.Portfolio.Places
+﻿namespace Portfolio.Services.Content.Portfolio.Places;
+
+public enum StudioType
 {
-	public enum StudioType
-	{
-		None,
-		SelfEmployed,
-		Indie,
-		AA,
-		AAA
-	}
+	None,
+	SelfEmployed,
+	Indie,
+	AA,
+	AAA
 }

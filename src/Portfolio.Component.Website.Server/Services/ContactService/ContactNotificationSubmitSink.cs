@@ -7,56 +7,55 @@ using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace Portfolio.Component.Website.Server.Services.ContactService
+namespace Portfolio.Component.Website.Server.Services.ContactService;
+
+public class ContactNotificationSubmitSink : IContactSubmitSink
 {
-	public class ContactNotificationSubmitSink : IContactSubmitSink
+	private readonly ILogger<ContactNotificationSubmitSink> logger;
+	private readonly IAmazonSimpleEmailService simpleEmailService;
+	private readonly IViewToStringRenderer razorViewToStringRenderer;
+
+	public ContactNotificationSubmitSink(
+		ILogger<ContactNotificationSubmitSink> logger,
+		IAmazonSimpleEmailService simpleEmailService,
+		IViewToStringRenderer razorViewToStringRenderer)
 	{
-		private readonly ILogger<ContactNotificationSubmitSink> logger;
-		private readonly IAmazonSimpleEmailService simpleEmailService;
-		private readonly IViewToStringRenderer razorViewToStringRenderer;
+		this.logger = logger;
+		this.simpleEmailService = simpleEmailService;
+		this.razorViewToStringRenderer = razorViewToStringRenderer;
+	}
 
-		public ContactNotificationSubmitSink(
-			ILogger<ContactNotificationSubmitSink> logger,
-			IAmazonSimpleEmailService simpleEmailService,
-			IViewToStringRenderer razorViewToStringRenderer)
+	public async Task ProcessSubmitAsync(ContactSubmitModel contactSubmit)
+	{
+		string htmlBody = await razorViewToStringRenderer.RenderViewToStringAsync("Email/NewTicket", new ContactSubmitModel()
 		{
-			this.logger = logger;
-			this.simpleEmailService = simpleEmailService;
-			this.razorViewToStringRenderer = razorViewToStringRenderer;
-		}
+			FormName = "Contact",
+			TicketId = contactSubmit.TicketId,
+			UserEmail = contactSubmit.UserEmail,
+			UserBody = contactSubmit.UserBody,
+			UserSubject = contactSubmit.UserSubject,
+			SubmitTime = DateTimeOffset.Now
+		});
 
-		public async Task ProcessSubmitAsync(ContactSubmitModel contactSubmit)
+		var request = new SendEmailRequest()
 		{
-			string htmlBody = await razorViewToStringRenderer.RenderViewToStringAsync("Email/NewTicket", new ContactSubmitModel()
+			Source = "Anthony Marmont <contact@anthonymarmont.com>",
+			Destination = new Destination()
 			{
-				FormName = "Contact",
-				TicketId = contactSubmit.TicketId,
-				UserEmail = contactSubmit.UserEmail,
-				UserBody = contactSubmit.UserBody,
-				UserSubject = contactSubmit.UserSubject,
-				SubmitTime = DateTimeOffset.Now
-			});
-
-			var request = new SendEmailRequest()
+				ToAddresses = new List<string>()
+				{
+					"dev.anthonymarmont@gmail.com"
+				}
+			},
+			Message = new Message()
 			{
-				Source = "Anthony Marmont <contact@anthonymarmont.com>",
-				Destination = new Destination()
+				Subject = new Content($"New message from '{contactSubmit.UserEmail}'."),
+				Body = new Body()
 				{
-					ToAddresses = new List<string>()
-					{
-						"dev.anthonymarmont@gmail.com"
-					}
-				},
-				Message = new Message()
-				{
-					Subject = new Content($"New message from '{contactSubmit.UserEmail}'."),
-					Body = new Body()
-					{
-						Html = new Content(htmlBody)
-					}
-				},
-			};
-			await simpleEmailService.SendEmailAsync(request);
-		}
+					Html = new Content(htmlBody)
+				}
+			},
+		};
+		await simpleEmailService.SendEmailAsync(request);
 	}
 }

@@ -5,31 +5,30 @@ using System;
 using System.Collections.Generic;
 using System.Text.Json.Serialization;
 
-namespace Portfolio.Services.Content.Portfolio
+namespace Portfolio.Services.Content.Portfolio;
+
+[EditableType]
+public class DisciplineModel : ILoadResourceCallback, IComparable<DisciplineModel>
 {
-	[EditableType]
-	public class DisciplineModel : ILoadResourceCallback, IComparable<DisciplineModel>
+	public string DisplayName { get; set; } = string.Empty;
+	public string Slug { get; set; } = string.Empty;
+	public string Description { get; set; } = string.Empty;
+	public string FeaturedImage { get; set; } = string.Empty;
+	public string IconImage { get; set; } = string.Empty;
+	public string Page { get; set; } = string.Empty;
+	public bool ShowOnHomePage { get; set; }
+	public int Order { get; set; }
+
+	[JsonIgnore] public IResource? PageResource { get; private set; }
+	[JsonIgnore] public List<ProjectModel> FeaturedProjects { get; private set; } = new List<ProjectModel>();
+
+	public void OnAfterDeserializedFrom(ILoadedResourceCache cache, IResource resource)
 	{
-		public string DisplayName { get; set; } = string.Empty;
-		public string Slug { get; set; } = string.Empty;
-		public string Description { get; set; } = string.Empty;
-		public string FeaturedImage { get; set; } = string.Empty;
-		public string IconImage { get; set; } = string.Empty;
-		public string Page { get; set; } = string.Empty;
-		public bool ShowOnHomePage { get; set; }
-		public int Order { get; set; }
+		PageResource = cache.GetResource(Page);
+	}
 
-		[JsonIgnore] public IResource? PageResource { get; private set; }
-		[JsonIgnore] public List<ProjectModel> FeaturedProjects { get; private set; } = new List<ProjectModel>();
-
-		public void OnAfterDeserializedFrom(ILoadedResourceCache cache, IResource resource)
-		{
-			PageResource = cache.GetResource(Page);
-		}
-
-		public int CompareTo(DisciplineModel other)
-		{
-			return Order.CompareTo(other?.Order ?? 0);
-		}
+	public int CompareTo(DisciplineModel other)
+	{
+		return Order.CompareTo(other?.Order ?? 0);
 	}
 }

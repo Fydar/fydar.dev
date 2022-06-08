@@ -1,7 +1,6 @@
-﻿namespace Portfolio.Component.Content
-{
-	internal class Entrypoint
-	{
+﻿namespace Portfolio.Component.Content;
 
-	}
+internal class Entrypoint
+{
+
 }

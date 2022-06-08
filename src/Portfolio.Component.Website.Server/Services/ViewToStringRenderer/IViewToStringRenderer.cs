@@ -1,9 +1,8 @@
 ﻿using System.Threading.Tasks;
 
-namespace Portfolio.Component.Website.Server.Services.ViewToStringRenderer
+namespace Portfolio.Component.Website.Server.Services.ViewToStringRenderer;
+
+public interface IViewToStringRenderer
 {
-	public interface IViewToStringRenderer
-	{
-		Task<string> RenderViewToStringAsync<TModel>(string viewName, TModel model);
-	}
+	Task<string> RenderViewToStringAsync<TModel>(string viewName, TModel model);
 }

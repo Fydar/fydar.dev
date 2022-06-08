@@ -4,32 +4,31 @@ using System.Buffers;
 using System.IO;
 using System.Threading.Tasks;
 
-namespace Portfolio.Component.Website.Server.Components.Markup
+namespace Portfolio.Component.Website.Server.Components.Markup;
+
+internal class MarkupViewComponentResult : IViewComponentResult
 {
-	internal class MarkupViewComponentResult : IViewComponentResult
+	private readonly Stream stream;
+
+	public MarkupViewComponentResult(Stream stream)
 	{
-		private readonly Stream stream;
+		this.stream = stream;
+	}
 
-		public MarkupViewComponentResult(Stream stream)
+	public void Execute(ViewComponentContext context)
+	{
+	}
+
+	public async Task ExecuteAsync(ViewComponentContext context)
+	{
+		using var streamReader = new StreamReader(stream);
+
+		char[] buffer = ArrayPool<char>.Shared.Rent(2048);
+		while (!streamReader.EndOfStream)
 		{
-			this.stream = stream;
+			int bytesRead = await streamReader.ReadBlockAsync(buffer, 0, buffer.Length);
+			context.Writer.Write(buffer, 0, bytesRead);
 		}
-
-		public void Execute(ViewComponentContext context)
-		{
-		}
-
-		public async Task ExecuteAsync(ViewComponentContext context)
-		{
-			using var streamReader = new StreamReader(stream);
-
-			char[] buffer = ArrayPool<char>.Shared.Rent(2048);
-			while (!streamReader.EndOfStream)
-			{
-				int bytesRead = await streamReader.ReadBlockAsync(buffer, 0, buffer.Length);
-				context.Writer.Write(buffer, 0, bytesRead);
-			}
-			ArrayPool<char>.Shared.Return(buffer);
-		}
+		ArrayPool<char>.Shared.Return(buffer);
 	}
 }

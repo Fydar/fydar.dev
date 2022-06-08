@@ -1,11 +1,10 @@
-﻿namespace Portfolio.Services.Content.Portfolio.Places
+﻿namespace Portfolio.Services.Content.Portfolio.Places;
+
+public enum JobTime
 {
-	public enum JobTime
-	{
-		None,
-		FullTime,
-		PartTime,
-		Contract,
-		Volunteer,
-	}
+	None,
+	FullTime,
+	PartTime,
+	Contract,
+	Volunteer,
 }

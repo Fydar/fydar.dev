@@ -2,21 +2,20 @@
 using Portfolio.Component.Api.Server.Controllers;
 using System.Reflection;
 
-namespace Portfolio.Component.Api.Server
+namespace Portfolio.Component.Api.Server;
+
+public static class IServiceCollectionExtensions
 {
-	public static class IServiceCollectionExtensions
+	public static IServiceCollection AddPortfolioApiControllers(this IServiceCollection collection)
 	{
-		public static IServiceCollection AddPortfolioApiControllers(this IServiceCollection collection)
-		{
-			var sampleAssembly = Assembly.GetAssembly(typeof(ProfileController));
+		var sampleAssembly = Assembly.GetAssembly(typeof(ProfileController));
 
-			collection
-				.AddControllers(options =>
-				{
-				})
-				.AddApplicationPart(sampleAssembly);
+		collection
+			.AddControllers(options =>
+			{
+			})
+			.AddApplicationPart(sampleAssembly);
 
-			return collection;
-		}
+		return collection;
 	}
 }

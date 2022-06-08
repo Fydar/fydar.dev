@@ -1,10 +1,9 @@
 ﻿using Portfolio.Component.Website.Server.Areas.Contact.Models;
 using System.Threading.Tasks;
 
-namespace Portfolio.Component.Website.Server.Services.ContactService
+namespace Portfolio.Component.Website.Server.Services.ContactService;
+
+public interface IContactSubmitSink
 {
-	public interface IContactSubmitSink
-	{
-		public Task ProcessSubmitAsync(ContactSubmitModel contactSubmit);
-	}
+	public Task ProcessSubmitAsync(ContactSubmitModel contactSubmit);
 }
