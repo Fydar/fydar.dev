@@ -15,7 +15,7 @@ public class LoggingImportProcessor : IImportProcessor
 
 	public IEnumerable<ProjectResourceUpdate> ProcessImport(ImportProcessorContext context, IResource resource)
 	{
-		Console.WriteLine($"Imported '{resource.FullName}'");
+		// Console.WriteLine($"Imported '{resource.FullName}'");
 
 		return null;
 	}

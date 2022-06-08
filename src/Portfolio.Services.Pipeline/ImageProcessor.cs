@@ -23,17 +23,17 @@ public class ImageProcessor : IImportProcessor
 
 	public IEnumerable<ProjectResourceUpdate> ProcessImport(ImportProcessorContext context, IResource resource)
 	{
-		lock (Console.Out)
-		{
-			Console.ForegroundColor = ConsoleColor.DarkGray;
-			Console.Write("Discovering image '");
-
-			Console.ForegroundColor = ConsoleColor.Gray;
-			Console.Write(resource.FullName);
-
-			Console.ForegroundColor = ConsoleColor.DarkGray;
-			Console.WriteLine("'");
-		}
+		//  lock (Console.Out)
+		//  {
+		//  	Console.ForegroundColor = ConsoleColor.DarkGray;
+		//  	Console.Write("Discovering image '");
+		//  
+		//  	Console.ForegroundColor = ConsoleColor.Gray;
+		//  	Console.Write(resource.FullName);
+		//  
+		//  	Console.ForegroundColor = ConsoleColor.DarkGray;
+		//  	Console.WriteLine("'");
+		//  }
 
 		var sizes = new HashSet<string>
 		{

@@ -1,7 +1,10 @@
 ﻿using Portfolio.Services.Pipeline;
+using RPGCore.FileTree.FileSystem;
+using RPGCore.Packages;
 using RPGCore.Projects;
 using System;
 using System.IO;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace Portfolio.Application.BuildStep;
@@ -30,13 +33,21 @@ internal class Program
 				throw new InvalidOperationException();
 			}
 
-			string destinationPath = Path.Combine(solutionDirectory.FullName, "bin/built-content");
 			string sourceProjectPath = Path.Combine(directory.FullName, "Content");
-
-			var destinationInfo = new DirectoryInfo(destinationPath);
 			var sourceProjectInfo = new DirectoryInfo(sourceProjectPath);
 
-			Console.WriteLine($"Copying game data:\n- FROM:  {sourceProjectInfo.FullName}\n- TO:    {destinationInfo.FullName}");
+			string destinationPath = Path.Combine(solutionDirectory.FullName, "bin/built-content");
+			var destinationInfo = new DirectoryInfo(destinationPath);
+
+			Console.WriteLine($"Exporting portfolio content...");
+			Console.WriteLine();
+
+			Console.ForegroundColor = ConsoleColor.DarkGray;
+			Console.WriteLine($"from   {sourceProjectInfo.FullName}");
+			Console.WriteLine($"to     {destinationInfo.FullName}");
+			Console.WriteLine();
+
+			int warnings = 0;
 
 			using (var project = await ProjectExplorer.LoadAsync(sourceProjectPath, PortfolioPipelines.Import))
 			{
@@ -46,40 +57,41 @@ internal class Program
 					{
 						if (string.IsNullOrEmpty(dependency.Key))
 						{
-							Console.ForegroundColor = ConsoleColor.DarkRed;
-							Console.Write($"ERROR: Invalid Dependency! The resource '");
+							Console.ForegroundColor = ConsoleColor.DarkYellow;
+							Console.Write($"WARNING: Invalid Dependency! The resource '");
 
-							Console.ForegroundColor = ConsoleColor.Red;
+							Console.ForegroundColor = ConsoleColor.Yellow;
 							Console.Write(resource.FullName);
 
-							Console.ForegroundColor = ConsoleColor.DarkRed;
+							Console.ForegroundColor = ConsoleColor.DarkYellow;
 							Console.Write($"' dependency '");
 
-							Console.ForegroundColor = ConsoleColor.Red;
+							Console.ForegroundColor = ConsoleColor.Yellow;
 							Console.Write(dependency.Key);
 
-							Console.ForegroundColor = ConsoleColor.DarkRed;
+							Console.ForegroundColor = ConsoleColor.DarkYellow;
 							Console.WriteLine("' is invalid");
-							// Console.WriteLine($"ERROR: Invalid Dependency! The resource '{resource.FullName}' dependency '{dependency.Key}' is invalid");
+
+							warnings++;
 						}
 						else if (!project.Resources.Contains(dependency.Key))
 						{
-							Console.ForegroundColor = ConsoleColor.DarkRed;
-							Console.Write($"ERROR: Missing Dependency! Unable to find '");
+							Console.ForegroundColor = ConsoleColor.DarkYellow;
+							Console.Write($"WARNING: Missing Dependency! Unable to find '");
 
-							Console.ForegroundColor = ConsoleColor.Red;
+							Console.ForegroundColor = ConsoleColor.Yellow;
 							Console.Write(resource.FullName);
 
-							Console.ForegroundColor = ConsoleColor.DarkRed;
+							Console.ForegroundColor = ConsoleColor.DarkYellow;
 							Console.Write($"' dependency '");
 
-							Console.ForegroundColor = ConsoleColor.Red;
+							Console.ForegroundColor = ConsoleColor.Yellow;
 							Console.Write(dependency.Key);
 
-							Console.ForegroundColor = ConsoleColor.DarkRed;
+							Console.ForegroundColor = ConsoleColor.DarkYellow;
 							Console.WriteLine("'");
 
-							// Console.WriteLine($"ERROR: Missing Dependency! Unable to find '{resource.FullName}' dependency '{dependency.Key}'");
+							warnings++;
 						}
 					}
 				}
@@ -87,32 +99,44 @@ internal class Program
 				var packageArchiveDirectory = project.ExportFoldersToDirectory(PortfolioPipelines.Build, destinationPath);
 
 				Console.WriteLine();
-				Console.ForegroundColor = ConsoleColor.DarkGreen;
+				Console.ForegroundColor = ConsoleColor.Green;
 				Console.WriteLine("Successfully exported content.");
 				Console.WriteLine();
 
-				/*
+				Console.ForegroundColor = ConsoleColor.Green;
+				Console.WriteLine($"  {project.Resources.Count} resources exported");
+				Console.ForegroundColor = ConsoleColor.Yellow;
+				Console.WriteLine($"  {warnings,2} warnings");
+				Console.WriteLine();
+
 				var packageArchive = new FileSystemArchive(packageArchiveDirectory, false);
 				var package = await PackageExplorer.LoadAsync(packageArchive.RootDirectory);
 
+				Console.ForegroundColor = ConsoleColor.Gray;
+				Console.WriteLine("Tags");
 				foreach (var tag in package.Tags)
 				{
-					Console.WriteLine($"{tag.Key}:");
+					Console.WriteLine($"  {tag.Value.Count,2} tagged '{tag.Key}'");
+				}
+				Console.WriteLine();
+				Console.ForegroundColor = ConsoleColor.Gray;
+				Console.WriteLine("File Types");
 
-					foreach (var taggedResource in tag.Value)
-					{
-						Console.WriteLine($" - {taggedResource.FullName}");
-					}
-				}*/
+				var resourcesByExtension = package.Resources.GroupBy(resource => resource.Extension);
+				foreach (var resourceExtension in resourcesByExtension)
+				{
+					Console.WriteLine($"  {resourceExtension.Count(),3} of type {resourceExtension.Key}");
+				}
+				Console.WriteLine();
 			}
 
 			Console.ResetColor();
 			return 0;
 		}
-		catch (Exception e)
+		catch (Exception exception)
 		{
 			Console.ForegroundColor = ConsoleColor.DarkRed;
-			Console.WriteLine(e);
+			Console.WriteLine(exception);
 			return 1;
 		}
 	}
