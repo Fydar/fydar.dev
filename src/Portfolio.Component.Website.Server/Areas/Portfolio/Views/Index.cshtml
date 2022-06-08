@@ -1,6 +1,6 @@
 ﻿@using Portfolio.Services.Content;
-@using Portfolio.Site.Areas.Portfolio.Models;
-using Portfolio.Component.Website.Server.Areas.Portfolio.Models;
+@using Portfolio.Component.Website.Server.Areas.Portfolio.Models;
+@using Portfolio.Component.Website.Server.Areas.Portfolio.Components;
 
 @model PortfolioIndexViewModel
 @{
@@ -14,6 +14,10 @@ using Portfolio.Component.Website.Server.Areas.Portfolio.Models;
     @for (int i = 0; i < contentService.Categories.Count; i++)
     {
       var category = contentService.Categories[i];
+
+      @await Component.InvokeAsync(typeof(PortfolioGridViewComponent), new {
+        category=category
+      })
 
       <vc:portfolio-grid category="category" />
     }

@@ -1,6 +1,5 @@
-﻿@using Portfolio.Site.Areas.Portfolio.Controllers
-@using Portfolio.Site.Services.PageMetaProvider;
-using Portfolio.Component.Website.Server.Services.PageMetaProvider;
+﻿@using Portfolio.Component.Website.Server.Areas.Portfolio.Controllers
+@using Portfolio.Component.Website.Server.Services.PageMetaProvider;
 
 <!DOCTYPE html>
 <html lang="en">
@@ -22,9 +21,10 @@ using Portfolio.Component.Website.Server.Services.PageMetaProvider;
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
   @ViewData.GetPageMetadata()
-
+  
   <link rel="stylesheet" href="~/css/main.min.css" asp-append-version="true" />
   <link rel="stylesheet" href="~/patio/patio.min.css" asp-append-version="true" />
+  <link rel="stylesheet" href="~/patio/patio.theme.materialblue.min.css" asp-append-version="true" />
 </head>
 <body class="dark">
 
