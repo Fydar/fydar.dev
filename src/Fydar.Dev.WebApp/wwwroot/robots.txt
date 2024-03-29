@@ -1,0 +1,53 @@
+# robots.txt
+
+# The Common Crawl dataset. Original source for GPT and others.
+User-agent: CCBot
+Disallow: /
+
+# Thes cohere-ai bot
+User-agent: cohere-ai
+Disallow: /
+
+# The example for img2dataset, although the default is *None*
+User-agent: img2dataset
+Disallow: /
+
+# GPTBot is OpenAI's web crawler
+User-agent: GPTBot
+Disallow: /
+
+User-agent: ChatGPT-User
+Disallow: /
+
+# Google's Bard and Vertex AI generative APIs
+User-agent: Google-Extended
+Disallow: /
+
+# Speculative blocks for Anthropic
+User-agent: anthropic-ai
+Disallow: /
+
+User-agent: Claude-Web
+Disallow: /
+
+# webz.io - they sell data for training LLMs.
+User-agent: Omgilibot
+Disallow: /
+
+User-agent: Omgili
+Disallow: /
+
+User-agent: Diffbot
+Disallow: /
+
+# Meta's bot that crawls public web pages to improve language models
+User-agent: FacebookBot
+Disallow: /
+
+# ByteDance's bot used to gather data for their LLMs, including Doubao.
+User-agent: Bytespider
+Disallow: /
+
+# Brandwatch - "AI to discover new trends"
+User-agent: magpie-crawler
+Disallow: /
