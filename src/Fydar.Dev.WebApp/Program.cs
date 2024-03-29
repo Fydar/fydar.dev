@@ -12,6 +12,7 @@ using Microsoft.AspNetCore.Components.Web;
 using Microsoft.AspNetCore.Hosting.Server;
 using Microsoft.AspNetCore.Hosting.Server.Features;
 using Microsoft.AspNetCore.Http.Features;
+using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.ResponseCompression;
 using Microsoft.AspNetCore.Server.Kestrel.Core;
 using Microsoft.AspNetCore.StaticFiles;
@@ -113,6 +114,10 @@ public class Program
 				{
 					ctx.Context.Response.Headers[HeaderNames.CacheControl] = $"public,max-age=31536000";
 				};
+			});
+			builder.Services.Configure<HttpsRedirectionOptions>(opts =>
+			{
+				opts.RedirectStatusCode = (int)HttpStatusCode.PermanentRedirect;
 			});
 
 			string domainName = builder.Configuration.GetValue<string>("DOMAINNAME") ?? string.Empty;
