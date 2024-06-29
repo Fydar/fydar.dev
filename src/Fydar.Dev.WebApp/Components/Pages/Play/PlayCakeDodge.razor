@@ -1,0 +1,54 @@
+@layout GameLayout
+@page "/play/cakedodge"
+
+<HeadContent>
+    @{
+        var openGraphModel = new OpenGraphModel()
+        {
+            Title = "Play Cake Dodge - Fydar",
+            Description = "The fun mobile game demo where Cookie must dodge cakes.",
+            CanonicalUrl = "https://fydar.dev/play/cakedodge",
+            Properties = [
+                new OpenGraphModelImage()
+                {
+                    Url = "https://fydar.dev/media/cakedodge/social.webp",
+                    Alt = "Promotional material for the game 'Cake Dodge'."
+                }
+            ]
+        };
+    }
+    <OpenGraphComponent Model="@openGraphModel" />
+    <meta name="theme-color" content="#2c3840">
+    <link rel="shortcut icon" href="/play/cakedodge/favicon.ico">
+    <link rel="manifest" href="/play/cakedodge/manifest.webmanifest">
+</HeadContent>
+
+<EmbedUnity>
+    <Configuration>
+        <script>
+            var config = {
+                companyName: "Fydar",
+                productName: "Cake Dodge",
+                productVersion: "v0.0.5-rc2",
+                dataUrl: "/play/cakedodge/build/WebGL.data.br",
+                codeUrl: "/play/cakedodge/build/WebGL.wasm.br",
+                frameworkUrl: "/play/cakedodge/build/WebGL.framework.js.br",
+                streamingAssetsUrl: "/play/cakedodge/StreamingAssets",
+                arguments: [],
+            };
+            var loaderUrl = "/play/cakedodge/build/WebGL.loader.js";
+        </script>
+    </Configuration>
+    <Placeholder>
+        <img src="/play/cakedodge/favicon.ico" alt="The logo for 'Astral Elites'." style="width: 200px; max-width: 90%; margin-bottom: 32px;" />
+    </Placeholder>
+</EmbedUnity>
+
+<script>
+    var serviceWorkerUrl = "/play/cakedodge/ServiceWorker.js";
+    window.addEventListener("load", function () {
+        if ("serviceWorker" in navigator) {
+            navigator.serviceWorker.register(serviceWorkerUrl);
+        }
+    });
+</script>
