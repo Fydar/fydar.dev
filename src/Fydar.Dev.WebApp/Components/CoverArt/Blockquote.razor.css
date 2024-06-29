@@ -6,18 +6,18 @@ blockquote {
     background-color: #2727557a;
 }
 
-    blockquote .source {
-        text-align: right;
+    blockquote p.source {
+        text-align: right !important;
         font-size: 12.6px;
         opacity: 0.75;
     }
 
-        blockquote .source:before {
+        blockquote p.source:before {
             content: '—';
             margin-right: 1rem;
             opacity: 0.5;
         }
 
-        blockquote .source ::deep a {
+        blockquote p.source ::deep a {
             text-decoration: none;
         }

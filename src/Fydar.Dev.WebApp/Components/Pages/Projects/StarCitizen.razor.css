@@ -1,0 +1,66 @@
+
+img.parallax-layer {
+    opacity: 0.925;
+}
+
+.flicker {
+    animation: flickerBrightness 3s linear reverse infinite;
+}
+
+@keyframes flickerBrightness {
+    0% {
+        filter: brightness(0.94);
+    }
+
+    5% {
+        filter: brightness(0.95);
+    }
+
+    10% {
+        filter: brightness(0.96);
+    }
+
+    15% {
+        filter: brightness(0.985);
+    }
+
+    25% {
+        filter: brightness(0.95);
+    }
+
+    30% {
+        filter: brightness(1);
+    }
+
+    35% {
+        filter: brightness(0.91);
+    }
+
+    40% {
+        filter: brightness(0.925);
+    }
+
+    45% {
+        filter: brightness(0.95);
+    }
+
+    60% {
+        filter: brightness(1);
+    }
+
+    70% {
+        filter: brightness(0.985);
+    }
+
+    80% {
+        filter: brightness(0.94);
+    }
+
+    90% {
+        filter: brightness(0.95);
+    }
+
+    100% {
+        filter: brightness(1);
+    }
+}

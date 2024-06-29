@@ -1,5 +1,6 @@
 * {
     --color-text-subtle-1: #d8d8d8;
+    --color-text-error: #dc3545;
     --color-border-2: #2d2f31;
     --color-border-select-1: #007bff40;
     --color-border-select-2: #80bdff;
@@ -114,6 +115,7 @@ p {
     width: 100%;
     margin-top: .4rem;
     font-size: 12.6px;
+    font-weight: 400;
     color: var(--color-text-error);
     opacity: 0;
     transition: opacity ease-in-out 0.1s;

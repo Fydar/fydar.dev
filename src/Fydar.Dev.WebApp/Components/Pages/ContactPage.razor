@@ -24,7 +24,7 @@
     <link rel="preload" href="media/portrait-cropped.webp" as="image" />
 </HeadContent>
 
-<section class="container" style="max-width: 680px;">
+<section class="container" style="max-width: 680px;place-self: center;">
 
     <h2>Drop me a message</h2>
 
@@ -43,7 +43,7 @@
 
 @if (!isSubmitted)
 {
-    <section class="container" style="max-width: 680px;">
+    <section class="container" style="max-width: 680px;place-self: center;">
 
         <EditForm method="post" Model="ContactMessage" OnValidSubmit="HandleValidSubmit" FormName="contract-form">
             <DataAnnotationsValidator />
@@ -91,7 +91,7 @@
     </section>
 }
 
-<section class="container" style="max-width: 680px;">
+<section class="container" style="max-width: 680px;place-self: center;">
 
     <h2>Send me an email</h2>
 

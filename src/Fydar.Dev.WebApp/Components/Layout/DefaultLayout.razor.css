@@ -285,6 +285,10 @@ footer {
                     opacity: 1;
                 }
 
+main:has(article.resume:last-child) + footer {
+    margin-top: 0;
+}
+
 main:has(section.section-feature:last-child) + footer {
     margin-top: 0;
 }
@@ -350,14 +354,12 @@ footer {
     box-sizing: border-box;
 }
 
-
-
 ::deep section.section-feature {
     grid-column: 1 / -1;
-    width: 100%;
-    min-height: 100vh;
-    display: grid;
     grid-template-columns: auto [container] 1fr auto;
+    width: 100%;
+    min-height: calc(100vh + 32px);
+    display: grid;
     box-sizing: border-box;
     align-items: center;
 }
@@ -369,20 +371,21 @@ footer {
 
 
     ::deep section.section-feature .feature-body {
-        backdrop-filter: blur(12px) brightness(0.525);
-        filter: drop-shadow(0px 1px 3px #0009);
-        font-weight: 400;
-        margin-top: 4rem;
-        margin-bottom: 4rem;
-        margin-left: 32px;
-        margin-right: 32px;
         grid-column: container / span 1;
-        box-sizing: border-box;
-        padding: 32px;
-        /* grid-column: 1 / -1; */
         grid-row: 1 / -1;
+        margin: 4rem 12px;
+        padding: 32px;
+        box-sizing: border-box;
+        backdrop-filter: blur(20px);
+        background-color: #00000075;
+        border-bottom: 4px solid #0002;
         border-radius: 16px;
+        font-weight: 400;
     }
+
+        ::deep section.section-feature .feature-body p {
+            text-align: left;
+        }
 
         ::deep section.section-feature .feature-body > *:first-child {
             margin-top: 0;
@@ -419,8 +422,8 @@ footer {
     }
 
     ::deep section.section-feature .feature-body {
-        margin-left: 32px;
-        margin-right: 32px;
+        margin-left: 24px;
+        margin-right: 24px;
     }
 }
 
@@ -432,8 +435,8 @@ footer {
     }
 
     ::deep section.section-feature .feature-body {
-        margin-left: 48px;
-        margin-right: 48px;
+        margin-left: 40px;
+        margin-right: 40px;
     }
 
     header,
@@ -459,6 +462,11 @@ footer {
     ::deep section.section-feature {
         grid-template-columns: auto [container] 960px auto;
     }
+
+        ::deep section.section-feature .feature-body {
+            margin-left: 0;
+            margin-right: 0;
+        }
 
     header,
     main,

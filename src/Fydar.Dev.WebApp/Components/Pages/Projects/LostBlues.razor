@@ -1,0 +1,49 @@
+@layout DefaultLayout
+@page "/portfolio/lostblues"
+
+<HeadContent>
+    @{
+        var openGraphModel = new OpenGraphModel()
+        {
+            Title = "Lost Blues - Fydar",
+            Description = "The clicker-style where you farm kelp and release fish.",
+            CanonicalUrl = "https://fydar.dev/portfolio/lostblues",
+            Properties = [
+                new OpenGraphModelImage()
+                {
+                    Url = "https://fydar.dev/media/lostblues/minijam-36-nature-1.png",
+                    Alt = "Promotional material for the game 'Lost Blues'."
+                }
+            ]
+        };
+    }
+    <OpenGraphComponent Model="@openGraphModel" />
+</HeadContent>
+
+<section class="fullscreen">
+    <div class="parallax-frame parallax-focalanchortop" style="--animation-time: 0.5;">
+
+        <video class="parallax-layer" style="--parallax-multiplier: 0.5" autoplay muted loop>
+            <source src="/media/lostblues/background.mp4?v=1" type="video/mp4">
+        </video>
+
+    </div>
+
+    <div class="fullscreen-footer">
+
+        <picture>
+            <img class="titlecard" src="media/lostblues/titlecard.svg?v=1" alt="Title card for the game 'Lost Blues'." />
+        </picture>
+
+    </div>
+</section>
+
+<aside>
+
+</aside>
+
+<section class="container">
+
+
+
+</section>

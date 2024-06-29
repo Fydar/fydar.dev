@@ -1,7 +1,7 @@
 
 .resume {
     z-index: 1;
-    padding: 2rem 1rem 1rem 1rem;
+    padding: 2rem 2rem 4rem 2rem;
     overflow-x: scroll;
     width: 100%;
     grid-column: 1 / -1;
@@ -155,8 +155,8 @@
             display: flex;
             flex-direction: row;
             color: #404040;
-            margin-top: 3pt;
-            margin-bottom: 3pt;
+            margin-top: 5pt;
+            margin-bottom: 5pt;
         }
 
             .resume .timeline-company .timeline-company-media img,
@@ -252,10 +252,7 @@
             margin-bottom: 6pt;
         }
 
-        .resume .timeline-company .timeline-position-details + .timeline-position {
-            margin-top: 18pt;
-        }
-
+        .resume .timeline-company .timeline-position-details + .timeline-position,
         .resume .timeline-company .timeline-position-media + .timeline-position {
             margin-top: 18pt;
         }
