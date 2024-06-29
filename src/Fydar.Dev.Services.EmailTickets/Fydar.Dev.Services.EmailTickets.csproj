@@ -7,8 +7,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="AWSSDK.S3" Version="3.7.305.31" />
-    <PackageReference Include="MimeKit" Version="4.4.0" />
+    <PackageReference Include="AWSSDK.S3" Version="3.7.309.11" />
+    <PackageReference Include="MimeKit" Version="4.7.0" />
   </ItemGroup>
 
 </Project>
