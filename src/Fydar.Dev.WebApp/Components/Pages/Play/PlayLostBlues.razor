@@ -1,0 +1,54 @@
+@layout GameLayout
+@page "/play/lostblues"
+
+<HeadContent>
+    @{
+        var openGraphModel = new OpenGraphModel()
+        {
+            Title = "Play Lost Blues - Fydar",
+            Description = "The Game Boy demake of the Nintendo DS Pokémon Diamond and Pearl underground mining minigame.",
+            CanonicalUrl = "https://fydar.dev/play/lostblues",
+            Properties = [
+                new OpenGraphModelImage()
+                {
+                    Url = "https://fydar.dev/media/lostblues/keyart-1_91x1.png",
+                    Alt = "Promotional material for the game 'Lost Blues'."
+                }
+            ]
+        };
+    }
+    <OpenGraphComponent Model="@openGraphModel" />
+    <meta name="theme-color" content="#2c3840">
+    <link rel="shortcut icon" href="/play/lostblues/favicon.ico">
+    <link rel="manifest" href="/play/lostblues/manifest.webmanifest">
+</HeadContent>
+
+<EmbedUnity>
+    <Configuration>
+        <script>
+            var config = {
+                companyName: "Fydar",
+                productName: "Lost Blues",
+                productVersion: "v0.0.1",
+                dataUrl: "/play/lostblues/build/WebGL.data.br",
+                codeUrl: "/play/lostblues/build/WebGL.wasm.br",
+                frameworkUrl: "/play/lostblues/build/WebGL.framework.js.br",
+                streamingAssetsUrl: "/play/lostblues/StreamingAssets",
+                arguments: [],
+            };
+            var loaderUrl = "/play/lostblues/build/WebGL.loader.js";
+        </script>
+    </Configuration>
+    <Placeholder>
+        <img src="/play/lostblues/favicon.ico" alt="The logo for 'Lost Blues'." style="width: 200px; max-width: 90%; margin-bottom: 32px;" />
+    </Placeholder>
+</EmbedUnity>
+
+<script>
+    var serviceWorkerUrl = "/play/lostblues/ServiceWorker.js";
+    window.addEventListener("load", function () {
+        if ("serviceWorker" in navigator) {
+            navigator.serviceWorker.register(serviceWorkerUrl);
+        }
+    });
+</script>
