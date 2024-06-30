@@ -1,0 +1,54 @@
+@layout GameLayout
+@page "/play/sofarfromhome"
+
+<HeadContent>
+    @{
+        var openGraphModel = new OpenGraphModel()
+        {
+            Title = "Play So Far From Home - Fydar",
+            Description = "The Game Boy demake of the Nintendo DS Pokémon Diamond and Pearl underground mining minigame.",
+            CanonicalUrl = "https://fydar.dev/play/sofarfromhome",
+            Properties = [
+                new OpenGraphModelImage()
+                {
+                    Url = "https://fydar.dev/media/sofarfromhome/global-game-jam-2019-header.jpg",
+                    Alt = "Promotional material for the game 'So Far From Home'."
+                }
+            ]
+        };
+    }
+    <OpenGraphComponent Model="@openGraphModel" />
+    <meta name="theme-color" content="#2c3840">
+    <link rel="shortcut icon" href="/play/sofarfromhome/favicon.ico">
+    <link rel="manifest" href="/play/sofarfromhome/manifest.webmanifest">
+</HeadContent>
+
+<EmbedUnity>
+    <Configuration>
+        <script>
+            var config = {
+                companyName: "Fydar",
+                productName: "So Far From Home",
+                productVersion: "v0.0.1",
+                dataUrl: "/play/sofarfromhome/build/WebGL.data.br",
+                codeUrl: "/play/sofarfromhome/build/WebGL.wasm.br",
+                frameworkUrl: "/play/sofarfromhome/build/WebGL.framework.js.br",
+                streamingAssetsUrl: "/play/sofarfromhome/StreamingAssets",
+                arguments: [],
+            };
+            var loaderUrl = "/play/sofarfromhome/build/WebGL.loader.js";
+        </script>
+    </Configuration>
+    <Placeholder>
+        <img src="/play/sofarfromhome/favicon.ico" alt="The logo for 'So Far From Home'." style="width: 200px; max-width: 90%; margin-bottom: 32px;" />
+    </Placeholder>
+</EmbedUnity>
+
+<script>
+    var serviceWorkerUrl = "/play/sofarfromhome/ServiceWorker.js";
+    window.addEventListener("load", function () {
+        if ("serviceWorker" in navigator) {
+            navigator.serviceWorker.register(serviceWorkerUrl);
+        }
+    });
+</script>
