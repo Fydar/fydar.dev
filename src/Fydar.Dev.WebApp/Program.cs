@@ -127,8 +127,8 @@ public class Program
 				options.AcceptTermsOfService = true;
 				options.DomainNames = [domainName];
 				options.EmailAddress = "dev.anthonymarmont@gmail.com";
-			})
-				.PersistDataToDirectory(new DirectoryInfo("lettuce"), null);
+			});
+			// 	.PersistDataToDirectory(new DirectoryInfo("lettuce"), null);
 
 			builder.WebHost.UseKestrel(kestrel =>
 			{
@@ -201,15 +201,15 @@ public class Program
 					headers.ContentEncoding = "br";
 					headers.ContentType = "application/wasm";
 				}
-				else if (context.File.Name.EndsWith(".data.br", StringComparison.OrdinalIgnoreCase))
-				{
-					headers.ContentEncoding = "br";
-					headers.ContentType = "application/octet-stream";
-				}
 				else if (context.File.Name.EndsWith(".js.br", StringComparison.OrdinalIgnoreCase))
 				{
 					headers.ContentEncoding = "br";
 					headers.ContentType = "application/javascript";
+				}
+				else if (context.File.Name.EndsWith(".data.br", StringComparison.OrdinalIgnoreCase))
+				{
+					headers.ContentEncoding = "br";
+					headers.ContentType = "application/octet-stream";
 				}
 				else if (context.File.Name.EndsWith(".data", StringComparison.OrdinalIgnoreCase))
 				{
