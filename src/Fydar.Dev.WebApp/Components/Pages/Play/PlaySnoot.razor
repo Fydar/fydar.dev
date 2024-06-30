@@ -1,0 +1,54 @@
+@layout GameLayout
+@page "/play/snoot"
+
+<HeadContent>
+    @{
+        var openGraphModel = new OpenGraphModel()
+        {
+            Title = "Play Snoot - Fydar",
+            Description = "Restore life to a desolate world by exploring a sandbox of crafting recipes. On your adventure you will bring rain, grass, bugs, birds, and bees.",
+            CanonicalUrl = "https://fydar.dev/play/snoot",
+            Properties = [
+                new OpenGraphModelImage()
+                {
+                    Url = "https://fydar.dev/media/snoot/keyart-1.91x1-1200x630.webp",
+                    Alt = "Promotional material for the game 'Snoot'."
+                }
+            ]
+        };
+    }
+    <OpenGraphComponent Model="@openGraphModel" />
+    <meta name="theme-color" content="#2c3840">
+    <link rel="shortcut icon" href="/play/snoot/favicon.ico">
+    <link rel="manifest" href="/play/snoot/manifest.webmanifest">
+</HeadContent>
+
+<EmbedUnity>
+    <Configuration>
+        <script>
+            var config = {
+                companyName: "Fydar",
+                productName: "Snoot",
+                productVersion: "v0.0.1",
+                dataUrl: "/play/snoot/build/WebGL.data.br",
+                codeUrl: "/play/snoot/build/WebGL.wasm.br",
+                frameworkUrl: "/play/snoot/build/WebGL.framework.js.br",
+                streamingAssetsUrl: "/play/snoot/StreamingAssets",
+                arguments: [],
+            };
+            var loaderUrl = "/play/snoot/build/WebGL.loader.js";
+        </script>
+    </Configuration>
+    <Placeholder>
+        <img src="/play/snoot/favicon.ico" alt="The logo for 'Snoot'." style="width: 200px; max-width: 90%; margin-bottom: 32px;" />
+    </Placeholder>
+</EmbedUnity>
+
+<script>
+    var serviceWorkerUrl = "/play/snoot/ServiceWorker.js";
+    window.addEventListener("load", function () {
+        if ("serviceWorker" in navigator) {
+            navigator.serviceWorker.register(serviceWorkerUrl);
+        }
+    });
+</script>
