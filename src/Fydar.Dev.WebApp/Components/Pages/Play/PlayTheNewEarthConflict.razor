@@ -1,0 +1,54 @@
+@layout GameLayout
+@page "/play/thenewearthconflict"
+
+<HeadContent>
+    @{
+        var openGraphModel = new OpenGraphModel()
+        {
+            Title = "Play The New Earth Conflict - Fydar",
+            Description = "A realtime space strategy game where the player takes the pilot seat of a battleship.",
+            CanonicalUrl = "https://fydar.dev/play/thenewearthconflict",
+            Properties = [
+                new OpenGraphModelImage()
+                {
+                    Url = "https://fydar.dev/media/thenewearthconflict/keyart-1-1_91x1-1200-630.webp",
+                    Alt = "Promotional material for the game 'The New Earth Conflict'."
+                }
+            ]
+        };
+    }
+    <OpenGraphComponent Model="@openGraphModel" />
+    <meta name="theme-color" content="#2c3840">
+    <link rel="shortcut icon" href="/play/thenewearthconflict/favicon.ico">
+    <link rel="manifest" href="/play/thenewearthconflict/manifest.webmanifest">
+</HeadContent>
+
+<EmbedUnity>
+    <Configuration>
+        <script>
+            var config = {
+                companyName: "Fydar",
+                productName: "The New Earth Conflict",
+                productVersion: "v0.0.1",
+                dataUrl: "/play/thenewearthconflict/build/WebGL.data.br",
+                codeUrl: "/play/thenewearthconflict/build/WebGL.wasm.br",
+                frameworkUrl: "/play/thenewearthconflict/build/WebGL.framework.js.br",
+                streamingAssetsUrl: "/play/thenewearthconflict/StreamingAssets",
+                arguments: [],
+            };
+            var loaderUrl = "/play/thenewearthconflict/build/WebGL.loader.js";
+        </script>
+    </Configuration>
+    <Placeholder>
+        <img src="/play/thenewearthconflict/favicon.ico" alt="The logo for 'The New Earth Conflict'." style="width: 200px; max-width: 90%; margin-bottom: 32px;" />
+    </Placeholder>
+</EmbedUnity>
+
+<script>
+    var serviceWorkerUrl = "/play/thenewearthconflict/ServiceWorker.js";
+    window.addEventListener("load", function () {
+        if ("serviceWorker" in navigator) {
+            navigator.serviceWorker.register(serviceWorkerUrl);
+        }
+    });
+</script>
