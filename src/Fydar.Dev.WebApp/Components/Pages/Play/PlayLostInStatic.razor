@@ -1,0 +1,54 @@
+@layout GameLayout
+@page "/play/lostinstatic"
+
+<HeadContent>
+    @{
+        var openGraphModel = new OpenGraphModel()
+        {
+            Title = "Play Lost in Static - Fydar",
+            Description = "The Game Boy demake of the Nintendo DS Pokémon Diamond and Pearl underground mining minigame.",
+            CanonicalUrl = "https://fydar.dev/play/lostinstatic",
+            Properties = [
+                new OpenGraphModelImage()
+                {
+                    Url = "https://fydar.dev/media/lostinstatic/keyart-1_91x1.png",
+                    Alt = "Promotional material for the game 'Lost in Static'."
+                }
+            ]
+        };
+    }
+    <OpenGraphComponent Model="@openGraphModel" />
+    <meta name="theme-color" content="#2c3840">
+    <link rel="shortcut icon" href="/play/lostinstatic/favicon.ico">
+    <link rel="manifest" href="/play/lostinstatic/manifest.webmanifest">
+</HeadContent>
+
+<EmbedUnity>
+    <Configuration>
+        <script>
+            var config = {
+                companyName: "Fydar",
+                productName: "Lost in Static",
+                productVersion: "v0.0.1",
+                dataUrl: "/play/lostinstatic/build/WebGL.data.br",
+                codeUrl: "/play/lostinstatic/build/WebGL.wasm.br",
+                frameworkUrl: "/play/lostinstatic/build/WebGL.framework.js.br",
+                streamingAssetsUrl: "/play/lostinstatic/StreamingAssets",
+                arguments: [],
+            };
+            var loaderUrl = "/play/lostinstatic/build/WebGL.loader.js";
+        </script>
+    </Configuration>
+    <Placeholder>
+        <img src="/play/lostinstatic/favicon.ico" alt="The logo for 'Lost in Static'." style="width: 200px; max-width: 90%; margin-bottom: 32px;" />
+    </Placeholder>
+</EmbedUnity>
+
+<script>
+    var serviceWorkerUrl = "/play/lostinstatic/ServiceWorker.js";
+    window.addEventListener("load", function () {
+        if ("serviceWorker" in navigator) {
+            navigator.serviceWorker.register(serviceWorkerUrl);
+        }
+    });
+</script>
