@@ -1,0 +1,54 @@
+@layout GameLayout
+@page "/play/void"
+
+<HeadContent>
+    @{
+        var openGraphModel = new OpenGraphModel()
+        {
+            Title = "Play Void - Fydar",
+            Description = "The simulation experience of what it’s like to be a healer in an MMORPG raid, complete with a variety of abilities and a challenging boss battle.",
+            CanonicalUrl = "https://fydar.dev/play/void",
+            Properties = [
+                new OpenGraphModelImage()
+                {
+                    Url = "https://fydar.dev/media/void/keyart-1.91x1-1200x630.webp",
+                    Alt = "Promotional material for the game 'Void'."
+                }
+            ]
+        };
+    }
+    <OpenGraphComponent Model="@openGraphModel" />
+    <meta name="theme-color" content="#2c3840">
+    <link rel="shortcut icon" href="/play/void/favicon.ico">
+    <link rel="manifest" href="/play/void/manifest.webmanifest">
+</HeadContent>
+
+<EmbedUnity>
+    <Configuration>
+        <script>
+            var config = {
+                companyName: "Fydar",
+                productName: "Void",
+                productVersion: "v0.0.1",
+                dataUrl: "/play/void/build/WebGL.data.br",
+                codeUrl: "/play/void/build/WebGL.wasm.br",
+                frameworkUrl: "/play/void/build/WebGL.framework.js.br",
+                streamingAssetsUrl: "/play/void/StreamingAssets",
+                arguments: [],
+            };
+            var loaderUrl = "/play/void/build/WebGL.loader.js";
+        </script>
+    </Configuration>
+    <Placeholder>
+        <img src="/play/void/favicon.ico" alt="The logo for 'Void'." style="width: 200px; max-width: 90%; margin-bottom: 32px;" />
+    </Placeholder>
+</EmbedUnity>
+
+<script>
+    var serviceWorkerUrl = "/play/void/ServiceWorker.js";
+    window.addEventListener("load", function () {
+        if ("serviceWorker" in navigator) {
+            navigator.serviceWorker.register(serviceWorkerUrl);
+        }
+    });
+</script>
