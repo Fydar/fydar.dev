@@ -1,0 +1,54 @@
+@layout GameLayout
+@page "/play/airseabattle"
+
+<HeadContent>
+    @{
+        var openGraphModel = new OpenGraphModel()
+        {
+            Title = "Play Air-Sea Battle - Fydar",
+            Description = "The Game Boy demake of the Nintendo DS Pokémon Diamond and Pearl underground mining minigame.",
+            CanonicalUrl = "https://fydar.dev/play/airseabattle",
+            Properties = [
+                new OpenGraphModelImage()
+                {
+                    Url = "https://fydar.dev/media/airseabattle/keyart-1_91x1.png",
+                    Alt = "Promotional material for the game 'Air-Sea Battle'."
+                }
+            ]
+        };
+    }
+    <OpenGraphComponent Model="@openGraphModel" />
+    <meta name="theme-color" content="#2c3840">
+    <link rel="shortcut icon" href="/play/airseabattle/favicon.ico">
+    <link rel="manifest" href="/play/airseabattle/manifest.webmanifest">
+</HeadContent>
+
+<EmbedUnity>
+    <Configuration>
+        <script>
+            var config = {
+                companyName: "Fydar",
+                productName: "Air-Sea Battle",
+                productVersion: "v0.0.1",
+                dataUrl: "/play/airseabattle/build/WebGL.data.br",
+                codeUrl: "/play/airseabattle/build/WebGL.wasm.br",
+                frameworkUrl: "/play/airseabattle/build/WebGL.framework.js.br",
+                streamingAssetsUrl: "/play/airseabattle/StreamingAssets",
+                arguments: [],
+            };
+            var loaderUrl = "/play/airseabattle/build/WebGL.loader.js";
+        </script>
+    </Configuration>
+    <Placeholder>
+        <img src="/play/airseabattle/favicon.ico" alt="The logo for 'Air-Sea Battle'." style="width: 200px; max-width: 90%; margin-bottom: 32px;" />
+    </Placeholder>
+</EmbedUnity>
+
+<script>
+    var serviceWorkerUrl = "/play/airseabattle/ServiceWorker.js";
+    window.addEventListener("load", function () {
+        if ("serviceWorker" in navigator) {
+            navigator.serviceWorker.register(serviceWorkerUrl);
+        }
+    });
+</script>
