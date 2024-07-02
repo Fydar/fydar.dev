@@ -1,0 +1,54 @@
+@layout GameLayout
+@page "/play/thedwellers"
+
+<HeadContent>
+    @{
+        var openGraphModel = new OpenGraphModel()
+        {
+            Title = "Play The Dwellers - Fydar",
+            Description = "A dungeon crawler with a powerful node-based editor for the RPG system.",
+            CanonicalUrl = "https://fydar.dev/portfolio/thedwellers",
+            Properties = [
+                new OpenGraphModelImage()
+                {
+                    Url = "https://fydar.dev/media/thedwellers/keyart-1-1_91x1-1200-630.webp",
+                    Alt = "Promotional material for the game 'The Dwellers'."
+                }
+            ]
+        };
+    }
+    <OpenGraphComponent Model="@openGraphModel" />
+    <meta name="theme-color" content="#2c3840">
+    <link rel="shortcut icon" href="/play/thedwellers/favicon.ico">
+    <link rel="manifest" href="/play/thedwellers/manifest.webmanifest">
+</HeadContent>
+
+<EmbedUnity>
+    <Configuration>
+        <script>
+            var config = {
+                companyName: "Fydar",
+                productName: "The Dwellers",
+                productVersion: "v0.0.1",
+                dataUrl: "/play/thedwellers/build/WebGL.data.br",
+                codeUrl: "/play/thedwellers/build/WebGL.wasm.br",
+                frameworkUrl: "/play/thedwellers/build/WebGL.framework.js.br",
+                streamingAssetsUrl: "/play/thedwellers/StreamingAssets",
+                arguments: [],
+            };
+            var loaderUrl = "/play/thedwellers/build/WebGL.loader.js";
+        </script>
+    </Configuration>
+    <Placeholder>
+        <img src="/play/thedwellers/favicon.ico" alt="The logo for 'The Dwellers'." style="width: 200px; max-width: 90%; margin-bottom: 32px;" />
+    </Placeholder>
+</EmbedUnity>
+
+<script>
+    var serviceWorkerUrl = "/play/thedwellers/ServiceWorker.js";
+    window.addEventListener("load", function () {
+        if ("serviceWorker" in navigator) {
+            navigator.serviceWorker.register(serviceWorkerUrl);
+        }
+    });
+</script>
