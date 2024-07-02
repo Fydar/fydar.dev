@@ -1,0 +1,81 @@
+@layout DefaultLayout
+@page "/play"
+
+<HeadContent>
+    @{
+        var openGraphModel = new OpenGraphModel()
+        {
+            Title = "Play - Fydar",
+            Description = "Explore my libary of playable games and experiences.",
+            CanonicalUrl = "https://fydar.dev/play",
+            Properties = [
+                new OpenGraphModelImage()
+                {
+                    Url = "https://fydar.dev/media/void/social.webp",
+                    Alt = "Promotional material for the game 'Void'."
+                }
+            ]
+        };
+    }
+    <OpenGraphComponent Model="@openGraphModel" />
+</HeadContent>
+
+<section class="container">
+
+    <HeaderDecoration>
+        <h2>Play</h2>
+    </HeaderDecoration>
+
+    <CoverGrid>
+
+        <Cover href="/play/astralelites">
+            <Background>
+                <picture>
+                    <img loading="lazy" width="400" height="600" src="media/astralelites/coverart.png" alt="Cover art for the game 'Astral Elites'." />
+                </picture>
+            </Background>
+        </Cover>
+
+        <Cover href="/play/miniminer">
+            <Background>
+                <picture>
+                    <img loading="lazy" width="400" height="600" src="media/miniminer/coverart.png" alt="Cover art for the game 'Outrage'." />
+                </picture>
+            </Background>
+        </Cover>
+        
+        <Cover href="/play/raidhealersimulator">
+            <Background>
+                <picture>
+                    <img loading="lazy" width="400" height="600" src="media/raidhealersimulator/coverart.png" alt="Cover art for the game 'Star Citizen'." />
+                </picture>
+            </Background>
+        </Cover>
+
+        <Cover href="/play/thenewearthconflict">
+            <Background>
+                <picture>
+                    <img loading="lazy" width="400" height="600" src="media/thenewearthconflict/coverart.png" alt="Cover art for the game 'Star Citizen'." />
+                </picture>
+            </Background>
+        </Cover>
+
+        <Cover href="/play/snoot">
+            <Background>
+                <picture>
+                    <img loading="lazy" width="400" height="600" src="media/snoot/coverart.png" alt="Cover art for the game 'Star Citizen'." />
+                </picture>
+            </Background>
+        </Cover>
+
+        <Cover href="/play/lostblues">
+            <Background>
+                <picture>
+                    <img loading="lazy" width="400" height="600" src="media/lostblues/coverart.png" alt="Cover art for the game 'Star Citizen'." />
+                </picture>
+            </Background>
+        </Cover>
+
+    </CoverGrid>
+
+</section>
