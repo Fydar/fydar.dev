@@ -1,0 +1,51 @@
+@layout DefaultLayout
+@page "/portfolio/sofarfromhome"
+
+<HeadContent>
+    @{
+        var openGraphModel = new OpenGraphModel()
+        {
+            Title = "So Far From Home - Fydar",
+            Description = "Searching between the sofa cushions for a missing key, but what else is down there?",
+            CanonicalUrl = "https://fydar.dev/play/sofarfromhome",
+            Properties = [
+                new OpenGraphModelImage()
+                {
+                    Url = "https://fydar.dev/media/sofarfromhome/global-game-jam-2019-header.jpg",
+                    Alt = "Promotional material for the game 'So Far From Home'."
+                }
+            ]
+        };
+    }
+    <OpenGraphComponent Model="@openGraphModel" />
+</HeadContent>
+
+<section class="fullscreen">
+    <div class="parallax-frame parallax-focalanchortop" style="--animation-time: 0.5;">
+
+        <video class="parallax-layer" style="--parallax-multiplier: 0.5" autoplay muted loop>
+            <source src="/media/sofarfromhome/background.mp4?v=1" type="video/mp4">
+        </video>
+
+    </div>
+
+    <div class="fullscreen-footer">
+
+        <picture>
+            <img class="titlecard" src="media/sofarfromhome/titlecard.svg?v=1" alt="Title card for the game 'The New Earth Conflict'." />
+        </picture>
+
+    </div>
+</section>
+
+<aside>
+
+</aside>
+
+<section class="container">
+
+    <h1>Fydar.Numerics</h1>
+
+
+
+</section>

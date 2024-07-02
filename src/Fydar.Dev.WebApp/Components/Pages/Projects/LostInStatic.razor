@@ -1,0 +1,49 @@
+@layout DefaultLayout
+@page "/portfolio/lostinstatic"
+
+<HeadContent>
+    @{
+        var openGraphModel = new OpenGraphModel()
+        {
+            Title = "Lost in Static - Fydar",
+            Description = "Remote control a drone to take down a rouge AI controlling the station.",
+            CanonicalUrl = "https://fydar.dev/portfolio/lostinstatic",
+            Properties = [
+                new OpenGraphModelImage()
+                {
+                    Url = "https://fydar.dev/media/lostinstatic/social.png",
+                    Alt = "Promotional material for the game 'Lost in Static'."
+                }
+            ]
+        };
+    }
+    <OpenGraphComponent Model="@openGraphModel" />
+</HeadContent>
+
+<section class="fullscreen">
+    <div class="parallax-frame parallax-focalanchortop" style="--animation-time: 0.5;">
+
+        <video class="parallax-layer" style="--parallax-multiplier: 0.5" autoplay muted loop>
+            <source src="/media/lostinstatic/background.mp4?v=1" type="video/mp4">
+        </video>
+
+    </div>
+
+    <div class="fullscreen-footer">
+
+        <picture>
+            <img class="titlecard" src="media/lostinstatic/titlecard.svg?v=1" alt="Title card for the game 'Lost in Static'." />
+        </picture>
+
+    </div>
+</section>
+
+<aside>
+
+</aside>
+
+<section class="container">
+
+
+
+</section>
