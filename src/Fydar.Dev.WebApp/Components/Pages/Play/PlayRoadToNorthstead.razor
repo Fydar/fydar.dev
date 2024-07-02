@@ -1,0 +1,54 @@
+@layout GameLayout
+@page "/play/roadtonorthstead"
+
+<HeadContent>
+    @{
+        var openGraphModel = new OpenGraphModel()
+        {
+            Title = "Play Road to Northstead - Fydar",
+            Description = "The game jam visual novel with questing and crafting to survive the night.",
+            CanonicalUrl = "https://fydar.dev/portfolio/roadtonorthstead",
+            Properties = [
+                new OpenGraphModelImage()
+                {
+                    Url = "https://fydar.dev/media/roadtonorthstead/keyart-1_91x1-1200x630.webp",
+                    Alt = "Promotional material for the game 'Road to Northstead'."
+                }
+            ]
+        };
+    }
+    <OpenGraphComponent Model="@openGraphModel" />
+    <meta name="theme-color" content="#2c3840">
+    <link rel="shortcut icon" href="/play/roadtonorthstead/favicon.ico">
+    <link rel="manifest" href="/play/roadtonorthstead/manifest.webmanifest">
+</HeadContent>
+
+<EmbedUnity>
+    <Configuration>
+        <script>
+            var config = {
+                companyName: "Fydar",
+                productName: "Road to Northstead",
+                productVersion: "v0.0.1",
+                dataUrl: "/play/roadtonorthstead/build/WebGL.data.br",
+                codeUrl: "/play/roadtonorthstead/build/WebGL.wasm.br",
+                frameworkUrl: "/play/roadtonorthstead/build/WebGL.framework.js.br",
+                streamingAssetsUrl: "/play/roadtonorthstead/StreamingAssets",
+                arguments: [],
+            };
+            var loaderUrl = "/play/roadtonorthstead/build/WebGL.loader.js";
+        </script>
+    </Configuration>
+    <Placeholder>
+        <img src="/play/roadtonorthstead/favicon.ico" alt="The logo for 'Road to Northstead'." style="width: 200px; max-width: 90%; margin-bottom: 32px;" />
+    </Placeholder>
+</EmbedUnity>
+
+<script>
+    var serviceWorkerUrl = "/play/roadtonorthstead/ServiceWorker.js";
+    window.addEventListener("load", function () {
+        if ("serviceWorker" in navigator) {
+            navigator.serviceWorker.register(serviceWorkerUrl);
+        }
+    });
+</script>
