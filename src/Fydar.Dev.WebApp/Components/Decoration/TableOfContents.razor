@@ -1,0 +1,18 @@
+@inject NavigationManager NavigationManager
+
+<ol>
+    @foreach (var heading in HeadingRegister.Headings)
+    {
+        <li><a href="@NavigationManager.Uri#@heading.Identifier">@heading.Text</a></li>
+    }
+</ol>
+
+@code {
+    [CascadingParameter]
+    public HeadingRegister? HeadingRegister { get; set; }
+
+    protected override void OnInitialized()
+    {
+        HeadingRegister.PropertyChanged += (evt, a) => StateHasChanged();
+    }
+}

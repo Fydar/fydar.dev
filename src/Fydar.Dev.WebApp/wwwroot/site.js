@@ -21,9 +21,6 @@ function UpdateRelativeElements() {
 
 UpdateRelativeElements();
 
-var lastX = 0;
-var lastY = 0;
-
 window.addEventListener("scroll",
     eventArgs => {
         UpdateRelativeElements();
@@ -36,6 +33,8 @@ window.addEventListener("resize",
     }, { passive: true }
 );
 
+var lastX = 0;
+var lastY = 0;
 
 window.addEventListener("pointermove",
     eventArgs => {
@@ -67,3 +66,53 @@ window.document.addEventListener("pointerenter",
         }
     }, { passive: true }
 );
+
+
+
+
+    function NavHighlighter() {
+        // Get all sections that have an ID defined
+        let sections = document.querySelectorAll("h2[id]");
+
+        // Get current scroll position
+        let scrollY = window.pageYOffset;
+
+        // Now we loop through sections to get height, top and ID values for each
+        sections.forEach(current => {
+            const wrapper = current.parentElement;
+            const sectionHeight = wrapper.offsetHeight;
+
+            const sectionTop = (wrapper.getBoundingClientRect().top + window.pageYOffset) - 50 - (window.innerHeight * 0.5 * getScrollPercent());
+            sectionId = current.getAttribute("id");
+
+            if (
+                scrollY > sectionTop &&
+                scrollY <= sectionTop + sectionHeight
+            ) {
+                document.querySelector("ol li a[href*=" + sectionId + "]").classList.add("active");
+            } else {
+                document.querySelector("ol li a[href*=" + sectionId + "]").classList.remove("active");
+            }
+        });
+    }
+    function getScrollPercent() {
+        var h = document.documentElement,
+            b = document.body,
+            st = 'scrollTop',
+            sh = 'scrollHeight';
+        return (h[st] || b[st]) / ((h[sh] || b[sh]) - h.clientHeight);
+    }
+
+    NavHighlighter();
+
+    window.addEventListener("scroll",
+        eventArgs => {
+            NavHighlighter();
+        }, { passive: true }
+    );
+
+    window.addEventListener("resize",
+        eventArgs => {
+            NavHighlighter();
+        }, { passive: true }
+    );

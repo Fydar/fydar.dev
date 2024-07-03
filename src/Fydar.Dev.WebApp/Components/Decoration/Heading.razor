@@ -1,0 +1,58 @@
+@inject NavigationManager NavigationManager
+
+<div class="heading-wrapper">
+
+    @if (Prefix != null)
+    {
+        <p class="heading-prefix">@Prefix</p>
+    }
+
+    @switch (Level)
+    {
+        case 1:
+            <h1 class="heading-anchor" id="@Identifier"><a class="anchor-tag" href="@NavigationManager.Uri#@Identifier">#</a>@Text</h1>
+            break;
+        case 2:
+            <h2 class="heading-anchor" id="@Identifier"><a class="anchor-tag" href="@NavigationManager.Uri#@Identifier">#</a>@Text</h2>
+            break;
+        case 3:
+            <h3 class="heading-anchor" id="@Identifier"><a class="anchor-tag" href="@NavigationManager.Uri#@Identifier">#</a>@Text</h3>
+            break;
+        case 4:
+            <h4 class="heading-anchor" id="@Identifier"><a class="anchor-tag" href="@NavigationManager.Uri#@Identifier">#</a>@Text</h4>
+            break;
+        case 5:
+            <h5 class="heading-anchor" id="@Identifier"><a class="anchor-tag" href="@NavigationManager.Uri#@Identifier">#</a>@Text</h5>
+            break;
+    }
+
+    @Content
+
+</div>
+
+@code {
+    [CascadingParameter]
+    public HeadingRegister? HeadingRegister { get; set; }
+
+    [Parameter, EditorRequired]
+    public int Level { get; set; } = 1;
+
+    [Parameter, EditorRequired]
+    public string Identifier { get; set; } = "";
+
+    [Parameter]
+    public RenderFragment? Prefix { get; set; }
+
+    [Parameter, EditorRequired]
+    public RenderFragment? Text { get; set; }
+
+    [Parameter, EditorRequired]
+    public RenderFragment? Content { get; set; }
+
+    protected override void OnParametersSet()
+    {
+        HeadingRegister.Register(this);
+
+        base.OnParametersSet();
+    }
+}

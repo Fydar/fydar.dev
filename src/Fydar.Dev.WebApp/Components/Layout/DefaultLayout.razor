@@ -21,6 +21,10 @@
 
 <SectionContent SectionName="layoutbodystyle">
     <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
             padding: 0;
             border: 0;
@@ -30,7 +34,7 @@
             width: 100%;
             font-size: 16px;
             font-weight: 300;
-            line-height: 1.625;
+            line-height: 1.75;
             min-height: 100vh;
             display: grid;
             grid-template-rows: auto 1fr auto;
@@ -39,6 +43,11 @@
             --color-text-primary: #d8d8d8;
             overflow-y: scroll;
             overflow-x: hidden;
+        }
+
+        p  {
+            margin-block-start: 1.5em;
+            margin-block-end: 1.5em;
         }
 
         @@supports (font-variation-settings: normal) {
@@ -89,7 +98,7 @@
         <menu class="navbar-sitenavigation" aria-label="Site navigation" dir="ltr">
             <li class="nav-home">
                 <a href="/" aria-label="Navigate home">
-                    <SvgSprite Link="/icons.svg?v=1#icon-fydar-round" Alt="Fydar's Icon'" />
+                    <SvgSprite Link="/icons.svg?v=1#icon-fydar-round" Alt="Fydar's Icon" />
                     <span class="nav-home-label">Fydar</span>
                 </a>
             </li>

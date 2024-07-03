@@ -54,7 +54,8 @@
     }
 
 ::deep h2 {
-    margin-top: 5rem;
+    font-size: 1.75em;
+    margin-top: 6rem;
 }
 
 ::deep p {
@@ -62,8 +63,11 @@
 }
 
     ::deep p.heading-prefix {
-        margin-top: 5rem;
+        margin-top: 6rem;
         margin-bottom: auto;
+        font-size: 1.25em;
+        line-height: 1em;
+        letter-spacing: 1px;
     }
 
         ::deep p.heading-prefix + h1,
@@ -477,7 +481,8 @@ footer {
         header:has(aside),
         main:has(aside),
         footer:has(aside) {
-            grid-template-columns: auto [aside] 360px [container] 600px auto;
+            gap: 0 30px;
+            grid-template-columns: auto [aside] 360px [container] 570px auto;
         }
 
             header:has(aside) ::deep .container.container-wide,
@@ -491,7 +496,8 @@ footer {
 @media screen and (min-width: 1200px) {
 
     ::deep section.section-feature {
-        grid-template-columns: auto [aside] 430px [container] 710px auto;
+        gap: 0 30px;
+        grid-template-columns: auto [aside] 430px [container] 680px auto;
     }
 
     header,
@@ -503,7 +509,8 @@ footer {
         header:has(aside),
         main:has(aside),
         footer:has(aside) {
-            grid-template-columns: auto [aside] 430px [container] 710px auto;
+            gap: 0 30px;
+            grid-template-columns: auto [aside] 430px [container] 680px auto;
         }
 }
 
@@ -523,7 +530,8 @@ footer {
         header:has(aside),
         main:has(aside),
         footer:has(aside) {
-            grid-template-columns: auto [aside] 495px [container] 825px auto;
+            gap: 0 30px;
+            grid-template-columns: auto [aside] 495px [container] 795px auto;
         }
 }
 

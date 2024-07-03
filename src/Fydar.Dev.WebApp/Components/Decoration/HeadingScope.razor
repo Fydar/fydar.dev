@@ -1,0 +1,10 @@
+<CascadingValue Value="@HeadingRegister">
+    @ChildContent
+</CascadingValue>
+
+@code {
+    public HeadingRegister HeadingRegister { get; } = new();
+
+    [Parameter, EditorRequired]
+    public RenderFragment? ChildContent { get; set; }
+}

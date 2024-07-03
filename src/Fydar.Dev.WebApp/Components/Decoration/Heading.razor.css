@@ -1,0 +1,35 @@
+
+.heading-wrapper {
+    display: inline-block;
+    width: 100%;
+}
+
+.heading-anchor:before {
+    content: '';
+    display: block;
+    position: relative;
+    width: 0;
+    height: 5em;
+    margin-top: -5em;
+    pointer-events: none;
+}
+
+.heading-anchor {
+    position: relative;
+}
+
+.anchor-tag {
+    position: absolute;
+    left: -1.5em;
+    text-decoration: none;
+    width: 1.5em;
+    text-align: center;
+    color: #444;
+    font-weight: 500;
+    transition: color 0.25s ease-in-out;
+}
+
+    .anchor-tag:focus,
+    .anchor-tag:hover {
+        color: currentColor;
+    }
