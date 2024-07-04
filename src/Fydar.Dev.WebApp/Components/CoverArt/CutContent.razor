@@ -1,3 +1,10 @@
+<div class="row">
+
+    @if (Media != null)
+    {
+        @Media
+    }
+
 <div class="cutcontent">
 
     <div class="cutcontent-line">
@@ -18,7 +25,12 @@
 
 </div>
 
+</div>
+
 @code {
     [Parameter]
     public RenderFragment? ChildContent { get; set; }
+
+    [Parameter]
+    public RenderFragment? Media { get; set; }
 }
