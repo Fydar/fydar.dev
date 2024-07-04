@@ -41,55 +41,101 @@
     </div>
 </section>
 
-<aside>
+<HeadingScope>
+    <aside>
+        <section style="position: sticky; top: 64px;">
+            <div style="height: 5rem"></div>
+            <TableOfContents />
+        </section>
 
-</aside>
+    </aside>
 
-<section class="container">
+    <section class="container">
 
-    <p class="heading-prefix">Servers and infrastructure for</p>
-    <h2>Leaderboards</h2>
+        <Heading Level="2" Identifier="leaderboards">
+            <Prefix>Servers and infrastructure for</Prefix>
+            <Text>Leaderboards</Text>
+            <Content>
+                <p>I took the role of the <b>Feature Lead</b> to implement weekly leaderboard system. This involved me first provisioning cloud resources and implementing the server systems for leaderboards, and finally implementing a basic UI that can later be reskinned.</p>
 
-    <p>I took the role of the <b>Feature Lead</b> to implement weekly leaderboard system. This involved me first provisioning cloud resources and implementing the server systems for leaderboards, and finally implementing a basic UI that can later be reskinned.</p>
+                <p>To finish off the Leaderboards feature, I also made an in-browser tool to inspect the state of the Leaderboards and manually modify them using <b>ASP.NET Core</b>.</p>
 
-    <p>To finish off the Leaderboards feature, I also made an in-browser tool to inspect the state of the Leaderboards and manually modify them using <b>ASP.NET Core</b>.</p>
+                <figure class="figure-image">
+                    <picture>
+                        <img loading="lazy" src="/media/legostarwarsbattles/leagues.webp?v=1" alt="A screenshot from the game 'LEGO® Star Wars™ Battles' featuring a Leaderboard." />
+                    </picture>
+                    <figcaption>Screenshot from the <a href="https://www.gameuidatabase.com/gameData.php?id=1244">Game UI Database</a>.</figcaption>
+                </figure>
 
-    <figure class="figure-image">
-        <picture>
-            <img loading="lazy" src="/media/legostarwarsbattles/leaderboards.jpg?v=1" alt="A screenshot from the game 'LEGO® Star Wars™ Battles' featuring a Leaderboard." />
-        </picture>
-        <figcaption>Screenshot from the <a href="https://www.gameuidatabase.com/gameData.php?id=1244">Game UI Database</a>.</figcaption>
-    </figure>
+                <Callout>
+                    <Icon><SvgSprite Link="/icons.svg?v=1#icon-seal-check-fill" Alt="Check" /></Icon>
+                    <ChildContent>My leaderboards have stood the test of time and proven to be highly scalable to high volumes of players.</ChildContent>
+                </Callout>
+            </Content>
+        </Heading>
 
-    <Callout>
-        <Icon><SvgSprite Link="/icons.svg?v=1#icon-seal-check-fill" Alt="Check" /></Icon>
-        <ChildContent>My leaderboards have stood the test of time and proven to be highly scalable to high volumes of players.</ChildContent>
-    </Callout>
+        <Heading Level="2" Identifier="clans">
+            <Prefix>Servers and infrastructure for</Prefix>
+            <Text>Clans</Text>
+            <Content>
 
+                <p>I took the role of the <b>Feature Lead</b> to implement the Clans social system. Much like with the <b>Leaderboards</b>, I started by developing the server-side systems and finished with the client-side UI.</p>
 
-    <p class="heading-prefix">Servers and infrastructure for</p>
-    <h2>Clans</h2>
+                <CutContent>
+                    <ChildContent>
+                        This feature was cut from the game.
+                    </ChildContent>
+                </CutContent>
 
-    <p>I took the role of the <b>Feature Lead</b> to implement the Clans social system. Much like with the <b>Leaderboards</b>, I started by developing the server-side systems and finished with the client-side UI.</p>
+            </Content>
+        </Heading>
 
-    <CutContent>Unfortunately, this feature was cut from the game.</CutContent>
+        <Heading Level="2" Identifier="username-moderation">
+            <Prefix>Servers and infrastructure for</Prefix>
+            <Text>Username Moderation</Text>
+            <Content>
 
-    <!--
+                <p>I created our username moderation pipeline utilising a third-party neural moderation API provided by <i>Community Sift</i>.</p>
 
-    <h1>Fydar.Numerics</h1>
-    Game Programmer
-    May 2019 – September 2020 · 1 yr 5 mos
+                <p>To manage the username moderation, I created the <b>Name Audit Tool</b>, a web-facing dashboard that allowed developers to quickly and easily assess the status of username moderation.</p>
 
-    Full-Stack games developer in C# (.NET Core and Unity) on the mobile title ‘LEGO® Star Wars™ Battles’.
+            </Content>
+        </Heading>
 
-    I was personally responsible for the creation and release of the servers and databases for clans and leaderboards.
+        <Heading Level="2" Identifier="server-side-receipt-validation">
+            <Prefix>Servers and infrastructure for</Prefix>
+            <Text>Server-Side Receipt Validation</Text>
+            <Content>
 
+                <p>In order to protect our game from fraudulent receipts being sent to our server in order to get free rewards, receipts from the Google Play Store and the Apple App Store have to be validated by our servers to ensure the receipt is from a valid transaction.</p>
+                
+                <CutContent>
+                    <ChildContent>
+                        <p>This feature was cut from the game.</p>
+                        <p>When the game released on Apple Arcade, we removed all monetization features.</p>
+                    </ChildContent>
+                </CutContent>
 
-    Gameplay programmer in C# (Unity) on the mobile title ‘LEGO® Star Wars™ Battles’.
+            </Content>
+        </Heading>
 
-    When I first joined the team, I worked primarily on gameplay. I created the data delivery mechanisms, configuration system, unit AI. I also created helpful tools for saved game data management, profile management, and network debugging.
+        <Heading Level="2" Identifier="updates-and-data-delivery">
+            <Prefix>Servers and infrastructure for</Prefix>
+            <Text>Updates and Data Delivery</Text>
+            <Content>
 
-    -->
+                <p>I architected and implemented the infrastructure necessary to deliver update data to our users.</p>
 
+                <p>Because of the nature of updating a live service mobile game, the mechanism had to take care to allow players using different versions of the game to share cloud resources such as databases and servers.</p>
+            </Content>
+        </Heading>
 
-</section>
+        <!--
+            Save data management tools
+            profile management tools
+            network debugging tools
+            configuration system
+        -->
+
+    </section>
+</HeadingScope>

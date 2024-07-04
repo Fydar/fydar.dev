@@ -41,68 +41,41 @@
     </div>
 </section>
 
-<aside>
+<HeadingScope>
+    <aside>
+        <section style="position: sticky; top: 64px;">
+            <div style="height: 5rem"></div>
+            <TableOfContents />
+        </section>
 
-</aside>
+    </aside>
 
-<section class="container">
+    <section class="container">
 
-    <p class="heading-prefix">Programming a multiplayer</p>
-    <h2>Deterministic Simulation</h2>
+        <Heading Level="2" Identifier="deterministic-simulation">
+            <Prefix>Programming a multiplayer</Prefix>
+            <Text>Deterministic Simulation</Text>
+            <Content>
+                <p>Fighting games require very specialised multiplayer programming in order to reduce latency, as milliseconds count when it comes to player-verses-player combat. In order to achieve the lowest latency possible, we opted to use <a href="https://www.photonengine.com/quantum">Photon Quantum</a> for our game simulation.</p>
 
-    <p>Fighting games require very specialised multiplayer programming in order to reduce latency, as milliseconds count when it comes to player-verses-player combat. In order to achieve the lowest latency possible, we opted to use <a href="https://www.photonengine.com/quantum">Photon Quantum</a> for our game simulation.</p>
+                <p>I implemented gameplay features to enhance the combat experience in the game, such as <b>picking up and throwing props</b> and <b>physics interactions with props</b>.</p>
 
-    <p>I implemented gameplay features to enhance the combat experience in the game, such as <b>picking up and throwing props</b> and <b>physics interactions with props</b>.</p>
+                <p>Having the opportunity to work first-hand with <b>Photon Quantum</b>, a deterministic entity-component system, inspired me to work on my own implementation of an <b>ECS</b> that utilises the <b>latest C# language features</b>.</p>
+            </Content>
+        </Heading>
 
-    <p>Having the oppertunity to work first-hand with <b>Photon Quantum</b>, a deterministic entity-component system, inspired me to work on my own implementation of an <b>ECS</b> that utilises the <b>latest C# language features</b>.</p>
+        <Heading Level="2" Identifier="animation-state-machines">
+            <Prefix>Programming for</Prefix>
+            <Text>Animation State Machines</Text>
+            <Content>
+                <p>In order to achieve precise control over the character animations we programmed our own <b>Animation State Machine</b>.</p>
 
+                <Callout>
+                    <Icon><SvgSprite Link="/icons.svg?v=1#icon-seal-check-fill" Alt="Check" /></Icon>
+                    <ChildContent>By programming our own <b>Animation State Machine</b>, all our actions can have fast and precise visual feedback and reactions.</ChildContent>
+                </Callout>
+            </Content>
+        </Heading>
 
-    <div style="height: 32px"></div>
-
-    <Callout Type="primary">
-        <Icon><SvgSprite Link="/icons.svg?v=1#icon-seal-check-fill" Alt="Check" /></Icon>
-        <ChildContent>Working on this project inspired me to work on my personal projects. Some of them can be found below.</ChildContent>
-    </Callout>
-
-    <CardGrid>
-        <Card href="/portfolio/fydarentities">
-            <div class="card-container">
-                <div class="row">
-                    <SvgSprite class="card-keyicon" Link="/icons.svg?v=1#icon-fydarentities" />
-                    <div class="column">
-                        <h3 class="card-header"><span class="subtle">Fydar.</span>Entities</h3>
-                    </div>
-                </div>
-                <div class="row">
-                    <p class="card-description">Highly-optimized ECS with a native and intuitive C# API.</p>
-                </div>
-            </div>
-        </Card>
-        <Card href="/portfolio/fydarnumerics">
-            <div class="card-container">
-                <div class="row">
-                    <SvgSprite class="card-keyicon" Link="/icons.svg?v=1#icon-numbers" />
-                    <div class="column">
-                        <h3 class="card-header"><span class="subtle">Fydar.</span>Numerics</h3>
-                    </div>
-                </div>
-                <div class="row">
-                    <p class="card-description">Deterministic mathematics library built around a custom Fixed-point numberic type.</p>
-                </div>
-            </div>
-        </Card>
-        <Card href="/portfolio/fydargeometry">
-            <div class="card-container">
-                <div class="row">
-                    <SvgSprite class="card-keyicon" Link="/icons.svg?v=1#icon-fydargeometry" />
-                    <div class="column">
-                        <h3 class="card-header"><span class="subtle">Fydar.</span>Geometry</h3>
-                    </div>
-                </div>
-                <div class="row">
-                    <p class="card-description">Deterministic 2D and 3D geometry library utilising Fixed-point numerics.</p>
-                </div>
-            </div>
-        </Card>
-    </CardGrid>
-</section>
+    </section>
+</HeadingScope>
