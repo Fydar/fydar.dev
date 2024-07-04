@@ -9,7 +9,7 @@ namespace Fydar.Dev.Lambda.EmailToTicket.Tests;
 public class FunctionServiceTest
 {
 	[Fact]
-	public async Task TestSQSEventLambdaFunction()
+	public void TestSQSEventLambdaFunction()
 	{
 		var logger = new TestLambdaLogger();
 		var context = new TestLambdaContext

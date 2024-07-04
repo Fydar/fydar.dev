@@ -6,7 +6,7 @@ public class HeadingRegister : INotifyPropertyChanged
 {
 	public event PropertyChangedEventHandler PropertyChanged;
 
-	public HashSet<Heading> Headings { get; } = new();
+	public HashSet<Heading> Headings { get; } = [];
 
 	public void Register(Heading heading)
 	{
