@@ -1,0 +1,81 @@
+@layout DefaultLayout
+@page "/portfolio/mywebsite"
+
+<HeadContent>
+    @{
+        var openGraphModel = new OpenGraphModel()
+        {
+            Title = "My Website - Fydar",
+            Description = "Find out how I created this website.",
+            CanonicalUrl = "https://fydar.dev/portfolio/mywebsite",
+            Properties = [
+                new OpenGraphModelImage()
+                {
+                    Url = "https://fydar.dev/media/header.webp",
+                    Alt = "A portrait of Fydar in an anime art style."
+                }
+            ]
+        };
+    }
+    <OpenGraphComponent Model="@openGraphModel" />
+</HeadContent>
+
+<HeadingScope>
+    <aside>
+        <section style="position: sticky; top: 64px;">
+            <div style="height: 5rem"></div>
+            <TableOfContents />
+        </section>
+
+    </aside>
+
+    <section class="container">
+
+        <Heading Level="2" Identifier="deterministic-simulation">
+            <Prefix>HTML and CSS</Prefix>
+            <Text>Designing for Print</Text>
+            <Content>
+
+                <p>My <a href="/resume">Resume page</a> is designed to be printed using either the Chromium CLI or the in-browser print dialogue.</p>
+
+                <figure class="figure-image">
+                    <a href="/resume">
+                        <picture>
+                            <img loading="lazy" src="/media/mywebsite/resume-banner.webp?v=1" alt="Printed pages from my resume." />
+                        </picture>
+                    </a>
+                </figure>
+
+                <p><b>Why is this a useful skill to have?</b> Well, there are a ton of reasons why you might need to automate the creation of PDF files. One that I've encountered in my career is producing PDF reports for the purposes fulfilling <b>GDPR Subject Access</b> requests.</p>
+
+                <ul>
+                    <li>
+                        By using <b>CSS Media Queries</b> I can change the appearance of the web page depending on whether it's being printed or viewed on a screen.
+                    </li>
+                    <li>
+                        By using <b>HTML tables and CSS counters</b>, I can create custom headers and footers with page numberings which automatically populate themselves on every page being printed.
+                    </li>
+                </ul>
+
+                <p>Other use cases for such automated PDF creation may include <b>automated testing reports</b>, <b>automated documentation</b>, and <b>automated invoices</b>.</p>
+
+            </Content>
+        </Heading>
+
+        <Heading Level="2" Identifier="animation-state-machines">
+            <Prefix>Site Optimizations and</Prefix>
+            <Text>PageSpeed Insights</Text>
+            <Content>
+                <p>Using <b>PageSpeed Insights</b> allowed me to identify issues with my website, and after much iteration I reached 100% on all 4 statistics.</p>
+
+                <PageSpeedInsights />
+
+                <Callout>
+                    <Icon><SvgSprite Link="/icons.svg?v=1#icon-seal-check-fill" Alt="Check" /></Icon>
+                    <ChildContent>By programming our own <b>Animation State Machine</b>, all our actions can have fast and precise visual feedback and reactions.</ChildContent>
+                </Callout>
+            </Content>
+        </Heading>
+
+    </section>
+</HeadingScope>
