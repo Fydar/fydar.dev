@@ -1,137 +1,120 @@
 
-.hero {
+.portrait {
+    grid-column: aside / span 1;
+    height: 46rem;
+    overflow: hidden;
     padding-top: 8rem;
-    display: grid;
-    justify-content: center;
-    grid-template-columns: 2fr 3fr;
-    grid-template-rows: auto auto;
+    justify-self: center;
+}
+
+    .portrait img {
+        width: 100%;
+        max-width: 490px;
+    }
+
+.nameplate {
+    grid-column: container / span 1;
+    align-self: end;
+    letter-spacing: 0.625px;
+    font-size: 1.2rem;
+    padding-top: 8rem;
     margin-bottom: 2rem;
 }
 
-    .hero .portrait {
-        grid-row: 1 / 1;
-        grid-column: 1 / 2;
-        height: 46rem;
-        overflow: hidden;
+    .nameplate .award-row {
+        gap: 3.8rem;
+        margin-top: 1rem;
+        margin-bottom: 2.5rem;
     }
 
-        .hero .portrait img {
-            width: 100%;
-        }
-
-    .hero .nameplate {
-        grid-row: 1 / 1;
-        grid-column: 2 / 3;
-        align-self: end;
-        letter-spacing: 0.625px;
-        font-size: 1.2rem;
-        margin-left: 4rem;
+    .nameplate .award {
+        position: relative;
+        padding: 0 30px;
+        min-height: 96px;
+        display: flex;
+        flex-direction: column;
     }
 
-        .hero .nameplate .award-row {
-            gap: 3.8rem;
-            margin-top: 1rem;
-            margin-bottom: 2.5rem;
+        .nameplate .award:nth-of-type(2) {
+            animation-delay: 0.4s;
         }
 
-        .hero .nameplate .award {
-            position: relative;
-            padding: 0 30px;
-            min-height: 96px;
+        .nameplate .award .award-value {
+            min-width: 118px;
+            height: 96px;
+            font-size: 3.5rem;
+            color: #ffffff;
             display: flex;
-            flex-direction: column;
+            width: 100%;
+            align-items: center;
+            place-content: center;
         }
 
-            .hero .nameplate .award:nth-of-type(2) {
-                animation-delay: 0.4s;
-            }
-
-            .hero .nameplate .award .award-value {
-                min-width: 118px;
+            .nameplate .award .award-value ::deep .laurel-left,
+            .nameplate .award .award-value ::deep .laurel-right {
+                content: '';
+                display: block;
+                position: absolute;
+                width: 48px;
                 height: 96px;
-                font-size: 3.5rem;
-                color: #ffffff;
-                display: flex;
-                width: 100%;
-                align-items: center;
-                place-content: center;
+                background-size: 100%;
+                top: 0;
             }
 
-                .hero .nameplate .award .award-value ::deep .laurel-left,
-                .hero .nameplate .award .award-value ::deep .laurel-right {
-                    content: '';
-                    display: block;
-                    position: absolute;
-                    width: 48px;
-                    height: 96px;
-                    background-size: 100%;
-                    top: 0;
-                }
-
-                .hero .nameplate .award .award-value ::deep .laurel-left {
-                    left: 0;
-                }
-
-                .hero .nameplate .award .award-value ::deep .laurel-right {
-                    right: 0;
-                    transform: scaleX(-1);
-                }
-
-            .hero .nameplate .award .award-name {
-                padding-top: 6px;
-                width: 100%;
-                font-size: 1.2rem;
-                text-align: center;
-                white-space: nowrap;
-                letter-spacing: 1px;
+            .nameplate .award .award-value ::deep .laurel-left {
+                left: 0;
             }
 
-        .hero .nameplate .phonetics {
-            display: inline-block;
-            margin-top: 24px;
-            padding-top: 4px;
-            padding-bottom: 4px;
-            font-size: 32px;
-            letter-spacing: 20px;
-            color: #ffffff60;
-            border-bottom: 2px dotted #ffffff10;
-            cursor: pointer;
+            .nameplate .award .award-value ::deep .laurel-right {
+                right: 0;
+                transform: scaleX(-1);
+            }
+
+        .nameplate .award .award-name {
+            padding-top: 6px;
+            width: 100%;
+            font-size: 1.2rem;
+            text-align: center;
+            white-space: nowrap;
+            letter-spacing: 1px;
+        }
+
+    .nameplate .phonetics {
+        display: inline-block;
+        margin-top: 24px;
+        padding-top: 4px;
+        padding-bottom: 4px;
+        font-size: 32px;
+        letter-spacing: 20px;
+        color: #ffffff60;
+        border-bottom: 2px dotted #ffffff10;
+        cursor: pointer;
+        font-weight: 400;
+    }
+
+    .nameplate h1 {
+        font-size: 98px;
+        letter-spacing: 20px;
+        margin: 0;
+        padding-top: 4px;
+        color: white;
+    }
+
+    .nameplate p {
+        text-align: left;
+    }
+
+    .nameplate ul {
+        padding-left: 32px;
+    }
+
+        .nameplate ul li {
+            line-height: 1.5;
+            margin: 4px 0;
             font-weight: 400;
         }
 
-        .hero .nameplate h1 {
-            font-size: 98px;
-            letter-spacing: 20px;
-            margin: 0;
-            padding-top: 4px;
-            color: white;
-        }
-
-        .hero .nameplate p {
-            text-align: left;
-        }
-
-        .hero .nameplate ul {
-            padding-left: 32px;
-        }
-
-            .hero .nameplate ul li {
-                line-height: 1.5;
-                margin: 4px 0;
-                font-weight: 400;
-            }
-
-        .hero .nameplate .row-download {
-            margin-top: 1.5rem;
-            margin-bottom: 0.5rem;
-        }
-
-@media screen and (max-width: 992px) {
-    .hero {
-        grid-template-columns: 1fr;
+    .nameplate .row-download {
+        margin-top: 1.5rem;
+        margin-bottom: 0.5rem;
     }
-
-        .hero .nameplate {
-            margin-left: 0;
-        }
-}

@@ -707,8 +707,8 @@ header menu {
     ::deep .container > .cover-grid,
     ::deep .container > .cover-grid.cover-grid-sm {
         grid-template-columns: 1fr 1fr;
-        gap: 24px 24px;
-        margin: 24px 0;
+        gap: 10px 10px;
+        margin: 10px 0;
     }
 
     ::deep .container > .card-grid {
@@ -742,14 +742,14 @@ header menu {
     ::deep .container > .cover-grid,
     ::deep .container > .cover-grid.cover-grid-sm {
         grid-template-columns: 1fr 1fr 1fr;
-        gap: 32px 32px;
-        margin: 32px 0;
+        gap: 10px 10px;
+        margin: 10px 0;
     }
 
     ::deep .container > .card-grid {
         grid-template-columns: 1fr;
-        gap: 2rem 2rem;
-        margin: 2rem 0;
+        gap: 10px 10px;
+        margin: 10px 0;
     }
 
         ::deep .container > .card-grid.card-grid-md {
@@ -771,8 +771,8 @@ header menu {
     ::deep .container > .cover-grid,
     ::deep .container > .cover-grid.cover-grid-sm {
         grid-template-columns: 1fr 1fr 1fr;
-        gap: 24px 24px;
-        margin: 24px 0;
+        gap: 10px 10px;
+        margin: 10px 0;
     }
 
     ::deep .container > .card-grid.card-grid-md {
@@ -793,13 +793,13 @@ header menu {
 
     ::deep .container > .cover-grid,
     ::deep .container > .cover-grid.cover-grid-sm {
-        gap: 28px 28px;
-        margin: 28px 0;
+        gap: 10px 10px;
+        margin: 10px 0;
     }
 
     ::deep .container > .card-grid {
-        gap: 28px 28px;
-        margin: 28px 0;
+        gap: 10px 10px;
+        margin: 10px 0;
     }
 
         ::deep .container > .card-grid.card-grid-md {
@@ -820,13 +820,13 @@ header menu {
 
     ::deep .container > .cover-grid,
     ::deep .container > .cover-grid.cover-grid-sm {
-        gap: 40px 40px;
-        margin: 40px 0;
+        gap: 10px;
+        margin: 10px 0;
     }
 
     ::deep .container > .card-grid {
-        gap: 40px 40px;
-        margin: 40px 0;
+        gap: 10px 10px;
+        margin: 10px 0;
     }
 
         ::deep .container > .card-grid.card-grid-md {
