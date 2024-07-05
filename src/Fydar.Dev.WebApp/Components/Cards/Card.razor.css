@@ -6,11 +6,14 @@
     place-content: flex-end;
     flex-direction: column;
     text-decoration: none;
-    border-radius: 8px;
     padding: 1.75px;
     transition: box-shadow 0.15s;
     --pointer-relative: -10000px -10000px;
     min-width: 0;
+    --border-top-left-radius: 8px;
+    --border-top-right-radius: 8px;
+    --border-bottom-left-radius: 8px;
+    --border-bottom-right-radius: 8px;
 }
     /* Containers */
     .card ::deep.card-container {
@@ -100,7 +103,10 @@
         overflow: hidden;
         opacity: 0.2;
         filter: grayscale(1);
-        border-radius: 8.75px;
+        border-top-left-radius: calc(var(--border-top-left-radius) + 0.75px);
+        border-top-right-radius: calc(var(--border-top-right-radius) + 0.75px);
+        border-bottom-left-radius: calc(var(--border-bottom-left-radius) + 0.75px);
+        border-bottom-right-radius: calc(var(--border-bottom-right-radius) + 0.75px);
         object-fit: cover;
         aspect-ratio: 3/2;
         z-index: -1;
@@ -110,7 +116,6 @@
     .card .card-outerglow {
         --glow-start: #e2b38430;
         --glow-end: #e2b38400;
-        --glow-rounded-radius: 25px;
         --glow-distance: 40px;
     }
 
@@ -130,50 +135,50 @@
         }
 
         /* Corners */
-        .card .card-outerglow .card-outerglow-tl,
-        .card .card-outerglow .card-outerglow-tr,
-        .card .card-outerglow .card-outerglow-bl,
-        .card .card-outerglow .card-outerglow-br {
-            width: calc(var(--glow-distance) + var(--glow-rounded-radius));
-            height: calc(var(--glow-distance) + var(--glow-rounded-radius));
-        }
-
         .card .card-outerglow .card-outerglow-tl {
+            width: calc(var(--glow-distance) + var(--border-top-left-radius));
+            height: calc(var(--glow-distance) + var(--border-top-left-radius));
             top: calc(var(--glow-distance) * -1);
             left: calc(var(--glow-distance) * -1);
-            mask: radial-gradient(circle at bottom right, transparent var(--glow-rounded-radius), white var(--glow-rounded-radius), #5555 calc(var(--glow-rounded-radius) + (var(--glow-distance) * 0.5)), transparent calc(var(--glow-rounded-radius) + var(--glow-distance)));
+            mask: radial-gradient(circle at bottom right, transparent var(--border-top-left-radius), white var(--border-top-left-radius), #5555 calc(var(--border-top-left-radius) + (var(--glow-distance) * 0.5)), transparent calc(var(--border-top-left-radius) + var(--glow-distance)));
         }
 
         .card .card-outerglow .card-outerglow-tr {
+            width: calc(var(--glow-distance) + var(--border-top-right-radius));
+            height: calc(var(--glow-distance) + var(--border-top-right-radius));
             top: calc(var(--glow-distance) * -1);
             right: calc(var(--glow-distance) * -1);
-            mask: radial-gradient(circle at bottom left, transparent var(--glow-rounded-radius), white var(--glow-rounded-radius), #5555 calc(var(--glow-rounded-radius) + (var(--glow-distance) * 0.5)), transparent calc(var(--glow-rounded-radius) + var(--glow-distance)));
+            mask: radial-gradient(circle at bottom left, transparent var(--border-top-right-radius), white var(--border-top-right-radius), #5555 calc(var(--border-top-right-radius) + (var(--glow-distance) * 0.5)), transparent calc(var(--border-top-right-radius) + var(--glow-distance)));
         }
 
         .card .card-outerglow .card-outerglow-bl {
+            width: calc(var(--glow-distance) + var(--border-bottom-left-radius));
+            height: calc(var(--glow-distance) + var(--border-bottom-left-radius));
             bottom: calc(var(--glow-distance) * -1);
             left: calc(var(--glow-distance) * -1);
-            mask: radial-gradient(circle at top right, transparent var(--glow-rounded-radius), white var(--glow-rounded-radius), #5555 calc(var(--glow-rounded-radius) + (var(--glow-distance) * 0.5)), transparent calc(var(--glow-rounded-radius) + var(--glow-distance)));
+            mask: radial-gradient(circle at top right, transparent var(--border-bottom-left-radius), white var(--border-bottom-left-radius), #5555 calc(var(--border-bottom-left-radius) + (var(--glow-distance) * 0.5)), transparent calc(var(--border-bottom-left-radius) + var(--glow-distance)));
         }
 
         .card .card-outerglow .card-outerglow-br {
+            width: calc(var(--glow-distance) + var(--border-bottom-right-radius));
+            height: calc(var(--glow-distance) + var(--border-bottom-right-radius));
             bottom: calc(var(--glow-distance) * -1);
             right: calc(var(--glow-distance) * -1);
-            mask: radial-gradient(circle at top left, transparent var(--glow-rounded-radius), white var(--glow-rounded-radius), #5555 calc(var(--glow-rounded-radius) + (var(--glow-distance) * 0.5)), transparent calc(var(--glow-rounded-radius) + var(--glow-distance)));
+            mask: radial-gradient(circle at top left, transparent var(--border-bottom-right-radius), white var(--border-bottom-right-radius), #5555 calc(var(--border-bottom-right-radius) + (var(--glow-distance) * 0.5)), transparent calc(var(--border-bottom-right-radius) + var(--glow-distance)));
         }
 
-        /* Straight Edges */
+        /* Edges */
         .card .card-outerglow .card-outerglow-ml {
-            top: var(--glow-rounded-radius);
-            bottom: var(--glow-rounded-radius);
+            top: var(--border-top-left-radius);
+            bottom: var(--border-bottom-left-radius);
             left: calc(var(--glow-distance) * -1);
             width: var(--glow-distance);
             mask: linear-gradient(to left, white, #5555 50%, transparent);
         }
 
         .card .card-outerglow .card-outerglow-mr {
-            top: var(--glow-rounded-radius);
-            bottom: var(--glow-rounded-radius);
+            top: var(--border-top-right-radius);
+            bottom: var(--border-bottom-right-radius);
             right: calc(var(--glow-distance) * -1);
             width: var(--glow-distance);
             mask: linear-gradient(to right, white, #5555 50%, transparent);
@@ -181,16 +186,16 @@
 
         .card .card-outerglow .card-outerglow-t {
             top: calc(var(--glow-distance) * -1);
-            left: var(--glow-rounded-radius);
-            right: var(--glow-rounded-radius);
+            left: var(--border-top-left-radius);
+            right: var(--border-top-right-radius);
             height: var(--glow-distance);
             mask: linear-gradient(to top, white, #5555 50%, transparent);
         }
 
         .card .card-outerglow .card-outerglow-b {
             bottom: calc(var(--glow-distance) * -1);
-            left: var(--glow-rounded-radius);
-            right: var(--glow-rounded-radius);
+            left: var(--border-bottom-left-radius);
+            right: var(--border-bottom-right-radius);
             height: var(--glow-distance);
             mask: linear-gradient(to bottom, white, #5555 50%, transparent);
         }
@@ -211,7 +216,10 @@
 
     .card .card-border-subtle {
         transition: opacity 0.15s ease-in-out;
-        border-radius: 8px;
+        border-top-left-radius: var(--border-top-left-radius);
+        border-top-right-radius: var(--border-top-right-radius);
+        border-bottom-left-radius: var(--border-bottom-left-radius);
+        border-bottom-right-radius: var(--border-bottom-right-radius);
         border: 2px solid #ffffff14;
     }
 
@@ -227,14 +235,20 @@
         transition: opacity 0.15s ease-in-out;
         background: radial-gradient(250px 250px at var(--pointer-fixed), #e2b384 0, transparent 100%);
         background-attachment: fixed;
-        border-radius: 8px;
+        border-top-left-radius: var(--border-top-left-radius);
+        border-top-right-radius: var(--border-top-right-radius);
+        border-bottom-left-radius: var(--border-bottom-left-radius);
+        border-bottom-right-radius: var(--border-bottom-right-radius);
     }
 
     .card .card-border-primary {
         transition: opacity 0.15s ease-in-out;
         background: radial-gradient(350px 350px at var(--pointer-fixed), #ffffff 0, #e2b384 40%, #3e3934 100%);
         background-attachment: fixed;
-        border-radius: 8px;
+        border-top-left-radius: var(--border-top-left-radius);
+        border-top-right-radius: var(--border-top-right-radius);
+        border-bottom-left-radius: var(--border-bottom-left-radius);
+        border-bottom-right-radius: var(--border-bottom-right-radius);
     }
 
     .card .card-hover {
