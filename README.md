@@ -9,15 +9,8 @@ An **[ASP.NET Core](https://dotnet.microsoft.com/apps/aspnet)** application host
 
 [![Home Dark-Theme](./img/header.webp)](https://fydar.dev/)
 
-### 📦 LettuceEncrypt
+## PageSpeed Insights
 
-This project utilises [LettuceEncrypt](https://github.com/natemcmaster/LettuceEncrypt) to support SSL certicifates and HTTPS.
+Using **PageSpeed Insights** allowed me to identify issues with my website, and after much iteration I reached 100% on all 4 statistics.
 
-> <sub>[![LettuceEncrypt](https://img.shields.io/badge/📦%20LettuceEncrypt-333333.svg)](https://github.com/natemcmaster/LettuceEncrypt)</sub>\
-> <sup>Open source library for HTTPS.</sup>
-
-## License
-
-[![Creative Commons License](https://i.creativecommons.org/l/by-nc/4.0/88x31.png)](http://creativecommons.org/licenses/by-nc/4.0/)
-
-This work is licensed under a [Creative Commons Attribution-NonCommercial 4.0 International License](http://creativecommons.org/licenses/by-nc/4.0/).
+[![PageSpeed Insights for Fydar.dev showing 100% on all categories](./img/pagespeed-insights.svg)](https://pagespeed.web.dev/analysis/https-fydar-dev/aca0rm4hj2?form_factor=desktop)
