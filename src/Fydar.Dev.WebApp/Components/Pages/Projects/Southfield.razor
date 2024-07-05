@@ -64,19 +64,13 @@
                 <Content>
                     <p>Radient is a <b>gradient editor</b> I created for Unity. I created it to release as an asset on the <a href="https://assetstore.unity.com/publishers/13236" target="_blank">Unity Asset Store</a> after watching the <a href="https://youtu.be/YZWKdw03Gls?t=853" target="_blank">Unite Europe 2017 talk detailing the VFX behind the game 'Spellsouls'</a>.</p>
 
-                    <p>Something that the original version of Radient had (and which unfortunately didn't get implemented in Southfield) was alternate blend spaces to improve colour interpolation.</p>
-
-                    <picture class="media">
-                        <img src="/media/radient/gradient-editor.png?v=1" alt="The gradient editor for Radient featuring a gradient blending in the CIEXYZ colour space." loading="lazy" />
-                    </picture>
-
                     <p>I created an updated version of Radient for <b>Southfield</b> that used vertical gradients (instead of the horizontal ones I was previously using) which inspired me to take up the project under the name <b>Procedural Assets</b> in my spare time - and good thing I did, because it turns out that the version I created for <b>Radical Forge</b> started having rare errors in the build.</p>
 
-                    <p>This was an incredible opportunity for me to explore new technologies for creating procedurally generated assets for a Unity project.</p>
-
-                    <video class="parallax-layer" style="--parallax-multiplier: 0.5" controls muted loop>
+                    <video controls muted loop>
                         <source src="/media/radient/model-demo.mp4?v=1" type='video/mp4'>
                     </video>
+
+                    <p>This was an incredible opportunity for me to explore new technologies for creating procedurally generated assets for a Unity project.</p>
 
                     <Callout>
                         <Icon><SvgSprite Link="/icons.svg?v=1#icon-seal-check-fill" Alt="Check" /></Icon>
@@ -86,6 +80,36 @@
                     <Callout>
                         <Icon><SvgSprite Link="/icons.svg?v=1#icon-seal-check-fill" Alt="Check" /></Icon>
                         <ChildContent>My tooling enabled artists to be able to freely adjust gradients <b>within the editor</b>.</ChildContent>
+                    </Callout>
+
+                    <p>Something that the original version of Radient had (and which unfortunately didn't get implemented in Southfield) was alternate blend spaces to improve colour interpolation.</p>
+
+                    <picture class="media">
+                        <img src="/media/radient/gradient-editor.png?v=1" alt="The gradient editor for Radient featuring a gradient blending in the CIEXYZ colour space." loading="lazy" />
+                    </picture>
+                </Content>
+            </Heading>
+
+            <Heading Level="2" Identifier="icon-generation">
+                <Prefix>Tooling for</Prefix>
+                <Text>Icon Generation</Text>
+                <Content>
+                    <p>I created a tool called <b>Holodrone</b> to automate the process of generating icons. I originally created this tool for a personal project, so when I ported the tool to <b>Southfield</b> I added <b>HDRP</b> support.</p>
+
+                    <p>To better support the <b>Southfield</b> art style, I created a custom post-processing stack along with a signed-distance field algorithm to add outlines and shadows to the generated icons. This was generated on the <b>GPU</b> using a shader.</p>
+
+                    <video controls muted loop>
+                        <source src="/media/holodrone/gun-demonstration.mp4?v=1" type='video/mp4'>
+                    </video>
+
+                    <Callout>
+                        <Icon><SvgSprite Link="/icons.svg?v=1#icon-seal-check-fill" Alt="Check" /></Icon>
+                        <ChildContent>My tooling preserved the environment used to render the icons so adjustments can be made in the future.</ChildContent>
+                    </Callout>
+
+                    <Callout>
+                        <Icon><SvgSprite Link="/icons.svg?v=1#icon-seal-check-fill" Alt="Check" /></Icon>
+                        <ChildContent>My tooling allowed icons to be updated in bulk (for example, adding a shadow to all icons).</ChildContent>
                     </Callout>
                 </Content>
             </Heading>
@@ -101,30 +125,6 @@
                     <Callout>
                         <Icon><SvgSprite Link="/icons.svg?v=1#icon-seal-check-fill" Alt="Check" /></Icon>
                         <ChildContent>My tooling <b>completely automated</b> the creation and maintainence of texture atlases.</ChildContent>
-                    </Callout>
-                </Content>
-            </Heading>
-
-            <Heading Level="2" Identifier="icon-generation">
-                <Prefix>Tooling for</Prefix>
-                <Text>Icon Generation</Text>
-                <Content>
-                    <p>I created a tool called <b>Holodrone</b> to automate the process of generating icons. I originally created this tool for a personal project, so when I ported the tool to <b>Southfield</b> I added <b>HDRP</b> support.</p>
-
-                    <p>To better support the <b>Southfield</b> art style, I created a custom post-processing stack along with a signed-distance field algorithm to add outlines and shadows to the generated icons. This was generated on the <b>GPU</b> using a shader.</p>
-
-                    <video class="parallax-layer" style="--parallax-multiplier: 0.5" controls muted loop>
-                        <source src="/media/holodrone/gun-demonstration.mp4?v=1" type='video/mp4'>
-                    </video>
-
-                    <Callout>
-                        <Icon><SvgSprite Link="/icons.svg?v=1#icon-seal-check-fill" Alt="Check" /></Icon>
-                        <ChildContent>My tooling preserved the environment used to render the icons so adjustments can be made in the future.</ChildContent>
-                    </Callout>
-
-                    <Callout>
-                        <Icon><SvgSprite Link="/icons.svg?v=1#icon-seal-check-fill" Alt="Check" /></Icon>
-                        <ChildContent>My tooling allowed icons to be updated in bulk (for example, adding a shadow to all icons).</ChildContent>
                     </Callout>
                 </Content>
             </Heading>

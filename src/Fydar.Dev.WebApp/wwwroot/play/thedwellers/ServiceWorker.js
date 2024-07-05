@@ -1,4 +1,4 @@
-const cacheName = "Fydar-Mini Miner-WebGL";
+const cacheName = "Fydar-The Dwellers-WebGL";
 const contentToCache = [
     "./",
     "Build/WebGL.loader.js",

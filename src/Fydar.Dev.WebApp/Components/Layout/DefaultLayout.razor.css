@@ -110,7 +110,8 @@ header {
         border-bottom: 1px solid #ffffff15;
         position: absolute;
         bottom: 0;
-        width: 100%;
+        left: 0;
+        right: 0;
     }
 
     header .row {
@@ -298,14 +299,10 @@ main:has(section.section-feature:last-child) + footer {
 }
 
 
-@media print {
-    header,
-    footer {
-        display: none;
-    }
+
+::deep video {
+    width: 100%;
 }
-
-
 
 
 
@@ -354,7 +351,7 @@ main,
 footer {
     width: 100%;
     display: grid;
-    grid-template-columns: auto [container] 1fr auto;
+    grid-template-columns: auto [aside container] 1fr auto;
     box-sizing: border-box;
 }
 
@@ -843,4 +840,11 @@ header menu {
         ::deep .container > .card-grid.card-grid-xs {
             grid-template-columns: 1fr 1fr 1fr 1fr;
         }
+}
+
+@media print {
+    header,
+    footer {
+        display: none;
+    }
 }

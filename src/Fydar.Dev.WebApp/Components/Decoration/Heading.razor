@@ -51,7 +51,12 @@
 
     protected override void OnParametersSet()
     {
-        HeadingRegister.Register(this);
+        HeadingRegister.Register(new HeadingModel()
+        {
+            Identifier = Identifier,
+            Text = Text,
+            Depth = Level
+        });
 
         base.OnParametersSet();
     }

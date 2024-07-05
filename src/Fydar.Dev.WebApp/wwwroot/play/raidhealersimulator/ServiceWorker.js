@@ -1,4 +1,4 @@
-const cacheName = "Fydar-So Far From Home-WebGL";
+const cacheName = "Fydar-Raid Healer Simulator-WebGL";
 const contentToCache = [
     "./",
     "Build/WebGL.loader.js",

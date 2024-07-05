@@ -6,13 +6,13 @@ public class HeadingRegister : INotifyPropertyChanged
 {
 	public event PropertyChangedEventHandler PropertyChanged;
 
-	public HashSet<Heading> Headings { get; } = [];
+	public HashSet<HeadingModel> Headings { get; } = [];
 
-	public void Register(Heading heading)
+	public void Register(HeadingModel heading)
 	{
 		if (Headings.Add(heading))
 		{
-			PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(Heading)));
+			PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(Headings)));
 		}
 	}
 }
