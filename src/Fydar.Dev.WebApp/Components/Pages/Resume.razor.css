@@ -23,6 +23,7 @@
         text-align: justify;
         font-family: Calibri, sans-serif;
         font-size: 11pt;
+        filter: brightness(0.9625);
     }
 
     .resume h1 {
