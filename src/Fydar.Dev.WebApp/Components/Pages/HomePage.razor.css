@@ -1,10 +1,30 @@
 
+.bg {
+    grid-column: 1 / -1;
+    grid-row: 1 / 1;
+    transition: opacity 0.15s ease-in-out;
+    pointer-events: none;
+    background-image: radial-gradient(#665847 2px, transparent 2.82800px);
+    /*
+        background: linear-gradient(#e2b384 1px, transparent 1px) 0 -10px, linear-gradient(90deg, #e2b384 1px, transparent 1px) -10px 0;
+        */
+    background-size: 40px 40px;
+    /*mask: radial-gradient(256px 256px at var(--pointer-fixed), black 40%, transparent 500%);
+    -webkit-mask: radial-gradient(256px 256px at var(--pointer-fixed), black 40%, transparent 500%);*/
+}
+
+.feature-signature {
+    width: 90%;
+}
+
+
 .portrait {
     grid-column: aside / span 1;
-    height: 46rem;
     overflow: hidden;
     padding-top: 8rem;
     justify-self: center;
+    align-self: end;
+    margin-bottom: 30px;
 }
 
     .portrait img {
@@ -81,40 +101,145 @@
 
     .nameplate .phonetics {
         display: inline-block;
+        position: relative;
         margin-top: 24px;
+        margin-bottom: 16px;
+        margin-right: -20px;
         padding-top: 4px;
-        padding-bottom: 4px;
         font-size: 32px;
         letter-spacing: 20px;
         color: #ffffff60;
-        border-bottom: 2px dotted #ffffff10;
         cursor: pointer;
         font-weight: 400;
     }
 
-    .nameplate h1 {
-        font-size: 98px;
-        letter-spacing: 20px;
-        margin: 0;
-        padding-top: 4px;
-        color: white;
-    }
-
-    .nameplate p {
-        text-align: left;
-    }
-
-    .nameplate ul {
-        padding-left: 32px;
-    }
-
-        .nameplate ul li {
-            line-height: 1.5;
-            margin: 4px 0;
-            font-weight: 400;
+        .nameplate .phonetics:before,
+        .nameplate .phonetics:after {
+            content: "";
+            height: 0;
+            left: 0;
+            position: absolute;
+            z-index: -1;
+            bottom: 2px;
         }
 
-    .nameplate .row-download {
-        margin-top: 1.5rem;
-        margin-bottom: 0.5rem;
+        .nameplate .phonetics:before {
+            right: 20px;
+            border-bottom: 2px solid #ffffff20;
+        }
+
+        .nameplate .phonetics:after {
+            border-bottom: 2px solid #e2b384;
+        }
+
+        .nameplate .phonetics.readanimation:after {
+            animation: readanimation-fydar 1s linear;
+        }
+
+        .nameplate .phonetics.readanimation .syllable1 {
+            animation: readanimation-syllable1 1s linear;
+        }
+
+        .nameplate .phonetics.readanimation .syllable2 {
+            animation: readanimation-syllable2 1s linear;
+        }
+
+@keyframes readanimation-fydar {
+    0% {
+        right: calc(100% - 20px);
+        opacity: 0;
     }
+
+    5% {
+        right: calc(100% - 20px);
+        opacity: 1;
+    }
+
+    25% {
+        right: 52.5%;
+    }
+
+    50% {
+        right: 52.5%;
+    }
+
+    65% {
+        right: 20px;
+    }
+
+    75% {
+        opacity: 1;
+    }
+
+    90% {
+        right: 20px;
+    }
+
+    100% {
+        right: 20px;
+        opacity: 0;
+    }
+}
+
+@keyframes readanimation-syllable1 {
+    0% {
+        color: #ffffff60;
+    }
+
+    5% {
+        color: #fffffff0;
+    }
+
+    25% {
+        color: #fffffff0;
+    }
+
+    50% {
+        color: #ffffff60;
+    }
+}
+
+@keyframes readanimation-syllable2 {
+    0% {
+        color: #ffffff60;
+    }
+
+    50% {
+        color: #ffffff60;
+    }
+
+    55% {
+        color: #fffffff0;
+    }
+
+    100% {
+        color: #ffffff60;
+    }
+}
+
+.nameplate h1 {
+    font-size: 98px;
+    letter-spacing: 20px;
+    margin: 0;
+    padding-top: 4px;
+    color: white;
+}
+
+.nameplate p {
+    text-align: left;
+}
+
+.nameplate ul {
+    padding-left: 32px;
+}
+
+    .nameplate ul li {
+        line-height: 1.5;
+        margin: 4px 0;
+        font-weight: 400;
+    }
+
+.nameplate .row-download {
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+}

@@ -41,9 +41,25 @@
         <source src="/media/pronunciation-fydar.ogg" type="audio/ogg">
     </audio>
 
-    <div class="phonetics" onclick="document.getElementById('pronunciation-fydar').play()">/&#952;a&#618;d&#593;r/</div>
+    <div class="phonetics" id="pronunciation-phonetics">/<span class="syllable1">&#952;a&#618;</span><span class="syllable2">d&#593;r</span>/</div>
 
-    <h1>FYDAR</h1>
+    <img class="feature-signature" width="300" src="/media/Fydar_white_low-res.png" style="display: block;" />
+
+    <script>
+        const audio = document.getElementById('pronunciation-fydar');
+        const text = document.getElementById('pronunciation-phonetics');
+
+        text.onclick = () => {
+            audio.play();
+        };
+        audio.onplay = () => {
+            text.classList.remove('readanimation');
+            text.classList.add('readanimation');
+        };
+        audio.onended = function() {
+            text.classList.remove('readanimation');
+        };
+    </script>
 
     <div class="row award-row">
         <div class="award">
