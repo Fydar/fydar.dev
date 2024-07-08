@@ -3,8 +3,8 @@
 .cover-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-gap: 10px 10px;
-    margin: 10px 0;
+    grid-gap: 16px 16px;
+    margin: 16px 0;
 }
 
     .cover-grid.cover-grid-md {

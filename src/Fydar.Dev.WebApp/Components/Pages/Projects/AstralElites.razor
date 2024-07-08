@@ -69,6 +69,29 @@
     <section class="container">
 
         <Heading Level="2" Identifier="world">
+            <Prefix>Optimizations for</Prefix>
+            <Text>Autoplay in Background</Text>
+            <Content>
+                <p>This page of my website features the game playing by itself in the background.</p>
+
+                <h3>Configuring the game</h3>
+                <p>To allow the game to be played in the background, I needed to create an alternate game controller that would manage the auto-playing of the game. This alternate game controller should only be active when the project is launched in background mode.</p>
+
+                <p>Allowing the project to launch in two different modes instead of creating alternate versions of the game means the website doesn't have to download two different games; which means users of my website can load the game faster.</p>
+
+                <p>In order to tell the game that it should be a background and not a playable game, I pass a command-line argument into the game in the JavaScript that launches the game. The game then checks for this, and launches in the alternate mode.</p>
+
+                <p>Finally, I added a basic AI player controller to play the game (albeit poorly) and the background is done!</p>
+
+                <h3>Making it load faster</h3>
+                <p>Since the game auto-playing is now apart of the project landing page, it's important that it loads as quickly as possible.</p>
+
+                <p>Using Unity's Asset Bundles, I moved the background music for the game into a seperate bundle which is only downloaded is music is required. Since the background version of the game doesn't need music, it's not download until the player pressed the button to "Play in Browser".</p>
+            </Content>
+        </Heading>
+
+
+        <Heading Level="2" Identifier="world">
             <Text>Discord Integration</Text>
             <Content>
                 <p>The physics-based and fast-paced asteroid clone for the modern era, complete with Discord integration.</p>

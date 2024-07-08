@@ -5,6 +5,10 @@
     <div class="card-border-subtle"></div>
     <div class="card-border-secondary"></div>
     <div class="card-hover">
+        @if (Signed)
+        {
+            <div class="card-signed"></div>
+        }
         <div class="card-outerglow">
             <div class="card-outerglow-tl"></div>
             <div class="card-outerglow-t"></div>
@@ -32,6 +36,22 @@
     [Parameter]
     public string AspectRatio { get; set; } = string.Empty;
 
+    [Parameter]
+    public bool Signed { get; set; } = false;
+
     [Parameter(CaptureUnmatchedValues = true)]
     public IDictionary<string, object>? AdditionalAttributes { get; set; }
+
+    [CascadingParameter(Name = "CardGrid")]
+    public CardGrid? CardGrid { get; set; }
+
+    protected override void OnParametersSet()
+    {
+        if (CardGrid != null)
+        {
+            CardGrid.Register(this);
+        }
+
+        base.OnParametersSet();
+    }
 }

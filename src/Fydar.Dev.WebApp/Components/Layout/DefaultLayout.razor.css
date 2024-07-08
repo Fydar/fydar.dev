@@ -37,7 +37,8 @@
     width: fit-content;
 }
 
-    ::deep figure.figure-image img {
+    ::deep figure.figure-image img,
+    ::deep figure.figure-image video {
         display: block;
         margin: auto;
         max-width: 100%;
@@ -479,7 +480,7 @@ footer {
         main:has(aside),
         footer:has(aside) {
             gap: 0 30px;
-            grid-template-columns: auto [aside] 360px [container] 570px auto;
+            grid-template-columns: auto [aside] 320px [container] 610px auto;
         }
 
             header:has(aside) ::deep .container.container-wide,
@@ -494,7 +495,7 @@ footer {
 
     ::deep section.section-feature {
         gap: 0 30px;
-        grid-template-columns: auto [aside] 430px [container] 680px auto;
+        grid-template-columns: auto [aside] 390px [container] 720px auto;
     }
 
     header,
@@ -507,7 +508,7 @@ footer {
         main:has(aside),
         footer:has(aside) {
             gap: 0 30px;
-            grid-template-columns: auto [aside] 430px [container] 680px auto;
+            grid-template-columns: auto [aside] 390px [container] 720px auto;
         }
 }
 
@@ -515,7 +516,7 @@ footer {
 @media screen and (min-width: 1400px) {
 
     ::deep section.section-feature {
-        grid-template-columns: auto [aside] 495px [container] 825px auto;
+        grid-template-columns: auto [aside] 450px [container] 870px auto;
     }
 
     header,
@@ -528,7 +529,7 @@ footer {
         main:has(aside),
         footer:has(aside) {
             gap: 0 30px;
-            grid-template-columns: auto [aside] 495px [container] 795px auto;
+            grid-template-columns: auto [aside] 450px [container] 870px auto;
         }
 }
 
@@ -575,6 +576,16 @@ main {
             object-fit: contain;
             object-position: bottom left;
         }
+
+
+::deep {
+    --container-xs: 0;
+    --container-sm: 540px;
+    --container-md: 720px;
+    --container-lg: 960px;
+    --container-xl: 1140px;
+    --container-xxl: 1320px;
+}
 
 /*
 ::deep .container,

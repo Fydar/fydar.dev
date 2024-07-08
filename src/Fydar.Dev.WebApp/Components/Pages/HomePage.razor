@@ -28,6 +28,7 @@
     <link rel="preload" href="media/portrait-cropped.webp" as="image" />
 </HeadContent>
 
+
 <div class="portrait">
     <picture>
         <img src="media/portrait-cropped.webp" alt="A portrait of Fydar in an anime art style." />
@@ -42,8 +43,8 @@
     </audio>
 
     <div class="phonetics" id="pronunciation-phonetics">/<span class="syllable1">&#952;a&#618;</span><span class="syllable2">d&#593;r</span>/</div>
-
-    <img class="feature-signature" width="300" src="/media/Fydar_white_low-res.png" style="display: block;" />
+    
+    <SvgSprite class="feature-signature" Link="/icons.svg?v=1#icon-fydar-signature" Alt="Fydar's signature." />
 
     <script>
         const audio = document.getElementById('pronunciation-fydar');
@@ -83,17 +84,6 @@
             </div>
         </div>
     </div>
-
-    <p>I thrive on pushing technical boundaries and empowering games development.</p>
-
-    <ul>
-        <li><b>Systems</b> Engineer</li>
-        <li><b>Tools</b> Engineer</li>
-        <li><b>Infrastructure</b> Engineer</li>
-        <li><b>Multiplayer</b> Engineer</li>
-        <li><b>Gameplay</b> Engineer</li>
-        <li><b>Technical</b> Artist</li>
-    </ul>
 
     <div class="row row-download">
         <Card href="/media/resume.pdf" download="Fydar-Resume.pdf">
@@ -189,16 +179,19 @@
             <Text>Systems Engineer</Text>
             <Content>
                 <CardGrid Size="md">
-                    <Card AspectRatio="4/6" href="/portfolio/behaviour">
+                    <Card href="/portfolio/behaviour" Signed=true>
                         <FeaturedImage>
-                            <SvgSprite class="card-image" Link="/icons.svg?v=1#icon-nodeeditor" />
+                            <picture>
+                                <SvgSprite class="card-image" Link="/icons.svg?v=1#icon-nodeeditor" />
+                            </picture>
                         </FeaturedImage>
                         <ChildContent>
+                            
                             <div class="card-container">
                                 <div class="row">
                                     <SvgSprite class="card-keyicon" Link="/icons.svg?v=1#icon-fydarbehaviour" Alt="An illustration of the node based editor." />
                                     <div class="column">
-                                        <h3 class="card-header"><span class="subtle">Fydar.</span>Behaviour</h3>
+                                        <h3 class="card-header">Behaviour</h3>
                                     </div>
                                 </div>
                                 <div class="row">
@@ -207,16 +200,18 @@
                             </div>
                         </ChildContent>
                     </Card>
-                    <Card AspectRatio="4/6" href="/portfolio/inventory">
+                    <Card href="/portfolio/inventory" Signed=true>
                         <FeaturedImage>
-                            <SvgSprite class="card-image" Link="/icons.svg?v=1#icon-inventory" />
+                            <picture>
+                                <SvgSprite class="card-image" Link="/icons.svg?v=1#icon-inventory" />
+                            </picture>
                         </FeaturedImage>
                         <ChildContent>
                             <div class="card-container">
                                 <div class="row">
                                     <SvgSprite class="card-keyicon" Link="/icons.svg?v=1#icon-fydarinventory" Alt="An illustration of the inventory system." />
                                     <div class="column">
-                                        <h3 class="card-header"><span class="subtle">Fydar.</span>Inventory</h3>
+                                        <h3 class="card-header">Inventory</h3>
                                     </div>
                                 </div>
                                 <div class="row">
@@ -225,15 +220,12 @@
                             </div>
                         </ChildContent>
                     </Card>
-                </CardGrid>
-
-                <CardGrid>
-                    <Card AspectRatio="4/6" href="/portfolio/entities">
+                    <Card href="/portfolio/entities">
                         <div class="card-container">
                             <div class="row">
                                 <SvgSprite class="card-keyicon" Link="/icons.svg?v=1#icon-fydarentities" />
                                 <div class="column">
-                                    <h3 class="card-header"><span class="subtle">Fydar.</span>Entities</h3>
+                                    <h3 class="card-header">Entities</h3>
                                 </div>
                             </div>
                             <div class="row">
@@ -241,12 +233,12 @@
                             </div>
                         </div>
                     </Card>
-                    <Card AspectRatio="4/6" href="/portfolio/numerics">
+                    <Card href="/portfolio/numerics">
                         <div class="card-container">
                             <div class="row">
                                 <SvgSprite class="card-keyicon" Link="/icons.svg?v=1#icon-numbers" />
                                 <div class="column">
-                                    <h3 class="card-header"><span class="subtle">Fydar.</span>Numerics</h3>
+                                    <h3 class="card-header">Numerics</h3>
                                 </div>
                             </div>
                             <div class="row">
@@ -254,18 +246,33 @@
                             </div>
                         </div>
                     </Card>
-                    <Card AspectRatio="4/6" href="/portfolio/geometry">
+                    <Card href="/portfolio/geometry">
                         <div class="card-container">
                             <div class="row">
                                 <SvgSprite class="card-keyicon" Link="/icons.svg?v=1#icon-fydargeometry" />
                                 <div class="column">
-                                    <h3 class="card-header"><span class="subtle">Fydar.</span>Geometry</h3>
+                                    <h3 class="card-header">Geometry</h3>
                                 </div>
                             </div>
                             <div class="row">
                                 <p class="card-description">Deterministic 2D and 3D geometry library utilising Fixed-point numerics.</p>
                             </div>
                         </div>
+                    </Card>
+                    <Card href="/portfolio/lodestone">
+                        <ChildContent>
+                            <div class="card-container">
+                                <div class="row">
+                                    <SvgSprite class="card-keyicon" Link="/icons.svg?v=1#icon-network-right-solid" />
+                                    <div class="column">
+                                        <h3 class="card-header">Lodestone</h3>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <p class="card-description">An asset build pipeline, asset database, and build system.</p>
+                                </div>
+                            </div>
+                        </ChildContent>
                     </Card>
                 </CardGrid>
             </Content>
@@ -275,7 +282,7 @@
             <Text>Gameplay Programmer</Text>
             <Content>
                 <CardGrid Size="md">
-                    <Card AspectRatio="4/6" href="/portfolio/miniminer">
+                    <Card href="/portfolio/miniminer">
                         <FeaturedImage>
                             <picture>
                                 <img loading="lazy" width="640" height="480" class="card-image" src="media/miniminer/keyart-4x3-640x480.png" alt="Preview of the game 'Mini Miner' showing a puzzle." />
@@ -295,9 +302,11 @@
                             </div>
                         </ChildContent>
                     </Card>
-                    <Card AspectRatio="4/6" href="/portfolio/astralelites">
+                    <Card href="/portfolio/astralelites">
                         <FeaturedImage>
-                            <SvgSprite class="card-image" Link="/icons.svg?v=1#illustration-astralelites" alt="Preview of the game 'Astral Elites' with a spaceship flying around and destroying asteroids." />
+                            <picture>
+                                <SvgSprite class="card-image" Link="/icons.svg?v=1#illustration-astralelites" alt="Preview of the game 'Astral Elites' with a spaceship flying around and destroying asteroids." />
+                            </picture>
                         </FeaturedImage>
                         <ChildContent>
                             <div class="card-container">
@@ -313,10 +322,7 @@
                             </div>
                         </ChildContent>
                     </Card>
-                </CardGrid>
-
-                <CardGrid>
-                    <Card AspectRatio="4/6" href="/portfolio/raidhealersimulator">
+                    <Card href="/portfolio/raidhealersimulator">
                         <FeaturedImage>
                             <picture>
                                 <img loading="lazy" width="400" height="300" class="card-image" src="media/raidhealersimulator/keyart-4x3-640x480.webp" alt="Preview of the Raid Healer Simulator game." />
@@ -336,7 +342,7 @@
                             </div>
                         </ChildContent>
                     </Card>
-                    <Card AspectRatio="4/6" href="/portfolio/snoot">
+                    <Card href="/portfolio/snoot">
                         <FeaturedImage>
                             <picture>
                                 <img loading="lazy" width="400" height="300" class="card-image" src="media/snoot/keyart-4x3-400x300.webp" alt="Preview of the game 'Snoot' featuring the protagonist in the world with signs of life." />
@@ -356,7 +362,7 @@
                             </div>
                         </ChildContent>
                     </Card>
-                    <Card AspectRatio="4/6" href="/portfolio/lostblues">
+                    <Card href="/portfolio/lostblues">
                         <FeaturedImage>
                             <picture>
                                 <img loading="lazy" width="400" height="300" class="card-image" src="media/lostblues/keyart-4x3.png" alt="Preview of the game 'Lost Blues'." style="image-rendering: pixelated;" />
@@ -380,11 +386,148 @@
             </Content>
         </Heading>
 
+        <Heading Level="2" Identifier="infrastructure-programming">
+            <Text>Infrastructure Engineer</Text>
+            <Content>
+                <CardGrid Size="md">
+                    <Card href="/portfolio/mywebsite">
+                        <ChildContent>
+                            <div class="card-container">
+                                <div class="row">
+                                    <SvgSprite class="card-keyicon" Link="/icons.svg?v=1#icon-network-right-solid" />
+                                    <div class="column">
+                                        <h3 class="card-header">My Website</h3>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <p class="card-description">This portfolio website made using <b>ASP.NET Core</b> and hosted in <b>AWS</b>.</p>
+                                </div>
+                            </div>
+                        </ChildContent>
+                    </Card>
+                    <Card href="/portfolio/pewpew">
+                        <ChildContent>
+                            <div class="card-container">
+                                <div class="row">
+                                    <SvgSprite class="card-keyicon" Link="/icons.svg?v=1#icon-network-right-solid" />
+                                    <div class="column">
+                                        <h3 class="card-header">Pew Pew</h3>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <p class="card-description">A 20v20 .io style browser game made in 48 hours using <b>ASP.NET Core</b> and hosted in <b>AWS</b>..</p>
+                                </div>
+                            </div>
+                        </ChildContent>
+                    </Card>
+                </CardGrid>
+            </Content>
+        </Heading>
+
+        <Heading Level="2" Identifier="tools-programming">
+            <Text>Tools Programming</Text>
+            <Content>
+                <CardGrid Size="md">
+                    <Card>
+                        <ChildContent>
+                            <div class="card-container">
+                                <div class="row">
+                                    <SvgSprite class="card-keyicon" Link="/icons.svg?v=1#icon-network-right-solid" />
+                                    <div class="column">
+                                        <h3 class="card-header">Holodrone</h3>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <p class="card-description">Automatic screenshot capture for automated testing and icon generation.</p>
+                                </div>
+                            </div>
+                        </ChildContent>
+                    </Card>
+                    <Card>
+                        <ChildContent>
+                            <div class="card-container">
+                                <div class="row">
+                                    <SvgSprite class="card-keyicon" Link="/icons.svg?v=1#icon-network-right-solid" />
+                                    <div class="column">
+                                        <h3 class="card-header">Gradients</h3>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <p class="card-description">Asset-based gradient editing.</p>
+                                </div>
+                            </div>
+                        </ChildContent>
+                    </Card>
+                    <Card>
+                        <ChildContent>
+                            <div class="card-container">
+                                <div class="row">
+                                    <SvgSprite class="card-keyicon" Link="/icons.svg?v=1#icon-network-right-solid" />
+                                    <div class="column">
+                                        <h3 class="card-header">Skill Tree Editor</h3>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <p class="card-description">Inspired by the skill tree in <i>'Path of Exile'</i>, a skill tree editor capable of making massive skill trees.</p>
+                                </div>
+                            </div>
+                        </ChildContent>
+                    </Card>
+                    <Card>
+                        <ChildContent>
+                            <div class="card-container">
+                                <div class="row">
+                                    <SvgSprite class="card-keyicon" Link="/icons.svg?v=1#icon-network-right-solid" />
+                                    <div class="column">
+                                        <h3 class="card-header">Lodestone</h3>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <p class="card-description">A standalone asset editor, management, and build system.</p>
+                                </div>
+                            </div>
+                        </ChildContent>
+                    </Card>
+                    <Card>
+                        <ChildContent>
+                            <div class="card-container">
+                                <div class="row">
+                                    <SvgSprite class="card-keyicon" Link="/icons.svg?v=1#icon-palette-swatch-variant" />
+                                    <div class="column">
+                                        <h3 class="card-header">Samples</h3>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <p class="card-description">Automation of code documentation, render code samples with advanced syntax highlighting.</p>
+                                </div>
+                            </div>
+                        </ChildContent>
+                    </Card>
+                    <Card>
+                        <ChildContent>
+                            <div class="card-container">
+                                <div class="row">
+                                    <SvgSprite class="card-keyicon" Link="/icons.svg?v=1#icon-network-right-solid" />
+                                    <div class="column">
+                                        <h3 class="card-header">AssetIcons</h3>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <p class="card-description">Published on the Unity Asset Store, a tool for generating icons for your assets.</p>
+                                </div>
+                            </div>
+                        </ChildContent>
+                    </Card>
+                </CardGrid>
+            </Content>
+        </Heading>
+
+
         <Heading Level="2" Identifier="education">
             <Text>Education</Text>
             <Content>
                 <CardGrid Size="md">
-                    <Card AspectRatio="4/6" href="/portfolio/thedwellers">
+                    <Card href="/portfolio/thedwellers">
                         <FeaturedImage>
                             <picture>
                                 <img loading="lazy" width="640" height="480" class="card-image" src="media/thedwellers/keyart-4x3-640x480.webp" alt="Preview of the game 'The Dwellers'" />
@@ -404,7 +547,7 @@
                             </div>
                         </ChildContent>
                     </Card>
-                    <Card AspectRatio="4/6" href="/portfolio/voxelmultiplayer">
+                    <Card href="/portfolio/voxelmultiplayer">
                         <FeaturedImage>
                             <picture>
                                 <img loading="lazy" width="640" height="480" class="card-image" src="media/voxelmultiplayer/keyart-4x3-640x480.webp" alt="Preview of the Voxel Multiplayer, showing the player character atop of a mountain." />
@@ -424,7 +567,7 @@
                             </div>
                         </ChildContent>
                     </Card>
-                    <Card AspectRatio="4/6" href="/portfolio/thenewearthconflict">
+                    <Card href="/portfolio/thenewearthconflict">
                         <FeaturedImage>
                             <picture>
                                 <img loading="lazy" width="640" height="480" class="card-image" src="media/thenewearthconflict/keyart-4x3-640x480.webp" alt="A preview of the game 'The New Earth Conflict' featuring the player ship engaging in combat." />
@@ -444,7 +587,7 @@
                             </div>
                         </ChildContent>
                     </Card>
-                    <Card AspectRatio="4/6" href="/portfolio/cryptcrawl">
+                    <Card href="/portfolio/cryptcrawl">
                         <FeaturedImage>
                             <picture>
                                 <img loading="lazy" width="640" height="480" class="card-image" src="media/cryptcrawl/keyart-4x3.png" alt="A preview of the game 'Crypt Crawl' featuring the protagonist wizard in a brown dungeon." style="image-rendering: pixelated;" />
@@ -471,121 +614,6 @@
     </section>
 </HeadingScope>
 
-
-
-<section class="container">
-
-</section>
-
-<section class="container">
-
-
-</section>
-
-<section class="container">
-</section>
-
-
-<!--
-<section class="container">
-
-    <h2>Tools Programmer</h2>
-
-    <CardGrid Size="md">
-        <Card AspectRatio="4/6">
-            <FeaturedImage>
-                <SvgSprite class="card-image" Link="/icons.svg?v=1#illustration-skilltree" />
-            </FeaturedImage>
-            <ChildContent>
-                <div class="card-container">
-                    <div class="row">
-                        <SvgSprite class="card-keyicon" Link="/icons.svg?v=1#icon-network-right-solid" />
-                        <div class="column">
-                            <h3 class="card-header">Skill Tree Editor</h3>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <p class="card-description">Inspired by the skill tree in <i>'Path of Exile'</i>, a skill tree editor capable of making massive skill trees.</p>
-                    </div>
-                </div>
-            </ChildContent>
-        </Card>
-        <Card AspectRatio="4/6">
-            <FeaturedImage>
-                <SvgSprite class="card-image" Link="/icons.svg?v=1#illustration-samples" />
-            </FeaturedImage>
-            <ChildContent>
-                <div class="card-container">
-                    <div class="row">
-                        <SvgSprite class="card-keyicon" Link="/icons.svg?v=1#icon-palette-swatch-variant" />
-                        <div class="column">
-                            <h3 class="card-header">Samples</h3>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <p class="card-description">Automation of code documentation, render code samples with advanced syntax highlighting.</p>
-                    </div>
-                </div>
-            </ChildContent>
-        </Card>
-    </CardGrid>
-
-    <CardGrid>
-        <Card>
-            <ChildContent>
-                <div class="card-container">
-                    <div class="row">
-                        <SvgSprite class="card-keyicon" Link="/icons.svg?v=1#icon-network-right-solid" />
-                        <div class="column">
-                            <h3 class="card-header">Holodrone</h3>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <p class="card-description">Automatic screenshot capture for automated testing and icon generation.</p>
-                    </div>
-                </div>
-            </ChildContent>
-        </Card>
-        <Card>
-            <ChildContent>
-                <div class="card-container">
-                    <div class="row">
-                        <SvgSprite class="card-keyicon" Link="/icons.svg?v=1#icon-network-right-solid" />
-                        <div class="column">
-                            <h3 class="card-header">AssetIcons</h3>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <p class="card-description">Published on the Unity Asset Store, a tool for generating icons for your assets.</p>
-                    </div>
-                </div>
-            </ChildContent>
-        </Card>
-        <Card>
-            <ChildContent>
-                <div class="card-container">
-                    <div class="row">
-                        <SvgSprite class="card-keyicon" Link="/icons.svg?v=1#icon-network-right-solid" />
-                        <div class="column">
-                            <h3 class="card-header">Lodestone</h3>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <p class="card-description">A standalone asset editor, management, and build system.</p>
-                    </div>
-                </div>
-            </ChildContent>
-        </Card>
-    </CardGrid>
-
-</section>
--->
-
-
-<section class="container">
-
-
-</section>
 
 <!--
 <section class="container">

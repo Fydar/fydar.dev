@@ -3,8 +3,8 @@
 .card-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-gap: 20px 20px;
-    margin: 20px 0;
+    grid-gap: 0;
+    margin: 0 0;
 }
 
     .card-grid.card-grid-md {
@@ -17,4 +17,104 @@
 
     .card-grid.card-grid-xs {
         grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+
+    .card-grid.card-grid-1cells {
+    }
+
+        .card-grid.card-grid-1cells ::deep .card {
+            --border-top-left-radius: 24px;
+            --border-top-right-radius: 24px;
+            --border-bottom-left-radius: 24px;
+            --border-bottom-right-radius: 24px;
+        }
+
+
+    .card-grid.card-grid-2cells {
+    }
+
+        .card-grid.card-grid-2cells ::deep .card:nth-child(1) {
+            --border-top-left-radius: 24px;
+            --border-bottom-left-radius: 24px;
+        }
+
+        .card-grid.card-grid-2cells ::deep .card:nth-child(2) {
+            --border-top-right-radius: 24px;
+            --border-bottom-right-radius: 24px;
+        }
+
+
+    .card-grid.card-grid-3cells {
+    }
+
+        .card-grid.card-grid-3cells ::deep .card:nth-child(1) {
+            --border-top-left-radius: 24px;
+        }
+
+        .card-grid.card-grid-3cells ::deep .card:nth-child(2) {
+            --border-top-right-radius: 24px;
+            --border-bottom-right-radius: 24px;
+        }
+
+        .card-grid.card-grid-3cells ::deep .card:nth-child(3) {
+            --border-bottom-left-radius: 24px;
+            --border-bottom-right-radius: 24px;
+        }
+
+    .card-grid.card-grid-4cells {
+    }
+
+        .card-grid.card-grid-4cells ::deep .card:nth-child(1) {
+            --border-top-left-radius: 24px;
+        }
+
+        .card-grid.card-grid-4cells ::deep .card:nth-child(2) {
+            --border-top-right-radius: 24px;
+        }
+
+        .card-grid.card-grid-4cells ::deep .card:nth-child(3) {
+            --border-bottom-left-radius: 24px;
+        }
+
+        .card-grid.card-grid-4cells ::deep .card:nth-child(4) {
+            --border-bottom-right-radius: 24px;
+        }
+
+    .card-grid.card-grid-5cells {
+    }
+
+        .card-grid.card-grid-5cells ::deep .card:nth-child(1) {
+            --border-top-left-radius: 24px;
+        }
+
+        .card-grid.card-grid-5cells ::deep .card:nth-child(2) {
+            --border-top-right-radius: 24px;
+        }
+
+        .card-grid.card-grid-5cells ::deep .card:nth-child(4) {
+            --border-bottom-right-radius: 24px;
+        }
+
+        .card-grid.card-grid-5cells ::deep .card:nth-child(5) {
+            --border-bottom-left-radius: 24px;
+            --border-bottom-right-radius: 24px;
+        }
+
+    .card-grid.card-grid-6cells {
+    }
+
+    .card-grid.card-grid-4cells ::deep .card:nth-child(1) {
+        --border-top-left-radius: 24px;
+    }
+
+    .card-grid.card-grid-4cells ::deep .card:nth-child(2) {
+        --border-top-right-radius: 24px;
+    }
+
+    .card-grid.card-grid-4cells ::deep .card:nth-child(5) {
+        --border-bottom-left-radius: 24px;
+    }
+
+    .card-grid.card-grid-4cells ::deep .card:nth-child(6) {
+        --border-bottom-right-radius: 24px;
     }

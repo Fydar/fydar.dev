@@ -1,7 +1,10 @@
+@using System.ComponentModel
 
-<div class="card-grid card-grid-@Size">
+<div class="card-grid card-grid-@Size card-grid-@(Cards.Count)cells">
 
-    @ChildContent
+    <CascadingValue Name="CardGrid" Value="this">
+        @ChildContent
+    </CascadingValue>
 
 </div>
 
@@ -11,4 +14,14 @@
 
     [Parameter]
     public string Size { get; set; } = "sm";
+
+    public HashSet<Card> Cards { get; } = [];
+
+    public void Register(Card card)
+    {
+        if (Cards.Add(card))
+        {
+            StateHasChanged();
+        }
+    }
 }

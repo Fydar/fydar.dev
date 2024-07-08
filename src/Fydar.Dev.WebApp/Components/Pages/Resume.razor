@@ -1,3 +1,4 @@
+@using Fydar.Dev.WebApp.Components.CoverArt;
 @layout DefaultLayout
 @page "/resume"
 
@@ -39,87 +40,61 @@
 
     <section class="page page-coverletter">
 
-        <p>Hi there, I am Fydar.</p>
+        <div class="page-coverletter-header">
+            <h1>Fydar</h1>
+        </div>
 
-        <div style="height: 1px"></div>
-
-        <ul>
-            <li>I am a <b>programmer</b></li>
-            <li>I have <b>6 years, 9 months</b> of professional experience</li>
-            <li>I am passionate about <b>game development</b></li>
-            <li>You can find my <b>portfolio</b> of work at <b><a href="@explicitBaseUri/" target="_blank">https://fydar.dev/</a></b></li>
+        <ul class="page-coverletter-details" dir="ltr">
+            <li><SvgSprite Link="/icons.svg?v=1#icon-home" Alt="Location" />Brighton, UK</li>
+            <li><ScrapeProofLink LinkText="contact@fydar.dev" LinkDestination="mailto:contact@fydar.dev"><SvgSprite Link="/icons.svg?v=1#icon-email" Alt="Email" /></ScrapeProofLink></li>
+            <li><a href="@explicitBaseUri/" target="_blank"><SvgSprite Link="/icons.svg?v=1#icon-fydar-round" Alt="Portfolio Website" />https://fydar.dev/</a></li>
+            <li><a href="https://github.com/Fydar" target="_blank"><SvgSprite Link="/icons.svg?v=1#icon-github" Alt="GitHub" />@@Fydar</a></li>
+            <li><a href="https://www.linkedin.com/in/fydar" target="_blank"><SvgSprite Link="/icons.svg?v=1#icon-linkedin-inverted" Alt="LinkedIn" />/in/fydar</a></li>
+            <li><a href="https://discordapp.com/users/172972361954492416" target="_blank"><SvgSprite Link="/icons.svg?v=1#icon-discord" Alt="Discord" />fydar</a></li
         </ul>
 
-        <ul>
-            <li>
-                Experienced in shipping releases of <b>6 high-profile commercial titles</b><br />
-                <a class="link-tag" href="@explicitBaseUri/portfolio/eitr" target="_blank"><SvgSprite Link="/icons.svg?v=1#icon-game-controller-duotone" Alt="Game" />Eitr</a>
-                <a class="link-tag" href="@explicitBaseUri/portfolio/legostarwarsbattles" target="_blank"><SvgSprite Link="/icons.svg?v=1#icon-game-controller-duotone" Alt="Game" />LEGO® Star Wars™ Battles</a>
-                <a class="link-tag" href="@explicitBaseUri/portfolio/starcitizen" target="_blank"><SvgSprite Link="/icons.svg?v=1#icon-game-controller-duotone" Alt="Game" />Squadron 42</a>
-                <br />
-                <a class="link-tag" href="@explicitBaseUri/portfolio/starcitizen" target="_blank"><SvgSprite Link="/icons.svg?v=1#icon-game-controller-duotone" Alt="Game" />Star Citizen</a>
-                <a class="link-tag" href="@explicitBaseUri/portfolio/outrage" target="_blank"><SvgSprite Link="/icons.svg?v=1#icon-game-controller-duotone" Alt="Game" />OutRage</a>
-                <a class="link-tag" href="@explicitBaseUri/portfolio/southfield" target="_blank"><SvgSprite Link="/icons.svg?v=1#icon-game-controller-duotone" Alt="Game" />Southfield</a>
-            </li>
-        </ul>
+        <p>Greetings,</p>
+        <div class="spacer"></div>
+
+        <p>I am a programmer with <b>6 years</b> and <b>9 months</b> of experience working in the <b>Games Development</b> industry. I have worked on <b><a href="@explicitBaseUri/#titles" target="_blank">6 commercial titles</a></b> and I have an extensive portfolio of other works.</p>
+
+        <p>
+            <a class="link-tag" href="@explicitBaseUri/portfolio/eitr" target="_blank"><SvgSprite Link="/icons.svg?v=1#icon-game-controller-duotone" Alt="Game" />Eitr</a>
+            <a class="link-tag" href="@explicitBaseUri/portfolio/legostarwarsbattles" target="_blank"><SvgSprite Link="/icons.svg?v=1#icon-game-controller-duotone" Alt="Game" />LEGO® Star Wars™ Battles</a>
+            <a class="link-tag" href="@explicitBaseUri/portfolio/starcitizen" target="_blank"><SvgSprite Link="/icons.svg?v=1#icon-game-controller-duotone" Alt="Game" />Squadron 42</a>
+            <br />
+            <a class="link-tag" href="@explicitBaseUri/portfolio/starcitizen" target="_blank"><SvgSprite Link="/icons.svg?v=1#icon-game-controller-duotone" Alt="Game" />Star Citizen</a>
+            <a class="link-tag" href="@explicitBaseUri/portfolio/outrage" target="_blank"><SvgSprite Link="/icons.svg?v=1#icon-game-controller-duotone" Alt="Game" />OutRage</a>
+            <a class="link-tag" href="@explicitBaseUri/portfolio/southfield" target="_blank"><SvgSprite Link="/icons.svg?v=1#icon-game-controller-duotone" Alt="Game" />Southfield</a>
+        </p>
+
+        <div class="spacer"></div>
+
+        <p>My career has been diverse, spanning a range of disciplines in the Games Development industry, making me a <b>highly versatile candidate</b> for any role.</p>
 
         <ul>
-            <li><b>Multiplayer Engineer</b> for game clients, meta-game servers, and realtime game servers</li>
+            <li><b>Backend Engineer</b> for highly scalable, distributed cloud microservices and dedicated servers</li>
             <li><b>Systems Engineer</b> for performance-critical and complex systems</li>
             <li><b>Tools Engineer</b> for technical art, game design, game data authoring, and asset management</li>
-            <li><b>Infrastructure Engineer</b> for distributed cloud microservices and dedicated servers</li>
-            <li><b>Network Engineer</b> for scalable realtime multiplayer games</li>
+            <li><b>Multiplayer Engineer</b> for game clients, meta-game servers, and realtime game servers</li>
+            <li><b>Gameplay Engineer</b> with a keen understanding of satisfying mechanics</li>
             <li><b>Technical Artist</b> for asset pipelines and artist tooling</li>
         </ul>
 
-        <ul>
-            <li>Strong understanding of <b>C#</b> and <b>Unity</b></li>
-            <li>Strong understanding of server programming with <b>ASP.NET Core</b></li>
-            <li>Strong understanding of <b>Blazor</b> and other web frameworks for web-based tooling</li>
-            <li>Strong understanding of <b>Substance Designer</b> and <b>PBR material workflows</b></li>
-            <li>Strong understanding of <b>HLSL</b>, <b>GLSL</b>, and <b>visual shader editors</b></li>
-            <li>Strong understanding of <b>Git</b> (<code>rebase</code>, <code>ref-log</code>, the whole lot)</li>
-        </ul>
+        <div class="spacer"></div>
 
-        <ul>
-            <li>Strong understanding of <b>Docker</b> and <b>Kubernetes</b></li>
-            <li>Strong understanding of <b>Jenkins</b>, <b>GitHub Actions</b> and other <b>CI/CD platforms</b></li>
-            <li>Strong understanding of <b>Azure</b> and <b>AWS</b></li>
-            <li>Strong understanding of <b>IaC</b> (Infrastructure as Code, e.g. <i>AWS CloudFormation</i>)</li>
-            <li>Strong understanding of <b>Advanced Vector Mathematics</b> and <b>Procedural Generation</b></li>
-        </ul>
+        <p>In addition to my professional experience in the above disciplines, I'm also a very active hobbyist developer. I regularly participate in game jams, many of which are available on my portfolio website. These serve as a great opportunity for me to push the boundaries of my knowledge with new techniques and the latest technologies.</p>
+        
+        <div class="spacer"></div>
 
-        <ul>
-            <li>Proven experience working with implementing <b>UI</b> and <b>UX</b> in collaboration with artists and designers</li>
-            <li>Proven experience working with realtime web technologies; <b>TCP</b>, <b>UDP</b>, <b>QUIC</b>, <b>WebTransport</b>, and <b>WebSockets</b></li>
-            <li>Proven experience working with RESTful web technologies; <b>HTTP</b>, <b>stateless infrastructure</b>, and <b>microservices</b></li>
-            <li>Proven experience working with database technologies; <b>SQL</b>, <b>NoSQL</b>, <b>Document</b>, and <b>Graph</b></li>
-            <li>Proven experience working with secure coding practices and conducting <b>Cybersecurity</b> assessments.</li>
-        </ul>
+        <p>Thank you for your consideration.</p>
+        
+        <div class="spacer"></div>
 
-        <ul>
-            <li>Proven experience with large-scale <b>network and infrastructure</b> on <b>two high-profile commercial titles</b></li>
-            <li>Proven experience with operating <b>live-ops</b> on the mobile <b>realtime strategy</b></li>
-            <li>Proven experience with a <b>feature leadership</b> role and managing development teams</li>
-            <li>Proven experience with <b>project management</b> using <b>agile</b> methodologies (<b>Scrum</b> and <b>Kanban</b>)</li>
-            <li>Proven experience with <b>mentoring</b> and <b>coaching</b> colleagues</li>
-        </ul>
-
-        <div style="height: 2px"></div>
-
-        <p>For your consideration,</p>
-
-        <p>Anthony <i>'Fydar'</i> Marmont<br /><span style="font-size: 0.75em;">(they/them)</span></p>
-
-        <ul class="resume-externallinks" aria-label="More External links" dir="ltr">
-            <li class="nav-siteicon" style="background-color: #414141"><a href="@explicitBaseUri/" target="_blank"><SvgSprite Link="/icons.svg?v=1#icon-fydar-round" Alt="Fydar’s Portfolio Website" /></a></li>
-            <li class="nav-siteicon" style="background-color: #181717"><a href="https://github.com/Fydar" target="_blank"><SvgSprite Link="/icons.svg?v=1#icon-github" Alt="GitHub" /></a></li>
-            <li class="nav-siteicon" style="background-color: #5865F2"><a href="https://discordapp.com/users/172972361954492416" target="_blank"><SvgSprite Link="/icons.svg?v=1#icon-discord" Alt="Discord" /></a></li
-            <li class="nav-siteicon" style="background-color: #0a66c2"><a href="https://www.linkedin.com/in/fydar" target="_blank"><SvgSprite Link="/icons.svg?v=1#icon-linkedin-inverted" Alt="LinkedIn" /></a></li>
-            <li class="nav-siteicon" style="background-color: #1da1f2"><a href="https://twitter.com/Fydarus" target="_blank"><SvgSprite Link="/icons.svg?v=1#icon-twitter" Alt="Twitter" /></a></li>
-            <li class="nav-siteicon" style="background-color: #fa5c5c"><a href="https://fydar.itch.io/" target="_blank"><SvgSprite Link="/icons.svg?v=1#icon-itchdotio" Alt="Itch.io" /></a></li>
-            <li class="nav-siteicon" style="background-color: #ff0000"><a href="https://www.youtube.com/@@fydar" target="_blank"><SvgSprite Link="/icons.svg?v=1#icon-youtube" Alt="YouTube" /></a></li>
-        </ul>
+        <p>Sincerely,<br />Fydar</p>
+        
+        <SvgSprite class="signature-signed" width="200" height="100" Link="/icons.svg?v=1#icon-fydar-signature" Alt="Fydar's signature."  />
+        <p><span class="phonetics">/&#952;a&#618;d&#593;r/</span></p>
     </section>
 
     <section class="page page-experience">
@@ -232,8 +207,6 @@
                 <p>Programmer on standalone (out-of-engine) tools using C# for <i><a href="@explicitBaseUri/portfolio/starcitizen" target="_blank">‘Star Citizen’</a></i> and <i><a href="@explicitBaseUri/portfolio/starcitizen">‘Squadron 42’</a></i>.</p>
 
                 <p>My primary assignment was creating and maintaining a bespoke asset management solution with asset dependency visualisation and change tracker.</p>
-
-                <p>I also maintained a large pre-existing codebase for game-data authoring, along with maintaining core gameplay code in <b>C++</b>.</p>
             </div>
 
         </div>

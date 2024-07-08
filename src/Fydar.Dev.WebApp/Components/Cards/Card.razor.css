@@ -3,24 +3,35 @@
 .card {
     position: relative;
     display: flex;
-    place-content: flex-end;
     flex-direction: column;
     text-decoration: none;
-    padding: 1.75px;
     transition: box-shadow 0.15s;
-    --pointer-relative: -10000px -10000px;
     min-width: 0;
-    --border-top-left-radius: 8px;
-    --border-top-right-radius: 8px;
-    --border-bottom-left-radius: 8px;
-    --border-bottom-right-radius: 8px;
+    --border-top-left-radius: 0px;
+    --border-top-right-radius: 0px;
+    --border-bottom-left-radius: 0px;
+    --border-bottom-right-radius: 0px;
 }
+
+    .card ::deep .card-signed {
+        position: absolute;
+        top: 16px;
+        right: 16px;
+        mask-image: url(/icons.svg?v=1#icon-fydar-signature);
+        mask-size: contain;
+        mask-repeat: no-repeat;
+        background: radial-gradient(350px 350px at var(--pointer-fixed), #ffffff 0, #e2b384 40%, #3e3934 100%);
+        background-attachment: fixed;
+        width: 160px;
+        height: 90px;
+    }
+
     /* Containers */
     .card ::deep.card-container {
-        padding: 2.5rem 16px 1.5rem 16px;
+        padding: 1.5rem 16px 1.5rem 16px;
         background: linear-gradient(to bottom, #16161800 0, #161618f0 2.25rem, #161618f0 100%);
-        border-bottom-right-radius: 8px;
-        border-bottom-left-radius: 8px;
+        border-bottom-left-radius: var(--border-bottom-left-radius);
+        border-bottom-right-radius: var(--border-bottom-right-radius);
     }
 
     .card ::deep.card-button {
@@ -46,6 +57,7 @@
         padding: 2px 0.825rem 2px 2px;
         color: white;
         transition: filter 0.15s ease-in-out;
+        align-self: center;
     }
 
     .card:hover ::deep.card-keyicon,
@@ -57,7 +69,7 @@
     .card ::deep.card-header {
         flex-grow: 0;
         padding: 0;
-        margin: 0 0 0.625rem 0;
+        margin: 0 0 0 0;
         font-size: 1.4375rem;
         font-weight: 350;
         letter-spacing: 1px;
@@ -80,16 +92,27 @@
         margin: 0;
         padding: 0;
         color: var(--color-text-primary);
-        margin-top: 5px;
+        margin-top: 0.75rem;
         font-size: 17px;
         line-height: 1.45;
         letter-spacing: 0.075px;
         text-align: left;
+        color: #8d8d8d;
+        font-size: 1rem;
+        font-weight: 400;
     }
 
         .card ::deep.card-description b {
             font-weight: 500;
+            color: #aaaaaa;
         }
+
+    .card ::deep picture {
+        position: relative;
+        width: 100%;
+        padding-top: 75%;
+        margin-bottom: -12px;
+    }
 
     /* Card images */
     .card ::deep.card-image {
@@ -98,18 +121,24 @@
         left: 0;
         width: 100%;
         height: 100%;
-        padding: 1.75px;
-        box-sizing: border-box;
+        object-fit: cover;
         overflow: hidden;
-        opacity: 0.2;
+        opacity: 0.25;
         filter: grayscale(1);
+        z-index: -1;
+        mask: linear-gradient(to top, #ffffff00 0px, #ffffffad 24px, #ffffff 48px, #ffffff);
+    }
+
+    .card > ::deep .card-image:first-child,
+    .card > ::deep picture:first-child .card-image {
         border-top-left-radius: calc(var(--border-top-left-radius) + 0.75px);
         border-top-right-radius: calc(var(--border-top-right-radius) + 0.75px);
+    }
+
+    .card > ::deep .card-image:last-child,
+    .card > ::deep picture:last-child .card-image {
         border-bottom-left-radius: calc(var(--border-bottom-left-radius) + 0.75px);
         border-bottom-right-radius: calc(var(--border-bottom-right-radius) + 0.75px);
-        object-fit: cover;
-        aspect-ratio: 3/2;
-        z-index: -1;
     }
 
     /* Glow */
@@ -205,10 +234,10 @@
     .card .card-border-secondary,
     .card .card-border-primary {
         position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
+        top: -1px;
+        bottom: -1px;
+        left: -1px;
+        right: -1px;
         padding: 1.75px;
         box-sizing: border-box;
         pointer-events: none;
@@ -255,6 +284,7 @@
         opacity: 0;
         transition: opacity 0.15s ease-in-out;
         pointer-events: none;
+        z-index: 1;
     }
 
     .card:hover .card-hover {
@@ -270,28 +300,28 @@
         outline: 0;
     }
 
-        .card:focus .card-hover {
-            opacity: 1;
-        }
+    .card:focus-visible .card-hover {
+        opacity: 1;
+    }
 
-        .card:focus.pointer-none .card-border-secondary,
-        .card:focus.pointer-none .card-border-primary {
-            opacity: 1;
-        }
+    .card:focus-visible.pointer-none .card-border-secondary,
+    .card:focus-visible.pointer-none .card-border-primary {
+        opacity: 1;
+    }
 
-        .card:focus .card-outerglow .card-outerglow-tl,
-        .card:focus .card-outerglow .card-outerglow-t,
-        .card:focus .card-outerglow .card-outerglow-tr,
-        .card:focus .card-outerglow .card-outerglow-ml,
-        .card:focus .card-outerglow .card-outerglow-m,
-        .card:focus .card-outerglow .card-outerglow-mr,
-        .card:focus .card-outerglow .card-outerglow-bl,
-        .card:focus .card-outerglow .card-outerglow-b,
-        .card:focus .card-outerglow .card-outerglow-br {
-            background: var(--glow-start);
-        }
+    .card:focus-visible .card-outerglow .card-outerglow-tl,
+    .card:focus-visible .card-outerglow .card-outerglow-t,
+    .card:focus-visible .card-outerglow .card-outerglow-tr,
+    .card:focus-visible .card-outerglow .card-outerglow-ml,
+    .card:focus-visible .card-outerglow .card-outerglow-m,
+    .card:focus-visible .card-outerglow .card-outerglow-mr,
+    .card:focus-visible .card-outerglow .card-outerglow-bl,
+    .card:focus-visible .card-outerglow .card-outerglow-b,
+    .card:focus-visible .card-outerglow .card-outerglow-br {
+        background: var(--glow-start);
+    }
 
-        .card:focus .card-border-primary {
-            background: radial-gradient(350px 350px at var(--pointer-fixed), #ffffff 0, #e2b384 40%);
-            background-attachment: fixed;
-        }
+    .card:focus-visible .card-border-primary {
+        background: radial-gradient(350px 350px at var(--pointer-fixed), #ffffff 0, #e2b384 40%);
+        background-attachment: fixed;
+    }

@@ -1,0 +1,346 @@
+@layout DefaultLayout
+@page "/gamejams"
+@using Microsoft.AspNetCore.OutputCaching
+
+<HeadContent>
+    @{
+        var openGraphModel = new OpenGraphModel()
+        {
+            Title = "Game Jams - Fydar",
+            Description = "Fydar is a game developer and engineer who thrives when pushing technical boundaries and creating memorable experiences.",
+            CanonicalUrl = "https://fydar.dev/gamejams",
+            Properties = [
+                new OpenGraphModelImage()
+                {
+                    Url = "https://fydar.dev/media/header.webp",
+                    Alt = "A portrait of Fydar in an anime art style."
+                }
+            ]
+        };
+    }
+    <OpenGraphComponent Model="@openGraphModel" />
+
+    <link rel="preload" href="media/portrait-cropped.webp" as="image" />
+</HeadContent>
+
+<HeadingScope>
+    <aside>
+        <section style="position: sticky; top: 64px;">
+            <div style="height: 5rem"></div>
+            <TableOfContents />
+        </section>
+
+    </aside>
+
+    <section class="container">
+
+        <Heading Level="2" Identifier="2022">
+            <Text>2022</Text>
+            <Content>
+                <CardGrid Size="md">
+                    <Card href="/portfolio/loversdefence">
+                        <FeaturedImage>
+                            <picture>
+                                <img loading="lazy" width="640" height="480" class="card-image" src="media/miniminer/keyart-4x3-640x480.png" alt="Preview of the game 'Mini Miner' showing a puzzle." />
+                            </picture>
+                        </FeaturedImage>
+                        <ChildContent>
+                            <div class="card-container">
+                                <div class="row">
+                                    <SvgSprite class="card-keyicon" Link="/icons.svg?v=1#icon-pewpew" />
+                                    <div class="column">
+                                        <h3 class="card-header">Lovers Defence</h3>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <p class="card-description">Interactive visual novel in a beautiful world.</p>
+                                </div>
+                            </div>
+                        </ChildContent>
+                    </Card>
+                    <Card href="/portfolio/bloodlust">
+                        <FeaturedImage>
+                            <picture>
+                                <img loading="lazy" width="640" height="480" class="card-image" src="media/miniminer/keyart-4x3-640x480.png" alt="Preview of the game 'Mini Miner' showing a puzzle." />
+                            </picture>
+                        </FeaturedImage>
+                        <ChildContent>
+                            <div class="card-container">
+                                <div class="row">
+                                    <SvgSprite class="card-keyicon" Link="/icons.svg?v=1#icon-pewpew" />
+                                    <div class="column">
+                                        <h3 class="card-header">Bloodlust</h3>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <p class="card-description">Interactive visual novel in a beautiful world.</p>
+                                </div>
+                            </div>
+                        </ChildContent>
+                    </Card>
+                </CardGrid>
+            </Content>
+        </Heading>
+
+        <Heading Level="2" Identifier="2021">
+            <Text>2021</Text>
+            <Content>
+                <CardGrid Size="md">
+                    <Card href="/portfolio/pewpew">
+                        <FeaturedImage>
+                            <picture>
+                                <img loading="lazy" width="640" height="480" class="card-image" src="media/miniminer/keyart-4x3-640x480.png" alt="Preview of the game 'Mini Miner' showing a puzzle." />
+                            </picture>
+                        </FeaturedImage>
+                        <ChildContent>
+                            <div class="card-container">
+                                <div class="row">
+                                    <SvgSprite class="card-keyicon" Link="/icons.svg?v=1#icon-pewpew" />
+                                    <div class="column">
+                                        <h3 class="card-header">Pew Pew</h3>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <p class="card-description">Coordinate with your team in a multiplayer space-shooter.</p>
+                                </div>
+                            </div>
+                        </ChildContent>
+                    </Card>
+                </CardGrid>
+            </Content>
+        </Heading>
+
+        <Heading Level="2" Identifier="2020">
+            <Text>2020</Text>
+            <Content>
+                <CardGrid Size="md">
+                    <Card href="/portfolio/miniminer">
+                        <FeaturedImage>
+                            <picture>
+                                <img loading="lazy" width="640" height="480" class="card-image" src="media/miniminer/keyart-4x3-640x480.png" alt="Preview of the game 'Mini Miner' showing a puzzle." />
+                            </picture>
+                        </FeaturedImage>
+                        <ChildContent>
+                            <div class="card-container">
+                                <div class="row">
+                                    <SvgSprite class="card-keyicon" Link="/icons.svg?v=1#icon-miniminer" />
+                                    <div class="column">
+                                        <h3 class="card-header">Mini Miner</h3>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <p class="card-description">The Game Boy demake of the Nintendo DS <i>Pokémon Diamond and Pearl</i> underground mining minigame.</p>
+                                </div>
+                            </div>
+                        </ChildContent>
+                    </Card>
+                    <Card href="/portfolio/void">
+                        <FeaturedImage>
+                            <picture>
+                                <img loading="lazy" width="400" height="300" class="card-image" src="media/snoot/keyart-4x3-400x300.webp" alt="Preview of the game 'Snoot' featuring the protagonist in the world with signs of life." />
+                            </picture>
+                        </FeaturedImage>
+                        <ChildContent>
+                            <div class="card-container">
+                                <div class="row">
+                                    <SvgSprite class="card-keyicon" Link="/icons.svg?v=1#icon-snoot" />
+                                    <div class="column">
+                                        <h3 class="card-header">Void</h3>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <p class="card-description">The cute crafting game to restore nature and life to the world.</p>
+                                </div>
+                            </div>
+                        </ChildContent>
+                    </Card>
+                    <Card href="/portfolio/raidhealersimulator">
+                        <FeaturedImage>
+                            <picture>
+                                <img loading="lazy" width="400" height="300" class="card-image" src="media/raidhealersimulator/keyart-4x3-640x480.webp" alt="Preview of the Raid Healer Simulator game." />
+                            </picture>
+                        </FeaturedImage>
+                        <ChildContent>
+                            <div class="card-container">
+                                <div class="row">
+                                    <SvgSprite class="card-keyicon" Link="/icons.svg?v=1#icon-raidhealersimulator" />
+                                    <div class="column">
+                                        <h3 class="card-header">Raid Healer Simulator</h3>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <p class="card-description">The UI-only simulator of the raid healer experience featuring verbal abuse.</p>
+                                </div>
+                            </div>
+                        </ChildContent>
+                    </Card>
+                    <Card href="/portfolio/snoot">
+                        <FeaturedImage>
+                            <picture>
+                                <img loading="lazy" width="400" height="300" class="card-image" src="media/snoot/keyart-4x3-400x300.webp" alt="Preview of the game 'Snoot' featuring the protagonist in the world with signs of life." />
+                            </picture>
+                        </FeaturedImage>
+                        <ChildContent>
+                            <div class="card-container">
+                                <div class="row">
+                                    <SvgSprite class="card-keyicon" Link="/icons.svg?v=1#icon-snoot" />
+                                    <div class="column">
+                                        <h3 class="card-header">Snoot</h3>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <p class="card-description">The cute crafting game to restore nature and life to the world.</p>
+                                </div>
+                            </div>
+                        </ChildContent>
+                    </Card>
+                </CardGrid>
+            </Content>
+        </Heading>
+
+        <Heading Level="2" Identifier="2019">
+            <Text>2019</Text>
+            <Content>
+                <CardGrid Size="md">
+                    <Card href="/portfolio/roadtonorthstead">
+                        <FeaturedImage>
+                            <picture>
+                                <img loading="lazy" width="400" height="300" class="card-image" src="media/roadtonorthstead/keyart-1_91x1-1200x630.png" alt="Preview of the game 'Road to Northstead'." />
+                            </picture>
+                        </FeaturedImage>
+                        <ChildContent>
+                            <div class="card-container">
+                                <div class="row">
+                                    <SvgSprite class="card-keyicon" Link="/icons.svg?v=1#icon-fish" />
+                                    <div class="column">
+                                        <h3 class="card-header">Road to Northstead</h3>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <p class="card-description">The game jam visual novel with questing and crafting to survive the night.</p>
+                                </div>
+                            </div>
+                        </ChildContent>
+                    </Card>
+                    <Card href="/portfolio/lostblues">
+                        <FeaturedImage>
+                            <picture>
+                                <img loading="lazy" width="400" height="300" class="card-image" src="media/lostblues/keyart-4x3.png" alt="Preview of the game 'Lost Blues'." style="image-rendering: pixelated;" />
+                            </picture>
+                        </FeaturedImage>
+                        <ChildContent>
+                            <div class="card-container">
+                                <div class="row">
+                                    <SvgSprite class="card-keyicon" Link="/icons.svg?v=1#icon-fish" />
+                                    <div class="column">
+                                        <h3 class="card-header">Lost Blues</h3>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <p class="card-description">The clicker-style where you farm kelp and release fish.</p>
+                                </div>
+                            </div>
+                        </ChildContent>
+                    </Card>
+                    <Card href="/portfolio/sofarfromhome">
+                        <FeaturedImage>
+                            <picture>
+                                <img loading="lazy" width="400" height="300" class="card-image" src="media/lostblues/keyart-4x3.png" alt="Preview of the game 'Lost Blues'." style="image-rendering: pixelated;" />
+                            </picture>
+                        </FeaturedImage>
+                        <ChildContent>
+                            <div class="card-container">
+                                <div class="row">
+                                    <SvgSprite class="card-keyicon" Link="/icons.svg?v=1#icon-fish" />
+                                    <div class="column">
+                                        <h3 class="card-header">So Far From Home</h3>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <p class="card-description">Searching between the sofa cushions for a missing key, but what else is down there?</p>
+                                </div>
+                            </div>
+                        </ChildContent>
+                    </Card>
+                </CardGrid>
+            </Content>
+        </Heading>
+
+        <Heading Level="2" Identifier="2018">
+            <Text>2018</Text>
+            <Content>
+                <CardGrid Size="md">
+                    <Card href="/portfolio/lostinstatic">
+                        <FeaturedImage>
+                            <picture>
+                                <img loading="lazy" width="400" height="300" class="card-image" src="media/lostblues/keyart-4x3.png" alt="Preview of the game 'Lost Blues'." style="image-rendering: pixelated;" />
+                            </picture>
+                        </FeaturedImage>
+                        <ChildContent>
+                            <div class="card-container">
+                                <div class="row">
+                                    <SvgSprite class="card-keyicon" Link="/icons.svg?v=1#icon-fish" />
+                                    <div class="column">
+                                        <h3 class="card-header">Lost in Static</h3>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <p class="card-description">The clicker-style where you farm kelp and release fish.</p>
+                                </div>
+                            </div>
+                        </ChildContent>
+                    </Card>
+                </CardGrid>
+            </Content>
+        </Heading>
+
+        <Heading Level="2" Identifier="2017">
+            <Text>2017</Text>
+            <Content>
+                <CardGrid Size="md">
+                    <Card href="/portfolio/lilypadleap">
+                        <FeaturedImage>
+                            <picture>
+                                <img loading="lazy" width="400" height="300" class="card-image" src="media/lostblues/keyart-4x3.png" alt="Preview of the game 'Lost Blues'." style="image-rendering: pixelated;" />
+                            </picture>
+                        </FeaturedImage>
+                        <ChildContent>
+                            <div class="card-container">
+                                <div class="row">
+                                    <SvgSprite class="card-keyicon" Link="/icons.svg?v=1#icon-fish" />
+                                    <div class="column">
+                                        <h3 class="card-header">Lilypad Leap</h3>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <p class="card-description">The clicker-style where you farm kelp and release fish.</p>
+                                </div>
+                            </div>
+                        </ChildContent>
+                    </Card>
+                    <Card href="/portfolio/astralswarm">
+                        <FeaturedImage>
+                            <picture>
+                                <img loading="lazy" width="400" height="300" class="card-image" src="media/lostblues/keyart-4x3.png" alt="Preview of the game 'Lost Blues'." style="image-rendering: pixelated;" />
+                            </picture>
+                        </FeaturedImage>
+                        <ChildContent>
+                            <div class="card-container">
+                                <div class="row">
+                                    <SvgSprite class="card-keyicon" Link="/icons.svg?v=1#icon-fish" />
+                                    <div class="column">
+                                        <h3 class="card-header">Astral Swarm</h3>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <p class="card-description">The clicker-style where you farm kelp and release fish.</p>
+                                </div>
+                            </div>
+                        </ChildContent>
+                    </Card>
+                </CardGrid>
+            </Content>
+        </Heading>
+
+    </section>
+</HeadingScope>
