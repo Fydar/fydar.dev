@@ -69,17 +69,16 @@ window.document.addEventListener("pointerenter",
 
 function NavHighlighter() {
     // Get all sections that have an ID defined
-    let sections = document.querySelectorAll("h2[id]");
+    let sections = document.querySelectorAll(".heading-wrapper[id]");
 
     // Get current scroll position
     let scrollY = window.scrollY;
 
     // Now we loop through sections to get height, top and ID values for each
     sections.forEach(current => {
-        const wrapper = current.parentElement;
-        const sectionHeight = wrapper.offsetHeight;
+        const sectionHeight = current.offsetHeight;
 
-        const sectionTop = (wrapper.getBoundingClientRect().top + scrollY) - 50 - (window.innerHeight * 0.5 * getScrollPercent());
+        const sectionTop = (current.getBoundingClientRect().top + scrollY) - 50 - (window.innerHeight * 0.5 * getScrollPercent());
         sectionId = current.getAttribute("id");
 
         if (
