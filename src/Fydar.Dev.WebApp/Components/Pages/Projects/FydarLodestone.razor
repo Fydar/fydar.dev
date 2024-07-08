@@ -1,0 +1,60 @@
+@layout DefaultLayout
+@page "/portfolio/lodestone"
+
+<HeadContent>
+    @{
+        var openGraphModel = new OpenGraphModel()
+        {
+            Title = "Lodestone - Fydar",
+            Description = "An asset database and build system.",
+            CanonicalUrl = "https://fydar.dev/portfolio/numerics",
+            Properties = [
+                new OpenGraphModelImage()
+                {
+                    Url = "https://fydar.dev/media/header.webp",
+                    Alt = "A portrait of Fydar in an anime art style."
+                }
+            ]
+        };
+    }
+    <OpenGraphComponent Model="@openGraphModel" />
+</HeadContent>
+
+<HeadingScope>
+    <aside>
+        <section style="position: sticky; top: 64px;">
+            <div style="height: 5rem"></div>
+            <TableOfContents />
+        </section>
+
+    </aside>
+
+    <section class="container">
+
+        <Heading Level="2" Identifier="world">
+            <Text>The Asset Pipeline</Text>
+            <Content>
+                <p>The asset pipeline is composed of processing layers that transform data from one format to another.</p>
+
+                <p>These layers can be thought of many-to-many transformations. Some layers will take multiple sources and map them to a single item.</p>
+                
+                <p>Other layers may map one source to many different resources.</p>
+
+                <p>Putting it all together, some layers might import multiple sources and produce multiple resources.</p>
+
+                <p>These layers can be stacked together to form a complete asset pipeline.</p>
+
+            </Content>
+        </Heading>
+
+        <Heading Level="2" Identifier="world">
+            <Text>Incremental Building</Text>
+            <Content>
+                <p>Lodestone features support for <b>incremental building</b> of assets through its cascading database.</p>
+
+
+            </Content>
+        </Heading>
+
+    </section>
+</HeadingScope>

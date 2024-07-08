@@ -56,11 +56,25 @@
             <Prefix>Programming a multiplayer</Prefix>
             <Text>Deterministic Simulation</Text>
             <Content>
-                <p>Fighting games require very specialised multiplayer programming in order to reduce latency, as milliseconds count when it comes to player-verses-player combat. In order to achieve the lowest latency possible, we opted to use <a href="https://www.photonengine.com/quantum">Photon Quantum</a> for our game simulation.</p>
-
-                <p>I implemented gameplay features to enhance the combat experience in the game, such as <b>picking up and throwing props</b> and <b>physics interactions with props</b>.</p>
+                <p>Fighting games require very specialised multiplayer programming in order to reduce latency, as milliseconds count when it comes to player-verses-player combat. In order to achieve the lowest latency possible, we opted to use <a href="https://www.photonengine.com/quantum" target="_blank">Photon Quantum</a> for our game simulation.</p>
 
                 <p>Having the opportunity to work first-hand with <b>Photon Quantum</b>, a deterministic entity-component system, inspired me to work on my own implementation of an <b>ECS</b> that utilises the <b>latest C# language features</b>.</p>
+            </Content>
+        </Heading>
+
+        <Heading Level="2" Identifier="throwing-props">
+            <Prefix>Programming the</Prefix>
+            <Text>Throwing Props</Text>
+            <Content>
+                <p>I implemented gameplay features to enhance the combat experience in the game, such as <b>picking up and throwing props</b> and <b>physics interactions with props</b>.</p>
+                
+                <figure class="figure-image">
+                    <video autoplay muted loop>
+                        <source src="/media/outrage/prop-throwing.1440p.60fps.h265.mp4?v=1" type='video/mp4; codecs="hvc1.1.2.L123.90"; profiles="isom,iso2,mp41"'>
+                        <source src="/media/outrage/prop-throwing.1440p.30fps.h264.mp4?v=1" type='video/mp4; codecs="avc1.4d4028"; profiles="isom,iso2,avc1,mp41"'>
+                    </video>
+                    <figcaption>Footage of props being thrown from <i><a href="https://youtu.be/zmrdgqExkLI" target="_blank">'OutRage: Fight Fest Demo'</a></i> by <a href="https://www.youtube.com/@@UnstableVoltage" target="_blank">UnstableVoltage</a>.</figcaption>
+                </figure>
             </Content>
         </Heading>
 
@@ -69,6 +83,15 @@
             <Text>Animation State Machines</Text>
             <Content>
                 <p>In order to achieve precise control over the character animations we programmed our own <b>Animation State Machine</b>.</p>
+
+                <p>Unity provides an animation state machine of it's own called the "Animator". This tool features a graph editor where the developer can configure transitions between different states. Once you start adding hundreds of transitions between states, however, it can become a nightmare to maintain.</p>
+
+                <figure class="figure-image">
+                    <picture>
+                        <img src="/media/outrage/unity-animator.webp?v=1" alt="A screenshot of an example Animator inside Unity." loading="lazy" />
+                    </picture>
+                    <figcaption>A screenshot of an example Animator inside Unity.</figcaption>
+                </figure>
 
                 <Callout>
                     <Icon><SvgSprite Link="/icons.svg?v=1#icon-seal-check-fill" Alt="Check" /></Icon>
