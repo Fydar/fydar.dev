@@ -307,9 +307,11 @@
     .resume {
         margin: 0;
         padding: 0;
+        overflow: hidden;
     }
 
         .resume .page {
             margin: 0;
+            filter: none;
         }
 }

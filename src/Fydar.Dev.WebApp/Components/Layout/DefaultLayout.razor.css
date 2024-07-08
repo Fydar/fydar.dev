@@ -174,7 +174,7 @@ header {
                 }
 
                 header menu li.nav-page:hover,
-                header menu li.nav-page:focus {
+                header menu li.nav-page:focus-visible {
                     opacity: 1;
                     border-bottom: 1px solid #ffffff33;
                 }
@@ -220,12 +220,12 @@ header {
                 }
 
                 header menu.navbar-externallinks li.nav-siteicon a:hover,
-                header menu.navbar-externallinks li.nav-siteicon a:focus {
+                header menu.navbar-externallinks li.nav-siteicon a:focus-visible {
                     opacity: 1;
                 }
 
                     header menu.navbar-externallinks li.nav-siteicon a:hover ::deep svg,
-                    header menu.navbar-externallinks li.nav-siteicon a:focus ::deep svg {
+                    header menu.navbar-externallinks li.nav-siteicon a:focus-visible ::deep svg {
                         filter: drop-shadow(0px 2px 4px black) drop-shadow(0 0 6px #e2b384);
                     }
 
@@ -284,7 +284,7 @@ footer {
             }
 
                 footer menu.footer-externallinks li.nav-siteicon a:hover,
-                footer menu.footer-externallinks li.nav-siteicon a:focus {
+                footer menu.footer-externallinks li.nav-siteicon a:focus-visible {
                     outline: 0;
                     filter: drop-shadow(0 0 1px #ffffff60) drop-shadow(0 0 6px #e2b384);
                     opacity: 1;

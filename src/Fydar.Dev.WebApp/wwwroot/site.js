@@ -86,9 +86,9 @@ function NavHighlighter() {
             scrollY > sectionTop &&
             scrollY <= sectionTop + sectionHeight
         ) {
-            document.querySelector("ol li a[href*=" + sectionId + "]").classList.add("active");
+            document.querySelector("ol li a[href*=\"" + sectionId + "\"]").classList.add("active");
         } else {
-            document.querySelector("ol li a[href*=" + sectionId + "]").classList.remove("active");
+            document.querySelector("ol li a[href*=\"" + sectionId + "\"]").classList.remove("active");
         }
     });
 }

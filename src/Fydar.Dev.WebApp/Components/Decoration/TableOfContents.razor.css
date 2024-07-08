@@ -26,11 +26,11 @@ ol {
             }
 
     ol:has(:hover),
-    ol:has(:focus-within) {
+    ol:has(:focus-visible) {
         color: #666;
     }
 
-    ol li a:focus,
+    ol li a:focus-visible,
     ol li a:hover {
         color: #d8d8d8;
     }
@@ -47,7 +47,7 @@ ol {
     }
 
     ol li a:hover:before,
-    ol li a:focus:before {
+    ol li a:focus-visible:before {
         width: 3em;
     }
 
