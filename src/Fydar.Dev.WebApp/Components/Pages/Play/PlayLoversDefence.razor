@@ -1,0 +1,54 @@
+@layout GameLayout
+@page "/play/loversdefence"
+
+<HeadContent>
+    @{
+        var openGraphModel = new OpenGraphModel()
+        {
+            Title = "Play Lovers Defence - Fydar",
+            Description = "The Game Boy demake of the Nintendo DS Pokémon Diamond and Pearl underground mining minigame.",
+            CanonicalUrl = "https://fydar.dev/play/loversdefence",
+            Properties = [
+                new OpenGraphModelImage()
+                {
+                    Url = "https://fydar.dev/media/loversdefence/keyart-1_91x1.png",
+                    Alt = "Promotional material for the game 'Lovers Defence'."
+                }
+            ]
+        };
+    }
+    <OpenGraphComponent Model="@openGraphModel" />
+    <meta name="theme-color" content="#2c3840">
+    <link rel="shortcut icon" href="/play/loversdefence/favicon.ico">
+    <link rel="manifest" href="/play/loversdefence/manifest.webmanifest">
+</HeadContent>
+
+<EmbedUnity>
+    <Configuration>
+        <script>
+            var config = {
+                companyName: "Fydar",
+                productName: "Lovers Defence",
+                productVersion: "v0.0.1",
+                dataUrl: "/play/loversdefence/build/WebGL.data.br",
+                codeUrl: "/play/loversdefence/build/WebGL.wasm.br",
+                frameworkUrl: "/play/loversdefence/build/WebGL.framework.js.br",
+                streamingAssetsUrl: "/play/loversdefence/StreamingAssets",
+                arguments: [],
+            };
+            var loaderUrl = "/play/loversdefence/build/WebGL.loader.js";
+        </script>
+    </Configuration>
+    <Placeholder>
+        <img src="media/loversdefence/titlecard.png?v=1" alt="Title card for the game 'Lovers Defence'." style="width: 200px; max-width: 90%; margin-bottom: 32px; image-rendering: pixelated;" />
+    </Placeholder>
+</EmbedUnity>
+
+<script>
+    var serviceWorkerUrl = "/play/loversdefence/ServiceWorker.js";
+    window.addEventListener("load", function () {
+        if ("serviceWorker" in navigator) {
+            navigator.serviceWorker.register(serviceWorkerUrl);
+        }
+    });
+</script>

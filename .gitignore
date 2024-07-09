@@ -36,3 +36,4 @@ Project/Library/EditorInstance.json
 *.stamp
 src/Portfolio.Instance/lettuce
 src/Portfolio.Instance/wwwimg
+!src/Fydar.Dev.WebApp/wwwroot/**/[Bb]uild/
