@@ -417,6 +417,11 @@ footer {
     width: 100%;
 }
 
+::deep aside,
+::deep .portrait {
+    display: none;
+}
+
 @media screen and (min-width: 576px) {
     ::deep .container {
         padding-left: 32px;
@@ -455,6 +460,11 @@ footer {
 }
 
 @media screen and (min-width: 992px) {
+
+    ::deep aside,
+    ::deep .portrait {
+        display: block;
+    }
 
     ::deep .container {
         padding-left: 0;
