@@ -404,6 +404,7 @@ footer {
     box-sizing: border-box;
     padding-left: 24px;
     padding-right: 24px;
+    overflow: hidden;
 }
 
     ::deep .container.container-wide {
@@ -469,6 +470,7 @@ footer {
     ::deep .container {
         padding-left: 0;
         padding-right: 0;
+        overflow: visible;
     }
 
     ::deep section.section-feature {
