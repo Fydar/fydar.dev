@@ -119,7 +119,7 @@
         display: inline-block;
         position: relative;
         margin-top: 24px;
-        margin-bottom: 16px;
+        margin-bottom: 32px;
         margin-right: -20px;
         padding-top: 4px;
         font-size: 2.25rem;
@@ -127,6 +127,7 @@
         color: #ffffff60;
         cursor: pointer;
         font-weight: 400;
+        white-space: nowrap;
     }
 
         .nameplate .phonetics:before,

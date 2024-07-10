@@ -424,6 +424,7 @@ footer {
 }
 
 @media screen and (min-width: 576px) {
+
     ::deep .container {
         padding-left: 32px;
         padding-right: 32px;

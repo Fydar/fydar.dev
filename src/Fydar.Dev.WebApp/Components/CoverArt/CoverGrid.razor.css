@@ -6,15 +6,3 @@
     grid-gap: 16px 16px;
     margin: 16px 0;
 }
-
-    .cover-grid.cover-grid-md {
-        grid-template-columns: 1fr 1fr;
-    }
-
-    .cover-grid.cover-grid-sm {
-        grid-template-columns: 1fr 1fr 1fr;
-    }
-
-    .cover-grid.cover-grid-xs {
-        grid-template-columns: 1fr 1fr 1fr 1fr;
-    }

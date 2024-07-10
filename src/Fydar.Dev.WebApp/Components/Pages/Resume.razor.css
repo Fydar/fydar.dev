@@ -130,7 +130,7 @@
     }
 
         .resume .page-coverletter-header h1 {
-            font-size: 3rem;
+            font-size: 42pt;
             text-transform: uppercase;
             letter-spacing: 0.1em;
             margin-bottom: 0;
@@ -203,7 +203,7 @@
                 box-sizing: border-box;
                 min-width: 74.6pt;
                 max-width: 74.6pt;
-                margin-right: 0.8rem;
+                margin-right: 8pt;
                 overflow: hidden;
                 display: flex;
                 align-items: center;

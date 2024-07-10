@@ -103,18 +103,18 @@
     .card-grid.card-grid-6cells {
     }
 
-    .card-grid.card-grid-4cells ::deep .card:nth-child(1) {
-        --border-top-left-radius: 24px;
-    }
+        .card-grid.card-grid-6cells ::deep .card:nth-child(1) {
+            --border-top-left-radius: 24px;
+        }
 
-    .card-grid.card-grid-4cells ::deep .card:nth-child(2) {
-        --border-top-right-radius: 24px;
-    }
+        .card-grid.card-grid-6cells ::deep .card:nth-child(2) {
+            --border-top-right-radius: 24px;
+        }
 
-    .card-grid.card-grid-4cells ::deep .card:nth-child(5) {
-        --border-bottom-left-radius: 24px;
-    }
+        .card-grid.card-grid-6cells ::deep .card:nth-child(5) {
+            --border-bottom-left-radius: 24px;
+        }
 
-    .card-grid.card-grid-4cells ::deep .card:nth-child(6) {
-        --border-bottom-right-radius: 24px;
-    }
+        .card-grid.card-grid-6cells ::deep .card:nth-child(6) {
+            --border-bottom-right-radius: 24px;
+        }
