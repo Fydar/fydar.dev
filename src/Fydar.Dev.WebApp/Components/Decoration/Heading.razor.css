@@ -23,3 +23,44 @@
     .anchor-tag:hover {
         color: currentColor;
     }
+
+
+/* Slim Mobile */
+@media screen and (max-width: 576px) {
+    .heading-anchor {
+        margin-left: 1.15em;
+    }
+}
+
+/* Mobile */
+@media screen and (min-width: 576px) {
+    .heading-anchor {
+        margin-left: 1.15em;
+    }
+}
+
+/* Tablet */
+@media screen and (min-width: 768px) {
+    .heading-anchor {
+        grid-template-columns: 1fr 1fr 1fr;
+        margin-left: 0;
+    }
+}
+
+/* Low-Resolution Desktop */
+@media screen and (min-width: 992px) {
+    .heading-anchor {
+    }
+}
+
+/* Desktop */
+@media screen and (min-width: 1200px) {
+    .heading-anchor {
+    }
+}
+
+/* Full-screen Desktop */
+@media screen and (min-width: 1400px) {
+    .heading-anchor {
+    }
+}
