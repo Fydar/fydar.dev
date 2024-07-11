@@ -273,3 +273,16 @@
         margin: 4px 0;
         font-weight: 400;
     }
+
+.row-readmore {
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+    justify-content: center;
+}
+
+    .row-readmore ::deep .card {
+        --border-top-left-radius: 16px;
+        --border-top-right-radius: 16px;
+        --border-bottom-left-radius: 16px;
+        --border-bottom-right-radius: 16px;
+    }
