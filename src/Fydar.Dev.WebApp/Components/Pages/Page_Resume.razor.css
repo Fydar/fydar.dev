@@ -8,6 +8,10 @@
     box-sizing: border-box;
 }
 
+    .resume ::deep *::selection {
+        background-color: #a3c0d9;
+    }
+
     .resume .page {
         min-width: 210mm;
         width: 210mm;
@@ -33,7 +37,7 @@
         font-size: 18pt;
         font-weight: 400;
         color: #404040;
-        margin: 0 0 26pt 0;
+        margin: 0 0 20pt 0;
         letter-spacing: 0.25pt;
     }
 
@@ -59,7 +63,22 @@
 
     .resume ::deep a {
         text-decoration: none;
-        color: #44546a;
+        color: #0055b6;
+    }
+
+    .resume a.textual-link {
+        display: inline-block;
+        white-space: nowrap;
+        font-weight: bold;
+    }
+
+    .resume ::deep svg.external-link-icon {
+        width: 8pt;
+        height: 8pt;
+        margin-left: 2pt;
+        margin-top: 2pt;
+        margin-right: 2pt;
+        opacity: 0.8;
     }
 
     .resume ul {
@@ -133,7 +152,7 @@
             font-size: 42pt;
             text-transform: uppercase;
             letter-spacing: 0.1em;
-            margin-bottom: 0;
+            margin-bottom: 6pt;
             font-weight: 600;
         }
 
@@ -146,9 +165,9 @@
         display: flex;
         flex-direction: row;
         gap: 4pt;
-        padding: 0;
+        padding: 0 4pt;
         font-size: 0.925em;
-        justify-content: space-around;
+        justify-content: space-between;
         margin-top: 0;
         margin-bottom: 32pt;
     }
@@ -157,24 +176,28 @@
             display: flex;
             align-items: center;
             margin: 0;
+            font-size: 11pt;
+            letter-spacing: 0.025em;
         }
 
             .resume .page-coverletter-details li ::deep a {
                 color: #3f3f3f;
                 display: flex;
-                user-select: none;
                 align-items: center;
-                letter-spacing: 0.025em;
                 padding-top: 4pt;
                 padding-bottom: 4pt;
                 padding-left: 4pt;
                 padding-right: 4pt;
             }
 
-            .resume .page-coverletter-details li ::deep svg {
+            .resume .page-coverletter-details li ::deep svg:first-child {
                 height: 12pt;
                 width: 12pt;
                 margin-right: 4pt;
+            }
+
+            .resume .page-coverletter-details li ::deep svg.external-link-icon {
+                transform: translateY(-4px);
             }
 
 
@@ -210,7 +233,6 @@
                 justify-content: center;
                 border-radius: 8pt;
                 object-fit: cover;
-                border: 1pt solid #bbbbbb;
                 background-color: #293138;
                 color: #eeeeee;
             }
@@ -262,6 +284,7 @@
                 aspect-ratio: 1;
                 object-fit: contain;
                 color: white;
+                user-select: none;
             }
 
         .resume .timeline-company .timeline-company-summary {
@@ -282,6 +305,7 @@
                 aspect-ratio: 1;
                 object-fit: contain;
                 color: #777;
+                user-select: none;
             }
 
         .resume .timeline-company .timeline-position {

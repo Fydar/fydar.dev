@@ -1,0 +1,45 @@
+@layout DefaultLayout
+@page "/portfolio/lilypadleap"
+
+<HeadContent>
+    @{
+        var openGraphModel = new OpenGraphModel()
+        {
+            Title = "Lilypad Leap - Fydar",
+            Description = "Jump from lilypad to lilypad across the pond..",
+            CanonicalUrl = "https://fydar.dev/portfolio/lilypadleap",
+            Properties = [
+                new OpenGraphModelImage()
+                {
+                    Url = "https://fydar.dev/media/lilypadleap/social.png",
+                    Alt = "Promotional material for the game 'Lilypad Leap'."
+                }
+            ]
+        };
+    }
+    <OpenGraphComponent Model="@openGraphModel" />
+</HeadContent>
+
+<section class="fullscreen">
+    <div class="parallax-frame parallax-focalanchortop" style="--animation-time: 0.5;">
+
+        <picture class="parallax-layer" style="--parallax-multiplier: 0.5">
+            <img src="/media/lilypadleap/background.webp?v=1" />
+        </picture>
+
+    </div>
+
+    <div class="fullscreen-footer">
+
+    </div>
+</section>
+
+<aside>
+
+</aside>
+
+<section class="container">
+
+
+
+</section>

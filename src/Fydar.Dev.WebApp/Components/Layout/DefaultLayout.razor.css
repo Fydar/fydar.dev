@@ -324,15 +324,30 @@ main:has(section.section-feature:last-child) + footer {
         transform: translateY(calc(var(--parallax-offset) * var(--parallax-multiplier) * -1px));
     }
 
+        ::deep .parallax-frame .parallax-layer .blur {
+            width: 100%;
+            height: 100%;
+        }
+
         ::deep .parallax-frame .parallax-layer canvas {
             pointer-events: none;
         }
 
+    ::deep .parallax-frame video.parallax-layer {
+        pointer-events: none;
+        animation: landing-fade-in ease 1s;
+        animation-iteration-count: 1;
+        animation-fill-mode: forwards;
+    }
+
+    ::deep .parallax-frame picture.parallax-layer img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
 ::deep .fullscreen .parallax-frame {
-    mask: linear-gradient(to top, #00000000 0px, #ffffff 200px, #ffffff);
-    animation: landing-fade-in ease 1s;
-    animation-iteration-count: 1;
-    animation-fill-mode: forwards;
+    mask: linear-gradient(to top, #00000000 0px, #80808080 70px, #ffffff 170px, #ffffff);
 }
 
 @keyframes landing-fade-in {

@@ -1,0 +1,53 @@
+@layout DefaultLayout
+@page "/portfolio/pewpew"
+
+<HeadContent>
+    @{
+        var openGraphModel = new OpenGraphModel()
+        {
+            Title = "Pew Pew - Fydar",
+            Description = "A 20v20 .io style browser game made in 48 hours using ASP.NET Core and hosted in AWS.",
+            CanonicalUrl = "https://fydar.dev/portfolio/pewpew",
+            Properties = [
+                new OpenGraphModelImage()
+                {
+                    Url = "https://fydar.dev/media/pewpew/social.webp",
+                    Alt = "Promotional material for the game 'Pew Pew'."
+                }
+            ]
+        };
+    }
+    <OpenGraphComponent Model="@openGraphModel" />
+</HeadContent>
+
+<section class="fullscreen">
+    <div class="parallax-frame parallax-focalanchortop" style="--animation-time: 0.5;">
+
+    </div>
+
+    <div class="fullscreen-footer">
+
+    </div>
+</section>
+
+<HeadingScope>
+    <aside>
+        <section style="position: sticky; top: 64px;">
+            <div style="height: 5rem"></div>
+            <TableOfContents />
+        </section>
+
+    </aside>
+
+    <section class="container">
+
+        <Heading Level="2" Identifier="skill-tree-editing">
+            <Prefix></Prefix>
+            <Text></Text>
+            <Content>
+
+            </Content>
+        </Heading>
+
+    </section>
+</HeadingScope>

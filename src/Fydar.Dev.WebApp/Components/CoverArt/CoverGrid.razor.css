@@ -3,7 +3,7 @@
 .cover-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 10px 10px;
+    gap: 12px 12px;
     margin: 10px 0;
 }
 

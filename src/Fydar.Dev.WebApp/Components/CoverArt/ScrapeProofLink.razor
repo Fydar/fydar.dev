@@ -1,6 +1,6 @@
 @using System.Text
 
-<a href="" id="decodethis">
+<a href="" id="decodethis" @attributes="AdditionalAttributes">
     @ChildContent
 </a>
 
@@ -36,6 +36,9 @@
     [Parameter] public string LinkText { get; set; } = string.Empty;
     [Parameter] public string LinkDestination { get; set; } = string.Empty;
     [Parameter] public string LinkTarget { get; set; } = "_blank";
+
+    [Parameter(CaptureUnmatchedValues = true)]
+    public IDictionary<string, object>? AdditionalAttributes { get; set; }
 
     private static string EncodeString(string input, bool isHtml)
     {

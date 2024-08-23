@@ -28,11 +28,30 @@
         background-color: #262a31;
     }
 
+        .cover .cover-background ::deep .blur {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
         .cover .cover-background ::deep svg,
-        .cover .cover-background ::deep img {
+        .cover .cover-background ::deep img,
+        .cover .cover-background ::deep video {
+            position: absolute;
+            top: 0;
+            left: 0;
             width: 100%;
             height: 100%;
             object-fit: cover;
+        }
+
+
+        .cover .cover-background ::deep video {
+            animation: library-fade-in ease 1s;
+            animation-iteration-count: 1;
+            animation-fill-mode: forwards;
         }
 
         .cover .cover-background .cover-overlay {
@@ -72,6 +91,10 @@
                 .cover .cover-background .cover-overlay ::deep .logo.logo-eitr {
                     padding: 0% 3% 107% 3%;
                     filter: drop-shadow(0px 1px 4px black);
+                }
+
+                .cover .cover-background .cover-overlay ::deep .logo.logo-uno {
+                    padding: 0% 3.5% 0% 3.5%;
                 }
 
         /* Shine */
@@ -124,3 +147,13 @@
         opacity: 0.6;
         transform: rotateX(7deg) translateY(-6px) scale(1.0325);
     }
+
+@keyframes library-fade-in {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
