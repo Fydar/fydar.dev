@@ -24,12 +24,12 @@
     <div class="parallax-frame parallax-focalanchortop" style="--animation-time: 0.5;">
 
         <div class="parallax-layer" style="--parallax-multiplier: 0.5;">
-            <div class="blur" style="background: radial-gradient(160% 125% at 75% 60%, rgba(250,202,21,1) 2%, rgba(253,165,13,1) 12%, rgba(255,118,7,1) 26%, rgba(250,70,0,1) 36%, rgba(241,36,1,1) 43%, rgba(141,5,0,1) 77%, rgba(101,2,0,1) 100%);">
+            <div class="blur" style="background: radial-gradient(100% 105% at 66% 60%, rgba(250,202,21,1) 2%, rgba(253,165,13,1) 12%, rgba(255,118,7,1) 26%, rgba(250,70,0,1) 36%, rgba(241,36,1,1) 43%, rgba(141,5,0,1) 77%, rgba(101,2,0,1) 100%);">
             </div>
         </div>
 
-        <video class="parallax-layer" style="--parallax-multiplier: 0.5" autoplay muted loop>
-            <source src="/media/uno/background.1440p.60fps.h265.mp4?v=1" type='video/mp4; codecs="hev1.1.2.L93.90"; profiles="isom,iso2,mp41"'>
+        <video class="parallax-layer" onloadeddata="this.classList.add('loaded');" style="--parallax-multiplier: 0.5; mix-blend-mode: screen;" autoplay muted loop>
+            <source src="/media/uno/background.1440p.60fps.h265.mp4?v=1" type='video/mp4; codecs="hvc1.1.2.L123.90"; profiles="isom,iso2,mp41"'>
             <source src="/media/uno/background.1440p.30fps.h264.mp4?v=1" type='video/mp4; codecs="avc1.4d401f"; profiles="isom,iso2,avc1,mp41"'>
         </video>
 
@@ -38,7 +38,7 @@
     <div class="fullscreen-footer">
 
         <picture>
-            <img class="titlecard" src="media/uno/titlecard.webp?v=1" alt="Title card for the game 'UNO'." />
+            <img class="titlecard" src="media/uno/logo.svg?v=1" alt="Title card for the game 'UNO'." />
         </picture>
 
         <SteamPlayButton href="https://www.ubisoft.com/en-gb/game/uno/uno">Visit on Ubisoft</SteamPlayButton>

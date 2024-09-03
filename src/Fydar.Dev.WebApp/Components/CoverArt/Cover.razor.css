@@ -9,6 +9,7 @@
     perspective: 1000px;
     perspective-origin: 50% 50%;
     aspect-ratio: 6 / 9;
+    user-select: none;
 }
 
     .cover .cover-background {
@@ -93,8 +94,8 @@
                     filter: drop-shadow(0px 1px 4px black);
                 }
 
-                .cover .cover-background .cover-overlay ::deep .logo.logo-uno {
-                    padding: 0% 3.5% 0% 3.5%;
+                .cover .cover-background .cover-overlay ::deep .logo.logo-ubisoft-uno {
+                    padding: 0% 0% 0% 0%;
                 }
 
         /* Shine */

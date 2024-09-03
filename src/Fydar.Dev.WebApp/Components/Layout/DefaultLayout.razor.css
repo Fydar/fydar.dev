@@ -335,10 +335,13 @@ main:has(section.section-feature:last-child) + footer {
 
     ::deep .parallax-frame video.parallax-layer {
         pointer-events: none;
-        animation: landing-fade-in ease 1s;
-        animation-iteration-count: 1;
-        animation-fill-mode: forwards;
+        opacity: 0;
+        transition: opacity 0.25s;
     }
+
+        ::deep .parallax-frame video.parallax-layer.loaded {
+            opacity: 1;
+        }
 
     ::deep .parallax-frame picture.parallax-layer img {
         width: 100%;
@@ -349,17 +352,6 @@ main:has(section.section-feature:last-child) + footer {
 ::deep .fullscreen .parallax-frame {
     mask: linear-gradient(to top, #00000000 0px, #80808080 70px, #ffffff 170px, #ffffff);
 }
-
-@keyframes landing-fade-in {
-    0% {
-        opacity: 0;
-    }
-
-    100% {
-        opacity: 1;
-    }
-}
-
 
 
 header,
