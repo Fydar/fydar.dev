@@ -14,7 +14,7 @@
     text-decoration: none;
     width: 1.5em;
     text-align: center;
-    color: #444;
+    color: #ffffff44;
     font-weight: 500;
     transition: color 0.25s ease-in-out;
 }
@@ -24,6 +24,11 @@
         color: currentColor;
     }
 
+    .anchor-tag ::deep svg {
+        color: currentColor;
+        width: 1em;
+        height: 0.75em;
+    }
 
 /* Slim Mobile */
 @media screen and (max-width: 576px) {

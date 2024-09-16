@@ -59,6 +59,10 @@
     margin-top: 6rem;
 }
 
+::deep h3 {
+    margin-block-start: 4em;
+}
+
 ::deep p {
     text-align: justify;
 }
