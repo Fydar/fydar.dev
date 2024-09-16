@@ -309,6 +309,9 @@ main:has(section.section-feature:last-child) + footer {
     width: 100%;
 }
 
+::deep .hidden {
+    display: none;
+}
 
 
 ::deep .parallax-frame {
