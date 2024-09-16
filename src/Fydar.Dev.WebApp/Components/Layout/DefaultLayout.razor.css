@@ -232,7 +232,7 @@ header {
 
 
 footer {
-    background-color: #151517;
+    background-color: #00000010;
     margin-top: 5rem;
     padding-top: 2rem;
     padding-bottom: 3rem;
@@ -353,6 +353,29 @@ main:has(section.section-feature:last-child) + footer {
     mask: linear-gradient(to top, #00000000 0px, #80808080 70px, #ffffff 170px, #ffffff);
 }
 
+::deep .cascade-container {
+    position: absolute;
+    grid-column: 1 / -1;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 0;
+    z-index: -100;
+    pointer-events: none;
+    bottom: 0;
+}
+
+    ::deep .cascade-container .cascade {
+        position: absolute;
+        top: -180px;
+        left: 0;
+        right: 0;
+        height: 1048px;
+        mask: linear-gradient(to top, #00000000 24px, #ffffffff 85%, #ffffffff 100%);
+    }
+    ::deep .cascade-container + * {
+        min-height: 512px;
+    }
 
 header,
 main,
