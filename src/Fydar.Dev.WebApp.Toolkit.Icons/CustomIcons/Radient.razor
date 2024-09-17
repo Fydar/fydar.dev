@@ -1,0 +1,47 @@
+@inherits Icon
+
+<symbol id="icon-@Identifier" fill="currentColor" viewBox="0 0 96 96">
+    <title>@Title</title>
+
+    <defs>
+        <linearGradient x1="89.47" y1="71.7" x2="42.58" y2="84.84" gradientUnits="userSpaceOnUse" spreadMethod="reflect" id="a">
+            <stop offset="0" stop-color="#F262B1" />
+            <stop offset=".97" stop-color="#9F38FE" />
+            <stop offset="1" stop-color="#9F38FE" />
+        </linearGradient>
+        <linearGradient x1="82.69" y1="12.89" x2="73.88" y2="47.3" gradientUnits="userSpaceOnUse" spreadMethod="reflect" id="b">
+            <stop offset="0" stop-color="#F5CC5A" />
+            <stop offset=".2" stop-color="#F4C677" />
+            <stop offset=".4" stop-color="#F4B98F" />
+            <stop offset=".6" stop-color="#F3A2A2" />
+            <stop offset=".8" stop-color="#F385AD" />
+            <stop offset="1" stop-color="#F261B2" />
+        </linearGradient>
+        <linearGradient x1="12.76" y1="13.27" x2="47.28" y2="22.1" gradientUnits="userSpaceOnUse" spreadMethod="reflect" id="c">
+            <stop offset="0" stop-color="#526FBC" />
+            <stop offset=".2" stop-color="#6893B7" />
+            <stop offset=".4" stop-color="#7BB0A9" />
+            <stop offset=".6" stop-color="#88C594" />
+            <stop offset=".8" stop-color="#91D378" />
+            <stop offset="1" stop-color="#95D956" />
+        </linearGradient>
+        <linearGradient x1="13.33" y1="83.18" x2="22.13" y2="48.78" gradientUnits="userSpaceOnUse" spreadMethod="reflect" id="d">
+            <stop offset="0" stop-color="#9F38FE" />
+            <stop offset=".2" stop-color="#9B4AFA" />
+            <stop offset=".4" stop-color="#905AF1" />
+            <stop offset=".6" stop-color="#8065E4" />
+            <stop offset=".8" stop-color="#6C6CD2" />
+            <stop offset="1" stop-color="#526FBC" />
+        </linearGradient>
+    </defs>
+    <path d="M46.11 55.44a7.66 7.66 0 0 1-5.5-9.3 7.66 7.66 0 0 1 9.29-5.5 7.66 7.66 0 0 1 5.5 9.3 7.66 7.66 0 0 1-9.29 5.5Zm44.24 1.72-7.05-4.3-17.23-10.71 9.04-10.17-13.14 3.08-1.21-20.42-.51-8.28L60 1.18 57.13 5.7l-4.3 7.05L42.24 30l-10.17-9.04 3.08 13.13-20.26 1.13-8.37.35-5.34.34L5.7 38.8l6.89 4.4 17.35 10.74-9 10.04 13.13-3.07 1.13 20.26.38 8.24.34 5.34 2.87-4.52 4.42-7.01 10.87-17.32 10.05 9-3.2-13.17 20.26-1.12 8.27-.51 5.35-.34-4.46-2.59Z" fill="#FFF" />
+    <path d="M78.78 65.9c-2.34 4-5.47 7.53-9.23 10.38a41.52 41.52 0 0 1-7 4.25 35.14 35.14 0 0 1-13.66 3.08L47.5 86l-3.15 5.1a42.96 42.96 0 0 0 24.45-5.17l2.79-1.65A43.83 43.83 0 0 0 87.7 65.42l-6.15.4-2.78.08Z" fill="url(#a)" />
+    <path d="M65.99 17.3c4 2.33 7.53 5.47 10.26 9.19a36.4 36.4 0 0 1 4.22 7.12c1.92 4.3 3.01 8.79 3.1 13.54l2.4 1.4 5.12 3.15A43.83 43.83 0 0 0 86 27.4l-1.65-2.78A43.35 43.35 0 0 0 65.48 8.49l.3 6 .2 2.8Z" fill="url(#b)" />
+    <path d="M17.3 29.93a35.67 35.67 0 0 1 16.35-14.6 34.8 34.8 0 0 1 13.38-3.02l1.5-2.24 3.14-5.11c-8.36-.7-16.8.96-24.26 4.96l-2.79 1.65A44.03 44.03 0 0 0 8.37 30.41l6-.3 2.92-.18Z" fill="url(#c)" />
+    <path d="M30.02 78.78A35.67 35.67 0 0 1 12.4 49.05l-2.36-1.53-5.11-3.15A42.87 42.87 0 0 0 10 68.67l1.65 2.79a43.83 43.83 0 0 0 18.87 16.12l-.43-6.02-.08-2.78Z" fill="url(#d)" />
+</symbol>
+
+@code {
+    public override string Identifier => "radient";
+    public override string Title => "Radient";
+}

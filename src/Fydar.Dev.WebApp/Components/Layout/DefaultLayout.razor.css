@@ -49,7 +49,7 @@
     ::deep figure.figure-image figcaption {
         padding: .8em 1rem;
         font-size: 12.6px;
-        background-color: #3d3d3d6e;
+        background-color: #3d3d3d3b;
         border-bottom-left-radius: 8px;
         border-bottom-right-radius: 8px;
     }
@@ -361,7 +361,7 @@ main:has(section.section-feature:last-child) + footer {
 }
 
 ::deep .cascade-container {
-    position: absolute;
+    position: relative;
     grid-column: 1 / -1;
     display: flex;
     flex-direction: column;
@@ -369,7 +369,6 @@ main:has(section.section-feature:last-child) + footer {
     height: 0;
     z-index: -100;
     pointer-events: none;
-    bottom: 0;
 }
 
     ::deep .cascade-container .cascade {

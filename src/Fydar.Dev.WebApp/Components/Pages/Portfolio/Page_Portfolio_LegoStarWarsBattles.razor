@@ -20,6 +20,7 @@
     <OpenGraphComponent Model="@openGraphModel" />
 </HeadContent>
 
+
 <section class="fullscreen">
     <div class="parallax-frame parallax-focalanchortop" style="--animation-time: 0.5;">
 
@@ -47,9 +48,15 @@
 </section>
 
 <div class="cascade-container">
-    <div class="cascade" style="background: linear-gradient(to right, #17314400 0%, #17314430 75%, #17314414 100%), url('media/noise.svg');">
+    <div class="cascade" style="background: linear-gradient(to right, #313d6c00 0%, #313d6c30 75%, #313d6c14 100%), url('media/noise.svg');">
     </div>
 </div>
+
+<SvgSpritesheet>
+
+    <Fydar.Dev.WebApp.Toolkit.Icons.CustomIcons.Sift />
+
+</SvgSpritesheet>
 
 <HeadingScope>
     <aside>
@@ -65,6 +72,7 @@
         <Heading Level="2" Identifier="leaderboards">
             <Prefix>Servers and infrastructure for</Prefix>
             <Text>Leaderboards</Text>
+            <Media><img src="media/legostarwarsbattles/icon-leagues.webp?v=1" alt="The icon for Leaderboards." /></Media>
             <Content>
                 <p>I took the role of the <b>Feature Lead</b> to implement weekly leaderboard system. This involved me first provisioning cloud resources and implementing the server systems for leaderboards, and finally implementing a basic UI that can later be reskinned.</p>
 
@@ -87,16 +95,12 @@
         <Heading Level="2" Identifier="clans">
             <Prefix>Servers and infrastructure for</Prefix>
             <Text>Clans</Text>
+            <Media><img src="media/legostarwarsbattles/icon-clans.webp?v=1" alt="The icon for Clans." /></Media>
             <Content>
 
                 <p>I took the role of the <b>Feature Lead</b> to implement the Clans social system. Much like with the <b>Leaderboards</b>, I started by developing the server-side systems and finished with the client-side UI.</p>
 
                 <CutContent>
-                    <Media>
-                        <picture>
-                            <img loading="lazy" src="/media/legostarwarsbattles/character-palpatine.png?v=1" alt="Emperor Palpatine." height="256" />
-                        </picture>
-                    </Media>
                     <ChildContent>
                         This feature was cut from the game.
                     </ChildContent>
@@ -108,6 +112,7 @@
         <Heading Level="2" Identifier="username-moderation">
             <Prefix>Servers and infrastructure for</Prefix>
             <Text>Username Moderation</Text>
+            <Media><SvgSprite Link="#icon-sift" /></Media>
             <Content>
 
                 <p>I created our username moderation pipeline utilising a third-party neural moderation API provided by <i>Community Sift</i>.</p>
@@ -120,16 +125,12 @@
         <Heading Level="2" Identifier="server-side-receipt-validation">
             <Prefix>Servers and infrastructure for</Prefix>
             <Text>Server-Side Receipt Validation</Text>
+            <Media><img src="media/legostarwarsbattles/icon-stud-pile.webp?v=1" alt="The icon for the shop." /></Media>
             <Content>
 
                 <p>In order to protect our game from fraudulent receipts being sent to our server in order to get free rewards, receipts from the Google Play Store and the Apple App Store have to be validated by our servers to ensure the receipt is from a valid transaction.</p>
 
                 <CutContent>
-                    <Media>
-                        <picture>
-                            <img loading="lazy" src="/media/legostarwarsbattles/character-watto.png?v=1" alt="Watto." height="256" />
-                        </picture>
-                    </Media>
                     <ChildContent>
                         <p>This feature was cut from the game.</p>
                         <p>When the game released on Apple Arcade, we removed all monetization features.</p>
@@ -142,6 +143,7 @@
         <Heading Level="2" Identifier="updates-and-data-delivery">
             <Prefix>Servers and infrastructure for</Prefix>
             <Text>Updates and Data Delivery</Text>
+            <Media><img src="media/legostarwarsbattles/icon-asteroid.webp?v=1" alt="The icon for rewards." /></Media>
             <Content>
 
                 <p>I architected and implemented the infrastructure necessary to deliver update data to our users.</p>

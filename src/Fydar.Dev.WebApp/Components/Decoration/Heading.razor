@@ -1,6 +1,6 @@
 @inject NavigationManager NavigationManager
 
-<div class="heading-wrapper" id="@Identifier">
+<div class="heading-wrapper @(Media != null ? "heading-wrapper-media" : "") " id="@Identifier">
 
     @if (Prefix != null)
     {
@@ -11,6 +11,12 @@
     {
         case 1:
             <h1 class="heading-anchor">
+                @if (Media != null)
+                {
+                    <div class="heading-media">
+                        @Media
+                    </div>
+                }
                 <a class="anchor-tag" href="@NavigationManager.Uri#@Identifier">
                     <SvgSprite Link="/icons.svg?v=1#glyph-inter-hashtag" />
                 </a>
@@ -19,6 +25,12 @@
             break;
         case 2:
             <h2 class="heading-anchor">
+                @if (Media != null)
+                {
+                    <div class="heading-media">
+                        @Media
+                    </div>
+                }
                 <a class="anchor-tag" href="@NavigationManager.Uri#@Identifier">
                     <SvgSprite Link="/icons.svg?v=1#glyph-inter-hashtag" />
                 </a>
@@ -27,6 +39,12 @@
             break;
         case 3:
             <h3 class="heading-anchor">
+                @if (Media != null)
+                {
+                    <div class="heading-media">
+                        @Media
+                    </div>
+                }
                 <a class="anchor-tag" href="@NavigationManager.Uri#@Identifier">
                     <SvgSprite Link="/icons.svg?v=1#glyph-inter-hashtag" />
                 </a>
@@ -35,6 +53,12 @@
             break;
         case 4:
             <h4 class="heading-anchor">
+                @if (Media != null)
+                {
+                    <div class="heading-media">
+                        @Media
+                    </div>
+                }
                 <a class="anchor-tag" href="@NavigationManager.Uri#@Identifier">
                     <SvgSprite Link="/icons.svg?v=1#glyph-inter-hashtag" />
                 </a>
@@ -43,6 +67,12 @@
             break;
         case 5:
             <h5 class="heading-anchor">
+                @if (Media != null)
+                {
+                    <div class="heading-media">
+                        @Media
+                    </div>
+                }
                 <a class="anchor-tag" href="@NavigationManager.Uri#@Identifier">
                     <SvgSprite Link="/icons.svg?v=1#glyph-inter-hashtag" />
                 </a>
@@ -68,8 +98,14 @@
     [Parameter]
     public RenderFragment? Prefix { get; set; }
 
+    [Parameter]
+    public RenderFragment? Media { get; set; }
+
     [Parameter, EditorRequired]
     public RenderFragment? Text { get; set; }
+
+    [Parameter]
+    public RenderFragment? SidebarText { get; set; }
 
     [Parameter, EditorRequired]
     public RenderFragment? Content { get; set; }
@@ -79,7 +115,7 @@
         HeadingRegister.Register(new HeadingModel()
         {
             Identifier = Identifier,
-            Text = Text,
+            Text = SidebarText ?? Text,
             Depth = Level
         });
 
