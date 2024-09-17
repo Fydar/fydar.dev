@@ -31,10 +31,51 @@
 
     <section class="container">
 
-        <Heading Level="2" Identifier="world">
+        <Heading Level="2" Identifier="items">
             <Prefix>Designing the</Prefix>
             <Text>Items</Text>
+            <Media><SvgSprite Link="/icons.svg?v=1#icon-knapsack" /></Media>
             <Content>
+
+            </Content>
+        </Heading>
+
+        <Heading Level="2" Identifier="stacks">
+            <Prefix>Designing the</Prefix>
+            <Text>Item Stacks</Text>
+            <Media><SvgSprite Link="/icons.svg?v=1#icon-knapsack" /></Media>
+            <Content>
+
+            </Content>
+        </Heading>
+
+        <Heading Level="2" Identifier="containers">
+            <Prefix>Designing the</Prefix>
+            <Text>Item Containers</Text>
+            <Media><SvgSprite Link="/icons.svg?v=1#icon-knapsack" /></Media>
+            <Content>
+
+                <p>Item containers are a common representation of anything that contains items. These can be a <b>single slot</b> for items in your bag or a whole <b>inventories</b> of items.</p>
+                
+                <h3>Container Constraints</h3>
+
+                <p>A common demand of inventory systems is to place constraints on what sort of items can enter containers. Using a common notion of an item "container" allows us to define constraints that can be reused across all item containers. For example, let's say we have an equipment slot on our character that can only accept weapons. We can define a constraint that limits that slot to only accept weapons, and re-use it on an inventory that can only accept weapons like a weapon rack.</p>
+
+                <p>Putting constraints on containers isn't just limited to slotted inventory systems; games like The Elder Scrolls V: Skyrim have allow you to carry an unlimited amount of items, but then limits the amount you can carry using <b>item weight</b>.</p>
+
+            </Content>
+        </Heading>
+
+
+        <Heading Level="2" Identifier="transactions">
+            <Prefix>Powerful APIs with</Prefix>
+            <Text>Inventory Transactions</Text>
+            <Media><SvgSprite Link="/icons.svg?v=1#icon-knapsack" /></Media>
+            <Content>
+                <p>A very common issue with inventories and items, especially in multiplayer games, is <b>vanishing or duplication glitches</b>. These glitches can result on a broken game economy. These issues should be tackled on a <b>systemic level</b>.</p>
+
+                <p>Instead of directly modifying a slot or an inventory, we can represent these modifications as a series of operations within a whole <b>Transaction</b>. This allows for for easy integration with with multiplayer game systems.</p>
+
 
             </Content>
         </Heading>
