@@ -1,0 +1,19 @@
+
+figure.figure-embed-youtube {
+    position: relative;
+    width: 100%;
+    padding-top: 56.25%;
+    background-color: black;
+    margin: 0;
+    margin-block-start: 4em;
+}
+
+    figure.figure-embed-youtube iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+    }
