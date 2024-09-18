@@ -93,13 +93,14 @@ function NavHighlighter() {
         const sectionTop = (current.getBoundingClientRect().top + scrollY) - 50 - (window.innerHeight * 0.5 * getScrollPercent());
         sectionId = current.getAttribute("id");
 
-        if (
-            scrollY > sectionTop &&
-            scrollY <= sectionTop + sectionHeight
-        ) {
-            document.querySelector("ol li a[href*=\"" + sectionId + "\"]").classList.add("active");
-        } else {
-            document.querySelector("ol li a[href*=\"" + sectionId + "\"]").classList.remove("active");
+        var queryResults = document.querySelector("ol li a[href*=\"" + sectionId + "\"]");
+
+        if (queryResults != null) {
+            if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+                queryResults.classList.add("active");
+            } else {
+                queryResults.classList.remove("active");
+            }
         }
     });
 }

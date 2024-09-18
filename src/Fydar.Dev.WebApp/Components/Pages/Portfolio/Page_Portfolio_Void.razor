@@ -1,0 +1,66 @@
+@layout DefaultLayout
+@page "/portfolio/void"
+
+<HeadContent>
+    @{
+        var openGraphModel = new OpenGraphModel()
+        {
+            Title = "Void - Fydar",
+            Description = "A top-down space RTS.",
+            CanonicalUrl = "https://fydar.dev/portfolio/void",
+            Properties = [
+                new OpenGraphModelImage()
+                {
+                    Url = "https://fydar.dev/media/void/social.webp",
+                    Alt = "Promotional material for the game 'Void'."
+                }
+            ]
+        };
+    }
+    <OpenGraphComponent Model="@openGraphModel" />
+</HeadContent>
+
+<section class="fullscreen">
+    <div class="parallax-frame parallax-focalanchortop" style="--animation-time: 0.5;">
+
+
+    </div>
+
+    <div class="fullscreen-footer">
+
+        <picture>
+            <img class="titlecard" src="media/void/titlecard.png?v=1" alt="Title card for the game 'Void'." />
+        </picture>
+
+        <SteamPlayButton href="/play/void">Play in Browser</SteamPlayButton>
+
+    </div>
+</section>
+
+<div class="cascade-container">
+    <div class="cascade" style="background: linear-gradient(to right, #FFA50000 0%, #FFA50030 75%, #FFA50014 100%), url('media/noise.svg');">
+    </div>
+</div>
+
+<HeadingScope>
+    <aside>
+        <section style="position: sticky; top: 64px;">
+            <div style="height: 5rem"></div>
+            <TableOfContents />
+        </section>
+
+    </aside>
+
+    <section class="container">
+
+        <Heading Level="2" Identifier="dialogue-system">
+            <Prefix>Implementing the </Prefix>
+            <Text>Pathfinding System</Text>
+            <Content>
+
+
+            </Content>
+        </Heading>
+
+    </section>
+</HeadingScope>
