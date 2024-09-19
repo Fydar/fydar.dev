@@ -1,0 +1,134 @@
+@layout DefaultLayout
+@page "/portfolio/asseticons"
+
+<HeadContent>
+    @{
+        var openGraphModel = new OpenGraphModel()
+        {
+            Title = "AssetIcons - Fydar",
+            Description = "Assign your own unique icon to each of your ScriptableObjects.",
+            CanonicalUrl = "https://fydar.dev/portfolio/asseticons",
+            Properties = [
+                new OpenGraphModelImage()
+                {
+                    Url = "https://fydar.dev/media/asseticons/social.webp",
+                    Alt = "Promotional material for 'AssetIcons'."
+                }
+            ]
+        };
+        var linkData = new LinkData()
+        {
+            new LinkDataBreadcrumbList()
+            {
+                new LinkDataBreadcrumbListItem()
+                {
+                    Name = "Portfolio",
+                    Item = "https://fydar.dev/portfolio/"
+                },
+                new LinkDataBreadcrumbListItem()
+                {
+                    Name = "AssetIcons",
+                    Item = "https://fydar.dev/portfolio/asseticons"
+                }
+            }
+        };
+    }
+    <OpenGraphComponent Model="@openGraphModel" />
+    <LinkDataComponent Model="@linkData" />
+</HeadContent>
+
+<section class="fullscreen">
+    <div class="parallax-frame parallax-focalanchortop" style="--animation-time: 0.5;">
+
+        <picture class="parallax-layer" style="--parallax-multiplier: 0.5">
+            <img src="/media/asseticons/background.webp?v=1" />
+        </picture>
+
+    </div>
+
+    <div class="fullscreen-footer">
+
+        <SteamPlayButton href="https://assetstore.unity.com/packages/tools/utilities/asseticons-100547">Visit the Asset Store</SteamPlayButton>
+
+    </div>
+</section>
+
+<div class="cascade-container">
+    <div class="cascade" style="background: linear-gradient(to right, #d868c900 0%, #d868c930 75%, #d868c914 100%), url('media/noise.svg');">
+    </div>
+</div>
+
+<HeadingScope>
+
+    <section class="container">
+        <figure class="figure-image">
+            <picture>
+                <img loading="lazy" src="/media/asseticons/asseticons-voxel-icons.png?v=1" alt="The AssetIcons update checker." />
+            </picture>
+            <figcaption>The project window with icons drawn by AssetIcons.</figcaption>
+        </figure>
+    </section>
+
+    <aside>
+        <section style="position: sticky; top: 64px;">
+            <div style="height: 5rem"></div>
+            <TableOfContents />
+        </section>
+
+    </aside>
+
+    <section class="container">
+
+        <Heading Level="2" Identifier="documentation">
+            <Text>Well Documented</Text>
+            <Content>
+
+                <figure class="figure-image">
+                    <picture>
+                        <img loading="lazy" src="/media/asseticons/asseticons-documentation-1.png?v=1" alt="The AssetIcons documentation." />
+                    </picture>
+                    <figcaption>Screenshot of <a href="https://fydar.github.io/AssetIcons/Documentation#home" target="_blank">the AssetIcons documentation<SvgSprite Link="/icons.svg?v=1#icon-external-link" class="external-link-icon" /></a>.</figcaption>
+                </figure>
+
+            </Content>
+        </Heading>
+
+        <Heading Level="2" Identifier="features">
+            <Text>Features</Text>
+            <Content>
+
+                <ul>
+                    <li>Dynamic icons for ScriptableObjects</li>
+                    <li>Custom icons per file extension</li>
+                    <li>Customize icons with attribute-defined styles</li>
+                    <li>Easy-to-use</li>
+                    <li>High-quality documentation</li>
+                    <li>Public issue tracker</li>
+                    <li>In-editor update checker</li>
+                    <li>Error detection and reporting</li>
+                    <li>Support for Unity's Collaborate overlay</li>
+                    <li>Support for Unity's Version Control overlay</li>
+                </ul>
+
+            </Content>
+        </Heading>
+
+        <Heading Level="2" Identifier="update-checker">
+            <Text>Update Checker</Text>
+            <Content>
+
+                <p>AssetIcons includes a utility to quickly and easily check for updates.</p>
+
+                <figure class="figure-image">
+                    <picture>
+                        <img loading="lazy" src="/media/asseticons/asseticons-update-checker.png?v=1" alt="The AssetIcons update checker." />
+                    </picture>
+                    <figcaption>The update checker window.</figcaption>
+                </figure>
+
+            </Content>
+        </Heading>
+
+
+    </section>
+</HeadingScope>
