@@ -5,19 +5,36 @@
     @{
         var openGraphModel = new OpenGraphModel()
         {
-            Title = "Lovers Defence - Fydar",
+            Title = "Lovers' Defence - Fydar",
             Description = "A narrative driven tower defence game.",
             CanonicalUrl = "https://fydar.dev/portfolio/loversdefence",
             Properties = [
                 new OpenGraphModelImage()
                 {
                     Url = "https://fydar.dev/media/loversdefence/social.webp",
-                    Alt = "Promotional material for the game 'Lovers Defence'."
+                    Alt = "Promotional material for the game 'Lovers' Defence'."
                 }
             ]
         };
+        var linkData = new LinkData()
+        {
+            new LinkDataBreadcrumbList()
+            {
+                new LinkDataBreadcrumbListItem()
+                {
+                    Name = "Portfolio",
+                    Item = "https://fydar.dev/portfolio/"
+                },
+                new LinkDataBreadcrumbListItem()
+                {
+                    Name = "Lovers' Defence",
+                    Item = "https://fydar.dev/portfolio/loversdefence"
+                }
+            }
+        };
     }
     <OpenGraphComponent Model="@openGraphModel" />
+    <LinkDataComponent Model="@linkData" />
 </HeadContent>
 
 <section class="fullscreen">

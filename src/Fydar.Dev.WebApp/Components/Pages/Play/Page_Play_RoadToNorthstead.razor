@@ -16,8 +16,25 @@
                 }
             ]
         };
+        var linkData = new LinkData()
+        {
+            new LinkDataBreadcrumbList()
+            {
+                new LinkDataBreadcrumbListItem()
+                {
+                    Name = "Play",
+                    Item = "https://fydar.dev/play/"
+                },
+                new LinkDataBreadcrumbListItem()
+                {
+                    Name = "Road to Northstead",
+                    Item = "https://fydar.dev/play/roadtonorthstead"
+                }
+            }
+        };
     }
     <OpenGraphComponent Model="@openGraphModel" />
+    <LinkDataComponent Model="@linkData" />
     <meta name="theme-color" content="#2c3840">
     <link rel="shortcut icon" href="/play/roadtonorthstead/favicon.ico">
     <link rel="manifest" href="/play/roadtonorthstead/manifest.webmanifest">

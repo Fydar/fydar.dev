@@ -16,8 +16,20 @@
                 }
             ]
         };
+        var linkData = new LinkData()
+        {
+            new LinkDataBreadcrumbList()
+            {
+                new LinkDataBreadcrumbListItem()
+                {
+                    Name = "Play",
+                    Item = "https://fydar.dev/play/"
+                }
+            }
+        };
     }
     <OpenGraphComponent Model="@openGraphModel" />
+    <LinkDataComponent Model="@linkData" />
 </HeadContent>
 
 <section class="container">

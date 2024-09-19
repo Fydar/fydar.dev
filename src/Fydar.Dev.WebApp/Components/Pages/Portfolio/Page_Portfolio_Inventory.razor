@@ -16,8 +16,25 @@
                 }
             ]
         };
+        var linkData = new LinkData()
+        {
+            new LinkDataBreadcrumbList()
+            {
+                new LinkDataBreadcrumbListItem()
+                {
+                    Name = "Portfolio",
+                    Item = "https://fydar.dev/portfolio/"
+                },
+                new LinkDataBreadcrumbListItem()
+                {
+                    Name = "Inventory",
+                    Item = "https://fydar.dev/portfolio/inventory"
+                }
+            }
+        };
     }
     <OpenGraphComponent Model="@openGraphModel" />
+    <LinkDataComponent Model="@linkData" />
 </HeadContent>
 
 <HeadingScope>

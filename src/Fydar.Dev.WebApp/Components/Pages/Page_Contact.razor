@@ -18,6 +18,17 @@
                 }
             ]
         };
+        var linkData = new LinkData()
+        {
+            new LinkDataBreadcrumbList()
+            {
+                new LinkDataBreadcrumbListItem()
+                {
+                    Name = "Contact",
+                    Item = "https://fydar.dev/contact/"
+                },
+            }
+        };
     }
     <OpenGraphComponent Model="@openGraphModel" />
 

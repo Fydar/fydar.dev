@@ -8,7 +8,7 @@
         {
             Title = "Game Jams - Fydar",
             Description = "Fydar is a game developer and engineer who thrives when pushing technical boundaries and creating memorable experiences.",
-            CanonicalUrl = "https://fydar.dev/gamejams",
+            CanonicalUrl = "https://fydar.dev/portfolio/gamejams",
             Properties = [
                 new OpenGraphModelImage()
                 {
@@ -17,8 +17,25 @@
                 }
             ]
         };
+        var linkData = new LinkData()
+        {
+            new LinkDataBreadcrumbList()
+            {
+                new LinkDataBreadcrumbListItem()
+                {
+                    Name = "Portfolio",
+                    Item = "https://fydar.dev/portfolio/"
+                },
+                new LinkDataBreadcrumbListItem()
+                {
+                    Name = "Game Jams",
+                    Item = "https://fydar.dev/portfolio/gamejams"
+                }
+            }
+        };
     }
     <OpenGraphComponent Model="@openGraphModel" />
+    <LinkDataComponent Model="@linkData" />
 
     <link rel="preload" href="media/portrait-cropped.webp" as="image" />
 </HeadContent>

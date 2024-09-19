@@ -5,7 +5,7 @@
     @{
         var openGraphModel = new OpenGraphModel()
         {
-            Title = "Play Lovers Defence - Fydar",
+            Title = "Play Lovers' Defence - Fydar",
             Description = "The Game Boy demake of the Nintendo DS Pokémon Diamond and Pearl underground mining minigame.",
             CanonicalUrl = "https://fydar.dev/play/loversdefence",
             Properties = [
@@ -16,8 +16,25 @@
                 }
             ]
         };
+        var linkData = new LinkData()
+        {
+            new LinkDataBreadcrumbList()
+            {
+                new LinkDataBreadcrumbListItem()
+                {
+                    Name = "Play",
+                    Item = "https://fydar.dev/play/"
+                },
+                new LinkDataBreadcrumbListItem()
+                {
+                    Name = "Lovers' Defence",
+                    Item = "https://fydar.dev/play/loversdefence"
+                }
+            }
+        };
     }
     <OpenGraphComponent Model="@openGraphModel" />
+    <LinkDataComponent Model="@linkData" />
     <meta name="theme-color" content="#2c3840">
     <link rel="shortcut icon" href="/play/loversdefence/favicon.ico">
     <link rel="manifest" href="/play/loversdefence/manifest.webmanifest">

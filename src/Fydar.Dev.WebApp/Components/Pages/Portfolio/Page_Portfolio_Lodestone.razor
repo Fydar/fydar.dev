@@ -7,7 +7,7 @@
         {
             Title = "Lodestone - Fydar",
             Description = "An asset database and build system.",
-            CanonicalUrl = "https://fydar.dev/portfolio/numerics",
+            CanonicalUrl = "https://fydar.dev/portfolio/lodestone",
             Properties = [
                 new OpenGraphModelImage()
                 {
@@ -16,8 +16,25 @@
                 }
             ]
         };
+        var linkData = new LinkData()
+        {
+            new LinkDataBreadcrumbList()
+            {
+                new LinkDataBreadcrumbListItem()
+                {
+                    Name = "Portfolio",
+                    Item = "https://fydar.dev/portfolio/"
+                },
+                new LinkDataBreadcrumbListItem()
+                {
+                    Name = "Lodestone",
+                    Item = "https://fydar.dev/portfolio/lodestone"
+                }
+            }
+        };
     }
     <OpenGraphComponent Model="@openGraphModel" />
+    <LinkDataComponent Model="@linkData" />
 </HeadContent>
 
 <HeadingScope>

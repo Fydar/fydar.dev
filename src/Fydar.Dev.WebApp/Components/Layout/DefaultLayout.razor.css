@@ -73,6 +73,7 @@
         font-size: 1.25em;
         line-height: 1em;
         letter-spacing: 1px;
+        text-align: left;
     }
 
         ::deep p.heading-prefix + h1,

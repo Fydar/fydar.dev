@@ -11,6 +11,7 @@
             color: currentColor;
             width: 1em;
             height: 0.75em;
+            text-align: left;
         }
 
     .heading-wrapper .anchor-tag {
