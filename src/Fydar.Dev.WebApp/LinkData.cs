@@ -46,6 +46,7 @@ public class LinkData : IReadOnlyList<ILinkDataElement>
 				writer.WriteStartObject();
 				writer.WriteString("@context", "https://schema.org");
 				writer.WriteString("@type", "BreadcrumbList");
+				writer.WriteString("name", string.Join(" > ", breadcrumbList.Select(b => b.Name).Where(n => !string.IsNullOrWhiteSpace(n))));
 				writer.WritePropertyName("itemListElement");
 				writer.WriteStartArray();
 				for (int j = 0; j < breadcrumbList.Count; j++)
