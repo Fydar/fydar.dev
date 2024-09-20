@@ -1,0 +1,131 @@
+@layout DefaultLayout
+@page "/portfolio/backend"
+
+<HeadContent>
+    @{
+        var openGraphModel = new OpenGraphModel()
+        {
+            Title = "Backend Programming - Fydar",
+            Description = "A collection of backend I've developed.",
+            CanonicalUrl = "https://fydar.dev/portfolio/backend",
+            Properties = [
+                new OpenGraphModelImage()
+                {
+                    Url = "https://fydar.dev/media/header.webp",
+                    Alt = "A portrait of Fydar in an anime art style."
+                }
+            ]
+        };
+        var linkData = new LinkData()
+        {
+            new LinkDataBreadcrumbList()
+            {
+                new LinkDataBreadcrumbListItem()
+                {
+                    Name = "Portfolio",
+                    Item = "https://fydar.dev/portfolio/"
+                },
+                new LinkDataBreadcrumbListItem()
+                {
+    Name = "Backend Programming",
+                    Item = "https://fydar.dev/portfolio/backend"
+                }
+            }
+        };
+    }
+    <OpenGraphComponent Model="@openGraphModel" />
+    <LinkDataComponent Model="@linkData" />
+</HeadContent>
+
+
+<HeadingScope>
+    <aside>
+        <section style="position: sticky; top: 64px;">
+            <div style="height: 5rem"></div>
+            <TableOfContents />
+        </section>
+
+    </aside>
+
+    <section class="container">
+
+        <Heading Level="2" Identifier="professional">
+            <Text>Professional</Text>
+            <Content>
+                <CoverGrid>
+
+                    <Cover href="/portfolio/starcitizen">
+                        <Background>
+                            <div class="blur" style="background: radial-gradient(300% 156% at 55% 60%, rgb(131 144 156) 2%, rgb(52 69 95) 30%, rgb(65 73 83) 80%)">
+                            </div>
+                            <picture>
+                                <img loading="lazy" width="400" height="600" src="media/starcitizen/coverart.webp" alt="Cover art for the game 'Star Citizen'." />
+                            </picture>
+                        </Background>
+                    </Cover>
+
+                    <Cover href="/portfolio/starcitizen">
+                        <Background>
+                            <div class="blur" style="background: linear-gradient(rgb(153 148 139) 0%, rgb(63 57 50) 100%)">
+                            </div>
+                            <picture>
+                                <img loading="lazy" width="400" height="600" src="media/squadron42/coverart.webp" alt="Cover art for the game 'Squadron 42'." />
+                            </picture>
+                        </Background>
+                    </Cover>
+
+                    <Cover href="/portfolio/legostarwarsbattles">
+                        <Background>
+                            <div class="blur" style="background: radial-gradient(180% 60% at 50% 52%, #0d1f57, #040510)">
+                            </div>
+                            <picture>
+                                <img loading="lazy" width="400" height="600" src="media/legostarwarsbattles/coverart.webp" alt="Cover art for the game 'LEGO Star Wars: Battles'." />
+                            </picture>
+                        </Background>
+                    </Cover>
+
+                </CoverGrid>
+            </Content>
+        </Heading>
+
+        <Heading Level="2" Identifier="Hobbyist">
+            <Text>Hobbyist</Text>
+            <Content>
+                
+                <CardGrid Size="md">
+                    <Card href="/portfolio/mywebsite">
+                        <ChildContent>
+                            <div class="card-container">
+                                <div class="row">
+                                    <SvgSprite class="card-keyicon" Link="/icons.svg?v=1#icon-fydar" />
+                                    <div class="column">
+                                        <h3 class="card-header">My Website</h3>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <p class="card-description">This portfolio website made using <b>ASP.NET Core</b> and hosted in <b>AWS</b>.</p>
+                                </div>
+                            </div>
+                        </ChildContent>
+                    </Card>
+                    <Card href="/portfolio/pewpew">
+                        <ChildContent>
+                            <div class="card-container">
+                                <div class="row">
+                                    <SvgSprite class="card-keyicon" Link="/icons.svg?v=1#icon-network-right-solid" />
+                                    <div class="column">
+                                        <h3 class="card-header">Pew Pew</h3>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <p class="card-description">A 20v20 .io style browser game made in 48 hours using <b>ASP.NET Core</b> and hosted in <b>AWS</b>.</p>
+                                </div>
+                            </div>
+                        </ChildContent>
+                    </Card>
+                </CardGrid>
+            </Content>
+        </Heading>
+
+    </section>
+</HeadingScope>

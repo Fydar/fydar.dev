@@ -1,0 +1,194 @@
+@layout DefaultLayout
+@page "/portfolio/tools"
+
+<HeadContent>
+    @{
+        var openGraphModel = new OpenGraphModel()
+        {
+            Title = "Tools Programming - Fydar",
+            Description = "A collection of tools I've developed.",
+            CanonicalUrl = "https://fydar.dev/portfolio/tools",
+            Properties = [
+                new OpenGraphModelImage()
+                {
+                    Url = "https://fydar.dev/media/header.webp",
+                    Alt = "A portrait of Fydar in an anime art style."
+                }
+            ]
+        };
+        var linkData = new LinkData()
+        {
+            new LinkDataBreadcrumbList()
+            {
+                new LinkDataBreadcrumbListItem()
+                {
+                    Name = "Portfolio",
+                    Item = "https://fydar.dev/portfolio/"
+                },
+                new LinkDataBreadcrumbListItem()
+                {
+                    Name = "Tools Programming",
+                    Item = "https://fydar.dev/portfolio/tools"
+                }
+            }
+        };
+    }
+    <OpenGraphComponent Model="@openGraphModel" />
+    <LinkDataComponent Model="@linkData" />
+</HeadContent>
+
+
+<HeadingScope>
+    <aside>
+        <section style="position: sticky; top: 64px;">
+            <div style="height: 5rem"></div>
+            <TableOfContents />
+        </section>
+
+    </aside>
+
+    <section class="container">
+
+        <Heading Level="2" Identifier="professional">
+            <Text>Professional</Text>
+            <Content>
+                <CoverGrid>
+
+                    <Cover href="/portfolio/southfield">
+                        <Background>
+                            <div class="blur" style="background: radial-gradient(200% 53% at 55% 60%, rgb(136 162 247) 2%, rgb(76 96 238) 100%)">
+                            </div>
+                            <picture>
+                                <img loading="lazy" width="400" height="600" src="media/southfield/coverart-background.webp" alt="Cover art for the game 'Southfield'." />
+                            </picture>
+                        </Background>
+                        <Overlay>
+                            <SvgSprite class="logo logo-southfield" Link="/icons.svg?v=1#titlecard-southfield" Alt="Logo for the game 'Southfield'" />
+                        </Overlay>
+                    </Cover>
+
+                    <Cover href="/portfolio/starcitizen">
+                        <Background>
+                            <div class="blur" style="background: radial-gradient(300% 156% at 55% 60%, rgb(131 144 156) 2%, rgb(52 69 95) 30%, rgb(65 73 83) 80%)">
+                            </div>
+                            <picture>
+                                <img loading="lazy" width="400" height="600" src="media/starcitizen/coverart.webp" alt="Cover art for the game 'Star Citizen'." />
+                            </picture>
+                        </Background>
+                    </Cover>
+
+                    <Cover href="/portfolio/eitr">
+                        <Background>
+                            <div class="blur" style="background: radial-gradient(130% 66% at 55% 40%, rgb(137 117 120) 0%, rgb(77 62 71) 60%, rgb(49 36 56) 100%)">
+                            </div>
+                            <img loading="lazy" width="400" height="600" src="media/eitr/coverart-background.png" alt="Cover art for the game 'Eitr'." style="image-rendering: pixelated;" />
+                        </Background>
+                        <Overlay>
+                            <img loading="lazy" class="logo logo-eitr" src="media/eitr/titlecard.png" alt="Logo for the game 'Eitr'." style="image-rendering: pixelated;" />
+                        </Overlay>
+                    </Cover>
+
+                </CoverGrid>
+            </Content>
+        </Heading>
+
+        <Heading Level="2" Identifier="Hobbyist">
+            <Text>Hobbyist</Text>
+            <Content>
+                <CardGrid Size="md">
+                    <Card>
+                        <ChildContent>
+                            <div class="card-container">
+                                <div class="row">
+                                    <SvgSprite class="card-keyicon" Link="/icons.svg?v=1#icon-holodrone" />
+                                    <div class="column">
+                                        <h3 class="card-header">Holodrone</h3>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <p class="card-description">Automatic screenshot capture for automated testing and icon generation.</p>
+                                </div>
+                            </div>
+                        </ChildContent>
+                    </Card>
+                    <Card>
+                        <ChildContent>
+                            <div class="card-container">
+                                <div class="row">
+                                    <SvgSprite class="card-keyicon" Link="/icons.svg?v=1#icon-network-right-solid" />
+                                    <div class="column">
+                                        <h3 class="card-header">Gradients</h3>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <p class="card-description">Asset-based gradient editing.</p>
+                                </div>
+                            </div>
+                        </ChildContent>
+                    </Card>
+                    <Card>
+                        <ChildContent>
+                            <div class="card-container">
+                                <div class="row">
+                                    <SvgSprite class="card-keyicon" Link="/icons.svg?v=1#icon-network-right-solid" />
+                                    <div class="column">
+                                        <h3 class="card-header">Skill Tree Editor</h3>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <p class="card-description">Inspired by the skill tree in <i>'Path of Exile'</i>, a skill tree editor capable of making massive skill trees.</p>
+                                </div>
+                            </div>
+                        </ChildContent>
+                    </Card>
+                    <Card>
+                        <ChildContent>
+                            <div class="card-container">
+                                <div class="row">
+                                    <SvgSprite class="card-keyicon" Link="/icons.svg?v=1#icon-network-right-solid" />
+                                    <div class="column">
+                                        <h3 class="card-header">Lodestone</h3>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <p class="card-description">A standalone asset editor, management, and build system.</p>
+                                </div>
+                            </div>
+                        </ChildContent>
+                    </Card>
+                    <Card>
+                        <ChildContent>
+                            <div class="card-container">
+                                <div class="row">
+                                    <SvgSprite class="card-keyicon" Link="/icons.svg?v=1#icon-palette-swatch-variant" />
+                                    <div class="column">
+                                        <h3 class="card-header">Samples</h3>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <p class="card-description">Automation of code documentation, render code samples with advanced syntax highlighting.</p>
+                                </div>
+                            </div>
+                        </ChildContent>
+                    </Card>
+                    <Card>
+                        <ChildContent>
+                            <div class="card-container">
+                                <div class="row">
+                                    <SvgSprite class="card-keyicon" Link="/icons.svg?v=1#icon-network-right-solid" />
+                                    <div class="column">
+                                        <h3 class="card-header">AssetIcons</h3>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <p class="card-description">Published on the Unity Asset Store, a tool for generating icons for your assets.</p>
+                                </div>
+                            </div>
+                        </ChildContent>
+                    </Card>
+                </CardGrid>
+            </Content>
+        </Heading>
+
+    </section>
+</HeadingScope>

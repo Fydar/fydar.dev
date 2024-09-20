@@ -1,0 +1,230 @@
+@layout DefaultLayout
+@page "/portfolio/gameplay"
+
+<HeadContent>
+    @{
+        var openGraphModel = new OpenGraphModel()
+        {
+            Title = "Gameplay Programming - Fydar",
+            Description = "A collection of gameplay I've developed.",
+            CanonicalUrl = "https://fydar.dev/portfolio/gameplay",
+            Properties = [
+                new OpenGraphModelImage()
+                {
+                    Url = "https://fydar.dev/media/header.webp",
+                    Alt = "A portrait of Fydar in an anime art style."
+                }
+            ]
+        };
+        var linkData = new LinkData()
+        {
+            new LinkDataBreadcrumbList()
+            {
+                new LinkDataBreadcrumbListItem()
+                {
+                    Name = "Portfolio",
+                    Item = "https://fydar.dev/portfolio/"
+                },
+                new LinkDataBreadcrumbListItem()
+                {
+                    Name = "Gameplay Programming",
+                    Item = "https://fydar.dev/portfolio/gameplay"
+                }
+            }
+        };
+    }
+    <OpenGraphComponent Model="@openGraphModel" />
+    <LinkDataComponent Model="@linkData" />
+</HeadContent>
+
+
+<HeadingScope>
+    <aside>
+        <section style="position: sticky; top: 64px;">
+            <div style="height: 5rem"></div>
+            <TableOfContents />
+        </section>
+
+    </aside>
+
+    <section class="container">
+
+        <Heading Level="2" Identifier="professional">
+            <Text>Professional</Text>
+            <Content>
+                <p>Throughout my career I have always been able to rely on my gameplay programming.</p>
+
+                <CoverGrid>
+                    <Cover href="/portfolio/uno">
+                        <Background>
+                            <div class="blur" style="background: radial-gradient(160% 125% at 75% 60%, rgba(250,202,21,1) 2%, rgba(253,165,13,1) 12%, rgba(255,118,7,1) 26%, rgba(250,70,0,1) 36%, rgba(241,36,1,1) 43%, rgba(141,5,0,1) 77%, rgba(101,2,0,1) 100%)">
+                            </div>
+                            <video onloadeddata="this.classList.add('loaded');" style="mix-blend-mode: screen;" autoplay muted loop>
+                                <source src="/media/uno/library.30fps.h265.mp4?v=1" type='video/mp4; codecs="hev1.1.2.L93.90"; profiles="isom,iso2,mp41"'>
+                                <source src="/media/uno/library.30fps.h264.mp4?v=1" type='video/mp4; codecs="avc1.4d401f"; profiles="isom,iso2,avc1,mp41"'>
+                            </video>
+                        </Background>
+                        <Overlay>
+                            <SvgSprite class="logo logo-ubisoft-uno" Link="/icons.svg?v=1#icon-ubisoft-uno" Alt="Logo for the game 'UNO'" />
+                        </Overlay>
+                    </Cover>
+
+                    <Cover href="/portfolio/outrage">
+                        <Background>
+                            <div class="blur" style="background: radial-gradient(200% 53% at 55% 60%, rgb(235 152 243) 2%, rgb(231 193 245) 50%, rgb(201 214 249) 100%)">
+                            </div>
+                            <picture>
+                                <img loading="lazy" width="400" height="600" src="media/outrage/coverart.webp" alt="Cover art for the game 'Outrage'." />
+                            </picture>
+                        </Background>
+                    </Cover>
+
+                    <Cover href="/portfolio/eitr">
+                        <Background>
+                            <div class="blur" style="background: radial-gradient(130% 66% at 55% 40%, rgb(137 117 120) 0%, rgb(77 62 71) 60%, rgb(49 36 56) 100%)">
+                            </div>
+                            <img loading="lazy" width="400" height="600" src="media/eitr/coverart-background.png" alt="Cover art for the game 'Eitr'." style="image-rendering: pixelated;" />
+                        </Background>
+                        <Overlay>
+                            <img loading="lazy" class="logo logo-eitr" src="media/eitr/titlecard.png" alt="Logo for the game 'Eitr'." style="image-rendering: pixelated;" />
+                        </Overlay>
+                    </Cover>
+
+                </CoverGrid>
+            </Content>
+        </Heading>
+
+
+        <Heading Level="2" Identifier="hobbyist">
+            <Text>Hobbyist</Text>
+            <Content>
+
+                <p>Although I haven't always been a gameplay programmer, that doesn't stop me from doing it! I'm always working on personal projects or game jams.</p>
+
+                <CardGrid Size="md">
+                    <Card href="/portfolio/miniminer">
+                        <FeaturedImage>
+                            <picture>
+                                <img loading="lazy" width="640" height="480" class="card-image" src="media/miniminer/card.webp" alt="Preview of the game 'Mini Miner' showing a puzzle." />
+                            </picture>
+                        </FeaturedImage>
+                        <ChildContent>
+                            <div class="card-container">
+                                <div class="row">
+                                    <SvgSprite class="card-keyicon" Link="/icons.svg?v=1#icon-miniminer" />
+                                    <div class="column">
+                                        <h3 class="card-header">Mini Miner</h3>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <p class="card-description">The Game Boy demake of the Nintendo DS <i>Pokémon Diamond and Pearl</i> underground mining minigame.</p>
+                                </div>
+                            </div>
+                        </ChildContent>
+                    </Card>
+                    <Card href="/portfolio/astralelites">
+                        <FeaturedImage>
+                            <picture>
+                                <SvgSprite class="card-image" Link="/icons.svg?v=1#illustration-astralelites" alt="Preview of the game 'Astral Elites' with a spaceship flying around and destroying asteroids." />
+                            </picture>
+                        </FeaturedImage>
+                        <ChildContent>
+                            <div class="card-container">
+                                <div class="row">
+                                    <SvgSprite class="card-keyicon" Link="/icons.svg?v=1#icon-astralelites" />
+                                    <div class="column">
+                                        <h3 class="card-header">Astral Elites</h3>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <p class="card-description">The physics-based and fast-paced asteroid clone for the modern era.</p>
+                                </div>
+                            </div>
+                        </ChildContent>
+                    </Card>
+                    <Card href="/portfolio/raidhealersimulator">
+                        <FeaturedImage>
+                            <picture>
+                                <img loading="lazy" width="400" height="300" class="card-image" src="media/raidhealersimulator/card.webp" alt="Preview of the Raid Healer Simulator game." />
+                            </picture>
+                        </FeaturedImage>
+                        <ChildContent>
+                            <div class="card-container">
+                                <div class="row">
+                                    <SvgSprite class="card-keyicon" Link="/icons.svg?v=1#icon-raidhealersimulator" />
+                                    <div class="column">
+                                        <h3 class="card-header">Raid Healer Simulator</h3>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <p class="card-description">The UI-only simulator of the raid healer experience featuring verbal abuse.</p>
+                                </div>
+                            </div>
+                        </ChildContent>
+                    </Card>
+                    <Card href="/portfolio/snoot">
+                        <FeaturedImage>
+                            <picture>
+                                <img loading="lazy" width="400" height="300" class="card-image" src="media/snoot/keyart-4x3-400x300.webp" alt="Preview of the game 'Snoot' featuring the protagonist in the world with signs of life." />
+                            </picture>
+                        </FeaturedImage>
+                        <ChildContent>
+                            <div class="card-container">
+                                <div class="row">
+                                    <SvgSprite class="card-keyicon" Link="/icons.svg?v=1#icon-snoot" />
+                                    <div class="column">
+                                        <h3 class="card-header">Snoot</h3>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <p class="card-description">The cute crafting game to restore nature and life to the world.</p>
+                                </div>
+                            </div>
+                        </ChildContent>
+                    </Card>
+                    <Card href="/portfolio/thenewearthconflict">
+                        <FeaturedImage>
+                            <picture>
+                                <img loading="lazy" width="640" height="480" class="card-image" src="media/thenewearthconflict/card.webp" alt="A preview of the game 'The New Earth Conflict' featuring the player ship engaging in combat." />
+                            </picture>
+                        </FeaturedImage>
+                        <ChildContent>
+                            <div class="card-container">
+                                <div class="row">
+                                    <SvgSprite class="card-keyicon" Link="/icons.svg?v=1#icon-thenewearthconflict" />
+                                    <div class="column">
+                                        <h3 class="card-header">The New Earth Conflict</h3>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <p class="card-description">A realtime space battle where you take control over a battleship and pilot it into battle against an AI team.</p>
+                                </div>
+                            </div>
+                        </ChildContent>
+                    </Card>
+                    <Card href="/portfolio/thedwellers">
+                        <FeaturedImage>
+                            <picture>
+                                <img loading="lazy" width="640" height="480" class="card-image" src="media/thedwellers/card.webp" alt="Preview of the game 'The Dwellers'" />
+                            </picture>
+                        </FeaturedImage>
+                        <ChildContent>
+                            <div class="card-container">
+                                <div class="row">
+                                    <SvgSprite class="card-keyicon" Link="/icons.svg?v=1#icon-thedwellers" />
+                                    <div class="column">
+                                        <h3 class="card-header">The Dwellers</h3>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <p class="card-description">A 3D dungeon crawler game demo with a full RPG item system, featuring a wide range of weapons and other equipment.</p>
+                                </div>
+                            </div>
+                        </ChildContent>
+                    </Card>
+                </CardGrid>
+            </Content>
+        </Heading>
+
+    </section>
+</HeadingScope>
