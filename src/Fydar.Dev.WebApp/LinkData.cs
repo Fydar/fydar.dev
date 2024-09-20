@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Text;
+using System.Text.Json;
 
 namespace Fydar.Dev.WebApp;
 
@@ -29,109 +30,50 @@ public class LinkData : IReadOnlyList<ILinkDataElement>
 
 	public string ToJson()
 	{
-		var stringBuilder = new StringBuilder();
-
-		stringBuilder.AppendLine("""
-[{
-""");
-
-		for (int i = 0; i < elements.Count; i++)
+		var options = new JsonWriterOptions
 		{
-			var linkDataElement = elements[i];
+			Indented = false
+		};
 
+		using var stream = new MemoryStream();
+		using var writer = new Utf8JsonWriter(stream, options);
+
+		writer.WriteStartArray();
+		foreach (var linkDataElement in elements)
+		{
 			if (linkDataElement is LinkDataBreadcrumbList breadcrumbList)
 			{
-				stringBuilder.AppendLine("""
-	"@context": "https://schema.org",
-	"@type": "BreadcrumbList",
-	"itemListElement": [{
-""");
-
+				writer.WriteStartObject();
+				writer.WriteString("@context", "https://schema.org");
+				writer.WriteString("@type", "BreadcrumbList");
+				writer.WritePropertyName("itemListElement");
+				writer.WriteStartArray();
 				for (int j = 0; j < breadcrumbList.Count; j++)
 				{
 					var breadcrumb = breadcrumbList[j];
 
-					stringBuilder.Append($"""
-		"@type": "ListItem",
-		"position": {j + 1},
-		"name": "{breadcrumb.Name}"
-""");
+					writer.WriteStartObject();
+					writer.WriteString("@type", "ListItem");
+					writer.WriteNumber("position", j + 1);
+					writer.WriteString("name", breadcrumb.Name);
+
 					if (!string.IsNullOrWhiteSpace(breadcrumb.Item))
 					{
-						stringBuilder.AppendLine($"""
-,
-		"item": "{breadcrumb.Item}"
-""");
+						writer.WriteString("item", breadcrumb.Item);
 					}
-					else
-					{
-						stringBuilder.AppendLine();
-					}
-
-					if (j != breadcrumbList.Count - 1)
-					{
-						stringBuilder.AppendLine("""
-	}, {
-""");
-					}
+					writer.WriteEndObject();
 				}
-
-				stringBuilder.AppendLine("""
-	}]
-""");
-			}
-
-			if (i != elements.Count - 1)
-			{
-				stringBuilder.AppendLine("""
-}, {
-""");
+				writer.WriteEndArray();
+				writer.WriteEndObject();
 			}
 		}
+		writer.WriteEndArray();
 
-		stringBuilder.AppendLine("""
-}]
-""");
+		writer.Flush();
 
-		return stringBuilder.ToString();
+		string json = Encoding.UTF8.GetString(stream.ToArray());
+		return json;
 	}
-	/*
-<script type="application/ld+json">
-[{
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [{
-		"@type": "ListItem",
-		"position": 1,
-		"name": "Books",
-		"item": "https://example.com/books"
-    },{
-		"@type": "ListItem",
-		"position": 2,
-		"name": "Science Fiction",
-		"item": "https://example.com/books/sciencefiction"
-    },{
-		"@type": "ListItem",
-		"position": 3,
-		"name": "Award Winners"
-    }]
-},
-{
-    "@context": "https://schema.org",
-	"@type": "BreadcrumbList",
-	"itemListElement": [{
-		"@type": "ListItem",
-		"position": 1,
-		"name": "Literature",
-		"item": "https://example.com/literature"
-    },{
-		"@type": "ListItem",
-		"position": 2,
-		"name": "Award Winners"
-    }]
-}]
-</script>
-*/
 }
 
 public interface ILinkDataElement
