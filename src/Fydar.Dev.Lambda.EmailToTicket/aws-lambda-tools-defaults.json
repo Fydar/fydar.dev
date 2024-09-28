@@ -16,7 +16,7 @@
     "function-timeout"      : 30,
     "function-handler"      : "Fydar.Dev.Lambda.EmailToTicket::Fydar.Dev.Lambda.EmailToTicket.FunctionService::FunctionHandler",
     "environment-variables" : "\"ANNOTATIONS_HANDLER\"=\"Fydar.Dev.Lambda.EmailToTicket::Fydar.Dev.Lambda.EmailToTicket.FunctionService::FunctionHandler\";\"CONFIG_EMAILBUCKET\"=\"fydar.dev-inbound-email\";\"CONFIG_FORWARDTO\"=\"dev.anthonymarmont@gmail.com\"",
-    "framework"             : "net8.0",
+    "framework"             : "net9.0",
     "function-name"         : "fydardev-emailtoticket-lambda-4",
     "package-type"          : "Zip",
     "function-role"         : "arn:aws:iam::222779217717:role/Portfolio-EmailReceive-14-LambdaFunctionTaskRole-1BTFHBU51TH1V",

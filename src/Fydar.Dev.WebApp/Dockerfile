@@ -1,12 +1,12 @@
 #See https://aka.ms/customizecontainer to learn how to customize your debug container and how Visual Studio uses this Dockerfile to build your images for faster debugging.
 
-FROM mcr.microsoft.com/dotnet/aspnet:8.0.1-alpine3.19-arm64v8 AS base
+FROM mcr.microsoft.com/dotnet/aspnet:9.0-noble-chiseled-arm64v8 AS base
 USER app
 WORKDIR /app
 EXPOSE 8060
 EXPOSE 8061
 
-FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
+FROM mcr.microsoft.com/dotnet/sdk:9.0 AS build
 SHELL ["/bin/bash", "-c"]
 ENV TERM=xterm-256color
 ARG BUILD_CONFIGURATION=Release

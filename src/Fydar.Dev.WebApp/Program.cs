@@ -128,26 +128,29 @@ public class Program
 				options.EmailAddress = "dev.anthonymarmont@gmail.com";
 			});
 			// 	.PersistDataToDirectory(new DirectoryInfo("lettuce"), null);
+		}
 
-			builder.WebHost.UseKestrel(kestrel =>
-			{
-				var appServices = kestrel.ApplicationServices;
+		builder.WebHost.UseKestrel(kestrel =>
+		{
+			var appServices = kestrel.ApplicationServices;
 
-				kestrel.Listen(IPAddress.Any, 8060);
+			kestrel.Listen(IPAddress.Any, 8060);
 
-				kestrel.Listen(
-					IPAddress.Any, 8061,
-					listen =>
+			kestrel.Listen(
+				IPAddress.Any, 8061,
+				listen =>
+				{
+					listen.Protocols = HttpProtocols.Http1 | HttpProtocols.Http2 | HttpProtocols.Http3;
+
+					listen.UseHttps(adapter =>
 					{
-						listen.Protocols = HttpProtocols.Http1 | HttpProtocols.Http2 | HttpProtocols.Http3;
-
-						listen.UseHttps(adapter =>
+						if (builder.WebHost.GetSetting("Environment") != "Development")
 						{
 							adapter.UseLettuceEncrypt(appServices);
-						});
+						}
 					});
-			});
-		}
+				});
+		});
 
 		var app = builder.Build();
 
