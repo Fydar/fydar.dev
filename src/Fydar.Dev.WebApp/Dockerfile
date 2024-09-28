@@ -1,3 +1,4 @@
+# syntax=docker/dockerfile:1.7-labs
 #See https://aka.ms/customizecontainer to learn how to customize your debug container and how Visual Studio uses this Dockerfile to build your images for faster debugging.
 
 FROM mcr.microsoft.com/dotnet/aspnet:9.0-noble-chiseled-arm64v8 AS base
@@ -26,5 +27,7 @@ RUN dotnet publish "./Fydar.Dev.WebApp.csproj" -c $BUILD_CONFIGURATION -o /app/p
 
 FROM base AS final
 WORKDIR /app
-COPY --from=publish /app/publish .
+COPY --from=publish /app/publish/wwwroot/play ./wwwroot/play
+COPY --from=publish /app/publish/wwwroot/media ./wwwroot/media
+COPY --exclude=wwwroot/play/* --exclude=wwwroot/media/* --from=publish /app/publish .
 ENTRYPOINT ["dotnet", "Fydar.Dev.WebApp.dll"]
