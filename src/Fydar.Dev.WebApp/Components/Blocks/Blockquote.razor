@@ -1,13 +1,16 @@
-<blockquote>
-
-    @ChildContent
+<figure>
+    <blockquote>
+        @ChildContent
+    </blockquote>
 
     @if (Source != null)
     {
-        <p class="source">@Source</p>
+        <figcaption>
+            @Source
+        </figcaption>
     }
+</figure>
 
-</blockquote>
 
 @code {
     [Parameter]

@@ -33,21 +33,20 @@
             margin: 0;
             background: #161618;
             color: var(--color-text-primary);
-            width: 100%;
-            max-width: 100vw;
+            min-height: 100vh;
             font-weight: 300;
             line-height: 1.75;
-            min-height: 100vh;
-            display: grid;
-            grid-template-rows: auto 1fr auto;
-            grid-template-columns: auto;
             font-family: 'Inter', sans-serif;
             --color-text-primary: #d8d8d8;
-            overflow-y: scroll;
-            overflow-x: hidden;
+            display: inline-block;
+            min-width: 100%;
         }
 
-        p  {
+            body:has(main > section.fullscreen:first-child) header {
+                position: fixed;
+            }
+
+        p {
             margin-block-start: 1.5em;
             margin-block-end: 1.5em;
         }
@@ -73,7 +72,6 @@
             font-size: 14px;
         }
 
-
         @@media screen and (min-width: 576px) {
             :root {
                 font-size: 15px;
@@ -84,19 +82,6 @@
             :root {
                 font-size: 16px;
             }
-        }
-
-        @@media screen and (min-width: 992px) {
-        }
-
-
-        @@media screen and (min-width: 1200px) {
-    
-        }
-
-
-        @@media screen and (min-width: 1400px) {
-    
         }
 
         ::-webkit-scrollbar {
@@ -132,32 +117,32 @@
 </SectionContent>
 
 <header>
-    <div class="row container" data-nosnippet>
-        <menu class="navbar-sitenavigation" aria-label="Site navigation" dir="ltr">
-            <li class="nav-home">
-                <a href="/" aria-label="Navigate home">
-                    <SvgSprite Link="/icons.svg?v=1#icon-fydar-round" Alt="Fydar's Icon" />
-                    <span class="nav-home-label">Fydar</span>
-                </a>
-            </li>
-            @if (NavigationManager.ToBaseRelativePath(NavigationManager.Uri) == "")
-            {
-                <li class="nav-page"><NavLink href="/portfolio" class="active">Portfolio</NavLink></li>
-            }
-            else
-            {
-                <li class="nav-page"><NavLink href="/portfolio">Portfolio</NavLink></li>
-            }
-            <li class="nav-page"><NavLink href="/resume">Resume</NavLink></li>
-            <li class="nav-page"><NavLink href="/contact">Contact</NavLink></li>
-        </menu>
+    <div class="topbar">
+        <div class="row container" data-nosnippet>
+            <menu class="navbar-sitenavigation" aria-label="Site navigation">
+                <li class="nav-home">
+                    <a href="/" aria-label="Navigate home">
+                        <SvgSprite Link="/icons.svg?v=1#icon-fydar-round" Alt="Fydar's Icon" />
+                        <span class="nav-home-label">Fydar</span>
+                    </a>
+                </li>
+                @if (NavigationManager.ToBaseRelativePath(NavigationManager.Uri) == "")
+                {
+                    <li class="nav-page"><NavLink href="/portfolio" class="active">Portfolio</NavLink></li>
+                }
+                else
+                {
+                    <li class="nav-page"><NavLink href="/portfolio">Portfolio</NavLink></li>
+                }
+                <li class="nav-page"><NavLink href="/resume">Resume</NavLink></li>
+                <li class="nav-page"><NavLink href="/contact">Contact</NavLink></li>
+            </menu>
 
-        <menu class="navbar-externallinks" aria-label="External links" dir="ltr">
-            <li class="nav-siteicon"><a href="https://github.com/Fydar" target="_blank"><SvgSprite Link="/icons.svg?v=1#icon-github" Alt="GitHub" /></a></li>
-            <li class="nav-siteicon"><a href="https://www.linkedin.com/in/fydar" target="_blank"><SvgSprite Link="/icons.svg?v=1#icon-linkedin" Alt="LinkedIn" /></a></li>
-        </menu>
-
-        <div class="glowline"></div>
+            <menu class="navbar-externallinks" aria-label="External links">
+                <li><a href="https://github.com/Fydar" target="_blank"><SvgSprite Link="/icons.svg?v=1#icon-github" Alt="GitHub" /></a></li>
+                <li><a href="https://www.linkedin.com/in/fydar" target="_blank"><SvgSprite Link="/icons.svg?v=1#icon-linkedin" Alt="LinkedIn" /></a></li>
+            </menu>
+        </div>
     </div>
 </header>
 
@@ -168,16 +153,16 @@
 <footer>
     <section class="container" data-nosnippet>
 
-        <menu class="footer-externallinks" aria-label="More External links" dir="ltr">
-            <li class="nav-siteicon"><a href="https://github.com/Fydar" target="_blank"><SvgSprite Link="/icons.svg?v=1#icon-github" Alt="GitHub" /></a></li>
-            <li class="nav-siteicon"><a href="https://www.linkedin.com/in/fydar" target="_blank"><SvgSprite Link="/icons.svg?v=1#icon-linkedin" Alt="LinkedIn" /></a></li>
-            <li class="nav-siteicon"><a href="https://discordapp.com/users/172972361954492416" target="_blank"><SvgSprite Link="/icons.svg?v=1#icon-discord" Alt="Discord" /></a></li>
-            <li class="nav-siteicon"><a href="https://www.youtube.com/@@fydar" target="_blank"><SvgSprite Link="/icons.svg?v=1#icon-youtube" Alt="YouTube" /></a></li>
-            <li class="nav-siteicon"><a href="https://www.twitch.tv/fydar" target="_blank"><SvgSprite Link="/icons.svg?v=1#icon-twitch" Alt="Twitch" /></a></li>
-            <li class="nav-siteicon"><a href="https://twitter.com/Fydarus" target="_blank"><SvgSprite Link="/icons.svg?v=1#icon-twitter" Alt="Twitter" /></a></li>
-            <li class="nav-siteicon"><a href="https://fydar.itch.io/" target="_blank"><SvgSprite Link="/icons.svg?v=1#icon-itchdotio" Alt="Itch.io" /></a></li>
-            <li class="nav-siteicon"><a href="https://assetstore.unity.com/publishers/13236" target="_blank"><SvgSprite Link="/icons.svg?v=1#icon-unity" Alt="Unity Asset Store" /></a></li>
-            <li class="nav-siteicon"><a href="https://opencollective.com/fydar" target="_blank"><SvgSprite Link="/icons.svg?v=1#icon-opencollective" Alt="OpenCollective" /></a></li>
+        <menu class="footer-externallinks" aria-label="More External links">
+            <li><a href="https://github.com/Fydar" target="_blank"><SvgSprite Link="/icons.svg?v=1#icon-github" Alt="GitHub" /></a></li>
+            <li><a href="https://www.linkedin.com/in/fydar" target="_blank"><SvgSprite Link="/icons.svg?v=1#icon-linkedin" Alt="LinkedIn" /></a></li>
+            <li><a href="https://discordapp.com/users/172972361954492416" target="_blank"><SvgSprite Link="/icons.svg?v=1#icon-discord" Alt="Discord" /></a></li>
+            <li><a href="https://www.youtube.com/@@fydar" target="_blank"><SvgSprite Link="/icons.svg?v=1#icon-youtube" Alt="YouTube" /></a></li>
+            <li><a href="https://www.twitch.tv/fydar" target="_blank"><SvgSprite Link="/icons.svg?v=1#icon-twitch" Alt="Twitch" /></a></li>
+            <li><a href="https://twitter.com/Fydarus" target="_blank"><SvgSprite Link="/icons.svg?v=1#icon-twitter" Alt="Twitter" /></a></li>
+            <li><a href="https://fydar.itch.io/" target="_blank"><SvgSprite Link="/icons.svg?v=1#icon-itchdotio" Alt="Itch.io" /></a></li>
+            <li><a href="https://assetstore.unity.com/publishers/13236" target="_blank"><SvgSprite Link="/icons.svg?v=1#icon-unity" Alt="Unity Asset Store" /></a></li>
+            <li><a href="https://opencollective.com/fydar" target="_blank"><SvgSprite Link="/icons.svg?v=1#icon-opencollective" Alt="OpenCollective" /></a></li>
         </menu>
 
         <p class="notice">Website created by Fydar using ASP.NET Core with Blazor.</p>

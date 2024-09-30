@@ -1,0 +1,22 @@
+@using Microsoft.AspNetCore.WebUtilities
+
+<figure class="figure-embed-video">
+    
+    @if (ChildContent != null)
+    {
+        @ChildContent
+    }
+
+    @if (Caption != null)
+    {
+        <figcaption>@Caption</figcaption>
+    }
+</figure>
+
+@code {
+    [Parameter]
+    public RenderFragment? ChildContent { get; set; }
+
+    [Parameter]
+    public RenderFragment? Caption { get; set; }
+}

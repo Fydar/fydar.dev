@@ -1,0 +1,33 @@
+figure {
+    margin: 0 0 1rem;
+    border-left: 6px solid #3368e473;
+    padding: 2px 26px 6px 26px;
+    max-width: 580px;
+    background-color: #2727557a;
+    color: rgb(221 221 221);
+}
+
+    figure blockquote {
+        margin: 0;
+        text-align: left;
+    }
+
+        figure blockquote ::deep p {
+            text-align: left;
+        }
+
+    figure figcaption {
+        text-align: right !important;
+        font-size: 12.6px;
+        opacity: 0.8;
+    }
+
+        figure figcaption:before {
+            content: '—';
+            margin-right: 1rem;
+            opacity: 0.5;
+        }
+
+        figure figcaption ::deep a {
+            text-decoration: none;
+        }

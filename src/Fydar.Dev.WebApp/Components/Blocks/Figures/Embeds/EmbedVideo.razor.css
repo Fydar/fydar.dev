@@ -1,14 +1,14 @@
 
-figure.figure-embed-youtube {
+figure.figure-embed-video {
     position: relative;
     width: 100%;
-    padding-top: 56.25%;
     background-color: black;
     margin: 0;
     margin-block-start: 4em;
+    border-radius: 8px;
 }
 
-    figure.figure-embed-youtube iframe {
+    figure.figure-embed-video video {
         position: absolute;
         top: 0;
         left: 0;
@@ -16,4 +16,5 @@ figure.figure-embed-youtube {
         right: 0;
         width: 100%;
         height: 100%;
+        border-radius: 8px;
     }

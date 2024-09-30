@@ -1,0 +1,64 @@
+@using Microsoft.AspNetCore.WebUtilities
+
+<figure class="figure-embed-youtube" style="padding-top: @aspectRatioPercent">
+    
+    <iframe src="@fullUrl" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+    @if (ChildContent != null)
+    {
+        <figcaption>@ChildContent</figcaption>
+    }
+
+</figure>
+
+@code {
+    private string aspectRatioPercent = "56.25%";
+    private string fullUrl = "";
+
+    [Parameter]
+    public RenderFragment? ChildContent { get; set; }
+
+    [Parameter, EditorRequired]
+    public string Url { get; set; } = string.Empty;
+
+    [Parameter]
+    public string AspectRatio { get; set; } = string.Empty;
+
+    [Parameter]
+    public bool? SlowRelatedVideos { get; set; } = false;
+
+    [Parameter]
+    public int? StartTime { get; set; }
+
+    protected override void OnParametersSet()
+    {
+        var parameters = new Dictionary<string, string?>();
+
+        if (StartTime != null)
+        {
+            parameters.Add("start", StartTime.ToString());
+        }
+        
+        if (SlowRelatedVideos == true)
+        {
+            parameters.Add("rel", "1");
+        }
+        else if (SlowRelatedVideos == false)
+        {
+            parameters.Add("rel", "0");
+        }
+
+        fullUrl = QueryHelpers.AddQueryString(Url, parameters);
+
+        if (!string.IsNullOrEmpty(AspectRatio))
+        {
+            var aspectRatioSpan = AspectRatio.AsSpan();
+
+            int slashIndex = aspectRatioSpan.IndexOf('/');
+            var numerator = int.Parse(aspectRatioSpan[0..(slashIndex - 1)].Trim());
+            var denominator = int.Parse(aspectRatioSpan[slashIndex..].Trim());
+
+            aspectRatioPercent = $"{((float)numerator) / denominator:00.00}%";
+        }
+    }
+}
