@@ -57,14 +57,13 @@ header {
 
             header .topbar menu li {
                 display: flex;
-                height: 48px;
+                height: 3em;
                 -webkit-box-align: center;
                 align-items: center;
                 flex-shrink: 0;
                 margin: 0px;
-                font-size: 16px;
-                line-height: 1;
                 font-weight: var(--font-weight-medium);
+                line-height: 1;
                 color: #ffffffdd;
             }
 
@@ -107,7 +106,7 @@ header {
                     }
 
                     header .topbar menu li.nav-page ::deep a {
-                        padding: 0 10px;
+                        padding: 0 0.5em;
                     }
 
                 header .topbar menu li ::deep a {
