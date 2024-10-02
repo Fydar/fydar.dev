@@ -123,7 +123,7 @@
         background-color: #f6f8fa;
         border: solid 1pt rgb(209, 213, 218);
         border-radius: 8pt;
-        padding: 0 6pt 0 4pt;
+        padding: 1pt 6pt 1pt 4pt;
         margin: 4pt 4pt 0 0;
         gap: 4pt;
         display: inline-flex;
@@ -132,19 +132,19 @@
         font-weight: bold;
     }
 
-        .resume .link-tag ::deep svg {
+        .resume .link-tag ::deep svg:first-child {
             width: 14pt;
             height: 14pt;
         }
 
-            .resume .link-tag ::deep svg.link-type {
-                width: 8pt;
-                height: 8pt;
-                margin-left: 2pt;
-                margin-top: 2pt;
-                margin-right: 2pt;
-                align-self: start;
-            }
+        .resume .link-tag ::deep svg:last-child {
+            width: 7pt;
+            height: 7pt;
+            margin-left: -1pt;
+            margin-top: 1pt;
+            margin-right: -1pt;
+            align-self: start;
+        }
 
     .resume .page-coverletter-header {
     }
