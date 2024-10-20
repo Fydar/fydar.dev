@@ -1,10 +1,10 @@
-const cacheName = "Fydar-MiniMiner-v0.1.2-WebGL";
+const cacheName = "fydar-miniminer-v0.1.2";
 const contentToCache = [
     "./",
-    "Build/WebGL.loader.js",
-    "Build/WebGL.framework.js.br",
-    "Build/WebGL.data.br",
-    "Build/WebGL.wasm.br"
+    "build/miniminer.loader.js",
+    "build/miniminer.framework.js.br",
+    "build/miniminer.data.br",
+    "build/miniminer.wasm.br"
 ];
 
 self.addEventListener('install', function (e) {
