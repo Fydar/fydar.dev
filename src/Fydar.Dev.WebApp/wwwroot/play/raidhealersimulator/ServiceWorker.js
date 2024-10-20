@@ -1,10 +1,10 @@
-const cacheName = "Fydar-Raid Healer Simulator-WebGL";
+const cacheName = "fydar-raidhealersimulator-v0.1.2";
 const contentToCache = [
     "./",
-    "Build/WebGL.loader.js",
-    "Build/WebGL.framework.js.br",
-    "Build/WebGL.data.br",
-    "Build/WebGL.wasm.br"
+    "build/raidhealersimulator.loader.js",
+    "build/raidhealersimulator.framework.js.br",
+    "build/raidhealersimulator.data.br",
+    "build/raidhealersimulator.wasm.br"
 ];
 
 self.addEventListener('install', function (e) {
