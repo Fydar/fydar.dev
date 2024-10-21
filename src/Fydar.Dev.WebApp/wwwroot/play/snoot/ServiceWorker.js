@@ -1,10 +1,10 @@
-const cacheName = "Fydar-Snoot-WebGL";
+const cacheName = "fydar-snoot-v0.0.4";
 const contentToCache = [
     "./",
-    "Build/WebGL.loader.js",
-    "Build/WebGL.framework.js.br",
-    "Build/WebGL.data.br",
-    "Build/WebGL.wasm.br"
+    "build/snoot.loader.js",
+    "build/snoot.framework.js.br",
+    "build/snoot.data.br",
+    "build/snoot.wasm.br"
 ];
 
 self.addEventListener('install', function (e) {
