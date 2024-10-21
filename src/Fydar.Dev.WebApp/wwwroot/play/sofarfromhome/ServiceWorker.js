@@ -1,10 +1,10 @@
-const cacheName = "Fydar-So Far From Home-WebGL";
+const cacheName = "fydar-sofarfromhome-v1.1.0";
 const contentToCache = [
     "./",
-    "Build/WebGL.loader.js",
-    "Build/WebGL.framework.js.br",
-    "Build/WebGL.data.br",
-    "Build/WebGL.wasm.br"
+    "build/sofarfromhome.loader.js",
+    "build/sofarfromhome.framework.js.br",
+    "build/sofarfromhome.data.br",
+    "build/sofarfromhome.wasm.br"
 ];
 
 self.addEventListener('install', function (e) {
