@@ -1,10 +1,10 @@
-const cacheName = "Fydar-Lost Blues-WebGL";
+const cacheName = "fydar-lostblues-v0.1.1";
 const contentToCache = [
     "./",
-    "Build/WebGL.loader.js",
-    "Build/WebGL.framework.js.br",
-    "Build/WebGL.data.br",
-    "Build/WebGL.wasm.br"
+    "build/lostblues.loader.js",
+    "build/lostblues.framework.js.br",
+    "build/lostblues.data.br",
+    "build/lostblues.wasm.br"
 ];
 
 self.addEventListener('install', function (e) {
