@@ -1,0 +1,71 @@
+@layout GameLayout
+@page "/play/bloodlust"
+
+<HeadContent>
+    @{
+        var openGraphModel = new OpenGraphModel()
+        {
+            Title = "Play Bloodlust - Fydar",
+            Description = "The physics-based and fast-paced asteroids clone for the modern era.",
+            CanonicalUrl = "https://fydar.dev/play/bloodlust",
+            Properties = [
+                new OpenGraphModelImage()
+                {
+                    Url = "https://fydar.dev/media/bloodlust/social.webp",
+                    Alt = "Promotional material for the game 'Bloodlust'."
+                }
+            ]
+        };
+        var linkData = new LinkData()
+        {
+            new LinkDataBreadcrumbList()
+            {
+                new LinkDataBreadcrumbListItem()
+                {
+                    Name = "Play",
+                    Item = "https://fydar.dev/play/"
+                },
+                new LinkDataBreadcrumbListItem()
+                {
+                    Name = "Bloodlust",
+                    Item = "https://fydar.dev/play/bloodlust"
+                }
+            }
+        };
+    }
+    <OpenGraphComponent Model="@openGraphModel" />
+    <LinkDataComponent Model="@linkData" />
+    <meta name="theme-color" content="#2c3840">
+    <link rel="shortcut icon" href="/play/bloodlust/favicon.ico">
+    <link rel="manifest" href="/play/bloodlust/manifest.webmanifest">
+</HeadContent>
+
+<EmbedUnity>
+    <Configuration>
+        <script>
+            var config = {
+                companyName: "Fydar",
+                productName: "Bloodlust",
+                productVersion: "bloodlust",
+                dataUrl: "/play/bloodlust/build/bloodlust.data.br",
+                codeUrl: "/play/bloodlust/build/bloodlust.wasm.br",
+                frameworkUrl: "/play/bloodlust/build/bloodlust.framework.js.br",
+                streamingAssetsUrl: "/play/bloodlust/StreamingAssets",
+                arguments: [],
+            };
+            var loaderUrl = "/play/bloodlust/build/bloodlust.loader.js";
+        </script>
+    </Configuration>
+    <Placeholder>
+        <img src="/play/bloodlust/favicon.ico" alt="The logo for 'Bloodlust'." style="width: 200px; max-width: 90%; margin-bottom: 32px;" />
+    </Placeholder>
+</EmbedUnity>
+
+<script>
+    var serviceWorkerUrl = "/play/bloodlust/ServiceWorker.js";
+    window.addEventListener("load", function () {
+        if ("serviceWorker" in navigator) {
+            navigator.serviceWorker.register(serviceWorkerUrl);
+        }
+    });
+</script>

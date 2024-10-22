@@ -191,6 +191,7 @@ public class Program
 		provider.Mappings.Remove(".br");
 		provider.Mappings[".br"] = "application/octet-stream";
 		provider.Mappings[".data"] = "application/octet-stream";
+		provider.Mappings[".bank"] = "application/octet-stream";
 
 		app.UseStaticFiles(new StaticFileOptions
 		{
