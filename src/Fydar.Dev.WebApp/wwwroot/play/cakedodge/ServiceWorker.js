@@ -1,10 +1,10 @@
-const cacheName = "Fydar-Cake Dodge-WebGL";
+const cacheName = "fydar-cakedodge-v1.0.0";
 const contentToCache = [
     "./",
-    "Build/WebGL.loader.js",
-    "Build/WebGL.framework.js.br",
-    "Build/WebGL.data.br",
-    "Build/WebGL.wasm.br"
+    "build/cakedodge.loader.js",
+    "build/cakedodge.framework.js.br",
+    "build/cakedodge.data.br",
+    "build/cakedodge.wasm.br"
 ];
 
 self.addEventListener('install', function (e) {
