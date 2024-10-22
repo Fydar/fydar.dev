@@ -1,10 +1,10 @@
-const cacheName = "Fydar-Air-Sea Battle-WebGL";
+const cacheName = "fydar-airseabattle-v0.1.0";
 const contentToCache = [
     "./",
-    "Build/WebGL.loader.js",
-    "Build/WebGL.framework.js.br",
-    "Build/WebGL.data.br",
-    "Build/WebGL.wasm.br"
+    "build/airseabattle.loader.js",
+    "build/airseabattle.framework.js.br",
+    "build/airseabattle.data.br",
+    "build/airseabattle.wasm.br"
 ];
 
 self.addEventListener('install', function (e) {
