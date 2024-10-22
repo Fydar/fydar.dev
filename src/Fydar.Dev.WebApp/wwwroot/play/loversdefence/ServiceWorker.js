@@ -1,10 +1,10 @@
-const cacheName = "Fydar-Lovers Defence-WebGL";
+const cacheName = "fydar-loversdefence-v1.0.0";
 const contentToCache = [
     "./",
-    "Build/WebGL.loader.js",
-    "Build/WebGL.framework.js.br",
-    "Build/WebGL.data.br",
-    "Build/WebGL.wasm.br"
+    "build/loversdefence.loader.js",
+    "build/loversdefence.framework.js.br",
+    "build/loversdefence.data.br",
+    "build/loversdefence.wasm.br"
 ];
 
 self.addEventListener('install', function (e) {
