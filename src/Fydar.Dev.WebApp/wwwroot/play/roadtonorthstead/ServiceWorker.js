@@ -1,10 +1,10 @@
-const cacheName = "Fydar-Road to Northstead-WebGL";
+const cacheName = "fydar-roadtonorthstead-v0.1.0";
 const contentToCache = [
     "./",
-    "Build/WebGL.loader.js",
-    "Build/WebGL.framework.js.br",
-    "Build/WebGL.data.br",
-    "Build/WebGL.wasm.br"
+    "build/roadtonorthstead.loader.js",
+    "build/roadtonorthstead.framework.js.br",
+    "build/roadtonorthstead.data.br",
+    "build/roadtonorthstead.wasm.br"
 ];
 
 self.addEventListener('install', function (e) {
