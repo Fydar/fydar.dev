@@ -1,10 +1,10 @@
-const cacheName = "Fydar-The New Earth Conflict-WebGL";
+const cacheName = "fydar-thenewearthconflict-v0.1.0";
 const contentToCache = [
     "./",
-    "Build/WebGL.loader.js",
-    "Build/WebGL.framework.js.br",
-    "Build/WebGL.data.br",
-    "Build/WebGL.wasm.br"
+    "build/thenewearthconflict.loader.js",
+    "build/thenewearthconflict.framework.js.br",
+    "build/thenewearthconflict.data.br",
+    "build/thenewearthconflict.wasm.br"
 ];
 
 self.addEventListener('install', function (e) {
