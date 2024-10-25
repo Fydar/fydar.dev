@@ -1,0 +1,71 @@
+@layout GameLayout
+@page "/play/altosterrain"
+
+<HeadContent>
+    @{
+        var openGraphModel = new OpenGraphModel()
+        {
+            Title = "Play Altos-style Terrain - Fydar",
+            Description = "A recreation of the procedural terrain generation from Altos Odyssy.",
+            CanonicalUrl = "https://fydar.dev/play/altosterrain",
+            Properties = [
+                new OpenGraphModelImage()
+                {
+                    Url = "https://fydar.dev/media/altosterrain/social.webp",
+                    Alt = "Promotional material for the game 'Altos-style Terrain'."
+                }
+            ]
+        };
+        var linkData = new LinkData()
+        {
+            new LinkDataBreadcrumbList()
+            {
+                new LinkDataBreadcrumbListItem()
+                {
+                    Name = "Play",
+                    Item = "https://fydar.dev/play/"
+                },
+                new LinkDataBreadcrumbListItem()
+                {
+                    Name = "Altos-style Terrain",
+                    Item = "https://fydar.dev/play/altosterrain"
+                }
+            }
+        };
+    }
+    <OpenGraphComponent Model="@openGraphModel" />
+    <LinkDataComponent Model="@linkData" />
+    <meta name="theme-color" content="#2c3840">
+    <link rel="shortcut icon" href="/play/altosterrain/favicon.ico">
+    <link rel="manifest" href="/play/altosterrain/manifest.webmanifest">
+</HeadContent>
+
+<EmbedUnity>
+    <Configuration>
+        <script>
+            var config = {
+                companyName: "Fydar",
+                productName: "Altos-style Terrain",
+                productVersion: "v0.1.0",
+                dataUrl: "/play/altosterrain/build/altosterrain.data.br",
+                codeUrl: "/play/altosterrain/build/altosterrain.wasm.br",
+                frameworkUrl: "/play/altosterrain/build/altosterrain.framework.js.br",
+                streamingAssetsUrl: "/play/altosterrain/StreamingAssets",
+                arguments: [],
+            };
+            var loaderUrl = "/play/altosterrain/build/altosterrain.loader.js";
+        </script>
+    </Configuration>
+    <Placeholder>
+        <img src="/play/altosterrain/favicon.ico" alt="The logo for 'Altos-style Terrain'." style="width: 200px; max-width: 90%; margin-bottom: 32px;" />
+    </Placeholder>
+</EmbedUnity>
+
+<script>
+    var serviceWorkerUrl = "/play/altosterrain/ServiceWorker.js";
+    window.addEventListener("load", function () {
+        if ("serviceWorker" in navigator) {
+            navigator.serviceWorker.register(serviceWorkerUrl);
+        }
+    });
+</script>
