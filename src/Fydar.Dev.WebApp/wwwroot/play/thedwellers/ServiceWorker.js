@@ -1,10 +1,10 @@
-const cacheName = "Fydar-The Dwellers-WebGL";
+const cacheName = "fydar-thedwellers-v0.1.0";
 const contentToCache = [
     "./",
-    "Build/WebGL.loader.js",
-    "Build/WebGL.framework.js.br",
-    "Build/WebGL.data.br",
-    "Build/WebGL.wasm.br"
+    "build/thedwellers.loader.js",
+    "build/thedwellers.framework.js.br",
+    "build/thedwellers.data.br",
+    "build/thedwellers.wasm.br"
 ];
 
 self.addEventListener('install', function (e) {
