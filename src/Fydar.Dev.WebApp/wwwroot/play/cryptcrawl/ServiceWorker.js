@@ -1,10 +1,10 @@
-const cacheName = "Fydar-Crypt Crawl-WebGL";
+const cacheName = "fydar-cryptcrawl-v0.1.0";
 const contentToCache = [
     "./",
-    "Build/WebGL.loader.js",
-    "Build/WebGL.framework.js.br",
-    "Build/WebGL.data.br",
-    "Build/WebGL.wasm.br"
+    "build/cryptcrawl.loader.js",
+    "build/cryptcrawl.framework.js.br",
+    "build/cryptcrawl.data.br",
+    "build/cryptcrawl.wasm.br"
 ];
 
 self.addEventListener('install', function (e) {
