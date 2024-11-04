@@ -1,0 +1,71 @@
+@layout GameLayout
+@page "/play/lilypadleap"
+
+<HeadContent>
+    @{
+        var openGraphModel = new OpenGraphModel()
+        {
+            Title = "Play Lilypad Leap - Fydar",
+            Description = "A relaxing arcade game.",
+            CanonicalUrl = "https://fydar.dev/play/lilypadleap",
+            Properties = [
+                new OpenGraphModelImage()
+                {
+                    Url = "https://fydar.dev/media/lilypadleap/social.webp",
+                    Alt = "Promotional material for the game 'Lilypad Leap'."
+                }
+            ]
+        };
+        var linkData = new LinkData()
+        {
+            new LinkDataBreadcrumbList()
+            {
+                new LinkDataBreadcrumbListItem()
+                {
+                    Name = "Play",
+                    Item = "https://fydar.dev/play/"
+                },
+                new LinkDataBreadcrumbListItem()
+                {
+                    Name = "Lilypad Leap",
+                    Item = "https://fydar.dev/play/lilypadleap"
+                }
+            }
+        };
+    }
+    <OpenGraphComponent Model="@openGraphModel" />
+    <LinkDataComponent Model="@linkData" />
+    <meta name="theme-color" content="#2c3840">
+    <link rel="shortcut icon" href="/play/lilypadleap/favicon.ico">
+    <link rel="manifest" href="/play/lilypadleap/manifest.webmanifest">
+</HeadContent>
+
+<EmbedUnity>
+    <Configuration>
+        <script>
+            var config = {
+                companyName: "Fydar",
+                productName: "Lilypad Leap",
+                productVersion: "v0.1.0",
+                dataUrl: "/play/lilypadleap/build/lilypadleap.data.br",
+                codeUrl: "/play/lilypadleap/build/lilypadleap.wasm.br",
+                frameworkUrl: "/play/lilypadleap/build/lilypadleap.framework.js.br",
+                streamingAssetsUrl: "/play/lilypadleap/StreamingAssets",
+                arguments: [],
+            };
+            var loaderUrl = "/play/lilypadleap/build/lilypadleap.loader.js";
+        </script>
+    </Configuration>
+    <Placeholder>
+        <img src="/play/lilypadleap/favicon.ico" alt="The logo for 'Lilypad Leap'." style="width: 200px; max-width: 90%; margin-bottom: 32px;" />
+    </Placeholder>
+</EmbedUnity>
+
+<script>
+    var serviceWorkerUrl = "/play/lilypadleap/ServiceWorker.js";
+    window.addEventListener("load", function () {
+        if ("serviceWorker" in navigator) {
+            navigator.serviceWorker.register(serviceWorkerUrl);
+        }
+    });
+</script>
