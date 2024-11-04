@@ -1,0 +1,71 @@
+@layout GameLayout
+@page "/play/astralswarm"
+
+<HeadContent>
+    @{
+        var openGraphModel = new OpenGraphModel()
+        {
+            Title = "Play Astral Swarm - Fydar",
+            Description = "A space shooter.",
+            CanonicalUrl = "https://fydar.dev/play/astralswarm",
+            Properties = [
+                new OpenGraphModelImage()
+                {
+                    Url = "https://fydar.dev/media/astralswarm/social.webp",
+                    Alt = "Promotional material for the game 'Astral Swarm'."
+                }
+            ]
+        };
+        var linkData = new LinkData()
+        {
+            new LinkDataBreadcrumbList()
+            {
+                new LinkDataBreadcrumbListItem()
+                {
+                    Name = "Play",
+                    Item = "https://fydar.dev/play/"
+                },
+                new LinkDataBreadcrumbListItem()
+                {
+                    Name = "Astral Swarm",
+                    Item = "https://fydar.dev/play/astralswarm"
+                }
+            }
+        };
+    }
+    <OpenGraphComponent Model="@openGraphModel" />
+    <LinkDataComponent Model="@linkData" />
+    <meta name="theme-color" content="#2c3840">
+    <link rel="shortcut icon" href="/play/astralswarm/favicon.ico">
+    <link rel="manifest" href="/play/astralswarm/manifest.webmanifest">
+</HeadContent>
+
+<EmbedUnity>
+    <Configuration>
+        <script>
+            var config = {
+                companyName: "Fydar",
+                productName: "Astral Swarm",
+                productVersion: "v0.1.0",
+                dataUrl: "/play/astralswarm/build/astralswarm.data.br",
+                codeUrl: "/play/astralswarm/build/astralswarm.wasm.br",
+                frameworkUrl: "/play/astralswarm/build/astralswarm.framework.js.br",
+                streamingAssetsUrl: "/play/astralswarm/StreamingAssets",
+                arguments: [],
+            };
+            var loaderUrl = "/play/astralswarm/build/astralswarm.loader.js";
+        </script>
+    </Configuration>
+    <Placeholder>
+        <img src="/play/astralswarm/favicon.ico" alt="The logo for 'Astral Swarm'." style="width: 200px; max-width: 90%; margin-bottom: 32px;" />
+    </Placeholder>
+</EmbedUnity>
+
+<script>
+    var serviceWorkerUrl = "/play/astralswarm/ServiceWorker.js";
+    window.addEventListener("load", function () {
+        if ("serviceWorker" in navigator) {
+            navigator.serviceWorker.register(serviceWorkerUrl);
+        }
+    });
+</script>
