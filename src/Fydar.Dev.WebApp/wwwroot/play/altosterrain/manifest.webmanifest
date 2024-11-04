@@ -1,7 +1,7 @@
 {
-    "name": "Air-Sea Battle",
-    "short_name": "Air-Sea Battle",
-    "start_url": "/play/airseabattle",
+    "name": "Altos Terrain",
+    "short_name": "Altos Terrain",
+    "start_url": "/play/altosterrain",
     "display": "fullscreen",
     "background_color": "#12171A",
     "theme_color": "#000",

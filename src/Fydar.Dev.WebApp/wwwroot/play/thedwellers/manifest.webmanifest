@@ -1,7 +1,7 @@
 {
-    "name": "Mini Miner",
-    "short_name": "Mini Miner",
-    "start_url": "/play/miniminer",
+    "name": "The Dwellers",
+    "short_name": "The Dwellers",
+    "start_url": "/play/thedwellers",
     "display": "fullscreen",
     "background_color": "#12171A",
     "theme_color": "#000",
