@@ -1,0 +1,58 @@
+
+.appicon {
+    --icon-size: 88px;
+    --icon-image-size: 40px;
+    --hue: 290deg;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    aspect-ratio: 1;
+    flex-shrink: 0;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow:
+        inset 0 .899px .899px 0 hsla(0, 0%, 100%, .1),
+        inset 0 5.396px 3.598px 0 hsla(0, 0%, 100%, .02),
+        inset 0 6.296px 12.592px 0 hsla(0, 0%, 100%, .03),
+        /*0 98.036px 27.882px 0 rgba(0, 0, 0, .01),*/
+        /*0 62.959px 25.184px 0 rgba(0, 0, 0, .05),*/
+        0 35.077px 21.586px 0 rgba(0, 0, 0, .1),
+        0 15.29px 15.29px 0 rgba(0, 0, 0, .3),
+        0 3.598px 8.994px 0 rgba(0, 0, 0, .35);
+    background: radial-gradient(hsl(var(--hue) 10% 10%), hsl(var(--hue) 10% 5%));
+}
+
+    .appicon ::deep svg {
+        position: absolute;
+        left: 25%;
+        top: 25%;
+        width: 50%;
+        height: 50%;
+        overflow: visible;
+    }
+
+        .appicon ::deep svg:first-child {
+            color: hsl(var(--hue) 100% 50%);
+            filter: drop-shadow(0px 0px 6px hsl(var(--hue) 100% 50%));
+        }
+
+        .appicon ::deep svg:last-child {
+            color: hsl(var(--hue) 100% 85%);
+            filter: blur(1.25px);
+        }
+
+    .appicon:hover {
+        background: radial-gradient(hsl(var(--hue) 60% 29%), hsl(var(--hue) 50% 5%));
+    }
+
+        .appicon:hover ::deep svg {
+        }
+
+            .appicon:hover ::deep svg:first-child {
+            }
+
+            .appicon:hover ::deep svg:last-child {
+                color: hsl(var(--hue) 100% 95%);
+            }

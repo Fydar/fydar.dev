@@ -1,0 +1,15 @@
+<a @attributes="AdditionalAttributes" class="appicon" style="--hue: @Hue">
+    <SvgSprite Link="@Link" />
+    <SvgSprite Link="@Link" />
+</a>
+
+@code {
+    [Parameter]
+    public string? Link { get; set; }
+
+    [Parameter]
+    public string? Hue { get; set; } = "0deg";
+
+    [Parameter(CaptureUnmatchedValues = true)]
+    public IDictionary<string, object>? AdditionalAttributes { get; set; }
+}

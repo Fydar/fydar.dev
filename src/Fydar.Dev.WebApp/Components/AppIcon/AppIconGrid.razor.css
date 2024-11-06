@@ -1,0 +1,8 @@
+
+.appicon-grid {
+    margin-top: 4rem;
+    display: grid;
+    justify-items: center;
+    gap: 24px;
+    grid-template-columns: repeat(auto-fit, minmax(88px, 1fr));
+}
