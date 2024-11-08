@@ -348,6 +348,7 @@ main:has(section.section-feature:last-child) + footer {
         position: fixed;
         top: 0;
         transform: translateY(calc(var(--parallax-offset) * var(--parallax-multiplier) * -1px));
+        user-select: none;
     }
 
         ::deep .parallax-frame .parallax-layer .blur {
@@ -370,6 +371,7 @@ main:has(section.section-feature:last-child) + footer {
         }
 
     ::deep .parallax-frame picture.parallax-layer img {
+        position: absolute;
         width: 100%;
         height: 100%;
         object-fit: cover;
@@ -618,7 +620,8 @@ footer {
         box-sizing: border-box;
         position: relative;
         display: flex;
-        align-items: center;
+        justify-content: center;
+        align-content: center;
     }
 
         ::deep section.fullscreen .fullscreen-footer .titlecard {
@@ -630,6 +633,7 @@ footer {
             width: 512px;
             object-fit: contain;
             object-position: bottom left;
+            user-select: none;
         }
 
 
