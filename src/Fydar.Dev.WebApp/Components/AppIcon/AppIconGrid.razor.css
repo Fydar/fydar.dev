@@ -1,6 +1,7 @@
 
 .appicon-grid {
-    margin-top: 4rem;
+    margin-top: 2rem;
+    margin-bottom: 3rem;
     display: grid;
     justify-items: center;
     gap: 24px;
