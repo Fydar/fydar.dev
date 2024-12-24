@@ -1,0 +1,123 @@
+@layout DefaultLayout
+@page "/portfolio/phasmophobia"
+
+<HeadContent>
+    @{
+        var openGraphModel = new OpenGraphModel()
+        {
+            Title = "Phasmophobia - Fydar",
+            Description = "Phasmophobia is a 4 player online co-op psychological horror. Paranormal activity is on the rise and it’s up to you and your team to use all the ghost-hunting equipment at your disposal in order to gather as much evidence as you can.",
+            CanonicalUrl = "https://fydar.dev/portfolio/phasmophobia",
+            Properties = [
+                new OpenGraphModelImage()
+                {
+                    Url = "https://fydar.dev/media/phasmophobia/social.webp",
+                    Alt = "Promotional material for the game 'Phasmophobia'."
+                }
+            ]
+        };
+        var linkData = new LinkData()
+        {
+            new LinkDataBreadcrumbList()
+            {
+                new LinkDataBreadcrumbListItem()
+                {
+                    Name = "Portfolio",
+                    Item = "https://fydar.dev/portfolio/"
+                },
+                new LinkDataBreadcrumbListItem()
+                {
+                    Name = "Phasmophobia",
+                    Item = "https://fydar.dev/portfolio/phasmophobia"
+                }
+            }
+        };
+    }
+    <OpenGraphComponent Model="@openGraphModel" />
+    <LinkDataComponent Model="@linkData" />
+</HeadContent>
+
+<section class="fullscreen" data-nosnippet>
+    <div class="parallax-frame parallax-focalanchortop" style="--animation-time: 0.5;">
+
+        <picture class="parallax-layer" style="--parallax-multiplier: 0.5">
+            <img src="/media/phasmophobia/background.webp?v=1" class="flicker" />
+            <div class="grain"></div>
+        </picture>
+
+    </div>
+
+    <div class="fullscreen-footer">
+
+        <picture>
+            <img class="titlecard" src="media/phasmophobia/titlecard.svg?v=1" alt="Title card for the game 'Phasmophobia'." />
+        </picture>
+
+        <SteamPlayButton href="https://store.steampowered.com/app/739630/Phasmophobia/">Play on Steam</SteamPlayButton>
+
+    </div>
+</section>
+
+<div class="cascade-container">
+    <div class="cascade" style="background: linear-gradient(to right, 'bfb09e 0%, #101010 75%, #101010 100%), url('media/noise.svg');">
+    </div>
+</div>
+
+<aside>
+    <section>
+        <h1>Phasmophobia</h1>
+    </section>
+</aside>
+
+<section class="container">
+        
+    <EmbedYouTube Url="https://www.youtube-nocookie.com/embed/sRa9oeo5KiY?si=ReT_v-pScRGteTmx" />
+
+</section>
+
+<HeadingScope>
+    <aside>
+        <section style="position: sticky; top: 64px;">
+            <div style="height: 5rem"></div>
+            <TableOfContents />
+        </section>
+
+    </aside>
+
+    <section class="container">
+
+        <Heading Level="2" Identifier="more-to-come">
+            <Text>More to Come</Text>
+            <Content>
+
+                <p>I can't wait to share with you what I've been doing on Phasmophobia!</p>
+
+            </Content>
+        </Heading>
+
+        <Heading Level="2" Identifier="unknown">
+            <Prefix>Unknown</Prefix>
+            <Text>Unknown</Text>
+            <Content>
+
+                <p>Working on [UNKNOWN].</p>
+
+                <div style="height: 5rem"></div>
+
+            </Content>
+        </Heading>
+
+    </section>
+
+    <section class="section-feature">
+
+        <div class="parallax-frame parallax-focalanchortop">
+            <picture>
+                <img class="parallax-layer flicker" style="--parallax-multiplier: 0.5" loading="lazy" src="/media/phasmophobia/asylum-outside.webp" />
+            </picture>
+            <div class="grain" style="height: 103%;"></div>
+        </div>
+
+    </section>
+
+</HeadingScope>

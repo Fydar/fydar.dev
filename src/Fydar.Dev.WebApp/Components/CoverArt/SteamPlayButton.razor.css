@@ -11,6 +11,7 @@
     line-height: 1;
     text-transform: uppercase;
     transition: filter 0.35s;
+    align-self: center;
 }
 
     .steamplaybutton:hover,

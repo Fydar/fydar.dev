@@ -10,6 +10,7 @@
     perspective-origin: 50% 50%;
     aspect-ratio: 6 / 9;
     user-select: none;
+    color: white;
 }
 
     .cover .cover-background {
