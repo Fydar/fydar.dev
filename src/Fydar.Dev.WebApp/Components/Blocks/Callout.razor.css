@@ -45,3 +45,19 @@
         .callout.callout-primary ::deep svg {
             color: #f6c569;
         }
+
+
+    .callout.callout-construction {
+        background: repeating-linear-gradient(140deg, #f6c5690c, #f6c5692c 1px, #f6c5692c 11px, #f6c5690c 12px, #f6c5690c 20px);
+        border: 2px solid #f6c56999;
+        background-clip: padding-box;
+    }
+
+        .callout.callout-construction ::deep svg {
+            color: #f6c569;
+        }
+
+        .callout.callout-construction ::deep svg,
+        .callout.callout-construction .callout-body {
+            filter: drop-shadow(0px 2px 2px black);
+        }
