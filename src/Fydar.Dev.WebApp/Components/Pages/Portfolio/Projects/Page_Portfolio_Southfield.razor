@@ -106,9 +106,12 @@
 
                 <p>I created an updated version of Radient for <b>Southfield</b> that used vertical gradients (instead of the horizontal ones I was previously using) which inspired me to take up the project under the name <b>Procedural Assets</b> in my spare time - and good thing I did, because it turns out that the version I created for <b>Radical Forge</b> started having rare errors in the build.</p>
 
-                <video controls muted loop>
-                    <source src="/media/radient/model-demo.mp4?v=1" type='video/mp4'>
-                </video>
+                <figure class="figure-image">
+                    <video controls muted loop>
+                        <source src="/media/radient/model-demo.mp4?v=1" type='video/mp4'>
+                    </video>
+                    <figcaption>Demonstration of the procedural gradient atlas tool.</figcaption>
+                </figure>
 
                 <p>This was an incredible opportunity for me to explore new technologies for creating procedurally generated assets for a Unity project.</p>
 
@@ -139,9 +142,12 @@
 
                 <p>To better support the <b>Southfield</b> art style, I created a custom post-processing stack along with a signed-distance field algorithm to add outlines and shadows to the generated icons. This was generated on the <b>GPU</b> using a shader.</p>
 
-                <video controls muted loop>
-                    <source src="/media/holodrone/gun-demonstration.mp4?v=1" type='video/mp4'>
-                </video>
+                <figure class="figure-image">
+                    <video controls muted loop>
+                        <source src="/media/holodrone/gun-demonstration.mp4?v=1" type='video/mp4'>
+                    </video>
+                    <figcaption>Demonstration of the non-destructive icon generation workflow with Holodrone.</figcaption>
+                </figure>
 
                 <Callout>
                     <Icon><SvgSprite Link="/icons.svg?v=1#icon-seal-check-fill" Alt="Check" /></Icon>
@@ -163,6 +169,13 @@
 
                 <p>In the future, I would like to rewrite Packbook. It would be good if I could make the the system flexible enough to be able to combine the texture atlasing tool with the gradient palette tool so that I can pack them together using the same mechanisms.</p>
 
+                <figure class="figure-image">
+                    <picture class="media-wide">
+                        <img src="/media/southfield/packbook-textures.png?v=1" alt="Texture atlases containing textures for the crops in the game." loading="lazy" />
+                    </picture>
+                    <figcaption>The crops of Southfield have their textures packed into these custom atlases in-engine.</figcaption>
+                </figure>
+
                 <Callout>
                     <Icon><SvgSprite Link="/icons.svg?v=1#icon-seal-check-fill" Alt="Check" /></Icon>
                     <ChildContent>My tooling <b>completely automated</b> the creation and maintainence of texture atlases.</ChildContent>
@@ -178,9 +191,12 @@
 
                 <p>The world of <b>Southfield</b> is vast, often requiring many individual props (pebbles, rocks, bushes, flowers, e.t.c) to be placed into the scene.</p>
 
-                <picture class="media-wide">
-                    <img src="/media/southfield/screenshot-exploration.jpg?v=1" alt="The player character exploring the world with a companion." loading="lazy" />
-                </picture>
+                <figure class="figure-image">
+                    <picture class="media-wide">
+                        <img src="/media/southfield/screenshot-exploration.jpg?v=1" alt="The player character exploring the world with a companion." loading="lazy" />
+                    </picture>
+                    <figcaption>The world of Southfield as seen in the game trailer authored using my tools.</figcaption>
+                </figure>
 
                 <Callout>
                     <Icon><SvgSprite Link="/icons.svg?v=1#icon-seal-check-fill" Alt="Check" /></Icon>
@@ -194,11 +210,11 @@
             </Content>
         </Heading>
 
-        <Heading Level="2" Identifier="cinematic-camera-locomotion">
-            <Prefix>Tooling for</Prefix>
-            <Text>Cinematic Camera Locomotion</Text>
+        <Heading Level="2" Identifier="cinematic-camera">
+            <Prefix>Tooling for a</Prefix>
+            <Text>Cinematic Camera</Text>
             <Content>
-                <p>Much of the game trailer was recorded using my cinematic camera controller.</p>
+                <p>Much of the game trailer was recorded using my <b>cinematic camera controller</b>.</p>
 
                 <p>I created a camera controller designed with <b>cinematic locomotion</b> in mind. This meant adding spring systems so that subtle movement can be added to complement the camera movements.</p>
 
