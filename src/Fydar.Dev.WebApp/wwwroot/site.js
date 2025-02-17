@@ -45,6 +45,39 @@ window.addEventListener("resize",
     }, { passive: true }
 );
 
+
+
+function createStylesheet() {
+    const style = document.createElement('style');
+    document.head.appendChild(style);
+    return style.sheet;
+}
+
+function addCSSRule(stylesheet, selector, styles) {
+    if (stylesheet.insertRule) { // Modern browsers
+        stylesheet.insertRule(`${selector} { ${styles} }`, stylesheet.cssRules.length);
+    } else if (stylesheet.addRule) { // Older IE (rarely needed now)
+        stylesheet.addRule(selector, styles, -1);
+    } else {
+        console.error("Adding CSS rule not supported.");
+    }
+}
+
+function findCSSRule(stylesheet, selector) {
+    const rules = stylesheet.cssRules || stylesheet.rules;
+    for (let i = 0; i < rules.length; i++) {
+        const rule = rules[i];
+        if (rule instanceof CSSStyleRule && rule.selectorText === selector) {
+            return rule;
+        }
+    }
+    return null;
+}
+
+var proceduralStylesheet = createStylesheet();
+addCSSRule(proceduralStylesheet, ".pointer-relative", "--pointer-fixed: 0px 0px;");
+const rule = findCSSRule(proceduralStylesheet, ".pointer-relative");
+
 var lastX = 0;
 var lastY = 0;
 
@@ -52,8 +85,8 @@ window.addEventListener("pointermove",
     eventArgs => {
         lastX = eventArgs.clientX;
         lastY = eventArgs.clientY;
-        document.documentElement.style.setProperty("--pointer-fixed", lastX.toFixed(2) + "px " + lastY.toFixed(2) + "px");
-        UpdateRelativeElements();
+
+        rule.style.setProperty("--pointer-fixed", lastX.toFixed(2) + "px " + lastY.toFixed(2) + "px");
     }, { passive: true }
 );
 
