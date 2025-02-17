@@ -5,14 +5,14 @@
     @{
         var openGraphModel = new OpenGraphModel()
         {
-            Title = "UNO - Fydar",
+            Title = "UNO® - Fydar",
             Description = "One of the most iconic classic games which we all grew to know and love!",
             CanonicalUrl = "https://fydar.dev/portfolio/uno",
             Properties = [
                 new OpenGraphModelImage()
                 {
                     Url = "https://fydar.dev/media/uno/social.webp",
-                    Alt = "Promotional material for the game 'UNO'."
+                    Alt = "Promotional material for the game 'UNO®'."
                 }
             ]
         };
@@ -27,7 +27,7 @@
                 },
                 new LinkDataBreadcrumbListItem()
                 {
-                    Name = "UNO",
+                    Name = "UNO®",
                     Item = "https://fydar.dev/portfolio/uno"
                 }
             }
@@ -91,7 +91,7 @@
 
     <section class="container">
 
-        <Heading Level="2" Identifier="skill-tree-editing">
+        <Heading Level="2" Identifier="legacy-codebase">
             <Prefix>Bug fixing in a</Prefix>
             <Text>Legacy Codebase</Text>
             <Media><img src="media/uno/green-1.webp?v=1" alt="A green UNO 1 card." /></Media>
@@ -102,7 +102,7 @@
             </Content>
         </Heading>
 
-        <Heading Level="2" Identifier="skill-tree-editing">
+        <Heading Level="2" Identifier="button-behaviour">
             <Prefix>Debugging, fixing, and polishing the</Prefix>
             <Text>Main Menu Button Behaviour</Text>
             <Media><img src="media/uno/blue-2.webp?v=1" alt="A blue UNO 2 card." /></Media>
@@ -111,6 +111,79 @@
                 <p>Whilst fixing bugs on some buttons in the game Main Menu I identified a whole host of troublesome behaviours. My best course of action was to completely rethink how these buttons work.</p>
 
                 <p>Before we do that, though, let's analyse the old UI behaviour and see what issues we can identify with its design and implementation.</p>
+
+                <h3>Issue 1: Inconsistent Hitboxes</h3>
+
+                <p>When using the UI for the first time I noticed that the buttons had very inconsistent hitboxes. This was very frustrating to the point where I avoided using the buttons because of how bad their hitboxes were.</p>
+
+                <figure class="figure-image">
+                    <video autoplay muted loop>
+                        <source src="/media/uno/issue1-before.30fps.h265.mp4?v=1" type='video/mp4; codecs="hvc1.1.2.L123.90"; profiles="isom,iso2,mp41"'>
+                        <source src="/media/uno/issue1-before.30fps.h264.mp4?v=1" type='video/mp4; codecs="avc1.4d4028"; profiles="isom,iso2,avc1,mp41"'>
+                    </video>
+                    <figcaption>Footage of the mouse hovering over the old main menu buttons.</figcaption>
+                </figure>
+
+                <p>I quickly realised that these hitboxes were inconsistent because the hitboxes were being scaled whilst the user hovered over the button. This is a common mistake which should be avoided.</p>
+
+                <figure class="figure-image">
+                    <video autoplay muted loop>
+                        <source src="/media/uno/issue1-after.30fps.h265.mp4?v=1" type='video/mp4; codecs="hvc1.1.2.L123.90"; profiles="isom,iso2,mp41"'>
+                        <source src="/media/uno/issue1-after.30fps.h264.mp4?v=1" type='video/mp4; codecs="avc1.4d4028"; profiles="isom,iso2,avc1,mp41"'>
+                    </video>
+                    <figcaption>Footage of the mouse hovering over the new main menu buttons.</figcaption>
+                </figure>
+
+                <h3>Issue 2: No "Depressed" State </h3>
+
+                <p>When clicking on the buttons using the mouse, keyboard, or controller button, there is no visual feedback.</p>
+
+                <figure class="figure-image">
+                    <video autoplay muted loop>
+                        <source src="/media/uno/issue2-before.30fps.h265.mp4?v=1" type='video/mp4; codecs="hvc1.1.2.L123.90"; profiles="isom,iso2,mp41"'>
+                        <source src="/media/uno/issue2-before.30fps.h264.mp4?v=1" type='video/mp4; codecs="avc1.4d4028"; profiles="isom,iso2,avc1,mp41"'>
+                    </video>
+                    <figcaption>Footage of the mouse clicking on the old main menu buttons.</figcaption>
+                </figure>
+
+                <p>Without a depressed state on the button there is a significant disconnect between the user and the interface.</p>
+
+                <figure class="figure-image">
+                    <video autoplay muted loop>
+                        <source src="/media/uno/issue2-after.30fps.h265.mp4?v=1" type='video/mp4; codecs="hvc1.1.2.L123.90"; profiles="isom,iso2,mp41"'>
+                        <source src="/media/uno/issue2-after.30fps.h264.mp4?v=1" type='video/mp4; codecs="avc1.4d4028"; profiles="isom,iso2,avc1,mp41"'>
+                    </video>
+                    <figcaption>Footage of the mouse clicking on the new main menu buttons.</figcaption>
+                </figure>
+
+                <h3>Issue 3: Inconsistent</h3>
+
+                <p>There were quite a few inconsistencies with the old behaviour:</p>
+
+                <ul>
+                    <li>When you navigate between buttons using a controller there is no animation, unlike when you're using the mouse.</li>
+                    <li>When you highlight the "profile" button using a mouse it glows, but it doesn't if you're using a controller.</li>
+                    <li>Buttons animate out when you stop hovering using the mouse, but not when you hover.</li>
+                    <li>Some buttons don't have labels that appear when you hover over them.</li>
+                </ul>
+
+                <figure class="figure-image">
+                    <video autoplay muted loop>
+                        <source src="/media/uno/issue3-before.30fps.h265.mp4?v=1" type='video/mp4; codecs="hvc1.1.2.L123.90"; profiles="isom,iso2,mp41"'>
+                        <source src="/media/uno/issue3-before.30fps.h264.mp4?v=1" type='video/mp4; codecs="avc1.4d4028"; profiles="isom,iso2,avc1,mp41"'>
+                    </video>
+                    <figcaption>Footage of controller navigation on the old main menu buttons.</figcaption>
+                </figure>
+
+                <p>With these inconsistencies, it can be difficult for the user to navigate the menu naturally.</p>
+
+                <figure class="figure-image">
+                    <video autoplay muted loop>
+                        <source src="/media/uno/issue3-after.30fps.h265.mp4?v=1" type='video/mp4; codecs="hvc1.1.2.L123.90"; profiles="isom,iso2,mp41"'>
+                        <source src="/media/uno/issue3-after.30fps.h264.mp4?v=1" type='video/mp4; codecs="avc1.4d4028"; profiles="isom,iso2,avc1,mp41"'>
+                    </video>
+                    <figcaption>Footage of controller navigation on the new main menu buttons.</figcaption>
+                </figure>
 
             </Content>
         </Heading>
