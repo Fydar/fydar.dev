@@ -270,6 +270,7 @@
 
         .resume .timeline-company .timeline-company-logo {
             grid-column: 1 / 2;
+            grid-row: 1 / span 1;
             display: flex;
             align-items: center;
             align-self: center;
@@ -287,6 +288,38 @@
                 color: white;
                 user-select: none;
             }
+
+        .resume .timeline-company .timeline-years {
+            grid-column: 1 / 2;
+            grid-row: 2 / span 16;
+            display: flex;
+            flex-direction: column;
+            place-content: space-evenly;
+            align-items: center;
+            padding-top: 4pt;
+            padding-bottom: 2pt;
+        }
+            .resume .timeline-company .timeline-years .timeline-year {
+                color: #b6b6b6;
+                display: flex;
+                flex-direction: column;
+                font-weight: bold;
+                align-items: center;
+                flex-grow: 1;
+                font-size: 12pt;
+                letter-spacing: 1pt;
+            }
+                .resume .timeline-company .timeline-years::before,
+                .resume .timeline-company .timeline-years .timeline-year::after {
+                    content: '';
+                    width: 3pt;
+                    margin-top: 4pt;
+                    margin-bottom: 4pt;
+                    background-color: #d4d4d4;
+                    flex-grow: 1;
+                    align-items: center;
+                    border-radius: 1.5pt;
+                }
 
         .resume .timeline-company .timeline-company-summary {
             grid-column: 2 / 3;
@@ -353,6 +386,14 @@
             height: auto;
             margin: 16.5pt auto 1.5pt auto;
             grid-column: 1;
+        }
+
+        .resume .timeline-company:last-child .timeline-years .timeline-year:last-child {
+            flex-grow: 0;
+        }
+
+        .resume .timeline-company:last-child .timeline-years .timeline-year:last-child::after {
+            content: unset;
         }
 
 
