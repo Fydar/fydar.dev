@@ -32,10 +32,11 @@
         font-family: Calibri, sans-serif;
         font-size: 11pt;
         filter: brightness(0.9625);
+        --palette-primary-color: #595959;
     }
 
     .resume h1 {
-        font-size: 18pt;
+        font-size: 22pt;
         font-weight: 400;
         color: #404040;
         margin: 0 0 20pt 0;
@@ -43,7 +44,7 @@
     }
 
     .resume h2 {
-        font-size: 13pt;
+        font-size: 15pt;
         font-weight: bold;
         color: #404040;
         letter-spacing: 0.25pt;
@@ -52,7 +53,7 @@
     .resume h3 {
         font-size: 11pt;
         font-weight: bold;
-        color: #404040;
+        color: var(--palette-primary-color);
         letter-spacing: 0.25pt;
     }
 
@@ -61,6 +62,17 @@
         margin-top: 6pt;
         margin-bottom: 6pt;
     }
+
+    .resume .textual-tag {
+    }
+
+        .resume .textual-tag + .textual-tag::before {
+            content: "· ";
+            font-weight: bold;
+            white-space: pre;
+            padding-left: 2pt;
+            padding-right: 2pt;
+        }
 
     .resume ::deep a {
         text-decoration: none;
@@ -78,8 +90,6 @@
         height: 8pt;
         margin-left: 2pt;
         margin-top: 2pt;
-        margin-right: 2pt;
-        opacity: 0.8;
     }
 
     .resume ul {
@@ -99,7 +109,7 @@
     }
 
     .resume .subtitle2 {
-        color: #595959;
+        color: var(--palette-primary-color);
     }
 
     .resume .subtitle3 {
@@ -112,11 +122,8 @@
     }
 
     .resume .phonetics {
-        letter-spacing: 2px;
+        letter-spacing: 2.25pt;
         color: #898989;
-    }
-
-    .resume .printed-name {
     }
 
     .resume .link-tag {
@@ -146,131 +153,180 @@
             align-self: start;
         }
 
-    .resume .page-coverletter-header {
+
+    .resume .capsule-tag-cloud {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6pt;
     }
 
-        .resume .page-coverletter-header h1 {
-            font-size: 42pt;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            margin-bottom: 6pt;
-            font-weight: 600;
+    .resume .capsule-tag {
+        background-color: var(--palette-primary-background1-color);
+        border: solid 1pt var(--palette-primary-color);
+        color: var(--palette-primary-color);
+        border-radius: 4pt;
+        line-height: 1em;
+        padding: 0 2pt 0 3pt;
+        gap: 0pt 2pt;
+        display: inline-flex;
+        font-weight: bold;
+        letter-spacing: 0.25pt;
+        align-items: center;
+    }
+
+        .resume .capsule-tag p {
+            padding: 3pt 0;
+            margin: 0;
         }
+
+        .resume .capsule-tag ::deep svg:last-child {
+            width: 7pt;
+            height: 7pt;
+            margin-left: -1pt;
+            margin-top: 2pt;
+            margin-right: 1pt;
+            align-self: start;
+        }
+
+        .resume .capsule-tag ::deep svg:first-child {
+            width: 14pt;
+            height: 14pt;
+            margin: 0;
+        }
+
+    .resume .page-coverletter {
+    }
+
+        .resume .page-coverletter .page-coverletter-header {
+        }
+
+            .resume .page-coverletter .page-coverletter-header h1 {
+                font-size: 42pt;
+                text-transform: uppercase;
+                letter-spacing: 0.1em;
+                margin-bottom: 6pt;
+                font-weight: 600;
+            }
+
+        .resume .page-coverletter .page-coverletter-details {
+            border-bottom: 2pt solid #3f3f3f;
+            display: flex;
+            flex-direction: row;
+            gap: 4pt;
+            padding: 0;
+            font-size: 0.925em;
+            justify-content: space-between;
+            margin-top: 0;
+            margin-bottom: 32pt;
+        }
+
+            .resume .page-coverletter .page-coverletter-details li {
+                display: flex;
+                align-items: center;
+                margin: 0;
+                font-size: 11pt;
+                letter-spacing: 0.025em;
+            }
+
+                .resume .page-coverletter .page-coverletter-details li ::deep p,
+                .resume .page-coverletter .page-coverletter-details li ::deep a {
+                    margin: 0;
+                    color: #3f3f3f;
+                    display: flex;
+                    align-items: center;
+                    padding-top: 4pt;
+                    padding-bottom: 4pt;
+                    padding-left: 4pt;
+                    padding-right: 4pt;
+                }
+
+                .resume .page-coverletter .page-coverletter-details li ::deep svg:first-child {
+                    height: 12pt;
+                    width: 12pt;
+                    margin-right: 4pt;
+                }
+
+                .resume .page-coverletter .page-coverletter-details li ::deep svg.external-link-icon {
+                    transform: translateY(-3pt);
+                }
 
     .resume .spacer {
         height: 12pt;
     }
 
-        .resume .page-coverletter .page-coverletter-details {
-        border-bottom: 2pt solid #3f3f3f;
-        display: flex;
-        flex-direction: row;
-        gap: 4pt;
-            padding: 0;
-        font-size: 0.925em;
-        justify-content: space-between;
-        margin-top: 0;
-        margin-bottom: 32pt;
-    }
 
-            .resume .page-coverletter .page-coverletter-details li {
-            display: flex;
-            align-items: center;
-            margin: 0;
-            font-size: 11pt;
-            letter-spacing: 0.025em;
-        }
-
-                .resume .page-coverletter .page-coverletter-details li ::deep p,
-                .resume .page-coverletter .page-coverletter-details li ::deep a {
-                    margin: 0;
-                color: #3f3f3f;
-                display: flex;
-                align-items: center;
-                padding-top: 4pt;
-                padding-bottom: 4pt;
-                padding-left: 4pt;
-                padding-right: 4pt;
-            }
-
-                .resume .page-coverletter .page-coverletter-details li ::deep svg:first-child {
-                height: 12pt;
-                width: 12pt;
-                margin-right: 4pt;
-            }
-
-            .resume .page-coverletter-details li ::deep svg.external-link-icon {
-                transform: translateY(-4px);
-            }
-
-
-
-    .resume .timeline-company {
+    .resume .timeline {
         display: grid;
-        grid-template-columns: 1.625cm auto;
+        grid-template-columns: 46pt auto;
         gap: 0 12pt;
-        margin-bottom: 16pt;
+        margin-bottom: 22pt;
         page-break-inside: avoid;
     }
 
-        .resume .timeline-company .timeline-company-media,
-        .resume .timeline-company .timeline-position-media {
+        .resume .timeline .timeline-media-header {
+            grid-column: 2 / 3;
+            position: relative;
+            text-align: left;
+            font-weight: bold;
+            font-size: 13pt;
+            letter-spacing: 0.25pt;
+            margin-top: 8pt;
+            margin-bottom: 4pt;
+            padding-bottom: 1pt;
+            padding-top: 1pt;
+            color: #404040;
+        }
+
+            .resume .timeline .timeline-media-header::before {
+                content: '';
+                position: absolute;
+                width: 75.25pt;
+                height: 64pt;
+                top: 0;
+                left: 0;
+            }
+
+        .resume .timeline .timeline-media {
             grid-column: 2 / 3;
             display: flex;
             flex-direction: row;
             color: #404040;
             margin-top: 5pt;
             margin-bottom: 5pt;
+            margin: 0 0 8pt 0;
+            gap: 6pt;
         }
 
-            .resume .timeline-company .timeline-company-media img,
-            .resume .timeline-company .timeline-position-media img {
-                height: 48pt;
-                box-sizing: border-box;
-                min-width: 74.6pt;
-                max-width: 74.6pt;
-                margin-right: 8pt;
-                overflow: hidden;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                border-radius: 8pt;
+            .resume .timeline .timeline-media img {
+                min-width: 75.25pt;
+                max-width: 75.25pt;
+                height: 43pt;
+                border-radius: 4pt;
                 object-fit: cover;
                 background-color: #293138;
                 color: #eeeeee;
             }
 
-            .resume .timeline-company .timeline-company-media .timeline-company-media-body,
-            .resume .timeline-company .timeline-position-media .timeline-position-media-body {
+            .resume .timeline .timeline-media .timeline-media-body {
                 display: flex;
                 flex-direction: column;
-                align-self: center;
             }
 
-                .resume .timeline-company .timeline-company-media .timeline-company-media-body .timeline-company-media-body-name,
-                .resume .timeline-company .timeline-position-media .timeline-position-media-body .timeline-position-media-body-name {
-                    font-weight: bold;
+                .resume .timeline .timeline-media .timeline-media-body .timeline-media-body-name {
                     margin: 0;
                     text-align: left;
+                    font-weight: bold;
+                    font-size: 12pt;
+                    letter-spacing: 0.25pt;
                 }
 
-                .resume .timeline-company .timeline-company-media .timeline-company-media-body .timeline-company-media-body-description,
-                .resume .timeline-company .timeline-position-media .timeline-position-media-body .timeline-position-media-body-description {
+                .resume .timeline .timeline-media .timeline-media-body .timeline-media-body-description {
                     text-overflow: ellipsis;
                     margin: 0;
                     text-align: left;
                 }
 
-        .resume .timeline-company .timeline-company-media {
-            margin-top: 8pt;
-            margin-bottom: 8pt;
-        }
-
-        .resume .timeline-company .timeline-position-media {
-            grid-column: 2 / 3;
-        }
-
-        .resume .timeline-company .timeline-company-logo {
+        .resume .timeline .timeline-icon {
             grid-column: 1 / 2;
             grid-row: 1 / span 1;
             display: flex;
@@ -278,20 +334,21 @@
             align-self: center;
         }
 
-            .resume .timeline-company .timeline-company-logo picture {
+            .resume .timeline .timeline-icon picture {
                 display: contents;
             }
 
-            .resume .timeline-company .timeline-company-logo img,
-            .resume .timeline-company .timeline-company-logo ::deep svg {
+            .resume .timeline .timeline-icon img,
+            .resume .timeline .timeline-icon ::deep svg {
                 width: 100%;
                 aspect-ratio: 1;
                 object-fit: contain;
                 color: white;
                 user-select: none;
+                border-radius: 2pt;
             }
 
-        .resume .timeline-company .timeline-years {
+        .resume .timeline .timeline-years {
             grid-column: 1 / 2;
             grid-row: 2 / span 16;
             display: flex;
@@ -301,7 +358,8 @@
             padding-top: 4pt;
             padding-bottom: 2pt;
         }
-            .resume .timeline-company .timeline-years .timeline-year {
+
+            .resume .timeline .timeline-years .timeline-year {
                 color: #b6b6b6;
                 display: flex;
                 flex-direction: column;
@@ -311,93 +369,149 @@
                 font-size: 12pt;
                 letter-spacing: 1pt;
             }
-                .resume .timeline-company .timeline-years::before,
-                .resume .timeline-company .timeline-years .timeline-year::after {
+
+                .resume .timeline .timeline-years::before,
+                .resume .timeline .timeline-years .timeline-year::after {
                     content: '';
                     width: 3pt;
-                    margin-top: 4pt;
+                    margin-top: 6pt;
                     margin-bottom: 4pt;
-                    background-color: #d4d4d4;
+                    background-color: #e6e6e6;
                     flex-grow: 1;
                     align-items: center;
                     border-radius: 1.5pt;
                 }
 
-        .resume .timeline-company .timeline-company-summary {
+                .resume .timeline .timeline-years:empty::before,
+                .resume .timeline .timeline-years .timeline-year:last-child::after {
+                    margin-bottom: -15pt;
+                }
+
+        .resume .timeline:last-child .timeline-years .timeline-year:last-child {
+            flex-grow: 0;
+        }
+
+            .resume .timeline:last-child .timeline-years .timeline-year:last-child::after {
+                content: unset;
+            }
+
+        .resume .timeline .timeline-header {
+            grid-row: 1;
             grid-column: 2 / 3;
             align-self: center;
         }
 
-        .resume .timeline-company .timeline-position-icon {
-            grid-column: 2 / 3;
-            display: flex;
-            align-items: center;
-            width: 20pt;
-        }
-
-            .resume .timeline-company .timeline-position-icon img,
-            .resume .timeline-company .timeline-position-icon ::deep svg {
-                width: 100%;
-                aspect-ratio: 1;
-                object-fit: contain;
-                color: #777;
-                user-select: none;
+            .resume .timeline .timeline-header *:first-child {
+                margin-top: 0
             }
 
-        .resume .timeline-company .timeline-position {
+            .resume .timeline .timeline-header *:last-child {
+                margin-bottom: 0
+            }
+
+        .resume .timeline .timeline-header-link {
+            grid-row: 1;
+            grid-column: 1 / 3;
+            width: 100%;
+            height: 100%;
+        }
+
+        .resume .timeline .timeline-position {
+            position: relative;
             grid-column: 2 / 3;
-            margin-top: 6pt;
-            margin-bottom: 6pt;
+            margin: 0 0 6pt 0;
+            padding: 3pt 10pt 3pt 38pt;
+            background: linear-gradient(90deg, var(--palette-primary-background1-color), transparent 150%);
+            border-radius: 3pt;
         }
 
-        .resume .timeline-company .timeline-position-details + .timeline-position,
-        .resume .timeline-company .timeline-position-media + .timeline-position {
-            margin-top: 18pt;
-        }
+            .resume .timeline .timeline-position > ::deep svg:first-child {
+                position: absolute;
+                width: 24pt;
+                height: 24pt;
+                left: 9pt;
+                top: 50%;
+                transform: translateY(-12pt);
+                color: var(--palette-primary-color);
+            }
 
-        .resume .timeline-company .timeline-position-details {
-            grid-column: 2 / 3;
-            margin-bottom: 6pt;
-        }
+            .resume .timeline .timeline-position::before {
+                content: '';
+                position: absolute;
+                width: 3pt;
+                height: 100%;
+                left: 0;
+                top: 0;
+                background-color: var(--palette-primary-color);
+                border-top-left-radius: 3pt;
+                border-bottom-left-radius: 3pt;
+            }
 
-            .resume .timeline-company .timeline-position-details *:first-child {
+            .resume .timeline .timeline-position + .timeline-position {
                 margin-top: 0;
             }
 
-            .resume .timeline-company .timeline-position-details *:last-child {
+
+        .resume .timeline .timeline-position-details + .timeline-position {
+            margin-top: 18pt;
+        }
+
+        .resume .timeline .timeline-position-details {
+            grid-column: 2 / 3;
+            margin-bottom: 6pt;
+        }
+
+            .resume .timeline .timeline-position-details *:first-child {
+                margin-top: 0;
+            }
+
+            .resume .timeline .timeline-position-details *:last-child {
                 margin-bottom: 0;
             }
 
-        .resume .timeline-company .timeline-stream {
-            grid-column: 1;
-            display: contents;
-        }
+.palette-magenta {
+    --palette-primary-color: #c54394;
+    --palette-primary-background1-color: #c5439425;
+}
 
-        .resume .timeline-company .timeline-stream-node {
-            background-color: #bfbfbf;
-            border-radius: 50%;
-            width: 6pt;
-            height: 6pt;
-            grid-column: 1;
-            margin: 4.5pt auto 0 auto;
-        }
+.palette-northbrook {
+    --palette-primary-color: #DA3C10;
+    --palette-primary-background1-color: #DA3C1025;
+}
 
-        .resume .timeline-company .timeline-stream-connection {
-            background-color: #bfbfbf;
-            width: 1.5pt;
-            height: auto;
-            margin: 16.5pt auto 1.5pt auto;
-            grid-column: 1;
-        }
+.palette-backend {
+    --palette-primary-color: #435ac5;
+    --palette-primary-background1-color: #435ac525;
+}
 
-        .resume .timeline-company:last-child .timeline-years .timeline-year:last-child {
-            flex-grow: 0;
-        }
+.palette-systems {
+    --palette-primary-color: #4393C5;
+    --palette-primary-background1-color: #4393C525;
+}
 
-        .resume .timeline-company:last-child .timeline-years .timeline-year:last-child::after {
-            content: unset;
-        }
+.palette-tools {
+    --palette-primary-color: #8F43C5;
+    --palette-primary-background1-color: #8F43C525;
+}
 
+.palette-multiplayer {
+    --palette-primary-color: #b80000;
+    --palette-primary-background1-color: #ff000025;
+}
+
+.palette-gameplay {
+    --palette-primary-color: #c54394;
+    --palette-primary-background1-color: #c5439425;
+}
+
+.palette-technicalart {
+    /*
+    --palette-primary-color: #457c00;
+    --palette-primary-background1-color: #457c0025;
+    */
+    --palette-primary-color: #0a7a5f;
+    --palette-primary-background1-color: #00a46e24;
+}
 
 @media print {
     * {
