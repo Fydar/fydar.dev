@@ -7,7 +7,7 @@ public abstract class Icon : ComponentBase
 	[Parameter]
 	public required string Alt { get; set; }
 
-	public abstract string Identifier { get; }
+	public virtual string Identifier { get; }
 
-	public abstract string Title { get; }
+	public virtual string Title { get; }
 }
