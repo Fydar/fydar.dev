@@ -92,22 +92,33 @@
 
                 <p>I can't wait to share with you what I've been doing on Phasmophobia!</p>
 
+                <Callout Type="construction">
+                    <Icon><SvgSprite Link="/icons.svg?v=1#fluent-emoji-high-contrast--construction" Alt="Check" /></Icon>
+                    <ChildContent>This section of my website is currently <b>under NDA</b>.</ChildContent>
+                </Callout>
+
             </Content>
         </Heading>
 
         <Heading Level="2" Identifier="unknown">
-            <Prefix>Unknown</Prefix>
-            <Text>Unknown</Text>
+            <Prefix>Technical Art</Prefix>
+            <Text>Optimizing SetPass calls</Text>
             <Content>
 
-                <p>Working on [UNKNOWN].</p>
+                <p>The new Unity <b>SRP Batcher</b> can batch together renderers in many more configurations than the legacy <b>Dynamic Batcher</b>, but there are limitations. Whenever the shaders differ or shader keywords differ the <b>SRP Batcher</b> can't batch the renderers together. In order to increase the batch sizes, a couple of the following optimizations can be made.</p>
 
-                <div style="height: 5rem"></div>
+                <h3>Consistent Material Keywords</h3>
+
+                <p>There are many reasons why shaders like the Unity URP Standard Lit shader might use different keywords, such as the usage of Alpha Clipping, Emission, Parallax Occlusion, and Detail Mapping.</p>
+
+                <p>Identifying instances where these shader keywords are unnecessary and fixing them via an automated process allows us to save many SetPass calls.</p>
 
                 <Callout Type="construction">
                     <Icon><SvgSprite Link="/icons.svg?v=1#fluent-emoji-high-contrast--construction" Alt="Check" /></Icon>
                     <ChildContent>This section of my website is currently <b>under construction</b>.</ChildContent>
                 </Callout>
+
+                <div style="height: 5rem"></div>
 
             </Content>
 
