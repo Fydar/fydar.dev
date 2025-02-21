@@ -161,19 +161,19 @@
         height: 12pt;
     }
 
-    .resume .page-coverletter-details {
+        .resume .page-coverletter .page-coverletter-details {
         border-bottom: 2pt solid #3f3f3f;
         display: flex;
         flex-direction: row;
         gap: 4pt;
-        padding: 0 4pt;
+            padding: 0;
         font-size: 0.925em;
         justify-content: space-between;
         margin-top: 0;
         margin-bottom: 32pt;
     }
 
-        .resume .page-coverletter-details li {
+            .resume .page-coverletter .page-coverletter-details li {
             display: flex;
             align-items: center;
             margin: 0;
@@ -181,7 +181,9 @@
             letter-spacing: 0.025em;
         }
 
-            .resume .page-coverletter-details li ::deep a {
+                .resume .page-coverletter .page-coverletter-details li ::deep p,
+                .resume .page-coverletter .page-coverletter-details li ::deep a {
+                    margin: 0;
                 color: #3f3f3f;
                 display: flex;
                 align-items: center;
@@ -191,7 +193,7 @@
                 padding-right: 4pt;
             }
 
-            .resume .page-coverletter-details li ::deep svg:first-child {
+                .resume .page-coverletter .page-coverletter-details li ::deep svg:first-child {
                 height: 12pt;
                 width: 12pt;
                 margin-right: 4pt;

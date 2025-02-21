@@ -36,8 +36,6 @@
     }
     <OpenGraphComponent Model="@openGraphModel" />
     <LinkDataComponent Model="@linkData" />
-
-    <link rel="preload" href="media/portrait-cropped.webp" as="image" />
 </HeadContent>
 
 @{
@@ -59,7 +57,7 @@
 
         <div  data-nosnippet>
             <ul class="page-coverletter-details" dir="ltr">
-                <li><SvgSprite Link="/icons.svg?v=1#icon-home" Alt="Location" />Brighton, UK</li>
+                <li><p><SvgSprite Link="/icons.svg?v=1#icon-home" Alt="Location" />Brighton, UK</p></li>
                 <li><ScrapeProofLink LinkText="contact@fydar.dev" LinkDestination="mailto:contact@fydar.dev" target="_blank"><SvgSprite Link="/icons.svg?v=1#icon-email" Alt="Email" /></ScrapeProofLink></li>
                 <li><a href="@explicitBaseUri/" target="_blank"><SvgSprite Link="/icons.svg?v=1#icon-fydar-round" Alt="Portfolio Website" />https://fydar.dev/<SvgSprite Link="/icons.svg?v=1#icon-external-link" class="external-link-icon" /></a></li>
                 <li><a href="https://github.com/Fydar" target="_blank"><SvgSprite Link="/icons.svg?v=1#icon-github" Alt="GitHub" />@@Fydar<SvgSprite Link="/icons.svg?v=1#icon-external-link" class="external-link-icon" /></a></li>
