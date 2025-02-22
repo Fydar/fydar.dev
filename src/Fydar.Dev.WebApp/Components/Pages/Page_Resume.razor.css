@@ -259,7 +259,7 @@
         display: grid;
         grid-template-columns: 46pt auto;
         gap: 0 12pt;
-        margin-bottom: 22pt;
+        margin-bottom: 20pt;
         page-break-inside: avoid;
     }
 
@@ -480,37 +480,37 @@
 }
 
 .palette-backend {
-    --palette-primary-color: #435ac5;
-    --palette-primary-background1-color: #435ac525;
-}
-
-.palette-systems {
     --palette-primary-color: #4393C5;
     --palette-primary-background1-color: #4393C525;
 }
 
-.palette-tools {
-    --palette-primary-color: #8F43C5;
-    --palette-primary-background1-color: #8F43C525;
-}
-
-.palette-multiplayer {
-    --palette-primary-color: #b80000;
-    --palette-primary-background1-color: #ff000025;
-}
-
-.palette-gameplay {
-    --palette-primary-color: #c54394;
-    --palette-primary-background1-color: #c5439425;
-}
-
-.palette-technicalart {
+.palette-systems {
     /*
     --palette-primary-color: #457c00;
     --palette-primary-background1-color: #457c0025;
     */
     --palette-primary-color: #0a7a5f;
     --palette-primary-background1-color: #00a46e24;
+}
+
+.palette-tools {
+    --palette-primary-color: #435ac5;
+    --palette-primary-background1-color: #435ac525;
+}
+
+.palette-multiplayer {
+    --palette-primary-color: #c54394;
+    --palette-primary-background1-color: #c5439425;
+}
+
+.palette-gameplay {
+    --palette-primary-color: #8F43C5;
+    --palette-primary-background1-color: #8F43C525;
+}
+
+.palette-technicalart {
+    --palette-primary-color: #b80000;
+    --palette-primary-background1-color: #ff000025;
 }
 
 @media print {
