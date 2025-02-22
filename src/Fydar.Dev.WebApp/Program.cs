@@ -221,11 +221,10 @@ public class Program
 			}
 		});
 
-		app.UseStaticFiles();
-
 		app.UseAntiforgery();
 
 		app.MapRazorComponents<App>()
+			.WithStaticAssets()
 			.AddInteractiveWebAssemblyRenderMode()
 			.AddAdditionalAssemblies(
 				typeof(Counter).Assembly,
