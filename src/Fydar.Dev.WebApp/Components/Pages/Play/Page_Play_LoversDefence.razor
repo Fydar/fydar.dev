@@ -36,8 +36,8 @@
     <OpenGraphComponent Model="@openGraphModel" />
     <LinkDataComponent Model="@linkData" />
     <meta name="theme-color" content="#2c3840">
-    <link rel="shortcut icon" href="/play/loversdefence/favicon.ico">
-    <link rel="manifest" href="/play/loversdefence/manifest.webmanifest">
+    <link rel="shortcut icon" href="@Assets["/play/loversdefence/favicon.ico"]">
+    <link rel="manifest" href="@Assets["/play/loversdefence/manifest.webmanifest"]">
 </HeadContent>
 
 <EmbedUnity>
@@ -47,22 +47,22 @@
                 companyName: "Fydar",
                 productName: "Lovers Defence",
                 productVersion: "v1.0.0",
-                dataUrl: "/play/loversdefence/build/loversdefence.data.br",
-                codeUrl: "/play/loversdefence/build/loversdefence.wasm.br",
-                frameworkUrl: "/play/loversdefence/build/loversdefence.framework.js.br",
+                dataUrl: "@Assets["play/loversdefence/build/loversdefence.data.br"]",
+                codeUrl: "@Assets["play/loversdefence/build/loversdefence.wasm.br"]",
+                frameworkUrl: "@Assets["play/loversdefence/build/loversdefence.framework.js.br"]",
                 streamingAssetsUrl: "/play/loversdefence/StreamingAssets",
                 arguments: [],
             };
-            var loaderUrl = "/play/loversdefence/build/loversdefence.loader.js";
+            var loaderUrl = "@Assets["play/loversdefence/build/loversdefence.loader.js"]";
         </script>
     </Configuration>
     <Placeholder>
-        <img src="media/loversdefence/titlecard.png?v=1" alt="Title card for the game 'Lovers Defence'." style="width: 200px; max-width: 90%; margin-bottom: 32px; image-rendering: pixelated;" />
+        <img src="@Assets["media/loversdefence/titlecard.png"]" alt="Title card for the game 'Lovers Defence'." style="width: 200px; max-width: 90%; margin-bottom: 32px; image-rendering: pixelated;" />
     </Placeholder>
 </EmbedUnity>
 
 <script>
-    var serviceWorkerUrl = "/play/loversdefence/ServiceWorker.js";
+    var serviceWorkerUrl = "@Assets["play/loversdefence/ServiceWorker.js"]";
     window.addEventListener("load", function () {
         if ("serviceWorker" in navigator) {
             navigator.serviceWorker.register(serviceWorkerUrl);

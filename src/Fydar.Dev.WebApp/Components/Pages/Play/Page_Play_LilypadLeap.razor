@@ -36,8 +36,8 @@
     <OpenGraphComponent Model="@openGraphModel" />
     <LinkDataComponent Model="@linkData" />
     <meta name="theme-color" content="#2c3840">
-    <link rel="shortcut icon" href="/play/lilypadleap/favicon.ico">
-    <link rel="manifest" href="/play/lilypadleap/manifest.webmanifest">
+    <link rel="shortcut icon" href="@Assets["/play/lilypadleap/favicon.ico"]">
+    <link rel="manifest" href="@Assets["/play/lilypadleap/manifest.webmanifest"]">
 </HeadContent>
 
 <EmbedUnity>
@@ -47,22 +47,22 @@
                 companyName: "Fydar",
                 productName: "Lilypad Leap",
                 productVersion: "v0.1.0",
-                dataUrl: "/play/lilypadleap/build/lilypadleap.data.br",
-                codeUrl: "/play/lilypadleap/build/lilypadleap.wasm.br",
-                frameworkUrl: "/play/lilypadleap/build/lilypadleap.framework.js.br",
+                dataUrl: "@Assets["play/lilypadleap/build/lilypadleap.data.br"]",
+                codeUrl: "@Assets["play/lilypadleap/build/lilypadleap.wasm.br"]",
+                frameworkUrl: "@Assets["play/lilypadleap/build/lilypadleap.framework.js.br"]",
                 streamingAssetsUrl: "/play/lilypadleap/StreamingAssets",
                 arguments: [],
             };
-            var loaderUrl = "/play/lilypadleap/build/lilypadleap.loader.js";
+            var loaderUrl = "@Assets["play/lilypadleap/build/lilypadleap.loader.js"]";
         </script>
     </Configuration>
     <Placeholder>
-        <img src="/play/lilypadleap/favicon.ico" alt="The logo for 'Lilypad Leap'." style="width: 200px; max-width: 90%; margin-bottom: 32px;" />
+        <img src="@Assets["play/lilypadleap/favicon.ico"]" alt="The logo for 'Lilypad Leap'." style="width: 200px; max-width: 90%; margin-bottom: 32px;" />
     </Placeholder>
 </EmbedUnity>
 
 <script>
-    var serviceWorkerUrl = "/play/lilypadleap/ServiceWorker.js";
+    var serviceWorkerUrl = "@Assets["play/lilypadleap/ServiceWorker.js"]";
     window.addEventListener("load", function () {
         if ("serviceWorker" in navigator) {
             navigator.serviceWorker.register(serviceWorkerUrl);

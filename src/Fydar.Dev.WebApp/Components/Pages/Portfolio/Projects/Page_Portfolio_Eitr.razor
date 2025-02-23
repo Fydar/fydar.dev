@@ -46,8 +46,8 @@
         </div>
 
         <video class="parallax-layer" onloadeddata="this.classList.add('loaded');" style="--parallax-multiplier: 0.5" autoplay muted loop>
-            <source src="/media/eitr/background.720p.29fps.h265.mp4?v=1" type='video/mp4; codecs="hev1.1.2.L93.90"; profiles="isom,iso2,mp41"'>
-            <source src="/media/eitr/background.720p.29fps.h264.mp4?v=1" type='video/mp4; codecs="avc1.4d401f"; profiles="isom,iso2,avc1,mp41"'>
+            <source src="@Assets["media/eitr/background.720p.29fps.h265.mp4"]" type='video/mp4; codecs="hev1.1.2.L93.90"; profiles="isom,iso2,mp41"'>
+            <source src="@Assets["media/eitr/background.720p.29fps.h264.mp4"]" type='video/mp4; codecs="avc1.4d401f"; profiles="isom,iso2,avc1,mp41"'>
         </video>
 
     </div>
@@ -55,7 +55,7 @@
     <div class="fullscreen-footer">
 
         <picture>
-            <img class="titlecard" src="media/eitr/titlecard.png?v=1" alt="Title card for the game 'EITR'." style="image-rendering: pixelated;" />
+            <img class="titlecard" src="@Assets["media/eitr/titlecard.png"]" alt="Title card for the game 'EITR'." style="image-rendering: pixelated;" />
         </picture>
 
         <SteamPlayButton href="https://store.steampowered.com/app/350050/EITR/">Visit on Steam</SteamPlayButton>
@@ -101,7 +101,7 @@
 
                 <figure class="figure-image">
                     <picture>
-                        <img loading="lazy" src="/media/eitr/skill-tree-editor-1-w900.jpg?v=1" alt="A screenshot of my skill tree editor editing a large skill tree." />
+                        <img loading="lazy" src="@Assets["media/eitr/skill-tree-editor-1-w900.jpg"]" alt="A screenshot of my skill tree editor editing a large skill tree." />
                     </picture>
                     <figcaption>A skill tree for ‘EITR’ inspired by those from <a href="https://www.pathofexile.com/" target="_blank">‘Path of Exile’<SvgSprite Link="/icons.svg?v=1#icon-external-link" class="external-link-icon" /></a>.</figcaption>
                 </figure>
@@ -110,7 +110,7 @@
 
                 <figure class="figure-image">
                     <picture>
-                        <img loading="lazy" src="/media/eitr/skill-tree-editor-2-w900.jpg?v=1" alt="A screenshot of my skill tree editor editing a smaller skill tree." />
+                        <img loading="lazy" src="@Assets["media/eitr/skill-tree-editor-2-w900.jpg"]" alt="A screenshot of my skill tree editor editing a smaller skill tree." />
                     </picture>
                     <figcaption>A skill tree for ‘EITR’ inspired by Nordic runes.</figcaption>
                 </figure>

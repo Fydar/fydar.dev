@@ -36,8 +36,8 @@
     <OpenGraphComponent Model="@openGraphModel" />
     <LinkDataComponent Model="@linkData" />
     <meta name="theme-color" content="#2c3840">
-    <link rel="shortcut icon" href="/play/astralswarm/favicon.ico">
-    <link rel="manifest" href="/play/astralswarm/manifest.webmanifest">
+    <link rel="shortcut icon" href="@Assets["/play/astralswarm/favicon.ico"]">
+    <link rel="manifest" href="@Assets["/play/astralswarm/manifest.webmanifest"]">
 </HeadContent>
 
 <EmbedUnity>
@@ -47,22 +47,22 @@
                 companyName: "Fydar",
                 productName: "Astral Swarm",
                 productVersion: "v0.1.0",
-                dataUrl: "/play/astralswarm/build/astralswarm.data.br",
-                codeUrl: "/play/astralswarm/build/astralswarm.wasm.br",
-                frameworkUrl: "/play/astralswarm/build/astralswarm.framework.js.br",
+                dataUrl: "@Assets["play/astralswarm/build/astralswarm.data.br"]",
+                codeUrl: "@Assets["play/astralswarm/build/astralswarm.wasm.br"]",
+                frameworkUrl: "@Assets["play/astralswarm/build/astralswarm.framework.js.br"]",
                 streamingAssetsUrl: "/play/astralswarm/StreamingAssets",
                 arguments: [],
             };
-            var loaderUrl = "/play/astralswarm/build/astralswarm.loader.js";
+            var loaderUrl = "@Assets["play/astralswarm/build/astralswarm.loader.js"]";
         </script>
     </Configuration>
     <Placeholder>
-        <img src="/play/astralswarm/favicon.ico" alt="The logo for 'Astral Swarm'." style="width: 200px; max-width: 90%; margin-bottom: 32px;" />
+        <img src="@Assets["play/astralswarm/favicon.ico"]" alt="The logo for 'Astral Swarm'." style="width: 200px; max-width: 90%; margin-bottom: 32px;" />
     </Placeholder>
 </EmbedUnity>
 
 <script>
-    var serviceWorkerUrl = "/play/astralswarm/ServiceWorker.js";
+    var serviceWorkerUrl = "@Assets["play/astralswarm/ServiceWorker.js"]";
     window.addEventListener("load", function () {
         if ("serviceWorker" in navigator) {
             navigator.serviceWorker.register(serviceWorkerUrl);

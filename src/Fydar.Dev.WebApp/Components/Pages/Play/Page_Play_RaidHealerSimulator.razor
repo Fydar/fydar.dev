@@ -36,8 +36,8 @@
     <OpenGraphComponent Model="@openGraphModel" />
     <LinkDataComponent Model="@linkData" />
     <meta name="theme-color" content="#2c3840">
-    <link rel="shortcut icon" href="/play/raidhealersimulator/favicon.ico">
-    <link rel="manifest" href="/play/raidhealersimulator/manifest.webmanifest">
+    <link rel="shortcut icon" href="@Assets["/play/raidhealersimulator/favicon.ico"]">
+    <link rel="manifest" href="@Assets["/play/raidhealersimulator/manifest.webmanifest"]">
 </HeadContent>
 
 <EmbedUnity>
@@ -47,22 +47,22 @@
                 companyName: "Fydar",
                 productName: "Raid Healer Simulator",
                 productVersion: "v0.0.1",
-                dataUrl: "/play/raidhealersimulator/build/raidhealersimulator.data.br",
-                codeUrl: "/play/raidhealersimulator/build/raidhealersimulator.wasm.br",
-                frameworkUrl: "/play/raidhealersimulator/build/raidhealersimulator.framework.js.br",
+                dataUrl: "@Assets["play/raidhealersimulator/build/raidhealersimulator.data.br"]",
+                codeUrl: "@Assets["play/raidhealersimulator/build/raidhealersimulator.wasm.br"]",
+                frameworkUrl: "@Assets["play/raidhealersimulator/build/raidhealersimulator.framework.js.br"]",
                 streamingAssetsUrl: "/play/raidhealersimulator/StreamingAssets",
                 arguments: [],
             };
-            var loaderUrl = "/play/raidhealersimulator/build/raidhealersimulator.loader.js";
+            var loaderUrl = "@Assets["play/raidhealersimulator/build/raidhealersimulator.loader.js"]";
         </script>
     </Configuration>
     <Placeholder>
-        <img src="/play/raidhealersimulator/favicon.ico" alt="The logo for 'Raid Healer Simulator'." style="width: 200px; max-width: 90%; margin-bottom: 32px;" />
+        <img src="@Assets["play/raidhealersimulator/favicon.ico"]" alt="The logo for 'Raid Healer Simulator'." style="width: 200px; max-width: 90%; margin-bottom: 32px;" />
     </Placeholder>
 </EmbedUnity>
 
 <script>
-    var serviceWorkerUrl = "/play/raidhealersimulator/ServiceWorker.js";
+    var serviceWorkerUrl = "@Assets["play/raidhealersimulator/ServiceWorker.js"]";
     window.addEventListener("load", function () {
         if ("serviceWorker" in navigator) {
             navigator.serviceWorker.register(serviceWorkerUrl);

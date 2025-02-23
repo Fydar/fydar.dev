@@ -36,8 +36,8 @@
     <OpenGraphComponent Model="@openGraphModel" />
     <LinkDataComponent Model="@linkData" />
     <meta name="theme-color" content="#2c3840">
-    <link rel="shortcut icon" href="/play/roadtonorthstead/favicon.ico">
-    <link rel="manifest" href="/play/roadtonorthstead/manifest.webmanifest">
+    <link rel="shortcut icon" href="@Assets["/play/roadtonorthstead/favicon.ico"]">
+    <link rel="manifest" href="@Assets["/play/roadtonorthstead/manifest.webmanifest"]">
 </HeadContent>
 
 <EmbedUnity>
@@ -47,22 +47,22 @@
                 companyName: "Fydar",
                 productName: "Road to Northstead",
                 productVersion: "v0.1.0",
-                dataUrl: "/play/roadtonorthstead/build/roadtonorthstead.data.br",
-                codeUrl: "/play/roadtonorthstead/build/roadtonorthstead.wasm.br",
-                frameworkUrl: "/play/roadtonorthstead/build/roadtonorthstead.framework.js.br",
+                dataUrl: "@Assets["play/roadtonorthstead/build/roadtonorthstead.data.br"]",
+                codeUrl: "@Assets["play/roadtonorthstead/build/roadtonorthstead.wasm.br"]",
+                frameworkUrl: "@Assets["play/roadtonorthstead/build/roadtonorthstead.framework.js.br"]",
                 streamingAssetsUrl: "/play/roadtonorthstead/StreamingAssets",
                 arguments: [],
             };
-            var loaderUrl = "/play/roadtonorthstead/build/roadtonorthstead.loader.js";
+            var loaderUrl = "@Assets["play/roadtonorthstead/build/roadtonorthstead.loader.js"]";
         </script>
     </Configuration>
     <Placeholder>
-        <img src="/play/roadtonorthstead/favicon.ico" alt="The logo for 'Road to Northstead'." style="width: 200px; max-width: 90%; margin-bottom: 32px;" />
+        <img src="@Assets["play/roadtonorthstead/favicon.ico"]" alt="The logo for 'Road to Northstead'." style="width: 200px; max-width: 90%; margin-bottom: 32px;" />
     </Placeholder>
 </EmbedUnity>
 
 <script>
-    var serviceWorkerUrl = "/play/roadtonorthstead/ServiceWorker.js";
+    var serviceWorkerUrl = "@Assets["play/roadtonorthstead/ServiceWorker.js"]";
     window.addEventListener("load", function () {
         if ("serviceWorker" in navigator) {
             navigator.serviceWorker.register(serviceWorkerUrl);

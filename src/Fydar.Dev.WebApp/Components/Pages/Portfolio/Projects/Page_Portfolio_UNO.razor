@@ -46,8 +46,8 @@
         </div>
 
         <video class="parallax-layer" onloadeddata="this.classList.add('loaded');" style="--parallax-multiplier: 0.5; mix-blend-mode: screen;" autoplay muted loop>
-            <source src="/media/uno/background.1440p.60fps.h265.mp4?v=1" type='video/mp4; codecs="hvc1.1.2.L123.90"; profiles="isom,iso2,mp41"'>
-            <source src="/media/uno/background.1440p.30fps.h264.mp4?v=1" type='video/mp4; codecs="avc1.4d401f"; profiles="isom,iso2,avc1,mp41"'>
+            <source src="@Assets["media/uno/background.1440p.60fps.h265.mp4"]" type='video/mp4; codecs="hvc1.1.2.L123.90"; profiles="isom,iso2,mp41"'>
+            <source src="@Assets["media/uno/background.1440p.30fps.h264.mp4"]" type='video/mp4; codecs="avc1.4d401f"; profiles="isom,iso2,avc1,mp41"'>
         </video>
 
     </div>
@@ -55,7 +55,7 @@
     <div class="fullscreen-footer">
 
         <picture>
-            <img class="titlecard" src="media/uno/logo.svg?v=1" alt="Title card for the game 'UNO'." />
+            <img class="titlecard" src="@Assets["media/uno/logo.svg"]" alt="Title card for the game 'UNO'." />
         </picture>
 
         <SteamPlayButton href="https://www.ubisoft.com/en-gb/game/uno/uno">Visit on Ubisoft</SteamPlayButton>
@@ -94,7 +94,7 @@
         <Heading Level="2" Identifier="legacy-codebase">
             <Prefix>Bug fixing in a</Prefix>
             <Text>Legacy Codebase</Text>
-            <Media><img src="media/uno/green-1.webp?v=1" alt="A green UNO™ 1 card." /></Media>
+            <Media><img src="@Assets["media/uno/green-1.webp"]" alt="A green UNO™ 1 card." /></Media>
             <Content>
 
                 <p>The UNO™ codebase dates back to 2016 with the first release of the <b>Ubisoft</b> UNO™ game. As such, it inherited a lot of bugs over the many years of development it's received. My responsibility working on UNO was to address these bugs to earn community trust.</p>
@@ -105,7 +105,7 @@
         <Heading Level="2" Identifier="button-behaviour">
             <Prefix>Debugging, fixing, and polishing the</Prefix>
             <Text>Main Menu Button Behaviour</Text>
-            <Media><img src="media/uno/blue-2.webp?v=1" alt="A blue UNO™ 2 card." /></Media>
+            <Media><img src="@Assets["media/uno/blue-2.webp"]" alt="A blue UNO™ 2 card." /></Media>
             <Content>
 
                 <p>Whilst fixing bugs on some buttons in the game Main Menu I identified a whole host of troublesome behaviours. My best course of action was to completely rethink how these buttons work.</p>
@@ -118,8 +118,8 @@
 
                 <figure class="figure-image">
                     <video autoplay muted loop>
-                        <source src="/media/uno/issue1-before.30fps.h265.mp4?v=1" type='video/mp4; codecs="hvc1.1.2.L123.90"; profiles="isom,iso2,mp41"'>
-                        <source src="/media/uno/issue1-before.30fps.h264.mp4?v=1" type='video/mp4; codecs="avc1.4d4028"; profiles="isom,iso2,avc1,mp41"'>
+                        <source src="@Assets["media/uno/issue1-before.30fps.h265.mp4"]" type='video/mp4; codecs="hvc1.1.2.L123.90"; profiles="isom,iso2,mp41"'>
+                        <source src="@Assets["media/uno/issue1-before.30fps.h264.mp4"]" type='video/mp4; codecs="avc1.4d4028"; profiles="isom,iso2,avc1,mp41"'>
                     </video>
                     <figcaption>Footage of the mouse hovering over the old main menu buttons.</figcaption>
                 </figure>
@@ -128,8 +128,8 @@
 
                 <figure class="figure-image">
                     <video autoplay muted loop>
-                        <source src="/media/uno/issue1-after.30fps.h265.mp4?v=1" type='video/mp4; codecs="hvc1.1.2.L123.90"; profiles="isom,iso2,mp41"'>
-                        <source src="/media/uno/issue1-after.30fps.h264.mp4?v=1" type='video/mp4; codecs="avc1.4d4028"; profiles="isom,iso2,avc1,mp41"'>
+                        <source src="@Assets["media/uno/issue1-after.30fps.h265.mp4"]" type='video/mp4; codecs="hvc1.1.2.L123.90"; profiles="isom,iso2,mp41"'>
+                        <source src="@Assets["media/uno/issue1-after.30fps.h264.mp4"]" type='video/mp4; codecs="avc1.4d4028"; profiles="isom,iso2,avc1,mp41"'>
                     </video>
                     <figcaption>Footage of the mouse hovering over the new main menu buttons.</figcaption>
                 </figure>
@@ -140,8 +140,8 @@
 
                 <figure class="figure-image">
                     <video autoplay muted loop>
-                        <source src="/media/uno/issue2-before.30fps.h265.mp4?v=1" type='video/mp4; codecs="hvc1.1.2.L123.90"; profiles="isom,iso2,mp41"'>
-                        <source src="/media/uno/issue2-before.30fps.h264.mp4?v=1" type='video/mp4; codecs="avc1.4d4028"; profiles="isom,iso2,avc1,mp41"'>
+                        <source src="@Assets["media/uno/issue2-before.30fps.h265.mp4"]" type='video/mp4; codecs="hvc1.1.2.L123.90"; profiles="isom,iso2,mp41"'>
+                        <source src="@Assets["media/uno/issue2-before.30fps.h264.mp4"]" type='video/mp4; codecs="avc1.4d4028"; profiles="isom,iso2,avc1,mp41"'>
                     </video>
                     <figcaption>Footage of the mouse clicking on the old main menu buttons.</figcaption>
                 </figure>
@@ -150,8 +150,8 @@
 
                 <figure class="figure-image">
                     <video autoplay muted loop>
-                        <source src="/media/uno/issue2-after.30fps.h265.mp4?v=1" type='video/mp4; codecs="hvc1.1.2.L123.90"; profiles="isom,iso2,mp41"'>
-                        <source src="/media/uno/issue2-after.30fps.h264.mp4?v=1" type='video/mp4; codecs="avc1.4d4028"; profiles="isom,iso2,avc1,mp41"'>
+                        <source src="@Assets["media/uno/issue2-after.30fps.h265.mp4"]" type='video/mp4; codecs="hvc1.1.2.L123.90"; profiles="isom,iso2,mp41"'>
+                        <source src="@Assets["media/uno/issue2-after.30fps.h264.mp4"]" type='video/mp4; codecs="avc1.4d4028"; profiles="isom,iso2,avc1,mp41"'>
                     </video>
                     <figcaption>Footage of the mouse clicking on the new main menu buttons.</figcaption>
                 </figure>
@@ -169,8 +169,8 @@
 
                 <figure class="figure-image">
                     <video autoplay muted loop>
-                        <source src="/media/uno/issue3-before.30fps.h265.mp4?v=1" type='video/mp4; codecs="hvc1.1.2.L123.90"; profiles="isom,iso2,mp41"'>
-                        <source src="/media/uno/issue3-before.30fps.h264.mp4?v=1" type='video/mp4; codecs="avc1.4d4028"; profiles="isom,iso2,avc1,mp41"'>
+                        <source src="@Assets["media/uno/issue3-before.30fps.h265.mp4"]" type='video/mp4; codecs="hvc1.1.2.L123.90"; profiles="isom,iso2,mp41"'>
+                        <source src="@Assets["media/uno/issue3-before.30fps.h264.mp4"]" type='video/mp4; codecs="avc1.4d4028"; profiles="isom,iso2,avc1,mp41"'>
                     </video>
                     <figcaption>Footage of controller navigation on the old main menu buttons.</figcaption>
                 </figure>
@@ -179,8 +179,8 @@
 
                 <figure class="figure-image">
                     <video autoplay muted loop>
-                        <source src="/media/uno/issue3-after.30fps.h265.mp4?v=1" type='video/mp4; codecs="hvc1.1.2.L123.90"; profiles="isom,iso2,mp41"'>
-                        <source src="/media/uno/issue3-after.30fps.h264.mp4?v=1" type='video/mp4; codecs="avc1.4d4028"; profiles="isom,iso2,avc1,mp41"'>
+                        <source src="@Assets["media/uno/issue3-after.30fps.h265.mp4"]" type='video/mp4; codecs="hvc1.1.2.L123.90"; profiles="isom,iso2,mp41"'>
+                        <source src="@Assets["media/uno/issue3-after.30fps.h264.mp4"]" type='video/mp4; codecs="avc1.4d4028"; profiles="isom,iso2,avc1,mp41"'>
                     </video>
                     <figcaption>Footage of controller navigation on the new main menu buttons.</figcaption>
                 </figure>
@@ -191,25 +191,25 @@
         <Heading Level="2" Identifier="overdraw">
             <Prefix>Technical Art</Prefix>
             <Text>Addressing Overdraw</Text>
-            <Media><img src="media/uno/red-3.webp?v=1" alt="A red UNO™ 3 card." /></Media>
+            <Media><img src="@Assets["media/uno/red-3.webp"]" alt="A red UNO™ 3 card." /></Media>
             <Content>
 
                 <p>The UNO™ Valhalla DLC features an alternative map where your cards do battle (higher value wins). This scene was plagued with performance issues, especially on XBOX. I was tasked with identifying what was causing the slowdown and fixing it.</p>
 
                 <figure class="figure-image">
                     <picture class="media-wide">
-                        <img src="/media/uno/valhalla-battle.webp?v=1" alt="The UNO™ Valhalla DLC battle map." loading="lazy" />
+                        <img src="@Assets["media/uno/valhalla-battle.webp"]" alt="The UNO™ Valhalla DLC battle map." loading="lazy" />
                     </picture>
                     <figcaption>The UNO™ Valhalla DLC "battle" screen that had performance issues.</figcaption>
                 </figure>
 
                 <p>When I first read the reports of performance issues on this scene I was immediately suspicious of the <a target="_blank" href="https://docs.unity3d.com/Manual/ParticleSystems.html">Unity Particle System<SvgSprite Link="/icons.svg?v=1#icon-external-link" class="external-link-icon" /></a> used to produce the aurora effect that appears in the background because of my experience optimizing <a href="/portfolio/eitr">Eitr</a> for consoles.</p>
-                
+
                 <p>Using tools for identifying areas of significant overdraw, I was able to see that there was indeed areas of high overdraw caused by the particles. I reproduced the issue below. See how, on the left, how much "hotter"" the particles read?</p>
 
                 <figure class="figure-image">
                     <picture class="media-wide">
-                        <img src="/media/uno/valhalla-battle-godrays-overdraw.webp?v=1" alt="A comparison of different godray particles using the Overdraw debugger.." loading="lazy" />
+                        <img src="@Assets["media/uno/valhalla-battle-godrays-overdraw.webp"]" alt="A comparison of different godray particles using the Overdraw debugger.." loading="lazy" />
                     </picture>
                     <figcaption><b>Left</b> is the slow Particle System; <b>Right</b> is the optimized Particle System; both viewed using the Overdraw debugger.</figcaption>
                 </figure>
@@ -218,7 +218,7 @@
 
                 <figure class="figure-image">
                     <picture class="media-wide">
-                        <img src="/media/uno/valhalla-battle-godrays-comparison.webp?v=1" alt="A comparison of different godray particles." loading="lazy" />
+                        <img src="@Assets["media/uno/valhalla-battle-godrays-comparison.webp"]" alt="A comparison of different godray particles." loading="lazy" />
                     </picture>
                     <figcaption><b>Left</b> is the slow Particle System; <b>Right</b> is the optimized Particle System.</figcaption>
                 </figure>

@@ -46,8 +46,8 @@
         </div>
 
         <video class="parallax-layer" onloadeddata="this.classList.add('loaded');" style="--parallax-multiplier: 0.5" autoplay muted loop>
-            <source src="/media/southfield/background.1440p.60fps.h265.mp4?v=1" type='video/mp4; codecs="hvc1.1.2.L150.90"; profiles="isom,iso2,mp41"'>
-            <source src="/media/southfield/background.1440p.30fps.h264.mp4?v=1" type='video/mp4; codecs="avc1.4d4029"; profiles="isom,iso2,avc1,mp41"'>
+            <source src="@Assets["media/southfield/background.1440p.60fps.h265.mp4"]" type='video/mp4; codecs="hvc1.1.2.L150.90"; profiles="isom,iso2,mp41"'>
+            <source src="@Assets["media/southfield/background.1440p.30fps.h264.mp4"]" type='video/mp4; codecs="avc1.4d4029"; profiles="isom,iso2,avc1,mp41"'>
         </video>
 
     </div>
@@ -55,7 +55,7 @@
     <div class="fullscreen-footer">
 
         <picture>
-            <img class="titlecard" src="media/southfield/titlecard.svg?v=1" alt="Title card for the game 'Southfield'." />
+            <img class="titlecard" src="@Assets["media/southfield/titlecard.svg"]" alt="Title card for the game 'Southfield'." />
         </picture>
 
         <SteamPlayButton href="https://store.steampowered.com/app/2076210/Southfield/">Wishlist on Steam</SteamPlayButton>
@@ -108,7 +108,7 @@
 
                 <figure class="figure-image">
                     <video controls muted loop>
-                        <source src="/media/radient/model-demo.mp4?v=1" type='video/mp4'>
+                        <source src="@Assets["media/radient/model-demo.mp4"]" type='video/mp4'>
                     </video>
                     <figcaption>Demonstration of the procedural gradient atlas tool.</figcaption>
                 </figure>
@@ -128,7 +128,7 @@
                 <p>Something that the original version of Radient had (and which unfortunately didn't get implemented in Southfield) was alternate blend spaces to improve colour interpolation.</p>
 
                 <picture class="media">
-                    <img src="/media/radient/gradient-editor.png?v=1" alt="The gradient editor for Radient featuring a gradient blending in the CIEXYZ colour space." loading="lazy" />
+                    <img src="@Assets["media/radient/gradient-editor.png"]" alt="The gradient editor for Radient featuring a gradient blending in the CIEXYZ colour space." loading="lazy" />
                 </picture>
             </Content>
         </Heading>
@@ -144,7 +144,7 @@
 
                 <figure class="figure-image">
                     <video controls muted loop>
-                        <source src="/media/holodrone/gun-demonstration.mp4?v=1" type='video/mp4'>
+                        <source src="@Assets["media/holodrone/gun-demonstration.mp4"]" type='video/mp4'>
                     </video>
                     <figcaption>Demonstration of the non-destructive icon generation workflow with Holodrone.</figcaption>
                 </figure>
@@ -171,7 +171,7 @@
 
                 <figure class="figure-image">
                     <picture class="media-wide">
-                        <img src="/media/southfield/packbook-textures.png?v=1" alt="Texture atlases containing textures for the crops in the game." loading="lazy" />
+                        <img src="@Assets["media/southfield/packbook-textures.png"]" alt="Texture atlases containing textures for the crops in the game." loading="lazy" />
                     </picture>
                     <figcaption>The crops of Southfield have their textures packed into these custom atlases in-engine.</figcaption>
                 </figure>
@@ -193,7 +193,7 @@
 
                 <figure class="figure-image">
                     <picture class="media-wide">
-                        <img src="/media/southfield/screenshot-exploration.jpg?v=1" alt="The player character exploring the world with a companion." loading="lazy" />
+                        <img src="@Assets["media/southfield/screenshot-exploration.jpg"]" alt="The player character exploring the world with a companion." loading="lazy" />
                     </picture>
                     <figcaption>The world of Southfield as seen in the game trailer authored using my tools.</figcaption>
                 </figure>

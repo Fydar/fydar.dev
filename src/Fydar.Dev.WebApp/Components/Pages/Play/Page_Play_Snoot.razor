@@ -36,8 +36,8 @@
     <OpenGraphComponent Model="@openGraphModel" />
     <LinkDataComponent Model="@linkData" />
     <meta name="theme-color" content="#2c3840">
-    <link rel="shortcut icon" href="/play/snoot/favicon.ico">
-    <link rel="manifest" href="/play/snoot/manifest.webmanifest">
+    <link rel="shortcut icon" href="@Assets["/play/snoot/favicon.ico"]">
+    <link rel="manifest" href="@Assets["/play/snoot/manifest.webmanifest"]">
 </HeadContent>
 
 <EmbedUnity>
@@ -47,22 +47,22 @@
                 companyName: "Fydar",
                 productName: "Snoot",
                 productVersion: "v0.0.4",
-                dataUrl: "/play/snoot/build/snoot.data.br",
-                codeUrl: "/play/snoot/build/snoot.wasm.br",
-                frameworkUrl: "/play/snoot/build/snoot.framework.js.br",
+                dataUrl: "@Assets["play/snoot/build/snoot.data.br"]",
+                codeUrl: "@Assets["play/snoot/build/snoot.wasm.br"]",
+                frameworkUrl: "@Assets["play/snoot/build/snoot.framework.js.br"]",
                 streamingAssetsUrl: "/play/snoot/StreamingAssets",
                 arguments: [],
             };
-            var loaderUrl = "/play/snoot/build/snoot.loader.js";
+            var loaderUrl = "@Assets["play/snoot/build/snoot.loader.js"]";
         </script>
     </Configuration>
     <Placeholder>
-        <img src="/play/snoot/favicon.ico" alt="The logo for 'Snoot'." style="width: 200px; max-width: 90%; margin-bottom: 32px;" />
+        <img src="@Assets["play/snoot/favicon.ico"]" alt="The logo for 'Snoot'." style="width: 200px; max-width: 90%; margin-bottom: 32px;" />
     </Placeholder>
 </EmbedUnity>
 
 <script>
-    var serviceWorkerUrl = "/play/snoot/ServiceWorker.js";
+    var serviceWorkerUrl = "@Assets["play/snoot/ServiceWorker.js"]";
     window.addEventListener("load", function () {
         if ("serviceWorker" in navigator) {
             navigator.serviceWorker.register(serviceWorkerUrl);

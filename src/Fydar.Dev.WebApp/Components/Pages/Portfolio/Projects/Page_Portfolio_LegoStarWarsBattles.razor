@@ -47,8 +47,8 @@
         </div>
 
         <video class="parallax-layer" onloadeddata="this.classList.add('loaded');" style="--parallax-multiplier: 0.5" autoplay muted loop>
-            <source src="/media/legostarwarsbattles/background.1080p.30fps.h265.mp4?v=1" type='video/mp4; codecs="hvc1.1.2.L120.90"; profiles="isom,iso2,mp41"'>
-            <source src="/media/legostarwarsbattles/background.1080p.30fps.h264.mp4?v=1" type='video/mp4; codecs="avc1.4d4028"; profiles="isom,iso2,avc1,mp41"'>
+            <source src="@Assets["media/legostarwarsbattles/background.1080p.30fps.h265.mp4"]" type='video/mp4; codecs="hvc1.1.2.L120.90"; profiles="isom,iso2,mp41"'>
+            <source src="@Assets["media/legostarwarsbattles/background.1080p.30fps.h264.mp4"]" type='video/mp4; codecs="avc1.4d4028"; profiles="isom,iso2,avc1,mp41"'>
         </video>
 
     </div>
@@ -56,7 +56,7 @@
     <div class="fullscreen-footer">
 
         <picture>
-            <img class="titlecard" src="media/legostarwarsbattles/titlecard.png?v=1" alt="Title card for the game 'LEGO® Star Wars™ Battles'." />
+            <img class="titlecard" src="@Assets["media/legostarwarsbattles/titlecard.png"]" alt="Title card for the game 'LEGO® Star Wars™ Battles'." />
         </picture>
 
         <SteamPlayButton href="https://apps.apple.com/us/app/lego-star-wars-battles/id1563174698">Apple Arcade</SteamPlayButton>
@@ -101,7 +101,7 @@
         <Heading Level="2" Identifier="leaderboards">
             <Prefix>Servers and infrastructure for</Prefix>
             <Text>Leaderboards</Text>
-            <Media><img src="media/legostarwarsbattles/icon-leagues.webp?v=1" alt="The icon for Leaderboards." /></Media>
+            <Media><img src="@Assets["media/legostarwarsbattles/icon-leagues.webp"]" alt="The icon for Leaderboards." /></Media>
             <Content>
                 <p>I took the role of the <b>Feature Lead</b> to implement weekly leaderboard system. This involved me first provisioning cloud resources and implementing the server systems for leaderboards, and finally implementing a basic UI that can later be reskinned.</p>
 
@@ -109,7 +109,7 @@
 
                 <figure class="figure-image">
                     <picture>
-                        <img loading="lazy" src="/media/legostarwarsbattles/leagues.webp?v=1" alt="A screenshot from the game 'LEGO® Star Wars™ Battles' featuring a Leaderboard." />
+                        <img loading="lazy" src="@Assets["media/legostarwarsbattles/leagues.webp"]" alt="A screenshot from the game 'LEGO® Star Wars™ Battles' featuring a Leaderboard." />
                     </picture>
                     <figcaption>Screenshot from the <a href="https://www.gameuidatabase.com/gameData.php?id=1244">Game UI Database<SvgSprite Link="/icons.svg?v=1#icon-external-link" class="external-link-icon" /></a>.</figcaption>
                 </figure>
@@ -124,7 +124,7 @@
         <Heading Level="2" Identifier="clans">
             <Prefix>Servers and infrastructure for</Prefix>
             <Text>Clans</Text>
-            <Media><img src="media/legostarwarsbattles/icon-clans.webp?v=1" alt="The icon for Clans." /></Media>
+            <Media><img src="@Assets["media/legostarwarsbattles/icon-clans.webp"]" alt="The icon for Clans." /></Media>
             <Content>
 
                 <p>I took the role of the <b>Feature Lead</b> to implement the Clans social system. Much like with the <b>Leaderboards</b>, I started by developing the server-side systems and finished with the client-side UI.</p>
@@ -154,7 +154,7 @@
         <Heading Level="2" Identifier="server-side-receipt-validation">
             <Prefix>Servers and infrastructure for</Prefix>
             <Text>Server-Side Receipt Validation</Text>
-            <Media><img src="media/legostarwarsbattles/icon-stud-pile.webp?v=1" alt="The icon for the shop." /></Media>
+            <Media><img src="@Assets["media/legostarwarsbattles/icon-stud-pile.webp"]" alt="The icon for the shop." /></Media>
             <Content>
 
                 <p>In order to protect our game from fraudulent receipts being sent to our server in order to get free rewards, receipts from the Google Play Store and the Apple App Store have to be validated by our servers to ensure the receipt is from a valid transaction.</p>
@@ -172,7 +172,7 @@
         <Heading Level="2" Identifier="updates-and-data-delivery">
             <Prefix>Servers and infrastructure for</Prefix>
             <Text>Updates and Data Delivery</Text>
-            <Media><img src="media/legostarwarsbattles/icon-asteroid.webp?v=1" alt="The icon for rewards." /></Media>
+            <Media><img src="@Assets["media/legostarwarsbattles/icon-asteroid.webp"]" alt="The icon for rewards." /></Media>
             <Content>
 
                 <p>I architected and implemented the infrastructure necessary to deliver update data to our users.</p>
@@ -180,7 +180,7 @@
                 <p>Because of the nature of updating a live service mobile game, the mechanism had to take care to allow players using different versions of the game to share cloud resources such as databases and servers.</p>
 
                 <picture>
-                    <img loading="lazy" src="/media/legostarwarsbattles/heroes-collage.png?v=1" alt="A collage of hero cards." style="width: 100%;" />
+                    <img loading="lazy" src="@Assets["media/legostarwarsbattles/heroes-collage.png"]" alt="A collage of hero cards." style="width: 100%;" />
                 </picture>
             </Content>
         </Heading>

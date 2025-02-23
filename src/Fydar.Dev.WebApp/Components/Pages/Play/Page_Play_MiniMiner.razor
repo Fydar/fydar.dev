@@ -36,8 +36,8 @@
     <OpenGraphComponent Model="@openGraphModel" />
     <LinkDataComponent Model="@linkData" />
     <meta name="theme-color" content="#2c3840">
-    <link rel="shortcut icon" href="/play/miniminer/favicon.ico">
-    <link rel="manifest" href="/play/miniminer/manifest.webmanifest">
+    <link rel="shortcut icon" href="@Assets["/play/miniminer/favicon.ico"]">
+    <link rel="manifest" href="@Assets["/play/miniminer/manifest.webmanifest"]">
 </HeadContent>
 
 <EmbedUnity>
@@ -47,22 +47,22 @@
                 companyName: "Fydar",
                 productName: "Mini Miner",
                 productVersion: "v0.0.1",
-                dataUrl: "/play/miniminer/build/miniminer.data.br",
-                codeUrl: "/play/miniminer/build/miniminer.wasm.br",
-                frameworkUrl: "/play/miniminer/build/miniminer.framework.js.br",
+                dataUrl: "@Assets["play/miniminer/build/miniminer.data.br"]",
+                codeUrl: "@Assets["play/miniminer/build/miniminer.wasm.br"]",
+                frameworkUrl: "@Assets["play/miniminer/build/miniminer.framework.js.br"]",
                 streamingAssetsUrl: "/play/miniminer/StreamingAssets",
                 arguments: [],
             };
-            var loaderUrl = "/play/miniminer/build/miniminer.loader.js";
+            var loaderUrl = "@Assets["play/miniminer/build/miniminer.loader.js"]";
         </script>
     </Configuration>
     <Placeholder>
-        <img src="/play/miniminer/favicon.ico" alt="The logo for 'Mini Miner'." style="width: 200px; max-width: 90%; margin-bottom: 32px;" />
+        <img src="@Assets["play/miniminer/favicon.ico"]" alt="The logo for 'Mini Miner'." style="width: 200px; max-width: 90%; margin-bottom: 32px;" />
     </Placeholder>
 </EmbedUnity>
 
 <script>
-    var serviceWorkerUrl = "/play/miniminer/ServiceWorker.js";
+    var serviceWorkerUrl = "@Assets["play/miniminer/ServiceWorker.js"]";
     window.addEventListener("load", function () {
         if ("serviceWorker" in navigator) {
             navigator.serviceWorker.register(serviceWorkerUrl);

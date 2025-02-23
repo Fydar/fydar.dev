@@ -36,8 +36,8 @@
     <OpenGraphComponent Model="@openGraphModel" />
     <LinkDataComponent Model="@linkData" />
     <meta name="theme-color" content="#2c3840">
-    <link rel="shortcut icon" href="/play/astralelites/favicon.ico">
-    <link rel="manifest" href="/play/astralelites/manifest.webmanifest">
+    <link rel="shortcut icon" href="@Assets["/play/astralelites/favicon.ico"]">
+    <link rel="manifest" href="@Assets["/play/astralelites/manifest.webmanifest"]">
 </HeadContent>
 
 <EmbedUnity>
@@ -47,22 +47,22 @@
                 companyName: "Fydar",
                 productName: "Astral Elites",
                 productVersion: "astralelites",
-                dataUrl: "/play/astralelites/build/astralelites.data.br",
-                codeUrl: "/play/astralelites/build/astralelites.wasm.br",
-                frameworkUrl: "/play/astralelites/build/astralelites.framework.js.br",
+                dataUrl: "@Assets["play/astralelites/build/astralelites.data.br"]",
+                codeUrl: "@Assets["play/astralelites/build/astralelites.wasm.br"]",
+                frameworkUrl: "@Assets["play/astralelites/build/astralelites.framework.js.br"]",
                 streamingAssetsUrl: "/play/astralelites/StreamingAssets",
                 arguments: [],
             };
-            var loaderUrl = "/play/astralelites/build/astralelites.loader.js";
+            var loaderUrl = "@Assets["play/astralelites/build/astralelites.loader.js"]";
         </script>
     </Configuration>
     <Placeholder>
-        <img src="/play/astralelites/favicon.ico" alt="The logo for 'Astral Elites'." style="width: 200px; max-width: 90%; margin-bottom: 32px;" />
+        <img src="@Assets["play/astralelites/favicon.ico"]" alt="The logo for 'Astral Elites'." style="width: 200px; max-width: 90%; margin-bottom: 32px;" />
     </Placeholder>
 </EmbedUnity>
 
 <script>
-    var serviceWorkerUrl = "/play/astralelites/ServiceWorker.js";
+    var serviceWorkerUrl = "@Assets["play/astralelites/ServiceWorker.js"]";
     window.addEventListener("load", function () {
         if ("serviceWorker" in navigator) {
             navigator.serviceWorker.register(serviceWorkerUrl);

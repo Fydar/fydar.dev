@@ -36,8 +36,8 @@
     <OpenGraphComponent Model="@openGraphModel" />
     <LinkDataComponent Model="@linkData" />
     <meta name="theme-color" content="#2c3840">
-    <link rel="shortcut icon" href="/play/sofarfromhome/favicon.ico">
-    <link rel="manifest" href="/play/sofarfromhome/manifest.webmanifest">
+    <link rel="shortcut icon" href="@Assets["/play/sofarfromhome/favicon.ico"]">
+    <link rel="manifest" href="@Assets["/play/sofarfromhome/manifest.webmanifest"]">
 </HeadContent>
 
 <EmbedUnity>
@@ -47,22 +47,22 @@
                 companyName: "Fydar",
                 productName: "So Far From Home",
                 productVersion: "v0.0.1",
-                dataUrl: "/play/sofarfromhome/build/sofarfromhome.data.br",
-                codeUrl: "/play/sofarfromhome/build/sofarfromhome.wasm.br",
-                frameworkUrl: "/play/sofarfromhome/build/sofarfromhome.framework.js.br",
+                dataUrl: "@Assets["play/sofarfromhome/build/sofarfromhome.data.br"]",
+                codeUrl: "@Assets["play/sofarfromhome/build/sofarfromhome.wasm.br"]",
+                frameworkUrl: "@Assets["play/sofarfromhome/build/sofarfromhome.framework.js.br"]",
                 streamingAssetsUrl: "/play/sofarfromhome/StreamingAssets",
                 arguments: [],
             };
-            var loaderUrl = "/play/sofarfromhome/build/sofarfromhome.loader.js";
+            var loaderUrl = "@Assets["play/sofarfromhome/build/sofarfromhome.loader.js"]";
         </script>
     </Configuration>
     <Placeholder>
-        <img src="/play/sofarfromhome/favicon.ico" alt="The logo for 'So Far From Home'." style="width: 200px; max-width: 90%; margin-bottom: 32px;" />
+        <img src="@Assets["play/sofarfromhome/favicon.ico"]" alt="The logo for 'So Far From Home'." style="width: 200px; max-width: 90%; margin-bottom: 32px;" />
     </Placeholder>
 </EmbedUnity>
 
 <script>
-    var serviceWorkerUrl = "/play/sofarfromhome/ServiceWorker.js";
+    var serviceWorkerUrl = "@Assets["play/sofarfromhome/ServiceWorker.js"]";
     window.addEventListener("load", function () {
         if ("serviceWorker" in navigator) {
             navigator.serviceWorker.register(serviceWorkerUrl);

@@ -47,17 +47,17 @@
                         companyName: "Fydar",
                         productName: "Astral Elites",
                         productVersion: "astralelites",
-                        dataUrl: "/play/astralelites/build/astralelites.data.br",
-                        codeUrl: "/play/astralelites/build/astralelites.wasm.br",
-                        frameworkUrl: "/play/astralelites/build/astralelites.framework.js.br",
+                        dataUrl: "@Assets["play/astralelites/build/astralelites.data.br"]",
+                        codeUrl: "@Assets["play/astralelites/build/astralelites.wasm.br"]",
+                        frameworkUrl: "@Assets["play/astralelites/build/astralelites.framework.js.br"]",
                         streamingAssetsUrl: "/play/astralelites/StreamingAssets",
                         arguments: ["background"],
                     };
-                    var loaderUrl = "/play/astralelites/build/astralelites.loader.js";
+                    var loaderUrl = "@Assets["play/astralelites/build/astralelites.loader.js"]";
                 </script>
             </Configuration>
             <Placeholder>
-                <img src="/play/astralelites/favicon.ico" alt="The logo for 'Astral Elites'." style="width: 200px; max-width: 90%; margin-bottom: 32px;" />
+                <img src="@Assets["play/astralelites/favicon.ico"]" alt="The logo for 'Astral Elites'." style="width: 200px; max-width: 90%; margin-bottom: 32px;" />
             </Placeholder>
         </EmbedUnity>
 
@@ -66,7 +66,7 @@
     <div class="fullscreen-footer">
 
         <picture>
-            <img class="titlecard" src="media/astralelites/titlecard.svg?v=1" alt="Title card for the game 'Astral Elites'." />
+            <img class="titlecard" src="@Assets["media/astralelites/titlecard.svg"]" alt="Title card for the game 'Astral Elites'." />
         </picture>
 
         <SteamPlayButton href="/play/astralelites">Play in Browser</SteamPlayButton>

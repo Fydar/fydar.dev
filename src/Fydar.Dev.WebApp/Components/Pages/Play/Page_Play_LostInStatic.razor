@@ -36,8 +36,8 @@
     <OpenGraphComponent Model="@openGraphModel" />
     <LinkDataComponent Model="@linkData" />
     <meta name="theme-color" content="#2c3840">
-    <link rel="shortcut icon" href="/play/lostinstatic/favicon.ico">
-    <link rel="manifest" href="/play/lostinstatic/manifest.webmanifest">
+    <link rel="shortcut icon" href="@Assets["/play/lostinstatic/favicon.ico"]">
+    <link rel="manifest" href="@Assets["/play/lostinstatic/manifest.webmanifest"]">
 </HeadContent>
 
 <EmbedUnity>
@@ -47,22 +47,22 @@
                 companyName: "Fydar",
                 productName: "Lost in Static",
                 productVersion: "v0.0.1",
-                dataUrl: "/play/lostinstatic/build/lostinstatic.data.br",
-                codeUrl: "/play/lostinstatic/build/lostinstatic.wasm.br",
-                frameworkUrl: "/play/lostinstatic/build/lostinstatic.framework.js.br",
+                dataUrl: "@Assets["play/lostinstatic/build/lostinstatic.data.br"]",
+                codeUrl: "@Assets["play/lostinstatic/build/lostinstatic.wasm.br"]",
+                frameworkUrl: "@Assets["play/lostinstatic/build/lostinstatic.framework.js.br"]",
                 streamingAssetsUrl: "/play/lostinstatic/StreamingAssets",
                 arguments: [],
             };
-            var loaderUrl = "/play/lostinstatic/build/lostinstatic.loader.js";
+            var loaderUrl = "@Assets["play/lostinstatic/build/lostinstatic.loader.js"]";
         </script>
     </Configuration>
     <Placeholder>
-        <img src="/play/lostinstatic/favicon.ico" alt="The logo for 'Lost in Static'." style="width: 200px; max-width: 90%; margin-bottom: 32px;" />
+        <img src="@Assets["play/lostinstatic/favicon.ico"]" alt="The logo for 'Lost in Static'." style="width: 200px; max-width: 90%; margin-bottom: 32px;" />
     </Placeholder>
 </EmbedUnity>
 
 <script>
-    var serviceWorkerUrl = "/play/lostinstatic/ServiceWorker.js";
+    var serviceWorkerUrl = "@Assets["play/lostinstatic/ServiceWorker.js"]";
     window.addEventListener("load", function () {
         if ("serviceWorker" in navigator) {
             navigator.serviceWorker.register(serviceWorkerUrl);

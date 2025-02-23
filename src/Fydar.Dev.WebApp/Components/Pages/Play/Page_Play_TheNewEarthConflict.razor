@@ -36,8 +36,8 @@
     <OpenGraphComponent Model="@openGraphModel" />
     <LinkDataComponent Model="@linkData" />
     <meta name="theme-color" content="#2c3840">
-    <link rel="shortcut icon" href="/play/thenewearthconflict/favicon.ico">
-    <link rel="manifest" href="/play/thenewearthconflict/manifest.webmanifest">
+    <link rel="shortcut icon" href="@Assets["/play/thenewearthconflict/favicon.ico"]">
+    <link rel="manifest" href="@Assets["/play/thenewearthconflict/manifest.webmanifest"]">
 </HeadContent>
 
 <EmbedUnity>
@@ -47,22 +47,22 @@
                 companyName: "Fydar",
                 productName: "The New Earth Conflict",
                 productVersion: "v0.1.0",
-                dataUrl: "/play/thenewearthconflict/build/thenewearthconflict.data.br",
-                codeUrl: "/play/thenewearthconflict/build/thenewearthconflict.wasm.br",
-                frameworkUrl: "/play/thenewearthconflict/build/thenewearthconflict.framework.js.br",
+                dataUrl: "@Assets["play/thenewearthconflict/build/thenewearthconflict.data.br"]",
+                codeUrl: "@Assets["play/thenewearthconflict/build/thenewearthconflict.wasm.br"]",
+                frameworkUrl: "@Assets["play/thenewearthconflict/build/thenewearthconflict.framework.js.br"]",
                 streamingAssetsUrl: "/play/thenewearthconflict/StreamingAssets",
                 arguments: [],
             };
-            var loaderUrl = "/play/thenewearthconflict/build/thenewearthconflict.loader.js";
+            var loaderUrl = "@Assets["play/thenewearthconflict/build/thenewearthconflict.loader.js"]";
         </script>
     </Configuration>
     <Placeholder>
-        <img src="/play/thenewearthconflict/favicon.ico" alt="The logo for 'The New Earth Conflict'." style="width: 200px; max-width: 90%; margin-bottom: 32px;" />
+        <img src="@Assets["play/thenewearthconflict/favicon.ico"]" alt="The logo for 'The New Earth Conflict'." style="width: 200px; max-width: 90%; margin-bottom: 32px;" />
     </Placeholder>
 </EmbedUnity>
 
 <script>
-    var serviceWorkerUrl = "/play/thenewearthconflict/ServiceWorker.js";
+    var serviceWorkerUrl = "@Assets["play/thenewearthconflict/ServiceWorker.js"]";
     window.addEventListener("load", function () {
         if ("serviceWorker" in navigator) {
             navigator.serviceWorker.register(serviceWorkerUrl);

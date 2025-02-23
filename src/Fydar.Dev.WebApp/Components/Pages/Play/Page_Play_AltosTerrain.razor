@@ -36,8 +36,8 @@
     <OpenGraphComponent Model="@openGraphModel" />
     <LinkDataComponent Model="@linkData" />
     <meta name="theme-color" content="#2c3840">
-    <link rel="shortcut icon" href="/play/altosterrain/favicon.ico">
-    <link rel="manifest" href="/play/altosterrain/manifest.webmanifest">
+    <link rel="shortcut icon" href="@Assets["/play/altosterrain/favicon.ico"]">
+    <link rel="manifest" href="@Assets["/play/altosterrain/manifest.webmanifest"]">
 </HeadContent>
 
 <EmbedUnity>
@@ -47,22 +47,22 @@
                 companyName: "Fydar",
                 productName: "Altos-style Terrain",
                 productVersion: "v0.1.0",
-                dataUrl: "/play/altosterrain/build/altosterrain.data.br",
-                codeUrl: "/play/altosterrain/build/altosterrain.wasm.br",
-                frameworkUrl: "/play/altosterrain/build/altosterrain.framework.js.br",
+                dataUrl: "@Assets["play/altosterrain/build/altosterrain.data.br"]",
+                codeUrl: "@Assets["play/altosterrain/build/altosterrain.wasm.br"]",
+                frameworkUrl: "@Assets["play/altosterrain/build/altosterrain.framework.js.br"]",
                 streamingAssetsUrl: "/play/altosterrain/StreamingAssets",
                 arguments: [],
             };
-            var loaderUrl = "/play/altosterrain/build/altosterrain.loader.js";
+            var loaderUrl = "@Assets["play/altosterrain/build/altosterrain.loader.js"]";
         </script>
     </Configuration>
     <Placeholder>
-        <img src="/play/altosterrain/favicon.ico" alt="The logo for 'Altos-style Terrain'." style="width: 200px; max-width: 90%; margin-bottom: 32px;" />
+        <img src="@Assets["play/altosterrain/favicon.ico"]" alt="The logo for 'Altos-style Terrain'." style="width: 200px; max-width: 90%; margin-bottom: 32px;" />
     </Placeholder>
 </EmbedUnity>
 
 <script>
-    var serviceWorkerUrl = "/play/altosterrain/ServiceWorker.js";
+    var serviceWorkerUrl = "@Assets["play/altosterrain/ServiceWorker.js"]";
     window.addEventListener("load", function () {
         if ("serviceWorker" in navigator) {
             navigator.serviceWorker.register(serviceWorkerUrl);

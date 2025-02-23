@@ -36,8 +36,8 @@
     <OpenGraphComponent Model="@openGraphModel" />
     <LinkDataComponent Model="@linkData" />
     <meta name="theme-color" content="#2c3840">
-    <link rel="shortcut icon" href="/play/thedwellers/favicon.ico">
-    <link rel="manifest" href="/play/thedwellers/manifest.webmanifest">
+    <link rel="shortcut icon" href="@Assets["/play/thedwellers/favicon.ico"]">
+    <link rel="manifest" href="@Assets["/play/thedwellers/manifest.webmanifest"]">
 </HeadContent>
 
 <EmbedUnity>
@@ -47,22 +47,22 @@
                 companyName: "Fydar",
                 productName: "The Dwellers",
                 productVersion: "v0.1.0",
-                dataUrl: "/play/thedwellers/build/thedwellers.data.br",
-                codeUrl: "/play/thedwellers/build/thedwellers.wasm.br",
-                frameworkUrl: "/play/thedwellers/build/thedwellers.framework.js.br",
+                dataUrl: "@Assets["play/thedwellers/build/thedwellers.data.br"]",
+                codeUrl: "@Assets["play/thedwellers/build/thedwellers.wasm.br"]",
+                frameworkUrl: "@Assets["play/thedwellers/build/thedwellers.framework.js.br"]",
                 streamingAssetsUrl: "/play/thedwellers/StreamingAssets",
                 arguments: [],
             };
-            var loaderUrl = "/play/thedwellers/build/thedwellers.loader.js";
+            var loaderUrl = "@Assets["play/thedwellers/build/thedwellers.loader.js"]";
         </script>
     </Configuration>
     <Placeholder>
-        <img src="/play/thedwellers/favicon.ico" alt="The logo for 'The Dwellers'." style="width: 200px; max-width: 90%; margin-bottom: 32px;" />
+        <img src="@Assets["play/thedwellers/favicon.ico"]" alt="The logo for 'The Dwellers'." style="width: 200px; max-width: 90%; margin-bottom: 32px;" />
     </Placeholder>
 </EmbedUnity>
 
 <script>
-    var serviceWorkerUrl = "/play/thedwellers/ServiceWorker.js";
+    var serviceWorkerUrl = "@Assets["play/thedwellers/ServiceWorker.js"]";
     window.addEventListener("load", function () {
         if ("serviceWorker" in navigator) {
             navigator.serviceWorker.register(serviceWorkerUrl);

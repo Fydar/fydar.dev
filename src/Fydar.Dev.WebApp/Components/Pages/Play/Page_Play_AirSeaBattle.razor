@@ -36,8 +36,8 @@
     <OpenGraphComponent Model="@openGraphModel" />
     <LinkDataComponent Model="@linkData" />
     <meta name="theme-color" content="#2c3840">
-    <link rel="shortcut icon" href="/play/airseabattle/favicon.ico">
-    <link rel="manifest" href="/play/airseabattle/manifest.webmanifest">
+    <link rel="shortcut icon" href="@Assets["/play/airseabattle/favicon.ico"]">
+    <link rel="manifest" href="@Assets["/play/airseabattle/manifest.webmanifest"]">
 </HeadContent>
 
 <EmbedUnity>
@@ -47,22 +47,22 @@
                 companyName: "Fydar",
                 productName: "Air-Sea Battle",
                 productVersion: "v0.1.0",
-                dataUrl: "/play/airseabattle/build/airseabattle.data.br",
-                codeUrl: "/play/airseabattle/build/airseabattle.wasm.br",
-                frameworkUrl: "/play/airseabattle/build/airseabattle.framework.js.br",
+                dataUrl: "@Assets["play/airseabattle/build/airseabattle.data.br"]",
+                codeUrl: "@Assets["play/airseabattle/build/airseabattle.wasm.br"]",
+                frameworkUrl: "@Assets["play/airseabattle/build/airseabattle.framework.js.br"]",
                 streamingAssetsUrl: "/play/airseabattle/StreamingAssets",
                 arguments: [],
             };
-            var loaderUrl = "/play/airseabattle/build/airseabattle.loader.js";
+            var loaderUrl = "@Assets["play/airseabattle/build/airseabattle.loader.js"]";
         </script>
     </Configuration>
     <Placeholder>
-        <img src="/play/airseabattle/favicon.ico" alt="The logo for 'Air-Sea Battle'." style="width: 200px; max-width: 90%; margin-bottom: 32px;" />
+        <img src="@Assets["play/airseabattle/favicon.ico"]" alt="The logo for 'Air-Sea Battle'." style="width: 200px; max-width: 90%; margin-bottom: 32px;" />
     </Placeholder>
 </EmbedUnity>
 
 <script>
-    var serviceWorkerUrl = "/play/airseabattle/ServiceWorker.js";
+    var serviceWorkerUrl = "@Assets["play/airseabattle/ServiceWorker.js"]";
     window.addEventListener("load", function () {
         if ("serviceWorker" in navigator) {
             navigator.serviceWorker.register(serviceWorkerUrl);
