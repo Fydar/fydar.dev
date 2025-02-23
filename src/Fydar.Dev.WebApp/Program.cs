@@ -15,6 +15,7 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.ResponseCompression;
 using Microsoft.AspNetCore.Server.Kestrel.Core;
 using Microsoft.AspNetCore.StaticFiles;
+using Microsoft.Extensions.FileProviders;
 using Microsoft.Net.Http.Headers;
 using Serilog;
 using Serilog.Events;
@@ -189,37 +190,47 @@ public class Program
 
 		var provider = new FileExtensionContentTypeProvider();
 		provider.Mappings.Remove(".br");
+		provider.Mappings.Clear();
+		provider.Mappings[".js"] = "application/javascript";
 		provider.Mappings[".br"] = "application/octet-stream";
 		provider.Mappings[".data"] = "application/octet-stream";
 		provider.Mappings[".bank"] = "application/octet-stream";
 
 		app.UseStaticFiles(new StaticFileOptions
 		{
+			FileProvider = new PhysicalFileProvider(
+				Path.Combine(builder.Environment.ContentRootPath, "precompressed")),
 			ContentTypeProvider = provider,
 			OnPrepareResponse = context =>
 			{
 				var headers = context.Context.Response.Headers;
-				if (context.File.Name.EndsWith(".wasm.br", StringComparison.OrdinalIgnoreCase))
+
+				if (context.File.Name.EndsWith(".br", StringComparison.OrdinalIgnoreCase))
 				{
 					headers.ContentEncoding = "br";
-					headers.ContentType = "application/wasm";
+
+					if (context.File.Name.Contains(".wasm", StringComparison.OrdinalIgnoreCase))
+					{
+						headers.ContentType = "application/wasm";
+					}
+					else if (context.File.Name.Contains(".js", StringComparison.OrdinalIgnoreCase))
+					{
+						headers.ContentType = "application/javascript";
+					}
+					else if (context.File.Name.Contains(".data", StringComparison.OrdinalIgnoreCase))
+					{
+						headers.ContentType = "application/octet-stream";
+					}
 				}
-				else if (context.File.Name.EndsWith(".js.br", StringComparison.OrdinalIgnoreCase))
-				{
-					headers.ContentEncoding = "br";
-					headers.ContentType = "application/javascript";
-				}
-				else if (context.File.Name.EndsWith(".data.br", StringComparison.OrdinalIgnoreCase))
-				{
-					headers.ContentEncoding = "br";
-					headers.ContentType = "application/octet-stream";
-				}
-				else if (context.File.Name.EndsWith(".data", StringComparison.OrdinalIgnoreCase))
+
+				if (context.File.Name.EndsWith(".data", StringComparison.OrdinalIgnoreCase))
 				{
 					headers.ContentType = "application/octet-stream";
 				}
 			}
 		});
+
+		app.MapStaticAssets();
 
 		app.UseAntiforgery();
 
