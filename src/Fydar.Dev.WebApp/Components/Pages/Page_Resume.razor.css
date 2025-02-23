@@ -67,7 +67,7 @@
     }
 
         .resume .textual-tag + .textual-tag::before {
-            content: "· ";
+            content: "\00b7 ";
             font-weight: bold;
             white-space: pre;
             padding-left: 2pt;
