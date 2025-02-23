@@ -204,3 +204,10 @@ small {
             border-color: #1b8ed1;
             box-shadow: 0 0 0 5px rgba(38,143,255,.5);
         }
+
+/* Reposition the Dashlane autofill slightly to the left and brighten it as this is a dark-theme website. */
+::deep span[data-dashlanecreated=true] {
+    transform: translateX(-6px) !important;
+    filter: brightness(2) !important;
+    cursor: text !important;
+}
