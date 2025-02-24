@@ -68,5 +68,143 @@
             </Content>
         </Heading>
 
+        <Heading Level="2" Identifier="nodes">
+            <Prefix>Assembling some</Prefix>
+            <Text>Graphs</Text>
+            <Content>
+
+                <p>Now that we have some nodes, we can start assembling them into graphs. Here is the above Add node in a graph.</p>
+
+                <NodeGraph TargetSize="640">
+
+                    <Connection StartX="-8" StartY="-5" EndX="-5" EndY="-2" />
+                    <Connection StartX="-8" StartY="0" EndX="-5" EndY="-1" />
+
+                    <Connection StartX="3" StartY="-3" EndX="6" EndY="1" />
+                    <Connection StartX="3" StartY="5" EndX="6" EndY="2" />
+                    <Node X="-14" Y="-7" MinWidth="6">
+                        <Name>Player Level</Name>
+                        <Content>
+                            <div class="node-section-sockets">
+
+                                <div class="node-outputs">
+                                    <div class="node-output connected" style="--row: 1">
+                                        <div class="node-output-socket">I</div>
+                                        <div class="node-output-label">Level</div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </Content>
+                    </Node>
+                    <Node X="-14" Y="-2" MinWidth="6">
+                        <Name>Integer</Name>
+                        <Content>
+                            <div class="node-section-sockets">
+
+                                <div class="node-outputs">
+                                    <div class="node-output connected" style="--row: 1">
+                                        <div class="node-output-socket">I</div>
+                                        <div class="node-output-label">Output</div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </Content>
+                    </Node>
+                    <Node X="-5" Y="3" MinWidth="8">
+                        <Name>Roll</Name>
+                        <Content>
+                            <div class="node-section-sockets">
+
+                                <div class="node-inputs">
+
+                                    <div class="node-input" style="--row: 1">
+                                        <div class="node-input-socket">I</div>
+                                        <div class="node-input-label">Min</div>
+                                    </div>
+                                    <div class="node-input" style="--row: 2">
+                                        <div class="node-input-socket">I</div>
+                                        <div class="node-input-label">Max</div>
+                                    </div>
+
+                                </div>
+
+                                <div class="node-outputs">
+                                    <div class="node-output connected" style="--row: 1">
+                                        <div class="node-output-socket">I</div>
+                                        <div class="node-output-label">Value</div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </Content>
+                    </Node>
+                    <Node X="-3" Y="-5" MinWidth="6">
+                        <Name>Multiply</Name>
+                        <Content>
+                            <div class="node-section-sockets">
+
+                                <div class="node-inputs">
+
+                                    <div class="node-input connected" style="--row: 1">
+                                        <div class="node-input-socket">I</div>
+                                        <div class="node-input-label">A</div>
+                                    </div>
+                                    <div class="node-input connected" style="--row: 2">
+                                        <div class="node-input-socket">I</div>
+                                        <div class="node-input-label">B</div>
+                                    </div>
+
+                                </div>
+
+                                <div class="node-outputs">
+                                    <div class="node-output connected" style="--row: 1">
+                                        <div class="node-output-socket">I</div>
+                                        <div class="node-output-label">Output</div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </Content>
+                    </Node>
+                    <Node X="8" Y="-2" MinWidth="6">
+                        <Name>Add</Name>
+                        <Content>
+                            <div class="node-section-sockets">
+
+                                <div class="node-inputs">
+
+                                    <div class="node-input connected" style="--row: 1">
+                                        <div class="node-input-socket">I</div>
+                                        <div class="node-input-label">A</div>
+                                    </div>
+                                    <div class="node-input connected" style="--row: 2">
+                                        <div class="node-input-socket">I</div>
+                                        <div class="node-input-label">B</div>
+                                    </div>
+
+                                </div>
+
+                                <div class="node-outputs">
+                                    <div class="node-output" style="--row: 1">
+                                        <div class="node-output-socket">I</div>
+                                        <div class="node-output-label">Output</div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </Content>
+                    </Node>
+                </NodeGraph>
+
+                <Callout Type="construction">
+                    <Icon><SvgSprite Link="/icons.svg?v=1#fluent-emoji-high-contrast--construction" Alt="Check" /></Icon>
+                    <ChildContent>This section of my website is currently <b>under construction</b>.</ChildContent>
+                </Callout>
+
+            </Content>
+        </Heading>
+
     </section>
 </HeadingScope>

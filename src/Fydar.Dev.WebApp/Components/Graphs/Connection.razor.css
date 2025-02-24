@@ -1,0 +1,29 @@
+
+svg {
+    position: absolute;
+    overflow: visible;
+    pointer-events: none;
+}
+
+    svg .collider {
+        stroke: transparent;
+        stroke-width: 10;
+        stroke-linejoin: round;
+        fill: none;
+        fill-rule: nonzero;
+        pointer-events: stroke;
+    }
+
+    svg .connector {
+        stroke: #1d62ff;
+        stroke-width: 4;
+        stroke-linejoin: round;
+        fill: none;
+    }
+
+    svg:has(*:hover) .connector {
+        stroke: cyan;
+    }
+
+    svg path {
+    }

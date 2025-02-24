@@ -1,0 +1,18 @@
+<svg style="left: @(StartX * 20)px; top: @(StartY * 20)px">
+    <path d="m 4 0 h 16 l @((EndX - StartX) * 20) @(((EndY - StartY) * 20) - 20) h 16" class="collider" />
+    <path d="m 4 0 h 16 l @((EndX - StartX) * 20) @(((EndY - StartY) * 20) - 20) h 16" class="connector" />
+</svg>
+
+@code {
+    [Parameter]
+    public int StartX { get; set; }
+
+    [Parameter]
+    public int StartY { get; set; }
+
+    [Parameter]
+    public int EndX { get; set; }
+
+    [Parameter]
+    public int EndY { get; set; }
+}

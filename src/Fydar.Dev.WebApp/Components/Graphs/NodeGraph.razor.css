@@ -1,0 +1,62 @@
+
+.graph {
+    aspect-ratio: 16 / 9;
+    background: #171923;
+    border-radius: 8px;
+    /*
+    background: #151516;
+    border: 2px solid #222222;
+    */
+    overflow: hidden;
+    position: relative;
+    color: #daddeb;
+    --Lodestone-graph-scale: 1;
+    --Lodestone-graph-translate-x: 0;
+    --Lodestone-graph-translate-y: 0;
+    --Lodestone-graph-targetsize: 720;
+}
+
+    .graph .graph-background {
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        background-position: calc(50% + (1px * var(--Lodestone-graph-scale) * (10 + var(--Lodestone-graph-translate-x)))) calc(50% + (1px * var(--Lodestone-graph-scale) * (10 + var(--Lodestone-graph-translate-y))));
+        background-size: calc(20px * var(--Lodestone-graph-scale)) calc(20px * var(--Lodestone-graph-scale));
+        background-image: radial-gradient(#50565e 1px, transparent 1.414px);
+        animation-name: fadeBackground;
+        animation-duration: 5s;
+        animation-timing-function: linear;
+        animation-direction: normal;
+        animation-fill-mode: both;
+        animation-play-state: paused;
+        animation-delay: calc(var(--Lodestone-graph-scale, 1) * -1s);
+    }
+
+    .graph .graph-content {
+        position: absolute;
+        width: 0px;
+        height: 0px;
+        top: 50%;
+        left: 50%;
+        transform: scale(var(--Lodestone-graph-scale)) translate(calc(1px * var(--Lodestone-graph-translate-x)), calc(1px * var(--Lodestone-graph-translate-y)));
+    }
+
+@keyframes fadeBackground {
+    0% {
+        opacity: 0;
+    }
+
+    5% {
+        opacity: 0;
+    }
+
+    35% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}

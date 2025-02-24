@@ -145,7 +145,19 @@ function getScrollPercent() {
     return (h[st] || b[st]) / ((h[sh] || b[sh]) - h.clientHeight);
 }
 
+function GraphScaler() {
+    var elements = document.getElementsByClassName("graph");
+    for (let i = 0; i < elements.length; i++) {
+        var element = elements[i];
+        var clientRect = element.getBoundingClientRect()
+
+        var targetSize = window.getComputedStyle(element).getPropertyValue("--Lodestone-graph-targetsize");
+        element.style.setProperty("--Lodestone-graph-scale", clientRect.width / targetSize);
+    }
+}
+
 NavHighlighter();
+GraphScaler();
 
 window.addEventListener("scroll",
     eventArgs => {
@@ -156,5 +168,7 @@ window.addEventListener("scroll",
 window.addEventListener("resize",
     eventArgs => {
         NavHighlighter();
+        GraphScaler();
     }, { passive: true }
 );
+
