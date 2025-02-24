@@ -57,17 +57,17 @@
                 <ul>
                     <li>I want it to be <b>hierarchical</b>.</li>
                     <li>I want parent-child relationships to be <b>hard-typed</b>.</li>
-                    <li>I want to take advantage of the latest C# APIs to achieve maximum performance.</li>
-                    <li>I want to use minimal reflection to ensure maximum linkability and performance.</li>
+                    <li>I want to take advantage of the <b>latest C# APIs</b> to achieve maximum performance.</li>
+                    <li>I want to use <b>zero reflection</b> to ensure maximum linkability and performance.</li>
                 </ul>
 
                 <h3>Hard-Typed Relationships</h3>
 
-                <p>I wanted to bring <b>natural object-oriented data structures</b> into the realm of <b>ECS</b>. To do this, I started by introducing Entity Archetypes, which allowed me to specify archetypes of entities that always contain set components. I didn't want to loose the flexibility of a traditional ECS, so I made sparse components an optional feature of the archetypes.</p>
+                <p>I wanted to bring <b>natural object-oriented data structures</b> into the realm of <b>ECS</b>. To do this, I started by introducing <b>Entity Archetypes</b>, which allowed me to specify archetypes of entities that always contain set components. I didn't want to loose the flexibility of a traditional ECS, so I made sparse components an optional feature of the archetypes.</p>
 
-                <p>I then experimented with what it might look like to add parent-child relationships to the archetypes, but found myself blurring the lines between what is an entity and what is a component. It was clear that this wasn't the solution I was looking for, so I continued experimenting.</p>
+                <p>I then experimented with what it might look like to add <b>parent-child relationships</b> to the archetypes, but I found myself blurring the lines between what is an entity and what is a component. It was clear that this wasn't the solution I was looking for, so I continued experimenting...</p>
 
-                <p>Eventually I explored replacing both entities and components with a single entry in the hierarchy: the node. This is somewhat similar to what Godot does, however the hard-typed relationships between parent and children nodes ends with 2D, 3D, and UI nodes. What if I took the hard-typed scene root nodes and brought it to every node in the scene?</p>
+                <p>Eventually I explored replacing both entities and components with a single entry in the hierarchy: thus creating the <b>Node</b>. This is somewhat similar to what Godot does, however the hard-typed relationships between parent and children nodes in Godot starts and ends with 2D, 3D, and UI nodes. What if I took the hard-typed scene root nodes and brought it to every node in the scene?</p>
 
             </Content>
         </Heading>

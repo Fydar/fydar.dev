@@ -48,10 +48,61 @@
 
     <section class="container">
 
-        <Heading Level="2" Identifier="world">
-            <Prefix>Designing the</Prefix>
-            <Text>World</Text>
+        <Heading Level="2" Identifier="why">
+            <Prefix>Answering the question</Prefix>
+            <Text>Why?</Text>
             <Content>
+
+                <p>This project is a continuation of the <a href="/portfolio/numerics">Numerics</a> project, which is based around a custom <b>Fixed-point numeric</b> type. This allows the consumer to create <b>deterministic simulations</b> using geometry.</p>
+
+            </Content>
+        </Heading>
+
+        <Heading Level="2" Identifier="2d-shapes">
+            <Prefix>Creating the</Prefix>
+            <Text>Primitive 2D Shapes</Text>
+            <Content>
+
+                <p>I started by implementing the primitive 2D shapes, a commonly used component in games development.</p>
+
+                <ul>
+                    <li>2D Ray (defined by a <b>Start</b> point and a direction <b>Vector</b>)</li>
+                    <li>2D Line (defined by a <b>Start</b> point and an <b>End</b> point)</li>
+                    <li>Circle (defined by a <b>Center</b> point and a <b>Radius</b>)</li>
+                    <li>Axis-Aligned Rect (defined by a <b>Center</b> point and the <b>Extents</b>)</li>
+                    <li>Axis-Aligned Min-Max Rect (defined by a <b>Min</b> point and a <b>Max</b> point)</li>
+                    <li>2D Triangle (defined by <b>3 points</b> with clockwise winding)</li>
+                    <li>2D Convex Hull (defined by an array of <b>3 or more points</b> with clockwise winding)</li>
+                </ul>
+
+                <p>By using a winding that is known ahead-of-time we can optimize intersection checks by completing them early if any of the individual edge-sidedness checks indicate that the point is on a given side of the edge.</p>
+
+                <Callout Type="construction">
+                    <Icon><SvgSprite Link="/icons.svg?v=1#fluent-emoji-high-contrast--construction" Alt="Check" /></Icon>
+                    <ChildContent>This section of my website is currently <b>under construction</b>.</ChildContent>
+                </Callout>
+
+            </Content>
+        </Heading>
+
+        <Heading Level="2" Identifier="3d-shapes">
+            <Prefix>Creating the</Prefix>
+            <Text>Primitive 3D Shapes</Text>
+            <Content>
+
+                <p>I then moved on to implementing the primitive 3D shapes.</p>
+
+                <ul>
+                    <li>3D Ray (defined by a <b>Start</b> point and a direction <b>Vector</b>)</li>
+                    <li>3D Line (defined by a <b>Start</b> point and an <b>End</b> point)</li>
+                    <li>Sphere (defined by a <b>Center</b> point and a <b>Radius</b>)</li>
+                    <li>Axis-Aligned Box (defined by a <b>Center</b> point and the <b>Extents</b>)</li>
+                    <li>Axis-Aligned Min-Max Box (defined by a <b>Min</b> point and a <b>Max</b> point)</li>
+                    <li>3D Triangle (defined by <b>3 points</b> with clockwise winding)</li>
+                    <li>3D Convex Hull (defined by an array of <b>3 or more points</b> with clockwise winding)</li>
+                </ul>
+
+                <p>By using a winding that is known ahead-of-time we can optimize intersection checks by completing them early if any of the individual edge-sidedness checks indicate that the point is on a given side of the edge.</p>
 
                 <Callout Type="construction">
                     <Icon><SvgSprite Link="/icons.svg?v=1#fluent-emoji-high-contrast--construction" Alt="Check" /></Icon>
