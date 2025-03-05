@@ -27,7 +27,8 @@ RUN dotnet publish "./Fydar.Dev.WebApp.csproj" -c $BUILD_CONFIGURATION -o /app/p
 
 FROM base AS final
 WORKDIR /app
+COPY --from=publish /app/publish/precompressed ./precompressed
 COPY --from=publish /app/publish/wwwroot/play ./wwwroot/play
 COPY --from=publish /app/publish/wwwroot/media ./wwwroot/media
-COPY --exclude=wwwroot/play/* --exclude=wwwroot/media/* --from=publish /app/publish .
+COPY --exclude=wwwroot/precompressed/* --exclude=wwwroot/play/* --exclude=wwwroot/media/* --from=publish /app/publish .
 ENTRYPOINT ["dotnet", "Fydar.Dev.WebApp.dll"]
